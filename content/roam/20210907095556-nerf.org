@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       e874c7e2-6531-4ddf-a7fb-2e9b515301cd
+:END:
+#+title: NeRF
+
+[[./20210907095536-neural_radiance_field.org][Neural Radiance Field]]

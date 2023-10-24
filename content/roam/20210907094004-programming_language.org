@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       62a198c9-6302-4ca0-82bf-a245d0ea2904
+:END:
+#+title: programming languages
+
+[[./20210907094021-python.org][Python]]
+
+[[./20210907094326-c.org][C++]]
+
+
+[[./20210907094501-emacs_lisp.org][emacs lisp]]
+
+[[./20210907094617-cmake.org][cmake]]
+
+[[./20210907094642-bash_script.org][bash script]]

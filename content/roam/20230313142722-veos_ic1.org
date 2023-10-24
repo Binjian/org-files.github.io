@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       2bacbc00-f148-4eea-9457-d8f035b665b6
+:END:
+#+title: veos-iC1
+* Concept Discussion：
+<2023-03-13 周一>
+** 推理模型文件管理方案
+** 车机端推理
+** 车机端刷表

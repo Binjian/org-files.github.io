@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       47ed36d4-97cc-4912-9c21-ca27b9a2ddc0
+:END:
+#+title: Job Descirption for Deep Learning Engineer
+
+[[./20231024174436-deep_learning_theory.org][deep learning theory]]
+
+* Requirement
+** theory
+*** Machine Learning
+*** Deep Learning
+**** Deep Reinforcement Learning
+**** GAN/VAE
+**** GNN
+**** RNN/LSTM/Transformer
+**** NERF
+** skills
+*** programming technique
+**** python: iter, exception handling, function decorator
+**** tensorflow/pytorch
+**** ml_collections/fiddle/pyrallis/hydra (lazy computation)
+**** argparse, abseil-py, getopt(), optparse, ...
+**** pandas, numpy, scipy, scikit-learn,
+**** unittest/nose
+**** Jupyter Notebook/JupterLab
+*** documentation
+**** markdown
+**** rST (reStructuredText)
+**** orgmode
+**** asciidoc
+**** texinfo
+**** doxygen
+**** json: data type
+*** Linux
+**** script
+**** git: commit, push, branch, merge, rebase, lfs, pull request/merge request;
+**** emacs/vim
+**** docker
+*** Office
+**** markdown: pandoc, reveal.js etc.
+** experience
+*** coding example
+*** documentation example
+*** Github/Gitlab
+*** MLOps
+*** Git-Flow
+
+

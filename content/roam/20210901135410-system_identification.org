@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       24c4f509-d0c6-41d6-b5d6-0b0833d14b86
+:END:
+#+title: system identification
+* road load coefficient
+* pedal map

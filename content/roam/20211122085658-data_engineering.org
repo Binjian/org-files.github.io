@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       76c92ef8-8c74-406a-801d-adfa0f4b8b29
+:END:
+#+title: data engineering
+[[./20211122085637-opensource_stream_processing.org][opensource stream processing]]
+
+[[./20220829110049-data_warehouse.org][data warehouse]]

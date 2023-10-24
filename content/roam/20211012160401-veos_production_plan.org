@@ -1,0 +1,192 @@
+:PROPERTIES:
+:ID:       b37a3d2a-9138-4625-89a5-457373c00324
+:END:
+#+title: veos-production-plan
+#+CATEGORY: Projects
+#+filetags: :veos:
+[[./20210830182658-veos.org][veos]]
+* Gap to Production
+** Development
+*** data ingestion
+**** Interface confirmation
+***** Flashing
+****** Frequency (InTest)
+***** Observation
+****** speed, throttle & brake pedal
+****** voltage, current
+*** data digestion
+**** Function Maintainence and Upgrade
+***** Pretraining and episodic
+***** Episode-free inference
+***** RDPG (Serial States Encoding)
+***** Memory and warm startup
+***** Multi Agents
+***** distribution drifting impact
+*** excrement, deposition and regurgitation
+**** offline data deposition
+*** Test fleet
+**** Vehicle reworking
+***** KVaser
+***** CarPC/laptop
+***** Inverter and cables
+**** SW: Python only Interface (Company Windows system + Conda):
+***** data collection
+***** monitoring,
+***** HMI,
+***** Training
+***** Inference
+*** Test Drive
+**** a different triangle profile
+**** multi-triangle profile
+**** New Anting Town
+***** Baseline
+***** Episode free, inference only
+***** Extra module: HDMap, Traffic Light Detection
+***** expanded action space 0~35kmph/8 rows
+****** observation determines the activated action space!
+******* just assumption, where observation is only related to the corresponding action with the same speed!
+******* in reality, low speed observation may affect high speed action.
+******* but in analogy to convolution neural network, the policy could be shared between different action space
+******* the same DDPG shared for different speed interval! translation invariant in observation & action space? scale separation (0~20kmph-->0~100kmph)?
+**** Highway
+** Test and Validation
+*** Trip Sync
+**** Production over the Infotainment (manual button, internal http, navigation)
+**** Test
+***** STARTED [#C] Sync over UDP
+- State "STARTED"    from "DONE"       [2022-08-04 Thu 10:01]
+****** Vehicle: Trip logic, HMI, inferring
+****** Cloud: data, training
+******* 4G: fetch data from cloud
+***** Sync over the Air
+****** Vehicle: Trip logic, HMI
+******* 4G: Sync signal
+****** Cloud: training, inferring
+*** AI mode switch
+**** Notify (Inquire)
+*** Safety?
+**** motor
+**** driving
+**** torque range
+**** change rate
+* EC1-Production
+** communication
+*** inference on the cloud
+*** decision data dispatch through tbox (remote CAN, 4G and ccp) to VBU
+** training
+*** online (off policy): upload on the cloud, dispatch
+*** offline: upload, storage and offline training
+** data
+*** cloud
+**** model data
+**** training data
+***** offline storage
+***** 2database for inquiry
+** equipment
+*** VB sample with
+**** TBOX
+**** VBU
+*** Cloud cluster
+**** inference
+***** runtime
+***** realtime observation transmission
+***** realtime policy execution
+**** training
+***** database; observation/model/logs storage search and fetch
+***** training runtime
+* TODO ADP Plan
+DEADLINE: <2022-08-31 Wed>
+** Goal
+*** Priority: function, performance;
+*** robust (noise?)
+*** safety (risk?)
+** TODO [#A] review the interface: requriment vs implementation
+SCHEDULED: <2022-02-18 Fri>
+*** 状态读取（上传）以云端为主体: 短消息，快，1.5 秒，上传后在云端存储
+*** 刷写（下发）
+** TODO [#A] test the interface
+DEADLINE: <2022-02-25 Fri>
+*** upload
+*** download
+** TODO [#A] single test vehicle: freeze the 1st version to have a test training and validation
+SCHEDULED: <2022-03-30 Wed>
+*** TODO cloud cluster setup and test
+*** TODO ddpg/rdpg real-time with remotecan to test the realtimeness
+*** TODO ddpg/rdpg offline training/learning & realtime inference
+*** TODO ddpg/rdgp offline training/learning & inference with big timegap (latency, data loss)
+** TODO [#B] review the performance and feasiblity
+SCHEDULED: <2022-05-04 Wed>
+** TODO [#A] batch test: (multiple vehicles)
+SCHEDULED: <2022-06-08 Wed>
+** TODO System Concept (different from test concept, final evaluation)
+SCHEDULED: <2022-07-15 Fri>
+*** TODO Lower Bound: no real-time download and upload, just offline assessment
+**** static optimal pedal map with pre-training （urban eco & highway eco & ... etc. )
+*** TODO Expected Performance:
+**** update when scenario changes smoothly MPC (adaptive changing), from urban --> highway
+***** pretraining on highway
+***** scenario changes
+***** online update in urban street
+*** TODO Upper Bound:
+**** realtime dynamic optimal pedal map with online updating (5s observation immediate after flashing/download;)
+[[id:59bd937c-b70b-4546-bb0b-98d2215737d8][veos-adp]]
+* EC1 Training
+** Responsibility
+*** TODO provide methods and instruction, analysis of the training data, debugging
+*** No support for actual testing,
+** high quality training (due to inference only mode in EC1)
+*** TODO quality and efficiency assessment (eos/)
+*** Anting training is better than Jiangyin.
+*** If no training in Anting, only depending training in Jiangyin, already specified (assessing quality of the training based on the specification！)
+** high quality remotecan signal, responsibility?
+*** TODO quality assessemnt (eos/remotecan itself)
+*** TODO improve remotecan?
+**** if no, decision for abandoning improvement? resource/timing/difficulty, argument?
+**** TODO if yes, how?
+** Analysis
+*** TODO Development test
+**** minimum 1 month, 3 weeks is insufficient, will have to debug remotely
+*** TODO training with new version
+*** TODO inference with new version
+* TODO EC1 assessemnt
+** TODO safety, again?
+** TODO efficiency? not included.
+** TODO Not responsible for evaluation, already proved in ADP, with the best algorithm deep rl!
+** TODO only support for analysis
+* EOS Software
+** Production level software packaage
+** scalable, cluster ready
+*** algorithms, tensorflow on cluster, optimized
+*** Data storage solution: tailored time series database (faster than MongoDB)
+**** arrow parquet - columnar
+**** avro - row based, variable length records
+**** unified interface for record & episode based storage and sampling
+**** metadata solution and interface
+**** basis for offline reinforcement learning
+*** Data Processing interface
+**** Timestamping
+**** Bits precise with Schema
+**** Full integration with Pandas 2.0 processing (multiindex, null typing,)
+**** tensor based vector analysis
+**** variable sequence-length processing and storage
+*** Vector logging analysis: fast statistics extraction and timing analysis, fast signal quality anaylis and validation
+*** EOS Exception handling
+** Full typing with mypy, dataclass and pydantic
+*** mypy config on package and module levels
+*** create stubs for own modules and class
+*** overriding optional with constructors
+** Extendable architecture
+*** integration of multiple input interface (local/remote)
+*** integration of multiple storage interface (database, local files, cluster interface)
+*** integration of polymorphic agent (DDPG/RDPG)
+*** Production configuration system with validation: Vehicle/Driver/Storage config, VCU, TBox, Driver management
+*** TODO DL training/testing metrics with W&B
+*** TODO Time series processing with Transformer architecture
+*** TODO Offline Reinforcement Learning investigation, EDA of offline data
+*** TODO Foundational Model for VEOS （prediction and decision, LLM-agent)
+*** TODO Spark extention to Eos Storage
+*** TODO MapReduce pipeline for veos analysis: statistics,
+* EOS Algorithms
+** Offline Reinforcement Learning CQL, etc.
+** Transformer substitute LSTM
+** Foundational Model for time series

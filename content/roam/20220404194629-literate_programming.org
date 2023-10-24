@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b0dc40d2-6209-4872-bd42-765659d855e9
+:END:
+#+title: Literate Programming
+
+[[id:62a198c9-6302-4ca0-82bf-a245d0ea2904][programming languages]]
+
+# Goal
+- aesthetic, humanitarian, economic

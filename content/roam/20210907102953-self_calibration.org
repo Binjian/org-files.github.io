@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0c3267f0-dbd3-423d-89f7-f8e66d9aa026
+:END:
+#+title: self-calibration
+[[./20210907095556-nerf.org][NeRF]]
+https://github.com/POSTECH-CVLab/SCNeRF
+
+* limitations of current methods:
+** linear pin-hole camera, no nonlinearity optmization
+** sparse features , no direct photometric consistency
+** non-differentiable, nor optimization of 3D geometry

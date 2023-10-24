@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       59ecf766-867e-4c4d-adf2-93a68edbe0e7
+:END:
+#+title: baiduflow
+* 百度百舸
+** 分布式缓存，内存,SSD
+** raas, paas; model aas;
+** 容器：AI 作业调度；GPU 调度，弹性训练，AI 加速引擎，加速镜像，
+** 高性能实例
+*** A100, H100，昆仑 NPU,
+*** X-MAN 架构： InfiniBand & Xlink， 1.6T,
+*** 太行：hypervisor 弹性裸金属
+*** RDMA + VPC
+** 存储
+*** 100TB， 600TB
+*** 原生镜像
+*** rapid fs
+*** PFS:
+*** RapidFS
+** 容器
+*** 可插拔：AI Job Operator,训练作业，资源队列，AI 框架
+*** NVLink 2.0
+*** GPU Device Plugin：精细调度，用户态，内核态，编解码；SM；
+*** 容器适配
+*** AIK
+*** GPU 虚拟化（内核态，用户态）
+*** AI 容器调度 Binpack
+*** 加速引擎，通信库
+*** 空分复用，5000 卡；5%-->50%
+*** 亲和性标签，预热数据节点
+** CCE 百舸能力，

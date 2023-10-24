@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       bcbf0874-b795-4fa7-ba8c-8d59ebc66f30
+:END:
+#+title: Newrizon Proposals for ChipLego
+#+OPTIONS:toc:nil
+#+OPTIONS: num:0 H:0
+
+* Requirements
+** 3d is important
+** big model is relevant to performance
+** occlusions need to be handled
+* Basic modules
+** transformer
+** convolution
+*** UNet
+** MLP
+** encoder, decoder (VAE)
+** generative model (diffusion)
+* Proposals
+** Model zoo TIMM with pretrained model and various model size
+*** different types of computer, big --> small
+*** Vision model as encoder
+**** ViT-pytorch (lucidrain)
+**** RegNet
+**** ConvNext
+**** FocalNet
+** Steps:
+*** evaluate accessible models
+*** add layers and scale up inputs to test
+*** adapt big models to HW (see. AlexNet)
+** "All in One" structure: Generative models (Stable Diffusion model)

@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       9a143947-e1d9-4dc1-a786-6f8a27a723ea
+:END:
+#+title: deep learning theory
+
+
+[[./20210907095536-neural_radiance_field.org][Neural Radiance Field]]
+
+[[./20210830182842-deep_reinforcement_learning.org][deep-reinforcement-learning]]
+
+[[./20210907095445-computer_vision.org][computer vision]]
+
+[[./20210907124642-rnn.org][rnn]]
+
+[[./20211101093409-neural_turing_machine_reinforcement_learning.org][neural turning machine]]
+
+
+[[./20211221093832-gan.org][GAN]]
+
+[[./20211101093611-pondernet.org][pondernet]]
+
+
+[[./20220927113311-deep_learning_hardware.org][deep learning hardware]]

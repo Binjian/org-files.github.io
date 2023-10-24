@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       8655a4e4-2ce6-4ff1-9099-d6d8218e3bcd
+:END:
+#+title: micromamba_env_for_docker
+* install micromamba
+* create ueos env with ueos-env.yaml
+micromamba create -f ueos-env.yaml
+micromamba install pip
+** export micromamba env ueos to requirements-freeze.txt
+pip list --format=freeze > requirements.txt
+* create eos package with poetry
+pyenv local eos
+** poetry update with pyproject.toml
+poetry update
+poetry lock
+poetry build
+* modify poetry pyproject.toml with manual version check
+poetry add $(cat requirements.txt)
+* build eos package with updated poetry virtual environment
+poetry lock
+poetry build
+* create micromamba env ueos from ueos-env.yaml
+** update ueos-env.yaml with local eos package
+./dist/eos-0.0.3-py3-none-any.whl
+* test local micromamba env ueos
+micromamba create -f ueos-env.yaml
+* export from ueos-env ueos-env-lock.txt file
+conda list --explicit --md5 > ueos-env-lock.txt
+
+
+
+* create ueos by micromamba with ueos-env.yaml pytho=3.10.8
+pip list --format=freeze > requirements.txt
+* export freeze format requirements,
+* export conda env ueos to frozen txt
+conda list --explicit --md5 > ueos-env-lock.txt
+* docker micromamba install frozen ueos-env
+* pip intall extra package not in conda-forge
+rocketmq
+cutelog
+pyqt5
+poetry2conda
+* pip install -e . with pyproject.toml with depleted dependencies

@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       03bd1ddd-0f79-481a-b6f2-8e58f12f69b1
+:END:
+#+title: cmake

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       4557d862-1d9f-4048-81f8-933e33783c7b
+:END:
+#+title: veos-remote-errors
+
+* <2022-08-25 四>
+upload corrupt!
+reson {'reson': {'node': 'service get_signal', 'stack': {'elapsed': 2.260907, 'node': 'remote_can.post_get_data.POST_GET_DATA', 'why': 'tbox 获取数据——失败！oss 数据不足'}}, 'result': {'delay': 6.282274961471558}, 'success': False}
+* <2022-08-29 一>
+upload corrupt!
+reson {'reson': {'node': 'service get_signal', 'stack': {'delay': 30.207080602645874, 'elapsed': 30.048862, 'node': 'remote_can.post_get_data.POST_GET_DATA', 'why': '{"code":"301","error":"命令执行超时","success":false}'}}, 'result': {'delay': 30.21088933944702}, 'success': False}

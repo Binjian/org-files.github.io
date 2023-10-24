@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       a85f9100-c309-4a76-89a9-5dd1525839ed
+:END:
+#+title:  Time Series GAN
+#+STARTUP: latexpreview
+
+* Gist
+** temoporal dynamics
+** embedding space by supervised & adverserial objectives
+* TimeGAN
+** stepwise supervised loss, stepwise conditional distributions in the data
+** embedding network: reversible mapping between features and latent representation
+*** temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation
+*** supervised loss minized by jointly training both the embedding and generator netowrks
+**** parameter efficiency
+*** conditioned to facilitate generator in learning temporal relationship
+**** mixed-data: static & time-series
+** evaluation
+*** desiderata:
+**** diversity
+***** Visualization
+****** t-SNE and PCA
+**** fidelity
+***** post hoc time series classifier
+**** usefulnes
+***** train on synthetic, test on real: TSTR
+****** predictive score MAE mean absolute error
+** Problem Formulation
+*** dataset $(\mathbf{S}, \mathbf{X}_{1:T})$
+*** embedding model: static and temporal features
+**** feature space$(\mathcal{S}\times\prod_t\mathcal{X})$
+***** static $\mathcal{S}$
+***** temporal $\mathcal{X}_{1:T}$
+**** latent space
+***** static $\mathcal{H_S}$
+***** temporal $\mathcal{H_X}_{1:T}$
+**** target embedding $(\mathbf{H_\mathcal{S}}, \mathbf{h}_{1:T})$
+**** Z: deeper latent to H; Gaussian and Wiener (OU noise?)
+**** embedding and recovery functions
+***** embedding $e_{\mathcal{s}}(\mathbf{s})$, $e_{\mathcal{X}}(\mathbf{h}_{\mathcal{S}}, \mathbf{h}_{t-1},\mathbf{x}_{t})$

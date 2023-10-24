@@ -1,0 +1,42 @@
+#+title: My Note Dumps as PARA
+
+* Overview
+
+This is an notes dump in a _website_ written with [[https://orgmode.org][Org Mode]]!
+
+
+* Projects
+** EOS
+*** [[id:228e200d-6679-453b-af68-788ed82029d6][veos]]
+**** [[./20220408125710-veos_adp_training_data_interface.org][veos adp training data ingestion interface]]
+*** [[./20211220160946-blmp_project.org][BLMP-Project]]
+**** [[./20211202104125-battery_soh_prediction_using_generative_model.org][Battery SOH prediction using Generative Model]]
+
+* Areas
+** [[./20211013091403-vertex_lab.org][VERTEX Lab]]
+** [[./20210930153026-um_sjtu_t5.org][UM-SJTU-T5]]
+
+* Resources
+** Algorithms
+*** [[./20231024174436-deep_learning_theory.org][deep learning theory]]
+*** [[./20210830182842-deep_reinforcement_learning.org][deep reinforcement learning]]
+*** [[./20211018085542-federated_learning.org][federated learning]]
+**** [[./20211018085801-differential_privacy.org][differential privacy]]
+
+** Hardwares
+*** [[./20220927113311-deep_learning_hardware.org][deep learning hardware]]
+*** [[./20221111125428-newrizon_proposals_for_chiplego.org][Newrizon Proposals for ChipLego]]
+*** [[./20211020132210-veos_compute.org][veos-compute]]
+
+* Archives
+** [[./20210907094004-programming_language.org][programming languages]]
+** [[./20220404194629-literate_programming.org][Literate Programming]]
+** [[./20211122085658-data_engineering.org][data engineering]]
+** [[./20210907095445-computer_vision.org][Computer vision]]
+
+* Links
+*** Here is a link to my [[./Emacs.org][Emacs configuration]].
+- [[https://systemcrafters.net][System Crafters Official Site]]
+- [[https://youtube.com/SystemCrafters][System Crafters on YouTube]]
+- [[https://twitch.com/SystemCrafters][System Crafters on Twitch]]
+- [[https://twitter.com/SystemCrafters][System Crafters on Twitter]]

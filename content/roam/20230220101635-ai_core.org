@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       9dd3692c-6715-4515-abee-56fd244fe0df
+:END:
+#+title: AI-Core
+
+[[./20231024150747-deep_learning_general_theory.org][deep learning]]
+
+[[./20220406135530-devel_project.org][devel-project]]
+
+* code
+** pythonic refactoring
+*** dataclass
+*** ABC for expanding
+**** RL toolkit
+**** datastore (db, cluster)
+**** observation/flashing interface (EC1, iC1, ...)
+**** Exception handling
+*** database technology (indexing, storage, DVC)
+*** refactor in pytorch
+*** transformer implementation
+** VCS (git)
+*** publishing
+*** subscription
+*** autotest
+* Projects
+** development harness
+*** DL model tuning
+**** training
+**** testing
+**** validation
+**** data pipeline
+** [[./20211217115351-mlops.org][MLOps]]
+** debugging on the cloud
+** database
+** docker compose, K8s
+* Deep Learning
+** Reinforcement learning
+*** *Offline reinforcement learning*
+*** *RLHF in VEOS (convergence boundary, performance enhancement)*
+*** efficient search in memory （experience pool)
+*** transformer based decision system
+*** Federated Learning
+** Generative model
+*** *Diffusion model*
+*** *transformer application*
+*** *Application of new TS features from EP*
+** transformer application in DRL and Generative modeling
+** Foundational Model exploration
+*** Image captioning (scene understanding)
+*** Policy selection/Planning with Instructions
+** Building TS foundation model

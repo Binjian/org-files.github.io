@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a72ed00a-5ab7-4662-8786-7862803acac5
+:END:
+#+title: ev
+
+[[./20210830182658-veos.org][veos]]

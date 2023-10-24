@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       125e36b4-aed3-44a7-9e48-c68a7291e004
+:END:
+#+title: veos-adp-plan-cn
+#+OPTIONS: p:t
+
+* 算法 :veos:
+** ddpg :veos:
+*** TODO 代码重构
+DEADLINE: <2022-05-13 fri>
+** rdpg :veos:
+*** TODO 实现与代码重构
+DEADLINE: <2022-05-19 thu>
+*** 园区测试
+*** 道路测试
+** TODO 离线训练编码
+DEADLINE: <2022-05-26 Thu>
+** 驾驶风格聚类/分类分析
+DEADLINE: <2022-06-15 Wed>
+*** TODO 训练接口评审
+*** TODO 分类结果评审
+*** TODO 算法评审
+** TODO 算法修订与选择 I
+DEADLINE: <2022-06-30 thu>
+** TODO 算法修订与选择 II
+DEADLINE: <2022-07-29 fri>
+* 云端集群开发 :veos:
+** TODO 云端环境设置（创建 dockerfile 文件)
+DEADLINE: <2022-04-29 fri>
+** TODO 原始数据接口封装打包
+DEADLINE: <2022-05-13 fri>
+*** TODO 在线
+**** TODO 四元组接口
+*** TODO 离线
+**** TODO 数据池接口（依赖云端离线数据库接口）
+**** TODO 采样方法
+DEADLINE: <2022-05-13 fri>
+* 集成测试 :veos:
+** TODO remotecan
+*** TODO 在线训练
+DEADLINE: <2022-05-26 Thu>
+*** TODO 离线训练
+DEADLINE: <2022-06-02 Thu>
+*** TODO 离线数据引擎训练
+DEADLINE: <2022-06-09 Thu>
+** TODO rdpg 园区测试
+DEADLINE: <2022-05-31 Tue>
+** TODO ddpg 道路测试 I
+DEADLINE: <2022-06-16 thu>
+** TODO rdpg 道路测试 I
+DEADLINE: <2022-06-30 thu>
+** TODO ddpg 道路测试 II
+DEADLINE: <2022-07-14 thu>
+** TODO rdpg 道路测试 II
+DEADLINE: <2022-07-28 thu>

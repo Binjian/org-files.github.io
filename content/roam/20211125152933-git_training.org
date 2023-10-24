@@ -1,0 +1,74 @@
+:PROPERTIES:
+:ID:       8525d1c4-20e9-40ca-ab38-1d1bd88d0884
+:END:
+#+title: git-training
+* git short introduction
+** 'git' not 'jit'
+** days of diff and patch, bitkeeper
+** Goal: distributed development (coooperative? depends!)
+** linus torwald
+** very similar to blockchain Merkle Tree (hash tree)
+*** https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain
+** SHA is not a security feature, security is a by-product
+** objects: blob, tree
+** references: name for raw SHA-1 value; refs
+** porcelan vs plumbing git cat-file -t -p
+** features: local, fast, efficient, distributed, snapshot not patches, changes
+** HEAD/Detached?
+* work-flow:
+** edit, stage(add), review, commit
+** git-flow
+*** https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html
+** submodule
+*** just update, track the new changes of the submodules (no change)
+**** manually : git fetch
+**** automatically: git submodule update --remote
+***** set specific branch .gitmodules submodule.submudle_name.branch stable
+***** -f: tracked; no -f locally, not tracked.
+***** git config status.submodulesummary 1
+*** work on the submodule collaboratively
+**** git submodule update --remote --rebase/--merge
+**** caveats: has to commit locally.
+**** publishing submodule changes: git push --recurse-submodules=check/on-demand
+*** caveats:
+**** accidental revert: git submodule update --remote to update .gitmodule; and commit in parent projects.
+**** cannot merge: no submodule merge
+
+* index/stage, repository, working tree, remote;
+** git hash-object -w;git cat-file -p/-t; git update-index --add --cacheinfo
+** file modes: 100644/100755/120000
+** git write-tree
+** git objects: content-addressable filesystem
+*** tree objects
+*** blob
+*** commit objects
+**** https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
+*** tag
+** diff, snapshot
+*** view/content
+** git commit: is a snapshot
+*** new commits often: history of your logic units of change, a story of history of the repository
+*** metadta: contents, messages of author, timestamp,
+*** change history, --amend
+** reference
+*** branch, HEAD, detached
+**** branch: reference to the head of a line of work-->git update-ref refs/heads/master
+**** HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object
+**** detatched HEAD: cannot commit (checkout a commit/tag/remote branch)
+***** to save : git checkout -b foo/ git branch foo/ git tag foo
+*** git reflog -2 HEAD/ HEAD^^
+*** git symbolic-ref
+*** master^^
+*** tags： branch reference; never moves
+*** remotes: git remote add origin git@gitlab.work:ai/ref.git: git push
+** merge
+** rebase
+** stashing
+** log
+** commit amend, rename, gitignore, submodule,
+* git advanced
+** git revert
+*** git revision specification
+**** git log, git reset, git chery-pick
+** git rebase
+** magit

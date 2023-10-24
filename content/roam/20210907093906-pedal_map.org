@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       d3c0e384-d58f-4049-9f81-41f739117b17
+:END:
+#+title: pedal map

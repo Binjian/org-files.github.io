@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       77eca4cf-9be7-43f7-9dc7-b34af3fb1b18
+:END:
+#+title: capstone-scrum
+* STRT Sprint 1: Set up the open-ended road simulation system [0/7]
+SCHEDULED: <2021-10-29 五>
++ [ ] Generate road network with randomly sampled curvature and connection topology
++ [ ] Generate Non-Player-Character object vehicles with pre-programmed motion trajectories
++ [ ] Generate autonmous driving object vehicles with pre-trained baseline reinforcement learning agents
++ [ ] Spawn object vehicles on the map
++ [ ] Spawn ego vehicles with VEOS
++ [ ] Investigate Vehicle Model
++ [ ] Implement the longitudinal and lateral PID controller in PGDrive (ref. Coursera Course Motion Planning for Self-Driving Cars)
+* TODO Sprint 2: Evaluate the function and performance index of VEOS through the simulation platform [0/5]
+SCHEDULED: <2021-11-12 五>
++ [ ] Implement the DDPG & RDPG agent for VEOS system
++ [ ] Evaluate the generalization capability of VEOS under diverse road conditions
++ [ ] Collect data through simulation platform and train the VEOS system
++ [ ] Evaluate the safety property for vehicles with VEOS, for example crash, traffic rules impediments
++ [ ] Evaluate the competetive and cooperative behavior of the multi-agent system sharing the same VEOS strategy
+* TODO Sprint 3: Propose improvement of VEOS based on the simulation results. [0/3]
+SCHEDULED: <2021-11-26 五>
++ [ ] collect and analyse the simulation data
++ [ ] collect some actual road test result and compare them with simulation results.
++ [ ] Implement the improvement proposals in the simulation platform by retrain the veos system with validation.
+* TODO Review and Submit [0/2]
+SCHEDULED: <2021-12-10 五>
++ [ ] Code consolidation/Review
++ [ ] Final Report/Presentation
+
+* Team
++ **徐亦航 momo_byh@sjtu.edu.cn**
++ 陆东昀 ludongyun0722@sjtu.edu.cn
++ 张思远 zhangsiyuan0518@sjtu.edu.cn
++ 方寒 han.fang@sjtu.edu.cn
++ 许泽恒 15000956679@sjtu.edu.cn
++ 潘泓辰 hongchen.pan@newrizon.com

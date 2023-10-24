@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       7e6148de-8bc4-4064-9498-ab69e2b8587e
+:END:
+#+title: VAE
+
+* Way of VAE
+** maximum likelihood of the data distribution, with latent space of a minimal prior information
+*** KL-divergence is indirect
+* property
+** prioar $p(z)$ has an impact, Gaussiana as prior has the maximal entropy and thus minimizaion of the prior information.
+** $p_{\theta}(z|x)$ and $q_{\phi}(z|x)$ will be finally very simimlar thus can be ignored.
+** encoder part use KL-Divergence, Decoder data maximum likelihood
+
+
+[[id:c099ea75-ef58-4ca8-96a2-6d1468e8d9e8][GAN]]

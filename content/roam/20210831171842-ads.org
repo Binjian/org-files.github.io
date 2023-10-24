@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       bd800c4b-3a12-48dd-8e84-09aa386c98b1
+:END:
+#+title: ads
+[[./20210831171703-patent.org][patent]]
+
+[[./20210831171925-l3.org][l3]]
+
+* features
+** NERF
+*** easy camera calibration
+*** 3d inference
+**** map inference
+*** instant NERF
+**** planning input
+** BEV inference
+** LLM as AGI
+*** planning for longtails
+*** complex environments (grounded planning - saycan)
+*** 5G necessary
+** simulation
+*** generative model
+*** planning: Sim2Real
+*** transfer learning
+** prediction
+*** unsupervised learning (GAN) for prediction
+*** mixing of perception and prediction
+** world model for allevation of inferences
+*** 3d vehicle dataset
+** CLIP level perception (more labels with language model)
+** DDPM

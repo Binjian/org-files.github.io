@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       dbb91023-f503-43e5-b291-4a8e524ff223
+:END:
+#+title: kubeflow
+
+* Goal
+** tensorflow
+** Kubernetes
+** pain points
+*** counter measure?
+** version control of code, model, and data
+** scaling up?
+** security?
+** reporting/logging?
+* Architecture
+
+* Features
+* Components

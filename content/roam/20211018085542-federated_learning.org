@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f3b0d4ee-3d51-41a4-910e-afd9377881eb
+:END:
+#+title: federated learning
+[[./20211018085600-distributed_learning.org][distributed learning]]
+
+[[./20211018085801-differential_privacy.org][differential privacy]]

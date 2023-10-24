@@ -1,0 +1,118 @@
+:PROPERTIES:
+:ID:       24167752-1da4-4721-8ff3-bdfebe653ecc
+:END:
+#+title: Battery SOH prediction using Generative Model
+#+STARTUP: latexpreview
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: ^:{}
+
+* input
+** voltage
+** current
+** ...etc
+* output
+** SOH prediction: SOC
+* Use Cases:
+** charging
+*** Fast charging
+*** AC/DC charging
+** driving
+* Motivation
+** No labels, no models
+** need outlier detection
+** unsupervised learning
+*** given a data X (one time sequence of voltage), under a specific usage (fast charging)
+*** determine whether it's normal or abnormal
+*** Most of the battery cells are OK, say 90%, to get the most of the training data (safe assumption)
+*** check the remaining 10% to pick out the outliers
+** Learn the data distribution in a high dimenional feature space X
+** Learn the feature unsupervised (latent variable Z)
+** get the latent variable Z
+** Conditioned on input data current value
+** Specification of typical use cases: fast charge, driving
+** Generate diverse time series under the
+* Issue
+** Limited samples for training
+*** adaptive discriminator oaugmentation
+*** data augmentation
+** discriminator overfitting early
+** non-convergence
+*** VAE (VQ-VAE)
+*** DDPM
+* Retrospection
+** TimeGAN
+*** autoencoding (embedding space, efficiency): compression, dynamics encoding (provided by embedder & recovery)
+*** apply supervised learning (objective time-frequency characteristics, fidelity) to guide adversarial learning (GAN objective): loss addition!
+*** synchronization (of latent space for real and synthetic, e&f): superviser
+**** let generator learn the dynamics of the actual data distribution in latent space
+*** e, r: MLP+RNN, unidirectional (has to be causal),
+**** deterministic Encoder-Decoder， add probabilistic spin!
+**** r might not be necessary!
+*** g: MLP+RNN (noise: Gaussian + Wiener)
+**** $\mathcal{Z}_{\mathcal{S}}$ and $\mathcal{Z}_t$ is the real latent of the latent, not the same space as $\mathcal{S}$ and $\mathcal{X}_t$
+*** d :
+**** bidirectional(?): as discriminator doesn't have to be causal, retrospective, add capacity) RNN + MLP,
+**** $\tilde{y}_{\mathcal{S}}$ (boolean for static features), $\tilde{y}_{1:T}$ a boolean on every timestamp (necessary?): true/false has dynamics, timing capacity, then summarization
+*** not completely integral as pure VAE or GAN, bastlerei
+*** equal weights for the additive loss of static feature and time series feature!
+*** the claim that GAN loss alone is not sufficient is very dubious, image data has the same spatial fluctuation but is sufficient!
+*** classification error 10~20% (~48% significantly better), prediction error MAE (normalized, 3.8&~30%) events (~30%)
+** no labels (expert knowledge) for supervised learning
+** challenge and caveats for unsuperviesd learning:
+*** relevant features to reflect intrinsic parameters of battery health
+**** the distribution of battery health state depending on those parameters
+*** when the features are relevant, sufficient *finite* data to represent this distribution
+**** Example: Gaussian/uniform; GT distribution is the unknown (nonlinear, multimodal, non-stationary) natural density of data: distribution $p_{\xi}$ --> Neural Network v$p_{\theta}$
+***** NN very versatile: $p_{\theta}$ can approxmate any distribution!
+***** prior $p(z)$ has an impact on the final sample and capability of the whole network: $p(z) \odot p_{\theta}(x)$
+***** if enough expert knowledge is available tell us it's normal distribution, just 2 parameters to estimate, still a lot of samples for bootstrapping/bagging, sample mean / sample variance, need confidence level, statistical trial for inspection.
+**** scenario data (time sequences of specific scenes)
+**** given the current compute resources: the way to go is to reduce the data amount requirement by defining relevant features and relevant scenarios
+*** optimal architecture for G and D (optimize weights) :
+**** multidimensional continuous function enough? More expertise to make this happen!
+***** transformer for sequential modeling
+***** make prior learnable
+**** optimal hyperparameters?
+*** no guarantee for convergence
+*** CGAN and feature labels?
+** Future work
+*** multimodalities in TimeGAN
+**** Gaussian mixture model in latent space
+*** transformer instead of GRU
+*** diffusion model
+*** extreme event detection
+* summary
+** what has been achieved
+*** time series gan with lstm/gru
+*** time series features
+*** rough complexity estimation
+** method
+*** fast feedback with small distriubtion
+*** target real time series of charging voltage
+** model as a platform
+** diffusion model
+*** manipulate data distribution
+*** static pattern (maximum likelihood estimation) --> stochastic differential equation
+*** grasp the data distribution finally
+** emperical vs data science
+*** expert knowledge --> absorbed by machine learning model
+*** deep learnig technology is the best technology so far
+** difficulty
+*** model complexity of time series
+**** features need expertise
+**** conditional models add more complexity
+*** time series features
+**** cannot utilize human intelligence, language, concepts
+**** need battery experts opinion
+*** machine learning
+**** GAN unstable
+**** RNN not for long sequences
+*** data volume lacks
+*** compute resources lack
+** Chances
+*** transformer
+*** diffusion model
+**** acceleration 1000x
+**** way of recover distribution from big data

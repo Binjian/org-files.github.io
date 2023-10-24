@@ -1,0 +1,53 @@
+:PROPERTIES:
+:ID:       2cbbee95-a129-448c-8f42-ab5e7b0c5e95
+:END:
+#+title: BLMP-Project
+#+CATEGORY: Projects
+#+filetags: :battery:
+
+[[./20220411103644-blmp_devel.org][BLMP-devel]]
+
+* 计划
+** 1.0 根据阈值判定
+** 2.0 瞬态电压判断离群点
+*** V=f(I,SOC) ignore T, SOH, ...
+*** OCV V=F(SOC) 4mV +-3mV
+** 3.0 周期性对比同意单体的性能指标值变化
+*** 极化，产生电阻/电势，实验室方法；100ms；诊断功能
+* 项目目标
+** 电芯层面
+** 同状态, I，T, SOC, SOH,
+** 时间累计（应力累计）
+* 电池监控
+** CMU Cell monitor unit, 均衡，测量，（LECU 从板，采样，均衡)
+** BMS
+** VBU 指令
+** TBOX :@OFFICE:COMPUTER:
+** TSP
+** 前晨云端数据库(Elastic Search)
+*  [2022-01-20 Thu]
+** 1.0 已上线
+*** 先抓数据量看一下；
+** 相同 traveltime 有重复数据
+** 历史报警数据； :battery:
+** 极限耐久测试：不符合 :battery:
+** 电芯一致性： :battery: <2022-01-29 Sat 13:00>
+*** 后天？
+*** 先天？
+*  [2022-01-29 Sat]
+** show grid search result <2022-02-03 Thu>
+* 电芯数据
+** 超过 5 分钟是两次充电
+** 震荡的不对
+** 突变
+** 延迟，
+** 长度不同，没有充满，时间短，
+** soc 稳定线性增加（BMS 控制目标）
+** 电流逐渐减小是正常
+** 毛刺，充电设备问题，电流减小，电芯内阻响应
+** 区分：充电不正常，电芯不正常
+** 充电快满的
+* EP features
+** SoC-V 曲线
+** V
+** 差分充电特征
