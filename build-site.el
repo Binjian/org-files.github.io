@@ -27,7 +27,7 @@
       (list
        (list "org-site"
              :recursive t
-             :base-directory "./content"
+             :base-directory "./content/roam"
              :publishing-function 'org-html-publish-to-html
              :publishing-directory "./docs"
              :with-author nil           ;; Don't include author name
