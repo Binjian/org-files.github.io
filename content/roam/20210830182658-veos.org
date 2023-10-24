@@ -38,7 +38,7 @@ Vehicle Energy Optimization System
 *** exponential complexity with extending range
 *** unpredictable events, interrupts change the scenarios
 * solution
-** memory: rnn encoding; [[id:4ef8328b-1e92-46b6-b61b-58276d5e0164][neural turing machine reinforcement learning]]
+** memory: rnn encoding; [[./20211101093524-neural_turning_machine.org][neural turing machine reinforcement learning]]
 ** model based
 *** GAN
 *** Stochastic Value Gradient SVG(0) SVG(1)

@@ -2,7 +2,7 @@
 :ID:       23f591f8-a162-4145-b6f7-0ef92399f039
 :END:
 #+title: veos-compute
-[[id:228e200d-6679-453b-af68-788ed82029d6][veos]]
+[[./20210830182658-veos.org][veos]]
 
 [[./20210917084801-ddpg.org][DDPG]]
 

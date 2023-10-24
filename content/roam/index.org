@@ -7,7 +7,7 @@ This is an notes dump in a _website_ written with [[https://orgmode.org][Org Mod
 
 * Projects
 ** EOS
-*** [[id:228e200d-6679-453b-af68-788ed82029d6][veos]]
+*** [[./20210830182658-veos.org][veos]]
 **** [[./20220408125710-veos_adp_training_data_interface.org][veos adp training data ingestion interface]]
 *** [[./20211220160946-blmp_project.org][BLMP-Project]]
 **** [[./20211202104125-battery_soh_prediction_using_generative_model.org][Battery SOH prediction using Generative Model]]

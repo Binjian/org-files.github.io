@@ -129,7 +129,7 @@ SCHEDULED: <2022-07-15 Fri>
 ***** online update in urban street
 *** TODO Upper Bound:
 **** realtime dynamic optimal pedal map with online updating (5s observation immediate after flashing/download;)
-[[id:59bd937c-b70b-4546-bb0b-98d2215737d8][veos-adp]]
+[[./20220406134513-veos_adp.org][veos-adp]]
 * EC1 Training
 ** Responsibility
 *** TODO provide methods and instruction, analysis of the training data, debugging

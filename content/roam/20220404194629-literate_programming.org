@@ -3,7 +3,7 @@
 :END:
 #+title: Literate Programming
 
-[[id:62a198c9-6302-4ca0-82bf-a245d0ea2904][programming languages]]
+[[./20210907094004-programming_language.org][programming languages]]
 
 # Goal
 - aesthetic, humanitarian, economic

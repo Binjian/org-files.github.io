@@ -12,4 +12,4 @@
 ** encoder part use KL-Divergence, Decoder data maximum likelihood
 
 
-[[id:c099ea75-ef58-4ca8-96a2-6d1468e8d9e8][GAN]]
+[[./20211221093832-gan.org][GAN]]
