@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Job Descirption for Deep Learning Engineer</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Job Descirption for Deep Learning Engineer</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgad1fa9a">Requirement</a>
+<ul>
+<li><a href="#org50a5077">theory</a>
+<ul>
+<li><a href="#org87229c1">Machine Learning</a></li>
+<li><a href="#org60c031d">Deep Learning</a></li>
+</ul>
+</li>
+<li><a href="#org908e273">skills</a>
+<ul>
+<li><a href="#org582949d">programming technique</a></li>
+<li><a href="#orgfb2063e">documentation</a></li>
+<li><a href="#org28653de">Linux</a></li>
+<li><a href="#org3c78c8f">Office</a></li>
+</ul>
+</li>
+<li><a href="#org9422135">experience</a>
+<ul>
+<li><a href="#org115f2c8">coding example</a></li>
+<li><a href="#org2fb69f1">documentation example</a></li>
+<li><a href="#orgce298a1">Github/Gitlab</a></li>
+<li><a href="#org5e7a4c1">MLOps</a></li>
+<li><a href="#orgf925ebc">Git-Flow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="./20231024174436-deep_learning_theory.html">deep learning theory</a>
+</p>
+
+<div id="outline-container-orgad1fa9a" class="outline-2">
+<h2 id="orgad1fa9a">Requirement</h2>
+<div class="outline-text-2" id="text-orgad1fa9a">
+</div>
+<div id="outline-container-org50a5077" class="outline-3">
+<h3 id="org50a5077">theory</h3>
+<div class="outline-text-3" id="text-org50a5077">
+</div>
+<div id="outline-container-org87229c1" class="outline-4">
+<h4 id="org87229c1">Machine Learning</h4>
+</div>
+<div id="outline-container-org60c031d" class="outline-4">
+<h4 id="org60c031d">Deep Learning</h4>
+<div class="outline-text-4" id="text-org60c031d">
+</div>
+<ul class="org-ul">
+<li><a id="org7615133"></a>Deep Reinforcement Learning<br /></li>
+<li><a id="org63a39c7"></a>GAN/VAE<br /></li>
+<li><a id="org823bd48"></a>GNN<br /></li>
+<li><a id="orge9521f4"></a>RNN/LSTM/Transformer<br /></li>
+<li><a id="org19543bc"></a>NERF<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org908e273" class="outline-3">
+<h3 id="org908e273">skills</h3>
+<div class="outline-text-3" id="text-org908e273">
+</div>
+<div id="outline-container-org582949d" class="outline-4">
+<h4 id="org582949d">programming technique</h4>
+<div class="outline-text-4" id="text-org582949d">
+</div>
+<ul class="org-ul">
+<li><a id="orgdedbaca"></a>python: iter, exception handling, function decorator<br /></li>
+<li><a id="org50c63b5"></a>tensorflow/pytorch<br /></li>
+<li><a id="org0b56101"></a>ml<sub>collections</sub>/fiddle/pyrallis/hydra (lazy computation)<br /></li>
+<li><a id="orgefa0222"></a>argparse, abseil-py, getopt(), optparse, &#x2026;<br /></li>
+<li><a id="org6b220c7"></a>pandas, numpy, scipy, scikit-learn,<br /></li>
+<li><a id="org2f48e42"></a>unittest/nose<br /></li>
+<li><a id="org04fc592"></a>Jupyter Notebook/JupterLab<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgfb2063e" class="outline-4">
+<h4 id="orgfb2063e">documentation</h4>
+<div class="outline-text-4" id="text-orgfb2063e">
+</div>
+<ul class="org-ul">
+<li><a id="org703a1a9"></a>markdown<br /></li>
+<li><a id="orgeaffbc4"></a>rST (reStructuredText)<br /></li>
+<li><a id="org88388ea"></a>orgmode<br /></li>
+<li><a id="orgba83bbc"></a>asciidoc<br /></li>
+<li><a id="org098dd25"></a>texinfo<br /></li>
+<li><a id="org014f352"></a>doxygen<br /></li>
+<li><a id="org033680a"></a>json: data type<br /></li>
+</ul>
+</div>
+<div id="outline-container-org28653de" class="outline-4">
+<h4 id="org28653de">Linux</h4>
+<div class="outline-text-4" id="text-org28653de">
+</div>
+<ul class="org-ul">
+<li><a id="org520ac4e"></a>script<br /></li>
+<li><a id="org5a13304"></a>git: commit, push, branch, merge, rebase, lfs, pull request/merge request;<br /></li>
+<li><a id="org06f4a3c"></a>emacs/vim<br /></li>
+<li><a id="org43a87b7"></a>docker<br /></li>
+</ul>
+</div>
+<div id="outline-container-org3c78c8f" class="outline-4">
+<h4 id="org3c78c8f">Office</h4>
+<div class="outline-text-4" id="text-org3c78c8f">
+</div>
+<ul class="org-ul">
+<li><a id="org6f1d876"></a>markdown: pandoc, reveal.js etc.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9422135" class="outline-3">
+<h3 id="org9422135">experience</h3>
+<div class="outline-text-3" id="text-org9422135">
+</div>
+<div id="outline-container-org115f2c8" class="outline-4">
+<h4 id="org115f2c8">coding example</h4>
+</div>
+<div id="outline-container-org2fb69f1" class="outline-4">
+<h4 id="org2fb69f1">documentation example</h4>
+</div>
+<div id="outline-container-orgce298a1" class="outline-4">
+<h4 id="orgce298a1">Github/Gitlab</h4>
+</div>
+<div id="outline-container-org5e7a4c1" class="outline-4">
+<h4 id="org5e7a4c1">MLOps</h4>
+</div>
+<div id="outline-container-orgf925ebc" class="outline-4">
+<h4 id="orgf925ebc">Git-Flow</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

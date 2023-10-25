@@ -38,144 +38,144 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcb4398b">input</a>
+<li><a href="#orgc80071c">input</a>
 <ul>
-<li><a href="#orgee7354e">voltage</a></li>
-<li><a href="#org6d9cf0d">current</a></li>
-<li><a href="#org46d2c21">&#x2026;etc</a></li>
+<li><a href="#orgcda3199">voltage</a></li>
+<li><a href="#org699de17">current</a></li>
+<li><a href="#orga5a2e25">&#x2026;etc</a></li>
 </ul>
 </li>
-<li><a href="#org3fc2bbf">output</a>
+<li><a href="#org8cf5800">output</a>
 <ul>
-<li><a href="#org761eba0">SOH prediction: SOC</a></li>
+<li><a href="#org8616d0f">SOH prediction: SOC</a></li>
 </ul>
 </li>
-<li><a href="#orge40c8b3">Use Cases:</a>
+<li><a href="#org79fb1d9">Use Cases:</a>
 <ul>
-<li><a href="#org73c79e5">charging</a>
+<li><a href="#orgeb97f75">charging</a>
 <ul>
-<li><a href="#orgb7cf2a1">Fast charging</a></li>
-<li><a href="#orgb81a4c3">AC/DC charging</a></li>
+<li><a href="#org35a986e">Fast charging</a></li>
+<li><a href="#org47903a9">AC/DC charging</a></li>
 </ul>
 </li>
-<li><a href="#org9c5ff94">driving</a></li>
+<li><a href="#org1013cae">driving</a></li>
 </ul>
 </li>
-<li><a href="#orga24c343">Motivation</a>
+<li><a href="#org87709f4">Motivation</a>
 <ul>
-<li><a href="#org5376050">No labels, no models</a></li>
-<li><a href="#orga9f7e82">need outlier detection</a></li>
-<li><a href="#org19d7c86">unsupervised learning</a>
+<li><a href="#org64277a4">No labels, no models</a></li>
+<li><a href="#org9dc164f">need outlier detection</a></li>
+<li><a href="#org450f57a">unsupervised learning</a>
 <ul>
-<li><a href="#org1dbbae9">given a data X (one time sequence of voltage), under a specific usage (fast charging)</a></li>
-<li><a href="#org7a13ed4">determine whether it's normal or abnormal</a></li>
-<li><a href="#org1beaaf1">Most of the battery cells are OK, say 90%, to get the most of the training data (safe assumption)</a></li>
-<li><a href="#org8a614e4">check the remaining 10% to pick out the outliers</a></li>
+<li><a href="#orgf67d699">given a data X (one time sequence of voltage), under a specific usage (fast charging)</a></li>
+<li><a href="#org1386716">determine whether it's normal or abnormal</a></li>
+<li><a href="#org311fae0">Most of the battery cells are OK, say 90%, to get the most of the training data (safe assumption)</a></li>
+<li><a href="#orgdc000d5">check the remaining 10% to pick out the outliers</a></li>
 </ul>
 </li>
-<li><a href="#orgfeadd61">Learn the data distribution in a high dimenional feature space X</a></li>
-<li><a href="#orgb436076">Learn the feature unsupervised (latent variable Z)</a></li>
-<li><a href="#org5203737">get the latent variable Z</a></li>
-<li><a href="#org8c5fe41">Conditioned on input data current value</a></li>
-<li><a href="#org92624b3">Specification of typical use cases: fast charge, driving</a></li>
-<li><a href="#orgce2df5c">Generate diverse time series under the</a></li>
+<li><a href="#org196e108">Learn the data distribution in a high dimenional feature space X</a></li>
+<li><a href="#orgdfcaca2">Learn the feature unsupervised (latent variable Z)</a></li>
+<li><a href="#org247ed98">get the latent variable Z</a></li>
+<li><a href="#org4eecabe">Conditioned on input data current value</a></li>
+<li><a href="#org808b304">Specification of typical use cases: fast charge, driving</a></li>
+<li><a href="#org59197f6">Generate diverse time series under the</a></li>
 </ul>
 </li>
-<li><a href="#orgf7ad6e1">Issue</a>
+<li><a href="#org7b3aa50">Issue</a>
 <ul>
-<li><a href="#orge9479a6">Limited samples for training</a>
+<li><a href="#org2a22380">Limited samples for training</a>
 <ul>
-<li><a href="#orgccb4a7c">adaptive discriminator oaugmentation</a></li>
-<li><a href="#org8a0adc7">data augmentation</a></li>
+<li><a href="#org7bea9c0">adaptive discriminator oaugmentation</a></li>
+<li><a href="#orgb926a64">data augmentation</a></li>
 </ul>
 </li>
-<li><a href="#orgca68e7c">discriminator overfitting early</a></li>
-<li><a href="#org2d49a71">non-convergence</a>
+<li><a href="#orgecf3cce">discriminator overfitting early</a></li>
+<li><a href="#org53a3360">non-convergence</a>
 <ul>
-<li><a href="#org82351da">VAE (VQ-VAE)</a></li>
-<li><a href="#org8b4e0f5">DDPM</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org980c826">Retrospection</a>
-<ul>
-<li><a href="#org3f33aa3">TimeGAN</a>
-<ul>
-<li><a href="#orgd678c74">autoencoding (embedding space, efficiency): compression, dynamics encoding (provided by embedder &amp; recovery)</a></li>
-<li><a href="#org6e22bc1">apply supervised learning (objective time-frequency characteristics, fidelity) to guide adversarial learning (GAN objective): loss addition!</a></li>
-<li><a href="#org2ee7cb7">synchronization (of latent space for real and synthetic, e&amp;f): superviser</a></li>
-<li><a href="#org83eaccc">e, r: MLP+RNN, unidirectional (has to be causal),</a></li>
-<li><a href="#orgfea9efc">g: MLP+RNN (noise: Gaussian + Wiener)</a></li>
-<li><a href="#org3ba1741">d :</a></li>
-<li><a href="#org4ef1a08">not completely integral as pure VAE or GAN, bastlerei</a></li>
-<li><a href="#orgd1d1481">equal weights for the additive loss of static feature and time series feature!</a></li>
-<li><a href="#org6173a4c">the claim that GAN loss alone is not sufficient is very dubious, image data has the same spatial fluctuation but is sufficient!</a></li>
-<li><a href="#orgf1cd13c">classification error 10~20% (~48% significantly better), prediction error MAE (normalized, 3.8&amp;~30%) events (~30%)</a></li>
-</ul>
-</li>
-<li><a href="#org62bbe10">no labels (expert knowledge) for supervised learning</a></li>
-<li><a href="#orgdb56d6e">challenge and caveats for unsuperviesd learning:</a>
-<ul>
-<li><a href="#orga1c3b69">relevant features to reflect intrinsic parameters of battery health</a></li>
-<li><a href="#org3530ec5">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</a></li>
-<li><a href="#org77e6df8">optimal architecture for G and D (optimize weights) :</a></li>
-<li><a href="#org3e8e475">no guarantee for convergence</a></li>
-<li><a href="#org22670cc">CGAN and feature labels?</a></li>
-</ul>
-</li>
-<li><a href="#org288aca1">Future work</a>
-<ul>
-<li><a href="#org2c2a17f">multimodalities in TimeGAN</a></li>
-<li><a href="#org226150f">transformer instead of GRU</a></li>
-<li><a href="#orgd75c092">diffusion model</a></li>
-<li><a href="#org05a4d49">extreme event detection</a></li>
+<li><a href="#org9fc4006">VAE (VQ-VAE)</a></li>
+<li><a href="#orgfea8dbf">DDPM</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgcf388c3">summary</a>
+<li><a href="#orgd909af2">Retrospection</a>
 <ul>
-<li><a href="#org7f5d970">what has been achieved</a>
+<li><a href="#org4d70380">TimeGAN</a>
 <ul>
-<li><a href="#orge1da4be">time series gan with lstm/gru</a></li>
-<li><a href="#orgd7b4371">time series features</a></li>
-<li><a href="#org15a9d7a">rough complexity estimation</a></li>
+<li><a href="#org9b0a504">autoencoding (embedding space, efficiency): compression, dynamics encoding (provided by embedder &amp; recovery)</a></li>
+<li><a href="#org03b0649">apply supervised learning (objective time-frequency characteristics, fidelity) to guide adversarial learning (GAN objective): loss addition!</a></li>
+<li><a href="#org692a6c1">synchronization (of latent space for real and synthetic, e&amp;f): superviser</a></li>
+<li><a href="#org1c71d6b">e, r: MLP+RNN, unidirectional (has to be causal),</a></li>
+<li><a href="#orge676801">g: MLP+RNN (noise: Gaussian + Wiener)</a></li>
+<li><a href="#org37af28a">d :</a></li>
+<li><a href="#org85f9fe6">not completely integral as pure VAE or GAN, bastlerei</a></li>
+<li><a href="#org8863078">equal weights for the additive loss of static feature and time series feature!</a></li>
+<li><a href="#org24fe861">the claim that GAN loss alone is not sufficient is very dubious, image data has the same spatial fluctuation but is sufficient!</a></li>
+<li><a href="#orgb73fdd3">classification error 10~20% (~48% significantly better), prediction error MAE (normalized, 3.8&amp;~30%) events (~30%)</a></li>
 </ul>
 </li>
-<li><a href="#orgf210250">method</a>
+<li><a href="#org3d8879f">no labels (expert knowledge) for supervised learning</a></li>
+<li><a href="#orgdffff3f">challenge and caveats for unsuperviesd learning:</a>
 <ul>
-<li><a href="#org677a8ed">fast feedback with small distriubtion</a></li>
-<li><a href="#orgf96a1a8">target real time series of charging voltage</a></li>
+<li><a href="#org62643cb">relevant features to reflect intrinsic parameters of battery health</a></li>
+<li><a href="#org49f5c7e">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</a></li>
+<li><a href="#orge3a6867">optimal architecture for G and D (optimize weights) :</a></li>
+<li><a href="#orgc86a76e">no guarantee for convergence</a></li>
+<li><a href="#org5e88300">CGAN and feature labels?</a></li>
 </ul>
 </li>
-<li><a href="#org337e653">model as a platform</a></li>
-<li><a href="#orgdc8f936">diffusion model</a>
+<li><a href="#orgf4dfa8f">Future work</a>
 <ul>
-<li><a href="#org1c67b18">manipulate data distribution</a></li>
-<li><a href="#orgc5233d2">static pattern (maximum likelihood estimation) &#x2013;&gt; stochastic differential equation</a></li>
-<li><a href="#org65cdfc3">grasp the data distribution finally</a></li>
+<li><a href="#org4e23df1">multimodalities in TimeGAN</a></li>
+<li><a href="#org4901ee1">transformer instead of GRU</a></li>
+<li><a href="#orge0ae881">diffusion model</a></li>
+<li><a href="#orgb67f25e">extreme event detection</a></li>
 </ul>
 </li>
-<li><a href="#org4d5e17e">emperical vs data science</a>
-<ul>
-<li><a href="#org71eb0b9">expert knowledge &#x2013;&gt; absorbed by machine learning model</a></li>
-<li><a href="#org5d52c4b">deep learnig technology is the best technology so far</a></li>
 </ul>
 </li>
-<li><a href="#orgb1f8e8c">difficulty</a>
+<li><a href="#org7c25dba">summary</a>
 <ul>
-<li><a href="#orgd55cda1">model complexity of time series</a></li>
-<li><a href="#org595b866">time series features</a></li>
-<li><a href="#org19d5323">machine learning</a></li>
-<li><a href="#org318e4f4">data volume lacks</a></li>
-<li><a href="#orgb44e4b7">compute resources lack</a></li>
+<li><a href="#org337790b">what has been achieved</a>
+<ul>
+<li><a href="#org775c8fd">time series gan with lstm/gru</a></li>
+<li><a href="#orgf8b9651">time series features</a></li>
+<li><a href="#org345630d">rough complexity estimation</a></li>
 </ul>
 </li>
-<li><a href="#org8ecc0a9">Chances</a>
+<li><a href="#org1567e5a">method</a>
 <ul>
-<li><a href="#orga5c3a43">transformer</a></li>
-<li><a href="#orgd71efff">diffusion model</a></li>
+<li><a href="#orgdace99b">fast feedback with small distriubtion</a></li>
+<li><a href="#orgfcaba22">target real time series of charging voltage</a></li>
+</ul>
+</li>
+<li><a href="#org93c5b82">model as a platform</a></li>
+<li><a href="#org07e1f6b">diffusion model</a>
+<ul>
+<li><a href="#org5ab73fd">manipulate data distribution</a></li>
+<li><a href="#orgb74ffc3">static pattern (maximum likelihood estimation) &#x2013;&gt; stochastic differential equation</a></li>
+<li><a href="#org3f19cdb">grasp the data distribution finally</a></li>
+</ul>
+</li>
+<li><a href="#orgcb3f71f">emperical vs data science</a>
+<ul>
+<li><a href="#org0984b9e">expert knowledge &#x2013;&gt; absorbed by machine learning model</a></li>
+<li><a href="#org365e204">deep learnig technology is the best technology so far</a></li>
+</ul>
+</li>
+<li><a href="#orgf2c85d1">difficulty</a>
+<ul>
+<li><a href="#orgb194cc2">model complexity of time series</a></li>
+<li><a href="#org34c37f3">time series features</a></li>
+<li><a href="#orgfdf3115">machine learning</a></li>
+<li><a href="#org420d54e">data volume lacks</a></li>
+<li><a href="#org6cc1e49">compute resources lack</a></li>
+</ul>
+</li>
+<li><a href="#orgc861857">Chances</a>
+<ul>
+<li><a href="#orgf8483e3">transformer</a></li>
+<li><a href="#org4dff0e4">diffusion model</a></li>
 </ul>
 </li>
 </ul>
@@ -187,368 +187,368 @@
 :ID:       24167752-1da4-4721-8ff3-bdfebe653ecc
 </p>
 
-<div id="outline-container-orgcb4398b" class="outline-2">
-<h2 id="orgcb4398b">input</h2>
-<div class="outline-text-2" id="text-orgcb4398b">
+<div id="outline-container-orgc80071c" class="outline-2">
+<h2 id="orgc80071c">input</h2>
+<div class="outline-text-2" id="text-orgc80071c">
 </div>
-<div id="outline-container-orgee7354e" class="outline-3">
-<h3 id="orgee7354e">voltage</h3>
+<div id="outline-container-orgcda3199" class="outline-3">
+<h3 id="orgcda3199">voltage</h3>
 </div>
-<div id="outline-container-org6d9cf0d" class="outline-3">
-<h3 id="org6d9cf0d">current</h3>
+<div id="outline-container-org699de17" class="outline-3">
+<h3 id="org699de17">current</h3>
 </div>
-<div id="outline-container-org46d2c21" class="outline-3">
-<h3 id="org46d2c21">&#x2026;etc</h3>
-</div>
-</div>
-<div id="outline-container-org3fc2bbf" class="outline-2">
-<h2 id="org3fc2bbf">output</h2>
-<div class="outline-text-2" id="text-org3fc2bbf">
-</div>
-<div id="outline-container-org761eba0" class="outline-3">
-<h3 id="org761eba0">SOH prediction: SOC</h3>
+<div id="outline-container-orga5a2e25" class="outline-3">
+<h3 id="orga5a2e25">&#x2026;etc</h3>
 </div>
 </div>
-<div id="outline-container-orge40c8b3" class="outline-2">
-<h2 id="orge40c8b3">Use Cases:</h2>
-<div class="outline-text-2" id="text-orge40c8b3">
+<div id="outline-container-org8cf5800" class="outline-2">
+<h2 id="org8cf5800">output</h2>
+<div class="outline-text-2" id="text-org8cf5800">
 </div>
-<div id="outline-container-org73c79e5" class="outline-3">
-<h3 id="org73c79e5">charging</h3>
-<div class="outline-text-3" id="text-org73c79e5">
-</div>
-<div id="outline-container-orgb7cf2a1" class="outline-4">
-<h4 id="orgb7cf2a1">Fast charging</h4>
-</div>
-<div id="outline-container-orgb81a4c3" class="outline-4">
-<h4 id="orgb81a4c3">AC/DC charging</h4>
+<div id="outline-container-org8616d0f" class="outline-3">
+<h3 id="org8616d0f">SOH prediction: SOC</h3>
 </div>
 </div>
-<div id="outline-container-org9c5ff94" class="outline-3">
-<h3 id="org9c5ff94">driving</h3>
+<div id="outline-container-org79fb1d9" class="outline-2">
+<h2 id="org79fb1d9">Use Cases:</h2>
+<div class="outline-text-2" id="text-org79fb1d9">
+</div>
+<div id="outline-container-orgeb97f75" class="outline-3">
+<h3 id="orgeb97f75">charging</h3>
+<div class="outline-text-3" id="text-orgeb97f75">
+</div>
+<div id="outline-container-org35a986e" class="outline-4">
+<h4 id="org35a986e">Fast charging</h4>
+</div>
+<div id="outline-container-org47903a9" class="outline-4">
+<h4 id="org47903a9">AC/DC charging</h4>
 </div>
 </div>
-<div id="outline-container-orga24c343" class="outline-2">
-<h2 id="orga24c343">Motivation</h2>
-<div class="outline-text-2" id="text-orga24c343">
-</div>
-<div id="outline-container-org5376050" class="outline-3">
-<h3 id="org5376050">No labels, no models</h3>
-</div>
-<div id="outline-container-orga9f7e82" class="outline-3">
-<h3 id="orga9f7e82">need outlier detection</h3>
-</div>
-<div id="outline-container-org19d7c86" class="outline-3">
-<h3 id="org19d7c86">unsupervised learning</h3>
-<div class="outline-text-3" id="text-org19d7c86">
-</div>
-<div id="outline-container-org1dbbae9" class="outline-4">
-<h4 id="org1dbbae9">given a data X (one time sequence of voltage), under a specific usage (fast charging)</h4>
-</div>
-<div id="outline-container-org7a13ed4" class="outline-4">
-<h4 id="org7a13ed4">determine whether it's normal or abnormal</h4>
-</div>
-<div id="outline-container-org1beaaf1" class="outline-4">
-<h4 id="org1beaaf1">Most of the battery cells are OK, say 90%, to get the most of the training data (safe assumption)</h4>
-</div>
-<div id="outline-container-org8a614e4" class="outline-4">
-<h4 id="org8a614e4">check the remaining 10% to pick out the outliers</h4>
+<div id="outline-container-org1013cae" class="outline-3">
+<h3 id="org1013cae">driving</h3>
 </div>
 </div>
-<div id="outline-container-orgfeadd61" class="outline-3">
-<h3 id="orgfeadd61">Learn the data distribution in a high dimenional feature space X</h3>
+<div id="outline-container-org87709f4" class="outline-2">
+<h2 id="org87709f4">Motivation</h2>
+<div class="outline-text-2" id="text-org87709f4">
 </div>
-<div id="outline-container-orgb436076" class="outline-3">
-<h3 id="orgb436076">Learn the feature unsupervised (latent variable Z)</h3>
+<div id="outline-container-org64277a4" class="outline-3">
+<h3 id="org64277a4">No labels, no models</h3>
 </div>
-<div id="outline-container-org5203737" class="outline-3">
-<h3 id="org5203737">get the latent variable Z</h3>
+<div id="outline-container-org9dc164f" class="outline-3">
+<h3 id="org9dc164f">need outlier detection</h3>
 </div>
-<div id="outline-container-org8c5fe41" class="outline-3">
-<h3 id="org8c5fe41">Conditioned on input data current value</h3>
+<div id="outline-container-org450f57a" class="outline-3">
+<h3 id="org450f57a">unsupervised learning</h3>
+<div class="outline-text-3" id="text-org450f57a">
 </div>
-<div id="outline-container-org92624b3" class="outline-3">
-<h3 id="org92624b3">Specification of typical use cases: fast charge, driving</h3>
+<div id="outline-container-orgf67d699" class="outline-4">
+<h4 id="orgf67d699">given a data X (one time sequence of voltage), under a specific usage (fast charging)</h4>
 </div>
-<div id="outline-container-orgce2df5c" class="outline-3">
-<h3 id="orgce2df5c">Generate diverse time series under the</h3>
+<div id="outline-container-org1386716" class="outline-4">
+<h4 id="org1386716">determine whether it's normal or abnormal</h4>
 </div>
+<div id="outline-container-org311fae0" class="outline-4">
+<h4 id="org311fae0">Most of the battery cells are OK, say 90%, to get the most of the training data (safe assumption)</h4>
 </div>
-<div id="outline-container-orgf7ad6e1" class="outline-2">
-<h2 id="orgf7ad6e1">Issue</h2>
-<div class="outline-text-2" id="text-orgf7ad6e1">
-</div>
-<div id="outline-container-orge9479a6" class="outline-3">
-<h3 id="orge9479a6">Limited samples for training</h3>
-<div class="outline-text-3" id="text-orge9479a6">
-</div>
-<div id="outline-container-orgccb4a7c" class="outline-4">
-<h4 id="orgccb4a7c">adaptive discriminator oaugmentation</h4>
-</div>
-<div id="outline-container-org8a0adc7" class="outline-4">
-<h4 id="org8a0adc7">data augmentation</h4>
+<div id="outline-container-orgdc000d5" class="outline-4">
+<h4 id="orgdc000d5">check the remaining 10% to pick out the outliers</h4>
 </div>
 </div>
-<div id="outline-container-orgca68e7c" class="outline-3">
-<h3 id="orgca68e7c">discriminator overfitting early</h3>
+<div id="outline-container-org196e108" class="outline-3">
+<h3 id="org196e108">Learn the data distribution in a high dimenional feature space X</h3>
 </div>
-<div id="outline-container-org2d49a71" class="outline-3">
-<h3 id="org2d49a71">non-convergence</h3>
-<div class="outline-text-3" id="text-org2d49a71">
+<div id="outline-container-orgdfcaca2" class="outline-3">
+<h3 id="orgdfcaca2">Learn the feature unsupervised (latent variable Z)</h3>
 </div>
-<div id="outline-container-org82351da" class="outline-4">
-<h4 id="org82351da">VAE (VQ-VAE)</h4>
+<div id="outline-container-org247ed98" class="outline-3">
+<h3 id="org247ed98">get the latent variable Z</h3>
 </div>
-<div id="outline-container-org8b4e0f5" class="outline-4">
-<h4 id="org8b4e0f5">DDPM</h4>
+<div id="outline-container-org4eecabe" class="outline-3">
+<h3 id="org4eecabe">Conditioned on input data current value</h3>
+</div>
+<div id="outline-container-org808b304" class="outline-3">
+<h3 id="org808b304">Specification of typical use cases: fast charge, driving</h3>
+</div>
+<div id="outline-container-org59197f6" class="outline-3">
+<h3 id="org59197f6">Generate diverse time series under the</h3>
+</div>
+</div>
+<div id="outline-container-org7b3aa50" class="outline-2">
+<h2 id="org7b3aa50">Issue</h2>
+<div class="outline-text-2" id="text-org7b3aa50">
+</div>
+<div id="outline-container-org2a22380" class="outline-3">
+<h3 id="org2a22380">Limited samples for training</h3>
+<div class="outline-text-3" id="text-org2a22380">
+</div>
+<div id="outline-container-org7bea9c0" class="outline-4">
+<h4 id="org7bea9c0">adaptive discriminator oaugmentation</h4>
+</div>
+<div id="outline-container-orgb926a64" class="outline-4">
+<h4 id="orgb926a64">data augmentation</h4>
+</div>
+</div>
+<div id="outline-container-orgecf3cce" class="outline-3">
+<h3 id="orgecf3cce">discriminator overfitting early</h3>
+</div>
+<div id="outline-container-org53a3360" class="outline-3">
+<h3 id="org53a3360">non-convergence</h3>
+<div class="outline-text-3" id="text-org53a3360">
+</div>
+<div id="outline-container-org9fc4006" class="outline-4">
+<h4 id="org9fc4006">VAE (VQ-VAE)</h4>
+</div>
+<div id="outline-container-orgfea8dbf" class="outline-4">
+<h4 id="orgfea8dbf">DDPM</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org980c826" class="outline-2">
-<h2 id="org980c826">Retrospection</h2>
-<div class="outline-text-2" id="text-org980c826">
+<div id="outline-container-orgd909af2" class="outline-2">
+<h2 id="orgd909af2">Retrospection</h2>
+<div class="outline-text-2" id="text-orgd909af2">
 </div>
-<div id="outline-container-org3f33aa3" class="outline-3">
-<h3 id="org3f33aa3">TimeGAN</h3>
-<div class="outline-text-3" id="text-org3f33aa3">
+<div id="outline-container-org4d70380" class="outline-3">
+<h3 id="org4d70380">TimeGAN</h3>
+<div class="outline-text-3" id="text-org4d70380">
 </div>
-<div id="outline-container-orgd678c74" class="outline-4">
-<h4 id="orgd678c74">autoencoding (embedding space, efficiency): compression, dynamics encoding (provided by embedder &amp; recovery)</h4>
+<div id="outline-container-org9b0a504" class="outline-4">
+<h4 id="org9b0a504">autoencoding (embedding space, efficiency): compression, dynamics encoding (provided by embedder &amp; recovery)</h4>
 </div>
-<div id="outline-container-org6e22bc1" class="outline-4">
-<h4 id="org6e22bc1">apply supervised learning (objective time-frequency characteristics, fidelity) to guide adversarial learning (GAN objective): loss addition!</h4>
+<div id="outline-container-org03b0649" class="outline-4">
+<h4 id="org03b0649">apply supervised learning (objective time-frequency characteristics, fidelity) to guide adversarial learning (GAN objective): loss addition!</h4>
 </div>
-<div id="outline-container-org2ee7cb7" class="outline-4">
-<h4 id="org2ee7cb7">synchronization (of latent space for real and synthetic, e&amp;f): superviser</h4>
-<div class="outline-text-4" id="text-org2ee7cb7">
+<div id="outline-container-org692a6c1" class="outline-4">
+<h4 id="org692a6c1">synchronization (of latent space for real and synthetic, e&amp;f): superviser</h4>
+<div class="outline-text-4" id="text-org692a6c1">
 </div>
 <ul class="org-ul">
-<li><a id="org648ff82"></a>let generator learn the dynamics of the actual data distribution in latent space<br /></li>
+<li><a id="org3fe84cf"></a>let generator learn the dynamics of the actual data distribution in latent space<br /></li>
 </ul>
 </div>
-<div id="outline-container-org83eaccc" class="outline-4">
-<h4 id="org83eaccc">e, r: MLP+RNN, unidirectional (has to be causal),</h4>
-<div class="outline-text-4" id="text-org83eaccc">
+<div id="outline-container-org1c71d6b" class="outline-4">
+<h4 id="org1c71d6b">e, r: MLP+RNN, unidirectional (has to be causal),</h4>
+<div class="outline-text-4" id="text-org1c71d6b">
 </div>
 <ul class="org-ul">
-<li><a id="org1f647fb"></a>deterministic Encoder-Decoder， add probabilistic spin!<br /></li>
-<li><a id="org950a543"></a>r might not be necessary!<br /></li>
+<li><a id="org6ad13b4"></a>deterministic Encoder-Decoder， add probabilistic spin!<br /></li>
+<li><a id="orgd463a04"></a>r might not be necessary!<br /></li>
 </ul>
 </div>
-<div id="outline-container-orgfea9efc" class="outline-4">
-<h4 id="orgfea9efc">g: MLP+RNN (noise: Gaussian + Wiener)</h4>
-<div class="outline-text-4" id="text-orgfea9efc">
+<div id="outline-container-orge676801" class="outline-4">
+<h4 id="orge676801">g: MLP+RNN (noise: Gaussian + Wiener)</h4>
+<div class="outline-text-4" id="text-orge676801">
 </div>
 <ul class="org-ul">
-<li><a id="org1f674d0"></a>\(\mathcal{Z}_{\mathcal{S}}\) and \(\mathcal{Z}_t\) is the real latent of the latent, not the same space as \(\mathcal{S}\) and \(\mathcal{X}_t\)<br /></li>
+<li><a id="org3d7050b"></a>\(\mathcal{Z}_{\mathcal{S}}\) and \(\mathcal{Z}_t\) is the real latent of the latent, not the same space as \(\mathcal{S}\) and \(\mathcal{X}_t\)<br /></li>
 </ul>
 </div>
-<div id="outline-container-org3ba1741" class="outline-4">
-<h4 id="org3ba1741">d :</h4>
-<div class="outline-text-4" id="text-org3ba1741">
+<div id="outline-container-org37af28a" class="outline-4">
+<h4 id="org37af28a">d :</h4>
+<div class="outline-text-4" id="text-org37af28a">
 </div>
 <ul class="org-ul">
-<li><a id="org7db3875"></a>bidirectional(?): as discriminator doesn't have to be causal, retrospective, add capacity) RNN + MLP,<br /></li>
-<li><a id="orgda85bed"></a>\(\tilde{y}_{\mathcal{S}}\) (boolean for static features), \(\tilde{y}_{1:T}\) a boolean on every timestamp (necessary?): true/false has dynamics, timing capacity, then summarization<br /></li>
+<li><a id="orgde661ce"></a>bidirectional(?): as discriminator doesn't have to be causal, retrospective, add capacity) RNN + MLP,<br /></li>
+<li><a id="org938be02"></a>\(\tilde{y}_{\mathcal{S}}\) (boolean for static features), \(\tilde{y}_{1:T}\) a boolean on every timestamp (necessary?): true/false has dynamics, timing capacity, then summarization<br /></li>
 </ul>
 </div>
-<div id="outline-container-org4ef1a08" class="outline-4">
-<h4 id="org4ef1a08">not completely integral as pure VAE or GAN, bastlerei</h4>
+<div id="outline-container-org85f9fe6" class="outline-4">
+<h4 id="org85f9fe6">not completely integral as pure VAE or GAN, bastlerei</h4>
 </div>
-<div id="outline-container-orgd1d1481" class="outline-4">
-<h4 id="orgd1d1481">equal weights for the additive loss of static feature and time series feature!</h4>
+<div id="outline-container-org8863078" class="outline-4">
+<h4 id="org8863078">equal weights for the additive loss of static feature and time series feature!</h4>
 </div>
-<div id="outline-container-org6173a4c" class="outline-4">
-<h4 id="org6173a4c">the claim that GAN loss alone is not sufficient is very dubious, image data has the same spatial fluctuation but is sufficient!</h4>
+<div id="outline-container-org24fe861" class="outline-4">
+<h4 id="org24fe861">the claim that GAN loss alone is not sufficient is very dubious, image data has the same spatial fluctuation but is sufficient!</h4>
 </div>
-<div id="outline-container-orgf1cd13c" class="outline-4">
-<h4 id="orgf1cd13c">classification error 10~20% (~48% significantly better), prediction error MAE (normalized, 3.8&amp;~30%) events (~30%)</h4>
+<div id="outline-container-orgb73fdd3" class="outline-4">
+<h4 id="orgb73fdd3">classification error 10~20% (~48% significantly better), prediction error MAE (normalized, 3.8&amp;~30%) events (~30%)</h4>
 </div>
 </div>
-<div id="outline-container-org62bbe10" class="outline-3">
-<h3 id="org62bbe10">no labels (expert knowledge) for supervised learning</h3>
+<div id="outline-container-org3d8879f" class="outline-3">
+<h3 id="org3d8879f">no labels (expert knowledge) for supervised learning</h3>
 </div>
-<div id="outline-container-orgdb56d6e" class="outline-3">
-<h3 id="orgdb56d6e">challenge and caveats for unsuperviesd learning:</h3>
-<div class="outline-text-3" id="text-orgdb56d6e">
+<div id="outline-container-orgdffff3f" class="outline-3">
+<h3 id="orgdffff3f">challenge and caveats for unsuperviesd learning:</h3>
+<div class="outline-text-3" id="text-orgdffff3f">
 </div>
-<div id="outline-container-orga1c3b69" class="outline-4">
-<h4 id="orga1c3b69">relevant features to reflect intrinsic parameters of battery health</h4>
-<div class="outline-text-4" id="text-orga1c3b69">
+<div id="outline-container-org62643cb" class="outline-4">
+<h4 id="org62643cb">relevant features to reflect intrinsic parameters of battery health</h4>
+<div class="outline-text-4" id="text-org62643cb">
 </div>
 <ul class="org-ul">
-<li><a id="org2e9b189"></a>the distribution of battery health state depending on those parameters<br /></li>
+<li><a id="org9bdf667"></a>the distribution of battery health state depending on those parameters<br /></li>
 </ul>
 </div>
-<div id="outline-container-org3530ec5" class="outline-4">
-<h4 id="org3530ec5">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</h4>
-<div class="outline-text-4" id="text-org3530ec5">
+<div id="outline-container-org49f5c7e" class="outline-4">
+<h4 id="org49f5c7e">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</h4>
+<div class="outline-text-4" id="text-org49f5c7e">
 </div>
 <ul class="org-ul">
-<li><a id="orgd88457b"></a>Example: Gaussian/uniform; GT distribution is the unknown (nonlinear, multimodal, non-stationary) natural density of data: distribution \(p_{\xi}\) &#x2013;&gt; Neural Network v\(p_{\theta}\)<br />
+<li><a id="org19c8991"></a>Example: Gaussian/uniform; GT distribution is the unknown (nonlinear, multimodal, non-stationary) natural density of data: distribution \(p_{\xi}\) &#x2013;&gt; Neural Network v\(p_{\theta}\)<br />
 <ul class="org-ul">
-<li><a id="orged46aa9"></a>NN very versatile: \(p_{\theta}\) can approxmate any distribution!<br /></li>
-<li><a id="orgdea6a5c"></a>prior \(p(z)\) has an impact on the final sample and capability of the whole network: \(p(z) \odot p_{\theta}(x)\)<br /></li>
-<li><a id="org6b9e190"></a>if enough expert knowledge is available tell us it's normal distribution, just 2 parameters to estimate, still a lot of samples for bootstrapping/bagging, sample mean / sample variance, need confidence level, statistical trial for inspection.<br /></li>
-</ul>
-</li>
-<li><a id="org02329bb"></a>scenario data (time sequences of specific scenes)<br /></li>
-<li><a id="org1d05216"></a>given the current compute resources: the way to go is to reduce the data amount requirement by defining relevant features and relevant scenarios<br /></li>
-</ul>
-</div>
-<div id="outline-container-org77e6df8" class="outline-4">
-<h4 id="org77e6df8">optimal architecture for G and D (optimize weights) :</h4>
-<div class="outline-text-4" id="text-org77e6df8">
-</div>
-<ul class="org-ul">
-<li><a id="orga3374ec"></a>multidimensional continuous function enough? More expertise to make this happen!<br />
-<ul class="org-ul">
-<li><a id="org3509fb8"></a>transformer for sequential modeling<br /></li>
-<li><a id="org5d865a5"></a>make prior learnable<br /></li>
+<li><a id="org18c7f04"></a>NN very versatile: \(p_{\theta}\) can approxmate any distribution!<br /></li>
+<li><a id="orga352635"></a>prior \(p(z)\) has an impact on the final sample and capability of the whole network: \(p(z) \odot p_{\theta}(x)\)<br /></li>
+<li><a id="orgdf16f63"></a>if enough expert knowledge is available tell us it's normal distribution, just 2 parameters to estimate, still a lot of samples for bootstrapping/bagging, sample mean / sample variance, need confidence level, statistical trial for inspection.<br /></li>
 </ul>
 </li>
-<li><a id="org2dc0f08"></a>optimal hyperparameters?<br /></li>
+<li><a id="org621bbd9"></a>scenario data (time sequences of specific scenes)<br /></li>
+<li><a id="orgfb47fa7"></a>given the current compute resources: the way to go is to reduce the data amount requirement by defining relevant features and relevant scenarios<br /></li>
 </ul>
 </div>
-<div id="outline-container-org3e8e475" class="outline-4">
-<h4 id="org3e8e475">no guarantee for convergence</h4>
-</div>
-<div id="outline-container-org22670cc" class="outline-4">
-<h4 id="org22670cc">CGAN and feature labels?</h4>
-</div>
-</div>
-<div id="outline-container-org288aca1" class="outline-3">
-<h3 id="org288aca1">Future work</h3>
-<div class="outline-text-3" id="text-org288aca1">
-</div>
-<div id="outline-container-org2c2a17f" class="outline-4">
-<h4 id="org2c2a17f">multimodalities in TimeGAN</h4>
-<div class="outline-text-4" id="text-org2c2a17f">
+<div id="outline-container-orge3a6867" class="outline-4">
+<h4 id="orge3a6867">optimal architecture for G and D (optimize weights) :</h4>
+<div class="outline-text-4" id="text-orge3a6867">
 </div>
 <ul class="org-ul">
-<li><a id="org03808f6"></a>Gaussian mixture model in latent space<br /></li>
+<li><a id="org11a550b"></a>multidimensional continuous function enough? More expertise to make this happen!<br />
+<ul class="org-ul">
+<li><a id="org2bd82b6"></a>transformer for sequential modeling<br /></li>
+<li><a id="org60137e0"></a>make prior learnable<br /></li>
+</ul>
+</li>
+<li><a id="orgbbb0d7a"></a>optimal hyperparameters?<br /></li>
 </ul>
 </div>
-<div id="outline-container-org226150f" class="outline-4">
-<h4 id="org226150f">transformer instead of GRU</h4>
+<div id="outline-container-orgc86a76e" class="outline-4">
+<h4 id="orgc86a76e">no guarantee for convergence</h4>
 </div>
-<div id="outline-container-orgd75c092" class="outline-4">
-<h4 id="orgd75c092">diffusion model</h4>
-</div>
-<div id="outline-container-org05a4d49" class="outline-4">
-<h4 id="org05a4d49">extreme event detection</h4>
+<div id="outline-container-org5e88300" class="outline-4">
+<h4 id="org5e88300">CGAN and feature labels?</h4>
 </div>
 </div>
+<div id="outline-container-orgf4dfa8f" class="outline-3">
+<h3 id="orgf4dfa8f">Future work</h3>
+<div class="outline-text-3" id="text-orgf4dfa8f">
 </div>
-<div id="outline-container-orgcf388c3" class="outline-2">
-<h2 id="orgcf388c3">summary</h2>
-<div class="outline-text-2" id="text-orgcf388c3">
-</div>
-<div id="outline-container-org7f5d970" class="outline-3">
-<h3 id="org7f5d970">what has been achieved</h3>
-<div class="outline-text-3" id="text-org7f5d970">
-</div>
-<div id="outline-container-orge1da4be" class="outline-4">
-<h4 id="orge1da4be">time series gan with lstm/gru</h4>
-</div>
-<div id="outline-container-orgd7b4371" class="outline-4">
-<h4 id="orgd7b4371">time series features</h4>
-</div>
-<div id="outline-container-org15a9d7a" class="outline-4">
-<h4 id="org15a9d7a">rough complexity estimation</h4>
-</div>
-</div>
-<div id="outline-container-orgf210250" class="outline-3">
-<h3 id="orgf210250">method</h3>
-<div class="outline-text-3" id="text-orgf210250">
-</div>
-<div id="outline-container-org677a8ed" class="outline-4">
-<h4 id="org677a8ed">fast feedback with small distriubtion</h4>
-</div>
-<div id="outline-container-orgf96a1a8" class="outline-4">
-<h4 id="orgf96a1a8">target real time series of charging voltage</h4>
-</div>
-</div>
-<div id="outline-container-org337e653" class="outline-3">
-<h3 id="org337e653">model as a platform</h3>
-</div>
-<div id="outline-container-orgdc8f936" class="outline-3">
-<h3 id="orgdc8f936">diffusion model</h3>
-<div class="outline-text-3" id="text-orgdc8f936">
-</div>
-<div id="outline-container-org1c67b18" class="outline-4">
-<h4 id="org1c67b18">manipulate data distribution</h4>
-</div>
-<div id="outline-container-orgc5233d2" class="outline-4">
-<h4 id="orgc5233d2">static pattern (maximum likelihood estimation) &#x2013;&gt; stochastic differential equation</h4>
-</div>
-<div id="outline-container-org65cdfc3" class="outline-4">
-<h4 id="org65cdfc3">grasp the data distribution finally</h4>
-</div>
-</div>
-<div id="outline-container-org4d5e17e" class="outline-3">
-<h3 id="org4d5e17e">emperical vs data science</h3>
-<div class="outline-text-3" id="text-org4d5e17e">
-</div>
-<div id="outline-container-org71eb0b9" class="outline-4">
-<h4 id="org71eb0b9">expert knowledge &#x2013;&gt; absorbed by machine learning model</h4>
-</div>
-<div id="outline-container-org5d52c4b" class="outline-4">
-<h4 id="org5d52c4b">deep learnig technology is the best technology so far</h4>
-</div>
-</div>
-<div id="outline-container-orgb1f8e8c" class="outline-3">
-<h3 id="orgb1f8e8c">difficulty</h3>
-<div class="outline-text-3" id="text-orgb1f8e8c">
-</div>
-<div id="outline-container-orgd55cda1" class="outline-4">
-<h4 id="orgd55cda1">model complexity of time series</h4>
-<div class="outline-text-4" id="text-orgd55cda1">
+<div id="outline-container-org4e23df1" class="outline-4">
+<h4 id="org4e23df1">multimodalities in TimeGAN</h4>
+<div class="outline-text-4" id="text-org4e23df1">
 </div>
 <ul class="org-ul">
-<li><a id="org13a8485"></a>features need expertise<br /></li>
-<li><a id="org82311e1"></a>conditional models add more complexity<br /></li>
+<li><a id="org00798e1"></a>Gaussian mixture model in latent space<br /></li>
 </ul>
 </div>
-<div id="outline-container-org595b866" class="outline-4">
-<h4 id="org595b866">time series features</h4>
-<div class="outline-text-4" id="text-org595b866">
+<div id="outline-container-org4901ee1" class="outline-4">
+<h4 id="org4901ee1">transformer instead of GRU</h4>
+</div>
+<div id="outline-container-orge0ae881" class="outline-4">
+<h4 id="orge0ae881">diffusion model</h4>
+</div>
+<div id="outline-container-orgb67f25e" class="outline-4">
+<h4 id="orgb67f25e">extreme event detection</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org7c25dba" class="outline-2">
+<h2 id="org7c25dba">summary</h2>
+<div class="outline-text-2" id="text-org7c25dba">
+</div>
+<div id="outline-container-org337790b" class="outline-3">
+<h3 id="org337790b">what has been achieved</h3>
+<div class="outline-text-3" id="text-org337790b">
+</div>
+<div id="outline-container-org775c8fd" class="outline-4">
+<h4 id="org775c8fd">time series gan with lstm/gru</h4>
+</div>
+<div id="outline-container-orgf8b9651" class="outline-4">
+<h4 id="orgf8b9651">time series features</h4>
+</div>
+<div id="outline-container-org345630d" class="outline-4">
+<h4 id="org345630d">rough complexity estimation</h4>
+</div>
+</div>
+<div id="outline-container-org1567e5a" class="outline-3">
+<h3 id="org1567e5a">method</h3>
+<div class="outline-text-3" id="text-org1567e5a">
+</div>
+<div id="outline-container-orgdace99b" class="outline-4">
+<h4 id="orgdace99b">fast feedback with small distriubtion</h4>
+</div>
+<div id="outline-container-orgfcaba22" class="outline-4">
+<h4 id="orgfcaba22">target real time series of charging voltage</h4>
+</div>
+</div>
+<div id="outline-container-org93c5b82" class="outline-3">
+<h3 id="org93c5b82">model as a platform</h3>
+</div>
+<div id="outline-container-org07e1f6b" class="outline-3">
+<h3 id="org07e1f6b">diffusion model</h3>
+<div class="outline-text-3" id="text-org07e1f6b">
+</div>
+<div id="outline-container-org5ab73fd" class="outline-4">
+<h4 id="org5ab73fd">manipulate data distribution</h4>
+</div>
+<div id="outline-container-orgb74ffc3" class="outline-4">
+<h4 id="orgb74ffc3">static pattern (maximum likelihood estimation) &#x2013;&gt; stochastic differential equation</h4>
+</div>
+<div id="outline-container-org3f19cdb" class="outline-4">
+<h4 id="org3f19cdb">grasp the data distribution finally</h4>
+</div>
+</div>
+<div id="outline-container-orgcb3f71f" class="outline-3">
+<h3 id="orgcb3f71f">emperical vs data science</h3>
+<div class="outline-text-3" id="text-orgcb3f71f">
+</div>
+<div id="outline-container-org0984b9e" class="outline-4">
+<h4 id="org0984b9e">expert knowledge &#x2013;&gt; absorbed by machine learning model</h4>
+</div>
+<div id="outline-container-org365e204" class="outline-4">
+<h4 id="org365e204">deep learnig technology is the best technology so far</h4>
+</div>
+</div>
+<div id="outline-container-orgf2c85d1" class="outline-3">
+<h3 id="orgf2c85d1">difficulty</h3>
+<div class="outline-text-3" id="text-orgf2c85d1">
+</div>
+<div id="outline-container-orgb194cc2" class="outline-4">
+<h4 id="orgb194cc2">model complexity of time series</h4>
+<div class="outline-text-4" id="text-orgb194cc2">
 </div>
 <ul class="org-ul">
-<li><a id="org7477603"></a>cannot utilize human intelligence, language, concepts<br /></li>
-<li><a id="org7f00404"></a>need battery experts opinion<br /></li>
+<li><a id="orga9d38bc"></a>features need expertise<br /></li>
+<li><a id="orga2138c3"></a>conditional models add more complexity<br /></li>
 </ul>
 </div>
-<div id="outline-container-org19d5323" class="outline-4">
-<h4 id="org19d5323">machine learning</h4>
-<div class="outline-text-4" id="text-org19d5323">
+<div id="outline-container-org34c37f3" class="outline-4">
+<h4 id="org34c37f3">time series features</h4>
+<div class="outline-text-4" id="text-org34c37f3">
 </div>
 <ul class="org-ul">
-<li><a id="org34f20a4"></a>GAN unstable<br /></li>
-<li><a id="org406ad71"></a>RNN not for long sequences<br /></li>
+<li><a id="org2dadf18"></a>cannot utilize human intelligence, language, concepts<br /></li>
+<li><a id="orgcd1b561"></a>need battery experts opinion<br /></li>
 </ul>
 </div>
-<div id="outline-container-org318e4f4" class="outline-4">
-<h4 id="org318e4f4">data volume lacks</h4>
-</div>
-<div id="outline-container-orgb44e4b7" class="outline-4">
-<h4 id="orgb44e4b7">compute resources lack</h4>
-</div>
-</div>
-<div id="outline-container-org8ecc0a9" class="outline-3">
-<h3 id="org8ecc0a9">Chances</h3>
-<div class="outline-text-3" id="text-org8ecc0a9">
-</div>
-<div id="outline-container-orga5c3a43" class="outline-4">
-<h4 id="orga5c3a43">transformer</h4>
-</div>
-<div id="outline-container-orgd71efff" class="outline-4">
-<h4 id="orgd71efff">diffusion model</h4>
-<div class="outline-text-4" id="text-orgd71efff">
+<div id="outline-container-orgfdf3115" class="outline-4">
+<h4 id="orgfdf3115">machine learning</h4>
+<div class="outline-text-4" id="text-orgfdf3115">
 </div>
 <ul class="org-ul">
-<li><a id="org21aa565"></a>acceleration 1000x<br /></li>
-<li><a id="org7967f5c"></a>way of recover distribution from big data<br /></li>
+<li><a id="org2144b5e"></a>GAN unstable<br /></li>
+<li><a id="org8d43625"></a>RNN not for long sequences<br /></li>
+</ul>
+</div>
+<div id="outline-container-org420d54e" class="outline-4">
+<h4 id="org420d54e">data volume lacks</h4>
+</div>
+<div id="outline-container-org6cc1e49" class="outline-4">
+<h4 id="org6cc1e49">compute resources lack</h4>
+</div>
+</div>
+<div id="outline-container-orgc861857" class="outline-3">
+<h3 id="orgc861857">Chances</h3>
+<div class="outline-text-3" id="text-orgc861857">
+</div>
+<div id="outline-container-orgf8483e3" class="outline-4">
+<h4 id="orgf8483e3">transformer</h4>
+</div>
+<div id="outline-container-org4dff0e4" class="outline-4">
+<h4 id="org4dff0e4">diffusion model</h4>
+<div class="outline-text-4" id="text-org4dff0e4">
+</div>
+<ul class="org-ul">
+<li><a id="orgf7782d8"></a>acceleration 1000x<br /></li>
+<li><a id="orgd51c3a0"></a>way of recover distribution from big data<br /></li>
 </ul>
 </div>
 </div>

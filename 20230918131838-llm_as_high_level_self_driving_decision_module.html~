@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<style> .figure p {text-align: center;}</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8b7b6ab">language as glue layer between low-level perception and high-level decision</a></li>
+<li><a href="#org68f7f77">Introduction</a></li>
+<li><a href="#org2e94667">Solved Problems</a></li>
+<li><a href="#org6c39609">Implementation</a></li>
+<li><a href="#org87c7082">Innovation</a></li>
+<li><a href="#orge6d508b">Advantage</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b7b6ab" class="outline-2">
+<h2 id="org8b7b6ab">language as glue layer between low-level perception and high-level decision</h2>
+<div class="outline-text-2" id="text-org8b7b6ab">
+</div>
+<div id="outline-container-org8894e01" class="outline-3">
+<h3 id="org8894e01">Overall architecture</h3>
+<div class="outline-text-3" id="text-org8894e01">
+<div class="org-src-container">
+<pre class="src src-mermaid" id="orgef7548e">flowchart TD
+   Sensor--&gt; ADSW[Classic AD Perception SW stack] --&gt;|code instruction|Prompt[Prompt Template]
+   Sensor--&gt; E2EMM[Visual Langue Model]:::NN
+   Sensor--&gt; E2EMMF[Foundational Visual Language Model]:::NN
+   subgraph NL_as_Interface[Natural Language as interface]
+    Prompt--&gt;|"`**textual scenario description**`"|LLM:::NN
+    E2EMM--&gt;|embedding|decoder[Text Decoder]--&gt;|"`**textual scenario description**`"|LLM
+    LLM--&gt;|"`**formatted textual control instruction**`"|Decoder[Code Adapter]:::NN
+    E2EMMF--&gt;|"`**formatted textual control instruction**`"|Decoder
+   end
+   Decoder--&gt;|"`**code instruction**`"|Planning[Planning&amp;Tracking]--&gt;|"`**Lateral &amp; Longitudinal Control Trajctory**`"|Vehicle[Vehicle Control]
+   classDef NN fill:#0f0
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org3fdd348" class="outline-3">
+<h3 id="org3fdd348">Option 1: Classic AD and LLM</h3>
+<div class="outline-text-3" id="text-org3fdd348">
+<div class="org-src-container">
+<pre class="src src-mermaid" id="org116ca1a">flowchart TD
+   Sensor--&gt; ADSW[Classic AD Perception SW stack]--&gt;|code instruction|Prompt[Prompt Template]
+   subgraph LLM_Interface[Natural language as Interface]
+   Prompt[Prompt Template]--&gt;|"`**textual scenario description**`"|LLM:::NN--&gt;|"`**formatted textual control instruction**`"|Decoder[Code Adapter]:::NN
+   end
+   Decoder[Code Adapter]:::NN--&gt;|"`**code instruction**`"|Planning[Planning&amp;Tracking]--&gt;|"`**Lateral &amp; Longitudinal Control Trajctory**`"|Vehicle[Vehicle Control]
+   classDef NN fill:#0f0
+</pre>
+</div>
+</div>
+<div id="outline-container-org7834a2e" class="outline-4">
+<h4 id="org7834a2e">Scenario 1 Highway lane change ()</h4>
+</div>
+</div>
+<div id="outline-container-org1da23a4" class="outline-3">
+<h3 id="org1da23a4">option 2 VLM and LLM</h3>
+<div class="outline-text-3" id="text-org1da23a4">
+<div class="org-src-container">
+<pre class="src src-mermaid" id="org2898197">flowchart TD
+   Sensor--&gt; E2EMM[Visual Langue Model]:::NN
+   subgraph NL_as_Interface[Natural Language as Interface]
+    Prompt[Prompt Template]--&gt;
+    E2EMM--&gt;|embedding|decoder[Text Decoder]--&gt;|"`**textual scenario description**`"|LLM:::NN --&gt;|"`**formatted textual control instruction**`"|Decoder[Code Adapter]:::NN
+   end
+   Decoder--&gt;|"`**code instruction**`"|Planning[Planning&amp;Tracking]--&gt;|"`**Lateral &amp; Longitudinal Control Trajctory**`"|Vehicle[Vehicle Control]
+   classDef NN fill:#0f0
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8fb3d97" class="outline-4">
+<h4 id="org8fb3d97">Scene analysis from VLM (Image captioning; Prompt), &#x2013;&gt; LLM chain (extraction + prompt)</h4>
+</div>
+</div>
+
+<div id="outline-container-orgaf656ee" class="outline-3">
+<h3 id="orgaf656ee">Option3 Foundational VLM (GPT4)</h3>
+<div class="outline-text-3" id="text-orgaf656ee">
+<div class="org-src-container">
+<pre class="src src-mermaid" id="orgd452155">flowchart TD
+   Sensor--&gt; E2EMMF[Foundatinal Visual Language Model]:::NN
+   subgraph NL_as_Interface[Natural langaue as Interface]
+    E2EMMF--&gt;|"`**formatted textual control instruction**`"|Decoder[Code Adapter]:::NN
+   end
+   Decoder--&gt;|"`**code instruction**`"|Planning[Planning&amp;Tracking]--&gt;|"`**Lateral &amp; Longitudinal Control Trajctory**`"|Vehicle[Vehicle Control]
+   classDef NN fill:#0f0
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org68f7f77" class="outline-2">
+<h2 id="org68f7f77">Introduction</h2>
+<div class="outline-text-2" id="text-org68f7f77">
+</div>
+<div id="outline-container-orgd026f37" class="outline-3">
+<h3 id="orgd026f37">prior art</h3>
+</div>
+<div id="outline-container-orgdd371b9" class="outline-3">
+<h3 id="orgdd371b9">issues</h3>
+<div class="outline-text-3" id="text-orgdd371b9">
+</div>
+<div id="outline-container-orgb5a95bb" class="outline-4">
+<h4 id="orgb5a95bb">not robust</h4>
+</div>
+<div id="outline-container-org28a83cb" class="outline-4">
+<h4 id="org28a83cb">corner cases</h4>
+</div>
+<div id="outline-container-org5714945" class="outline-4">
+<h4 id="org5714945">long-tail</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org2e94667" class="outline-2">
+<h2 id="org2e94667">Solved Problems</h2>
+<div class="outline-text-2" id="text-org2e94667">
+</div>
+<div id="outline-container-orgffb84ff" class="outline-3">
+<h3 id="orgffb84ff">traffic rules and regulations as in natural language (small rigid limited rules in the general language repertoire)</h3>
+</div>
+<div id="outline-container-org5c239d9" class="outline-3">
+<h3 id="org5c239d9">common sense based high-level planning</h3>
+</div>
+<div id="outline-container-org4929585" class="outline-3">
+<h3 id="org4929585">regulation based high-level planning</h3>
+</div>
+</div>
+
+<div id="outline-container-org6c39609" class="outline-2">
+<h2 id="org6c39609">Implementation</h2>
+<div class="outline-text-2" id="text-org6c39609">
+</div>
+<div id="outline-container-org2678e89" class="outline-3">
+<h3 id="org2678e89">Input from powerful E2E model Image Captioning (Image understanding) like BLIP2/Flamingo vision-and-language pre-training</h3>
+<div class="outline-text-3" id="text-org2678e89">
+</div>
+<div id="outline-container-org27ef298" class="outline-4">
+<h4 id="org27ef298">Prompt Template with limited scenario database (keywords road, traffic light, pedestrian, motorcycle, bicycle, truck, vehicles, crosswalk, sidewalk)</h4>
+</div>
+<div id="outline-container-org9e8c457" class="outline-4">
+<h4 id="org9e8c457">Raw Sensor(Video) data, point cloud</h4>
+</div>
+<div id="outline-container-org9d441b1" class="outline-4">
+<h4 id="org9d441b1">query Vision-Languange model to get description</h4>
+<div class="outline-text-4" id="text-org9d441b1">
+</div>
+<ul class="org-ul">
+<li><a id="org68b460a"></a>BLIP2<br /></li>
+<li><a id="org7764755"></a>LLaVA<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf2a954" class="outline-3">
+<h3 id="orgdf2a954">as montioring for validation of decision module on a higher level</h3>
+</div>
+<div id="outline-container-org2d5740e" class="outline-3">
+<h3 id="org2d5740e">as direct decision module</h3>
+</div>
+<div id="outline-container-orgfd2c447" class="outline-3">
+<h3 id="orgfd2c447">output with Response Schema for easy extraction of parameter (as motion descriptor)</h3>
+</div>
+<div id="outline-container-orgfc005f2" class="outline-3">
+<h3 id="orgfc005f2">output with dynamic generation of implementation code interpretable language/compiling language (Reward translator = motion descriptor + reward coder)</h3>
+</div>
+</div>
+<div id="outline-container-org87c7082" class="outline-2">
+<h2 id="org87c7082">Innovation</h2>
+<div class="outline-text-2" id="text-org87c7082">
+</div>
+<div id="outline-container-org8bd633a" class="outline-3">
+<h3 id="org8bd633a">LLM fast for complex scenario</h3>
+</div>
+<div id="outline-container-org2472907" class="outline-3">
+<h3 id="org2472907">can use ToT, agent</h3>
+</div>
+<div id="outline-container-orga9a39e5" class="outline-3">
+<h3 id="orga9a39e5">suitable for both classic AD SW stack and End-to-End Neural Network</h3>
+</div>
+<div id="outline-container-org29670c8" class="outline-3">
+<h3 id="org29670c8">output parser</h3>
+</div>
+<div id="outline-container-orge529daa" class="outline-3">
+<h3 id="orge529daa">Prompt Template</h3>
+</div>
+<div id="outline-container-org695d2fa" class="outline-3">
+<h3 id="org695d2fa">Scenario Database</h3>
+<div class="outline-text-3" id="text-org695d2fa">
+</div>
+<div id="outline-container-orge9dc340" class="outline-4">
+<h4 id="orge9dc340">for each scenario, multiple templates, corresponding traditional system requirements specifications, can even import the SRS for existing documents</h4>
+</div>
+</div>
+<div id="outline-container-orgba2b89b" class="outline-3">
+<h3 id="orgba2b89b">Interpretatbility</h3>
+<div class="outline-text-3" id="text-orgba2b89b">
+</div>
+<div id="outline-container-org5c127a2" class="outline-4">
+<h4 id="org5c127a2">can output intermediate result, thought process</h4>
+</div>
+</div>
+<div id="outline-container-org9a0f702" class="outline-3">
+<h3 id="org9a0f702">output parser/eval</h3>
+</div>
+<div id="outline-container-org2a74673" class="outline-3">
+<h3 id="org2a74673">Use Cases</h3>
+<div class="outline-text-3" id="text-org2a74673">
+</div>
+<div id="outline-container-orge1c12b6" class="outline-4">
+<h4 id="orge1c12b6">Highway Lane Change</h4>
+<div class="outline-text-4" id="text-orge1c12b6">
+</div>
+<ul class="org-ul">
+<li><a id="org866b962"></a>Prompt Template for highway lane change decision<br />
+<div class="outline-text-5" id="text-org866b962">
+<div class="org-src-container">
+<pre class="src src-python" id="org0cec4f5"><span style="font-weight: bold;">import</span> os
+<span style="font-weight: bold;">import</span> openai
+<span style="font-weight: bold;">from</span> dotenv <span style="font-weight: bold;">import</span> load_dotenv
+<span style="font-weight: bold;">from</span> pathlib <span style="font-weight: bold;">import</span> Path  <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Python 3.6+ only</span>
+<span style="font-weight: bold;">import</span> pprint
+<span style="font-weight: bold; font-style: italic;">pp</span> = pprint.PrettyPrinter(indent=4)
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">load_dotenv(verbose=True)</span>
+<span style="font-weight: bold; font-style: italic;">env_path</span> = Path(<span style="font-style: italic;">'.'</span>) / <span style="font-style: italic;">'.env'</span>
+load_dotenv(dotenv_path=env_path)
+<span style="font-weight: bold; font-style: italic;">openai_api_key</span>=os.environ.get(<span style="font-style: italic;">'OPENAI_API4_LANGCHAIN'</span>)
+openai.<span style="font-weight: bold; font-style: italic;">proxy</span> = os.environ.get(<span style="font-style: italic;">'HTTP_PROXY'</span>)
+
+
+<span style="font-weight: bold;">from</span> langchain.llms <span style="font-weight: bold;">import</span> OpenAI
+<span style="font-weight: bold;">from</span> langchain <span style="font-weight: bold;">import</span> PromptTemplate
+
+<span style="font-weight: bold; font-style: italic;">llm</span> = OpenAI(model_name=<span style="font-style: italic;">"text-davinci-003"</span>, openai_api_key=openai_api_key)
+
+<span style="font-weight: bold; font-style: italic;">template</span> = <span style="font-style: italic;">"""</span>
+<span style="font-style: italic;">"You're an experienced safe driver. {objects_on_left_lane}. The front car is {front_car_distance} ahead of me {front_car_speed}. I'm driving {ego_speed}. {condition_of_urgency}, should I change my lane or keep following the front car?"</span>
+<span style="font-style: italic;">"""</span>
+<span style="font-weight: bold; font-style: italic;">prompt1</span> = PromptTemplate(
+    input_variables=[<span style="font-style: italic;">"objects_on_left_lane"</span>,<span style="font-style: italic;">"front_car_distance"</span>, <span style="font-style: italic;">"front_car_speed"</span>, <span style="font-style: italic;">"ego_speed"</span>, <span style="font-style: italic;">"condition_of_urgency"</span>],
+    template=template,
+)
+pp.pprint(f<span style="font-style: italic;">"prompt1: </span>{prompt1}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">return prompt1</span>
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">prompt1</span>
+</pre>
+</div>
+</div>
+</li>
+
+
+<li><a id="org5cf045f"></a>Prompt Template for code adapter<br />
+<div class="outline-text-5" id="text-org5cf045f">
+<div class="org-src-container">
+<pre class="src src-python" id="org03211f4"><span style="font-weight: bold;">from</span> langchain.output_parsers <span style="font-weight: bold;">import</span> StructuredOutputParser, ResponseSchema
+<span style="font-weight: bold;">from</span> langchain.prompts <span style="font-weight: bold;">import</span> ChatPromptTemplate, HumanMessagePromptTemplate
+<span style="font-weight: bold;">from</span> langchain <span style="font-weight: bold;">import</span> PromptTemplate
+
+<span style="font-weight: bold; font-style: italic;">response_schemas</span> = [
+    ResponseSchema(name=<span style="font-style: italic;">"lateral_drive_decision"</span>, description=<span style="font-style: italic;">"This is the drive decision to change or not change the lane, it's value should be either 'change' or 'keep'"</span>),
+    ResponseSchema(name=<span style="font-style: italic;">"longitudinal_drive_decision"</span>, description=<span style="font-style: italic;">"This is the drive decision to accelerate, decelerate, or maintain the speed, its value should be either 'accelerate', 'decelerate', or 'maintain'"</span>),
+]
+<span style="font-weight: bold; font-style: italic;">output_parser</span> = StructuredOutputParser.from_response_schemas(response_schemas)
+
+<span style="font-weight: bold; font-style: italic;">format_instructions</span> = output_parser.get_format_instructions()
+
+<span style="font-weight: bold; font-style: italic;">template</span> = <span style="font-style: italic;">"""</span>
+<span style="font-style: italic;">You will be given a string with drive decision from a user with an objective.</span>
+<span style="font-style: italic;">Extract the lateral and longitudinal drive decision and make sure all the words are spelled correctly.</span>
+
+<span style="font-style: italic;">{format_instructions}</span>
+
+<span style="font-style: italic;">% USER_OBJECTIVE:</span>
+<span style="font-style: italic;">{user_objective}</span>
+
+<span style="font-style: italic;">% USER INPUT:</span>
+<span style="font-style: italic;">{user_input}</span>
+
+<span style="font-style: italic;">YOUR RESPONSE:</span>
+<span style="font-style: italic;">"""</span>
+
+<span style="font-weight: bold; font-style: italic;">prompt2</span> = PromptTemplate(
+    input_variables=[<span style="font-style: italic;">"user_objective"</span>, <span style="font-style: italic;">"user_input"</span>],
+    partial_variables={<span style="font-style: italic;">"format_instructions"</span>: format_instructions},
+    template=template
+)
+
+pp.pprint(f<span style="font-style: italic;">"prompt2: </span>{prompt2}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+
+
+<li><a id="orgebfbad3"></a>S1: following<br />
+<div class="outline-text-5" id="text-orgebfbad3">
+
+<div id="org5fbcef2" class="figure">
+<p><img src="./img/Use_Cases/_20231011_16584629.png" alt="_20231011_16584629.png" />
+</p>
+</div>
+
+
+<div id="orgcf6a45f" class="figure">
+<p><img src="./img/Use_Cases/_20231011_165912single_mo_follow.gif" alt="_20231011_165912single_mo_follow.gif" />
+</p>
+</div>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgd7006e7"></a>Input prompt to the LLM and the LLM output:<br />
+<div class="outline-text-6" id="text-orgd7006e7">
+<div class="org-src-container">
+<pre class="src src-python" id="org360d9d6"><span style="font-weight: bold; font-style: italic;">final_prompt</span> = prompt1.<span style="font-weight: bold;">format</span>(objects_on_left_lane=<span style="font-style: italic;">"There are no cars on the left lane and the left lane is clear"</span>,front_car_distance=<span style="font-style: italic;">'200 meters'</span>,front_car_speed=<span style="font-style: italic;">'and with the same speed as me'</span>, ego_speed=<span style="font-style: italic;">'slower than the speed limit'</span>, condition_of_urgency=<span style="font-style: italic;">'When there is nothing special'</span>)
+pp.pprint(f<span style="font-style: italic;">"Prompt: </span>{final_prompt}<span style="font-style: italic;">"</span>)
+
+<span style="font-weight: bold; font-style: italic;">output</span> = llm(final_prompt)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{output}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org84954de"></a>Input prompt to the code adapter (LLM)<br />
+<div class="outline-text-6" id="text-org84954de">
+<div class="org-src-container">
+<pre class="src src-python" id="org53084ff"><span style="font-weight: bold; font-style: italic;">promptValue</span> = prompt2.<span style="font-weight: bold;">format</span>(user_objective=<span style="font-style: italic;">"I am a defensive driver."</span>,user_input=output)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{promptValue}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">llm_output</span>=llm(promptValue)
+pp.pprint(f<span style="font-style: italic;">"llm_output: </span>{llm_output}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">control_action</span> = output_parser.parse(llm_output)
+pp.pprint(f<span style="font-style: italic;">"contorl code: </span>{control_action}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+
+
+<li><a id="org29e82ee"></a>Construct the prompt:<br />
+<ul class="org-ul">
+<li><a id="org3d393df"></a>example selector,<br /></li>
+<li><a id="orgd9d44f1"></a>prompt (template),<br /></li>
+<li><a id="org51550d5"></a>output parser (ResponseSchema) and eval/output_parser (llm/chat)<br /></li>
+<li><a id="orga896fa7"></a>evaluation (quality check) with QAEvalChain for finetuning and retraining.<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a id="orgdec9c90"></a>S2: overtaking<br />
+<div class="outline-text-5" id="text-orgdec9c90">
+
+<div id="org11d28b6" class="figure">
+<p><img src="./img/Use_Cases/_20231011_16565229.png" alt="_20231011_16565229.png" />
+</p>
+</div>
+
+
+<div id="orgee12ca2" class="figure">
+<p><img src="./img/Use_Cases/_20231011_165636single_mo_takeover.gif" alt="_20231011_165636single_mo_takeover.gif" />
+</p>
+</div>
+</div>
+
+
+<ul class="org-ul">
+<li><a id="org879c1cf"></a>Input prompt to the LLM<br />
+<div class="outline-text-6" id="text-org879c1cf">
+<div class="org-src-container">
+<pre class="src src-python" id="org2367dd5"><span style="font-weight: bold; font-style: italic;">final_prompt</span> = prompt1.<span style="font-weight: bold;">format</span>(objects_on_left_lane=<span style="font-style: italic;">"There are no cars on the left lane and the left lane is clear"</span>,front_car_distance=<span style="font-style: italic;">'10 meters'</span>,front_car_speed=<span style="font-style: italic;">'and with a speed much slower than me and will block my lane'</span>, ego_speed=<span style="font-style: italic;">'slower than the speed limit'</span>, condition_of_urgency=<span style="font-style: italic;">'When there is nothing special'</span>)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{final_prompt}<span style="font-style: italic;">"</span>)
+
+<span style="font-weight: bold; font-style: italic;">output</span> = llm(final_prompt)
+
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{output}<span style="font-style: italic;">"</span>)
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgca45b9f"></a>Input prompt to the code adapter (LLM)<br />
+<div class="outline-text-6" id="text-orgca45b9f">
+<div class="org-src-container">
+<pre class="src src-python" id="org39ca953"><span style="font-weight: bold; font-style: italic;">promptValue</span> = prompt2.<span style="font-weight: bold;">format</span>(user_objective=<span style="font-style: italic;">"I am comfortable with changing lane."</span>,user_input=output)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{promptValue}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">llm_output</span>=llm(promptValue)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{llm_output}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">control_action</span> = output_parser.parse(llm_output)
+pp.pprint(f<span style="font-style: italic;">"control code: </span>{control_action}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+
+
+<li><a id="orgb0d43af"></a>S3: no lane changing<br />
+<div class="outline-text-5" id="text-orgb0d43af">
+
+<div id="org028684f" class="figure">
+<p><img src="./img/Use_Cases/_20231011_16483829.png" alt="_20231011_16483829.png" />
+</p>
+</div>
+
+
+<div id="org0d31b29" class="figure">
+<p><img src="./img/Use_Cases/_20231011_164911double_mo_ng.gif" alt="_20231011_164911double_mo_ng.gif" />
+</p>
+</div>
+</div>
+
+
+<ul class="org-ul">
+<li><a id="org43de08f"></a>Input prompt to the LLM<br />
+<div class="outline-text-6" id="text-org43de08f">
+<div class="org-src-container">
+<pre class="src src-python" id="org966e3cf"><span style="font-weight: bold; font-style: italic;">final_prompt</span> = prompt1.<span style="font-weight: bold;">format</span>(objects_on_left_lane=<span style="font-style: italic;">"There is one car on the left lane 50 meters behind me with the same speed as me"</span>,front_car_distance=<span style="font-style: italic;">'closely in front of me'</span>,front_car_speed=<span style="font-style: italic;">'with a lower speed than me'</span>, ego_speed=<span style="font-style: italic;">"at the speed limit"</span>, condition_of_urgency=<span style="font-style: italic;">'When there is nothing special'</span>)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{final_prompt}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">output</span> = llm(final_prompt)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{output}<span style="font-style: italic;">"</span>)
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org753812e"></a>Input prompt to the code adapter (LLM)<br />
+<div class="outline-text-6" id="text-org753812e">
+<div class="org-src-container">
+<pre class="src src-python" id="orga052110"><span style="font-weight: bold; font-style: italic;">promptValue</span> = prompt2.<span style="font-weight: bold;">format</span>(user_objective=<span style="font-style: italic;">"I am comfortable with changing lane."</span>,user_input=output)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{promptValue}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">llm_output</span>=llm(promptValue)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{llm_output}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">control_action</span> = output_parser.parse(llm_output)
+pp.pprint(f<span style="font-style: italic;">"control code: </span>{control_action}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+
+
+<li><a id="orgd6d34a1"></a>S4: lane changing<br />
+<div class="outline-text-5" id="text-orgd6d34a1">
+
+<div id="orgbcc2dad" class="figure">
+<p><img src="./img/Use_Cases/_20231011_16482429.png" alt="_20231011_16482429.png" />
+</p>
+</div>
+
+
+<div id="org3dff5d7" class="figure">
+<p><img src="./img/Use_Cases/_20231011_164921double_mo.gif" alt="_20231011_164921double_mo.gif" />
+</p>
+</div>
+</div>
+
+<ul class="org-ul">
+<li><a id="org65ec04b"></a>Input prompt to the LLM<br />
+<div class="outline-text-6" id="text-org65ec04b">
+<div class="org-src-container">
+<pre class="src src-python" id="org5035917"><span style="font-weight: bold; font-style: italic;">final_prompt</span> = prompt1.<span style="font-weight: bold;">format</span>(objects_on_left_lane=<span style="font-style: italic;">"There is one car on the left lane 250 meters away with a lower speed than me but otherwise the left lane is clear"</span>,front_car_distance=<span style="font-style: italic;">'in a reducing distance closely'</span>,front_car_speed=<span style="font-style: italic;">'with a lower speed than me'</span>, ego_speed=<span style="font-style: italic;">"a little bit slower than the speed limit on the right lane"</span>, condition_of_urgency=<span style="font-style: italic;">'When there is nothing special'</span>)
+
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{final_prompt}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">output</span> = llm(final_prompt)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{output}<span style="font-style: italic;">"</span>)
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgd00856c"></a>Input prompt to the code adapter (LLM)<br />
+<div class="outline-text-6" id="text-orgd00856c">
+<div class="org-src-container">
+<pre class="src src-python" id="orgc232322"><span style="font-weight: bold; font-style: italic;">promptValue</span> = prompt2.<span style="font-weight: bold;">format</span>(user_objective=<span style="font-style: italic;">"I want to pass the front vehicle which is slower than me."</span>, user_input=output)
+pp.pprint(f<span style="font-style: italic;">"prompt: </span>{promptValue}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">llm_output</span>=llm(promptValue)
+pp.pprint(f<span style="font-style: italic;">"llm output: </span>{llm_output}<span style="font-style: italic;">"</span>)
+<span style="font-weight: bold; font-style: italic;">control_action</span> = output_parser.parse(llm_output)
+pp.pprint(f<span style="font-style: italic;">"control code: </span>{control_action}<span style="font-style: italic;">"</span>)
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org70a4091" class="outline-4">
+<h4 id="org70a4091"><span class="todo TODO">TODO</span> Crossing (turning, pedestrian)</h4>
+<div class="outline-text-4" id="text-org70a4091">
+</div>
+<ul class="org-ul">
+<li><a id="org6c14351"></a>concurrent execution of multiple hypothesis and syntheses<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org2265483" class="outline-4">
+<h4 id="org2265483"><span class="todo TODO">TODO</span> Parking decision</h4>
+</div>
+</div>
+<div id="outline-container-org87ab639" class="outline-3">
+<h3 id="org87ab639"><span class="todo TODO">TODO</span> Agent</h3>
+</div>
+</div>
+<div id="outline-container-orge6d508b" class="outline-2">
+<h2 id="orge6d508b">Advantage</h2>
+<div class="outline-text-2" id="text-orge6d508b">
+</div>
+<div id="outline-container-org1abf242" class="outline-3">
+<h3 id="org1abf242">language is a very robust form of scenario description comparing to classic AD SW code instruction</h3>
+</div>
+<div id="outline-container-org24b78d9" class="outline-3">
+<h3 id="org24b78d9">seamless integration with current software stack</h3>
+<div class="outline-text-3" id="text-org24b78d9">
+</div>
+<div id="outline-container-orge5b278b" class="outline-4">
+<h4 id="orge5b278b">flexible to be local (small finetuned) or large (cloud foundational, commercial)</h4>
+</div>
+</div>
+<div id="outline-container-org6518cf4" class="outline-3">
+<h3 id="org6518cf4">extention to end2end network</h3>
+</div>
+<div id="outline-container-orgdfd7603" class="outline-3">
+<h3 id="orgdfd7603">DRL from scratch too complicated, should find it in the language</h3>
+</div>
+<div id="outline-container-org612c43b" class="outline-3">
+<h3 id="org612c43b">LLM has the knowledge of world, including traffic, pedestrian, vehicles, decision logic, programming technology</h3>
+</div>
+<div id="outline-container-orgffcd41c" class="outline-3">
+<h3 id="orgffcd41c">LLM can be fine-tuned, distilled</h3>
+</div>
+<div id="outline-container-org594a092" class="outline-3">
+<h3 id="org594a092">interpretable</h3>
+</div>
+<div id="outline-container-org668218f" class="outline-3">
+<h3 id="org668218f">Very fast, and with concurrent, complex conversation in massive parallelism (much faster than human)</h3>
+</div>
+<div id="outline-container-org5a51146" class="outline-3">
+<h3 id="org5a51146">extendable by dataset and retraining</h3>
+</div>
+<div id="outline-container-org499dd83" class="outline-3">
+<h3 id="org499dd83">safety guarantee by output parser and extra programmatic/NLP instruction</h3>
+</div>
+<div id="outline-container-org67aaaeb" class="outline-3">
+<h3 id="org67aaaeb">agents</h3>
+<div class="outline-text-3" id="text-org67aaaeb">
+</div>
+<div id="outline-container-org4f4400a" class="outline-4">
+<h4 id="org4f4400a">chat</h4>
+</div>
+<div id="outline-container-org0803751" class="outline-4">
+<h4 id="org0803751">memory</h4>
+</div>
+<div id="outline-container-orgfe10a2a" class="outline-4">
+<h4 id="orgfe10a2a">self-correction</h4>
+</div>
+<div id="outline-container-org0505051" class="outline-4">
+<h4 id="org0505051">evolving</h4>
+</div>
+<div id="outline-container-orgd48cae2" class="outline-4">
+<h4 id="orgd48cae2">tools/toolkit</h4>
+</div>
+</div>
+<div id="outline-container-org4e2f713" class="outline-3">
+<h3 id="org4e2f713">Chain/Tree/Graph of Thoughts</h3>
+<div class="outline-text-3" id="text-org4e2f713">
+</div>
+<div id="outline-container-org58fc470" class="outline-4">
+<h4 id="org58fc470">straightforward sequential</h4>
+</div>
+<div id="outline-container-org4e8aa5c" class="outline-4">
+<h4 id="org4e8aa5c">summarization chain with text splitter</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-09-20 Wed 00:00</p>
+<p class="creator">忻斌健</p>
+</div>
+</body>
+</html>

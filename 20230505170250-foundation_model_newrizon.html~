@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>foundation_model_newrizon</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">foundation<sub>model</sub><sub>newrizon</sub></h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd655a69">LLM (language, multimodal (audio, image))</a>
+<ul>
+<li><a href="#org2338d02">Commercial data</a>
+<ul>
+<li><a href="#org769efca">Sales</a></li>
+<li><a href="#orgcab827b">Customer</a></li>
+<li><a href="#org8a71684">Supplier</a></li>
+</ul>
+</li>
+<li><a href="#org9f491f5">Office Applications</a></li>
+<li><a href="#org68e6b5e">Development</a>
+<ul>
+<li><a href="#orgef38962">software</a></li>
+<li><a href="#org82e1f83">system requirements</a></li>
+</ul>
+</li>
+<li><a href="#orgc3c14ae">autonomous driving systems</a>
+<ul>
+<li><a href="#org5974cce">LLM for prediction and planning in complicated driving scenes</a></li>
+<li><a href="#orgf95270d">perception</a></li>
+</ul>
+</li>
+<li><a href="#org96c8601">Policy switch for VEOS system based on low FR videos of Camcorder</a></li>
+<li><a href="#orgbe41a0d">Way of applications</a>
+<ul>
+<li><a href="#org37b20ef">prompt engineering</a></li>
+<li><a href="#orgb338629">LLM-Adapter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org441fd18">Foundational Models for Time Series</a>
+<ul>
+<li><a href="#org3f1b985">less research</a></li>
+<li><a href="#org386caf3">vehicle</a>
+<ul>
+<li><a href="#orgdb21bfa">EP (VBU)</a></li>
+<li><a href="#org9d41ffd">Battery</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd655a69" class="outline-2">
+<h2 id="orgd655a69">LLM (language, multimodal (audio, image))</h2>
+<div class="outline-text-2" id="text-orgd655a69">
+</div>
+<div id="outline-container-org2338d02" class="outline-3">
+<h3 id="org2338d02">Commercial data</h3>
+<div class="outline-text-3" id="text-org2338d02">
+</div>
+<div id="outline-container-org769efca" class="outline-4">
+<h4 id="org769efca">Sales</h4>
+</div>
+<div id="outline-container-orgcab827b" class="outline-4">
+<h4 id="orgcab827b">Customer</h4>
+</div>
+<div id="outline-container-org8a71684" class="outline-4">
+<h4 id="org8a71684">Supplier</h4>
+</div>
+</div>
+<div id="outline-container-org9f491f5" class="outline-3">
+<h3 id="org9f491f5">Office Applications</h3>
+</div>
+<div id="outline-container-org68e6b5e" class="outline-3">
+<h3 id="org68e6b5e">Development</h3>
+<div class="outline-text-3" id="text-org68e6b5e">
+</div>
+<div id="outline-container-orgef38962" class="outline-4">
+<h4 id="orgef38962">software</h4>
+</div>
+<div id="outline-container-org82e1f83" class="outline-4">
+<h4 id="org82e1f83">system requirements</h4>
+</div>
+</div>
+<div id="outline-container-orgc3c14ae" class="outline-3">
+<h3 id="orgc3c14ae">autonomous driving systems</h3>
+<div class="outline-text-3" id="text-orgc3c14ae">
+</div>
+<div id="outline-container-org5974cce" class="outline-4">
+<h4 id="org5974cce">LLM for prediction and planning in complicated driving scenes</h4>
+</div>
+<div id="outline-container-orgf95270d" class="outline-4">
+<h4 id="orgf95270d">perception</h4>
+<div class="outline-text-4" id="text-orgf95270d">
+</div>
+<ul class="org-ul">
+<li><a id="orgadaf5df"></a>complex scene understanding<br /></li>
+<li><a id="orgd5e7665"></a>visual: SAM<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org96c8601" class="outline-3">
+<h3 id="org96c8601">Policy switch for VEOS system based on low FR videos of Camcorder</h3>
+</div>
+<div id="outline-container-orgbe41a0d" class="outline-3">
+<h3 id="orgbe41a0d">Way of applications</h3>
+<div class="outline-text-3" id="text-orgbe41a0d">
+</div>
+<div id="outline-container-org37b20ef" class="outline-4">
+<h4 id="org37b20ef">prompt engineering</h4>
+</div>
+<div id="outline-container-orgb338629" class="outline-4">
+<h4 id="orgb338629">LLM-Adapter</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org441fd18" class="outline-2">
+<h2 id="org441fd18">Foundational Models for Time Series</h2>
+<div class="outline-text-2" id="text-org441fd18">
+</div>
+<div id="outline-container-org3f1b985" class="outline-3">
+<h3 id="org3f1b985">less research</h3>
+</div>
+<div id="outline-container-org386caf3" class="outline-3">
+<h3 id="org386caf3">vehicle</h3>
+<div class="outline-text-3" id="text-org386caf3">
+</div>
+<div id="outline-container-orgdb21bfa" class="outline-4">
+<h4 id="orgdb21bfa">EP (VBU)</h4>
+</div>
+<div id="outline-container-org9d41ffd" class="outline-4">
+<h4 id="org9d41ffd">Battery</h4>
+<div class="outline-text-4" id="text-org9d41ffd">
+<p>
+<b>**</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

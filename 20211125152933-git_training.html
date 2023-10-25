@@ -16,93 +16,93 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9f97de7">git short introduction</a>
+<li><a href="#orgd4a02cc">git short introduction</a>
 <ul>
-<li><a href="#orgfd51263">'git' not 'jit'</a></li>
-<li><a href="#org4239581">days of diff and patch, bitkeeper</a></li>
-<li><a href="#orgfd07399">Goal: distributed development (coooperative? depends!)</a></li>
-<li><a href="#org838345b">linus torwald</a></li>
-<li><a href="#org19aaee9">very similar to blockchain Merkle Tree (hash tree)</a>
+<li><a href="#org21b52c8">'git' not 'jit'</a></li>
+<li><a href="#org8340cb2">days of diff and patch, bitkeeper</a></li>
+<li><a href="#orgd268833">Goal: distributed development (coooperative? depends!)</a></li>
+<li><a href="#org4b65452">linus torwald</a></li>
+<li><a href="#orgeebaa4e">very similar to blockchain Merkle Tree (hash tree)</a>
 <ul>
-<li><a href="#orgf75e655">https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain</a></li>
+<li><a href="#org02f0098">https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain</a></li>
 </ul>
 </li>
-<li><a href="#org0788c57">SHA is not a security feature, security is a by-product</a></li>
-<li><a href="#orgf456668">objects: blob, tree</a></li>
-<li><a href="#orgcddbb29">references: name for raw SHA-1 value; refs</a></li>
-<li><a href="#orgc084f4d">porcelan vs plumbing git cat-file -t -p</a></li>
-<li><a href="#org3397114">features: local, fast, efficient, distributed, snapshot not patches, changes</a></li>
-<li><a href="#org2b88201">HEAD/Detached?</a></li>
+<li><a href="#orgd6cc96b">SHA is not a security feature, security is a by-product</a></li>
+<li><a href="#org063f0f7">objects: blob, tree</a></li>
+<li><a href="#org5874cc2">references: name for raw SHA-1 value; refs</a></li>
+<li><a href="#org3878db8">porcelan vs plumbing git cat-file -t -p</a></li>
+<li><a href="#orgeedc0f8">features: local, fast, efficient, distributed, snapshot not patches, changes</a></li>
+<li><a href="#orgae00a03">HEAD/Detached?</a></li>
 </ul>
 </li>
-<li><a href="#orgd6e8a33">work-flow:</a>
+<li><a href="#org9799a2b">work-flow:</a>
 <ul>
-<li><a href="#org8090252">edit, stage(add), review, commit</a></li>
-<li><a href="#org79aed7f">git-flow</a>
+<li><a href="#org35860c5">edit, stage(add), review, commit</a></li>
+<li><a href="#org67293d5">git-flow</a>
 <ul>
-<li><a href="#org38e72f7">https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html</a></li>
+<li><a href="#org0172f0b">https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html</a></li>
 </ul>
 </li>
-<li><a href="#org01eb543">submodule</a>
+<li><a href="#orgb1295e7">submodule</a>
 <ul>
-<li><a href="#org0409eb0">just update, track the new changes of the submodules (no change)</a></li>
-<li><a href="#orgdafbada">work on the submodule collaboratively</a></li>
-<li><a href="#org8e9794f">caveats:</a></li>
+<li><a href="#org0f50989">just update, track the new changes of the submodules (no change)</a></li>
+<li><a href="#org58f4d81">work on the submodule collaboratively</a></li>
+<li><a href="#orge9cec6c">caveats:</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgada72a4">index/stage, repository, working tree, remote;</a>
+<li><a href="#orgc57892a">index/stage, repository, working tree, remote;</a>
 <ul>
-<li><a href="#org19a8bcc">git hash-object -w;git cat-file -p/-t; git update-index &#x2013;add &#x2013;cacheinfo</a></li>
-<li><a href="#org37085bc">file modes: 100644/100755/120000</a></li>
-<li><a href="#orgcb2870a">git write-tree</a></li>
-<li><a href="#orgdb21809">git objects: content-addressable filesystem</a>
+<li><a href="#org08c3021">git hash-object -w;git cat-file -p/-t; git update-index &#x2013;add &#x2013;cacheinfo</a></li>
+<li><a href="#org9c9ec7f">file modes: 100644/100755/120000</a></li>
+<li><a href="#org7bb8a60">git write-tree</a></li>
+<li><a href="#org8fa665a">git objects: content-addressable filesystem</a>
 <ul>
-<li><a href="#org45a31ed">tree objects</a></li>
-<li><a href="#org8686e5d">blob</a></li>
-<li><a href="#org472fb64">commit objects</a></li>
-<li><a href="#orgd6494a5">tag</a></li>
+<li><a href="#org705212b">tree objects</a></li>
+<li><a href="#org3a1d712">blob</a></li>
+<li><a href="#org4b850a3">commit objects</a></li>
+<li><a href="#org12734f6">tag</a></li>
 </ul>
 </li>
-<li><a href="#org08edfaf">diff, snapshot</a>
+<li><a href="#orgf1be04c">diff, snapshot</a>
 <ul>
-<li><a href="#org98ce4c9">view/content</a></li>
+<li><a href="#org036df4c">view/content</a></li>
 </ul>
 </li>
-<li><a href="#org0f49c3d">git commit: is a snapshot</a>
+<li><a href="#orgd490aad">git commit: is a snapshot</a>
 <ul>
-<li><a href="#org190f8e9">new commits often: history of your logic units of change, a story of history of the repository</a></li>
-<li><a href="#org59f66d1">metadta: contents, messages of author, timestamp,</a></li>
-<li><a href="#orgeeba4d6">change history, &#x2013;amend</a></li>
+<li><a href="#orgacfa739">new commits often: history of your logic units of change, a story of history of the repository</a></li>
+<li><a href="#org0e27e51">metadta: contents, messages of author, timestamp,</a></li>
+<li><a href="#org257b380">change history, &#x2013;amend</a></li>
 </ul>
 </li>
-<li><a href="#orgeb47def">reference</a>
+<li><a href="#org2d58bc7">reference</a>
 <ul>
-<li><a href="#orgd7b7da3">branch, HEAD, detached</a></li>
-<li><a href="#org88c862a">git reflog -2 HEAD/ HEAD^^</a></li>
-<li><a href="#orgc483d49">git symbolic-ref</a></li>
-<li><a href="#orgbed7c61">master^^</a></li>
-<li><a href="#orga695450">tags： branch reference; never moves</a></li>
-<li><a href="#orga224bad">remotes: git remote add origin git@gitlab.work:ai/ref.git: git push</a></li>
+<li><a href="#orgc4d1704">branch, HEAD, detached</a></li>
+<li><a href="#org8a0d293">git reflog -2 HEAD/ HEAD^^</a></li>
+<li><a href="#org793b692">git symbolic-ref</a></li>
+<li><a href="#org4530d18">master^^</a></li>
+<li><a href="#org36dbd54">tags： branch reference; never moves</a></li>
+<li><a href="#org1350b2f">remotes: git remote add origin git@gitlab.work:ai/ref.git: git push</a></li>
 </ul>
 </li>
-<li><a href="#orga20c1fd">merge</a></li>
-<li><a href="#org812324d">rebase</a></li>
-<li><a href="#orgb0dc143">stashing</a></li>
-<li><a href="#org33f211b">log</a></li>
-<li><a href="#org11d3d11">commit amend, rename, gitignore, submodule,</a></li>
+<li><a href="#orgd0530a5">merge</a></li>
+<li><a href="#orgafb240d">rebase</a></li>
+<li><a href="#org5d6b431">stashing</a></li>
+<li><a href="#orgbfb21e7">log</a></li>
+<li><a href="#org12c4110">commit amend, rename, gitignore, submodule,</a></li>
 </ul>
 </li>
-<li><a href="#org4a56965">git advanced</a>
+<li><a href="#org35d5889">git advanced</a>
 <ul>
-<li><a href="#orgab76694">git revert</a>
+<li><a href="#org697cb0b">git revert</a>
 <ul>
-<li><a href="#org17e53a7">git revision specification</a></li>
+<li><a href="#org60b3d33">git revision specification</a></li>
 </ul>
 </li>
-<li><a href="#orgfaaa1e3">git rebase</a></li>
-<li><a href="#org6956647">magit</a></li>
+<li><a href="#orgc25bbcf">git rebase</a></li>
+<li><a href="#orge929cef">magit</a></li>
 </ul>
 </li>
 </ul>
@@ -111,234 +111,234 @@
 <p>
 :ID:       8525d1c4-20e9-40ca-ab38-1d1bd88d0884
 </p>
-<div id="outline-container-org9f97de7" class="outline-2">
-<h2 id="org9f97de7">git short introduction</h2>
-<div class="outline-text-2" id="text-org9f97de7">
+<div id="outline-container-orgd4a02cc" class="outline-2">
+<h2 id="orgd4a02cc">git short introduction</h2>
+<div class="outline-text-2" id="text-orgd4a02cc">
 </div>
-<div id="outline-container-orgfd51263" class="outline-3">
-<h3 id="orgfd51263">'git' not 'jit'</h3>
+<div id="outline-container-org21b52c8" class="outline-3">
+<h3 id="org21b52c8">'git' not 'jit'</h3>
 </div>
-<div id="outline-container-org4239581" class="outline-3">
-<h3 id="org4239581">days of diff and patch, bitkeeper</h3>
+<div id="outline-container-org8340cb2" class="outline-3">
+<h3 id="org8340cb2">days of diff and patch, bitkeeper</h3>
 </div>
-<div id="outline-container-orgfd07399" class="outline-3">
-<h3 id="orgfd07399">Goal: distributed development (coooperative? depends!)</h3>
+<div id="outline-container-orgd268833" class="outline-3">
+<h3 id="orgd268833">Goal: distributed development (coooperative? depends!)</h3>
 </div>
-<div id="outline-container-org838345b" class="outline-3">
-<h3 id="org838345b">linus torwald</h3>
+<div id="outline-container-org4b65452" class="outline-3">
+<h3 id="org4b65452">linus torwald</h3>
 </div>
-<div id="outline-container-org19aaee9" class="outline-3">
-<h3 id="org19aaee9">very similar to blockchain Merkle Tree (hash tree)</h3>
-<div class="outline-text-3" id="text-org19aaee9">
+<div id="outline-container-orgeebaa4e" class="outline-3">
+<h3 id="orgeebaa4e">very similar to blockchain Merkle Tree (hash tree)</h3>
+<div class="outline-text-3" id="text-orgeebaa4e">
 </div>
-<div id="outline-container-orgf75e655" class="outline-4">
-<h4 id="orgf75e655"><a href="https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain">https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain</a></h4>
-</div>
-</div>
-<div id="outline-container-org0788c57" class="outline-3">
-<h3 id="org0788c57">SHA is not a security feature, security is a by-product</h3>
-</div>
-<div id="outline-container-orgf456668" class="outline-3">
-<h3 id="orgf456668">objects: blob, tree</h3>
-</div>
-<div id="outline-container-orgcddbb29" class="outline-3">
-<h3 id="orgcddbb29">references: name for raw SHA-1 value; refs</h3>
-</div>
-<div id="outline-container-orgc084f4d" class="outline-3">
-<h3 id="orgc084f4d">porcelan vs plumbing git cat-file -t -p</h3>
-</div>
-<div id="outline-container-org3397114" class="outline-3">
-<h3 id="org3397114">features: local, fast, efficient, distributed, snapshot not patches, changes</h3>
-</div>
-<div id="outline-container-org2b88201" class="outline-3">
-<h3 id="org2b88201">HEAD/Detached?</h3>
+<div id="outline-container-org02f0098" class="outline-4">
+<h4 id="org02f0098"><a href="https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain">https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain</a></h4>
 </div>
 </div>
-<div id="outline-container-orgd6e8a33" class="outline-2">
-<h2 id="orgd6e8a33">work-flow:</h2>
-<div class="outline-text-2" id="text-orgd6e8a33">
+<div id="outline-container-orgd6cc96b" class="outline-3">
+<h3 id="orgd6cc96b">SHA is not a security feature, security is a by-product</h3>
 </div>
-<div id="outline-container-org8090252" class="outline-3">
-<h3 id="org8090252">edit, stage(add), review, commit</h3>
+<div id="outline-container-org063f0f7" class="outline-3">
+<h3 id="org063f0f7">objects: blob, tree</h3>
 </div>
-<div id="outline-container-org79aed7f" class="outline-3">
-<h3 id="org79aed7f">git-flow</h3>
-<div class="outline-text-3" id="text-org79aed7f">
+<div id="outline-container-org5874cc2" class="outline-3">
+<h3 id="org5874cc2">references: name for raw SHA-1 value; refs</h3>
 </div>
-<div id="outline-container-org38e72f7" class="outline-4">
-<h4 id="org38e72f7"><a href="https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html">https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html</a></h4>
+<div id="outline-container-org3878db8" class="outline-3">
+<h3 id="org3878db8">porcelan vs plumbing git cat-file -t -p</h3>
+</div>
+<div id="outline-container-orgeedc0f8" class="outline-3">
+<h3 id="orgeedc0f8">features: local, fast, efficient, distributed, snapshot not patches, changes</h3>
+</div>
+<div id="outline-container-orgae00a03" class="outline-3">
+<h3 id="orgae00a03">HEAD/Detached?</h3>
 </div>
 </div>
-<div id="outline-container-org01eb543" class="outline-3">
-<h3 id="org01eb543">submodule</h3>
-<div class="outline-text-3" id="text-org01eb543">
+<div id="outline-container-org9799a2b" class="outline-2">
+<h2 id="org9799a2b">work-flow:</h2>
+<div class="outline-text-2" id="text-org9799a2b">
 </div>
-<div id="outline-container-org0409eb0" class="outline-4">
-<h4 id="org0409eb0">just update, track the new changes of the submodules (no change)</h4>
-<div class="outline-text-4" id="text-org0409eb0">
+<div id="outline-container-org35860c5" class="outline-3">
+<h3 id="org35860c5">edit, stage(add), review, commit</h3>
+</div>
+<div id="outline-container-org67293d5" class="outline-3">
+<h3 id="org67293d5">git-flow</h3>
+<div class="outline-text-3" id="text-org67293d5">
+</div>
+<div id="outline-container-org0172f0b" class="outline-4">
+<h4 id="org0172f0b"><a href="https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html">https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html</a></h4>
+</div>
+</div>
+<div id="outline-container-orgb1295e7" class="outline-3">
+<h3 id="orgb1295e7">submodule</h3>
+<div class="outline-text-3" id="text-orgb1295e7">
+</div>
+<div id="outline-container-org0f50989" class="outline-4">
+<h4 id="org0f50989">just update, track the new changes of the submodules (no change)</h4>
+<div class="outline-text-4" id="text-org0f50989">
 </div>
 <ul class="org-ul">
-<li><a id="org6da38ee"></a>manually : git fetch<br /></li>
-<li><a id="orgcd2e946"></a>automatically: git submodule update &#x2013;remote<br />
+<li><a id="org4475414"></a>manually : git fetch<br /></li>
+<li><a id="orgcd0ec5d"></a>automatically: git submodule update &#x2013;remote<br />
 <ul class="org-ul">
-<li><a id="orge6411ea"></a>set specific branch .gitmodules submodule.submudle<sub>name.branch</sub> stable<br /></li>
-<li><a id="org2c68fba"></a>-f: tracked; no -f locally, not tracked.<br /></li>
-<li><a id="orgbf5e861"></a>git config status.submodulesummary 1<br /></li>
+<li><a id="orga86eeaf"></a>set specific branch .gitmodules submodule.submudle<sub>name.branch</sub> stable<br /></li>
+<li><a id="org5207568"></a>-f: tracked; no -f locally, not tracked.<br /></li>
+<li><a id="org1b52684"></a>git config status.submodulesummary 1<br /></li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="outline-container-orgdafbada" class="outline-4">
-<h4 id="orgdafbada">work on the submodule collaboratively</h4>
-<div class="outline-text-4" id="text-orgdafbada">
+<div id="outline-container-org58f4d81" class="outline-4">
+<h4 id="org58f4d81">work on the submodule collaboratively</h4>
+<div class="outline-text-4" id="text-org58f4d81">
 </div>
 <ul class="org-ul">
-<li><a id="org2511783"></a>git submodule update &#x2013;remote &#x2013;rebase/&#x2013;merge<br /></li>
-<li><a id="orgb913c70"></a>caveats: has to commit locally.<br /></li>
-<li><a id="orgc64c7a9"></a>publishing submodule changes: git push &#x2013;recurse-submodules=check/on-demand<br /></li>
+<li><a id="orgbdbd8d2"></a>git submodule update &#x2013;remote &#x2013;rebase/&#x2013;merge<br /></li>
+<li><a id="org27c7c60"></a>caveats: has to commit locally.<br /></li>
+<li><a id="org5d0ff84"></a>publishing submodule changes: git push &#x2013;recurse-submodules=check/on-demand<br /></li>
 </ul>
 </div>
-<div id="outline-container-org8e9794f" class="outline-4">
-<h4 id="org8e9794f">caveats:</h4>
-<div class="outline-text-4" id="text-org8e9794f">
+<div id="outline-container-orge9cec6c" class="outline-4">
+<h4 id="orge9cec6c">caveats:</h4>
+<div class="outline-text-4" id="text-orge9cec6c">
 </div>
 <ul class="org-ul">
-<li><a id="orged749f6"></a>accidental revert: git submodule update &#x2013;remote to update .gitmodule; and commit in parent projects.<br /></li>
-<li><a id="org3ea8c90"></a>cannot merge: no submodule merge<br /></li>
+<li><a id="org20531f1"></a>accidental revert: git submodule update &#x2013;remote to update .gitmodule; and commit in parent projects.<br /></li>
+<li><a id="org30f1984"></a>cannot merge: no submodule merge<br /></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgada72a4" class="outline-2">
-<h2 id="orgada72a4">index/stage, repository, working tree, remote;</h2>
-<div class="outline-text-2" id="text-orgada72a4">
+<div id="outline-container-orgc57892a" class="outline-2">
+<h2 id="orgc57892a">index/stage, repository, working tree, remote;</h2>
+<div class="outline-text-2" id="text-orgc57892a">
 </div>
-<div id="outline-container-org19a8bcc" class="outline-3">
-<h3 id="org19a8bcc">git hash-object -w;git cat-file -p/-t; git update-index &#x2013;add &#x2013;cacheinfo</h3>
+<div id="outline-container-org08c3021" class="outline-3">
+<h3 id="org08c3021">git hash-object -w;git cat-file -p/-t; git update-index &#x2013;add &#x2013;cacheinfo</h3>
 </div>
-<div id="outline-container-org37085bc" class="outline-3">
-<h3 id="org37085bc">file modes: 100644/100755/120000</h3>
+<div id="outline-container-org9c9ec7f" class="outline-3">
+<h3 id="org9c9ec7f">file modes: 100644/100755/120000</h3>
 </div>
-<div id="outline-container-orgcb2870a" class="outline-3">
-<h3 id="orgcb2870a">git write-tree</h3>
+<div id="outline-container-org7bb8a60" class="outline-3">
+<h3 id="org7bb8a60">git write-tree</h3>
 </div>
-<div id="outline-container-orgdb21809" class="outline-3">
-<h3 id="orgdb21809">git objects: content-addressable filesystem</h3>
-<div class="outline-text-3" id="text-orgdb21809">
+<div id="outline-container-org8fa665a" class="outline-3">
+<h3 id="org8fa665a">git objects: content-addressable filesystem</h3>
+<div class="outline-text-3" id="text-org8fa665a">
 </div>
-<div id="outline-container-org45a31ed" class="outline-4">
-<h4 id="org45a31ed">tree objects</h4>
+<div id="outline-container-org705212b" class="outline-4">
+<h4 id="org705212b">tree objects</h4>
 </div>
-<div id="outline-container-org8686e5d" class="outline-4">
-<h4 id="org8686e5d">blob</h4>
+<div id="outline-container-org3a1d712" class="outline-4">
+<h4 id="org3a1d712">blob</h4>
 </div>
-<div id="outline-container-org472fb64" class="outline-4">
-<h4 id="org472fb64">commit objects</h4>
-<div class="outline-text-4" id="text-org472fb64">
+<div id="outline-container-org4b850a3" class="outline-4">
+<h4 id="org4b850a3">commit objects</h4>
+<div class="outline-text-4" id="text-org4b850a3">
 </div>
 <ul class="org-ul">
-<li><a id="org260e061"></a><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">https://git-scm.com/book/en/v2/Git-Internals-Git-Objects</a><br /></li>
+<li><a id="org43a6bf2"></a><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">https://git-scm.com/book/en/v2/Git-Internals-Git-Objects</a><br /></li>
 </ul>
 </div>
-<div id="outline-container-orgd6494a5" class="outline-4">
-<h4 id="orgd6494a5">tag</h4>
+<div id="outline-container-org12734f6" class="outline-4">
+<h4 id="org12734f6">tag</h4>
 </div>
 </div>
-<div id="outline-container-org08edfaf" class="outline-3">
-<h3 id="org08edfaf">diff, snapshot</h3>
-<div class="outline-text-3" id="text-org08edfaf">
+<div id="outline-container-orgf1be04c" class="outline-3">
+<h3 id="orgf1be04c">diff, snapshot</h3>
+<div class="outline-text-3" id="text-orgf1be04c">
 </div>
-<div id="outline-container-org98ce4c9" class="outline-4">
-<h4 id="org98ce4c9">view/content</h4>
-</div>
-</div>
-<div id="outline-container-org0f49c3d" class="outline-3">
-<h3 id="org0f49c3d">git commit: is a snapshot</h3>
-<div class="outline-text-3" id="text-org0f49c3d">
-</div>
-<div id="outline-container-org190f8e9" class="outline-4">
-<h4 id="org190f8e9">new commits often: history of your logic units of change, a story of history of the repository</h4>
-</div>
-<div id="outline-container-org59f66d1" class="outline-4">
-<h4 id="org59f66d1">metadta: contents, messages of author, timestamp,</h4>
-</div>
-<div id="outline-container-orgeeba4d6" class="outline-4">
-<h4 id="orgeeba4d6">change history, &#x2013;amend</h4>
+<div id="outline-container-org036df4c" class="outline-4">
+<h4 id="org036df4c">view/content</h4>
 </div>
 </div>
-<div id="outline-container-orgeb47def" class="outline-3">
-<h3 id="orgeb47def">reference</h3>
-<div class="outline-text-3" id="text-orgeb47def">
+<div id="outline-container-orgd490aad" class="outline-3">
+<h3 id="orgd490aad">git commit: is a snapshot</h3>
+<div class="outline-text-3" id="text-orgd490aad">
 </div>
-<div id="outline-container-orgd7b7da3" class="outline-4">
-<h4 id="orgd7b7da3">branch, HEAD, detached</h4>
-<div class="outline-text-4" id="text-orgd7b7da3">
+<div id="outline-container-orgacfa739" class="outline-4">
+<h4 id="orgacfa739">new commits often: history of your logic units of change, a story of history of the repository</h4>
+</div>
+<div id="outline-container-org0e27e51" class="outline-4">
+<h4 id="org0e27e51">metadta: contents, messages of author, timestamp,</h4>
+</div>
+<div id="outline-container-org257b380" class="outline-4">
+<h4 id="org257b380">change history, &#x2013;amend</h4>
+</div>
+</div>
+<div id="outline-container-org2d58bc7" class="outline-3">
+<h3 id="org2d58bc7">reference</h3>
+<div class="outline-text-3" id="text-org2d58bc7">
+</div>
+<div id="outline-container-orgc4d1704" class="outline-4">
+<h4 id="orgc4d1704">branch, HEAD, detached</h4>
+<div class="outline-text-4" id="text-orgc4d1704">
 </div>
 <ul class="org-ul">
-<li><a id="orgb07b923"></a>branch: reference to the head of a line of work&#x2013;&gt;git update-ref refs/heads/master<br /></li>
-<li><a id="org2ea487c"></a>HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object<br /></li>
-<li><a id="org4ef3df4"></a>detatched HEAD: cannot commit (checkout a commit/tag/remote branch)<br />
+<li><a id="org155b968"></a>branch: reference to the head of a line of work&#x2013;&gt;git update-ref refs/heads/master<br /></li>
+<li><a id="org45b3b41"></a>HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object<br /></li>
+<li><a id="orgf250c05"></a>detatched HEAD: cannot commit (checkout a commit/tag/remote branch)<br />
 <ul class="org-ul">
-<li><a id="orgda6d30f"></a>to save : git checkout -b foo/ git branch foo/ git tag foo<br /></li>
+<li><a id="org5ba5b9a"></a>to save : git checkout -b foo/ git branch foo/ git tag foo<br /></li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="outline-container-org88c862a" class="outline-4">
-<h4 id="org88c862a">git reflog -2 HEAD/ HEAD^^</h4>
+<div id="outline-container-org8a0d293" class="outline-4">
+<h4 id="org8a0d293">git reflog -2 HEAD/ HEAD^^</h4>
 </div>
-<div id="outline-container-orgc483d49" class="outline-4">
-<h4 id="orgc483d49">git symbolic-ref</h4>
+<div id="outline-container-org793b692" class="outline-4">
+<h4 id="org793b692">git symbolic-ref</h4>
 </div>
-<div id="outline-container-orgbed7c61" class="outline-4">
-<h4 id="orgbed7c61">master^^</h4>
+<div id="outline-container-org4530d18" class="outline-4">
+<h4 id="org4530d18">master^^</h4>
 </div>
-<div id="outline-container-orga695450" class="outline-4">
-<h4 id="orga695450">tags： branch reference; never moves</h4>
+<div id="outline-container-org36dbd54" class="outline-4">
+<h4 id="org36dbd54">tags： branch reference; never moves</h4>
 </div>
-<div id="outline-container-orga224bad" class="outline-4">
-<h4 id="orga224bad">remotes: git remote add origin git@gitlab.work:ai/ref.git: git push</h4>
-</div>
-</div>
-<div id="outline-container-orga20c1fd" class="outline-3">
-<h3 id="orga20c1fd">merge</h3>
-</div>
-<div id="outline-container-org812324d" class="outline-3">
-<h3 id="org812324d">rebase</h3>
-</div>
-<div id="outline-container-orgb0dc143" class="outline-3">
-<h3 id="orgb0dc143">stashing</h3>
-</div>
-<div id="outline-container-org33f211b" class="outline-3">
-<h3 id="org33f211b">log</h3>
-</div>
-<div id="outline-container-org11d3d11" class="outline-3">
-<h3 id="org11d3d11">commit amend, rename, gitignore, submodule,</h3>
+<div id="outline-container-org1350b2f" class="outline-4">
+<h4 id="org1350b2f">remotes: git remote add origin git@gitlab.work:ai/ref.git: git push</h4>
 </div>
 </div>
-<div id="outline-container-org4a56965" class="outline-2">
-<h2 id="org4a56965">git advanced</h2>
-<div class="outline-text-2" id="text-org4a56965">
+<div id="outline-container-orgd0530a5" class="outline-3">
+<h3 id="orgd0530a5">merge</h3>
 </div>
-<div id="outline-container-orgab76694" class="outline-3">
-<h3 id="orgab76694">git revert</h3>
-<div class="outline-text-3" id="text-orgab76694">
+<div id="outline-container-orgafb240d" class="outline-3">
+<h3 id="orgafb240d">rebase</h3>
 </div>
-<div id="outline-container-org17e53a7" class="outline-4">
-<h4 id="org17e53a7">git revision specification</h4>
-<div class="outline-text-4" id="text-org17e53a7">
+<div id="outline-container-org5d6b431" class="outline-3">
+<h3 id="org5d6b431">stashing</h3>
+</div>
+<div id="outline-container-orgbfb21e7" class="outline-3">
+<h3 id="orgbfb21e7">log</h3>
+</div>
+<div id="outline-container-org12c4110" class="outline-3">
+<h3 id="org12c4110">commit amend, rename, gitignore, submodule,</h3>
+</div>
+</div>
+<div id="outline-container-org35d5889" class="outline-2">
+<h2 id="org35d5889">git advanced</h2>
+<div class="outline-text-2" id="text-org35d5889">
+</div>
+<div id="outline-container-org697cb0b" class="outline-3">
+<h3 id="org697cb0b">git revert</h3>
+<div class="outline-text-3" id="text-org697cb0b">
+</div>
+<div id="outline-container-org60b3d33" class="outline-4">
+<h4 id="org60b3d33">git revision specification</h4>
+<div class="outline-text-4" id="text-org60b3d33">
 </div>
 <ul class="org-ul">
-<li><a id="orga206db1"></a>git log, git reset, git chery-pick<br /></li>
+<li><a id="org099ba4d"></a>git log, git reset, git chery-pick<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfaaa1e3" class="outline-3">
-<h3 id="orgfaaa1e3">git rebase</h3>
+<div id="outline-container-orgc25bbcf" class="outline-3">
+<h3 id="orgc25bbcf">git rebase</h3>
 </div>
-<div id="outline-container-org6956647" class="outline-3">
-<h3 id="org6956647">magit</h3>
+<div id="outline-container-orge929cef" class="outline-3">
+<h3 id="orge929cef">magit</h3>
 </div>
 </div>
 </div>

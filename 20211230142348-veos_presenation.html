@@ -16,110 +16,110 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org250bd50">标题，主题</a>
+<li><a href="#orgb2a16e8">标题，主题</a>
 <ul>
-<li><a href="#org3ec96d0">reward is enough</a></li>
-<li><a href="#org98aeff0">基于大数据和奖励驱动的能源优化系统</a></li>
+<li><a href="#orgb14a70e">reward is enough</a></li>
+<li><a href="#org70f2ba6">基于大数据和奖励驱动的能源优化系统</a></li>
 </ul>
 </li>
-<li><a href="#orgfb74d11">背景</a>
+<li><a href="#org6ec953a">背景</a>
 <ul>
-<li><a href="#org2601849">车辆能源优化系统</a>
+<li><a href="#org32cbe19">车辆能源优化系统</a>
 <ul>
-<li><a href="#org97fb63a">基于专家系统</a></li>
-<li><a href="#org165dffe">通常应用场景是混动车动力系统最优分配比</a></li>
+<li><a href="#org5447bc5">基于专家系统</a></li>
+<li><a href="#orgefbf568">通常应用场景是混动车动力系统最优分配比</a></li>
 </ul>
 </li>
-<li><a href="#orge829d0e">强化学习</a>
+<li><a href="#org408854e">强化学习</a>
 <ul>
-<li><a href="#org34098a2">端到端，场景的切换是连续动态的</a></li>
-<li><a href="#org010e72f">适用于带噪声的高维度非平稳随机过程</a></li>
-<li><a href="#org2ef0637">随机闭环控制：可利用随机采样的结果及时更新策略</a></li>
-<li><a href="#orgd88ce13">挑战</a></li>
+<li><a href="#orgbe0a631">端到端，场景的切换是连续动态的</a></li>
+<li><a href="#orgaff6b1e">适用于带噪声的高维度非平稳随机过程</a></li>
+<li><a href="#org5a1342e">随机闭环控制：可利用随机采样的结果及时更新策略</a></li>
+<li><a href="#orgef8433a">挑战</a></li>
 </ul>
 </li>
-<li><a href="#org618728b">真实物理世界的强化学习应用（除游戏和仿真领域）</a>
+<li><a href="#org19cd1e7">真实物理世界的强化学习应用（除游戏和仿真领域）</a>
 <ul>
-<li><a href="#orgabef209">谷歌计算中心空调系统</a></li>
-<li><a href="#org8156ecc">神经网络架构搜索NAS</a></li>
-<li><a href="#org90005eb">集成电路芯片设计</a></li>
-<li><a href="#orgba41460">OpenAI Rubik's Cube</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org5eea0ec">方案</a>
-<ul>
-<li><a href="#org69abce9">一型决策系统</a>
-<ul>
-<li><a href="#org923dd5b">几秒内的短期决策，不考虑长期策略</a></li>
-<li><a href="#orgcfe0acc">避免高复杂度的长效策略优化</a></li>
-<li><a href="#org3c18a43">避免复杂的功劳归属问题（Credit Assignment)</a></li>
-</ul>
-</li>
-<li><a href="#org403136d">场景段（方式）</a>
-<ul>
-<li><a href="#orgc9a4c9b">无限时间地平线也可以，但是需要大量的时间和长期测试才可能收集到能耗和场景的分布</a></li>
-<li><a href="#org55d6131">分成场景段（episodic）方式有利于验证方案，也可以扩展</a></li>
-</ul>
-</li>
-<li><a href="#org1148278">优点</a>
-<ul>
-<li><a href="#orga1b8755">非监督学习，不需要标注，唯一的监督信号是能耗</a></li>
-<li><a href="#orgaf07394">从大数据中学习</a></li>
-<li><a href="#org78925a0">动态适应工况，持续更新模型</a></li>
-<li><a href="#orgec20c28">驾驶员是环境的一部分，不需要为驾驶员行为建模</a></li>
-<li><a href="#org4359c51">可定义安全边界，不影响司机的安全驾驶</a></li>
+<li><a href="#org925f322">谷歌计算中心空调系统</a></li>
+<li><a href="#org790d0b7">神经网络架构搜索NAS</a></li>
+<li><a href="#org254b430">集成电路芯片设计</a></li>
+<li><a href="#orgdfcb81a">OpenAI Rubik's Cube</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga1e9a75">数据要求</a>
+<li><a href="#org87d649d">方案</a>
 <ul>
-<li><a href="#org8f512ec">观测量需求</a>
+<li><a href="#orge2380e1">一型决策系统</a>
 <ul>
-<li><a href="#org2020e49">不需要导航数据，运动规划数据</a></li>
-<li><a href="#org65fb7f0">可观测性</a></li>
+<li><a href="#orgd9f45e6">几秒内的短期决策，不考虑长期策略</a></li>
+<li><a href="#org2baa3bb">避免高复杂度的长效策略优化</a></li>
+<li><a href="#org0dbc921">避免复杂的功劳归属问题（Credit Assignment)</a></li>
 </ul>
 </li>
-<li><a href="#org80d039a">决策空间</a>
+<li><a href="#org28fd09b">场景段（方式）</a>
 <ul>
-<li><a href="#org703105e">可控性:能有效影响能耗</a></li>
-<li><a href="#orgfa5b602">电动力系统控制器参数</a></li>
+<li><a href="#org9caf1bd">无限时间地平线也可以，但是需要大量的时间和长期测试才可能收集到能耗和场景的分布</a></li>
+<li><a href="#org3c88cb2">分成场景段（episodic）方式有利于验证方案，也可以扩展</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#orge94b6a3">机器学习框架</a>
+<li><a href="#org2f105c2">优点</a>
 <ul>
-<li><a href="#orgb4d285c">基于策略梯度方式</a></li>
-<li><a href="#org8988c33">离线策略（Off Policy）:可提高样本利用效率</a></li>
-<li><a href="#orgfbb5dfb">记忆池收集经验</a></li>
-</ul>
-</li>
-<li><a href="#org5c6e8ce">项目测试情况</a>
-<ul>
-<li><a href="#orgc64d572">封闭园区测试</a></li>
-<li><a href="#org48c776d">开放道路测试</a></li>
-<li><a href="#orgb6e28b5">开放道路自由路况测试</a>
-<ul>
-<li><a href="#org119ceef">预训练，冻结模型</a></li>
-</ul>
-</li>
-<li><a href="#org073c723">分析</a>
-<ul>
-<li><a href="#org88eaca0">利用能量回收</a></li>
+<li><a href="#org7a4fef5">非监督学习，不需要标注，唯一的监督信号是能耗</a></li>
+<li><a href="#org40b642c">从大数据中学习</a></li>
+<li><a href="#org4712f28">动态适应工况，持续更新模型</a></li>
+<li><a href="#org89ea2a8">驾驶员是环境的一部分，不需要为驾驶员行为建模</a></li>
+<li><a href="#org09dbf50">可定义安全边界，不影响司机的安全驾驶</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5935cac">展望和风险</a>
+<li><a href="#org1bfbd61">数据要求</a>
 <ul>
-<li><a href="#org28e8387">量产</a></li>
-<li><a href="#orgcd5b10c">算法：</a>
+<li><a href="#orgd200fee">观测量需求</a>
 <ul>
-<li><a href="#org0886d88">利用RNN进行时间序列编码</a></li>
-<li><a href="#orgff7049b">离线记忆数据的有效检索和利用</a></li>
+<li><a href="#org2333f01">不需要导航数据，运动规划数据</a></li>
+<li><a href="#org7c55034">可观测性</a></li>
+</ul>
+</li>
+<li><a href="#org2b3e2d2">决策空间</a>
+<ul>
+<li><a href="#orgbdd0616">可控性:能有效影响能耗</a></li>
+<li><a href="#org4bae45d">电动力系统控制器参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6856583">机器学习框架</a>
+<ul>
+<li><a href="#org0469cbf">基于策略梯度方式</a></li>
+<li><a href="#orgfd00aa2">离线策略（Off Policy）:可提高样本利用效率</a></li>
+<li><a href="#org986ec80">记忆池收集经验</a></li>
+</ul>
+</li>
+<li><a href="#orgb6a7192">项目测试情况</a>
+<ul>
+<li><a href="#orgba24dd8">封闭园区测试</a></li>
+<li><a href="#org22d391d">开放道路测试</a></li>
+<li><a href="#org7693231">开放道路自由路况测试</a>
+<ul>
+<li><a href="#orgaeb5f85">预训练，冻结模型</a></li>
+</ul>
+</li>
+<li><a href="#org8ca3b84">分析</a>
+<ul>
+<li><a href="#orgb12a019">利用能量回收</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6e07040">展望和风险</a>
+<ul>
+<li><a href="#org012a357">量产</a></li>
+<li><a href="#org3a256cc">算法：</a>
+<ul>
+<li><a href="#org745da13">利用RNN进行时间序列编码</a></li>
+<li><a href="#org07e6cfd">离线记忆数据的有效检索和利用</a></li>
 </ul>
 </li>
 </ul>
@@ -131,215 +131,215 @@
 :ID:       70b95c80-879e-4328-9c67-d4b0074914a1
 </p>
 
-<div id="outline-container-org250bd50" class="outline-2">
-<h2 id="org250bd50">标题，主题</h2>
-<div class="outline-text-2" id="text-org250bd50">
+<div id="outline-container-orgb2a16e8" class="outline-2">
+<h2 id="orgb2a16e8">标题，主题</h2>
+<div class="outline-text-2" id="text-orgb2a16e8">
 </div>
-<div id="outline-container-org3ec96d0" class="outline-3">
-<h3 id="org3ec96d0">reward is enough</h3>
+<div id="outline-container-orgb14a70e" class="outline-3">
+<h3 id="orgb14a70e">reward is enough</h3>
 </div>
-<div id="outline-container-org98aeff0" class="outline-3">
-<h3 id="org98aeff0">基于大数据和奖励驱动的能源优化系统</h3>
-</div>
-</div>
-<div id="outline-container-orgfb74d11" class="outline-2">
-<h2 id="orgfb74d11">背景</h2>
-<div class="outline-text-2" id="text-orgfb74d11">
-</div>
-<div id="outline-container-org2601849" class="outline-3">
-<h3 id="org2601849">车辆能源优化系统</h3>
-<div class="outline-text-3" id="text-org2601849">
-</div>
-<div id="outline-container-org97fb63a" class="outline-4">
-<h4 id="org97fb63a">基于专家系统</h4>
-<div class="outline-text-4" id="text-org97fb63a">
-</div>
-<ul class="org-ul">
-<li><a id="orgbbbd9f4"></a>基于规则<br /></li>
-<li><a id="orge9fe972"></a>传统机器学习，需要划分场景<br /></li>
-<li><a id="org4b46d1e"></a>大数据应用效率低<br /></li>
-</ul>
-</div>
-<div id="outline-container-org165dffe" class="outline-4">
-<h4 id="org165dffe">通常应用场景是混动车动力系统最优分配比</h4>
+<div id="outline-container-org70f2ba6" class="outline-3">
+<h3 id="org70f2ba6">基于大数据和奖励驱动的能源优化系统</h3>
 </div>
 </div>
-<div id="outline-container-orge829d0e" class="outline-3">
-<h3 id="orge829d0e">强化学习</h3>
-<div class="outline-text-3" id="text-orge829d0e">
+<div id="outline-container-org6ec953a" class="outline-2">
+<h2 id="org6ec953a">背景</h2>
+<div class="outline-text-2" id="text-org6ec953a">
 </div>
-<div id="outline-container-org34098a2" class="outline-4">
-<h4 id="org34098a2">端到端，场景的切换是连续动态的</h4>
+<div id="outline-container-org32cbe19" class="outline-3">
+<h3 id="org32cbe19">车辆能源优化系统</h3>
+<div class="outline-text-3" id="text-org32cbe19">
 </div>
-<div id="outline-container-org010e72f" class="outline-4">
-<h4 id="org010e72f">适用于带噪声的高维度非平稳随机过程</h4>
-</div>
-<div id="outline-container-org2ef0637" class="outline-4">
-<h4 id="org2ef0637">随机闭环控制：可利用随机采样的结果及时更新策略</h4>
-</div>
-<div id="outline-container-orgd88ce13" class="outline-4">
-<h4 id="orgd88ce13">挑战</h4>
-<div class="outline-text-4" id="text-orgd88ce13">
+<div id="outline-container-org5447bc5" class="outline-4">
+<h4 id="org5447bc5">基于专家系统</h4>
+<div class="outline-text-4" id="text-org5447bc5">
 </div>
 <ul class="org-ul">
-<li><a id="orga17b6ed"></a>需要大量数据和规模化应用<br /></li>
-<li><a id="org12d46dd"></a>不容易泛化<br /></li>
-<li><a id="org62fc6aa"></a>样本使用效率低 OpenAI Five for Dota， 45000年<br /></li>
+<li><a id="org7a13363"></a>基于规则<br /></li>
+<li><a id="orgb449380"></a>传统机器学习，需要划分场景<br /></li>
+<li><a id="org4f57d56"></a>大数据应用效率低<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgefbf568" class="outline-4">
+<h4 id="orgefbf568">通常应用场景是混动车动力系统最优分配比</h4>
+</div>
+</div>
+<div id="outline-container-org408854e" class="outline-3">
+<h3 id="org408854e">强化学习</h3>
+<div class="outline-text-3" id="text-org408854e">
+</div>
+<div id="outline-container-orgbe0a631" class="outline-4">
+<h4 id="orgbe0a631">端到端，场景的切换是连续动态的</h4>
+</div>
+<div id="outline-container-orgaff6b1e" class="outline-4">
+<h4 id="orgaff6b1e">适用于带噪声的高维度非平稳随机过程</h4>
+</div>
+<div id="outline-container-org5a1342e" class="outline-4">
+<h4 id="org5a1342e">随机闭环控制：可利用随机采样的结果及时更新策略</h4>
+</div>
+<div id="outline-container-orgef8433a" class="outline-4">
+<h4 id="orgef8433a">挑战</h4>
+<div class="outline-text-4" id="text-orgef8433a">
+</div>
+<ul class="org-ul">
+<li><a id="orgb94f132"></a>需要大量数据和规模化应用<br /></li>
+<li><a id="org263975a"></a>不容易泛化<br /></li>
+<li><a id="org51fa6d4"></a>样本使用效率低 OpenAI Five for Dota， 45000年<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org618728b" class="outline-3">
-<h3 id="org618728b">真实物理世界的强化学习应用（除游戏和仿真领域）</h3>
-<div class="outline-text-3" id="text-org618728b">
+<div id="outline-container-org19cd1e7" class="outline-3">
+<h3 id="org19cd1e7">真实物理世界的强化学习应用（除游戏和仿真领域）</h3>
+<div class="outline-text-3" id="text-org19cd1e7">
 </div>
-<div id="outline-container-orgabef209" class="outline-4">
-<h4 id="orgabef209">谷歌计算中心空调系统</h4>
+<div id="outline-container-org925f322" class="outline-4">
+<h4 id="org925f322">谷歌计算中心空调系统</h4>
 </div>
-<div id="outline-container-org8156ecc" class="outline-4">
-<h4 id="org8156ecc">神经网络架构搜索NAS</h4>
+<div id="outline-container-org790d0b7" class="outline-4">
+<h4 id="org790d0b7">神经网络架构搜索NAS</h4>
 </div>
-<div id="outline-container-org90005eb" class="outline-4">
-<h4 id="org90005eb">集成电路芯片设计</h4>
+<div id="outline-container-org254b430" class="outline-4">
+<h4 id="org254b430">集成电路芯片设计</h4>
 </div>
-<div id="outline-container-orgba41460" class="outline-4">
-<h4 id="orgba41460">OpenAI Rubik's Cube</h4>
-</div>
-</div>
-</div>
-<div id="outline-container-org5eea0ec" class="outline-2">
-<h2 id="org5eea0ec">方案</h2>
-<div class="outline-text-2" id="text-org5eea0ec">
-</div>
-<div id="outline-container-org69abce9" class="outline-3">
-<h3 id="org69abce9">一型决策系统</h3>
-<div class="outline-text-3" id="text-org69abce9">
-</div>
-<div id="outline-container-org923dd5b" class="outline-4">
-<h4 id="org923dd5b">几秒内的短期决策，不考虑长期策略</h4>
-</div>
-<div id="outline-container-orgcfe0acc" class="outline-4">
-<h4 id="orgcfe0acc">避免高复杂度的长效策略优化</h4>
-</div>
-<div id="outline-container-org3c18a43" class="outline-4">
-<h4 id="org3c18a43">避免复杂的功劳归属问题（Credit Assignment)</h4>
-</div>
-</div>
-<div id="outline-container-org403136d" class="outline-3">
-<h3 id="org403136d">场景段（方式）</h3>
-<div class="outline-text-3" id="text-org403136d">
-</div>
-<div id="outline-container-orgc9a4c9b" class="outline-4">
-<h4 id="orgc9a4c9b">无限时间地平线也可以，但是需要大量的时间和长期测试才可能收集到能耗和场景的分布</h4>
-</div>
-<div id="outline-container-org55d6131" class="outline-4">
-<h4 id="org55d6131">分成场景段（episodic）方式有利于验证方案，也可以扩展</h4>
-</div>
-</div>
-<div id="outline-container-org1148278" class="outline-3">
-<h3 id="org1148278">优点</h3>
-<div class="outline-text-3" id="text-org1148278">
-</div>
-<div id="outline-container-orga1b8755" class="outline-4">
-<h4 id="orga1b8755">非监督学习，不需要标注，唯一的监督信号是能耗</h4>
-</div>
-<div id="outline-container-orgaf07394" class="outline-4">
-<h4 id="orgaf07394">从大数据中学习</h4>
-</div>
-<div id="outline-container-org78925a0" class="outline-4">
-<h4 id="org78925a0">动态适应工况，持续更新模型</h4>
-</div>
-<div id="outline-container-orgec20c28" class="outline-4">
-<h4 id="orgec20c28">驾驶员是环境的一部分，不需要为驾驶员行为建模</h4>
-</div>
-<div id="outline-container-org4359c51" class="outline-4">
-<h4 id="org4359c51">可定义安全边界，不影响司机的安全驾驶</h4>
+<div id="outline-container-orgdfcb81a" class="outline-4">
+<h4 id="orgdfcb81a">OpenAI Rubik's Cube</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-orga1e9a75" class="outline-2">
-<h2 id="orga1e9a75">数据要求</h2>
-<div class="outline-text-2" id="text-orga1e9a75">
+<div id="outline-container-org87d649d" class="outline-2">
+<h2 id="org87d649d">方案</h2>
+<div class="outline-text-2" id="text-org87d649d">
 </div>
-<div id="outline-container-org8f512ec" class="outline-3">
-<h3 id="org8f512ec">观测量需求</h3>
-<div class="outline-text-3" id="text-org8f512ec">
+<div id="outline-container-orge2380e1" class="outline-3">
+<h3 id="orge2380e1">一型决策系统</h3>
+<div class="outline-text-3" id="text-orge2380e1">
 </div>
-<div id="outline-container-org2020e49" class="outline-4">
-<h4 id="org2020e49">不需要导航数据，运动规划数据</h4>
+<div id="outline-container-orgd9f45e6" class="outline-4">
+<h4 id="orgd9f45e6">几秒内的短期决策，不考虑长期策略</h4>
 </div>
-<div id="outline-container-org65fb7f0" class="outline-4">
-<h4 id="org65fb7f0">可观测性</h4>
+<div id="outline-container-org2baa3bb" class="outline-4">
+<h4 id="org2baa3bb">避免高复杂度的长效策略优化</h4>
 </div>
-</div>
-<div id="outline-container-org80d039a" class="outline-3">
-<h3 id="org80d039a">决策空间</h3>
-<div class="outline-text-3" id="text-org80d039a">
-</div>
-<div id="outline-container-org703105e" class="outline-4">
-<h4 id="org703105e">可控性:能有效影响能耗</h4>
-</div>
-<div id="outline-container-orgfa5b602" class="outline-4">
-<h4 id="orgfa5b602">电动力系统控制器参数</h4>
+<div id="outline-container-org0dbc921" class="outline-4">
+<h4 id="org0dbc921">避免复杂的功劳归属问题（Credit Assignment)</h4>
 </div>
 </div>
+<div id="outline-container-org28fd09b" class="outline-3">
+<h3 id="org28fd09b">场景段（方式）</h3>
+<div class="outline-text-3" id="text-org28fd09b">
 </div>
-<div id="outline-container-orge94b6a3" class="outline-2">
-<h2 id="orge94b6a3">机器学习框架</h2>
-<div class="outline-text-2" id="text-orge94b6a3">
+<div id="outline-container-org9caf1bd" class="outline-4">
+<h4 id="org9caf1bd">无限时间地平线也可以，但是需要大量的时间和长期测试才可能收集到能耗和场景的分布</h4>
 </div>
-<div id="outline-container-orgb4d285c" class="outline-3">
-<h3 id="orgb4d285c">基于策略梯度方式</h3>
-</div>
-<div id="outline-container-org8988c33" class="outline-3">
-<h3 id="org8988c33">离线策略（Off Policy）:可提高样本利用效率</h3>
-</div>
-<div id="outline-container-orgfbb5dfb" class="outline-3">
-<h3 id="orgfbb5dfb">记忆池收集经验</h3>
+<div id="outline-container-org3c88cb2" class="outline-4">
+<h4 id="org3c88cb2">分成场景段（episodic）方式有利于验证方案，也可以扩展</h4>
 </div>
 </div>
-<div id="outline-container-org5c6e8ce" class="outline-2">
-<h2 id="org5c6e8ce">项目测试情况</h2>
-<div class="outline-text-2" id="text-org5c6e8ce">
+<div id="outline-container-org2f105c2" class="outline-3">
+<h3 id="org2f105c2">优点</h3>
+<div class="outline-text-3" id="text-org2f105c2">
 </div>
-<div id="outline-container-orgc64d572" class="outline-3">
-<h3 id="orgc64d572">封闭园区测试</h3>
+<div id="outline-container-org7a4fef5" class="outline-4">
+<h4 id="org7a4fef5">非监督学习，不需要标注，唯一的监督信号是能耗</h4>
 </div>
-<div id="outline-container-org48c776d" class="outline-3">
-<h3 id="org48c776d">开放道路测试</h3>
+<div id="outline-container-org40b642c" class="outline-4">
+<h4 id="org40b642c">从大数据中学习</h4>
 </div>
-<div id="outline-container-orgb6e28b5" class="outline-3">
-<h3 id="orgb6e28b5">开放道路自由路况测试</h3>
-<div class="outline-text-3" id="text-orgb6e28b5">
+<div id="outline-container-org4712f28" class="outline-4">
+<h4 id="org4712f28">动态适应工况，持续更新模型</h4>
 </div>
-<div id="outline-container-org119ceef" class="outline-4">
-<h4 id="org119ceef">预训练，冻结模型</h4>
+<div id="outline-container-org89ea2a8" class="outline-4">
+<h4 id="org89ea2a8">驾驶员是环境的一部分，不需要为驾驶员行为建模</h4>
 </div>
-</div>
-<div id="outline-container-org073c723" class="outline-3">
-<h3 id="org073c723">分析</h3>
-<div class="outline-text-3" id="text-org073c723">
-</div>
-<div id="outline-container-org88eaca0" class="outline-4">
-<h4 id="org88eaca0">利用能量回收</h4>
+<div id="outline-container-org09dbf50" class="outline-4">
+<h4 id="org09dbf50">可定义安全边界，不影响司机的安全驾驶</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org5935cac" class="outline-2">
-<h2 id="org5935cac">展望和风险</h2>
-<div class="outline-text-2" id="text-org5935cac">
+<div id="outline-container-org1bfbd61" class="outline-2">
+<h2 id="org1bfbd61">数据要求</h2>
+<div class="outline-text-2" id="text-org1bfbd61">
 </div>
-<div id="outline-container-org28e8387" class="outline-3">
-<h3 id="org28e8387">量产</h3>
+<div id="outline-container-orgd200fee" class="outline-3">
+<h3 id="orgd200fee">观测量需求</h3>
+<div class="outline-text-3" id="text-orgd200fee">
 </div>
-<div id="outline-container-orgcd5b10c" class="outline-3">
-<h3 id="orgcd5b10c">算法：</h3>
-<div class="outline-text-3" id="text-orgcd5b10c">
+<div id="outline-container-org2333f01" class="outline-4">
+<h4 id="org2333f01">不需要导航数据，运动规划数据</h4>
 </div>
-<div id="outline-container-org0886d88" class="outline-4">
-<h4 id="org0886d88">利用RNN进行时间序列编码</h4>
+<div id="outline-container-org7c55034" class="outline-4">
+<h4 id="org7c55034">可观测性</h4>
 </div>
-<div id="outline-container-orgff7049b" class="outline-4">
-<h4 id="orgff7049b">离线记忆数据的有效检索和利用</h4>
+</div>
+<div id="outline-container-org2b3e2d2" class="outline-3">
+<h3 id="org2b3e2d2">决策空间</h3>
+<div class="outline-text-3" id="text-org2b3e2d2">
+</div>
+<div id="outline-container-orgbdd0616" class="outline-4">
+<h4 id="orgbdd0616">可控性:能有效影响能耗</h4>
+</div>
+<div id="outline-container-org4bae45d" class="outline-4">
+<h4 id="org4bae45d">电动力系统控制器参数</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org6856583" class="outline-2">
+<h2 id="org6856583">机器学习框架</h2>
+<div class="outline-text-2" id="text-org6856583">
+</div>
+<div id="outline-container-org0469cbf" class="outline-3">
+<h3 id="org0469cbf">基于策略梯度方式</h3>
+</div>
+<div id="outline-container-orgfd00aa2" class="outline-3">
+<h3 id="orgfd00aa2">离线策略（Off Policy）:可提高样本利用效率</h3>
+</div>
+<div id="outline-container-org986ec80" class="outline-3">
+<h3 id="org986ec80">记忆池收集经验</h3>
+</div>
+</div>
+<div id="outline-container-orgb6a7192" class="outline-2">
+<h2 id="orgb6a7192">项目测试情况</h2>
+<div class="outline-text-2" id="text-orgb6a7192">
+</div>
+<div id="outline-container-orgba24dd8" class="outline-3">
+<h3 id="orgba24dd8">封闭园区测试</h3>
+</div>
+<div id="outline-container-org22d391d" class="outline-3">
+<h3 id="org22d391d">开放道路测试</h3>
+</div>
+<div id="outline-container-org7693231" class="outline-3">
+<h3 id="org7693231">开放道路自由路况测试</h3>
+<div class="outline-text-3" id="text-org7693231">
+</div>
+<div id="outline-container-orgaeb5f85" class="outline-4">
+<h4 id="orgaeb5f85">预训练，冻结模型</h4>
+</div>
+</div>
+<div id="outline-container-org8ca3b84" class="outline-3">
+<h3 id="org8ca3b84">分析</h3>
+<div class="outline-text-3" id="text-org8ca3b84">
+</div>
+<div id="outline-container-orgb12a019" class="outline-4">
+<h4 id="orgb12a019">利用能量回收</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org6e07040" class="outline-2">
+<h2 id="org6e07040">展望和风险</h2>
+<div class="outline-text-2" id="text-org6e07040">
+</div>
+<div id="outline-container-org012a357" class="outline-3">
+<h3 id="org012a357">量产</h3>
+</div>
+<div id="outline-container-org3a256cc" class="outline-3">
+<h3 id="org3a256cc">算法：</h3>
+<div class="outline-text-3" id="text-org3a256cc">
+</div>
+<div id="outline-container-org745da13" class="outline-4">
+<h4 id="org745da13">利用RNN进行时间序列编码</h4>
+</div>
+<div id="outline-container-org07e6cfd" class="outline-4">
+<h4 id="org07e6cfd">离线记忆数据的有效检索和利用</h4>
 </div>
 </div>
 </div>

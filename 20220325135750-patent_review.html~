@@ -1,0 +1,4088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>patent review</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">patent review</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org8a86043">外观专利</a></li>
+<li><a href="#org3b7417e"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-25 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org96bdcd8">专家</a></li>
+<li><a href="#orge4a1757">刘守银</a>
+<ul>
+<li><a href="#org801189c">动力电池，非悬置</a></li>
+<li><a href="#org327a2d2">直接连接，消除震动</a></li>
+<li><a href="#org4aff1fb">量产结构，主要是上下连接支架；（实用新型）</a></li>
+<li><a href="#org6174037">张向超：</a></li>
+<li><a href="#org795d398">通过</a></li>
+</ul>
+</li>
+<li><a href="#org015f5ea">王洪帅</a>
+<ul>
+<li><a href="#org140ecbe">冗余线控制动</a></li>
+<li><a href="#org610b1c3">全冗余</a></li>
+<li><a href="#orge36707f">双通道备份阀</a></li>
+</ul>
+</li>
+<li><a href="#orga570824">忻斌健</a>
+<ul>
+<li><a href="#orge6a7c8b">cross check;</a></li>
+<li><a href="#orge48d677">王振兴：</a></li>
+<li><a href="#org890663d">表决通过</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4f9602d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-01 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgc4d4ada">鲁刚： 无焊接电池模组</a>
+<ul>
+<li><a href="#org1f4918a">创新点</a></li>
+<li><a href="#org8766cdd">表决</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7c8e475"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-08 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgff58d9c">车门玻璃</a>
+<ul>
+<li><a href="#org16351a2">考斯特</a></li>
+<li><a href="#orgf8cf46f">透光面积变大</a></li>
+<li><a href="#org4688804">加工冲压可行性变好，可制造性</a></li>
+<li><a href="#orgbbf1328">外观</a></li>
+<li><a href="#org728bd0c">支撑，非强度载体，</a></li>
+<li><a href="#orga0c75bb">用于 iC1</a></li>
+<li><a href="#org12acd0f">实用新型</a></li>
+</ul>
+</li>
+<li><a href="#orge0bf59d">限位器设计方法（stopper）</a>
+<ul>
+<li><a href="#org66c9aa8">仿真怎么做的，命令组合</a></li>
+<li><a href="#org8dfeca2">仅用于限位器，特殊组合</a></li>
+<li><a href="#org1f7b933">王博士：检查干涉，以前就有，没有写专利；易得易见，不能自动推定</a></li>
+<li><a href="#org670d5c0">张向超：不太好摸索。自己摸索比较困难。</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org948d992"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org9390504">郭永庆， IC1</a>
+<ul>
+<li><a href="#org18eeff9">外饰</a></li>
+<li><a href="#org82bf46e">内饰</a></li>
+<li><a href="#orgaf11c58">建议增加玩具车的造型专利</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org891b9c9"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-08-19 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org2c6566b">孙钦云</a>
+<ul>
+<li><a href="#org8817b45">冗余线控制动</a></li>
+<li><a href="#org9c5ee1e">李嘉鑫</a></li>
+<li><a href="#orgae8106d">郑重</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2f82e65"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-02 Fri&gt;</span></span></a>
+<ul>
+<li>
+<ul>
+<li><a href="#org75844a8">周芳连</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org12d7641"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-16 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgc91d479">江阴试验部 焦少斌</a>
+<ul>
+<li><a href="#org50c6561">创新点</a></li>
+<li><a href="#org04513be">评论</a></li>
+</ul>
+</li>
+<li><a href="#orgac5e9df">车辆工程 郭永庆</a></li>
+<li><a href="#org7d4a4bf">智能系统部 马亮</a>
+<ul>
+<li><a href="#org7fe5cd3">创新点</a></li>
+<li><a href="#orgbce7e26">评论</a></li>
+<li><a href="#orgbce9fb6">创新点</a></li>
+<li><a href="#org10bc79f">评论</a></li>
+</ul>
+</li>
+<li><a href="#org40117b6">智能系统部 赵家琦</a>
+<ul>
+<li><a href="#org6b365e1">创新点</a></li>
+<li><a href="#orgdd648ff">评论</a></li>
+<li><a href="#org75b4284">创新点</a></li>
+<li><a href="#org1f739e6">评论</a></li>
+<li><a href="#orgd26f04f">创新点</a></li>
+<li><a href="#org7dc5ca0">评论</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6986b3a">重卡专利明年：11 月份。</a>
+<ul>
+<li><a href="#orgb8e4e2c">外观优先</a></li>
+</ul>
+</li>
+<li><a href="#org2f8971c"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-23 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org3de772c">车辆工程 郭永庆</a>
+<ul>
+<li><a href="#orgd978215">内审材料&#x2013;一种摄像头护罩结构</a></li>
+<li><a href="#orgb89ef2b">内审材料&#x2013;一种前下防护装置.pptx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org36e0a92">智能系统 赵家琦</a>
+<ul>
+<li><a href="#orgeaaba55">一种挂车角度传感器.pptx</a></li>
+</ul>
+</li>
+<li><a href="#orge37fe2d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-28 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgb5859d9">王洪帅</a>
+<ul>
+<li><a href="#org478ad9d">多源冗余转向</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgce3cd19"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-10-14 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orge4f8691">张敏</a>
+<ul>
+<li><a href="#orgaf9224f">U 型螺栓仿真计算中的模拟方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org66fea00"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-11 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org15a7526">电动力 李兆东</a></li>
+<li><a href="#org61b4a84">电动力 刘宝同</a></li>
+</ul>
+</li>
+<li><a href="#orgf4f490d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org3364a41">朱诚诚</a>
+<ul>
+<li><a href="#org8a70d2e">ic1 换挡旋钮</a></li>
+<li><a href="#org5fbaa59">刘宝同</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga87d018"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-25 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org134f2d2">陈庆幸</a>
+<ul>
+<li><a href="#orga3062d2">增城市电动车热管理模式</a></li>
+</ul>
+</li>
+<li><a href="#orgc476917">韩志永</a>
+<ul>
+<li><a href="#orgd6a9e74">连接支架</a></li>
+<li><a href="#org060807b">变截面车架</a></li>
+<li><a href="#orgc34614e">一体化车架</a></li>
+<li><a href="#org272d5f4">电动商用车模块化平台</a></li>
+<li><a href="#org1ae9c48">是否可综合多个实用新型成为一个发明</a></li>
+</ul>
+</li>
+<li><a href="#org355b41d">冯天硕</a>
+<ul>
+<li><a href="#orgc6f4787">车道线数据预处理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb80d035"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-09 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgaa0e400">何为</a>
+<ul>
+<li><a href="#org7fa4c9f">纯电动底盘</a></li>
+<li><a href="#orgce8f4bb">增程式混合动力牵引车底盘</a></li>
+</ul>
+</li>
+<li><a href="#org65c1948">郭永庆</a>
+<ul>
+<li><a href="#orgf2118eb">可伸缩出风口</a></li>
+<li><a href="#org42e0a60">上车拉手结构</a></li>
+</ul>
+</li>
+<li><a href="#org25835f9">张玉峰</a>
+<ul>
+<li><a href="#org27ac925">iC1</a></li>
+<li><a href="#org01080c4">整体快换，液冷，高压快换</a></li>
+<li><a href="#org71c2179">045c ic1</a></li>
+<li><a href="#orgaf43ef0">车架侧，配套电池侧</a></li>
+</ul>
+</li>
+<li><a href="#org2e6935e">何雨</a></li>
+<li><a href="#org010d69f">陈洋</a></li>
+</ul>
+</li>
+<li><a href="#org33082a5"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-16 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org99a4aaa">樊星</a>
+<ul>
+<li><a href="#org8cdf92b">两孔高压连接器 （实用新型）</a></li>
+</ul>
+</li>
+<li><a href="#orgd818217">付建鹏</a>
+<ul>
+<li><a href="#org2014824">abs 传感器前桥</a></li>
+<li><a href="#org5ce118a">转向布置方案</a></li>
+<li><a href="#org77ba52c">长度调节机构</a></li>
+</ul>
+</li>
+<li><a href="#org5d3f5f9">韩一帆</a>
+<ul>
+<li><a href="#org7006386">轻卡布置结构</a></li>
+<li><a href="#org125b249">低地板驾驶室</a></li>
+</ul>
+</li>
+<li><a href="#orge574c93">贺炼丹</a>
+<ul>
+<li><a href="#orgea08efc">线控转向性能测试</a></li>
+<li><a href="#org15533ca">线控平台的测试方案。</a></li>
+<li><a href="#org866fdcb">重卡少</a></li>
+</ul>
+</li>
+<li><a href="#orgbe595ab">韩彦潇</a>
+<ul>
+<li><a href="#org1bc4c87">制动脚感模拟器 1</a></li>
+<li><a href="#org947a394">傅工：</a></li>
+<li><a href="#org392c4fd">制动脚感模拟器 2</a></li>
+</ul>
+</li>
+<li><a href="#orgac36b95">忻斌健</a>
+<ul>
+<li><a href="#org62386ed">增强检测</a></li>
+</ul>
+</li>
+<li><a href="#org5b9e936">刘豪</a>
+<ul>
+<li><a href="#org321b953">残值评估方法</a></li>
+<li><a href="#orgac16b41">车重估计方法</a></li>
+<li><a href="#orgcfd2017">充电推荐系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf363f58"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-06 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org4fb69f1">徐衡</a>
+<ul>
+<li><a href="#orge8eca34">基于实际采集数据</a></li>
+<li><a href="#org0cf9c45">仿真可用，可设置仿真开始时间：只能仿真</a></li>
+<li><a href="#org0baa07a">实车测试可用</a></li>
+<li><a href="#org312dd2c">仿真方案非保护点</a></li>
+<li><a href="#orgd133cc4">仿真，可视化（仿真+测试）</a></li>
+<li><a href="#orgfca34b8">通过</a></li>
+</ul>
+</li>
+<li><a href="#orga86cdd7">问靖</a>
+<ul>
+<li><a href="#org90bf203">向下 47 度，25 度</a></li>
+<li><a href="#orgd8f988b">标定:安装固定，外参标定前的预处理</a></li>
+<li><a href="#orgb494c78">有查重？安装方法</a></li>
+</ul>
+</li>
+<li><a href="#org310f1a1">赵家琦</a>
+<ul>
+<li><a href="#orgf5a71b0">N port</a></li>
+<li><a href="#org48b9590">电源，信号</a></li>
+<li><a href="#org0a7fd2e">可进行校验？</a></li>
+<li><a href="#org12d6a1c">接口标准？行业</a></li>
+<li><a href="#org12a5210">接口：</a></li>
+<li><a href="#orgcbdb40b">充电，usb</a></li>
+</ul>
+</li>
+<li><a href="#orgd775f28">马建伟</a>
+<ul>
+<li><a href="#org74de7b1">不需要</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd5fe3d7"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-13 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org7f86357">张建伟</a>
+<ul>
+<li><a href="#org023e530">安装重型轮胎的小车</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org93f48a1"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-18 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgf129bfe">顾宇庆</a>
+<ul>
+<li><a href="#org9130f85">三个工件，行车吊车叉车&#x2013;&gt;一个工件</a></li>
+<li><a href="#org5b09236">堆垛装置</a></li>
+<li><a href="#org8e2235c">三个自由度</a></li>
+<li><a href="#org7f79244">宋工：</a></li>
+<li><a href="#org97bfe99">产线，换电站，两种场景</a></li>
+<li><a href="#org96de4e3">供应商</a></li>
+<li><a href="#org2fcf5f7">实用新型</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org47db12f"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-18 Wed&gt;</span></span></a></li>
+<li><a href="#org1f18b90"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-10 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org44192f2">周芳连：</a>
+<ul>
+<li><a href="#org1bf3767">评论</a></li>
+</ul>
+</li>
+<li><a href="#org73aff54">鲁刚</a></li>
+</ul>
+</li>
+<li><a href="#org3e259fe"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-24 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org1aba3d8">郭永庆</a></li>
+<li><a href="#org9812242">刘宝同</a>
+<ul>
+<li><a href="#org02dfc6d">创新点</a></li>
+<li><a href="#orged24af0">沈迪</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd6e46aa"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-31 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgb19df4a">郑重</a>
+<ul>
+<li><a href="#org0867795">浮动换电支架</a></li>
+</ul>
+</li>
+<li><a href="#org2b7b048">郭永庆</a>
+<ul>
+<li><a href="#org7ff1200">车门玻璃装配不均匀</a></li>
+<li><a href="#orgba29fca">前挡玻璃弧度不正</a></li>
+<li><a href="#orge2753e3">抽查？</a></li>
+<li><a href="#org9b95d91">向超</a></li>
+</ul>
+</li>
+<li><a href="#org072dbea">刘宝同</a>
+<ul>
+<li><a href="#orgfa80a8e">解决的问题</a></li>
+<li><a href="#org844250a">效益</a></li>
+<li><a href="#org6f50606">技术点</a></li>
+<li><a href="#orgeb98aec">创新点</a></li>
+<li><a href="#orge5ece18">CAN 网络管理方案</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb693c3f"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-14 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org8b6dd08">企业治理及工业化 产品与项目管理 路则鹏</a>
+<ul>
+<li><a href="#orge85b2e4">前晨专利内审会模板-20230410-车载显示屏的应用功能用户界面.pptx</a></li>
+</ul>
+</li>
+<li><a href="#orgdbcba15">企业治理及工业化 产品与项目管理 梁博之</a>
+<ul>
+<li><a href="#orga88a8a0">轻卡换电站 - 外观专利.pptx</a></li>
+</ul>
+</li>
+<li><a href="#org8cc00d5">整车工程 车身与电气 郭永庆</a>
+<ul>
+<li><a href="#org796be0e">内审材料&#x2013;一种安全带导向环结构.pptx</a></li>
+<li><a href="#org929556d">内审材料&#x2013;一种汽车洗涤壶装置.pptx</a></li>
+<li><a href="#orgb8bf33d">内审材料–一种前风窗玻璃限位结构.pptx</a></li>
+</ul>
+</li>
+<li><a href="#org2e18d49">江阴试验部 焦少斌</a>
+<ul>
+<li><a href="#org8a20d7d">初版<sub>一种换电站的换电系统.pptx</sub></a></li>
+<li><a href="#org6b43f95">初版<sub>一种换电站的换电装置换电方法.pptx</sub></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3a2cb6d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-21 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org8ca5050">电动力及电子电器 沈迪</a>
+<ul>
+<li><a href="#orge4240db">电池系统+外观专利申请<sub>沈迪.doc</sub></a></li>
+<li><a href="#org9cf1a95">换电电池系统+外观专利申请<sub>沈迪.doc</sub></a></li>
+</ul>
+</li>
+<li><a href="#org0d59f12">企业治理及工业化 产品与项目管理 梁博之</a>
+<ul>
+<li><a href="#org5e0385a">轻卡换电站 - 外观专利.pptx</a></li>
+</ul>
+</li>
+<li><a href="#orgbba623c">整车工程 车身与电气 郭永庆</a>
+<ul>
+<li><a href="#orgf37db1b">内审材料&#x2013;一种滑门对加油口盖的锁止结构.pptx</a></li>
+<li><a href="#org4e84d6b">内审材料&#x2013;一种加油口盖限制滑门开启的结构.pptx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org734da5c"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-07-07 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org3632bdf">整车工程 车身与电气 郭永庆</a>
+<ul>
+<li><a href="#orgde1cfd5">内审材料&#x2013;车门外开把手.pptx</a></li>
+<li><a href="#org723921d">内审材料&#x2013;外水切.pptx</a></li>
+<li><a href="#org4422b77">内审材料&#x2013;隐藏式外水切.pptx</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org134b005"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-07-14 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#org23751e6">电动力工程 电池系统 周芳连</a>
+<ul>
+<li><a href="#org5a09d30">一种基于 simulink 模型的行车电池异常状态模拟以及验证方法</a></li>
+<li><a href="#org0423bcc">一种用于模拟电池系统行车异常数据的特制模组以及测试方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9590b55"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-09-11 Mon&gt;</span></span></a>
+<ul>
+<li><a href="#org4166c36">郭永庆</a>
+<ul>
+<li><a href="#orgceab2af">钣金件间隙测量装置</a></li>
+<li><a href="#orgd544126">一种钣金测量仪器</a></li>
+<li><a href="#org48e66e9">玻璃成像装置</a></li>
+<li><a href="#orga490c2b">车用暖水壶</a></li>
+<li><a href="#org07d2349">门洞密封条</a></li>
+<li><a href="#orga6b812b">后排后视镜</a></li>
+<li><a href="#orgdc3930d">仪表板结构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org8a86043" class="outline-2">
+<h2 id="org8a86043">外观专利</h2>
+<div class="outline-text-2" id="text-org8a86043">
+<p>
+外观，没有弧度，
+车上的部件
+车辆外观：六视图，设计要素，局部
+视觉上，经验，审查员。
+参考车型？
+</p>
+
+<p>
+挖掘车型升级
+</p>
+
+
+<p>
+其他零部件？六视图，
+</p>
+
+<p>
+交互界面
+人机界面：人机交互，
+参考方案？
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b7417e" class="outline-2">
+<h2 id="org3b7417e"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-03-25 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org3b7417e">
+</div>
+<div id="outline-container-org96bdcd8" class="outline-3">
+<h3 id="org96bdcd8">专家</h3>
+</div>
+
+
+<div id="outline-container-orge4a1757" class="outline-3">
+<h3 id="orge4a1757">刘守银</h3>
+<div class="outline-text-3" id="text-orge4a1757">
+</div>
+<div id="outline-container-org801189c" class="outline-4">
+<h4 id="org801189c">动力电池，非悬置</h4>
+</div>
+<div id="outline-container-org327a2d2" class="outline-4">
+<h4 id="org327a2d2">直接连接，消除震动</h4>
+</div>
+<div id="outline-container-org4aff1fb" class="outline-4">
+<h4 id="org4aff1fb">量产结构，主要是上下连接支架；（实用新型）</h4>
+</div>
+<div id="outline-container-org6174037" class="outline-4">
+<h4 id="org6174037">张向超：</h4>
+<div class="outline-text-4" id="text-org6174037">
+</div>
+<ul class="org-ul">
+<li><a id="orgff9728f"></a>快换如何实现，比较熟悉，电动力那里定位盒还有定位柱，需要注意对一下。<br /></li>
+<li><a id="org1d768aa"></a>快换过程,拆换过程；<br /></li>
+<li><a id="orgdbb7210"></a>斜锥头<br /></li>
+</ul>
+</div>
+<div id="outline-container-org795d398" class="outline-4">
+<h4 id="org795d398">通过</h4>
+</div>
+</div>
+<div id="outline-container-org015f5ea" class="outline-3">
+<h3 id="org015f5ea">王洪帅</h3>
+<div class="outline-text-3" id="text-org015f5ea">
+</div>
+<div id="outline-container-org140ecbe" class="outline-4">
+<h4 id="org140ecbe">冗余线控制动</h4>
+</div>
+<div id="outline-container-org610b1c3" class="outline-4">
+<h4 id="org610b1c3">全冗余</h4>
+</div>
+<div id="outline-container-orge36707f" class="outline-4">
+<h4 id="orge36707f">双通道备份阀</h4>
+<div class="outline-text-4" id="text-orge36707f">
+</div>
+<ul class="org-ul">
+<li><a id="orgf12d0b2"></a>独立供电<br /></li>
+<li><a id="org6832e73"></a>轮速传感器<br /></li>
+<li><a id="org2ffe780"></a>执行层面<br /></li>
+<li><a id="org8fd1f5d"></a>L4 制动，epb，执行器<br /></li>
+<li><a id="orgc242036"></a>控制逻辑<br /></li>
+<li><a id="orgb0961b8"></a>已经查重<br /></li>
+<li><a id="org3830fbd"></a>表决通过<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga570824" class="outline-3">
+<h3 id="orga570824">忻斌健</h3>
+<div class="outline-text-3" id="text-orga570824">
+</div>
+<div id="outline-container-orge6a7c8b" class="outline-4">
+<h4 id="orge6a7c8b">cross check;</h4>
+</div>
+<div id="outline-container-orge48d677" class="outline-4">
+<h4 id="orge48d677">王振兴：</h4>
+<div class="outline-text-4" id="text-orge48d677">
+</div>
+<ul class="org-ul">
+<li><a id="orgcf6f68b"></a>方法比较宽泛，<br /></li>
+</ul>
+</div>
+<div id="outline-container-org890663d" class="outline-4">
+<h4 id="org890663d">表决通过</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f9602d" class="outline-2">
+<h2 id="org4f9602d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-01 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org4f9602d">
+</div>
+<div id="outline-container-orgc4d4ada" class="outline-3">
+<h3 id="orgc4d4ada">鲁刚： 无焊接电池模组</h3>
+<div class="outline-text-3" id="text-orgc4d4ada">
+</div>
+<div id="outline-container-org1f4918a" class="outline-4">
+<h4 id="org1f4918a">创新点</h4>
+<div class="outline-text-4" id="text-org1f4918a">
+</div>
+<ul class="org-ul">
+<li><a id="org3ddef92"></a>电芯级别安装<br /></li>
+<li><a id="orgff5ef49"></a>铜排：防止脱落，保证接触；<br /></li>
+<li><a id="org56f2a77"></a>电芯上有座子铝型材；<br /></li>
+<li><a id="orga42c290"></a>整体高度增加一点<br /></li>
+<li><a id="org35c4000"></a>需要改电芯结构<br /></li>
+<li><a id="orgcbc3d80"></a>可靠性，车规级<br /></li>
+<li><a id="org7ed254a"></a>耐久性？<br /></li>
+</ul>
+</div>
+<div id="outline-container-org8766cdd" class="outline-4">
+<h4 id="org8766cdd">表决</h4>
+<div class="outline-text-4" id="text-org8766cdd">
+</div>
+<ul class="org-ul">
+<li><a id="org509d91f"></a>通过<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7c8e475" class="outline-2">
+<h2 id="org7c8e475"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-08 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org7c8e475">
+</div>
+<div id="outline-container-orgff58d9c" class="outline-3">
+<h3 id="orgff58d9c">车门玻璃</h3>
+<div class="outline-text-3" id="text-orgff58d9c">
+</div>
+<div id="outline-container-org16351a2" class="outline-4">
+<h4 id="org16351a2">考斯特</h4>
+</div>
+<div id="outline-container-orgf8cf46f" class="outline-4">
+<h4 id="orgf8cf46f">透光面积变大</h4>
+</div>
+<div id="outline-container-org4688804" class="outline-4">
+<h4 id="org4688804">加工冲压可行性变好，可制造性</h4>
+</div>
+<div id="outline-container-orgbbf1328" class="outline-4">
+<h4 id="orgbbf1328">外观</h4>
+</div>
+<div id="outline-container-org728bd0c" class="outline-4">
+<h4 id="org728bd0c">支撑，非强度载体，</h4>
+</div>
+<div id="outline-container-orga0c75bb" class="outline-4">
+<h4 id="orga0c75bb">用于 iC1</h4>
+</div>
+<div id="outline-container-org12acd0f" class="outline-4">
+<h4 id="org12acd0f">实用新型</h4>
+</div>
+</div>
+<div id="outline-container-orge0bf59d" class="outline-3">
+<h3 id="orge0bf59d">限位器设计方法（stopper）</h3>
+<div class="outline-text-3" id="text-orge0bf59d">
+</div>
+<div id="outline-container-org66c9aa8" class="outline-4">
+<h4 id="org66c9aa8">仿真怎么做的，命令组合</h4>
+</div>
+<div id="outline-container-org8dfeca2" class="outline-4">
+<h4 id="org8dfeca2">仅用于限位器，特殊组合</h4>
+</div>
+<div id="outline-container-org1f7b933" class="outline-4">
+<h4 id="org1f7b933">王博士：检查干涉，以前就有，没有写专利；易得易见，不能自动推定</h4>
+</div>
+<div id="outline-container-org670d5c0" class="outline-4">
+<h4 id="org670d5c0">张向超：不太好摸索。自己摸索比较困难。</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org948d992" class="outline-2">
+<h2 id="org948d992"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-07-22 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org948d992">
+</div>
+<div id="outline-container-org9390504" class="outline-3">
+<h3 id="org9390504">郭永庆， IC1</h3>
+<div class="outline-text-3" id="text-org9390504">
+</div>
+<div id="outline-container-org18eeff9" class="outline-4">
+<h4 id="org18eeff9">外饰</h4>
+<div class="outline-text-4" id="text-org18eeff9">
+</div>
+<ul class="org-ul">
+<li><a id="org74139c3"></a>与展车有差异，不大；<br /></li>
+<li><a id="org445b652"></a>带线条（黑白灰），需要正视图；<br /></li>
+<li><a id="orgcea060d"></a>图片的分辨率的要求（300-600 dpi)<br /></li>
+<li><a id="orgb57c1bd"></a>窗玻璃（作为实用新型已申）的造型已含<br /></li>
+</ul>
+</div>
+<div id="outline-container-org82bf46e" class="outline-4">
+<h4 id="org82bf46e">内饰</h4>
+<div class="outline-text-4" id="text-org82bf46e">
+</div>
+<ul class="org-ul">
+<li><a id="org1b7d6f4"></a>图片说明创新点<br /></li>
+<li><a id="orgd131a4f"></a>用局部零件；<br /></li>
+<li><a id="org82609c0"></a>防止别人侵权；<br /></li>
+<li><a id="org08dff71"></a>所有零件都是重新开模，重新设计<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgaf11c58" class="outline-4">
+<h4 id="orgaf11c58">建议增加玩具车的造型专利</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org891b9c9" class="outline-2">
+<h2 id="org891b9c9"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-08-19 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org891b9c9">
+</div>
+<div id="outline-container-org2c6566b" class="outline-3">
+<h3 id="org2c6566b">孙钦云</h3>
+<div class="outline-text-3" id="text-org2c6566b">
+</div>
+<div id="outline-container-org8817b45" class="outline-4">
+<h4 id="org8817b45">冗余线控制动</h4>
+<div class="outline-text-4" id="text-org8817b45">
+</div>
+<ul class="org-ul">
+<li><a id="org42bb709"></a>并联&#x2013;&gt;串联，科密，授权<br /></li>
+<li><a id="orgfeb8a58"></a>储气筒<br /></li>
+</ul>
+</div>
+<div id="outline-container-org9c5ee1e" class="outline-4">
+<h4 id="org9c5ee1e">李嘉鑫</h4>
+<div class="outline-text-4" id="text-org9c5ee1e">
+</div>
+<ul class="org-ul">
+<li><a id="orgef46b01"></a>动力电池液冷板<br />
+<ul class="org-ul">
+<li><a id="orgfdf45f8"></a>焊接工艺<br /></li>
+<li><a id="org0566776"></a>两层流道板，增强<br /></li>
+<li><a id="orgfbac9fa"></a>微孔阵列<br /></li>
+<li><a id="orgf32d0a3"></a>加工工艺：冲压，焊接；<br /></li>
+<li><a id="orga16ffd8"></a>与两层传统液冷板叠加相比：形状配合，微孔阵列，<br /></li>
+<li><a id="org2a52baf"></a>焊接需要<br /></li>
+</ul>
+</li>
+<li><a id="orgb2ad9b5"></a>沈迪：<br />
+<ul class="org-ul">
+<li><a id="org1323dcb"></a>厚度？厚度有相应增加，需要考虑和原单层板相当。4mm &#x2013;&gt; 2mm， 2.5mm，流道体积增加，<br /></li>
+<li><a id="orgd3e6da9"></a>流阻对比？和单层板相当<br /></li>
+<li><a id="org1424dde"></a>重量增加，需要减少<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgae8106d" class="outline-4">
+<h4 id="orgae8106d">郑重</h4>
+<div class="outline-text-4" id="text-orgae8106d">
+</div>
+<ul class="org-ul">
+<li><a id="org13a76ca"></a>板簧卡箍<br />
+<ul class="org-ul">
+<li><a id="org8d2395c"></a>螺纹管，卡紧，定位<br />
+<ul class="org-ul">
+<li><a id="org1a0b895"></a>传统：长螺栓<br /></li>
+<li><a id="org590cf11"></a>螺栓头区分左右避免掉落扎破轮胎。<br /></li>
+<li><a id="orga696466"></a>同轴 U 型夹，容易旋转<br /></li>
+<li><a id="orgeb0dde2"></a>平行轴<br /></li>
+</ul>
+</li>
+<li><a id="orge3f66b3"></a>左右不分<br /></li>
+<li><a id="org473ccbe"></a>不长，不容易扎破轮胎？<br /></li>
+<li><a id="org63d4540"></a>主付簧都需要，没有差异<br /></li>
+<li><a id="orgee81efb"></a>重量相当，成本变化不大；<br /></li>
+<li><a id="orgb7897de"></a>付建鹏：<br />
+<ul class="org-ul">
+<li><a id="orgf656d43"></a>实用新型<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2f82e65" class="outline-2">
+<h2 id="org2f82e65"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-02 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org2f82e65">
+</div>
+<div id="outline-container-org75844a8" class="outline-4">
+<h4 id="org75844a8">周芳连</h4>
+<div class="outline-text-4" id="text-org75844a8">
+</div>
+<ul class="org-ul">
+<li><a id="org76765c8"></a>电芯 BMS 策略验证测试台架<br />
+<ul class="org-ul">
+<li><a id="org0c4ff65"></a>台架改装，控制器<br /></li>
+<li><a id="org037ff60"></a>用电芯测试，电芯级短时间测试，系统级长，<br /></li>
+<li><a id="orgc38253b"></a>可进行恶劣工况测试<br /></li>
+<li><a id="orge2f1884"></a>多电芯测试<br /></li>
+<li><a id="org6ba4fb6"></a>PC,监控 ECU<br /></li>
+<li><a id="org9017f51"></a>模式一：工况用工控机<br /></li>
+<li><a id="orgf31f03b"></a>模式二：只有高压，2，3CAN 总线？更接近量产工况？<br /></li>
+<li><a id="org811ac59"></a>验证电芯？增加的实验，不可替代电池包。（单电芯测试，可多台架联合测试）<br /></li>
+<li><a id="orgfbd00ac"></a>王博士:<br />
+<ul class="org-ul">
+<li><a id="orgdffd6ee"></a>电池厂，供应商，有没有测试过？<br /></li>
+<li><a id="orgf6c0617"></a>模组怎么测？没有 PCB(加采样模块)<br /></li>
+</ul>
+</li>
+<li><a id="org860fa05"></a>沈迪：<br />
+<ul class="org-ul">
+<li><a id="org0413bae"></a>电芯级别测试：整车厂做测试<br /></li>
+</ul>
+</li>
+<li><a id="orgdc93d3c"></a>设备支持 CAN 通信，华进查重；<br /></li>
+<li><a id="orgf96810a"></a>通过（王博？）<br /></li>
+</ul>
+</li>
+<li><a id="orgbbfe3cb"></a>电芯测试工装<br />
+<ul class="org-ul">
+<li><a id="orgd4d4dc1"></a>减少重复制造测试工装，少做样件。<br /></li>
+<li><a id="orgfa797d0"></a>加工精度要求高<br /></li>
+<li><a id="orgd7e1f64"></a>增加散热面，改善温度控制，减少散热时间<br /></li>
+<li><a id="org6266130"></a>使用会有问题？夹板较贵，<br /></li>
+<li><a id="org1cadf25"></a>散热不能模拟运行工况<br /></li>
+<li><a id="orgc44d7d1"></a>王博士，实用性不足，只要实际中使用了，销子的尺寸。<br /></li>
+<li><a id="org0cd78f0"></a>沈迪:<br />
+<ul class="org-ul">
+<li><a id="org4328827"></a>减少散热时间<br /></li>
+<li><a id="orgc7bb194"></a>加工精度要求高<br /></li>
+<li><a id="org1811258"></a>螺栓预警<br /></li>
+<li><a id="orgcd229a0"></a>创新型不足，实用性有，新颖性有。<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org12d7641" class="outline-2">
+<h2 id="org12d7641"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-16 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org12d7641">
+</div>
+<div id="outline-container-orgc91d479" class="outline-3">
+<h3 id="orgc91d479">江阴试验部 焦少斌</h3>
+<div class="outline-text-3" id="text-orgc91d479">
+<p>
+一种台架方式测试续航里程及热管理测试.pptx
+</p>
+</div>
+<div id="outline-container-org50c6561" class="outline-4">
+<h4 id="org50c6561">创新点</h4>
+<div class="outline-text-4" id="text-org50c6561">
+</div>
+<ul class="org-ul">
+<li><a id="orgb80ed01"></a>台架方式测试整车热管理系统，续航测试<br /></li>
+<li><a id="org450f83e"></a>方便<br /></li>
+<li><a id="org7c1d83f"></a>特制工装代替试车测试：电池消耗代替<br /></li>
+<li><a id="org0bf7fe3"></a>路况，环境系统，工况覆盖，数据对比<br /></li>
+<li><a id="org86f694f"></a>目前针对 EC1，原理是一致的。<br /></li>
+</ul>
+</div>
+<div id="outline-container-org04513be" class="outline-4">
+<h4 id="org04513be">评论</h4>
+<div class="outline-text-4" id="text-org04513be">
+</div>
+<ul class="org-ul">
+<li><a id="org6ee4f54"></a>热管理模拟系统？（王博）：实车热管理系统，事物<br /></li>
+<li><a id="org96fb216"></a>其他公司做热管理台架不多：转鼓有，热管理。<br /></li>
+<li><a id="orgd87989f"></a>代价<br /></li>
+<li><a id="orgf48dbc2"></a>使用情况？产生效益？还没开始测。<br /></li>
+<li><a id="org4aff372"></a>充放电设备，对前期开发<br /></li>
+<li><a id="org6eba66f"></a>EC1，重卡也可以。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac5e9df" class="outline-3">
+<h3 id="orgac5e9df">车辆工程 郭永庆</h3>
+<div class="outline-text-3" id="text-orgac5e9df">
+<p>
+郭永庆-外饰专利申请-前面罩-下饰板.pptx
+郭永庆-外饰专利申请-前面罩-握手标.pptx
+郭永庆-外饰专利申请-前面罩 - N 标.pptx
+</p>
+</div>
+</div>
+<div id="outline-container-org7d4a4bf" class="outline-3">
+<h3 id="org7d4a4bf">智能系统部 马亮</h3>
+<div class="outline-text-3" id="text-org7d4a4bf">
+<p>
+马亮-一种自动驾驶分布式感知融合方案.pptx
+</p>
+</div>
+<div id="outline-container-org7fe5cd3" class="outline-4">
+<h4 id="org7fe5cd3">创新点</h4>
+<div class="outline-text-4" id="text-org7fe5cd3">
+</div>
+<ul class="org-ul">
+<li><a id="orgb2c52b9"></a>sdk + 自研，供应商和主机厂<br /></li>
+<li><a id="orgc68fa2b"></a>融合:不太明确，<br /></li>
+<li><a id="org0da910d"></a>片上融合+域控之间的融合 J3C 目标级融合<br /></li>
+<li><a id="org5a777bf"></a>系统级架构<br /></li>
+<li><a id="orga101d72"></a>其他家的方案：分布式不太有？<br /></li>
+<li><a id="org2633668"></a>3J3 不需要特殊<br /></li>
+<li><a id="org28c328f"></a>分布式，冗余，备份<br /></li>
+<li><a id="org00bfad7"></a>3J3 其他家单板，5Tops.,感知备份。<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgbce7e26" class="outline-4">
+<h4 id="orgbce7e26">评论</h4>
+<div class="outline-text-4" id="text-orgbce7e26">
+</div>
+<ul class="org-ul">
+<li><a id="org24241fa"></a>有实现<br />
+<div class="outline-text-5" id="text-org24241fa">
+<p>
+马亮-一种自动驾驶环境感知融合可视化调试工具.pptx
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgbce9fb6" class="outline-4">
+<h4 id="orgbce9fb6">创新点</h4>
+<div class="outline-text-4" id="text-orgbce9fb6">
+</div>
+<ul class="org-ul">
+<li><a id="org5bc9902"></a>HMI 设计：可视化工具<br /></li>
+<li><a id="orgb224ed7"></a>具体一些<br /></li>
+<li><a id="org82953c7"></a>软件著作？<br /></li>
+</ul>
+</div>
+<div id="outline-container-org10bc79f" class="outline-4">
+<h4 id="org10bc79f">评论</h4>
+</div>
+</div>
+<div id="outline-container-org40117b6" class="outline-3">
+<h3 id="org40117b6">智能系统部 赵家琦</h3>
+<div class="outline-text-3" id="text-org40117b6">
+<p>
+赵家琦&#x2013;一种分布式自动驾驶控制系统.pptx
+</p>
+</div>
+<div id="outline-container-org6b365e1" class="outline-4">
+<h4 id="org6b365e1">创新点</h4>
+<div class="outline-text-4" id="text-org6b365e1">
+</div>
+<ul class="org-ul">
+<li><a id="orgcc6c808"></a>低算力&lt;30Tops<br /></li>
+<li><a id="org98ffeb6"></a>技术点（需求）？<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgdd648ff" class="outline-4">
+<h4 id="orgdd648ff">评论</h4>
+<div class="outline-text-4" id="text-orgdd648ff">
+<p>
+赵家琦–一种用于自动驾驶系统的降级策略.pptx
+</p>
+</div>
+</div>
+<div id="outline-container-org75b4284" class="outline-4">
+<h4 id="org75b4284">创新点</h4>
+<div class="outline-text-4" id="text-org75b4284">
+</div>
+<ul class="org-ul">
+<li><a id="orged7543f"></a>功能划分？<br />
+<div class="outline-text-5" id="text-orged7543f">
+<p>
+<b>**</b>
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org1f739e6" class="outline-4">
+<h4 id="org1f739e6">评论</h4>
+<div class="outline-text-4" id="text-org1f739e6">
+<p>
+赵家琦&#x2013;一种用于自动驾驶系统的时间同步方案.pptx
+</p>
+</div>
+</div>
+<div id="outline-container-orgd26f04f" class="outline-4">
+<h4 id="orgd26f04f">创新点</h4>
+<div class="outline-text-4" id="text-orgd26f04f">
+<p>
+软件包的
+</p>
+</div>
+</div>
+<div id="outline-container-org7dc5ca0" class="outline-4">
+<h4 id="org7dc5ca0">评论</h4>
+<div class="outline-text-4" id="text-org7dc5ca0">
+<p>
+分布式架构，系统级，特殊通讯，负载均衡
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6986b3a" class="outline-2">
+<h2 id="org6986b3a">重卡专利明年：11 月份。</h2>
+<div class="outline-text-2" id="text-org6986b3a">
+</div>
+<div id="outline-container-orgb8e4e2c" class="outline-3">
+<h3 id="orgb8e4e2c">外观优先</h3>
+<div class="outline-text-3" id="text-orgb8e4e2c">
+<p>
+**
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2f8971c" class="outline-2">
+<h2 id="org2f8971c"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-23 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org2f8971c">
+</div>
+<div id="outline-container-org3de772c" class="outline-3">
+<h3 id="org3de772c">车辆工程 郭永庆</h3>
+<div class="outline-text-3" id="text-org3de772c">
+</div>
+<div id="outline-container-orgd978215" class="outline-4">
+<h4 id="orgd978215">内审材料&#x2013;一种摄像头护罩结构</h4>
+<div class="outline-text-4" id="text-orgd978215">
+</div>
+<ul class="org-ul">
+<li><a id="org2124928"></a>创新点<br />
+<div class="outline-text-5" id="text-org2124928">
+<p>
+<b><b>*</b></b>
+</p>
+</div>
+</li>
+<li><a id="org9b84e64"></a>评论<br /></li>
+<li><a id="org9c17e0b"></a>结论<br />
+<div class="outline-text-5" id="text-org9c17e0b">
+<p>
+<b><b>*</b></b>
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgb89ef2b" class="outline-4">
+<h4 id="orgb89ef2b">内审材料&#x2013;一种前下防护装置.pptx</h4>
+<div class="outline-text-4" id="text-orgb89ef2b">
+</div>
+<ul class="org-ul">
+<li><a id="org4715655"></a>创新点<br />
+<ul class="org-ul">
+<li><a id="org17544fa"></a>小支架<br /></li>
+<li><a id="orgdeef9c6"></a>支架超宽？<br /></li>
+<li><a id="org2d2de72"></a>传统<br /></li>
+</ul>
+</li>
+<li><a id="orgd8f7de3"></a>评论<br />
+<ul class="org-ul">
+<li><a id="orgb72dab6"></a>含传感器安装<br /></li>
+<li><a id="orge36632b"></a>超宽有争议：加装方式与其他家不同。超宽违反交通法规，不能上路。矿山，港口，封闭园区。<br /></li>
+</ul>
+</li>
+<li><a id="org8b41151"></a>结论<br />
+<ul class="org-ul">
+<li><a id="orgd0eca34"></a>通过内审<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org36e0a92" class="outline-2">
+<h2 id="org36e0a92">智能系统 赵家琦</h2>
+<div class="outline-text-2" id="text-org36e0a92">
+</div>
+<div id="outline-container-orgeaaba55" class="outline-3">
+<h3 id="orgeaaba55">一种挂车角度传感器.pptx</h3>
+<div class="outline-text-3" id="text-orgeaaba55">
+</div>
+<ul class="org-ul">
+<li><a id="orgdd90fc9"></a>创新点<br />
+<ul class="org-ul">
+<li><a id="org001b7ed"></a>控制端的需求<br /></li>
+<li><a id="orgbbb3cb2"></a>低速时使用<br /></li>
+</ul>
+</li>
+<li><a id="orgd43187d"></a>评论<br />
+<ul class="org-ul">
+<li><a id="org85db257"></a>超声波传感器精度<br />
+<ul class="org-ul">
+<li><a id="org75c33c4"></a>超声波阵列<br /></li>
+</ul>
+</li>
+<li><a id="orgb3ffa45"></a>其他角度传感器会需要安装到货箱上，接触式。<br /></li>
+<li><a id="org457dcf7"></a>传感器方案（非传感器本身）<br /></li>
+<li><a id="orgd420319"></a>应用在自动驾驶路径规划上<br /></li>
+<li><a id="org289e521"></a>已有传感器都安装在牵引车上<br /></li>
+</ul>
+</li>
+<li><a id="org0ce128b"></a>结论<br />
+<ul class="org-ul">
+<li><a id="orgd847104"></a>通过内审<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge37fe2d" class="outline-2">
+<h2 id="orge37fe2d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-09-28 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orge37fe2d">
+</div>
+<div id="outline-container-orgb5859d9" class="outline-3">
+<h3 id="orgb5859d9">王洪帅</h3>
+<div class="outline-text-3" id="text-orgb5859d9">
+</div>
+<div id="outline-container-org478ad9d" class="outline-4">
+<h4 id="org478ad9d">多源冗余转向</h4>
+<div class="outline-text-4" id="text-org478ad9d">
+</div>
+<ul class="org-ul">
+<li><a id="org8baeb8f"></a>创新点<br />
+<ul class="org-ul">
+<li><a id="org213dfef"></a>两个 ECU<br /></li>
+<li><a id="org92b2175"></a>双绕组电机<br /></li>
+</ul>
+</li>
+<li><a id="org92c4af4"></a>评论<br />
+<ul class="org-ul">
+<li><a id="orgd572dd2"></a>绕组=电机？<br /></li>
+<li><a id="org889dc6f"></a>控制？A1-&gt;B1, A2-&gt;B2<br /></li>
+<li><a id="orgf7c5259"></a>冗余 A，B<br /></li>
+<li><a id="orge2cb27c"></a>2A, 2B.<br /></li>
+<li><a id="orga927d9d"></a>定制，EHPS,<br /></li>
+<li><a id="org88a358f"></a>EPS 乘用车，<br /></li>
+<li><a id="org2f2143a"></a>针对电子件失效概率高；<br /></li>
+</ul>
+</li>
+<li><a id="orgf13eee0"></a>结论<br />
+<ul class="org-ul">
+<li><a id="org03e87e6"></a>通过内审<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgce3cd19" class="outline-2">
+<h2 id="orgce3cd19"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-10-14 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgce3cd19">
+</div>
+<div id="outline-container-orge4f8691" class="outline-3">
+<h3 id="orge4f8691">张敏</h3>
+<div class="outline-text-3" id="text-orge4f8691">
+</div>
+<div id="outline-container-orgaf9224f" class="outline-4">
+<h4 id="orgaf9224f">U 型螺栓仿真计算中的模拟方法</h4>
+<div class="outline-text-4" id="text-orgaf9224f">
+</div>
+<ul class="org-ul">
+<li><a id="org25e4c50"></a>创新<br />
+<ul class="org-ul">
+<li><a id="org79ff294"></a>U 型螺栓，gap 间歇单元，bar 梁单元；<br /></li>
+<li><a id="org508d9da"></a>多种单元组合<br />
+<div class="outline-text-6" id="text-org508d9da">
+<p>
+<b><b>**</b></b>
+</p>
+</div>
+</li>
+<li><a id="org7cb80a0"></a>不存在收敛问题<br /></li>
+<li><a id="orgf351055"></a>现有缺点：网格稀疏，接触<br /></li>
+</ul>
+</li>
+<li><a id="org6e3a6b1"></a>评论<br />
+<ul class="org-ul">
+<li><a id="orge85ffd6"></a>项目:通用<br /></li>
+<li><a id="org87b8edb"></a>模拟大结构<br /></li>
+<li><a id="org244f79d"></a>也可用于紧固件<br /></li>
+</ul>
+</li>
+<li><a id="orgcb6ac63"></a>结论<br />
+<ul class="org-ul">
+<li><a id="orgbfcf4e4"></a>通过，作为发明，<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org66fea00" class="outline-2">
+<h2 id="org66fea00"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-11 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org66fea00">
+</div>
+<div id="outline-container-org15a7526" class="outline-3">
+<h3 id="org15a7526">电动力 李兆东</h3>
+<div class="outline-text-3" id="text-org15a7526">
+<p>
+货箱顶灯控制：
+</p>
+
+<p>
+类似用驾驶室开关
+</p>
+
+<p>
+BCM 功能比较简单，成本高，
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61b4a84" class="outline-3">
+<h3 id="org61b4a84">电动力 刘宝同</h3>
+<div class="outline-text-3" id="text-org61b4a84">
+<p>
+阅读灯控制方案：
+多开关&#x2013;&gt;一个开关，自复位
+</p>
+
+<p>
+乘用车也有，有不一样：
+差异，有优势？
+使用场景是阅读灯
+</p>
+
+<p>
+专利律师事务所咨询。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4f490d" class="outline-2">
+<h2 id="orgf4f490d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgf4f490d">
+</div>
+<div id="outline-container-org3364a41" class="outline-3">
+<h3 id="org3364a41">朱诚诚</h3>
+<div class="outline-text-3" id="text-org3364a41">
+</div>
+<div id="outline-container-org8a70d2e" class="outline-4">
+<h4 id="org8a70d2e">ic1 换挡旋钮</h4>
+<div class="outline-text-4" id="text-org8a70d2e">
+</div>
+<ul class="org-ul">
+<li><a id="orge8f4d5f"></a>秦爽：<br />
+<ul class="org-ul">
+<li><a id="org5790ef9"></a>类型<br />
+<ul class="org-ul">
+<li><a id="org01e5397"></a>旋钮，按键结合。<br /></li>
+</ul>
+</li>
+<li><a id="orge88582e"></a>iC1<br />
+<ul class="org-ul">
+<li><a id="org24689ac"></a>增加 P 档，外观和字体不同。<br /></li>
+<li><a id="org7486566"></a>质疑：律所<br /></li>
+</ul>
+</li>
+<li><a id="org450b6ff"></a>绝大多数，<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org5fbaa59" class="outline-4">
+<h4 id="org5fbaa59">刘宝同</h4>
+<div class="outline-text-4" id="text-org5fbaa59">
+</div>
+<ul class="org-ul">
+<li><a id="org542f497"></a>电源状态切换管理系统<br />
+<ul class="org-ul">
+<li><a id="org3e99658"></a>简化电源状态跳转逻辑<br />
+<ul class="org-ul">
+<li><a id="orgaeae47b"></a>电动车取消 ACC,乘用车商用车可能有，<br /></li>
+</ul>
+</li>
+<li><a id="org11d7110"></a>冗余<br />
+<ul class="org-ul">
+<li><a id="orgc0c87f1"></a>查重<br /></li>
+<li><a id="org8918ffe"></a>每个方案都有，属于方案组合<br /></li>
+</ul>
+</li>
+<li><a id="orge8f378a"></a>类似冗余<br />
+<ul class="org-ul">
+<li><a id="orgbd0a176"></a>代价高，看不到<br />
+<div class="outline-text-7" id="text-orgbd0a176">
+<p>
+<b><b>**</b></b>
+</p>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org85288c0"></a>状态机数字？<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga87d018" class="outline-2">
+<h2 id="orga87d018"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-25 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orga87d018">
+</div>
+<div id="outline-container-org134f2d2" class="outline-3">
+<h3 id="org134f2d2">陈庆幸</h3>
+<div class="outline-text-3" id="text-org134f2d2">
+</div>
+<div id="outline-container-orga3062d2" class="outline-4">
+<h4 id="orga3062d2">增城市电动车热管理模式</h4>
+<div class="outline-text-4" id="text-orga3062d2">
+</div>
+<ul class="org-ul">
+<li><a id="org6c20da8"></a>两个低温散热器，改进总散热，减低能耗<br />
+<ul class="org-ul">
+<li><a id="org610da65"></a>成本？<br /></li>
+</ul>
+</li>
+<li><a id="orged4c305"></a>结构创新<br /></li>
+<li><a id="org7be613e"></a>取消 ptc,<br /></li>
+<li><a id="org0d2b9e0"></a>一个水暖 ptc 发热元件<br /></li>
+<li><a id="orgfa89f8d"></a>三通阀，电池贿赂自循环<br /></li>
+<li><a id="orge5adf06"></a>风扇 2 可在车外<br /></li>
+<li><a id="orgc77dcab"></a>暖风 ptc+电池 ptc， &#x2013;&gt; 水水+ptc<br /></li>
+<li><a id="org7218acf"></a>张玉峰：简化的结构，商用车，可随时切换，发动机余热足够 96kw, 4kg/c,。<br /></li>
+<li><a id="orga0927af"></a>低温二合一，高温一变二<br /></li>
+<li><a id="orga5b3f7d"></a>产热要求高，是否能启动<br />
+<ul class="org-ul">
+<li><a id="orgca8ef9e"></a>固定增程发动机让它产热<br /></li>
+</ul>
+</li>
+<li><a id="orgab1f5b1"></a>散热器<br /></li>
+<li><a id="org5d1ba78"></a>通过，改进创新点的表述。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc476917" class="outline-3">
+<h3 id="orgc476917">韩志永</h3>
+<div class="outline-text-3" id="text-orgc476917">
+</div>
+<div id="outline-container-orgd6a9e74" class="outline-4">
+<h4 id="orgd6a9e74">连接支架</h4>
+<div class="outline-text-4" id="text-orgd6a9e74">
+</div>
+<ul class="org-ul">
+<li><a id="org6959ee6"></a>结构模块化，两种规格<br /></li>
+<li><a id="org0b66aa8"></a>锁止？<br /></li>
+<li><a id="orgc59fc08"></a>造型? 机械，<br /></li>
+<li><a id="orgba33f6d"></a>与奥动方案比有创新<br />
+<ul class="org-ul">
+<li><a id="orgfab6c19"></a>可避开奥动的方案<br /></li>
+</ul>
+</li>
+<li><a id="org2abefa8"></a>通过<br /></li>
+</ul>
+</div>
+<div id="outline-container-org060807b" class="outline-4">
+<h4 id="org060807b">变截面车架</h4>
+<div class="outline-text-4" id="text-org060807b">
+</div>
+<ul class="org-ul">
+<li><a id="orgda07a5a"></a>配合奥动电池方案下背式电池<br /></li>
+<li><a id="org393777d"></a>增加横梁<br /></li>
+<li><a id="org0b4c10b"></a>通过<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgc34614e" class="outline-4">
+<h4 id="orgc34614e">一体化车架</h4>
+<div class="outline-text-4" id="text-orgc34614e">
+</div>
+<ul class="org-ul">
+<li><a id="orgf226e2d"></a>也可换电？<br /></li>
+<li><a id="orgf4f94e8"></a>全新的车架设计理念<br /></li>
+</ul>
+</div>
+<div id="outline-container-org272d5f4" class="outline-4">
+<h4 id="org272d5f4">电动商用车模块化平台</h4>
+<div class="outline-text-4" id="text-org272d5f4">
+</div>
+<ul class="org-ul">
+<li><a id="org3785f11"></a>平台开发设计方式？<br /></li>
+<li><a id="org59b7e8c"></a>灵活的模块化设计方式<br />
+<ul class="org-ul">
+<li><a id="orgf0c8a99"></a>动力，储能和驱动分别设计<br /></li>
+<li><a id="org437575d"></a>节省开发时间成本<br /></li>
+<li><a id="orgd84064b"></a>连接需要考虑<br /></li>
+</ul>
+</li>
+<li><a id="org514905b"></a>通过<br /></li>
+</ul>
+</div>
+<div id="outline-container-org1ae9c48" class="outline-4">
+<h4 id="org1ae9c48">是否可综合多个实用新型成为一个发明</h4>
+</div>
+</div>
+<div id="outline-container-org355b41d" class="outline-3">
+<h3 id="org355b41d">冯天硕</h3>
+<div class="outline-text-3" id="text-org355b41d">
+</div>
+<div id="outline-container-orgc6f4787" class="outline-4">
+<h4 id="orgc6f4787">车道线数据预处理</h4>
+<div class="outline-text-4" id="text-orgc6f4787">
+</div>
+<ul class="org-ul">
+<li><a id="orgcff12ef"></a>域控制器？<br />
+<ul class="org-ul">
+<li><a id="orga2f200d"></a>节省计算量，motivation<br /></li>
+</ul>
+</li>
+<li><a id="org5496afc"></a>车道线处理成点？<br /></li>
+<li><a id="org5f59d2a"></a>区分左右？相邻车道的车道线？多车道？lane width?<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb80d035" class="outline-2">
+<h2 id="orgb80d035"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-09 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgb80d035">
+</div>
+<div id="outline-container-orgaa0e400" class="outline-3">
+<h3 id="orgaa0e400">何为</h3>
+<div class="outline-text-3" id="text-orgaa0e400">
+</div>
+<div id="outline-container-org7fa4c9f" class="outline-4">
+<h4 id="org7fa4c9f">纯电动底盘</h4>
+<div class="outline-text-4" id="text-org7fa4c9f">
+</div>
+<ul class="org-ul">
+<li><a id="orgec31244"></a>重卡 IT1，纯电<br /></li>
+<li><a id="org35bac15"></a>基于奥动合作，底盘平铺<br /></li>
+<li><a id="org8e4fab5"></a>与张继杰方案不同电池连接，舱体结构不同<br /></li>
+<li><a id="orgb6bccc6"></a>电池平铺，驾驶室可以平铺。<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgce8f4bb" class="outline-4">
+<h4 id="orgce8f4bb">增程式混合动力牵引车底盘</h4>
+<div class="outline-text-4" id="text-orgce8f4bb">
+</div>
+<ul class="org-ul">
+<li><a id="org85b88a1"></a>布置不同，加增程器<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org65c1948" class="outline-3">
+<h3 id="org65c1948">郭永庆</h3>
+<div class="outline-text-3" id="text-org65c1948">
+</div>
+<div id="outline-container-orgf2118eb" class="outline-4">
+<h4 id="orgf2118eb">可伸缩出风口</h4>
+<div class="outline-text-4" id="text-orgf2118eb">
+</div>
+<ul class="org-ul">
+<li><a id="org0914a0c"></a>除霜除雾<br /></li>
+<li><a id="org0905449"></a>车辆振动？波纹管抗震？<br /></li>
+<li><a id="orga4a6511"></a>会不会影响气流，风机<br /></li>
+</ul>
+</div>
+<div id="outline-container-org42e0a60" class="outline-4">
+<h4 id="org42e0a60">上车拉手结构</h4>
+<div class="outline-text-4" id="text-org42e0a60">
+</div>
+<ul class="org-ul">
+<li><a id="org62ca61d"></a>刚度？<br /></li>
+<li><a id="orga2c5faa"></a>利用伯努利原理<br /></li>
+<li><a id="org4990ab4"></a>空气流到窗玻璃？<br /></li>
+<li><a id="org64cf145"></a>无风扇结构<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25835f9" class="outline-3">
+<h3 id="org25835f9">张玉峰</h3>
+<div class="outline-text-3" id="text-org25835f9">
+</div>
+<div id="outline-container-org27ac925" class="outline-4">
+<h4 id="org27ac925">iC1</h4>
+</div>
+<div id="outline-container-org01080c4" class="outline-4">
+<h4 id="org01080c4">整体快换，液冷，高压快换</h4>
+</div>
+<div id="outline-container-org71c2179" class="outline-4">
+<h4 id="org71c2179">045c ic1</h4>
+</div>
+<div id="outline-container-orgaf43ef0" class="outline-4">
+<h4 id="orgaf43ef0">车架侧，配套电池侧</h4>
+</div>
+</div>
+<div id="outline-container-org2e6935e" class="outline-3">
+<h3 id="org2e6935e">何雨</h3>
+<div class="outline-text-3" id="text-org2e6935e">
+<p>
+<b>*</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org010d69f" class="outline-3">
+<h3 id="org010d69f">陈洋</h3>
+<div class="outline-text-3" id="text-org010d69f">
+<p>
+<b>*</b>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org33082a5" class="outline-2">
+<h2 id="org33082a5"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-16 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org33082a5">
+</div>
+<div id="outline-container-org99a4aaa" class="outline-3">
+<h3 id="org99a4aaa">樊星</h3>
+<div class="outline-text-3" id="text-org99a4aaa">
+</div>
+<div id="outline-container-org8cdf92b" class="outline-4">
+<h4 id="org8cdf92b">两孔高压连接器 （实用新型）</h4>
+<div class="outline-text-4" id="text-org8cdf92b">
+</div>
+<ul class="org-ul">
+<li><a id="org6ba0c89"></a>传统多合一，保险盒单独拿出来放在连接器上<br /></li>
+<li><a id="orgabb2ad1"></a>小负载<br /></li>
+<li><a id="org5adc016"></a>维修简化<br /></li>
+<li><a id="orgf0e6dad"></a>一般在 PDU 里，<br /></li>
+<li><a id="orgf0e301c"></a>何为：<br /></li>
+<li><a id="org14ee193"></a>王博：应用？单开模，应该挺多。快换，造型很重要。可能包含在 PDU 总体结构。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd818217" class="outline-3">
+<h3 id="orgd818217">付建鹏</h3>
+<div class="outline-text-3" id="text-orgd818217">
+</div>
+<div id="outline-container-org2014824" class="outline-4">
+<h4 id="org2014824">abs 传感器前桥</h4>
+<div class="outline-text-4" id="text-org2014824">
+</div>
+<ul class="org-ul">
+<li><a id="org4b2fc5d"></a>只是信号双备份？ABS 安全器件通常都是双备份的！<br />
+<ul class="org-ul">
+<li><a id="org6982d48"></a>重卡前桥，双边传感器<br /></li>
+<li><a id="orgfc9657f"></a>ABS 传感器备份？<br /></li>
+<li><a id="org3677f96"></a>石龙：一个齿圈，两个传感器。厂家做过，定做。<br /></li>
+<li><a id="orgdf91e50"></a>王博:判断传感器哪个坏？与后桥驱动比较。<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org5ce118a" class="outline-4">
+<h4 id="org5ce118a">转向布置方案</h4>
+<div class="outline-text-4" id="text-org5ce118a">
+</div>
+<ul class="org-ul">
+<li><a id="org35603f4"></a>对其他子系统的影响？成本？功能，性能？<br /></li>
+<li><a id="orga7c2e46"></a>iC1 上量产方案<br /></li>
+<li><a id="orga2701e2"></a>整体调整过，支架变大，扭矩重新考虑。手感。<br /></li>
+<li><a id="org9839988"></a>王博:降低车身的目标，其他尝试，比其他轻卡都低。其他，悬置放在前端。<br />
+<ul class="org-ul">
+<li><a id="org402ba20"></a>乘用车，独立悬挂<br /></li>
+<li><a id="orgf1a2440"></a>商用车不能调节，结构不同。<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org77ba52c" class="outline-4">
+<h4 id="org77ba52c">长度调节机构</h4>
+<div class="outline-text-4" id="text-org77ba52c">
+</div>
+<ul class="org-ul">
+<li><a id="org978561a"></a>刹车距离有自动调节<br /></li>
+<li><a id="orge774376"></a>拉索疲劳，老化造成？<br /></li>
+<li><a id="orgd177638"></a>机构常见，联动到轮端，epb？<br /></li>
+<li><a id="org6143a3f"></a>红色动,淡蓝色和拉索一起，松弛状态会不会摆动？<br /></li>
+<li><a id="orgaf7f30a"></a>eC1<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5d3f5f9" class="outline-3">
+<h3 id="org5d3f5f9">韩一帆</h3>
+<div class="outline-text-3" id="text-org5d3f5f9">
+</div>
+<div id="outline-container-org7006386" class="outline-4">
+<h4 id="org7006386">轻卡布置结构</h4>
+<div class="outline-text-4" id="text-org7006386">
+</div>
+<ul class="org-ul">
+<li><a id="org3fee3ad"></a>iC1，一体式，pes<br /></li>
+<li><a id="orgce4d619"></a>充电座，低，<br /></li>
+</ul>
+</div>
+<div id="outline-container-org125b249" class="outline-4">
+<h4 id="org125b249">低地板驾驶室</h4>
+<div class="outline-text-4" id="text-org125b249">
+</div>
+<ul class="org-ul">
+<li><a id="orgb94e8cb"></a>iC1?已有？<br /></li>
+<li><a id="orgb4d0dde"></a>比展车高一点<br /></li>
+<li><a id="org2dcad7a"></a>副车架连接焊接？铆接<br /></li>
+<li><a id="org602c4fe"></a>弊端妨碍转向制动<br />
+<ul class="org-ul">
+<li><a id="orgc82d930"></a>没有量产<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge574c93" class="outline-3">
+<h3 id="orge574c93">贺炼丹</h3>
+<div class="outline-text-3" id="text-orge574c93">
+</div>
+<div id="outline-container-orgea08efc" class="outline-4">
+<h4 id="orgea08efc">线控转向性能测试</h4>
+<div class="outline-text-4" id="text-orgea08efc">
+</div>
+<ul class="org-ul">
+<li><a id="orga042fe3"></a>重卡<br /></li>
+<li><a id="org0f01825"></a>iT1 开发<br /></li>
+</ul>
+</div>
+<div id="outline-container-org15533ca" class="outline-4">
+<h4 id="org15533ca">线控平台的测试方案。</h4>
+</div>
+<div id="outline-container-org866fdcb" class="outline-4">
+<h4 id="org866fdcb">重卡少</h4>
+<div class="outline-text-4" id="text-org866fdcb">
+</div>
+<ul class="org-ul">
+<li><a id="org2dc1c2d"></a>通过<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbe595ab" class="outline-3">
+<h3 id="orgbe595ab">韩彦潇</h3>
+<div class="outline-text-3" id="text-orgbe595ab">
+</div>
+<div id="outline-container-org1bc4c87" class="outline-4">
+<h4 id="org1bc4c87">制动脚感模拟器 1</h4>
+<div class="outline-text-4" id="text-org1bc4c87">
+</div>
+<ul class="org-ul">
+<li><a id="orge4bce2a"></a>我敢，齿轮，祠服电机<br /></li>
+<li><a id="orge267ab4"></a>只有一个状态，调节方便；abs 吸油；<br /></li>
+<li><a id="org21d12b0"></a>量产不太会应用。<br /></li>
+</ul>
+</div>
+<div id="outline-container-org947a394" class="outline-4">
+<h4 id="org947a394">傅工：</h4>
+<div class="outline-text-4" id="text-org947a394">
+</div>
+<ul class="org-ul">
+<li><a id="org4f2fa30"></a>好的思路，个性化思路，调节脚感<br /></li>
+</ul>
+</div>
+<div id="outline-container-org392c4fd" class="outline-4">
+<h4 id="org392c4fd">制动脚感模拟器 2</h4>
+<div class="outline-text-4" id="text-org392c4fd">
+</div>
+<ul class="org-ul">
+<li><a id="org2112f63"></a>建议<br /></li>
+<li><a id="org82498c0"></a>没有车型<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac36b95" class="outline-3">
+<h3 id="orgac36b95">忻斌健</h3>
+<div class="outline-text-3" id="text-orgac36b95">
+</div>
+<div id="outline-container-org62386ed" class="outline-4">
+<h4 id="org62386ed">增强检测</h4>
+</div>
+</div>
+<div id="outline-container-org5b9e936" class="outline-3">
+<h3 id="org5b9e936">刘豪</h3>
+<div class="outline-text-3" id="text-org5b9e936">
+</div>
+<div id="outline-container-org321b953" class="outline-4">
+<h4 id="org321b953">残值评估方法</h4>
+<div class="outline-text-4" id="text-org321b953">
+</div>
+<ul class="org-ul">
+<li><a id="org4cb3a12"></a>多维度经验参数，如何判断合理性？端点，变化？<br /></li>
+<li><a id="org7587d6f"></a>多电芯的<br /></li>
+<li><a id="orgf008fbf"></a>车身和电池分开算<br /></li>
+<li><a id="org0fdd8aa"></a>车身分值归一化做过评分<br /></li>
+<li><a id="orgc536c9f"></a>电池容量需要公式<br /></li>
+<li><a id="orgf2840df"></a>交底书修改，重点描述系统<br /></li>
+<li><a id="org61c73c5"></a>驾驶行为，维修保养：表没法保护，如何保护？<br /></li>
+<li><a id="org270e5ec"></a>建议整个系统，经验公式，表如何保护？<br /></li>
+<li><a id="orged265d3"></a>数据处理的流程<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgac16b41" class="outline-4">
+<h4 id="orgac16b41">车重估计方法</h4>
+<div class="outline-text-4" id="text-orgac16b41">
+</div>
+<ul class="org-ul">
+<li><a id="org170158d"></a>公式经验公式/物理公式/与孙钦云的方案差异，基于车上算，现在基于云上的数据。<br /></li>
+<li><a id="orga7cceee"></a>大数据系统：精度 30%，判断空载，超载，<br /></li>
+<li><a id="orgf368f13"></a>参照其他车重<br /></li>
+<li><a id="org2c3fc0a"></a>系统加上<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgcfd2017" class="outline-4">
+<h4 id="orgcfd2017">充电推荐系统</h4>
+<div class="outline-text-4" id="text-orgcfd2017">
+</div>
+<ul class="org-ul">
+<li><a id="org2f98293"></a>充电位置推荐<br /></li>
+<li><a id="org6947730"></a>标题准确<br /></li>
+<li><a id="orge5ddefc"></a>充电习惯：20%<br /></li>
+<li><a id="org29784cf"></a>算法不明确，流程描述<br /></li>
+<li><a id="org9dea605"></a>充电桩公司，导航，基本都有，用户<br /></li>
+<li><a id="orgb3c0c9e"></a>乘用车，商用车轨迹比较固定，<br /></li>
+<li><a id="org81bce2a"></a>用户习惯的分类<br /></li>
+<li><a id="org7c6a4e9"></a>保护的规则？光系统就是实用新型。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf363f58" class="outline-2">
+<h2 id="orgf363f58"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-06 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgf363f58">
+</div>
+<div id="outline-container-org4fb69f1" class="outline-3">
+<h3 id="org4fb69f1">徐衡</h3>
+<div class="outline-text-3" id="text-org4fb69f1">
+</div>
+<div id="outline-container-orge8eca34" class="outline-4">
+<h4 id="orge8eca34">基于实际采集数据</h4>
+</div>
+<div id="outline-container-org0cf9c45" class="outline-4">
+<h4 id="org0cf9c45">仿真可用，可设置仿真开始时间：只能仿真</h4>
+</div>
+<div id="outline-container-org0baa07a" class="outline-4">
+<h4 id="org0baa07a">实车测试可用</h4>
+</div>
+<div id="outline-container-org312dd2c" class="outline-4">
+<h4 id="org312dd2c">仿真方案非保护点</h4>
+</div>
+<div id="outline-container-orgd133cc4" class="outline-4">
+<h4 id="orgd133cc4">仿真，可视化（仿真+测试）</h4>
+</div>
+<div id="outline-container-orgfca34b8" class="outline-4">
+<h4 id="orgfca34b8">通过</h4>
+</div>
+</div>
+<div id="outline-container-orga86cdd7" class="outline-3">
+<h3 id="orga86cdd7">问靖</h3>
+<div class="outline-text-3" id="text-orga86cdd7">
+</div>
+<div id="outline-container-org90bf203" class="outline-4">
+<h4 id="org90bf203">向下 47 度，25 度</h4>
+</div>
+<div id="outline-container-orgd8f988b" class="outline-4">
+<h4 id="orgd8f988b">标定:安装固定，外参标定前的预处理</h4>
+</div>
+<div id="outline-container-orgb494c78" class="outline-4">
+<h4 id="orgb494c78">有查重？安装方法</h4>
+</div>
+</div>
+<div id="outline-container-org310f1a1" class="outline-3">
+<h3 id="org310f1a1">赵家琦</h3>
+<div class="outline-text-3" id="text-org310f1a1">
+</div>
+<div id="outline-container-orgf5a71b0" class="outline-4">
+<h4 id="orgf5a71b0">N port</h4>
+</div>
+<div id="outline-container-org48b9590" class="outline-4">
+<h4 id="org48b9590">电源，信号</h4>
+</div>
+<div id="outline-container-org0a7fd2e" class="outline-4">
+<h4 id="org0a7fd2e">可进行校验？</h4>
+</div>
+<div id="outline-container-org12d6a1c" class="outline-4">
+<h4 id="org12d6a1c">接口标准？行业</h4>
+</div>
+<div id="outline-container-org12a5210" class="outline-4">
+<h4 id="org12a5210">接口：</h4>
+</div>
+<div id="outline-container-orgcbdb40b" class="outline-4">
+<h4 id="orgcbdb40b">充电，usb</h4>
+</div>
+</div>
+<div id="outline-container-orgd775f28" class="outline-3">
+<h3 id="orgd775f28">马建伟</h3>
+<div class="outline-text-3" id="text-orgd775f28">
+</div>
+<div id="outline-container-org74de7b1" class="outline-4">
+<h4 id="org74de7b1">不需要</h4>
+<div class="outline-text-4" id="text-org74de7b1">
+<p>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5fe3d7" class="outline-2">
+<h2 id="orgd5fe3d7"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-13 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgd5fe3d7">
+</div>
+<div id="outline-container-org7f86357" class="outline-3">
+<h3 id="org7f86357">张建伟</h3>
+<div class="outline-text-3" id="text-org7f86357">
+</div>
+<div id="outline-container-org023e530" class="outline-4">
+<h4 id="org023e530">安装重型轮胎的小车</h4>
+<div class="outline-text-4" id="text-org023e530">
+</div>
+<ul class="org-ul">
+<li><a id="orgbb1fd3f"></a>简易工装，一人完成<br /></li>
+<li><a id="orgd10915f"></a>一个一个装<br /></li>
+<li><a id="org15aec90"></a>实用新型<br /></li>
+<li><a id="org095d6df"></a>宋工：<br />
+<ul class="org-ul">
+<li><a id="org0033121"></a>实用性，轻巧 160 公斤<br /></li>
+<li><a id="org6ca9341"></a>顾总：垂直杠<br /></li>
+<li><a id="orgfd1052a"></a>横向杠，液压；<br /></li>
+<li><a id="org2d5a0e1"></a>三个自由度<br /></li>
+</ul>
+</li>
+<li><a id="org8d397eb"></a>江苏前晨<br /></li>
+<li><a id="orgf1dbbb6"></a>交底书<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org93f48a1" class="outline-2">
+<h2 id="org93f48a1"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-18 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org93f48a1">
+</div>
+<div id="outline-container-orgf129bfe" class="outline-3">
+<h3 id="orgf129bfe">顾宇庆</h3>
+<div class="outline-text-3" id="text-orgf129bfe">
+</div>
+<div id="outline-container-org9130f85" class="outline-4">
+<h4 id="org9130f85">三个工件，行车吊车叉车&#x2013;&gt;一个工件</h4>
+</div>
+<div id="outline-container-org5b09236" class="outline-4">
+<h4 id="org5b09236">堆垛装置</h4>
+</div>
+<div id="outline-container-org8e2235c" class="outline-4">
+<h4 id="org8e2235c">三个自由度</h4>
+<div class="outline-text-4" id="text-org8e2235c">
+</div>
+<ul class="org-ul">
+<li><a id="orgde36634"></a>插销<br /></li>
+</ul>
+</div>
+<div id="outline-container-org7f79244" class="outline-4">
+<h4 id="org7f79244">宋工：</h4>
+<div class="outline-text-4" id="text-org7f79244">
+</div>
+<ul class="org-ul">
+<li><a id="orgd74ca4a"></a>商用车，功能性实现<br /></li>
+<li><a id="org4865c7b"></a>电池包，快换站，<br /></li>
+<li><a id="org1d816a4"></a>效率提升<br /></li>
+</ul>
+</div>
+<div id="outline-container-org97bfe99" class="outline-4">
+<h4 id="org97bfe99">产线，换电站，两种场景</h4>
+</div>
+<div id="outline-container-org96de4e3" class="outline-4">
+<h4 id="org96de4e3">供应商</h4>
+</div>
+<div id="outline-container-org2fcf5f7" class="outline-4">
+<h4 id="org2fcf5f7">实用新型</h4>
+<div class="outline-text-4" id="text-org2fcf5f7">
+<p>
+<code>=====</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org47db12f" class="outline-2">
+<h2 id="org47db12f"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-18 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org47db12f">
+<p>
+**
+</p>
+</div>
+</div>
+<div id="outline-container-org1f18b90" class="outline-2">
+<h2 id="org1f18b90"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-10 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org1f18b90">
+</div>
+<div id="outline-container-org44192f2" class="outline-3">
+<h3 id="org44192f2">周芳连：</h3>
+<div class="outline-text-3" id="text-org44192f2">
+<p>
+整包均衡维护系统
+模块化
+探针方式
+多通道信息共享
+针对成组电芯？
+探针接触式
+iC1 和 eC1,
+</p>
+</div>
+<div id="outline-container-org1bf3767" class="outline-4">
+<h4 id="org1bf3767">评论</h4>
+<div class="outline-text-4" id="text-org1bf3767">
+<p>
+售后
+匹配工装，
+PC 控制，均衡控制，实时判断，
+通道原理：
+12 个通道，
+定位？
+含诊断算法？有具体化？还只是一个框架？
+电池推出专利，售后会推。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org73aff54" class="outline-3">
+<h3 id="org73aff54">鲁刚</h3>
+<div class="outline-text-3" id="text-org73aff54">
+<p>
+重卡 侧向换电
+串和并不说明
+换电专门设计，
+代价，
+效果？侧向换电方便。使用，单包。
+后推式不好，
+底盘上，重卡，
+</p>
+
+<p>
+手动锁止机构：
+外形
+与换电机构
+</p>
+
+<p>
+拧螺栓，用扳手怕扳不动，偷，脱开？
+安全问题？
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e259fe" class="outline-2">
+<h2 id="org3e259fe"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-24 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org3e259fe">
+</div>
+<div id="outline-container-org1aba3d8" class="outline-3">
+<h3 id="org1aba3d8">郭永庆</h3>
+<div class="outline-text-3" id="text-org1aba3d8">
+<p>
+磁性车门玻璃：
+隐私玻璃
+成本低
+应用写字板原理
+</p>
+
+<p>
+向超：
+操作性不强，
+原理新颖：依赖相对运动，实用性不强
+离量产距离较远，
+</p>
+
+<p>
+场景已经有，移动到玻璃上
+</p>
+
+<p>
+货箱
+比较容易想到
+防水性？
+</p>
+
+<p>
+结构？防水？
+运输成本高，
+</p>
+
+<p>
+铝，符合材料板，组装方式
+</p>
+
+<p>
+变钢，现有角钢，
+</p>
+
+<p>
+组装结构
+</p>
+
+<p>
+申请的方案：角铁，，重量轻，综合成本低。
+10cm，
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9812242" class="outline-3">
+<h3 id="org9812242">刘宝同</h3>
+<div class="outline-text-3" id="text-org9812242">
+</div>
+<div id="outline-container-org02dfc6d" class="outline-4">
+<h4 id="org02dfc6d">创新点</h4>
+<div class="outline-text-4" id="text-org02dfc6d">
+</div>
+<ul class="org-ul">
+<li><a id="org060c2a6"></a>传统非电控<br /></li>
+<li><a id="org0da259b"></a>保护模式<br /></li>
+<li><a id="orgd5e255d"></a>自动驾驶模式下,<br /></li>
+<li><a id="org43f5c56"></a>电喇叭+气喇叭<br /></li>
+</ul>
+</div>
+<div id="outline-container-orged24af0" class="outline-4">
+<h4 id="orged24af0">沈迪</h4>
+<div class="outline-text-4" id="text-orged24af0">
+</div>
+<ul class="org-ul">
+<li><a id="org9a7e9a1"></a>传统+自动驾驶<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6e46aa" class="outline-2">
+<h2 id="orgd6e46aa"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-03-31 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgd6e46aa">
+</div>
+<div id="outline-container-orgb19df4a" class="outline-3">
+<h3 id="orgb19df4a">郑重</h3>
+<div class="outline-text-3" id="text-orgb19df4a">
+</div>
+<div id="outline-container-org0867795" class="outline-4">
+<h4 id="org0867795">浮动换电支架</h4>
+<div class="outline-text-4" id="text-org0867795">
+</div>
+<ul class="org-ul">
+<li><a id="orgd106847"></a>解决了什么问题？<br /></li>
+<li><a id="org4f7d056"></a>效益：<br /></li>
+<li><a id="orgbd18841"></a>技术点<br />
+<ul class="org-ul">
+<li><a id="org6472c74"></a>机械：撞击损坏？稳定？<br />
+<div class="outline-text-6" id="text-org6472c74">
+<p>
+<b><b>**</b></b>
+</p>
+</div>
+</li>
+<li><a id="orgc8c83dd"></a>涉及电气连接？<br /></li>
+<li><a id="org957a30e"></a>驾驶影响？<br /></li>
+</ul>
+</li>
+<li><a id="org305b6d3"></a>创新点电池包，扭转，水口固定，<br />
+<div class="outline-text-5" id="text-org305b6d3">
+<p>
+电池包托架：化解，
+张总：
+耐久，水电口上下，平板电池。
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2b7b048" class="outline-3">
+<h3 id="org2b7b048">郭永庆</h3>
+<div class="outline-text-3" id="text-org2b7b048">
+</div>
+<div id="outline-container-org7ff1200" class="outline-4">
+<h4 id="org7ff1200">车门玻璃装配不均匀</h4>
+</div>
+<div id="outline-container-orgba29fca" class="outline-4">
+<h4 id="orgba29fca">前挡玻璃弧度不正</h4>
+</div>
+<div id="outline-container-orge2753e3" class="outline-4">
+<h4 id="orge2753e3">抽查？</h4>
+</div>
+<div id="outline-container-org9b95d91" class="outline-4">
+<h4 id="org9b95d91">向超</h4>
+<div class="outline-text-4" id="text-org9b95d91">
+</div>
+<ul class="org-ul">
+<li><a id="org8f5152e"></a>段差仪<br /></li>
+<li><a id="orga8f6a94"></a>shi'yong'xin'xing<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org072dbea" class="outline-3">
+<h3 id="org072dbea">刘宝同</h3>
+<div class="outline-text-3" id="text-org072dbea">
+</div>
+<div id="outline-container-orgfa80a8e" class="outline-4">
+<h4 id="orgfa80a8e">解决的问题</h4>
+<div class="outline-text-4" id="text-orgfa80a8e">
+</div>
+<ul class="org-ul">
+<li><a id="org784c55f"></a>自动驾驶标志灯<br /></li>
+<li><a id="org1bb725f"></a>法规<br /></li>
+<li><a id="orgef62295"></a>灯光调节<br /></li>
+<li><a id="orge243360"></a>阳光雨量调节器<br /></li>
+<li><a id="org9ba2e60"></a>具体方案<br />
+<ul class="org-ul">
+<li><a id="org952880d"></a>控制器控制 pwm 输出<br /></li>
+<li><a id="org624e444"></a>控制方案<br />
+<ul class="org-ul">
+<li><a id="orgf5a1ee0"></a>头灯<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org844250a" class="outline-4">
+<h4 id="org844250a">效益</h4>
+</div>
+<div id="outline-container-org6f50606" class="outline-4">
+<h4 id="org6f50606">技术点</h4>
+</div>
+<div id="outline-container-orgeb98aec" class="outline-4">
+<h4 id="orgeb98aec">创新点</h4>
+</div>
+<div id="outline-container-orge5ece18" class="outline-4">
+<h4 id="orge5ece18">CAN 网络管理方案</h4>
+<div class="outline-text-4" id="text-orge5ece18">
+</div>
+<ul class="org-ul">
+<li><a id="org768cd16"></a>车身控制器<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb693c3f" class="outline-2">
+<h2 id="orgb693c3f"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-14 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-orgb693c3f">
+</div>
+<div id="outline-container-org8b6dd08" class="outline-3">
+<h3 id="org8b6dd08">企业治理及工业化 产品与项目管理 路则鹏</h3>
+<div class="outline-text-3" id="text-org8b6dd08">
+</div>
+<div id="outline-container-orge85b2e4" class="outline-4">
+<h4 id="orge85b2e4">前晨专利内审会模板-20230410-车载显示屏的应用功能用户界面.pptx</h4>
+<div class="outline-text-4" id="text-orge85b2e4">
+<p>
+要素：几何（像素，物理尺寸，曲率，拓扑，布局（layout），几何元素（线段，圆，弧线，三角性，或者这些结构的组合）颜色，状态切换（状态机），风格（？）
+功能？操作方式？
+边框：应用场景，不写颜色
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+项目：iC1
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbcba15" class="outline-3">
+<h3 id="orgdbcba15">企业治理及工业化 产品与项目管理 梁博之</h3>
+<div class="outline-text-3" id="text-orgdbcba15">
+</div>
+<div id="outline-container-orga88a8a0" class="outline-4">
+<h4 id="orga88a8a0">轻卡换电站 - 外观专利.pptx</h4>
+<div class="outline-text-4" id="text-orga88a8a0">
+<p>
+要素：尺寸，结构，图案，组合，
+功能：
+机械结构：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">logo</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">ng</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+项目：
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8cc00d5" class="outline-3">
+<h3 id="org8cc00d5">整车工程 车身与电气 郭永庆</h3>
+<div class="outline-text-3" id="text-org8cc00d5">
+</div>
+<div id="outline-container-org796be0e" class="outline-4">
+<h4 id="org796be0e">内审材料&#x2013;一种安全带导向环结构.pptx</h4>
+<div class="outline-text-4" id="text-org796be0e">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">避免剐蹭</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">窗口连接方式</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">安装方式</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">拉紧的时候影响受力分布，有安全问题</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">实用性需要优化</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+项目：
+</p>
+</div>
+</div>
+<div id="outline-container-org929556d" class="outline-4">
+<h4 id="org929556d">内审材料&#x2013;一种汽车洗涤壶装置.pptx</h4>
+<div class="outline-text-4" id="text-org929556d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb8bf33d" class="outline-4">
+<h4 id="orgb8bf33d">内审材料–一种前风窗玻璃限位结构.pptx</h4>
+<div class="outline-text-4" id="text-orgb8bf33d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">不拆</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">只有一块料</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">用处大</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2e18d49" class="outline-3">
+<h3 id="org2e18d49">江阴试验部 焦少斌</h3>
+<div class="outline-text-3" id="text-org2e18d49">
+</div>
+<div id="outline-container-org8a20d7d" class="outline-4">
+<h4 id="org8a20d7d">初版<sub>一种换电站的换电系统.pptx</sub></h4>
+<div class="outline-text-4" id="text-org8a20d7d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">作为整体申请</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">应用领域</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">创新性不足</td>
+</tr>
+
+<tr>
+<td class="org-left">信息流处理逻辑</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org6b43f95" class="outline-4">
+<h4 id="org6b43f95">初版<sub>一种换电站的换电装置换电方法.pptx</sub></h4>
+<div class="outline-text-4" id="text-org6b43f95">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">布局 1</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">两种布局</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">流程</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">突出保护点？</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">摆放方式</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">查重</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a2cb6d" class="outline-2">
+<h2 id="org3a2cb6d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-21 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org3a2cb6d">
+</div>
+<div id="outline-container-org8ca5050" class="outline-3">
+<h3 id="org8ca5050">电动力及电子电器 沈迪</h3>
+<div class="outline-text-3" id="text-org8ca5050">
+</div>
+<div id="outline-container-orge4240db" class="outline-4">
+<h4 id="orge4240db">电池系统+外观专利申请<sub>沈迪.doc</sub></h4>
+<div class="outline-text-4" id="text-orge4240db">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org9cf1a95" class="outline-4">
+<h4 id="org9cf1a95">换电电池系统+外观专利申请<sub>沈迪.doc</sub></h4>
+<div class="outline-text-4" id="text-org9cf1a95">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d59f12" class="outline-3">
+<h3 id="org0d59f12">企业治理及工业化 产品与项目管理 梁博之</h3>
+<div class="outline-text-3" id="text-org0d59f12">
+</div>
+<div id="outline-container-org5e0385a" class="outline-4">
+<h4 id="org5e0385a">轻卡换电站 - 外观专利.pptx</h4>
+<div class="outline-text-4" id="text-org5e0385a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbba623c" class="outline-3">
+<h3 id="orgbba623c">整车工程 车身与电气 郭永庆</h3>
+<div class="outline-text-3" id="text-orgbba623c">
+</div>
+<div id="outline-container-orgf37db1b" class="outline-4">
+<h4 id="orgf37db1b">内审材料&#x2013;一种滑门对加油口盖的锁止结构.pptx</h4>
+<div class="outline-text-4" id="text-orgf37db1b">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">拉线方式较难实现</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">机械方式</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org4e84d6b" class="outline-4">
+<h4 id="org4e84d6b">内审材料&#x2013;一种加油口盖限制滑门开启的结构.pptx</h4>
+<div class="outline-text-4" id="text-org4e84d6b">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org734da5c" class="outline-2">
+<h2 id="org734da5c"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-07-07 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org734da5c">
+</div>
+<div id="outline-container-org3632bdf" class="outline-3">
+<h3 id="org3632bdf">整车工程 车身与电气 郭永庆</h3>
+<div class="outline-text-3" id="text-org3632bdf">
+</div>
+<div id="outline-container-orgde1cfd5" class="outline-4">
+<h4 id="orgde1cfd5">内审材料&#x2013;车门外开把手.pptx</h4>
+<div class="outline-text-4" id="text-orgde1cfd5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">iC1</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">相对成熟</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">错开玻璃</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org723921d" class="outline-4">
+<h4 id="org723921d">内审材料&#x2013;外水切.pptx</h4>
+<div class="outline-text-4" id="text-org723921d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">外水切</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">查重？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">固定方式</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">为了美观</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">iC1</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">内部连接</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">乘用车用在商用车，卡口以后用胶粘</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org4422b77" class="outline-4">
+<h4 id="org4422b77">内审材料&#x2013;隐藏式外水切.pptx</h4>
+<div class="outline-text-4" id="text-org4422b77">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">挂钣金的结构</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">可以节省冲压费</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">预研</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org134b005" class="outline-2">
+<h2 id="org134b005"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-07-14 Fri&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org134b005">
+</div>
+<div id="outline-container-org23751e6" class="outline-3">
+<h3 id="org23751e6">电动力工程 电池系统 周芳连</h3>
+<div class="outline-text-3" id="text-org23751e6">
+</div>
+<div id="outline-container-org5a09d30" class="outline-4">
+<h4 id="org5a09d30">一种基于 simulink 模型的行车电池异常状态模拟以及验证方法</h4>
+<div class="outline-text-4" id="text-org5a09d30">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">标定方法</td>
+<td class="org-left">不涉及建模</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">数据来源</td>
+<td class="org-left">simulink 一种应用</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">建模方法？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">可调整</td>
+<td class="org-left">电池仿真模拟很多</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">特点？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">找边界的方法</td>
+<td class="org-left">模拟一场情况的方法？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">实际发挥作用</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提前模拟的方法？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">快速色痕迹的方法？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">方法：自己搭建模型，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">整包 不是电芯：重点是封装完以后的测试</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org0423bcc" class="outline-4">
+<h4 id="org0423bcc">一种用于模拟电池系统行车异常数据的特制模组以及测试方法</h4>
+<div class="outline-text-4" id="text-org0423bcc">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何特制的方法</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">提前获取数据，输入系统的方式</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">如何实现快速设计，方法？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">特制的模组</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">工况有限，故障注入的功能</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">模组级别，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">模组, 江阴在用，通用项目。</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9590b55" class="outline-2">
+<h2 id="org9590b55"><span class="timestamp-wrapper"><span class="timestamp">&lt;2023-09-11 Mon&gt;</span></span></h2>
+<div class="outline-text-2" id="text-org9590b55">
+</div>
+<div id="outline-container-org4166c36" class="outline-3">
+<h3 id="org4166c36">郭永庆</h3>
+<div class="outline-text-3" id="text-org4166c36">
+</div>
+<div id="outline-container-orgceab2af" class="outline-4">
+<h4 id="orgceab2af">钣金件间隙测量装置</h4>
+<div class="outline-text-4" id="text-orgceab2af">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">传统测量方式</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">点测量</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">有间隙</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">精度要求不高</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">磁石吸附</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">向超：   瑕疵</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">高度不能太高，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">9-15mm 适用范围较广</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">只是能够用于平行的平面</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">建议做小点，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">没有用于造车的计划</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">需要昂贵，传感器，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">实用新型</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">光电是为回避已有专利</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgd544126" class="outline-4">
+<h4 id="orgd544126">一种钣金测量仪器</h4>
+<div class="outline-text-4" id="text-orgd544126">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">采用柔性尺</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">精度&lt;0.5mm</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org48e66e9" class="outline-4">
+<h4 id="org48e66e9">玻璃成像装置</h4>
+<div class="outline-text-4" id="text-org48e66e9">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">光纤层</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">市场需求？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">内外玻璃层</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">成本高，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">胶质</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">难度，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga490c2b" class="outline-4">
+<h4 id="orga490c2b">车用暖水壶</h4>
+<div class="outline-text-4" id="text-orga490c2b">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">主要后装</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">后装变前装/准前装/后装变前装</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">固定水壶的装置，差不多，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">商用车暖壶固定装置</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org07d2349" class="outline-4">
+<h4 id="org07d2349">门洞密封条</h4>
+<div class="outline-text-4" id="text-org07d2349">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">漏水</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">弹簧芯/赛芯两种方案</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">和我们车型关系不到</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">在我们自己车上没有应用</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orga6b812b" class="outline-4">
+<h4 id="orga6b812b">后排后视镜</h4>
+<div class="outline-text-4" id="text-orga6b812b">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">纸片，镜面柔性材料，安全性</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">和已有方案的差异是用了柔性镜面材料</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">新材料的引用</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgdc3930d" class="outline-4">
+<h4 id="orgdc3930d">仪表板结构</h4>
+<div class="outline-text-4" id="text-orgdc3930d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">解决问题</th>
+<th scope="col" class="org-left">效益</th>
+<th scope="col" class="org-left">创新点</th>
+<th scope="col" class="org-left">评论</th>
+<th scope="col" class="org-left">项目</th>
+<th scope="col" class="org-left">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">仪表板封口破坏结构整体性，美观</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">车内加湿器</td>
+<td class="org-left">车内需要加湿器？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">出风？出雾？</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">氛围灯效果，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">湿度，</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>
