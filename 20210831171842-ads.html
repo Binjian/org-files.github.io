@@ -16,43 +16,43 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga5753ec">features</a>
+<li><a href="#org4c4bf79">features</a>
 <ul>
-<li><a href="#orgccd2c5f">NERF</a>
+<li><a href="#org006e8db">NERF</a>
 <ul>
-<li><a href="#org51d634a">easy camera calibration</a></li>
-<li><a href="#org5b7a89a">3d inference</a></li>
-<li><a href="#orgc3fe3a9">instant NERF</a></li>
+<li><a href="#org98545f0">easy camera calibration</a></li>
+<li><a href="#org0e4f45b">3d inference</a></li>
+<li><a href="#orgd3f962c">instant NERF</a></li>
 </ul>
 </li>
-<li><a href="#org2b205fa">BEV inference</a></li>
-<li><a href="#orgc75c00a">LLM as AGI</a>
+<li><a href="#org8b09282">BEV inference</a></li>
+<li><a href="#orgd2ddccf">LLM as AGI</a>
 <ul>
-<li><a href="#orgacfa367">planning for longtails</a></li>
-<li><a href="#orgf722370">complex environments (grounded planning - saycan)</a></li>
-<li><a href="#orgd8d9811">5G necessary</a></li>
+<li><a href="#org7f87872">planning for longtails</a></li>
+<li><a href="#org259d3b8">complex environments (grounded planning - saycan)</a></li>
+<li><a href="#org0c630c1">5G necessary</a></li>
 </ul>
 </li>
-<li><a href="#orgfa1da4f">simulation</a>
+<li><a href="#org65ee07b">simulation</a>
 <ul>
-<li><a href="#orgaba7eef">generative model</a></li>
-<li><a href="#org37334f5">planning: Sim2Real</a></li>
-<li><a href="#orgcc69724">transfer learning</a></li>
+<li><a href="#org5958e58">generative model</a></li>
+<li><a href="#org2d03c5f">planning: Sim2Real</a></li>
+<li><a href="#org1c7458e">transfer learning</a></li>
 </ul>
 </li>
-<li><a href="#org60118bd">prediction</a>
+<li><a href="#org77ae830">prediction</a>
 <ul>
-<li><a href="#orga501c95">unsupervised learning (GAN) for prediction</a></li>
-<li><a href="#org59979f3">mixing of perception and prediction</a></li>
+<li><a href="#org7b0ff43">unsupervised learning (GAN) for prediction</a></li>
+<li><a href="#org94330f0">mixing of perception and prediction</a></li>
 </ul>
 </li>
-<li><a href="#org5632cf8">world model for allevation of inferences</a>
+<li><a href="#orga806376">world model for allevation of inferences</a>
 <ul>
-<li><a href="#org8f4e5f7">3d vehicle dataset</a></li>
+<li><a href="#orgbba2be4">3d vehicle dataset</a></li>
 </ul>
 </li>
-<li><a href="#org3339eb6">CLIP level perception (more labels with language model)</a></li>
-<li><a href="#orgd9255f9">DDPM</a></li>
+<li><a href="#org110663c">CLIP level perception (more labels with language model)</a></li>
+<li><a href="#org3bc3f61">DDPM</a></li>
 </ul>
 </li>
 </ul>
@@ -69,89 +69,89 @@
 <a href="./20210831171925-l3.html">l3</a>
 </p>
 
-<div id="outline-container-orga5753ec" class="outline-2">
-<h2 id="orga5753ec">features</h2>
-<div class="outline-text-2" id="text-orga5753ec">
+<div id="outline-container-org4c4bf79" class="outline-2">
+<h2 id="org4c4bf79">features</h2>
+<div class="outline-text-2" id="text-org4c4bf79">
 </div>
-<div id="outline-container-orgccd2c5f" class="outline-3">
-<h3 id="orgccd2c5f">NERF</h3>
-<div class="outline-text-3" id="text-orgccd2c5f">
+<div id="outline-container-org006e8db" class="outline-3">
+<h3 id="org006e8db">NERF</h3>
+<div class="outline-text-3" id="text-org006e8db">
 </div>
-<div id="outline-container-org51d634a" class="outline-4">
-<h4 id="org51d634a">easy camera calibration</h4>
+<div id="outline-container-org98545f0" class="outline-4">
+<h4 id="org98545f0">easy camera calibration</h4>
 </div>
-<div id="outline-container-org5b7a89a" class="outline-4">
-<h4 id="org5b7a89a">3d inference</h4>
-<div class="outline-text-4" id="text-org5b7a89a">
-</div>
-<ul class="org-ul">
-<li><a id="orgd030213"></a>map inference<br /></li>
-</ul>
-</div>
-<div id="outline-container-orgc3fe3a9" class="outline-4">
-<h4 id="orgc3fe3a9">instant NERF</h4>
-<div class="outline-text-4" id="text-orgc3fe3a9">
+<div id="outline-container-org0e4f45b" class="outline-4">
+<h4 id="org0e4f45b">3d inference</h4>
+<div class="outline-text-4" id="text-org0e4f45b">
 </div>
 <ul class="org-ul">
-<li><a id="orge3610cc"></a>planning input<br /></li>
+<li><a id="orga48bb93"></a>map inference<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgd3f962c" class="outline-4">
+<h4 id="orgd3f962c">instant NERF</h4>
+<div class="outline-text-4" id="text-orgd3f962c">
+</div>
+<ul class="org-ul">
+<li><a id="orgc9b6e44"></a>planning input<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2b205fa" class="outline-3">
-<h3 id="org2b205fa">BEV inference</h3>
+<div id="outline-container-org8b09282" class="outline-3">
+<h3 id="org8b09282">BEV inference</h3>
 </div>
-<div id="outline-container-orgc75c00a" class="outline-3">
-<h3 id="orgc75c00a">LLM as AGI</h3>
-<div class="outline-text-3" id="text-orgc75c00a">
+<div id="outline-container-orgd2ddccf" class="outline-3">
+<h3 id="orgd2ddccf">LLM as AGI</h3>
+<div class="outline-text-3" id="text-orgd2ddccf">
 </div>
-<div id="outline-container-orgacfa367" class="outline-4">
-<h4 id="orgacfa367">planning for longtails</h4>
+<div id="outline-container-org7f87872" class="outline-4">
+<h4 id="org7f87872">planning for longtails</h4>
 </div>
-<div id="outline-container-orgf722370" class="outline-4">
-<h4 id="orgf722370">complex environments (grounded planning - saycan)</h4>
+<div id="outline-container-org259d3b8" class="outline-4">
+<h4 id="org259d3b8">complex environments (grounded planning - saycan)</h4>
 </div>
-<div id="outline-container-orgd8d9811" class="outline-4">
-<h4 id="orgd8d9811">5G necessary</h4>
-</div>
-</div>
-<div id="outline-container-orgfa1da4f" class="outline-3">
-<h3 id="orgfa1da4f">simulation</h3>
-<div class="outline-text-3" id="text-orgfa1da4f">
-</div>
-<div id="outline-container-orgaba7eef" class="outline-4">
-<h4 id="orgaba7eef">generative model</h4>
-</div>
-<div id="outline-container-org37334f5" class="outline-4">
-<h4 id="org37334f5">planning: Sim2Real</h4>
-</div>
-<div id="outline-container-orgcc69724" class="outline-4">
-<h4 id="orgcc69724">transfer learning</h4>
+<div id="outline-container-org0c630c1" class="outline-4">
+<h4 id="org0c630c1">5G necessary</h4>
 </div>
 </div>
-<div id="outline-container-org60118bd" class="outline-3">
-<h3 id="org60118bd">prediction</h3>
-<div class="outline-text-3" id="text-org60118bd">
+<div id="outline-container-org65ee07b" class="outline-3">
+<h3 id="org65ee07b">simulation</h3>
+<div class="outline-text-3" id="text-org65ee07b">
 </div>
-<div id="outline-container-orga501c95" class="outline-4">
-<h4 id="orga501c95">unsupervised learning (GAN) for prediction</h4>
+<div id="outline-container-org5958e58" class="outline-4">
+<h4 id="org5958e58">generative model</h4>
 </div>
-<div id="outline-container-org59979f3" class="outline-4">
-<h4 id="org59979f3">mixing of perception and prediction</h4>
+<div id="outline-container-org2d03c5f" class="outline-4">
+<h4 id="org2d03c5f">planning: Sim2Real</h4>
 </div>
-</div>
-<div id="outline-container-org5632cf8" class="outline-3">
-<h3 id="org5632cf8">world model for allevation of inferences</h3>
-<div class="outline-text-3" id="text-org5632cf8">
-</div>
-<div id="outline-container-org8f4e5f7" class="outline-4">
-<h4 id="org8f4e5f7">3d vehicle dataset</h4>
+<div id="outline-container-org1c7458e" class="outline-4">
+<h4 id="org1c7458e">transfer learning</h4>
 </div>
 </div>
-<div id="outline-container-org3339eb6" class="outline-3">
-<h3 id="org3339eb6">CLIP level perception (more labels with language model)</h3>
+<div id="outline-container-org77ae830" class="outline-3">
+<h3 id="org77ae830">prediction</h3>
+<div class="outline-text-3" id="text-org77ae830">
 </div>
-<div id="outline-container-orgd9255f9" class="outline-3">
-<h3 id="orgd9255f9">DDPM</h3>
+<div id="outline-container-org7b0ff43" class="outline-4">
+<h4 id="org7b0ff43">unsupervised learning (GAN) for prediction</h4>
+</div>
+<div id="outline-container-org94330f0" class="outline-4">
+<h4 id="org94330f0">mixing of perception and prediction</h4>
+</div>
+</div>
+<div id="outline-container-orga806376" class="outline-3">
+<h3 id="orga806376">world model for allevation of inferences</h3>
+<div class="outline-text-3" id="text-orga806376">
+</div>
+<div id="outline-container-orgbba2be4" class="outline-4">
+<h4 id="orgbba2be4">3d vehicle dataset</h4>
+</div>
+</div>
+<div id="outline-container-org110663c" class="outline-3">
+<h3 id="org110663c">CLIP level perception (more labels with language model)</h3>
+</div>
+<div id="outline-container-org3bc3f61" class="outline-3">
+<h3 id="org3bc3f61">DDPM</h3>
 </div>
 </div>
 </div>
