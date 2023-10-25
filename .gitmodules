@@ -1,4 +1,4 @@
 [submodule "content"]
 	path = content
 	url = ssh://git@gitlab.newrizon.work:2222/binjian.xin/orgnotes.git
-	branch = master
+	branch = publish
