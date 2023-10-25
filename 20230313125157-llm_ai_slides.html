@@ -39,9 +39,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb9a4ac8">概述</a></li>
-<li><a href="#org0c57a01">大型语言模型的工程实现</a></li>
-<li><a href="#org90bc2c7">展望和挑战</a></li>
+<li><a href="#org00142f7">概述</a></li>
+<li><a href="#org3be7273">大型语言模型的工程实现</a></li>
+<li><a href="#org75eb4ba">展望和挑战</a></li>
 </ul>
 </div>
 </div>
@@ -49,9 +49,9 @@
 :ID:       a52aa49d-d9d0-4b3f-ba2b-d5eced50e7c6
 </p>
 
-<div id="outline-container-org02ae279" class="outline-3">
-<h3 id="org02ae279">签到码</h3>
-<div class="outline-text-3" id="text-org02ae279">
+<div id="outline-container-orgbb6df20" class="outline-3">
+<h3 id="orgbb6df20">签到码</h3>
+<div class="outline-text-3" id="text-orgbb6df20">
 
 <div class="figure">
 <p><img src="./img/llm_images/register.jpg" title="满意度调查码" width="600pix" />
@@ -59,16 +59,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgb9a4ac8" class="outline-2">
-<h2 id="orgb9a4ac8">概述</h2>
-<div class="outline-text-2" id="text-orgb9a4ac8">
+<div id="outline-container-org00142f7" class="outline-2">
+<h2 id="org00142f7">概述</h2>
+<div class="outline-text-2" id="text-org00142f7">
 </div>
 
-<div id="outline-container-org974eb57" class="outline-3">
-<h3 id="org974eb57">技术进步</h3>
-<div class="outline-text-3" id="text-org974eb57">
+<div id="outline-container-orgfdc7279" class="outline-3">
+<h3 id="orgfdc7279">技术进步</h3>
+<div class="outline-text-3" id="text-orgfdc7279">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>技术进步</label><pre class="src src-mermaid" id="org63867d4">flowchart LR
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>技术进步</label><pre class="src src-mermaid" id="org9cafbdc">flowchart LR
     id1(((农业革命)))--&gt;id2(((工业革命)))--&gt;id3(((电力革命)))--&gt;id4(((信息革命)))--&gt;id5(((大数据)))
     id4--&gt;id6(((人工智能)))
     id2--&gt;id7(((蒸汽机)))
@@ -108,11 +108,11 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org267597e" class="outline-3">
-<h3 id="org267597e">科学观念的更新</h3>
-<div class="outline-text-3" id="text-org267597e">
+<div id="outline-container-org1642092" class="outline-3">
+<h3 id="org1642092">科学观念的更新</h3>
+<div class="outline-text-3" id="text-org1642092">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 2: </span>科学进展</label><pre class="src src-mermaid" id="orgc3b17f2">mindmap
+<label class="org-src-name"><span class="listing-number">Listing 2: </span>科学进展</label><pre class="src src-mermaid" id="orgb86ea9c">mindmap
   root((科学))
   :::urgent large
     )物理(
@@ -153,9 +153,9 @@
 
 </div>
 </div>
-<div id="outline-container-org5629911" class="outline-4">
-<h4 id="org5629911">什么是 ChatGPT？</h4>
-<div class="outline-text-4" id="text-org5629911">
+<div id="outline-container-org90e05a2" class="outline-4">
+<h4 id="org90e05a2">什么是 ChatGPT？</h4>
+<div class="outline-text-4" id="text-org90e05a2">
 <p>
 <b><u>Chat</u></b> <b><u>G</u></b>enerative <b><u>P</u></b>retrained <b><u>T</u></b>ransformer
 </p>
@@ -214,9 +214,9 @@
 </div>
 
 
-<div id="outline-container-org127f042" class="outline-4">
-<h4 id="org127f042">Ilya Sutskever NIPS 2015</h4>
-<div class="outline-text-4" id="text-org127f042">
+<div id="outline-container-org9851608" class="outline-4">
+<h4 id="org9851608">Ilya Sutskever NIPS 2015</h4>
+<div class="outline-text-4" id="text-org9851608">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/sutskever_nips2015.png" title="Sutskever 2015" width="400pix" align="center" />
@@ -239,15 +239,15 @@ RNN 模型，谷歌大脑
 </div>
 </div>
 
-<div id="outline-container-orgb0e02ee" class="outline-4">
-<h4 id="orgb0e02ee">大型语言模型</h4>
-<div class="outline-text-4" id="text-orgb0e02ee">
+<div id="outline-container-org4466d67" class="outline-4">
+<h4 id="org4466d67">大型语言模型</h4>
+<div class="outline-text-4" id="text-org4466d67">
 </div>
 <ul class="org-ul">
-<li><a id="org302642c"></a>GPT 系列<br />
+<li><a id="org3fbc6b7"></a>GPT 系列<br />
 <ul class="org-ul">
-<li><a id="org49350a3"></a>GPT2 (1.5B), GPT3 (175B), InstructGPT(Alignment, RLHF)， ChatGPT(数据收集差异), GPT4(?)<br />
-<div class="outline-text-6" id="text-org49350a3">
+<li><a id="org93ce1d1"></a>GPT2 (1.5B), GPT3 (175B), InstructGPT(Alignment, RLHF)， ChatGPT(数据收集差异), GPT4(?)<br />
+<div class="outline-text-6" id="text-org93ce1d1">
 <p>
 👉 NanoGPT (Andrej Karpathy)
 </p>
@@ -267,9 +267,9 @@ RNN 模型，谷歌大脑
 </ul>
 </div>
 
-<div id="outline-container-orgaf1a806" class="outline-4">
-<h4 id="orgaf1a806">大型语言模型及训练计算量</h4>
-<div class="outline-text-4" id="text-orgaf1a806">
+<div id="outline-container-orgca59cf1" class="outline-4">
+<h4 id="orgca59cf1">大型语言模型及训练计算量</h4>
+<div class="outline-text-4" id="text-orgca59cf1">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/Ai-training-computation.png" title="隐空间聚类分布" width="500pix" align="center" />
@@ -307,9 +307,9 @@ Amazon: AlexaTM(20B)
 </div>
 </div>
 
-<div id="outline-container-org240eb93" class="outline-4">
-<h4 id="org240eb93">锂电池能量密度提升</h4>
-<div class="outline-text-4" id="text-org240eb93">
+<div id="outline-container-org0ec2be1" class="outline-4">
+<h4 id="org0ec2be1">锂电池能量密度提升</h4>
+<div class="outline-text-4" id="text-org0ec2be1">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/FOTW_1234.png" title="锂电池能量密度的增长" width="800px" align="center" />
@@ -318,9 +318,9 @@ Amazon: AlexaTM(20B)
 </div>
 </div>
 
-<div id="outline-container-org64fec91" class="outline-4">
-<h4 id="org64fec91">大型语言模型的能力改善</h4>
-<div class="outline-text-4" id="text-org64fec91">
+<div id="outline-container-org9923922" class="outline-4">
+<h4 id="org9923922">大型语言模型的能力改善</h4>
+<div class="outline-text-4" id="text-org9923922">
 
 <div class="figure">
 <p><img src="./img/llm_images/llm-progress.jpg" title="Emergence Behavior" width="500px" />
@@ -337,9 +337,9 @@ Amazon: AlexaTM(20B)
 </div>
 </div>
 
-<div id="outline-container-org4971c84" class="outline-4">
-<h4 id="org4971c84">社会影响</h4>
-<div class="outline-text-4" id="text-org4971c84">
+<div id="outline-container-orgeb89ece" class="outline-4">
+<h4 id="orgeb89ece">社会影响</h4>
+<div class="outline-text-4" id="text-orgeb89ece">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/ai_investment.png" alt="人工智能的投入" title="人工智能的投入" width="600px" align="right" />
@@ -364,9 +364,9 @@ Amazon: AlexaTM(20B)
 </div>
 </div>
 </div>
-<div id="outline-container-org0af51bd" class="outline-4">
-<h4 id="org0af51bd"><a href="https://www.nytimes.com/2023/03/08/opinion/noam-chomsky-chatgpt-ai.html">ChatGPT的虚假承诺</a></h4>
-<div class="outline-text-4" id="text-org0af51bd">
+<div id="outline-container-org3e9ae45" class="outline-4">
+<h4 id="org3e9ae45"><a href="https://www.nytimes.com/2023/03/08/opinion/noam-chomsky-chatgpt-ai.html">ChatGPT的虚假承诺</a></h4>
+<div class="outline-text-4" id="text-org3e9ae45">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/Noam_Chomsky_portrait_2017_retouched.png" title="诺姆⋅乔姆斯基" width="400pix" align="center" />
@@ -396,9 +396,9 @@ The human mind is not, like ChatGPT and its ilk, a lumbering statistical engine 
 </div>
 </div>
 
-<div id="outline-container-orgb2ec318" class="outline-4">
-<h4 id="orgb2ec318"><a href="https://venturebeat.com/ai/as-gpt-4-chatter-resumes-yoshua-bengio-says-chatgpt-is-a-wake-up-call/">Yoshua Bengio</a></h4>
-<div class="outline-text-4" id="text-orgb2ec318">
+<div id="outline-container-orgc72b9bc" class="outline-4">
+<h4 id="orgc72b9bc"><a href="https://venturebeat.com/ai/as-gpt-4-chatter-resumes-yoshua-bengio-says-chatgpt-is-a-wake-up-call/">Yoshua Bengio</a></h4>
+<div class="outline-text-4" id="text-orgc72b9bc">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/Yoshua_Bengio_2019_cropped.jpg" title="诺姆⋅乔姆斯基" width="400pix" align="center" />
@@ -433,13 +433,13 @@ ChatGPT 令人印象深刻，但在科学上只是微小的一步，最多称得
 </div>
 </div>
 
-<div id="outline-container-org0c57a01" class="outline-2">
-<h2 id="org0c57a01">大型语言模型的工程实现</h2>
-<div class="outline-text-2" id="text-org0c57a01">
+<div id="outline-container-org3be7273" class="outline-2">
+<h2 id="org3be7273">大型语言模型的工程实现</h2>
+<div class="outline-text-2" id="text-org3be7273">
 </div>
-<div id="outline-container-org626a872" class="outline-3">
-<h3 id="org626a872">用例</h3>
-<div class="outline-text-3" id="text-org626a872">
+<div id="outline-container-org19b4913" class="outline-3">
+<h3 id="org19b4913">用例</h3>
+<div class="outline-text-3" id="text-org19b4913">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/nn.png" title="神经网络做为大型语言模型" width="500px" align="center" />
@@ -457,9 +457,9 @@ ChatGPT 令人印象深刻，但在科学上只是微小的一步，最多称得
 </div>
 </div>
 
-<div id="outline-container-org297c1f0" class="outline-3">
-<h3 id="org297c1f0">语言编码模型：语素和 n-元语法(n-gram)</h3>
-<div class="outline-text-3" id="text-org297c1f0">
+<div id="outline-container-org4b99c9c" class="outline-3">
+<h3 id="org4b99c9c">语言编码模型：语素和 n-元语法(n-gram)</h3>
+<div class="outline-text-3" id="text-org4b99c9c">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/ngram-example.png" title="n 元语法（n-gram）" width="500px" align="center" />
@@ -481,9 +481,9 @@ ChatGPT 令人印象深刻，但在科学上只是微小的一步，最多称得
 </div>
 </div>
 
-<div id="outline-container-orga1c0481" class="outline-3">
-<h3 id="orga1c0481">GPT 中的计算对象：内嵌(embedding)</h3>
-<div class="outline-text-3" id="text-orga1c0481">
+<div id="outline-container-orgae7a872" class="outline-3">
+<h3 id="orgae7a872">GPT 中的计算对象：内嵌(embedding)</h3>
+<div class="outline-text-3" id="text-orgae7a872">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/word2vec.png" title="内嵌" width="500px" align="center" />
@@ -512,9 +512,9 @@ ChatGPT 令人印象深刻，但在科学上只是微小的一步，最多称得
 </div>
 </div>
 </div>
-<div id="outline-container-org49c466c" class="outline-3">
-<h3 id="org49c466c">内嵌的运算（embedding）</h3>
-<div class="outline-text-3" id="text-org49c466c">
+<div id="outline-container-org617508c" class="outline-3">
+<h3 id="org617508c">内嵌的运算（embedding）</h3>
+<div class="outline-text-3" id="text-org617508c">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/king-colored-embedding.png" alt="King, Man, Woman" width="800pix" title="内嵌向量" align="center" />
@@ -548,9 +548,9 @@ We try to copy these patterns in our lives and our society, seeking the rhythms,
 </div>
 </div>
 </div>
-<div id="outline-container-orgc86013c" class="outline-3">
-<h3 id="orgc86013c">图像中的内嵌</h3>
-<div class="outline-text-3" id="text-orgc86013c">
+<div id="outline-container-org7c4d312" class="outline-3">
+<h3 id="org7c4d312">图像中的内嵌</h3>
+<div class="outline-text-3" id="text-org7c4d312">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/image_embedding.png" title="图像内嵌" width="800px" align="center" />
@@ -570,9 +570,9 @@ We try to copy these patterns in our lives and our society, seeking the rhythms,
 </div>
 </div>
 
-<div id="outline-container-orgdba3701" class="outline-3">
-<h3 id="orgdba3701"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 训练</a></h3>
-<div class="outline-text-3" id="text-orgdba3701">
+<div id="outline-container-org06c90cf" class="outline-3">
+<h3 id="org06c90cf"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 训练</a></h3>
+<div class="outline-text-3" id="text-org06c90cf">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/01-gpt3-language-model-overview.gif" alt="Overview" title="overview" width="500pix" align="center" />
@@ -612,9 +612,9 @@ We try to copy these patterns in our lives and our society, seeking the rhythms,
 </div>
 </div>
 
-<div id="outline-container-orgc5f81f3" class="outline-3">
-<h3 id="orgc5f81f3"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 推理</a></h3>
-<div class="outline-text-3" id="text-orgc5f81f3">
+<div id="outline-container-org602219d" class="outline-3">
+<h3 id="org602219d"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 推理</a></h3>
+<div class="outline-text-3" id="text-org602219d">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/04-gpt3-generate-tokens-output.gif" alt="Overview" title="overview" width="500pix" align="center" />
@@ -646,9 +646,9 @@ We try to copy these patterns in our lives and our society, seeking the rhythms,
 </div>
 </div>
 </div>
-<div id="outline-container-org374ad66" class="outline-3">
-<h3 id="org374ad66"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 与 Transformer</a></h3>
-<div class="outline-text-3" id="text-org374ad66">
+<div id="outline-container-org4ed5dcb" class="outline-3">
+<h3 id="org4ed5dcb"><a href="https://jalammar.github.io/how-gpt3-works-visualizations-animations/">GPT3 与 Transformer</a></h3>
+<div class="outline-text-3" id="text-org4ed5dcb">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/07-gpt3-processing-transformer-blocks.gif" alt="Overview" title="overview" width="500pix" align="center" />
@@ -683,9 +683,9 @@ We try to copy these patterns in our lives and our society, seeking the rhythms,
 </div>
 </div>
 </div>
-<div id="outline-container-org9295034" class="outline-3">
-<h3 id="org9295034">ChatGPT</h3>
-<div class="outline-text-3" id="text-org9295034">
+<div id="outline-container-orge0137f8" class="outline-3">
+<h3 id="orge0137f8">ChatGPT</h3>
+<div class="outline-text-3" id="text-orge0137f8">
 
 <div class="figure">
 <p><object type="image/svg+xml" data="file:///home/runner/.org.d/roam/img/llm_images/ChatGPT_Diagram.svg" class="org-svg" title="隐空间聚类分布" width="800pix" align="center">
@@ -712,9 +712,9 @@ Sorry, your browser does not support SVG.</object>
 
 </div>
 </div>
-<div id="outline-container-orgc44c34c" class="outline-4">
-<h4 id="orgc44c34c">涌现行为（<a href="https://www.jasonwei.net/blog/emergence">Emergence Behavior</a>)</h4>
-<div class="outline-text-4" id="text-orgc44c34c">
+<div id="outline-container-org8afc658" class="outline-4">
+<h4 id="org8afc658">涌现行为（<a href="https://www.jasonwei.net/blog/emergence">Emergence Behavior</a>)</h4>
+<div class="outline-text-4" id="text-org8afc658">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/emergence.gif" title="Emergence Ablities on Benchmarks" width="600px" />
@@ -735,9 +735,9 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgd11ff52" class="outline-3">
-<h3 id="orgd11ff52">应用和部署</h3>
-<div class="outline-text-3" id="text-orgd11ff52">
+<div id="outline-container-org4116fd2" class="outline-3">
+<h3 id="org4116fd2">应用和部署</h3>
+<div class="outline-text-3" id="text-org4116fd2">
 <ul class="org-ul">
 <li>提示工程(Prompt Engineering)</li>
 <li>LLaMA 复刻 GPT (斯坦福<a href="https://crfm.stanford.edu/2023/03/13/alpaca.html">Alpaca</a> 7B, 100$）
@@ -761,9 +761,9 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org7b5c233" class="outline-3">
-<h3 id="org7b5c233">变形金刚（Transformer）</h3>
-<div class="outline-text-3" id="text-org7b5c233">
+<div id="outline-container-orgc3a82b2" class="outline-3">
+<h3 id="orgc3a82b2">变形金刚（Transformer）</h3>
+<div class="outline-text-3" id="text-orgc3a82b2">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/transformer.png" alt="Transformer and attention" title="Transformer and attention" width="800px" align="right" />
@@ -792,13 +792,13 @@ GPT3
 </div>
 </div>
 
-<div id="outline-container-orgf0ba04c" class="outline-3">
-<h3 id="orgf0ba04c">争议</h3>
-<div class="outline-text-3" id="text-orgf0ba04c">
+<div id="outline-container-orgead79a4" class="outline-3">
+<h3 id="orgead79a4">争议</h3>
+<div class="outline-text-3" id="text-orgead79a4">
 </div>
-<div id="outline-container-org08f1b57" class="outline-4">
-<h4 id="org08f1b57"><a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web">ChatGPT 是现实的模糊版本</a></h4>
-<div class="outline-text-4" id="text-org08f1b57">
+<div id="outline-container-org3168cc1" class="outline-4">
+<h4 id="org3168cc1"><a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web">ChatGPT 是现实的模糊版本</a></h4>
+<div class="outline-text-4" id="text-org3168cc1">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/Chiang.gif" title="blurry web" width="800pix" align="center" />
@@ -822,9 +822,9 @@ Markus Hutter Prize 2006 智能是一种压缩，无损压缩: 1GB wiki &#x2013;
 </div>
 </div>
 </div>
-<div id="outline-container-org3b2e153" class="outline-4">
-<h4 id="org3b2e153"><a href="https://www.fast.ai/posts/2023-03-20-wittgenstein.html">GPT4 和语言的未知领域</a></h4>
-<div class="outline-text-4" id="text-org3b2e153">
+<div id="outline-container-org48ca43a" class="outline-4">
+<h4 id="org48ca43a"><a href="https://www.fast.ai/posts/2023-03-20-wittgenstein.html">GPT4 和语言的未知领域</a></h4>
+<div class="outline-text-4" id="text-org48ca43a">
 <p>
 “它们(LLM)还可能带来新的伦理、社会和文化挑战，需要认真反思和监管。 我们如何使用这项技术将取决于我们如何认识到它对我们自己和他人的影响。
 </p>
@@ -864,9 +864,9 @@ But when we let GPT 4 do this for us, are we not abdicating our intelligence? Ar
 </div>
 </div>
 
-<div id="outline-container-org4b06f4e" class="outline-4">
-<h4 id="org4b06f4e"><a href="https://sohl-dickstein.github.io/2023/03/09/coherence.html">智能与一致性问题</a></h4>
-<div class="outline-text-4" id="text-org4b06f4e">
+<div id="outline-container-org8121ec9" class="outline-4">
+<h4 id="org8121ec9"><a href="https://sohl-dickstein.github.io/2023/03/09/coherence.html">智能与一致性问题</a></h4>
+<div class="outline-text-4" id="text-org8121ec9">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/llm_images/int_coh_cartoon_1.png" title="智能与条理性（coherence)" />
@@ -874,9 +874,9 @@ But when we let GPT 4 do this for us, are we not abdicating our intelligence? Ar
 </div>
 </div>
 </div>
-<div id="outline-container-org9626590" class="outline-4">
-<h4 id="org9626590">越高级的智能越混乱</h4>
-<div class="outline-text-4" id="text-org9626590">
+<div id="outline-container-orgec486e7" class="outline-4">
+<h4 id="orgec486e7">越高级的智能越混乱</h4>
+<div class="outline-text-4" id="text-orgec486e7">
 
 <div class="figure">
 <p><img src="./img/llm_images/int_coh_life.png" width="800pix" title="生物智能条理性" />
@@ -890,9 +890,9 @@ But when we let GPT 4 do this for us, are we not abdicating our intelligence? Ar
 </div>
 </div>
 
-<div id="outline-container-orgd22053a" class="outline-4">
-<h4 id="orgd22053a">神经网络的条理性</h4>
-<div class="outline-text-4" id="text-orgd22053a">
+<div id="outline-container-orgfa0bc9d" class="outline-4">
+<h4 id="orgfa0bc9d">神经网络的条理性</h4>
+<div class="outline-text-4" id="text-orgfa0bc9d">
 
 <div class="figure">
 <p><img src="./img/llm_images/int_coh_machines.png" title="神经网络的条理性" width="800pix" />
@@ -903,9 +903,9 @@ But when we let GPT 4 do this for us, are we not abdicating our intelligence? Ar
 </div>
 </div>
 
-<div id="outline-container-org90bc2c7" class="outline-2">
-<h2 id="org90bc2c7">展望和挑战</h2>
-<div class="outline-text-2" id="text-org90bc2c7">
+<div id="outline-container-org75eb4ba" class="outline-2">
+<h2 id="org75eb4ba">展望和挑战</h2>
+<div class="outline-text-2" id="text-org75eb4ba">
 <ul class="org-ul">
 <li>效率，开放，出处，有效性，合成
 <ul class="org-ul">
@@ -925,9 +925,9 @@ But when we let GPT 4 do this for us, are we not abdicating our intelligence? Ar
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org2c3be51" class="outline-3">
-<h3 id="org2c3be51">满意度调查码</h3>
-<div class="outline-text-3" id="text-org2c3be51">
+<div id="outline-container-orgb6b752c" class="outline-3">
+<h3 id="orgb6b752c">满意度调查码</h3>
+<div class="outline-text-3" id="text-orgb6b752c">
 
 <div class="figure">
 <p><img src="./img/llm_images/feedback.jpg" title="满意度调查码" width="600pix" />

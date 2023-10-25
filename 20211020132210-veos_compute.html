@@ -16,14 +16,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd9143a4">model</a>
+<li><a href="#org384f39c">model</a>
 <ul>
-<li><a href="#org415b374">actor</a></li>
-<li><a href="#org9695b14">critic</a></li>
+<li><a href="#org7b764d1">actor</a></li>
+<li><a href="#org5a385aa">critic</a></li>
 </ul>
 </li>
-<li><a href="#org3d077b5">memory</a></li>
-<li><a href="#org0472f69">compute</a></li>
+<li><a href="#org870c835">memory</a></li>
+<li><a href="#orgdc8066b">compute</a></li>
 </ul>
 </div>
 </div>
@@ -38,13 +38,13 @@
 <a href="./20210917084801-ddpg.html">DDPG</a>
 </p>
 
-<div id="outline-container-orgd9143a4" class="outline-2">
-<h2 id="orgd9143a4">model</h2>
-<div class="outline-text-2" id="text-orgd9143a4">
+<div id="outline-container-org384f39c" class="outline-2">
+<h2 id="org384f39c">model</h2>
+<div class="outline-text-2" id="text-org384f39c">
 </div>
-<div id="outline-container-org415b374" class="outline-3">
-<h3 id="org415b374">actor</h3>
-<div class="outline-text-3" id="text-org415b374">
+<div id="outline-container-org7b764d1" class="outline-3">
+<h3 id="org7b764d1">actor</h3>
+<div class="outline-text-3" id="text-org7b764d1">
 <ul class="org-ul">
 <li>input layer 5x30</li>
 <li>1st hidden layer 256</li>
@@ -53,9 +53,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org9695b14" class="outline-3">
-<h3 id="org9695b14">critic</h3>
-<div class="outline-text-3" id="text-org9695b14">
+<div id="outline-container-org5a385aa" class="outline-3">
+<h3 id="org5a385aa">critic</h3>
+<div class="outline-text-3" id="text-org5a385aa">
 <ul class="org-ul">
 <li>input state layer: 5x30</li>
 <li>1st input hidden layer: 16</li>
@@ -70,9 +70,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org3d077b5" class="outline-2">
-<h2 id="org3d077b5">memory</h2>
-<div class="outline-text-2" id="text-org3d077b5">
+<div id="outline-container-org870c835" class="outline-2">
+<h2 id="org870c835">memory</h2>
+<div class="outline-text-2" id="text-org870c835">
 <ul class="org-ul">
 <li>actor: 150+256+256+85 = 747</li>
 <li>critic: (150+16+32)+(85+32)+256+256+1=3318</li>
@@ -85,9 +85,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0472f69" class="outline-2">
-<h2 id="org0472f69">compute</h2>
-<div class="outline-text-2" id="text-org0472f69">
+<div id="outline-container-orgdc8066b" class="outline-2">
+<h2 id="orgdc8066b">compute</h2>
+<div class="outline-text-2" id="text-orgdc8066b">
 <ul class="org-ul">
 <li>(125696+87808)*2*3*6/3 = 2.56 megaFlops</li>
 </ul>

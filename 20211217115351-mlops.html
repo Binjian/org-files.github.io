@@ -16,106 +16,106 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd6e20ac">Terminology</a></li>
-<li><a href="#org14e7608">Definition</a></li>
-<li><a href="#org3e9420c">Challenge</a>
+<li><a href="#org31a19ff">Terminology</a></li>
+<li><a href="#orge32ab37">Definition</a></li>
+<li><a href="#orge96798d">Challenge</a>
 <ul>
-<li><a href="#org8fe02dc">dependencies: data changing, business shifting, results applying to business, real feedback, continuous evaluation, align with original goal</a></li>
-<li><a href="#org470b060">multidiscipline: business, data science, IT, different tools and skills</a></li>
-<li><a href="#org997e0cb">Data scientists not software engineers: model building and assessment</a>
+<li><a href="#orgb94f150">dependencies: data changing, business shifting, results applying to business, real feedback, continuous evaluation, align with original goal</a></li>
+<li><a href="#org4ff1da4">multidiscipline: business, data science, IT, different tools and skills</a></li>
+<li><a href="#orgb5363c4">Data scientists not software engineers: model building and assessment</a>
 <ul>
-<li><a href="#orgd8f40c6">need Software engineer: deployment, operation</a></li>
-<li><a href="#orgf336bdf">streched data scientists</a></li>
+<li><a href="#org628bdf5">need Software engineer: deployment, operation</a></li>
+<li><a href="#orgae49f77">streched data scientists</a></li>
 </ul>
 </li>
-<li><a href="#orga58aae7">compares to DevOps: streamlineing SW changes and updates.</a>
+<li><a href="#org7a077f9">compares to DevOps: streamlineing SW changes and updates.</a>
 <ul>
-<li><a href="#orga80e9ba">SAME:</a></li>
-<li><a href="#org20bb1d5">DIFFERENT:</a></li>
+<li><a href="#org159e762">SAME:</a></li>
+<li><a href="#org6a4ff6a">DIFFERENT:</a></li>
 </ul>
 </li>
-<li><a href="#org4bcfa76">Need to be at Enterprise Level at a large scale</a>
+<li><a href="#org6e94b9c">Need to be at Enterprise Level at a large scale</a>
 <ul>
-<li><a href="#org3286b38">multistage</a></li>
-<li><a href="#orga011918">mulit-discipline</a></li>
-<li><a href="#orgddb573e">mulit-phase</a></li>
-<li><a href="#org1df86c0">heterogeneous environment</a></li>
-<li><a href="#org149dca9">framework</a></li>
-<li><a href="#orgda82f5c">best practices</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgbf8aae0">Benefit</a>
-<ul>
-<li><a href="#org46c6bb1">mitigate risk</a>
-<ul>
-<li><a href="#orgc3f6ffa">risk assessment</a></li>
-<li><a href="#org5683952">risk mitigation</a></li>
-<li><a href="#org86bf1a3">responsible AI</a></li>
-</ul>
-</li>
-<li><a href="#orgbdf6c49">scale up at enterprise level</a>
-<ul>
-<li><a href="#org7a985c5">MLOps discipline</a></li>
+<li><a href="#orgd14751f">multistage</a></li>
+<li><a href="#org52cf5d6">mulit-discipline</a></li>
+<li><a href="#orgdcde73e">mulit-phase</a></li>
+<li><a href="#orgb3d3fa0">heterogeneous environment</a></li>
+<li><a href="#orgc63de34">framework</a></li>
+<li><a href="#orgbab2d75">best practices</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9fbdbeb">Deployment with MLOps</a>
+<li><a href="#orge9da88f">Benefit</a>
 <ul>
-<li><a href="#org08cbc81">essential practices</a>
+<li><a href="#orga758d30">mitigate risk</a>
 <ul>
-<li><a href="#orgfaf2753">model quality and continuity</a></li>
+<li><a href="#org294a548">risk assessment</a></li>
+<li><a href="#org5d367e1">risk mitigation</a></li>
+<li><a href="#orgd47bf16">responsible AI</a></li>
 </ul>
 </li>
-<li><a href="#orgdda35cd">risk without MLOps</a>
+<li><a href="#org9bde18e">scale up at enterprise level</a>
 <ul>
-<li><a href="#org39a381e">business risk with model quality, conitnuity (biased model, poor prediction)</a></li>
-</ul>
-</li>
-<li><a href="#orgb1544ef">transparency and accountability</a>
-<ul>
-<li><a href="#org28a5b47">management （MLOps and C-suite) should understand MLOps,</a></li>
+<li><a href="#org80373b7">MLOps discipline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc5a7c8f">People of MLOps</a>
+<li><a href="#org7f1f914">Deployment with MLOps</a>
 <ul>
-<li><a href="#org1a50c60">subject matter experts SME</a>
+<li><a href="#org1a057bf">essential practices</a>
 <ul>
-<li><a href="#org840b00b">Business Decision Modeling / Enterprise Decision Management</a></li>
-<li><a href="#org56afa95">active at the beginning and end of ML model</a></li>
-<li><a href="#org71bb6b1">close the feedback loop not to ignore important information</a></li>
-<li><a href="#orga4e0cd8">easy to understand model performancein business terms, unexpected performance shifts</a></li>
-<li><a href="#orgd89ae3e">flag results that don't align with business expectations</a></li>
-<li><a href="#org823c290">need transparency and understand data pipelines, communication with data scientists for models</a></li>
-<li><a href="#org9e9ba14">responsible AI</a></li>
+<li><a href="#orgcb4ab65">model quality and continuity</a></li>
 </ul>
 </li>
-<li><a href="#org8021f10">data scientists</a>
+<li><a href="#org6f8b6cd">risk without MLOps</a>
 <ul>
-<li><a href="#org297ab18">most criticalchallenged by siloed data, process and tools, difficult to efforts</a></li>
-<li><a href="#orgfedd03b">benefit from MLOps</a></li>
-<li><a href="#org4f3157b">build model</a></li>
-<li><a href="#org5ff5a3d">understand SME requirements, help to frame business problems for a viable ML solution (difficult!, BDM helps)</a></li>
-<li><a href="#orgafd7eb9">siloed from core of the business and SME, orgnizational infrastructure</a></li>
-<li><a href="#org4193a28">interface to data engineers</a></li>
-<li><a href="#orge71a7df">assess model quality to ensure it's working in production,</a></li>
-<li><a href="#org936f4fb">answer initial business questions or needs,</a></li>
-<li><a href="#orgc9d8e28">operationalization: pushing model to production and measuring the performance against business goals, while MLOps maintains the models and data pipeline in production, new Operationalization.</a></li>
-<li><a href="#org55ee499">transparency: drill down to data pipelines, quick assessment and adjustments.</a></li>
-<li><a href="#org303beaa">Automated model packaging and delivery for quick and easy (safe) deployment to production.</a></li>
+<li><a href="#orgac53a05">business risk with model quality, conitnuity (biased model, poor prediction)</a></li>
+</ul>
+</li>
+<li><a href="#orgf63d7c6">transparency and accountability</a>
+<ul>
+<li><a href="#org91737fc">management （MLOps and C-suite) should understand MLOps,</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7501da1">Framework</a>
+<li><a href="#org03c3f5f">People of MLOps</a>
 <ul>
-<li><a href="#org51886b5">metaflow</a></li>
-<li><a href="#org4105e89">kubeflow</a></li>
-<li><a href="#org472a718">baiduflow</a></li>
+<li><a href="#org315d147">subject matter experts SME</a>
+<ul>
+<li><a href="#orgdbe7cd7">Business Decision Modeling / Enterprise Decision Management</a></li>
+<li><a href="#org30f1053">active at the beginning and end of ML model</a></li>
+<li><a href="#org5cb1e58">close the feedback loop not to ignore important information</a></li>
+<li><a href="#orgb611985">easy to understand model performancein business terms, unexpected performance shifts</a></li>
+<li><a href="#org2811d9a">flag results that don't align with business expectations</a></li>
+<li><a href="#org017c71b">need transparency and understand data pipelines, communication with data scientists for models</a></li>
+<li><a href="#orgd7cc7db">responsible AI</a></li>
+</ul>
+</li>
+<li><a href="#org0e093b5">data scientists</a>
+<ul>
+<li><a href="#org7e98e8d">most criticalchallenged by siloed data, process and tools, difficult to efforts</a></li>
+<li><a href="#org8afde73">benefit from MLOps</a></li>
+<li><a href="#org8ddf509">build model</a></li>
+<li><a href="#org383aa4e">understand SME requirements, help to frame business problems for a viable ML solution (difficult!, BDM helps)</a></li>
+<li><a href="#org15190ae">siloed from core of the business and SME, orgnizational infrastructure</a></li>
+<li><a href="#org7795863">interface to data engineers</a></li>
+<li><a href="#org54c9376">assess model quality to ensure it's working in production,</a></li>
+<li><a href="#orge51cb3a">answer initial business questions or needs,</a></li>
+<li><a href="#orgddf9500">operationalization: pushing model to production and measuring the performance against business goals, while MLOps maintains the models and data pipeline in production, new Operationalization.</a></li>
+<li><a href="#org724f530">transparency: drill down to data pipelines, quick assessment and adjustments.</a></li>
+<li><a href="#org3548c2d">Automated model packaging and delivery for quick and easy (safe) deployment to production.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org41e6390">Framework</a>
+<ul>
+<li><a href="#org716f1a0">metaflow</a></li>
+<li><a href="#org620319a">kubeflow</a></li>
+<li><a href="#org35a3656">baiduflow</a></li>
 </ul>
 </li>
 </ul>
@@ -125,9 +125,9 @@
 :ID:       fed316c6-eeb4-4267-b8e2-448a3d789927
 </p>
 
-<div id="outline-container-orgd6e20ac" class="outline-2">
-<h2 id="orgd6e20ac">Terminology</h2>
-<div class="outline-text-2" id="text-orgd6e20ac">
+<div id="outline-container-org31a19ff" class="outline-2">
+<h2 id="org31a19ff">Terminology</h2>
+<div class="outline-text-2" id="text-org31a19ff">
 <p>
 MLOps
 AIOps (AI for DevOps)
@@ -135,9 +135,9 @@ DataOps: continuous monitoring of data quality and metadata change; has intersec
 </p>
 </div>
 </div>
-<div id="outline-container-org14e7608" class="outline-2">
-<h2 id="org14e7608">Definition</h2>
-<div class="outline-text-2" id="text-org14e7608">
+<div id="outline-container-orge32ab37" class="outline-2">
+<h2 id="orge32ab37">Definition</h2>
+<div class="outline-text-2" id="text-orge32ab37">
 <p>
 standardization and streamlining of machine learning life cycle
 </p>
@@ -153,174 +153,174 @@ Goal: decision automation, company wide, parallel, risk control,
 </div>
 </div>
 
-<div id="outline-container-org3e9420c" class="outline-2">
-<h2 id="org3e9420c">Challenge</h2>
-<div class="outline-text-2" id="text-org3e9420c">
+<div id="outline-container-orge96798d" class="outline-2">
+<h2 id="orge96798d">Challenge</h2>
+<div class="outline-text-2" id="text-orge96798d">
 </div>
-<div id="outline-container-org8fe02dc" class="outline-3">
-<h3 id="org8fe02dc">dependencies: data changing, business shifting, results applying to business, real feedback, continuous evaluation, align with original goal</h3>
+<div id="outline-container-orgb94f150" class="outline-3">
+<h3 id="orgb94f150">dependencies: data changing, business shifting, results applying to business, real feedback, continuous evaluation, align with original goal</h3>
 </div>
-<div id="outline-container-org470b060" class="outline-3">
-<h3 id="org470b060">multidiscipline: business, data science, IT, different tools and skills</h3>
+<div id="outline-container-org4ff1da4" class="outline-3">
+<h3 id="org4ff1da4">multidiscipline: business, data science, IT, different tools and skills</h3>
 </div>
-<div id="outline-container-org997e0cb" class="outline-3">
-<h3 id="org997e0cb">Data scientists not software engineers: model building and assessment</h3>
-<div class="outline-text-3" id="text-org997e0cb">
+<div id="outline-container-orgb5363c4" class="outline-3">
+<h3 id="orgb5363c4">Data scientists not software engineers: model building and assessment</h3>
+<div class="outline-text-3" id="text-orgb5363c4">
 </div>
-<div id="outline-container-orgd8f40c6" class="outline-4">
-<h4 id="orgd8f40c6">need Software engineer: deployment, operation</h4>
+<div id="outline-container-org628bdf5" class="outline-4">
+<h4 id="org628bdf5">need Software engineer: deployment, operation</h4>
 </div>
-<div id="outline-container-orgf336bdf" class="outline-4">
-<h4 id="orgf336bdf">streched data scientists</h4>
+<div id="outline-container-orgae49f77" class="outline-4">
+<h4 id="orgae49f77">streched data scientists</h4>
 </div>
 </div>
-<div id="outline-container-orga58aae7" class="outline-3">
-<h3 id="orga58aae7">compares to DevOps: streamlineing SW changes and updates.</h3>
-<div class="outline-text-3" id="text-orga58aae7">
+<div id="outline-container-org7a077f9" class="outline-3">
+<h3 id="org7a077f9">compares to DevOps: streamlineing SW changes and updates.</h3>
+<div class="outline-text-3" id="text-org7a077f9">
 </div>
-<div id="outline-container-orga80e9ba" class="outline-4">
-<h4 id="orga80e9ba">SAME:</h4>
-<div class="outline-text-4" id="text-orga80e9ba">
+<div id="outline-container-org159e762" class="outline-4">
+<h4 id="org159e762">SAME:</h4>
+<div class="outline-text-4" id="text-org159e762">
 </div>
 <ul class="org-ul">
-<li><a id="org48ac93f"></a>robust automation and trust between teams<br /></li>
-<li><a id="org4025dc1"></a>collaboration and communication<br /></li>
-<li><a id="org5375644"></a>end2end service life cycle (build, test, release)<br /></li>
-<li><a id="orgd3acb79"></a>prioritizing continuous delivery and high quality<br /></li>
+<li><a id="orga5a48a0"></a>robust automation and trust between teams<br /></li>
+<li><a id="org948ef0a"></a>collaboration and communication<br /></li>
+<li><a id="org9a4bc7a"></a>end2end service life cycle (build, test, release)<br /></li>
+<li><a id="org3426817"></a>prioritizing continuous delivery and high quality<br /></li>
 </ul>
 </div>
-<div id="outline-container-org20bb1d5" class="outline-4">
-<h4 id="org20bb1d5">DIFFERENT:</h4>
-<div class="outline-text-4" id="text-org20bb1d5">
+<div id="outline-container-org6a4ff6a" class="outline-4">
+<h4 id="org6a4ff6a">DIFFERENT:</h4>
+<div class="outline-text-4" id="text-org6a4ff6a">
 </div>
 <ul class="org-ul">
-<li><a id="org8fef916"></a>Deploying no code but models to production<br /></li>
-<li><a id="orgc473f66"></a>code is static, while data is changing and model is dynamic, learning and adapting to new inputs, ML = code + data<br /></li>
+<li><a id="orgdb449c4"></a>Deploying no code but models to production<br /></li>
+<li><a id="org5524da1"></a>code is static, while data is changing and model is dynamic, learning and adapting to new inputs, ML = code + data<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4bcfa76" class="outline-3">
-<h3 id="org4bcfa76">Need to be at Enterprise Level at a large scale</h3>
-<div class="outline-text-3" id="text-org4bcfa76">
+<div id="outline-container-org6e94b9c" class="outline-3">
+<h3 id="org6e94b9c">Need to be at Enterprise Level at a large scale</h3>
+<div class="outline-text-3" id="text-org6e94b9c">
 </div>
-<div id="outline-container-org3286b38" class="outline-4">
-<h4 id="org3286b38">multistage</h4>
+<div id="outline-container-orgd14751f" class="outline-4">
+<h4 id="orgd14751f">multistage</h4>
 </div>
-<div id="outline-container-orga011918" class="outline-4">
-<h4 id="orga011918">mulit-discipline</h4>
+<div id="outline-container-org52cf5d6" class="outline-4">
+<h4 id="org52cf5d6">mulit-discipline</h4>
 </div>
-<div id="outline-container-orgddb573e" class="outline-4">
-<h4 id="orgddb573e">mulit-phase</h4>
+<div id="outline-container-orgdcde73e" class="outline-4">
+<h4 id="orgdcde73e">mulit-phase</h4>
 </div>
-<div id="outline-container-org1df86c0" class="outline-4">
-<h4 id="org1df86c0">heterogeneous environment</h4>
+<div id="outline-container-orgb3d3fa0" class="outline-4">
+<h4 id="orgb3d3fa0">heterogeneous environment</h4>
 </div>
-<div id="outline-container-org149dca9" class="outline-4">
-<h4 id="org149dca9">framework</h4>
+<div id="outline-container-orgc63de34" class="outline-4">
+<h4 id="orgc63de34">framework</h4>
 </div>
-<div id="outline-container-orgda82f5c" class="outline-4">
-<h4 id="orgda82f5c">best practices</h4>
+<div id="outline-container-orgbab2d75" class="outline-4">
+<h4 id="orgbab2d75">best practices</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf8aae0" class="outline-2">
-<h2 id="orgbf8aae0">Benefit</h2>
-<div class="outline-text-2" id="text-orgbf8aae0">
+<div id="outline-container-orge9da88f" class="outline-2">
+<h2 id="orge9da88f">Benefit</h2>
+<div class="outline-text-2" id="text-orge9da88f">
 </div>
-<div id="outline-container-org46c6bb1" class="outline-3">
-<h3 id="org46c6bb1">mitigate risk</h3>
-<div class="outline-text-3" id="text-org46c6bb1">
+<div id="outline-container-orga758d30" class="outline-3">
+<h3 id="orga758d30">mitigate risk</h3>
+<div class="outline-text-3" id="text-orga758d30">
 </div>
-<div id="outline-container-orgc3f6ffa" class="outline-4">
-<h4 id="orgc3f6ffa">risk assessment</h4>
-<div class="outline-text-4" id="text-orgc3f6ffa">
+<div id="outline-container-org294a548" class="outline-4">
+<h4 id="org294a548">risk assessment</h4>
+<div class="outline-text-4" id="text-org294a548">
 </div>
 <ul class="org-ul">
-<li><a id="org77d5406"></a>being unavailable for a given period of time<br /></li>
-<li><a id="org0d530a0"></a>bad prediction for a given sample<br /></li>
-<li><a id="org84c3801"></a>accuracy or fairness decrease over time<br /></li>
-<li><a id="orgb60f859"></a>skill to maintain the model (data scientists)<br /></li>
+<li><a id="org7da0614"></a>being unavailable for a given period of time<br /></li>
+<li><a id="org6daebec"></a>bad prediction for a given sample<br /></li>
+<li><a id="org5b7a0c1"></a>accuracy or fairness decrease over time<br /></li>
+<li><a id="orgcc004d8"></a>skill to maintain the model (data scientists)<br /></li>
 </ul>
 </div>
-<div id="outline-container-org5683952" class="outline-4">
-<h4 id="org5683952">risk mitigation</h4>
-<div class="outline-text-4" id="text-org5683952">
+<div id="outline-container-org5d367e1" class="outline-4">
+<h4 id="org5d367e1">risk mitigation</h4>
+<div class="outline-text-4" id="text-org5d367e1">
 </div>
 <ul class="org-ul">
-<li><a id="orge849ea0"></a>performance assessment can be done only in production: data dependent!<br /></li>
-<li><a id="org4b0d9a7"></a>sensitive to production environment, opengsource sw, operating systems<br /></li>
-<li><a id="orgdd3e157"></a>pushing models into production is not the final step of machine learning life cycle<br />
+<li><a id="orgcf732a6"></a>performance assessment can be done only in production: data dependent!<br /></li>
+<li><a id="org270278a"></a>sensitive to production environment, opengsource sw, operating systems<br /></li>
+<li><a id="orgc9c1445"></a>pushing models into production is not the final step of machine learning life cycle<br />
 <ul class="org-ul">
-<li><a id="org5462ba3"></a>monitoring performance<br /></li>
-<li><a id="org23bcc13"></a>model updating<br /></li>
+<li><a id="org4c59867"></a>monitoring performance<br /></li>
+<li><a id="org1404f64"></a>model updating<br /></li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="outline-container-org86bf1a3" class="outline-4">
-<h4 id="org86bf1a3">responsible AI</h4>
-<div class="outline-text-4" id="text-org86bf1a3">
+<div id="outline-container-orgd47bf16" class="outline-4">
+<h4 id="orgd47bf16">responsible AI</h4>
+<div class="outline-text-4" id="text-orgd47bf16">
 </div>
 <ul class="org-ul">
-<li><a id="org2f22a2e"></a>intentionality: aligned with purpose, compliant and unbiased sources, collaborate approach to AI projects that ensures mulitple checkes and balance potential model bias, explanability,<br /></li>
-<li><a id="org12673b4"></a>accountablity: centrally controlling, managing and auditing enterprise AI effort, traceability<br /></li>
+<li><a id="org7233ced"></a>intentionality: aligned with purpose, compliant and unbiased sources, collaborate approach to AI projects that ensures mulitple checkes and balance potential model bias, explanability,<br /></li>
+<li><a id="org8c1c992"></a>accountablity: centrally controlling, managing and auditing enterprise AI effort, traceability<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdf6c49" class="outline-3">
-<h3 id="orgbdf6c49">scale up at enterprise level</h3>
-<div class="outline-text-3" id="text-orgbdf6c49">
+<div id="outline-container-org9bde18e" class="outline-3">
+<h3 id="org9bde18e">scale up at enterprise level</h3>
+<div class="outline-text-3" id="text-org9bde18e">
 </div>
-<div id="outline-container-org7a985c5" class="outline-4">
-<h4 id="org7a985c5">MLOps discipline</h4>
-<div class="outline-text-4" id="text-org7a985c5">
-</div>
-<ul class="org-ul">
-<li><a id="org6c8f401"></a>Versioning (model, design), monitoring and tracking<br /></li>
-<li><a id="org05ee0ae"></a>Continuous benchmarking, promoting better models<br /></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org9fbdbeb" class="outline-2">
-<h2 id="org9fbdbeb">Deployment with MLOps</h2>
-<div class="outline-text-2" id="text-org9fbdbeb">
-</div>
-<div id="outline-container-org08cbc81" class="outline-3">
-<h3 id="org08cbc81">essential practices</h3>
-<div class="outline-text-3" id="text-org08cbc81">
-</div>
-<div id="outline-container-orgfaf2753" class="outline-4">
-<h4 id="orgfaf2753">model quality and continuity</h4>
-</div>
-</div>
-<div id="outline-container-orgdda35cd" class="outline-3">
-<h3 id="orgdda35cd">risk without MLOps</h3>
-<div class="outline-text-3" id="text-orgdda35cd">
-</div>
-<div id="outline-container-org39a381e" class="outline-4">
-<h4 id="org39a381e">business risk with model quality, conitnuity (biased model, poor prediction)</h4>
-</div>
-</div>
-<div id="outline-container-orgb1544ef" class="outline-3">
-<h3 id="orgb1544ef">transparency and accountability</h3>
-<div class="outline-text-3" id="text-orgb1544ef">
-</div>
-<div id="outline-container-org28a5b47" class="outline-4">
-<h4 id="org28a5b47">management （MLOps and C-suite) should understand MLOps,</h4>
-<div class="outline-text-4" id="text-org28a5b47">
+<div id="outline-container-org80373b7" class="outline-4">
+<h4 id="org80373b7">MLOps discipline</h4>
+<div class="outline-text-4" id="text-org80373b7">
 </div>
 <ul class="org-ul">
-<li><a id="orgc073947"></a>what ML models are deployed in production<br /></li>
-<li><a id="org431234a"></a>their effect on business<br /></li>
-<li><a id="orgfabbffc"></a>drill down to understand data pipeline (from raw data to final output)<br /></li>
+<li><a id="org5e60ce0"></a>Versioning (model, design), monitoring and tracking<br /></li>
+<li><a id="org91df042"></a>Continuous benchmarking, promoting better models<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc5a7c8f" class="outline-2">
-<h2 id="orgc5a7c8f">People of MLOps</h2>
-<div class="outline-text-2" id="text-orgc5a7c8f">
+<div id="outline-container-org7f1f914" class="outline-2">
+<h2 id="org7f1f914">Deployment with MLOps</h2>
+<div class="outline-text-2" id="text-org7f1f914">
+</div>
+<div id="outline-container-org1a057bf" class="outline-3">
+<h3 id="org1a057bf">essential practices</h3>
+<div class="outline-text-3" id="text-org1a057bf">
+</div>
+<div id="outline-container-orgcb4ab65" class="outline-4">
+<h4 id="orgcb4ab65">model quality and continuity</h4>
+</div>
+</div>
+<div id="outline-container-org6f8b6cd" class="outline-3">
+<h3 id="org6f8b6cd">risk without MLOps</h3>
+<div class="outline-text-3" id="text-org6f8b6cd">
+</div>
+<div id="outline-container-orgac53a05" class="outline-4">
+<h4 id="orgac53a05">business risk with model quality, conitnuity (biased model, poor prediction)</h4>
+</div>
+</div>
+<div id="outline-container-orgf63d7c6" class="outline-3">
+<h3 id="orgf63d7c6">transparency and accountability</h3>
+<div class="outline-text-3" id="text-orgf63d7c6">
+</div>
+<div id="outline-container-org91737fc" class="outline-4">
+<h4 id="org91737fc">management （MLOps and C-suite) should understand MLOps,</h4>
+<div class="outline-text-4" id="text-org91737fc">
+</div>
+<ul class="org-ul">
+<li><a id="org8737687"></a>what ML models are deployed in production<br /></li>
+<li><a id="org5012ba2"></a>their effect on business<br /></li>
+<li><a id="orgd849dfc"></a>drill down to understand data pipeline (from raw data to final output)<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org03c3f5f" class="outline-2">
+<h2 id="org03c3f5f">People of MLOps</h2>
+<div class="outline-text-2" id="text-org03c3f5f">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -438,91 +438,91 @@ Goal: decision automation, company wide, parallel, risk control,
 </table>
 </div>
 
-<div id="outline-container-org1a50c60" class="outline-3">
-<h3 id="org1a50c60">subject matter experts SME</h3>
-<div class="outline-text-3" id="text-org1a50c60">
+<div id="outline-container-org315d147" class="outline-3">
+<h3 id="org315d147">subject matter experts SME</h3>
+<div class="outline-text-3" id="text-org315d147">
 </div>
-<div id="outline-container-org840b00b" class="outline-4">
-<h4 id="org840b00b">Business Decision Modeling / Enterprise Decision Management</h4>
-<div class="outline-text-4" id="text-org840b00b">
+<div id="outline-container-orgdbe7cd7" class="outline-4">
+<h4 id="orgdbe7cd7">Business Decision Modeling / Enterprise Decision Management</h4>
+<div class="outline-text-4" id="text-orgdbe7cd7">
 </div>
 <ul class="org-ul">
-<li><a id="org61075d8"></a>information based decision<br /></li>
-<li><a id="orgceb71ca"></a>decision context and potential impact of model changes<br /></li>
-<li><a id="orgc760371"></a>structure and describe their needs<br /></li>
+<li><a id="orgf23c5d0"></a>information based decision<br /></li>
+<li><a id="org5330e33"></a>decision context and potential impact of model changes<br /></li>
+<li><a id="org2bdb2b0"></a>structure and describe their needs<br /></li>
 </ul>
 </div>
-<div id="outline-container-org56afa95" class="outline-4">
-<h4 id="org56afa95">active at the beginning and end of ML model</h4>
+<div id="outline-container-org30f1053" class="outline-4">
+<h4 id="org30f1053">active at the beginning and end of ML model</h4>
 </div>
-<div id="outline-container-org71bb6b1" class="outline-4">
-<h4 id="org71bb6b1">close the feedback loop not to ignore important information</h4>
+<div id="outline-container-org5cb1e58" class="outline-4">
+<h4 id="org5cb1e58">close the feedback loop not to ignore important information</h4>
 </div>
-<div id="outline-container-orga4e0cd8" class="outline-4">
-<h4 id="orga4e0cd8">easy to understand model performancein business terms, unexpected performance shifts</h4>
+<div id="outline-container-orgb611985" class="outline-4">
+<h4 id="orgb611985">easy to understand model performancein business terms, unexpected performance shifts</h4>
 </div>
-<div id="outline-container-orgd89ae3e" class="outline-4">
-<h4 id="orgd89ae3e">flag results that don't align with business expectations</h4>
+<div id="outline-container-org2811d9a" class="outline-4">
+<h4 id="org2811d9a">flag results that don't align with business expectations</h4>
 </div>
-<div id="outline-container-org823c290" class="outline-4">
-<h4 id="org823c290">need transparency and understand data pipelines, communication with data scientists for models</h4>
+<div id="outline-container-org017c71b" class="outline-4">
+<h4 id="org017c71b">need transparency and understand data pipelines, communication with data scientists for models</h4>
 </div>
-<div id="outline-container-org9e9ba14" class="outline-4">
-<h4 id="org9e9ba14">responsible AI</h4>
+<div id="outline-container-orgd7cc7db" class="outline-4">
+<h4 id="orgd7cc7db">responsible AI</h4>
 </div>
 </div>
-<div id="outline-container-org8021f10" class="outline-3">
-<h3 id="org8021f10">data scientists</h3>
-<div class="outline-text-3" id="text-org8021f10">
+<div id="outline-container-org0e093b5" class="outline-3">
+<h3 id="org0e093b5">data scientists</h3>
+<div class="outline-text-3" id="text-org0e093b5">
 </div>
-<div id="outline-container-org297ab18" class="outline-4">
-<h4 id="org297ab18">most criticalchallenged by siloed data, process and tools, difficult to efforts</h4>
+<div id="outline-container-org7e98e8d" class="outline-4">
+<h4 id="org7e98e8d">most criticalchallenged by siloed data, process and tools, difficult to efforts</h4>
 </div>
-<div id="outline-container-orgfedd03b" class="outline-4">
-<h4 id="orgfedd03b">benefit from MLOps</h4>
+<div id="outline-container-org8afde73" class="outline-4">
+<h4 id="org8afde73">benefit from MLOps</h4>
 </div>
-<div id="outline-container-org4f3157b" class="outline-4">
-<h4 id="org4f3157b">build model</h4>
+<div id="outline-container-org8ddf509" class="outline-4">
+<h4 id="org8ddf509">build model</h4>
 </div>
-<div id="outline-container-org5ff5a3d" class="outline-4">
-<h4 id="org5ff5a3d">understand SME requirements, help to frame business problems for a viable ML solution (difficult!, BDM helps)</h4>
+<div id="outline-container-org383aa4e" class="outline-4">
+<h4 id="org383aa4e">understand SME requirements, help to frame business problems for a viable ML solution (difficult!, BDM helps)</h4>
 </div>
-<div id="outline-container-orgafd7eb9" class="outline-4">
-<h4 id="orgafd7eb9">siloed from core of the business and SME, orgnizational infrastructure</h4>
+<div id="outline-container-org15190ae" class="outline-4">
+<h4 id="org15190ae">siloed from core of the business and SME, orgnizational infrastructure</h4>
 </div>
-<div id="outline-container-org4193a28" class="outline-4">
-<h4 id="org4193a28">interface to data engineers</h4>
+<div id="outline-container-org7795863" class="outline-4">
+<h4 id="org7795863">interface to data engineers</h4>
 </div>
-<div id="outline-container-orge71a7df" class="outline-4">
-<h4 id="orge71a7df">assess model quality to ensure it's working in production,</h4>
+<div id="outline-container-org54c9376" class="outline-4">
+<h4 id="org54c9376">assess model quality to ensure it's working in production,</h4>
 </div>
-<div id="outline-container-org936f4fb" class="outline-4">
-<h4 id="org936f4fb">answer initial business questions or needs,</h4>
+<div id="outline-container-orge51cb3a" class="outline-4">
+<h4 id="orge51cb3a">answer initial business questions or needs,</h4>
 </div>
-<div id="outline-container-orgc9d8e28" class="outline-4">
-<h4 id="orgc9d8e28">operationalization: pushing model to production and measuring the performance against business goals, while MLOps maintains the models and data pipeline in production, new Operationalization.</h4>
+<div id="outline-container-orgddf9500" class="outline-4">
+<h4 id="orgddf9500">operationalization: pushing model to production and measuring the performance against business goals, while MLOps maintains the models and data pipeline in production, new Operationalization.</h4>
 </div>
-<div id="outline-container-org55ee499" class="outline-4">
-<h4 id="org55ee499">transparency: drill down to data pipelines, quick assessment and adjustments.</h4>
+<div id="outline-container-org724f530" class="outline-4">
+<h4 id="org724f530">transparency: drill down to data pipelines, quick assessment and adjustments.</h4>
 </div>
-<div id="outline-container-org303beaa" class="outline-4">
-<h4 id="org303beaa">Automated model packaging and delivery for quick and easy (safe) deployment to production.</h4>
+<div id="outline-container-org3548c2d" class="outline-4">
+<h4 id="org3548c2d">Automated model packaging and delivery for quick and easy (safe) deployment to production.</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7501da1" class="outline-2">
-<h2 id="org7501da1">Framework</h2>
-<div class="outline-text-2" id="text-org7501da1">
+<div id="outline-container-org41e6390" class="outline-2">
+<h2 id="org41e6390">Framework</h2>
+<div class="outline-text-2" id="text-org41e6390">
 </div>
-<div id="outline-container-org51886b5" class="outline-3">
-<h3 id="org51886b5"><a href="./20220411120227-metaflow.html">metaflow</a></h3>
+<div id="outline-container-org716f1a0" class="outline-3">
+<h3 id="org716f1a0"><a href="./20220411120227-metaflow.html">metaflow</a></h3>
 </div>
-<div id="outline-container-org4105e89" class="outline-3">
-<h3 id="org4105e89"><a href="./20220622084010-kubeflow.html">kubeflow</a></h3>
+<div id="outline-container-org620319a" class="outline-3">
+<h3 id="org620319a"><a href="./20220622084010-kubeflow.html">kubeflow</a></h3>
 </div>
-<div id="outline-container-org472a718" class="outline-3">
-<h3 id="org472a718"><a href="./20220622100017-baiduflow.html">baiduflow</a></h3>
+<div id="outline-container-org35a3656" class="outline-3">
+<h3 id="org35a3656"><a href="./20220622100017-baiduflow.html">baiduflow</a></h3>
 </div>
 </div>
 </div>
