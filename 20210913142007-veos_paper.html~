@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-paper</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">veos-paper</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0108be8">motivation</a></li>
+<li><a href="#orgdc86c4f">sota</a></li>
+<li><a href="#org027f12d">method</a>
+<ul>
+<li><a href="#org581d2a1">model</a>
+<ul>
+<li><a href="#org4c1f607">vehicle dynamic system modeling</a></li>
+<li><a href="#orgf222d0e">reinforcement learning model</a></li>
+</ul>
+</li>
+<li><a href="#orgeb9cd31">time sequence is important for exact reward</a></li>
+<li><a href="#orgd4a2ffe">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</a></li>
+</ul>
+</li>
+<li><a href="#org54fff39">experiment results discussion</a>
+<ul>
+<li><a href="#org6e7282d">ddpg</a></li>
+<li><a href="#org68f6f38">driving style hinted at a common reward of human drive and agent</a></li>
+<li><a href="#org918387e">rdpg</a></li>
+</ul>
+</li>
+<li><a href="#orgc728294">broader impact</a></li>
+</ul>
+</div>
+</div>
+<p>
+<a href="./20210830182658-veos.html">veos</a>
+</p>
+<div id="outline-container-org0108be8" class="outline-2">
+<h2 id="org0108be8">motivation</h2>
+<div class="outline-text-2" id="text-org0108be8">
+<p>
+alex irpan paper post why reinforcement leanring does not work yet in the real world
+scaling up model, is not the case
+</p>
+<ol class="org-ol">
+<li>Simulation atari</li>
+<li>Carla</li>
+<li>server cluster VAC</li>
+<li>Bonsai</li>
+</ol>
+
+<p>
+make some progress, any progress in the application;
+</p>
+
+
+<p>
+learning based.
+</p>
+
+<p>
+driving decision with short horizon has an impact on the overall energy consumption
+</p>
+
+<p>
+no realtime requirement, based on the scenario, minutes would be sufficient. actuallly the luxuray of seconds updating the nearby rows of torque table.
+</p>
+
+<p>
+Contextual Information like NLU different scenario, any action is like tokens. &#x2013;&gt; Sequential decision by transformer/RNN
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgdc86c4f" class="outline-2">
+<h2 id="orgdc86c4f">sota</h2>
+</div>
+
+<div id="outline-container-org027f12d" class="outline-2">
+<h2 id="org027f12d">method</h2>
+<div class="outline-text-2" id="text-org027f12d">
+</div>
+<div id="outline-container-org581d2a1" class="outline-3">
+<h3 id="org581d2a1">model</h3>
+<div class="outline-text-3" id="text-org581d2a1">
+</div>
+<div id="outline-container-org4c1f607" class="outline-4">
+<h4 id="org4c1f607">vehicle dynamic system modeling</h4>
+<div class="outline-text-4" id="text-org4c1f607">
+</div>
+<ul class="org-ul">
+<li><a id="org79b51ea"></a>general model<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgf222d0e" class="outline-4">
+<h4 id="orgf222d0e">reinforcement learning model</h4>
+<div class="outline-text-4" id="text-orgf222d0e">
+</div>
+<ul class="org-ul">
+<li><a id="org81bb148"></a>action model: torque model, translational mixed gaussian model, with speed translation invariance<br />
+<div class="outline-text-5" id="text-org81bb148">
+<p>
+equation
+</p>
+</div>
+</li>
+<li><a id="orgf8c8372"></a>observation model: state,<br />
+<div class="outline-text-5" id="text-orgf8c8372">
+<p>
+equation
+</p>
+</div>
+</li>
+<li><a id="orgb9846eb"></a>reward model<br /></li>
+<li><a id="org1338016"></a>driver model<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb9cd31" class="outline-3">
+<h3 id="orgeb9cd31">time sequence is important for exact reward</h3>
+</div>
+<div id="outline-container-orgd4a2ffe" class="outline-3">
+<h3 id="orgd4a2ffe">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</h3>
+</div>
+</div>
+
+<div id="outline-container-org54fff39" class="outline-2">
+<h2 id="org54fff39">experiment results discussion</h2>
+<div class="outline-text-2" id="text-org54fff39">
+</div>
+<div id="outline-container-org6e7282d" class="outline-3">
+<h3 id="org6e7282d">ddpg</h3>
+<div class="outline-text-3" id="text-org6e7282d">
+<p>
+short period of attention window
+</p>
+</div>
+</div>
+<div id="outline-container-org68f6f38" class="outline-3">
+<h3 id="org68f6f38">driving style hinted at a common reward of human drive and agent</h3>
+</div>
+
+<div id="outline-container-org918387e" class="outline-3">
+<h3 id="org918387e">rdpg</h3>
+<div class="outline-text-3" id="text-org918387e">
+<p>
+long episode truncated BPTT long period of attention window
+episode management, training selection,
+</p>
+
+<p>
+RLHF? easy way with empirical distribution no sequential model, first ignore the time sequence, just to look at the difference.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc728294" class="outline-2">
+<h2 id="orgc728294">broader impact</h2>
+<div class="outline-text-2" id="text-orgc728294">
+<p>
+federated learning for meta learning,evolving
+NAS,
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

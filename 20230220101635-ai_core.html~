@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI-Core</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">AI-Core</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9b8f064">code</a>
+<ul>
+<li><a href="#org864ba82">pythonic refactoring</a>
+<ul>
+<li><a href="#org802ec7c">dataclass</a></li>
+<li><a href="#orgbba70d7">ABC for expanding</a></li>
+<li><a href="#org4c6183e">database technology (indexing, storage, DVC)</a></li>
+<li><a href="#org267f322">refactor in pytorch</a></li>
+<li><a href="#org46db1e2">transformer implementation</a></li>
+</ul>
+</li>
+<li><a href="#org4b4c987">VCS (git)</a>
+<ul>
+<li><a href="#orgee9858e">publishing</a></li>
+<li><a href="#org57190f0">subscription</a></li>
+<li><a href="#orgc468dd0">autotest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7f23e22">Projects</a>
+<ul>
+<li><a href="#orgf51c4ed">development harness</a>
+<ul>
+<li><a href="#org592faf5">DL model tuning</a></li>
+</ul>
+</li>
+<li><a href="#org02a6dd9">MLOps</a></li>
+<li><a href="#org10e65aa">debugging on the cloud</a></li>
+<li><a href="#org9170189">database</a></li>
+<li><a href="#orgb9c62ee">docker compose, K8s</a></li>
+</ul>
+</li>
+<li><a href="#org12dc355">Deep Learning</a>
+<ul>
+<li><a href="#org2b5cc1b">Reinforcement learning</a>
+<ul>
+<li><a href="#orgf1be8e5"><b>Offline reinforcement learning</b></a></li>
+<li><a href="#orgb4581f7"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></a></li>
+<li><a href="#org980d9b5">efficient search in memory （experience pool)</a></li>
+<li><a href="#org263b44f">transformer based decision system</a></li>
+<li><a href="#orgcb4bbd8">Federated Learning</a></li>
+</ul>
+</li>
+<li><a href="#org89853e4">Generative model</a>
+<ul>
+<li><a href="#orgb4a26fd"><b>Diffusion model</b></a></li>
+<li><a href="#org1f33fa5"><b>transformer application</b></a></li>
+<li><a href="#org609acf7"><b>Application of new TS features from EP</b></a></li>
+</ul>
+</li>
+<li><a href="#orgd061947">transformer application in DRL and Generative modeling</a></li>
+<li><a href="#orgb7ad410">Foundational Model exploration</a>
+<ul>
+<li><a href="#orgc780a53">Image captioning (scene understanding)</a></li>
+<li><a href="#orge7684fb">Policy selection/Planning with Instructions</a></li>
+</ul>
+</li>
+<li><a href="#orgeb3f3c2">Building TS foundation model</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="./20231024150747-deep_learning_general_theory.html">deep learning</a>
+</p>
+
+<p>
+<a href="./20220406135530-devel_project.html">devel-project</a>
+</p>
+
+<div id="outline-container-org9b8f064" class="outline-2">
+<h2 id="org9b8f064">code</h2>
+<div class="outline-text-2" id="text-org9b8f064">
+</div>
+<div id="outline-container-org864ba82" class="outline-3">
+<h3 id="org864ba82">pythonic refactoring</h3>
+<div class="outline-text-3" id="text-org864ba82">
+</div>
+<div id="outline-container-org802ec7c" class="outline-4">
+<h4 id="org802ec7c">dataclass</h4>
+</div>
+<div id="outline-container-orgbba70d7" class="outline-4">
+<h4 id="orgbba70d7">ABC for expanding</h4>
+<div class="outline-text-4" id="text-orgbba70d7">
+</div>
+<ul class="org-ul">
+<li><a id="org56ce97e"></a>RL toolkit<br /></li>
+<li><a id="org1bd62e1"></a>datastore (db, cluster)<br /></li>
+<li><a id="org7dfb63d"></a>observation/flashing interface (EC1, iC1, &#x2026;)<br /></li>
+<li><a id="orgf1388d4"></a>Exception handling<br /></li>
+</ul>
+</div>
+<div id="outline-container-org4c6183e" class="outline-4">
+<h4 id="org4c6183e">database technology (indexing, storage, DVC)</h4>
+</div>
+<div id="outline-container-org267f322" class="outline-4">
+<h4 id="org267f322">refactor in pytorch</h4>
+</div>
+<div id="outline-container-org46db1e2" class="outline-4">
+<h4 id="org46db1e2">transformer implementation</h4>
+</div>
+</div>
+<div id="outline-container-org4b4c987" class="outline-3">
+<h3 id="org4b4c987">VCS (git)</h3>
+<div class="outline-text-3" id="text-org4b4c987">
+</div>
+<div id="outline-container-orgee9858e" class="outline-4">
+<h4 id="orgee9858e">publishing</h4>
+</div>
+<div id="outline-container-org57190f0" class="outline-4">
+<h4 id="org57190f0">subscription</h4>
+</div>
+<div id="outline-container-orgc468dd0" class="outline-4">
+<h4 id="orgc468dd0">autotest</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f23e22" class="outline-2">
+<h2 id="org7f23e22">Projects</h2>
+<div class="outline-text-2" id="text-org7f23e22">
+</div>
+<div id="outline-container-orgf51c4ed" class="outline-3">
+<h3 id="orgf51c4ed">development harness</h3>
+<div class="outline-text-3" id="text-orgf51c4ed">
+</div>
+<div id="outline-container-org592faf5" class="outline-4">
+<h4 id="org592faf5">DL model tuning</h4>
+<div class="outline-text-4" id="text-org592faf5">
+</div>
+<ul class="org-ul">
+<li><a id="org63930e4"></a>training<br /></li>
+<li><a id="orge392337"></a>testing<br /></li>
+<li><a id="orgd1bbbcc"></a>validation<br /></li>
+<li><a id="org81858c2"></a>data pipeline<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org02a6dd9" class="outline-3">
+<h3 id="org02a6dd9"><a href="./20211217115351-mlops.html">MLOps</a></h3>
+</div>
+<div id="outline-container-org10e65aa" class="outline-3">
+<h3 id="org10e65aa">debugging on the cloud</h3>
+</div>
+<div id="outline-container-org9170189" class="outline-3">
+<h3 id="org9170189">database</h3>
+</div>
+<div id="outline-container-orgb9c62ee" class="outline-3">
+<h3 id="orgb9c62ee">docker compose, K8s</h3>
+</div>
+</div>
+<div id="outline-container-org12dc355" class="outline-2">
+<h2 id="org12dc355">Deep Learning</h2>
+<div class="outline-text-2" id="text-org12dc355">
+</div>
+<div id="outline-container-org2b5cc1b" class="outline-3">
+<h3 id="org2b5cc1b">Reinforcement learning</h3>
+<div class="outline-text-3" id="text-org2b5cc1b">
+</div>
+<div id="outline-container-orgf1be8e5" class="outline-4">
+<h4 id="orgf1be8e5"><b>Offline reinforcement learning</b></h4>
+</div>
+<div id="outline-container-orgb4581f7" class="outline-4">
+<h4 id="orgb4581f7"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></h4>
+</div>
+<div id="outline-container-org980d9b5" class="outline-4">
+<h4 id="org980d9b5">efficient search in memory （experience pool)</h4>
+</div>
+<div id="outline-container-org263b44f" class="outline-4">
+<h4 id="org263b44f">transformer based decision system</h4>
+</div>
+<div id="outline-container-orgcb4bbd8" class="outline-4">
+<h4 id="orgcb4bbd8">Federated Learning</h4>
+</div>
+</div>
+<div id="outline-container-org89853e4" class="outline-3">
+<h3 id="org89853e4">Generative model</h3>
+<div class="outline-text-3" id="text-org89853e4">
+</div>
+<div id="outline-container-orgb4a26fd" class="outline-4">
+<h4 id="orgb4a26fd"><b>Diffusion model</b></h4>
+</div>
+<div id="outline-container-org1f33fa5" class="outline-4">
+<h4 id="org1f33fa5"><b>transformer application</b></h4>
+</div>
+<div id="outline-container-org609acf7" class="outline-4">
+<h4 id="org609acf7"><b>Application of new TS features from EP</b></h4>
+</div>
+</div>
+<div id="outline-container-orgd061947" class="outline-3">
+<h3 id="orgd061947">transformer application in DRL and Generative modeling</h3>
+</div>
+<div id="outline-container-orgb7ad410" class="outline-3">
+<h3 id="orgb7ad410">Foundational Model exploration</h3>
+<div class="outline-text-3" id="text-orgb7ad410">
+</div>
+<div id="outline-container-orgc780a53" class="outline-4">
+<h4 id="orgc780a53">Image captioning (scene understanding)</h4>
+</div>
+<div id="outline-container-orge7684fb" class="outline-4">
+<h4 id="orge7684fb">Policy selection/Planning with Instructions</h4>
+</div>
+</div>
+<div id="outline-container-orgeb3f3c2" class="outline-3">
+<h3 id="orgeb3f3c2">Building TS foundation model</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

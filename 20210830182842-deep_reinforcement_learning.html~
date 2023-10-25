@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>deep reinforcement learning</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">deep reinforcement learning</h1>
+<p>
+<a href="./20210907105140-stochastic_actor_critic.html">stochastic actor critic</a>
+</p>
+
+<p>
+<a href="./20210830182904-q_learning.html">q learning</a>
+</p>
+
+
+<p>
+<a href="./20210906085305-recurrent_deterministic_policy_gradient.html">recurrent deterministic policy gradient</a>
+</p>
+
+<p>
+<a href="./20210907105609-ppo.html">PPO</a>
+</p>
+
+<p>
+<a href="./20210907105636-soft_actor_critc.html">Soft Actor Critc</a>
+</p>
+
+<p>
+<a href="./20210907105702-cooperative_reinforcement_learning.html">Cooperative Reinforcement Learning</a>
+</p>
+
+
+<p>
+<a href="./20210906085330-offline_reinforcement_learning.html">offline reinforcement learning</a>
+</p>
+
+
+<p>
+<a href="./20211101093409-neural_turing_machine_reinforcement_learning.html">neural turing machine reinforcement learning</a>
+</p>
+
+
+<p>
+<a href="./20211101093438-episodic_memory.html">episodic memory</a>
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

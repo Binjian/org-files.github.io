@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Time Series GAN</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Time Series GAN</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7cec1d1">Gist</a>
+<ul>
+<li><a href="#orgb1cf82f">temoporal dynamics</a></li>
+<li><a href="#org8177468">embedding space by supervised &amp; adverserial objectives</a></li>
+</ul>
+</li>
+<li><a href="#orgcec6742">TimeGAN</a>
+<ul>
+<li><a href="#org648263e">stepwise supervised loss, stepwise conditional distributions in the data</a></li>
+<li><a href="#org976d190">embedding network: reversible mapping between features and latent representation</a>
+<ul>
+<li><a href="#orgb855170">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</a></li>
+<li><a href="#org8514d65">supervised loss minized by jointly training both the embedding and generator netowrks</a></li>
+<li><a href="#org3545bba">conditioned to facilitate generator in learning temporal relationship</a></li>
+</ul>
+</li>
+<li><a href="#org053eb99">evaluation</a>
+<ul>
+<li><a href="#org1e6b109">desiderata:</a></li>
+</ul>
+</li>
+<li><a href="#org28198c1">Problem Formulation</a>
+<ul>
+<li><a href="#org66e5444">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</a></li>
+<li><a href="#orgbacd6ba">embedding model: static and temporal features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7cec1d1" class="outline-2">
+<h2 id="org7cec1d1">Gist</h2>
+<div class="outline-text-2" id="text-org7cec1d1">
+</div>
+<div id="outline-container-orgb1cf82f" class="outline-3">
+<h3 id="orgb1cf82f">temoporal dynamics</h3>
+</div>
+<div id="outline-container-org8177468" class="outline-3">
+<h3 id="org8177468">embedding space by supervised &amp; adverserial objectives</h3>
+</div>
+</div>
+<div id="outline-container-orgcec6742" class="outline-2">
+<h2 id="orgcec6742">TimeGAN</h2>
+<div class="outline-text-2" id="text-orgcec6742">
+</div>
+<div id="outline-container-org648263e" class="outline-3">
+<h3 id="org648263e">stepwise supervised loss, stepwise conditional distributions in the data</h3>
+</div>
+<div id="outline-container-org976d190" class="outline-3">
+<h3 id="org976d190">embedding network: reversible mapping between features and latent representation</h3>
+<div class="outline-text-3" id="text-org976d190">
+</div>
+<div id="outline-container-orgb855170" class="outline-4">
+<h4 id="orgb855170">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</h4>
+</div>
+<div id="outline-container-org8514d65" class="outline-4">
+<h4 id="org8514d65">supervised loss minized by jointly training both the embedding and generator netowrks</h4>
+<div class="outline-text-4" id="text-org8514d65">
+</div>
+<ul class="org-ul">
+<li><a id="org1c9487b"></a>parameter efficiency<br /></li>
+</ul>
+</div>
+<div id="outline-container-org3545bba" class="outline-4">
+<h4 id="org3545bba">conditioned to facilitate generator in learning temporal relationship</h4>
+<div class="outline-text-4" id="text-org3545bba">
+</div>
+<ul class="org-ul">
+<li><a id="org9865792"></a>mixed-data: static &amp; time-series<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org053eb99" class="outline-3">
+<h3 id="org053eb99">evaluation</h3>
+<div class="outline-text-3" id="text-org053eb99">
+</div>
+<div id="outline-container-org1e6b109" class="outline-4">
+<h4 id="org1e6b109">desiderata:</h4>
+<div class="outline-text-4" id="text-org1e6b109">
+</div>
+<ul class="org-ul">
+<li><a id="org353591f"></a>diversity<br />
+<ul class="org-ul">
+<li><a id="orgf34667e"></a>Visualization<br />
+<ul class="org-ul">
+<li><a id="org49e2392"></a>t-SNE and PCA<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="orgf809919"></a>fidelity<br />
+<ul class="org-ul">
+<li><a id="org5305ed4"></a>post hoc time series classifier<br /></li>
+</ul>
+</li>
+<li><a id="org6b1b568"></a>usefulnes<br />
+<ul class="org-ul">
+<li><a id="orgd6c5aa5"></a>train on synthetic, test on real: TSTR<br />
+<ul class="org-ul">
+<li><a id="org1d6ae98"></a>predictive score MAE mean absolute error<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28198c1" class="outline-3">
+<h3 id="org28198c1">Problem Formulation</h3>
+<div class="outline-text-3" id="text-org28198c1">
+</div>
+<div id="outline-container-org66e5444" class="outline-4">
+<h4 id="org66e5444">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</h4>
+</div>
+<div id="outline-container-orgbacd6ba" class="outline-4">
+<h4 id="orgbacd6ba">embedding model: static and temporal features</h4>
+<div class="outline-text-4" id="text-orgbacd6ba">
+</div>
+<ul class="org-ul">
+<li><a id="orga16d353"></a>feature space\((\mathcal{S}\times\prod_t\mathcal{X})\)<br />
+<ul class="org-ul">
+<li><a id="org383ef4c"></a>static \(\mathcal{S}\)<br /></li>
+<li><a id="org8228c45"></a>temporal \(\mathcal{X}_{1:T}\)<br /></li>
+</ul>
+</li>
+<li><a id="org2dddbf0"></a>latent space<br />
+<ul class="org-ul">
+<li><a id="org4bd824c"></a>static \(\mathcal{H_S}\)<br /></li>
+<li><a id="org394da6f"></a>temporal \(\mathcal{H_X}_{1:T}\)<br /></li>
+</ul>
+</li>
+<li><a id="orga742119"></a>target embedding \((\mathbf{H_\mathcal{S}}, \mathbf{h}_{1:T})\)<br /></li>
+<li><a id="orgf8ff098"></a>Z: deeper latent to H; Gaussian and Wiener (OU noise?)<br /></li>
+<li><a id="orgbf9dbfb"></a>embedding and recovery functions<br />
+<ul class="org-ul">
+<li><a id="org4273a78"></a>embedding \(e_{\mathcal{s}}(\mathbf{s})\), \(e_{\mathcal{X}}(\mathbf{h}_{\mathcal{S}}, \mathbf{h}_{t-1},\mathbf{x}_{t})\)<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

@@ -38,61 +38,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga05b758">battery aging model</a></li>
-<li><a href="#orgfd15e44">BMS interface</a></li>
-<li><a href="#org3633534">Algorithms</a>
+<li><a href="#orgef4ab49">battery aging model</a></li>
+<li><a href="#org7dc3a39">BMS interface</a></li>
+<li><a href="#org7467916">Algorithms</a>
 <ul>
-<li><a href="#org3590ea3">forcasting</a></li>
-<li><a href="#org210b7e6">outlier detection</a></li>
-<li><a href="#org261e33b">anomaly detection in time series</a>
+<li><a href="#org84c489a">forcasting</a></li>
+<li><a href="#orga547138">outlier detection</a></li>
+<li><a href="#org13445a6">anomaly detection in time series</a>
 <ul>
-<li><a href="#org8b46f4b">https://neptune.ai/blog/anomaly-detection-in-time-series</a></li>
-<li><a href="#org86863ab">https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427</a></li>
+<li><a href="#org39b550a">https://neptune.ai/blog/anomaly-detection-in-time-series</a></li>
+<li><a href="#org15a0404">https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org182a972">Modules</a>
+<li><a href="#org6d4440a">Modules</a>
 <ul>
-<li><a href="#org7f0ef45">https://github.com/pycaret/pycaret/tree/master/examples</a></li>
-<li><a href="#org5a06d02">https://github.com/facebookresearch/Kats</a>
+<li><a href="#org4e70233">https://github.com/pycaret/pycaret/tree/master/examples</a></li>
+<li><a href="#org9ea35ff">https://github.com/facebookresearch/Kats</a>
 <ul>
-<li><a href="#orgc0c28e3">forcast</a></li>
+<li><a href="#orgbd48865">forcast</a></li>
 </ul>
 </li>
-<li><a href="#org23dd7d1">https://github.com/pycaret/pycaret</a></li>
+<li><a href="#org6639129">https://github.com/pycaret/pycaret</a></li>
 </ul>
 </li>
-<li><a href="#org245c0c7">Methods</a>
+<li><a href="#orgd2f37d8">Methods</a>
 <ul>
-<li><a href="#org9b5f9e8">preprocessing: torque requrest &amp; battery response decomposition</a>
+<li><a href="#org1309f08">preprocessing: torque requrest &amp; battery response decomposition</a>
 <ul>
-<li><a href="#orgbffbcf8">SARIMA:</a></li>
-<li><a href="#orgb0bd384">Prophet: https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.</a></li>
-<li><a href="#orga7a9cda">Holt-Winters</a></li>
-<li><a href="#orgfd598af">ensemble</a></li>
+<li><a href="#orgde3ae63">SARIMA:</a></li>
+<li><a href="#orgf34db49">Prophet: https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well.</a></li>
+<li><a href="#org5c56fa2">Holt-Winters</a></li>
+<li><a href="#org8f24e38">ensemble</a></li>
 </ul>
 </li>
-<li><a href="#org4723ae7">forecasting with Kat/PyCaret</a></li>
+<li><a href="#org091dcec">forecasting with Kat/PyCaret</a></li>
 </ul>
 </li>
-<li><a href="#orgff695e2">Project</a>
+<li><a href="#org8ef292f">Project</a>
 <ul>
-<li><a href="#org30fd322">Fiasco/Funes</a></li>
-<li><a href="#orge118f4a">Hail Mary/Dataphage(Astrophage)</a></li>
-<li><a href="#org91c6b4a">Nabis/Impressionist</a></li>
+<li><a href="#orgc60ebc0">Fiasco/Funes</a></li>
+<li><a href="#org893f0e9">Hail Mary/Dataphage(Astrophage)</a></li>
+<li><a href="#orgd6d0543">Nabis/Impressionist</a></li>
 </ul>
 </li>
-<li><a href="#org483a4cd">Retrospection</a>
+<li><a href="#org69c87b5">Retrospection</a>
 <ul>
-<li><a href="#org11d4527">no labels (expert knowledge) for supervised learning</a></li>
-<li><a href="#orgae3b1b3">challenge and caveats for unsuperviesd learning:</a>
+<li><a href="#orga4225cd">no labels (expert knowledge) for supervised learning</a></li>
+<li><a href="#org108c31c">challenge and caveats for unsuperviesd learning:</a>
 <ul>
-<li><a href="#org31f812f">relevant features to reflect intrinsic parameters of battery health</a></li>
-<li><a href="#org881bc44">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</a></li>
-<li><a href="#org816b7fa">optimal architecture for G and D (optimize weights) :</a></li>
-<li><a href="#org4833071">no guarantee for convergence</a></li>
-<li><a href="#orge849720">CGAN and feature labels?</a></li>
+<li><a href="#org22ca01b">relevant features to reflect intrinsic parameters of battery health</a></li>
+<li><a href="#org685d860">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</a></li>
+<li><a href="#org758c6a0">optimal architecture for G and D (optimize weights) :</a></li>
+<li><a href="#orga35486d">no guarantee for convergence</a></li>
+<li><a href="#orge678f77">CGAN and feature labels?</a></li>
 </ul>
 </li>
 </ul>
@@ -107,165 +107,165 @@
 <a href="./20210831171810-battery.html">battery</a>
 </p>
 
-<div id="outline-container-orga05b758" class="outline-2">
-<h2 id="orga05b758"><a href="./20211012161557-battery_aging_model.html">battery aging model</a></h2>
+<div id="outline-container-orgef4ab49" class="outline-2">
+<h2 id="orgef4ab49"><a href="./20211012161557-battery_aging_model.html">battery aging model</a></h2>
 </div>
-<div id="outline-container-orgfd15e44" class="outline-2">
-<h2 id="orgfd15e44"><a href="./20211012161635-bms_interface.html">BMS interface</a></h2>
+<div id="outline-container-org7dc3a39" class="outline-2">
+<h2 id="org7dc3a39"><a href="./20211012161635-bms_interface.html">BMS interface</a></h2>
 </div>
-<div id="outline-container-org3633534" class="outline-2">
-<h2 id="org3633534">Algorithms</h2>
-<div class="outline-text-2" id="text-org3633534">
+<div id="outline-container-org7467916" class="outline-2">
+<h2 id="org7467916">Algorithms</h2>
+<div class="outline-text-2" id="text-org7467916">
 </div>
-<div id="outline-container-org3590ea3" class="outline-3">
-<h3 id="org3590ea3">forcasting</h3>
+<div id="outline-container-org84c489a" class="outline-3">
+<h3 id="org84c489a">forcasting</h3>
 </div>
-<div id="outline-container-org210b7e6" class="outline-3">
-<h3 id="org210b7e6">outlier detection</h3>
+<div id="outline-container-orga547138" class="outline-3">
+<h3 id="orga547138">outlier detection</h3>
 </div>
-<div id="outline-container-org261e33b" class="outline-3">
-<h3 id="org261e33b">anomaly detection in time series</h3>
-<div class="outline-text-3" id="text-org261e33b">
+<div id="outline-container-org13445a6" class="outline-3">
+<h3 id="org13445a6">anomaly detection in time series</h3>
+<div class="outline-text-3" id="text-org13445a6">
 </div>
-<div id="outline-container-org8b46f4b" class="outline-4">
-<h4 id="org8b46f4b"><a href="https://neptune.ai/blog/anomaly-detection-in-time-series">https://neptune.ai/blog/anomaly-detection-in-time-series</a></h4>
-<div class="outline-text-4" id="text-org8b46f4b">
-</div>
-<ul class="org-ul">
-<li><a id="org6b5de21"></a>STL deomposition seasonal, trend and residue<br /></li>
-<li><a id="org11335d6"></a>detection using forecasting<br /></li>
-<li><a id="orgface13d"></a>classification and regression tree (CART)<br /></li>
-</ul>
-</div>
-<div id="outline-container-org86863ab" class="outline-4">
-<h4 id="org86863ab"><a href="https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427">https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427</a></h4>
-</div>
-</div>
-</div>
-<div id="outline-container-org182a972" class="outline-2">
-<h2 id="org182a972">Modules</h2>
-<div class="outline-text-2" id="text-org182a972">
-</div>
-<div id="outline-container-org7f0ef45" class="outline-3">
-<h3 id="org7f0ef45"><a href="https://github.com/pycaret/pycaret/tree/master/examples">https://github.com/pycaret/pycaret/tree/master/examples</a></h3>
-</div>
-<div id="outline-container-org5a06d02" class="outline-3">
-<h3 id="org5a06d02"><a href="https://github.com/facebookresearch/Kats">https://github.com/facebookresearch/Kats</a></h3>
-<div class="outline-text-3" id="text-org5a06d02">
-</div>
-<div id="outline-container-orgc0c28e3" class="outline-4">
-<h4 id="orgc0c28e3">forcast</h4>
-</div>
-</div>
-<div id="outline-container-org23dd7d1" class="outline-3">
-<h3 id="org23dd7d1"><a href="https://github.com/pycaret/pycaret">https://github.com/pycaret/pycaret</a></h3>
-</div>
-</div>
-<div id="outline-container-org245c0c7" class="outline-2">
-<h2 id="org245c0c7">Methods</h2>
-<div class="outline-text-2" id="text-org245c0c7">
-</div>
-<div id="outline-container-org9b5f9e8" class="outline-3">
-<h3 id="org9b5f9e8">preprocessing: torque requrest &amp; battery response decomposition</h3>
-<div class="outline-text-3" id="text-org9b5f9e8">
-</div>
-<div id="outline-container-orgbffbcf8" class="outline-4">
-<h4 id="orgbffbcf8">SARIMA:</h4>
-<div class="outline-text-4" id="text-orgbffbcf8">
+<div id="outline-container-org39b550a" class="outline-4">
+<h4 id="org39b550a"><a href="https://neptune.ai/blog/anomaly-detection-in-time-series">https://neptune.ai/blog/anomaly-detection-in-time-series</a></h4>
+<div class="outline-text-4" id="text-org39b550a">
 </div>
 <ul class="org-ul">
-<li><a id="org5a8aeff"></a><a href="https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/">https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/</a><br /></li>
-<li><a id="orge8fc488"></a><a href="https://medium.com/@kfoofw/seasonal-lags-sarima-model-fa671a858729">https://medium.com/@kfoofw/seasonal-lags-sarima-model-fa671a858729</a><br /></li>
+<li><a id="orge32b210"></a>STL deomposition seasonal, trend and residue<br /></li>
+<li><a id="org6f4327c"></a>detection using forecasting<br /></li>
+<li><a id="org856c489"></a>classification and regression tree (CART)<br /></li>
 </ul>
 </div>
-<div id="outline-container-orgb0bd384" class="outline-4">
-<h4 id="orgb0bd384">Prophet: <a href="https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well">https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well</a>.</h4>
+<div id="outline-container-org15a0404" class="outline-4">
+<h4 id="org15a0404"><a href="https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427">https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427</a></h4>
 </div>
-<div id="outline-container-orga7a9cda" class="outline-4">
-<h4 id="orga7a9cda">Holt-Winters</h4>
-<div class="outline-text-4" id="text-orga7a9cda">
+</div>
+</div>
+<div id="outline-container-org6d4440a" class="outline-2">
+<h2 id="org6d4440a">Modules</h2>
+<div class="outline-text-2" id="text-org6d4440a">
+</div>
+<div id="outline-container-org4e70233" class="outline-3">
+<h3 id="org4e70233"><a href="https://github.com/pycaret/pycaret/tree/master/examples">https://github.com/pycaret/pycaret/tree/master/examples</a></h3>
+</div>
+<div id="outline-container-org9ea35ff" class="outline-3">
+<h3 id="org9ea35ff"><a href="https://github.com/facebookresearch/Kats">https://github.com/facebookresearch/Kats</a></h3>
+<div class="outline-text-3" id="text-org9ea35ff">
+</div>
+<div id="outline-container-orgbd48865" class="outline-4">
+<h4 id="orgbd48865">forcast</h4>
+</div>
+</div>
+<div id="outline-container-org6639129" class="outline-3">
+<h3 id="org6639129"><a href="https://github.com/pycaret/pycaret">https://github.com/pycaret/pycaret</a></h3>
+</div>
+</div>
+<div id="outline-container-orgd2f37d8" class="outline-2">
+<h2 id="orgd2f37d8">Methods</h2>
+<div class="outline-text-2" id="text-orgd2f37d8">
+</div>
+<div id="outline-container-org1309f08" class="outline-3">
+<h3 id="org1309f08">preprocessing: torque requrest &amp; battery response decomposition</h3>
+<div class="outline-text-3" id="text-org1309f08">
+</div>
+<div id="outline-container-orgde3ae63" class="outline-4">
+<h4 id="orgde3ae63">SARIMA:</h4>
+<div class="outline-text-4" id="text-orgde3ae63">
+</div>
+<ul class="org-ul">
+<li><a id="org470436e"></a><a href="https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/">https://machinelearningmastery.com/sarima-for-time-series-forecasting-in-python/</a><br /></li>
+<li><a id="org991fa53"></a><a href="https://medium.com/@kfoofw/seasonal-lags-sarima-model-fa671a858729">https://medium.com/@kfoofw/seasonal-lags-sarima-model-fa671a858729</a><br /></li>
+</ul>
+</div>
+<div id="outline-container-orgf34db49" class="outline-4">
+<h4 id="orgf34db49">Prophet: <a href="https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well">https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.&amp;text=Prophet%20is%20robust%20to%20missing,and%20typically%20handles%20outliers%20well</a>.</h4>
+</div>
+<div id="outline-container-org5c56fa2" class="outline-4">
+<h4 id="org5c56fa2">Holt-Winters</h4>
+<div class="outline-text-4" id="text-org5c56fa2">
 <p>
 <a href="https://orangematter.solarwinds.com/2019/12/15/holt-winters-forecasting-simplified/#:~:text=Holt%2DWinters%20is%20a%20model,cyclical%20repeating%20pattern%20(seasonality)">https://orangematter.solarwinds.com/2019/12/15/holt-winters-forecasting-simplified/#:~:text=Holt%2DWinters%20is%20a%20model,cyclical%20repeating%20pattern%20(seasonality)</a>.
 <a href="https://otexts.com/fpp2/holt-winters.html">https://otexts.com/fpp2/holt-winters.html</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd598af" class="outline-4">
-<h4 id="orgfd598af">ensemble</h4>
+<div id="outline-container-org8f24e38" class="outline-4">
+<h4 id="org8f24e38">ensemble</h4>
 </div>
 </div>
-<div id="outline-container-org4723ae7" class="outline-3">
-<h3 id="org4723ae7">forecasting with Kat/PyCaret</h3>
+<div id="outline-container-org091dcec" class="outline-3">
+<h3 id="org091dcec">forecasting with Kat/PyCaret</h3>
 </div>
 </div>
-<div id="outline-container-orgff695e2" class="outline-2">
-<h2 id="orgff695e2">Project</h2>
-<div class="outline-text-2" id="text-orgff695e2">
+<div id="outline-container-org8ef292f" class="outline-2">
+<h2 id="org8ef292f">Project</h2>
+<div class="outline-text-2" id="text-org8ef292f">
 </div>
-<div id="outline-container-org30fd322" class="outline-3">
-<h3 id="org30fd322">Fiasco/Funes</h3>
+<div id="outline-container-orgc60ebc0" class="outline-3">
+<h3 id="orgc60ebc0">Fiasco/Funes</h3>
 </div>
-<div id="outline-container-orge118f4a" class="outline-3">
-<h3 id="orge118f4a">Hail Mary/Dataphage(Astrophage)</h3>
+<div id="outline-container-org893f0e9" class="outline-3">
+<h3 id="org893f0e9">Hail Mary/Dataphage(Astrophage)</h3>
 </div>
-<div id="outline-container-org91c6b4a" class="outline-3">
-<h3 id="org91c6b4a">Nabis/Impressionist</h3>
+<div id="outline-container-orgd6d0543" class="outline-3">
+<h3 id="orgd6d0543">Nabis/Impressionist</h3>
 </div>
 </div>
-<div id="outline-container-org483a4cd" class="outline-2">
-<h2 id="org483a4cd">Retrospection</h2>
-<div class="outline-text-2" id="text-org483a4cd">
+<div id="outline-container-org69c87b5" class="outline-2">
+<h2 id="org69c87b5">Retrospection</h2>
+<div class="outline-text-2" id="text-org69c87b5">
 </div>
-<div id="outline-container-org11d4527" class="outline-3">
-<h3 id="org11d4527">no labels (expert knowledge) for supervised learning</h3>
+<div id="outline-container-orga4225cd" class="outline-3">
+<h3 id="orga4225cd">no labels (expert knowledge) for supervised learning</h3>
 </div>
-<div id="outline-container-orgae3b1b3" class="outline-3">
-<h3 id="orgae3b1b3">challenge and caveats for unsuperviesd learning:</h3>
-<div class="outline-text-3" id="text-orgae3b1b3">
+<div id="outline-container-org108c31c" class="outline-3">
+<h3 id="org108c31c">challenge and caveats for unsuperviesd learning:</h3>
+<div class="outline-text-3" id="text-org108c31c">
 </div>
-<div id="outline-container-org31f812f" class="outline-4">
-<h4 id="org31f812f">relevant features to reflect intrinsic parameters of battery health</h4>
-<div class="outline-text-4" id="text-org31f812f">
+<div id="outline-container-org22ca01b" class="outline-4">
+<h4 id="org22ca01b">relevant features to reflect intrinsic parameters of battery health</h4>
+<div class="outline-text-4" id="text-org22ca01b">
 </div>
 <ul class="org-ul">
-<li><a id="orge7d67a2"></a>the distribution of battery health state depending on those parameters<br /></li>
+<li><a id="org9c146ea"></a>the distribution of battery health state depending on those parameters<br /></li>
 </ul>
 </div>
-<div id="outline-container-org881bc44" class="outline-4">
-<h4 id="org881bc44">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</h4>
-<div class="outline-text-4" id="text-org881bc44">
+<div id="outline-container-org685d860" class="outline-4">
+<h4 id="org685d860">when the features are relevant, sufficient <b>finite</b> data to represent this distribution</h4>
+<div class="outline-text-4" id="text-org685d860">
 </div>
 <ul class="org-ul">
-<li><a id="org39efc4e"></a>Example: Gaussian/uniform; GT distribution is the unknown (nonlinear, multimodal, non-stationary) natural density of data: distribution \(p_{\xi}\) &#x2013;&gt; Neural Network v\(p_{\theta}\)<br />
+<li><a id="org3cda1cd"></a>Example: Gaussian/uniform; GT distribution is the unknown (nonlinear, multimodal, non-stationary) natural density of data: distribution \(p_{\xi}\) &#x2013;&gt; Neural Network v\(p_{\theta}\)<br />
 <ul class="org-ul">
-<li><a id="orgaa95d4b"></a>NN very versatile: \(p_{\theta}\) can approxmate any distribution!<br /></li>
-<li><a id="org832b454"></a>prior \(p(z)\) has an impact on the final sample and capability of the whole network: \(p(z) \odot p_{\theta}(x)\)<br /></li>
-<li><a id="orga5bd75c"></a>if enough expert knowledge is available tell us it's normal distribution, just 2 parameters to estimate, still a lot of samples for bootstrapping/bagging, sample mean / sample variance, need confidence level, statistical trial for inspection.<br /></li>
-</ul>
-</li>
-<li><a id="org53142b9"></a>scenario data (time sequences of specific scenes)<br /></li>
-<li><a id="org2eaae97"></a>given the current compute resources: the way to go is to reduce the data amount requirement by defining relevant features and relevant scenarios<br /></li>
-</ul>
-</div>
-<div id="outline-container-org816b7fa" class="outline-4">
-<h4 id="org816b7fa">optimal architecture for G and D (optimize weights) :</h4>
-<div class="outline-text-4" id="text-org816b7fa">
-</div>
-<ul class="org-ul">
-<li><a id="orgc5ac8e1"></a>multidimensional continuous function enough? More expertise to make this happen!<br />
-<ul class="org-ul">
-<li><a id="org3c22d5c"></a>transformer for sequential modeling<br /></li>
-<li><a id="org86ca92b"></a>make prior learnable<br /></li>
+<li><a id="orgea29e82"></a>NN very versatile: \(p_{\theta}\) can approxmate any distribution!<br /></li>
+<li><a id="org8ad9c80"></a>prior \(p(z)\) has an impact on the final sample and capability of the whole network: \(p(z) \odot p_{\theta}(x)\)<br /></li>
+<li><a id="orgd3b233f"></a>if enough expert knowledge is available tell us it's normal distribution, just 2 parameters to estimate, still a lot of samples for bootstrapping/bagging, sample mean / sample variance, need confidence level, statistical trial for inspection.<br /></li>
 </ul>
 </li>
-<li><a id="orga4c147e"></a>optimal hyperparameters?<br /></li>
+<li><a id="org518193a"></a>scenario data (time sequences of specific scenes)<br /></li>
+<li><a id="orgde98a76"></a>given the current compute resources: the way to go is to reduce the data amount requirement by defining relevant features and relevant scenarios<br /></li>
 </ul>
 </div>
-<div id="outline-container-org4833071" class="outline-4">
-<h4 id="org4833071">no guarantee for convergence</h4>
+<div id="outline-container-org758c6a0" class="outline-4">
+<h4 id="org758c6a0">optimal architecture for G and D (optimize weights) :</h4>
+<div class="outline-text-4" id="text-org758c6a0">
 </div>
-<div id="outline-container-orge849720" class="outline-4">
-<h4 id="orge849720">CGAN and feature labels?</h4>
+<ul class="org-ul">
+<li><a id="org970f743"></a>multidimensional continuous function enough? More expertise to make this happen!<br />
+<ul class="org-ul">
+<li><a id="org0dfe17a"></a>transformer for sequential modeling<br /></li>
+<li><a id="orgdfbaef5"></a>make prior learnable<br /></li>
+</ul>
+</li>
+<li><a id="orgc933ba4"></a>optimal hyperparameters?<br /></li>
+</ul>
+</div>
+<div id="outline-container-orga35486d" class="outline-4">
+<h4 id="orga35486d">no guarantee for convergence</h4>
+</div>
+<div id="outline-container-orge678f77" class="outline-4">
+<h4 id="orge678f77">CGAN and feature labels?</h4>
 </div>
 </div>
 </div>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-adp-plan-cn</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">veos-adp-plan-cn</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0e22cdb">算法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#org5947652">ddpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#orgdef4564"><span class="todo TODO">TODO</span> 代码重构</a></li>
+</ul>
+</li>
+<li><a href="#orgb5e049d">rdpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#orgfabd85e"><span class="todo TODO">TODO</span> 实现与代码重构</a></li>
+<li><a href="#orgb69b84b">园区测试</a></li>
+<li><a href="#org40922b9">道路测试</a></li>
+</ul>
+</li>
+<li><a href="#org5085a3e"><span class="todo TODO">TODO</span> 离线训练编码</a></li>
+<li><a href="#org2c9a0ab">驾驶风格聚类/分类分析</a>
+<ul>
+<li><a href="#orgb97c4c8"><span class="todo TODO">TODO</span> 训练接口评审</a></li>
+<li><a href="#org68808bd"><span class="todo TODO">TODO</span> 分类结果评审</a></li>
+<li><a href="#org63f2239"><span class="todo TODO">TODO</span> 算法评审</a></li>
+</ul>
+</li>
+<li><a href="#org5b34b5a"><span class="todo TODO">TODO</span> 算法修订与选择 I</a></li>
+<li><a href="#org8f325db"><span class="todo TODO">TODO</span> 算法修订与选择 II</a></li>
+</ul>
+</li>
+<li><a href="#org18adc93">云端集群开发&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#orga0ca366"><span class="todo TODO">TODO</span> 云端环境设置（创建 dockerfile 文件)</a></li>
+<li><a href="#orgbe29c4e"><span class="todo TODO">TODO</span> 原始数据接口封装打包</a>
+<ul>
+<li><a href="#orgde94fa7"><span class="todo TODO">TODO</span> 在线</a></li>
+<li><a href="#org2573da4"><span class="todo TODO">TODO</span> 离线</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0f0b0aa">集成测试&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#orga8509da"><span class="todo TODO">TODO</span> remotecan</a>
+<ul>
+<li><a href="#orgac4931e"><span class="todo TODO">TODO</span> 在线训练</a></li>
+<li><a href="#org580b5af"><span class="todo TODO">TODO</span> 离线训练</a></li>
+<li><a href="#org8bcebdf"><span class="todo TODO">TODO</span> 离线数据引擎训练</a></li>
+</ul>
+</li>
+<li><a href="#org42063d5"><span class="todo TODO">TODO</span> rdpg 园区测试</a></li>
+<li><a href="#orgead26e0"><span class="todo TODO">TODO</span> ddpg 道路测试 I</a></li>
+<li><a href="#orgb92b2ca"><span class="todo TODO">TODO</span> rdpg 道路测试 I</a></li>
+<li><a href="#org3af3220"><span class="todo TODO">TODO</span> ddpg 道路测试 II</a></li>
+<li><a href="#org0cfd453"><span class="todo TODO">TODO</span> rdpg 道路测试 II</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0e22cdb" class="outline-2">
+<h2 id="org0e22cdb">算法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-org0e22cdb">
+</div>
+<div id="outline-container-org5947652" class="outline-3">
+<h3 id="org5947652">ddpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h3>
+<div class="outline-text-3" id="text-org5947652">
+</div>
+<div id="outline-container-orgdef4564" class="outline-4">
+<h4 id="orgdef4564"><span class="todo TODO">TODO</span> 代码重构</h4>
+<div class="outline-text-4" id="text-orgdef4564">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5e049d" class="outline-3">
+<h3 id="orgb5e049d">rdpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h3>
+<div class="outline-text-3" id="text-orgb5e049d">
+</div>
+<div id="outline-container-orgfabd85e" class="outline-4">
+<h4 id="orgfabd85e"><span class="todo TODO">TODO</span> 实现与代码重构</h4>
+<div class="outline-text-4" id="text-orgfabd85e">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-19 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgb69b84b" class="outline-4">
+<h4 id="orgb69b84b">园区测试</h4>
+</div>
+<div id="outline-container-org40922b9" class="outline-4">
+<h4 id="org40922b9">道路测试</h4>
+</div>
+</div>
+<div id="outline-container-org5085a3e" class="outline-3">
+<h3 id="org5085a3e"><span class="todo TODO">TODO</span> 离线训练编码</h3>
+<div class="outline-text-3" id="text-org5085a3e">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-26 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org2c9a0ab" class="outline-3">
+<h3 id="org2c9a0ab">驾驶风格聚类/分类分析</h3>
+<div class="outline-text-3" id="text-org2c9a0ab">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-15 Wed&gt;</span></span></p>
+</div>
+<div id="outline-container-orgb97c4c8" class="outline-4">
+<h4 id="orgb97c4c8"><span class="todo TODO">TODO</span> 训练接口评审</h4>
+</div>
+<div id="outline-container-org68808bd" class="outline-4">
+<h4 id="org68808bd"><span class="todo TODO">TODO</span> 分类结果评审</h4>
+</div>
+<div id="outline-container-org63f2239" class="outline-4">
+<h4 id="org63f2239"><span class="todo TODO">TODO</span> 算法评审</h4>
+</div>
+</div>
+<div id="outline-container-org5b34b5a" class="outline-3">
+<h3 id="org5b34b5a"><span class="todo TODO">TODO</span> 算法修订与选择 I</h3>
+<div class="outline-text-3" id="text-org5b34b5a">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-30 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org8f325db" class="outline-3">
+<h3 id="org8f325db"><span class="todo TODO">TODO</span> 算法修订与选择 II</h3>
+<div class="outline-text-3" id="text-org8f325db">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-29 Fri&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-org18adc93" class="outline-2">
+<h2 id="org18adc93">云端集群开发&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-org18adc93">
+</div>
+<div id="outline-container-orga0ca366" class="outline-3">
+<h3 id="orga0ca366"><span class="todo TODO">TODO</span> 云端环境设置（创建 dockerfile 文件)</h3>
+<div class="outline-text-3" id="text-orga0ca366">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-29 Fri&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgbe29c4e" class="outline-3">
+<h3 id="orgbe29c4e"><span class="todo TODO">TODO</span> 原始数据接口封装打包</h3>
+<div class="outline-text-3" id="text-orgbe29c4e">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+<div id="outline-container-orgde94fa7" class="outline-4">
+<h4 id="orgde94fa7"><span class="todo TODO">TODO</span> 在线</h4>
+<div class="outline-text-4" id="text-orgde94fa7">
+</div>
+<ul class="org-ul">
+<li><a id="orgef65ebb"></a><span class="todo TODO">TODO</span> 四元组接口<br /></li>
+</ul>
+</div>
+<div id="outline-container-org2573da4" class="outline-4">
+<h4 id="org2573da4"><span class="todo TODO">TODO</span> 离线</h4>
+<div class="outline-text-4" id="text-org2573da4">
+</div>
+<ul class="org-ul">
+<li><a id="org9cc7d51"></a><span class="todo TODO">TODO</span> 数据池接口（依赖云端离线数据库接口）<br /></li>
+<li><a id="org40b3a74"></a><span class="todo TODO">TODO</span> 采样方法<br />
+<div class="outline-text-5" id="text-org40b3a74">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f0b0aa" class="outline-2">
+<h2 id="org0f0b0aa">集成测试&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-org0f0b0aa">
+</div>
+<div id="outline-container-orga8509da" class="outline-3">
+<h3 id="orga8509da"><span class="todo TODO">TODO</span> remotecan</h3>
+<div class="outline-text-3" id="text-orga8509da">
+</div>
+<div id="outline-container-orgac4931e" class="outline-4">
+<h4 id="orgac4931e"><span class="todo TODO">TODO</span> 在线训练</h4>
+<div class="outline-text-4" id="text-orgac4931e">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-26 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org580b5af" class="outline-4">
+<h4 id="org580b5af"><span class="todo TODO">TODO</span> 离线训练</h4>
+<div class="outline-text-4" id="text-org580b5af">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-02 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org8bcebdf" class="outline-4">
+<h4 id="org8bcebdf"><span class="todo TODO">TODO</span> 离线数据引擎训练</h4>
+<div class="outline-text-4" id="text-org8bcebdf">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-09 Thu&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-org42063d5" class="outline-3">
+<h3 id="org42063d5"><span class="todo TODO">TODO</span> rdpg 园区测试</h3>
+<div class="outline-text-3" id="text-org42063d5">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-31 Tue&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgead26e0" class="outline-3">
+<h3 id="orgead26e0"><span class="todo TODO">TODO</span> ddpg 道路测试 I</h3>
+<div class="outline-text-3" id="text-orgead26e0">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-16 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgb92b2ca" class="outline-3">
+<h3 id="orgb92b2ca"><span class="todo TODO">TODO</span> rdpg 道路测试 I</h3>
+<div class="outline-text-3" id="text-orgb92b2ca">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-30 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org3af3220" class="outline-3">
+<h3 id="org3af3220"><span class="todo TODO">TODO</span> ddpg 道路测试 II</h3>
+<div class="outline-text-3" id="text-org3af3220">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-14 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org0cfd453" class="outline-3">
+<h3 id="org0cfd453"><span class="todo TODO">TODO</span> rdpg 道路测试 II</h3>
+<div class="outline-text-3" id="text-org0cfd453">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-28 Thu&gt;</span></span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

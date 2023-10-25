@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>kubeflow</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">kubeflow</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6c94f9f">Goal</a>
+<ul>
+<li><a href="#org7ee96a5">tensorflow</a></li>
+<li><a href="#org6e2cfdf">Kubernetes</a></li>
+<li><a href="#org2927771">pain points</a>
+<ul>
+<li><a href="#org96e5d39">counter measure?</a></li>
+</ul>
+</li>
+<li><a href="#org7999e8e">version control of code, model, and data</a></li>
+<li><a href="#org487670a">scaling up?</a></li>
+<li><a href="#orgdd1fe99">security?</a></li>
+<li><a href="#orgfe74e05">reporting/logging?</a></li>
+</ul>
+</li>
+<li><a href="#orgc510dfb">Architecture</a></li>
+<li><a href="#org1875cb0">Features</a></li>
+<li><a href="#org9fd73fe">Components</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6c94f9f" class="outline-2">
+<h2 id="org6c94f9f">Goal</h2>
+<div class="outline-text-2" id="text-org6c94f9f">
+</div>
+<div id="outline-container-org7ee96a5" class="outline-3">
+<h3 id="org7ee96a5">tensorflow</h3>
+</div>
+<div id="outline-container-org6e2cfdf" class="outline-3">
+<h3 id="org6e2cfdf">Kubernetes</h3>
+</div>
+<div id="outline-container-org2927771" class="outline-3">
+<h3 id="org2927771">pain points</h3>
+<div class="outline-text-3" id="text-org2927771">
+</div>
+<div id="outline-container-org96e5d39" class="outline-4">
+<h4 id="org96e5d39">counter measure?</h4>
+</div>
+</div>
+<div id="outline-container-org7999e8e" class="outline-3">
+<h3 id="org7999e8e">version control of code, model, and data</h3>
+</div>
+<div id="outline-container-org487670a" class="outline-3">
+<h3 id="org487670a">scaling up?</h3>
+</div>
+<div id="outline-container-orgdd1fe99" class="outline-3">
+<h3 id="orgdd1fe99">security?</h3>
+</div>
+<div id="outline-container-orgfe74e05" class="outline-3">
+<h3 id="orgfe74e05">reporting/logging?</h3>
+</div>
+</div>
+<div id="outline-container-orgc510dfb" class="outline-2">
+<h2 id="orgc510dfb">Architecture</h2>
+</div>
+
+<div id="outline-container-org1875cb0" class="outline-2">
+<h2 id="org1875cb0">Features</h2>
+</div>
+<div id="outline-container-org9fd73fe" class="outline-2">
+<h2 id="org9fd73fe">Components</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JD-DL-Devlop_Engineer</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">JD-DL-Devlop<sub>Engineer</sub></h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb535ce9">基本信息</a>
+<ul>
+<li><a href="#org3701bde">职位名称</a></li>
+<li><a href="#org6e26bf8">所属部门</a></li>
+<li><a href="#org1b74170">所属分部</a></li>
+<li><a href="#org30e858c">职位类别</a></li>
+<li><a href="#org97f536b">适用范围</a></li>
+</ul>
+</li>
+<li><a href="#org9764260">主要职责</a>
+<ul>
+<li><a href="#orgaae5034">概述</a></li>
+<li><a href="#org8b6a394">职责描述</a>
+<ul>
+<li><a href="#org719b6c0">开发研究</a></li>
+<li><a href="#orgbf59f47">应用部署</a></li>
+</ul>
+</li>
+<li><a href="#org2e31a80">工作关系</a>
+<ul>
+<li><a href="#orgc4ff489">直接上级</a></li>
+<li><a href="#org4dcdc23">直接下级</a></li>
+<li><a href="#org0748132">内部联系</a></li>
+<li><a href="#orgae67ea2">外部联系</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7335114">任职资格</a>
+<ul>
+<li><a href="#orgb75894e">教育程度</a>
+<ul>
+<li><a href="#org9cc7ba0">学历</a></li>
+<li><a href="#org29da67c">专业</a></li>
+</ul>
+</li>
+<li><a href="#orgce8601e">工作经验（以下之一）</a></li>
+<li><a href="#orgb375ee4">知识/技能</a>
+<ul>
+<li><a href="#orga7c3c69">专业知识</a></li>
+<li><a href="#orgb7dacb5">专业证书</a></li>
+<li><a href="#org635d60a">英语</a></li>
+<li><a href="#org5ff2cef">计算机</a></li>
+<li><a href="#orgdb76b8b">其他技能</a></li>
+</ul>
+</li>
+<li><a href="#orga29a7b5">素质能力</a>
+<ul>
+<li><a href="#org6f982f4">基础项</a></li>
+<li><a href="#org60014a9">业务素质</a></li>
+</ul>
+</li>
+<li><a href="#orga0d2f51">其他要求</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb535ce9" class="outline-2">
+<h2 id="orgb535ce9">基本信息</h2>
+<div class="outline-text-2" id="text-orgb535ce9">
+</div>
+<div id="outline-container-org3701bde" class="outline-3">
+<h3 id="org3701bde">职位名称</h3>
+<div class="outline-text-3" id="text-org3701bde">
+<p>
+深度学习应用开发工程师
+</p>
+</div>
+</div>
+<div id="outline-container-org6e26bf8" class="outline-3">
+<h3 id="org6e26bf8">所属部门</h3>
+<div class="outline-text-3" id="text-org6e26bf8">
+<p>
+智能系统部
+</p>
+</div>
+</div>
+<div id="outline-container-org1b74170" class="outline-3">
+<h3 id="org1b74170">所属分部</h3>
+<div class="outline-text-3" id="text-org1b74170">
+<p>
+前沿开发
+</p>
+</div>
+</div>
+<div id="outline-container-org30e858c" class="outline-3">
+<h3 id="org30e858c">职位类别</h3>
+<div class="outline-text-3" id="text-org30e858c">
+<p>
+软件开发，数据开发
+</p>
+</div>
+</div>
+<div id="outline-container-org97f536b" class="outline-3">
+<h3 id="org97f536b">适用范围</h3>
+<div class="outline-text-3" id="text-org97f536b">
+<p>
+深度学习应用开发工程师岗位
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9764260" class="outline-2">
+<h2 id="org9764260">主要职责</h2>
+<div class="outline-text-2" id="text-org9764260">
+</div>
+<div id="outline-container-orgaae5034" class="outline-3">
+<h3 id="orgaae5034">概述</h3>
+<div class="outline-text-3" id="text-orgaae5034">
+<ul class="org-ul">
+<li>运用深度神经网络对车辆运行和运营大数据进行分析，研究优化车辆行驶和运营的深度学习模型和算法</li>
+<li>进行深度强化学习，大数据时间序列分析，生成性模型和图神经网络相关的前沿应用</li>
+<li>支持公司大数据业务模型开发和部署</li>
+<li>参与上述领域算法的优化和移动端推理部署</li>
+<li>与产品团队紧密合作，确保算法成功产品化</li>
+<li>关注特定方向的研究进展，行业新技术动态</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b6a394" class="outline-3">
+<h3 id="org8b6a394">职责描述</h3>
+<div class="outline-text-3" id="text-org8b6a394">
+</div>
+<div id="outline-container-org719b6c0" class="outline-4">
+<h4 id="org719b6c0">开发研究</h4>
+<div class="outline-text-4" id="text-org719b6c0">
+<ul class="org-ul">
+<li>运用深度强化学习技术对新能源车辆运行大数据进行优化分析，支持新能源汽车行业新业务模式的探索</li>
+<li>探索利用离线强化学习、联邦学习等前沿深度学习技术更新深度学习业务模型</li>
+<li>应用基于大数据的时间序列分析方法和无监督方法进行系统运行状态分析和预测</li>
+<li>探索深度图神经网络应用于物流运营优化调度</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbf59f47" class="outline-4">
+<h4 id="orgbf59f47">应用部署</h4>
+<div class="outline-text-4" id="text-orgbf59f47">
+<ul class="org-ul">
+<li>容器化部署</li>
+<li>建立和配置数据流水</li>
+<li>支持建立机器学习运营（MLOps)，云端部署机器学习模型算法</li>
+<li>支持运营优化和匹配</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2e31a80" class="outline-3">
+<h3 id="org2e31a80">工作关系</h3>
+<div class="outline-text-3" id="text-org2e31a80">
+</div>
+<div id="outline-container-orgc4ff489" class="outline-4">
+<h4 id="orgc4ff489">直接上级</h4>
+<div class="outline-text-4" id="text-orgc4ff489">
+<p>
+前沿开发高级技术总监
+</p>
+</div>
+</div>
+<div id="outline-container-org4dcdc23" class="outline-4">
+<h4 id="org4dcdc23">直接下级</h4>
+<div class="outline-text-4" id="text-org4dcdc23">
+<p>
+无
+</p>
+</div>
+</div>
+<div id="outline-container-org0748132" class="outline-4">
+<h4 id="org0748132">内部联系</h4>
+<div class="outline-text-4" id="text-org0748132">
+<p>
+产品开发部门：电动力总成及电子电器，商业智能
+</p>
+</div>
+</div>
+<div id="outline-container-orgae67ea2" class="outline-4">
+<h4 id="orgae67ea2">外部联系</h4>
+<div class="outline-text-4" id="text-orgae67ea2">
+<p>
+云服务供应商
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7335114" class="outline-2">
+<h2 id="org7335114">任职资格</h2>
+<div class="outline-text-2" id="text-org7335114">
+</div>
+<div id="outline-container-orgb75894e" class="outline-3">
+<h3 id="orgb75894e">教育程度</h3>
+<div class="outline-text-3" id="text-orgb75894e">
+</div>
+<div id="outline-container-org9cc7ba0" class="outline-4">
+<h4 id="org9cc7ba0">学历</h4>
+<div class="outline-text-4" id="text-org9cc7ba0">
+<p>
+本科或以上
+</p>
+</div>
+</div>
+<div id="outline-container-org29da67c" class="outline-4">
+<h4 id="org29da67c">专业</h4>
+<div class="outline-text-4" id="text-org29da67c">
+<p>
+人工智能类计算机类或自动化类
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgce8601e" class="outline-3">
+<h3 id="orgce8601e">工作经验（以下之一）</h3>
+<div class="outline-text-3" id="text-orgce8601e">
+<ul class="org-ul">
+<li>具备在学校有至少半年以上中小型深度学习项目开发经验</li>
+<li>在代码托管平台 github/gitlab/gitee 有深度参与开发维护的深度学习项目</li>
+<li>在企业研究机构从事过深度学习研究或者开发项目</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb375ee4" class="outline-3">
+<h3 id="orgb375ee4">知识/技能</h3>
+<div class="outline-text-3" id="text-orgb375ee4">
+</div>
+<div id="outline-container-orga7c3c69" class="outline-4">
+<h4 id="orga7c3c69">专业知识</h4>
+<div class="outline-text-4" id="text-orga7c3c69">
+<ul class="org-ul">
+<li>机器学习基础理论</li>
+<li>了解深度学习理论中的卷积网，强化学习，生成性对抗网络（GAN），图神经网络，大型语言模型等</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb7dacb5" class="outline-4">
+<h4 id="orgb7dacb5">专业证书</h4>
+<div class="outline-text-4" id="text-orgb7dacb5">
+<p>
+无特殊要求
+</p>
+</div>
+</div>
+<div id="outline-container-org635d60a" class="outline-4">
+<h4 id="org635d60a">英语</h4>
+<div class="outline-text-4" id="text-org635d60a">
+<ul class="org-ul">
+<li>能熟练阅读和理解英语技术文档和相关领域研究文献</li>
+<li>能编写基本的英语技术文档和指导书</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ff2cef" class="outline-4">
+<h4 id="org5ff2cef">计算机</h4>
+<div class="outline-text-4" id="text-org5ff2cef">
+<ul class="org-ul">
+<li>可熟练使用 python 编程</li>
+<li>熟悉以下一个或多个大数据应用程序包
+<ul class="org-ul">
+<li>tensorflow, pytorch</li>
+<li>pandas, numpy, scipy, scikit-learn</li>
+</ul></li>
+<li>具备扎实的 Linux 基础应用知识
+<ul class="org-ul">
+<li>熟练使用 Git</li>
+<li>了解并能使用 docker</li>
+<li>了解 markdown, rST, asciidoc, orgmode 或 doxygen</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb76b8b" class="outline-4">
+<h4 id="orgdb76b8b">其他技能</h4>
+<div class="outline-text-4" id="text-orgdb76b8b">
+<ul class="org-ul">
+<li>有敏捷开发经验者为佳</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga29a7b5" class="outline-3">
+<h3 id="orga29a7b5">素质能力</h3>
+<div class="outline-text-3" id="text-orga29a7b5">
+</div>
+<div id="outline-container-org6f982f4" class="outline-4">
+<h4 id="org6f982f4">基础项</h4>
+<div class="outline-text-4" id="text-org6f982f4">
+<p>
+诚信正直，有创新精神
+</p>
+</div>
+</div>
+<div id="outline-container-org60014a9" class="outline-4">
+<h4 id="org60014a9">业务素质</h4>
+<div class="outline-text-4" id="text-org60014a9">
+<p>
+具备不妥协的高标准质量意识
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0d2f51" class="outline-3">
+<h3 id="orga0d2f51">其他要求</h3>
+<div class="outline-text-3" id="text-orga0d2f51">
+<ul class="org-ul">
+<li>有不断持续改进工作的追求</li>
+<li>有较强的自我学习能力</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

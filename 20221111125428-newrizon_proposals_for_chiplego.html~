@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Newrizon Proposals for ChipLego</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Newrizon Proposals for ChipLego</h1>
+
+<ul class="org-ul">
+<li><a id="org2d2a359"></a>Requirements<br />
+<ul class="org-ul">
+<li><a id="orgaa3a724"></a>3d is important<br /></li>
+<li><a id="orga7d8cca"></a>big model is relevant to performance<br /></li>
+<li><a id="orgc20c751"></a>occlusions need to be handled<br /></li>
+</ul>
+</li>
+<li><a id="orgf690113"></a>Basic modules<br />
+<ul class="org-ul">
+<li><a id="org8174268"></a>transformer<br /></li>
+<li><a id="org4624c9c"></a>convolution<br />
+<ul class="org-ul">
+<li><a id="orgc1fb58b"></a>UNet<br /></li>
+</ul>
+</li>
+<li><a id="orga27e7c8"></a>MLP<br /></li>
+<li><a id="org2d266f8"></a>encoder, decoder (VAE)<br /></li>
+<li><a id="orgac0d7a8"></a>generative model (diffusion)<br /></li>
+</ul>
+</li>
+<li><a id="org99e6d82"></a>Proposals<br />
+<ul class="org-ul">
+<li><a id="org9383700"></a>Model zoo TIMM with pretrained model and various model size<br />
+<ul class="org-ul">
+<li><a id="org8024702"></a>different types of computer, big &#x2013;&gt; small<br /></li>
+<li><a id="orgcdfc0fa"></a>Vision model as encoder<br />
+<ul class="org-ul">
+<li><a id="org2d755f4"></a>ViT-pytorch (lucidrain)<br /></li>
+<li><a id="org5888344"></a>RegNet<br /></li>
+<li><a id="org97b1e74"></a>ConvNext<br /></li>
+<li><a id="orgc445c8a"></a>FocalNet<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="org3f0f9a8"></a>Steps:<br />
+<ul class="org-ul">
+<li><a id="orgcbcc9db"></a>evaluate accessible models<br /></li>
+<li><a id="orgd89c35b"></a>add layers and scale up inputs to test<br /></li>
+<li><a id="org6d31a13"></a>adapt big models to HW (see. AlexNet)<br /></li>
+</ul>
+</li>
+<li><a id="orgb348868"></a>"All in One" structure: Generative models (Stable Diffusion model)<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>
