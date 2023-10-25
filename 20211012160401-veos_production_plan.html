@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-production-plan</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">veos-production-plan</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf03268f">Gap to Production</a>
+<ul>
+<li><a href="#org790c1b4">Development</a>
+<ul>
+<li><a href="#org0035d4b">data ingestion</a></li>
+<li><a href="#org129a6f5">data digestion</a></li>
+<li><a href="#org1b7f81d">excrement, deposition and regurgitation</a></li>
+<li><a href="#orge1638cc">Test fleet</a></li>
+<li><a href="#org8ee20f0">Test Drive</a></li>
+</ul>
+</li>
+<li><a href="#org4b52bd4">Test and Validation</a>
+<ul>
+<li><a href="#org6d62bba">Trip Sync</a></li>
+<li><a href="#org2207ae5">AI mode switch</a></li>
+<li><a href="#org6c83203">Safety?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0191fb6">EC1-Production</a>
+<ul>
+<li><a href="#org1416125">communication</a>
+<ul>
+<li><a href="#orga77fa09">inference on the cloud</a></li>
+<li><a href="#org1f7dcc2">decision data dispatch through tbox (remote CAN, 4G and ccp) to VBU</a></li>
+</ul>
+</li>
+<li><a href="#org219f3c4">training</a>
+<ul>
+<li><a href="#org6176dd3">online (off policy): upload on the cloud, dispatch</a></li>
+<li><a href="#orgb0965fc">offline: upload, storage and offline training</a></li>
+</ul>
+</li>
+<li><a href="#org065b8a7">data</a>
+<ul>
+<li><a href="#org34e03a5">cloud</a></li>
+</ul>
+</li>
+<li><a href="#org3f57314">equipment</a>
+<ul>
+<li><a href="#orgf98f52d">VB sample with</a></li>
+<li><a href="#org379b312">Cloud cluster</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgacc2bb3"><span class="todo TODO">TODO</span> ADP Plan</a>
+<ul>
+<li><a href="#org5f01bf4">Goal</a>
+<ul>
+<li><a href="#org07f92c4">Priority: function, performance;</a></li>
+<li><a href="#org712966e">robust (noise?)</a></li>
+<li><a href="#orgb571e61">safety (risk?)</a></li>
+</ul>
+</li>
+<li><a href="#org0f88b74"><span class="todo TODO">TODO</span> review the interface: requriment vs implementation</a>
+<ul>
+<li><a href="#orge66364f">状态读取（上传）以云端为主体: 短消息，快，1.5 秒，上传后在云端存储</a></li>
+<li><a href="#orgf677c4b">刷写（下发）</a></li>
+</ul>
+</li>
+<li><a href="#org23e8f2d"><span class="todo TODO">TODO</span> test the interface</a>
+<ul>
+<li><a href="#orge772353">upload</a></li>
+<li><a href="#org3227960">download</a></li>
+</ul>
+</li>
+<li><a href="#orgeff5cbb"><span class="todo TODO">TODO</span> single test vehicle: freeze the 1st version to have a test training and validation</a>
+<ul>
+<li><a href="#org3f2f7a4"><span class="todo TODO">TODO</span> cloud cluster setup and test</a></li>
+<li><a href="#org72149e3"><span class="todo TODO">TODO</span> ddpg/rdpg real-time with remotecan to test the realtimeness</a></li>
+<li><a href="#org7bd435d"><span class="todo TODO">TODO</span> ddpg/rdpg offline training/learning &amp; realtime inference</a></li>
+<li><a href="#org9f9ce71"><span class="todo TODO">TODO</span> ddpg/rdgp offline training/learning &amp; inference with big timegap (latency, data loss)</a></li>
+</ul>
+</li>
+<li><a href="#org473bae7"><span class="todo TODO">TODO</span> review the performance and feasiblity</a></li>
+<li><a href="#orgeb1f84e"><span class="todo TODO">TODO</span> batch test: (multiple vehicles)</a></li>
+<li><a href="#org8290947"><span class="todo TODO">TODO</span> System Concept (different from test concept, final evaluation)</a>
+<ul>
+<li><a href="#orgaa2328f"><span class="todo TODO">TODO</span> Lower Bound: no real-time download and upload, just offline assessment</a></li>
+<li><a href="#org850d7c5"><span class="todo TODO">TODO</span> Expected Performance:</a></li>
+<li><a href="#org7c55483"><span class="todo TODO">TODO</span> Upper Bound:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge469645">EC1 Training</a>
+<ul>
+<li><a href="#org4795bfd">Responsibility</a>
+<ul>
+<li><a href="#org6b12800"><span class="todo TODO">TODO</span> provide methods and instruction, analysis of the training data, debugging</a></li>
+<li><a href="#org5ac4ab8">No support for actual testing,</a></li>
+</ul>
+</li>
+<li><a href="#org541c8fb">high quality training (due to inference only mode in EC1)</a>
+<ul>
+<li><a href="#orgb5d87db"><span class="todo TODO">TODO</span> quality and efficiency assessment (eos/)</a></li>
+<li><a href="#org2804f13">Anting training is better than Jiangyin.</a></li>
+<li><a href="#org65b2c7f">If no training in Anting, only depending training in Jiangyin, already specified (assessing quality of the training based on the specification！)</a></li>
+</ul>
+</li>
+<li><a href="#org73444d8">high quality remotecan signal, responsibility?</a>
+<ul>
+<li><a href="#org28e725e"><span class="todo TODO">TODO</span> quality assessemnt (eos/remotecan itself)</a></li>
+<li><a href="#org9a303e4"><span class="todo TODO">TODO</span> improve remotecan?</a></li>
+</ul>
+</li>
+<li><a href="#org53cd67b">Analysis</a>
+<ul>
+<li><a href="#org8c10210"><span class="todo TODO">TODO</span> Development test</a></li>
+<li><a href="#org9a8079a"><span class="todo TODO">TODO</span> training with new version</a></li>
+<li><a href="#org978a7d2"><span class="todo TODO">TODO</span> inference with new version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4c7d5b8"><span class="todo TODO">TODO</span> EC1 assessemnt</a>
+<ul>
+<li><a href="#org428cd90"><span class="todo TODO">TODO</span> safety, again?</a></li>
+<li><a href="#org8beaa67"><span class="todo TODO">TODO</span> efficiency? not included.</a></li>
+<li><a href="#org7bc377e"><span class="todo TODO">TODO</span> Not responsible for evaluation, already proved in ADP, with the best algorithm deep rl!</a></li>
+<li><a href="#org701ca8d"><span class="todo TODO">TODO</span> only support for analysis</a></li>
+</ul>
+</li>
+<li><a href="#org231aa06">EOS Software</a>
+<ul>
+<li><a href="#org79edfc5">Production level software packaage</a></li>
+<li><a href="#orgdd3e051">scalable, cluster ready</a>
+<ul>
+<li><a href="#orgdc0ee5a">algorithms, tensorflow on cluster, optimized</a></li>
+<li><a href="#orgebc3527">Data storage solution: tailored time series database (faster than MongoDB)</a></li>
+<li><a href="#org65e20b0">Data Processing interface</a></li>
+<li><a href="#org968a8a9">Vector logging analysis: fast statistics extraction and timing analysis, fast signal quality anaylis and validation</a></li>
+<li><a href="#org6c08b17">EOS Exception handling</a></li>
+</ul>
+</li>
+<li><a href="#org674a38e">Full typing with mypy, dataclass and pydantic</a>
+<ul>
+<li><a href="#org2204484">mypy config on package and module levels</a></li>
+<li><a href="#org4e24c21">create stubs for own modules and class</a></li>
+<li><a href="#org9a637ac">overriding optional with constructors</a></li>
+</ul>
+</li>
+<li><a href="#orgb0a8941">Extendable architecture</a>
+<ul>
+<li><a href="#org55e0309">integration of multiple input interface (local/remote)</a></li>
+<li><a href="#org86ab2a3">integration of multiple storage interface (database, local files, cluster interface)</a></li>
+<li><a href="#orgbcbe1ec">integration of polymorphic agent (DDPG/RDPG)</a></li>
+<li><a href="#orgcd267e4">Production configuration system with validation: Vehicle/Driver/Storage config, VCU, TBox, Driver management</a></li>
+<li><a href="#orgb67f8f1"><span class="todo TODO">TODO</span> DL training/testing metrics with W&amp;B</a></li>
+<li><a href="#orgd08f4e9"><span class="todo TODO">TODO</span> Time series processing with Transformer architecture</a></li>
+<li><a href="#orga5017ce"><span class="todo TODO">TODO</span> Offline Reinforcement Learning investigation, EDA of offline data</a></li>
+<li><a href="#org9ce17b4"><span class="todo TODO">TODO</span> Foundational Model for VEOS （prediction and decision, LLM-agent)</a></li>
+<li><a href="#orgdf136b2"><span class="todo TODO">TODO</span> Spark extention to Eos Storage</a></li>
+<li><a href="#orga3083b6"><span class="todo TODO">TODO</span> MapReduce pipeline for veos analysis: statistics,</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1f67aff">EOS Algorithms</a>
+<ul>
+<li><a href="#org147daf3">Offline Reinforcement Learning CQL, etc.</a></li>
+<li><a href="#orgbe69313">Transformer substitute LSTM</a></li>
+<li><a href="#org38d55c6">Foundational Model for time series</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       b37a3d2a-9138-4625-89a5-457373c00324
+</p>
+<p>
+<a href="./20210830182658-veos.html">veos</a>
+</p>
+<div id="outline-container-orgf03268f" class="outline-2">
+<h2 id="orgf03268f">Gap to Production</h2>
+<div class="outline-text-2" id="text-orgf03268f">
+</div>
+<div id="outline-container-org790c1b4" class="outline-3">
+<h3 id="org790c1b4">Development</h3>
+<div class="outline-text-3" id="text-org790c1b4">
+</div>
+<div id="outline-container-org0035d4b" class="outline-4">
+<h4 id="org0035d4b">data ingestion</h4>
+<div class="outline-text-4" id="text-org0035d4b">
+</div>
+<ul class="org-ul">
+<li><a id="orgf55dac4"></a>Interface confirmation<br />
+<ul class="org-ul">
+<li><a id="org438c3f9"></a>Flashing<br />
+<ul class="org-ul">
+<li><a id="org09e2d9f"></a>Frequency (InTest)<br /></li>
+</ul>
+</li>
+<li><a id="org593e6a4"></a>Observation<br />
+<ul class="org-ul">
+<li><a id="orgfcd27e1"></a>speed, throttle &amp; brake pedal<br /></li>
+<li><a id="orga344589"></a>voltage, current<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org129a6f5" class="outline-4">
+<h4 id="org129a6f5">data digestion</h4>
+<div class="outline-text-4" id="text-org129a6f5">
+</div>
+<ul class="org-ul">
+<li><a id="org3eae70e"></a>Function Maintainence and Upgrade<br />
+<ul class="org-ul">
+<li><a id="orgc976897"></a>Pretraining and episodic<br /></li>
+<li><a id="org8ef2284"></a>Episode-free inference<br /></li>
+<li><a id="org7a1fed8"></a>RDPG (Serial States Encoding)<br /></li>
+<li><a id="orgcb36e10"></a>Memory and warm startup<br /></li>
+<li><a id="org92c525c"></a>Multi Agents<br /></li>
+<li><a id="org7a7080f"></a>distribution drifting impact<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org1b7f81d" class="outline-4">
+<h4 id="org1b7f81d">excrement, deposition and regurgitation</h4>
+<div class="outline-text-4" id="text-org1b7f81d">
+</div>
+<ul class="org-ul">
+<li><a id="orgdad366b"></a>offline data deposition<br /></li>
+</ul>
+</div>
+<div id="outline-container-orge1638cc" class="outline-4">
+<h4 id="orge1638cc">Test fleet</h4>
+<div class="outline-text-4" id="text-orge1638cc">
+</div>
+<ul class="org-ul">
+<li><a id="org364eae1"></a>Vehicle reworking<br />
+<ul class="org-ul">
+<li><a id="orgfda3a6f"></a>KVaser<br /></li>
+<li><a id="orgcaef816"></a>CarPC/laptop<br /></li>
+<li><a id="org7ced193"></a>Inverter and cables<br /></li>
+</ul>
+</li>
+<li><a id="org13b03d8"></a>SW: Python only Interface (Company Windows system + Conda):<br />
+<ul class="org-ul">
+<li><a id="org66ec764"></a>data collection<br /></li>
+<li><a id="orgab571e2"></a>monitoring,<br /></li>
+<li><a id="org0e27308"></a>HMI,<br /></li>
+<li><a id="org2b24b1d"></a>Training<br /></li>
+<li><a id="orgd74bffb"></a>Inference<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org8ee20f0" class="outline-4">
+<h4 id="org8ee20f0">Test Drive</h4>
+<div class="outline-text-4" id="text-org8ee20f0">
+</div>
+<ul class="org-ul">
+<li><a id="org166121f"></a>a different triangle profile<br /></li>
+<li><a id="org358adea"></a>multi-triangle profile<br /></li>
+<li><a id="org15469b2"></a>New Anting Town<br />
+<ul class="org-ul">
+<li><a id="org050cf29"></a>Baseline<br /></li>
+<li><a id="org14b72c1"></a>Episode free, inference only<br /></li>
+<li><a id="org87eb6e2"></a>Extra module: HDMap, Traffic Light Detection<br /></li>
+<li><a id="orga39d8d6"></a>expanded action space 0~35kmph/8 rows<br />
+<ul class="org-ul">
+<li><a id="org043e71e"></a>observation determines the activated action space!<br />
+<ul class="org-ul">
+<li><a id="orgd18324f"></a>just assumption, where observation is only related to the corresponding action with the same speed!<br /></li>
+<li><a id="org2097b96"></a>in reality, low speed observation may affect high speed action.<br /></li>
+<li><a id="org272dd17"></a>but in analogy to convolution neural network, the policy could be shared between different action space<br /></li>
+<li><a id="orgdda692a"></a>the same DDPG shared for different speed interval! translation invariant in observation &amp; action space? scale separation (0~20kmph&#x2013;&gt;0~100kmph)?<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="orgb26ed99"></a>Highway<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4b52bd4" class="outline-3">
+<h3 id="org4b52bd4">Test and Validation</h3>
+<div class="outline-text-3" id="text-org4b52bd4">
+</div>
+<div id="outline-container-org6d62bba" class="outline-4">
+<h4 id="org6d62bba">Trip Sync</h4>
+<div class="outline-text-4" id="text-org6d62bba">
+</div>
+<ul class="org-ul">
+<li><a id="org797540c"></a>Production over the Infotainment (manual button, internal http, navigation)<br /></li>
+<li><a id="org5fc5723"></a>Test<br />
+<ul class="org-ul">
+<li><a id="orgdccb7d6"></a>STARTED [#C] Sync over UDP<br />
+<div class="outline-text-6" id="text-orgdccb7d6">
+<ul class="org-ul">
+<li>State "STARTED"    from "DONE"       <span class="timestamp-wrapper"><span class="timestamp">[2022-08-04 Thu 10:01]</span></span></li>
+</ul>
+</div>
+<ul class="org-ul">
+<li><a id="org12f437d"></a>Vehicle: Trip logic, HMI, inferring<br /></li>
+<li><a id="orgb44d026"></a>Cloud: data, training<br />
+<ul class="org-ul">
+<li><a id="orgcdcb8da"></a>4G: fetch data from cloud<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="orgf4bae2a"></a>Sync over the Air<br />
+<ul class="org-ul">
+<li><a id="org96dc62c"></a>Vehicle: Trip logic, HMI<br />
+<ul class="org-ul">
+<li><a id="org47d9b1f"></a>4G: Sync signal<br /></li>
+</ul>
+</li>
+<li><a id="orgfba7c0b"></a>Cloud: training, inferring<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org2207ae5" class="outline-4">
+<h4 id="org2207ae5">AI mode switch</h4>
+<div class="outline-text-4" id="text-org2207ae5">
+</div>
+<ul class="org-ul">
+<li><a id="orga2ec772"></a>Notify (Inquire)<br /></li>
+</ul>
+</div>
+<div id="outline-container-org6c83203" class="outline-4">
+<h4 id="org6c83203">Safety?</h4>
+<div class="outline-text-4" id="text-org6c83203">
+</div>
+<ul class="org-ul">
+<li><a id="orgc4a3f44"></a>motor<br /></li>
+<li><a id="orgd023134"></a>driving<br /></li>
+<li><a id="orgf7e03c9"></a>torque range<br /></li>
+<li><a id="orgf9aae63"></a>change rate<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0191fb6" class="outline-2">
+<h2 id="org0191fb6">EC1-Production</h2>
+<div class="outline-text-2" id="text-org0191fb6">
+</div>
+<div id="outline-container-org1416125" class="outline-3">
+<h3 id="org1416125">communication</h3>
+<div class="outline-text-3" id="text-org1416125">
+</div>
+<div id="outline-container-orga77fa09" class="outline-4">
+<h4 id="orga77fa09">inference on the cloud</h4>
+</div>
+<div id="outline-container-org1f7dcc2" class="outline-4">
+<h4 id="org1f7dcc2">decision data dispatch through tbox (remote CAN, 4G and ccp) to VBU</h4>
+</div>
+</div>
+<div id="outline-container-org219f3c4" class="outline-3">
+<h3 id="org219f3c4">training</h3>
+<div class="outline-text-3" id="text-org219f3c4">
+</div>
+<div id="outline-container-org6176dd3" class="outline-4">
+<h4 id="org6176dd3">online (off policy): upload on the cloud, dispatch</h4>
+</div>
+<div id="outline-container-orgb0965fc" class="outline-4">
+<h4 id="orgb0965fc">offline: upload, storage and offline training</h4>
+</div>
+</div>
+<div id="outline-container-org065b8a7" class="outline-3">
+<h3 id="org065b8a7">data</h3>
+<div class="outline-text-3" id="text-org065b8a7">
+</div>
+<div id="outline-container-org34e03a5" class="outline-4">
+<h4 id="org34e03a5">cloud</h4>
+<div class="outline-text-4" id="text-org34e03a5">
+</div>
+<ul class="org-ul">
+<li><a id="org556fcf6"></a>model data<br /></li>
+<li><a id="org9f1c1cd"></a>training data<br />
+<ul class="org-ul">
+<li><a id="orgfc33351"></a>offline storage<br /></li>
+<li><a id="orgd315378"></a>2database for inquiry<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f57314" class="outline-3">
+<h3 id="org3f57314">equipment</h3>
+<div class="outline-text-3" id="text-org3f57314">
+</div>
+<div id="outline-container-orgf98f52d" class="outline-4">
+<h4 id="orgf98f52d">VB sample with</h4>
+<div class="outline-text-4" id="text-orgf98f52d">
+</div>
+<ul class="org-ul">
+<li><a id="org12831a7"></a>TBOX<br /></li>
+<li><a id="orgd72a930"></a>VBU<br /></li>
+</ul>
+</div>
+<div id="outline-container-org379b312" class="outline-4">
+<h4 id="org379b312">Cloud cluster</h4>
+<div class="outline-text-4" id="text-org379b312">
+</div>
+<ul class="org-ul">
+<li><a id="orgffd3068"></a>inference<br />
+<ul class="org-ul">
+<li><a id="org3827fb4"></a>runtime<br /></li>
+<li><a id="org9f219f9"></a>realtime observation transmission<br /></li>
+<li><a id="orgd5a092c"></a>realtime policy execution<br /></li>
+</ul>
+</li>
+<li><a id="orgda111cf"></a>training<br />
+<ul class="org-ul">
+<li><a id="org10e92af"></a>database; observation/model/logs storage search and fetch<br /></li>
+<li><a id="orgb69f1fc"></a>training runtime<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgacc2bb3" class="outline-2">
+<h2 id="orgacc2bb3"><span class="todo TODO">TODO</span> ADP Plan</h2>
+<div class="outline-text-2" id="text-orgacc2bb3">
+</div>
+<div id="outline-container-org5f01bf4" class="outline-3">
+<h3 id="org5f01bf4">Goal</h3>
+<div class="outline-text-3" id="text-org5f01bf4">
+</div>
+<div id="outline-container-org07f92c4" class="outline-4">
+<h4 id="org07f92c4">Priority: function, performance;</h4>
+</div>
+<div id="outline-container-org712966e" class="outline-4">
+<h4 id="org712966e">robust (noise?)</h4>
+</div>
+<div id="outline-container-orgb571e61" class="outline-4">
+<h4 id="orgb571e61">safety (risk?)</h4>
+</div>
+</div>
+<div id="outline-container-org0f88b74" class="outline-3">
+<h3 id="org0f88b74"><span class="todo TODO">TODO</span> review the interface: requriment vs implementation</h3>
+<div class="outline-text-3" id="text-org0f88b74">
+</div>
+<div id="outline-container-orge66364f" class="outline-4">
+<h4 id="orge66364f">状态读取（上传）以云端为主体: 短消息，快，1.5 秒，上传后在云端存储</h4>
+</div>
+<div id="outline-container-orgf677c4b" class="outline-4">
+<h4 id="orgf677c4b">刷写（下发）</h4>
+</div>
+</div>
+<div id="outline-container-org23e8f2d" class="outline-3">
+<h3 id="org23e8f2d"><span class="todo TODO">TODO</span> test the interface</h3>
+<div class="outline-text-3" id="text-org23e8f2d">
+</div>
+<div id="outline-container-orge772353" class="outline-4">
+<h4 id="orge772353">upload</h4>
+</div>
+<div id="outline-container-org3227960" class="outline-4">
+<h4 id="org3227960">download</h4>
+</div>
+</div>
+<div id="outline-container-orgeff5cbb" class="outline-3">
+<h3 id="orgeff5cbb"><span class="todo TODO">TODO</span> single test vehicle: freeze the 1st version to have a test training and validation</h3>
+<div class="outline-text-3" id="text-orgeff5cbb">
+</div>
+<div id="outline-container-org3f2f7a4" class="outline-4">
+<h4 id="org3f2f7a4"><span class="todo TODO">TODO</span> cloud cluster setup and test</h4>
+</div>
+<div id="outline-container-org72149e3" class="outline-4">
+<h4 id="org72149e3"><span class="todo TODO">TODO</span> ddpg/rdpg real-time with remotecan to test the realtimeness</h4>
+</div>
+<div id="outline-container-org7bd435d" class="outline-4">
+<h4 id="org7bd435d"><span class="todo TODO">TODO</span> ddpg/rdpg offline training/learning &amp; realtime inference</h4>
+</div>
+<div id="outline-container-org9f9ce71" class="outline-4">
+<h4 id="org9f9ce71"><span class="todo TODO">TODO</span> ddpg/rdgp offline training/learning &amp; inference with big timegap (latency, data loss)</h4>
+</div>
+</div>
+<div id="outline-container-org473bae7" class="outline-3">
+<h3 id="org473bae7"><span class="todo TODO">TODO</span> review the performance and feasiblity</h3>
+<div class="outline-text-3" id="text-org473bae7">
+</div>
+</div>
+<div id="outline-container-orgeb1f84e" class="outline-3">
+<h3 id="orgeb1f84e"><span class="todo TODO">TODO</span> batch test: (multiple vehicles)</h3>
+<div class="outline-text-3" id="text-orgeb1f84e">
+</div>
+</div>
+<div id="outline-container-org8290947" class="outline-3">
+<h3 id="org8290947"><span class="todo TODO">TODO</span> System Concept (different from test concept, final evaluation)</h3>
+<div class="outline-text-3" id="text-org8290947">
+</div>
+<div id="outline-container-orgaa2328f" class="outline-4">
+<h4 id="orgaa2328f"><span class="todo TODO">TODO</span> Lower Bound: no real-time download and upload, just offline assessment</h4>
+<div class="outline-text-4" id="text-orgaa2328f">
+</div>
+<ul class="org-ul">
+<li><a id="orga8ce70f"></a>static optimal pedal map with pre-training （urban eco &amp; highway eco &amp; &#x2026; etc. )<br /></li>
+</ul>
+</div>
+<div id="outline-container-org850d7c5" class="outline-4">
+<h4 id="org850d7c5"><span class="todo TODO">TODO</span> Expected Performance:</h4>
+<div class="outline-text-4" id="text-org850d7c5">
+</div>
+<ul class="org-ul">
+<li><a id="org9203c86"></a>update when scenario changes smoothly MPC (adaptive changing), from urban &#x2013;&gt; highway<br />
+<ul class="org-ul">
+<li><a id="org05dfcf9"></a>pretraining on highway<br /></li>
+<li><a id="org53d572e"></a>scenario changes<br /></li>
+<li><a id="org01cf51c"></a>online update in urban street<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org7c55483" class="outline-4">
+<h4 id="org7c55483"><span class="todo TODO">TODO</span> Upper Bound:</h4>
+<div class="outline-text-4" id="text-org7c55483">
+</div>
+<ul class="org-ul">
+<li><a id="org19e8cfd"></a>realtime dynamic optimal pedal map with online updating (5s observation immediate after flashing/download;)<br />
+<div class="outline-text-5" id="text-org19e8cfd">
+<p>
+<a href="./20220406134513-veos_adp.html">veos-adp</a>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge469645" class="outline-2">
+<h2 id="orge469645">EC1 Training</h2>
+<div class="outline-text-2" id="text-orge469645">
+</div>
+<div id="outline-container-org4795bfd" class="outline-3">
+<h3 id="org4795bfd">Responsibility</h3>
+<div class="outline-text-3" id="text-org4795bfd">
+</div>
+<div id="outline-container-org6b12800" class="outline-4">
+<h4 id="org6b12800"><span class="todo TODO">TODO</span> provide methods and instruction, analysis of the training data, debugging</h4>
+</div>
+<div id="outline-container-org5ac4ab8" class="outline-4">
+<h4 id="org5ac4ab8">No support for actual testing,</h4>
+</div>
+</div>
+<div id="outline-container-org541c8fb" class="outline-3">
+<h3 id="org541c8fb">high quality training (due to inference only mode in EC1)</h3>
+<div class="outline-text-3" id="text-org541c8fb">
+</div>
+<div id="outline-container-orgb5d87db" class="outline-4">
+<h4 id="orgb5d87db"><span class="todo TODO">TODO</span> quality and efficiency assessment (eos/)</h4>
+</div>
+<div id="outline-container-org2804f13" class="outline-4">
+<h4 id="org2804f13">Anting training is better than Jiangyin.</h4>
+</div>
+<div id="outline-container-org65b2c7f" class="outline-4">
+<h4 id="org65b2c7f">If no training in Anting, only depending training in Jiangyin, already specified (assessing quality of the training based on the specification！)</h4>
+</div>
+</div>
+<div id="outline-container-org73444d8" class="outline-3">
+<h3 id="org73444d8">high quality remotecan signal, responsibility?</h3>
+<div class="outline-text-3" id="text-org73444d8">
+</div>
+<div id="outline-container-org28e725e" class="outline-4">
+<h4 id="org28e725e"><span class="todo TODO">TODO</span> quality assessemnt (eos/remotecan itself)</h4>
+</div>
+<div id="outline-container-org9a303e4" class="outline-4">
+<h4 id="org9a303e4"><span class="todo TODO">TODO</span> improve remotecan?</h4>
+<div class="outline-text-4" id="text-org9a303e4">
+</div>
+<ul class="org-ul">
+<li><a id="orgf086912"></a>if no, decision for abandoning improvement? resource/timing/difficulty, argument?<br /></li>
+<li><a id="orge639e94"></a><span class="todo TODO">TODO</span> if yes, how?<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53cd67b" class="outline-3">
+<h3 id="org53cd67b">Analysis</h3>
+<div class="outline-text-3" id="text-org53cd67b">
+</div>
+<div id="outline-container-org8c10210" class="outline-4">
+<h4 id="org8c10210"><span class="todo TODO">TODO</span> Development test</h4>
+<div class="outline-text-4" id="text-org8c10210">
+</div>
+<ul class="org-ul">
+<li><a id="org9cdce76"></a>minimum 1 month, 3 weeks is insufficient, will have to debug remotely<br /></li>
+</ul>
+</div>
+<div id="outline-container-org9a8079a" class="outline-4">
+<h4 id="org9a8079a"><span class="todo TODO">TODO</span> training with new version</h4>
+</div>
+<div id="outline-container-org978a7d2" class="outline-4">
+<h4 id="org978a7d2"><span class="todo TODO">TODO</span> inference with new version</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c7d5b8" class="outline-2">
+<h2 id="org4c7d5b8"><span class="todo TODO">TODO</span> EC1 assessemnt</h2>
+<div class="outline-text-2" id="text-org4c7d5b8">
+</div>
+<div id="outline-container-org428cd90" class="outline-3">
+<h3 id="org428cd90"><span class="todo TODO">TODO</span> safety, again?</h3>
+</div>
+<div id="outline-container-org8beaa67" class="outline-3">
+<h3 id="org8beaa67"><span class="todo TODO">TODO</span> efficiency? not included.</h3>
+</div>
+<div id="outline-container-org7bc377e" class="outline-3">
+<h3 id="org7bc377e"><span class="todo TODO">TODO</span> Not responsible for evaluation, already proved in ADP, with the best algorithm deep rl!</h3>
+</div>
+<div id="outline-container-org701ca8d" class="outline-3">
+<h3 id="org701ca8d"><span class="todo TODO">TODO</span> only support for analysis</h3>
+</div>
+</div>
+<div id="outline-container-org231aa06" class="outline-2">
+<h2 id="org231aa06">EOS Software</h2>
+<div class="outline-text-2" id="text-org231aa06">
+</div>
+<div id="outline-container-org79edfc5" class="outline-3">
+<h3 id="org79edfc5">Production level software packaage</h3>
+</div>
+<div id="outline-container-orgdd3e051" class="outline-3">
+<h3 id="orgdd3e051">scalable, cluster ready</h3>
+<div class="outline-text-3" id="text-orgdd3e051">
+</div>
+<div id="outline-container-orgdc0ee5a" class="outline-4">
+<h4 id="orgdc0ee5a">algorithms, tensorflow on cluster, optimized</h4>
+</div>
+<div id="outline-container-orgebc3527" class="outline-4">
+<h4 id="orgebc3527">Data storage solution: tailored time series database (faster than MongoDB)</h4>
+<div class="outline-text-4" id="text-orgebc3527">
+</div>
+<ul class="org-ul">
+<li><a id="org610af9f"></a>arrow parquet - columnar<br /></li>
+<li><a id="org0778cd8"></a>avro - row based, variable length records<br /></li>
+<li><a id="orgfaba684"></a>unified interface for record &amp; episode based storage and sampling<br /></li>
+<li><a id="orgc28f15e"></a>metadata solution and interface<br /></li>
+<li><a id="org2789cc8"></a>basis for offline reinforcement learning<br /></li>
+</ul>
+</div>
+<div id="outline-container-org65e20b0" class="outline-4">
+<h4 id="org65e20b0">Data Processing interface</h4>
+<div class="outline-text-4" id="text-org65e20b0">
+</div>
+<ul class="org-ul">
+<li><a id="orgcaad0a9"></a>Timestamping<br /></li>
+<li><a id="org11d0475"></a>Bits precise with Schema<br /></li>
+<li><a id="org4c201c0"></a>Full integration with Pandas 2.0 processing (multiindex, null typing,)<br /></li>
+<li><a id="org870c699"></a>tensor based vector analysis<br /></li>
+<li><a id="orgbcb444e"></a>variable sequence-length processing and storage<br /></li>
+</ul>
+</div>
+<div id="outline-container-org968a8a9" class="outline-4">
+<h4 id="org968a8a9">Vector logging analysis: fast statistics extraction and timing analysis, fast signal quality anaylis and validation</h4>
+</div>
+<div id="outline-container-org6c08b17" class="outline-4">
+<h4 id="org6c08b17">EOS Exception handling</h4>
+</div>
+</div>
+<div id="outline-container-org674a38e" class="outline-3">
+<h3 id="org674a38e">Full typing with mypy, dataclass and pydantic</h3>
+<div class="outline-text-3" id="text-org674a38e">
+</div>
+<div id="outline-container-org2204484" class="outline-4">
+<h4 id="org2204484">mypy config on package and module levels</h4>
+</div>
+<div id="outline-container-org4e24c21" class="outline-4">
+<h4 id="org4e24c21">create stubs for own modules and class</h4>
+</div>
+<div id="outline-container-org9a637ac" class="outline-4">
+<h4 id="org9a637ac">overriding optional with constructors</h4>
+</div>
+</div>
+<div id="outline-container-orgb0a8941" class="outline-3">
+<h3 id="orgb0a8941">Extendable architecture</h3>
+<div class="outline-text-3" id="text-orgb0a8941">
+</div>
+<div id="outline-container-org55e0309" class="outline-4">
+<h4 id="org55e0309">integration of multiple input interface (local/remote)</h4>
+</div>
+<div id="outline-container-org86ab2a3" class="outline-4">
+<h4 id="org86ab2a3">integration of multiple storage interface (database, local files, cluster interface)</h4>
+</div>
+<div id="outline-container-orgbcbe1ec" class="outline-4">
+<h4 id="orgbcbe1ec">integration of polymorphic agent (DDPG/RDPG)</h4>
+</div>
+<div id="outline-container-orgcd267e4" class="outline-4">
+<h4 id="orgcd267e4">Production configuration system with validation: Vehicle/Driver/Storage config, VCU, TBox, Driver management</h4>
+</div>
+<div id="outline-container-orgb67f8f1" class="outline-4">
+<h4 id="orgb67f8f1"><span class="todo TODO">TODO</span> DL training/testing metrics with W&amp;B</h4>
+</div>
+<div id="outline-container-orgd08f4e9" class="outline-4">
+<h4 id="orgd08f4e9"><span class="todo TODO">TODO</span> Time series processing with Transformer architecture</h4>
+</div>
+<div id="outline-container-orga5017ce" class="outline-4">
+<h4 id="orga5017ce"><span class="todo TODO">TODO</span> Offline Reinforcement Learning investigation, EDA of offline data</h4>
+</div>
+<div id="outline-container-org9ce17b4" class="outline-4">
+<h4 id="org9ce17b4"><span class="todo TODO">TODO</span> Foundational Model for VEOS （prediction and decision, LLM-agent)</h4>
+</div>
+<div id="outline-container-orgdf136b2" class="outline-4">
+<h4 id="orgdf136b2"><span class="todo TODO">TODO</span> Spark extention to Eos Storage</h4>
+</div>
+<div id="outline-container-orga3083b6" class="outline-4">
+<h4 id="orga3083b6"><span class="todo TODO">TODO</span> MapReduce pipeline for veos analysis: statistics,</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org1f67aff" class="outline-2">
+<h2 id="org1f67aff">EOS Algorithms</h2>
+<div class="outline-text-2" id="text-org1f67aff">
+</div>
+<div id="outline-container-org147daf3" class="outline-3">
+<h3 id="org147daf3">Offline Reinforcement Learning CQL, etc.</h3>
+</div>
+<div id="outline-container-orgbe69313" class="outline-3">
+<h3 id="orgbe69313">Transformer substitute LSTM</h3>
+</div>
+<div id="outline-container-org38d55c6" class="outline-3">
+<h3 id="org38d55c6">Foundational Model for time series</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

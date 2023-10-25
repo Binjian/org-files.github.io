@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>driving style classification</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">driving style classification</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org33aad35">data set preparation</a>
+<ul>
+<li><a href="#org5987cc4">using tensorflow datasets / sklearn interface training/validation splitt</a></li>
+<li><a href="#orga121dc7">labeling, shuffle, batch generation with sampling,</a></li>
+</ul>
+</li>
+<li><a href="#org462448e">supervised learning</a>
+<ul>
+<li><a href="#org31f90d3">XGBoost with time series</a></li>
+<li><a href="#org8c0d23c">LSTM classification</a></li>
+</ul>
+</li>
+<li><a href="#orga8537e1">unsupervised learning</a>
+<ul>
+<li><a href="#orgc6193d9">learn the embedding</a>
+<ul>
+<li><a href="#org2357330">PCA</a></li>
+<li><a href="#orgd1f09f9">t-SNE</a></li>
+<li><a href="#org6cf3892">UMap</a></li>
+<li><a href="#orgcc49bef">TriMap</a></li>
+<li><a href="#orga43422c">Compressive VAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       bc7050d5-36c0-4732-8863-ab08b86bf5ef
+</p>
+
+<div id="outline-container-org33aad35" class="outline-2">
+<h2 id="org33aad35">data set preparation</h2>
+<div class="outline-text-2" id="text-org33aad35">
+</div>
+<div id="outline-container-org5987cc4" class="outline-3">
+<h3 id="org5987cc4">using tensorflow datasets / sklearn interface training/validation splitt</h3>
+</div>
+<div id="outline-container-orga121dc7" class="outline-3">
+<h3 id="orga121dc7">labeling, shuffle, batch generation with sampling,</h3>
+</div>
+</div>
+<div id="outline-container-org462448e" class="outline-2">
+<h2 id="org462448e">supervised learning</h2>
+<div class="outline-text-2" id="text-org462448e">
+</div>
+<div id="outline-container-org31f90d3" class="outline-3">
+<h3 id="org31f90d3">XGBoost with time series</h3>
+</div>
+<div id="outline-container-org8c0d23c" class="outline-3">
+<h3 id="org8c0d23c">LSTM classification</h3>
+</div>
+</div>
+<div id="outline-container-orga8537e1" class="outline-2">
+<h2 id="orga8537e1">unsupervised learning</h2>
+<div class="outline-text-2" id="text-orga8537e1">
+</div>
+<div id="outline-container-orgc6193d9" class="outline-3">
+<h3 id="orgc6193d9">learn the embedding</h3>
+<div class="outline-text-3" id="text-orgc6193d9">
+</div>
+<div id="outline-container-org2357330" class="outline-4">
+<h4 id="org2357330">PCA</h4>
+</div>
+<div id="outline-container-orgd1f09f9" class="outline-4">
+<h4 id="orgd1f09f9">t-SNE</h4>
+</div>
+<div id="outline-container-org6cf3892" class="outline-4">
+<h4 id="org6cf3892">UMap</h4>
+</div>
+<div id="outline-container-orgcc49bef" class="outline-4">
+<h4 id="orgcc49bef">TriMap</h4>
+</div>
+<div id="outline-container-orga43422c" class="outline-4">
+<h4 id="orga43422c">Compressive VAE</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

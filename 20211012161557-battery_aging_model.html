@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>battery aging model</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">battery aging model</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2d6e36d">battery capacity estimation</a>
+<ul>
+<li><a href="#org2f8f88a">State of Health (SoH)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       6fcbbe7c-c6e7-4d68-917c-409a518b3995
+</p>
+<div id="outline-container-org2d6e36d" class="outline-2">
+<h2 id="org2d6e36d">battery capacity estimation</h2>
+<div class="outline-text-2" id="text-org2d6e36d">
+</div>
+<div id="outline-container-org2f8f88a" class="outline-3">
+<h3 id="org2f8f88a">State of Health (SoH)</h3>
+<div class="outline-text-3" id="text-org2f8f88a">
+<ul class="org-ul">
+<li>ratio of relative residual capacity with respect to the initial capacity</li>
+<li>critical for range prediction and maximum energy storage capability</li>
+<li>battery capacity: full charge process, parking iwt grid connection</li>
+<li>discharge is uncertain with environmental and operational conditions,
+<ul class="org-ul">
+<li>discharge curve is seldom available for on-board SoH monitoring</li>
+<li>charging and discharging voltage depends on thermodynamic and kinetic characteristics of the batttery</li>
+</ul></li>
+<li>do not need to a deep understanding of the electrochemical model, but large datasets</li>
+<li>degradation features?</li>
+<li>charging
+<ul class="org-ul">
+<li>regularly</li>
+<li>favorable</li>
+<li>relaxation process has a relationship with SoH:
+<ul class="org-ul">
+<li>relaxation voltage value at a specific time</li>
+<li>the voltage curve during a specific period</li>
+</ul></li>
+<li>CC (constant current) charge voltage-based</li>
+<li>CC-CV (constant current-constant voltage) charge voltage-based</li>
+<li><b>charging strategy for the purpose of surveying SoH?</b></li>
+<li><b>What is the general capacity degrading udner temperautre and charging current, cycles</b>?</li>
+<li>multistage charging? optimal stategy relying on real SoC</li>
+<li>start of charge normally distributed</li>
+<li>partial charge process in a specific voltage range for feature extraction
+<ul class="org-ul">
+<li>SOTA RMSE 0.39% ~ 4.26%</li>
+</ul></li>
+<li>differential voltage analysis, incremental capacity analysis for battery aging mechanism identification and capacity fade evaluation
+<ul class="org-ul">
+<li>SVR (support vector regression), GPPF (Gaussian Process Particle Filter), BPNN (Back-Propagation Neural Network), linear model</li>
+<li>partial incremental capacity curve</li>
+</ul></li>
+<li>rest voltage-based are few
+<ul class="org-ul">
+<li>linear model utilizing resting process: voltage after 30 min rest when fully charged: capacity estimation percentage error 0.7%~3.3%</li>
+<li>method using voltage relaxation for lithium plating detection</li>
+<li>ECM (Equivalent Circuit Model) to describe the voltage relaxation</li>
+<li>RC (resistor-capacitor) network model: batttery capacity decay during rest periods at 100% SoC using a dynamic time constant from RC model</li>
+</ul></li>
+</ul></li>
+<li>results with features from voltage relaxation curve:
+<ul class="org-ul">
+<li>ElasticNet, XGBoost, SVR: RMSE 1.0%, 1.7%, 1.6%</li>
+<li>Battery: NCA, NCM, NCM+NCA</li>
+</ul></li>
+<li>discharging
+<ul class="org-ul">
+<li>random</li>
+<li>driving behaviors</li>
+<li>road environments</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

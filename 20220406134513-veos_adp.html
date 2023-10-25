@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-adp</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">veos-adp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org81d366a">communication</a>
+<ul>
+<li><a href="#org5dc7a2f">online (remote-can)</a>
+<ul>
+<li><a href="#org0f6cbc1">uploading</a></li>
+<li><a href="#org36b4f46">downloading</a></li>
+</ul>
+</li>
+<li><a href="#org521d090">offline (cloud offline data)?</a>
+<ul>
+<li><a href="#org86374f1">database search interface (es)</a></li>
+</ul>
+</li>
+<li><a href="#org5dbd6bc">cloud deployment?</a></li>
+<li><a href="#org81f5134">data interface veos adp training data interface</a></li>
+</ul>
+</li>
+<li><a href="#orgc1a8d13">vehicles</a>
+<ul>
+<li><a href="#orgddf4d51">dev-vb</a></li>
+<li><a href="#orgf25a31b">3 test-vb</a></li>
+</ul>
+</li>
+<li><a href="#org0e3baa4">program management:</a>
+<ul>
+<li><a href="#org0801003">who makes decision?</a>
+<ul>
+<li><a href="#org00d6867">who has sense?</a></li>
+<li><a href="#org30be5dd">many decision made to stop the show, has impact on delaying the milestone.</a></li>
+<li><a href="#orgd84ce7e">technical decision: linux/windows, web requests not available on windows, why?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6d685b1">remotecan client</a>
+<ul>
+<li><a href="#orgfcb6e93">delivery insufficiency</a>
+<ul>
+<li><a href="#org28884c1">poor documentation</a></li>
+<li><a href="#org5e563f6">naming confusing</a></li>
+<li><a href="#org5c3ce9e">create a module, almost no test for delivery and expect client to test</a></li>
+<li><a href="#orgee435ce">poor acceptance of requirements</a></li>
+<li><a href="#org716de5a">why sending unnecessary redundant data (consumption list)?</a></li>
+<li><a href="#org4aa8a3d">"dalay"? method? review?, who is using?</a></li>
+<li><a href="#orgf43f7cb">what is the meaning of "alignment（对齐）"</a></li>
+<li><a href="#org4645a21">gears dimension? [2x2]?</a></li>
+<li><a href="#orgccf73a4">timestamp definition, when(被收到的时间戳?)?</a></li>
+<li><a href="#org5fc99b7">what does delay mean? estimation method?</a></li>
+<li><a href="#orge08ec4a">granularity 1s? should be able to get smaller granularity!</a></li>
+<li><a href="#org7fec593">what does "current<sub>zoomed</sub>" mean? method? need raw data!</a></li>
+<li><a href="#orgfc8934b">raw data : tuple with every timestamp, if not available use null!</a></li>
+<li><a href="#orgb3c00c7">api no return : black holes! (return status and the changes)</a></li>
+<li><a href="#orge613bee">failed test result return ok/done.</a></li>
+<li><a href="#org1141290">flashing dangerous parameter onto the vehicle without testing！</a></li>
+<li><a href="#org14abb5f">testing without knowing what is doing (which vehicle is flashing!)</a></li>
+<li><a href="#orgff8fcc9">chaotic imports no isort!</a></li>
+<li><a href="#orge795c2a">everytime huge chaotic code changes</a></li>
+<li><a href="#orge512fdf">chaotic documentation</a></li>
+<li><a href="#org4f8ee04">cannot use directly</a></li>
+<li><a href="#org837a39b">no confirm of changing!</a></li>
+<li><a href="#orgfba635f">no design, no architecture, no production level</a></li>
+<li><a href="#org0405f05">api design: flashing return error code 3?!</a></li>
+<li><a href="#org81b2772">api unstable: cannot flashing!</a></li>
+<li><a href="#org8c9b55e">todo debug 1000, 1002, empty code {} oss insufficiency</a></li>
+<li><a href="#org03b2344">todo get &amp; send in duplex mode</a></li>
+<li><a href="#orga3b5e78">poor response (own code response 2 days!)</a></li>
+</ul>
+</li>
+<li><a href="#org48e398a">fixed url for server?</a></li>
+<li><a href="#org87d5d02">need fake json data server like jsonplaceholder.typicode.com</a></li>
+<li><a href="#org0e0c6ca">need timestamps</a></li>
+<li><a href="#org95d3357">streaming requests</a></li>
+<li><a href="#org14691f2">session for higher efficiency</a></li>
+<li><a href="#org05df529">design goal &#x2013;&gt; understand deviation &#x2013;&gt; need verify &#x2013;&gt; performance checking</a></li>
+<li><a href="#org6e3f469">todo <b>issues</b> improvements:</a>
+<ul>
+<li><a href="#org4c92108">need streaming interface</a></li>
+<li><a href="#orga21db7d">need asynchronous download and upload</a></li>
+<li><a href="#orgee736e9">upload need more status: start/stop/interrupt eos mode,</a></li>
+<li><a href="#org2c15201"><b><b>use rpc instead of rest api</b></b></a></li>
+</ul>
+</li>
+<li><a href="#orgcea0f9d">product branch</a></li>
+</ul>
+</li>
+<li><a href="#org3f01925">tbox</a>
+<ul>
+<li><a href="#org9dc4a72">wiring</a>
+<ul>
+<li><a href="#orgc4a7592">can<sub>activate</sub> one light?</a></li>
+<li><a href="#orgd2b5d29">no calibration can?</a></li>
+</ul>
+</li>
+<li><a href="#org4e696db">can<sub>driver</sub><sub>node</sub> rebuild? observation values ok?</a></li>
+<li><a href="#orgdfd73c8">pm 21 rows &#x2013;&gt; 14 rows? row coordinates?</a></li>
+<li><a href="#org32871b9">flashing</a>
+<ul>
+<li><a href="#org619807f">upload?</a></li>
+<li><a href="#org235a92e">download?</a></li>
+<li><a href="#orgfc9bae9">diff on/off? meaning?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga7b4295">cloud</a>
+<ul>
+<li><a href="#org030b6af">task</a>
+<ul>
+<li><a href="#orge63a565">pre-requisite</a></li>
+<li><a href="#org9eb21d4">veos deployment (pip pip+git install, mypy, poetry, )</a></li>
+<li><a href="#orgb853d4f">veos functional test (remotecan, data pool)</a></li>
+</ul>
+</li>
+<li><a href="#org75d4288">cloud problem</a>
+<ul>
+<li><a href="#org3e5483d">connection</a></li>
+<li><a href="#orgae2139f">docker?</a></li>
+<li><a href="#org6e792a8">baiduyun account, profile setting</a></li>
+<li><a href="#org836c1da">pip</a></li>
+<li><a href="#org695eb4a">not doing own duties</a></li>
+<li><a href="#org4fbbd44">vbu software not confirmed</a></li>
+<li><a href="#orgcfb351b">instruction? handbook? (baidubce?, github? pytorch!)</a></li>
+<li><a href="#orgb540fa2">least surprise? (low efficiency, poor maturity)</a></li>
+</ul>
+</li>
+<li><a href="#org7e01819">database</a>
+<ul>
+<li><a href="#org83895b9">data warehouse</a></li>
+<li><a href="#org120e1dd">time series support for databse (timestamp, efficient indexing)</a></li>
+<li><a href="#orgbea1b13"><b>automatic choose collection based on meta data</b></a></li>
+<li><a href="#orge4387e1">serialization support for pandas dataframe and numpy array, python objects, compression</a></li>
+<li><a href="#orgeadf79b">data versioning, snapshots, chunking, ttl</a></li>
+<li><a href="#org71c4e51">update records with new features (mongodb 6.0, for mongodb&lt;6.0 only appending)</a></li>
+<li><a href="#org05ecd25">tracking changes over time</a></li>
+<li><a href="#org4884ed1">user, user library account management</a></li>
+<li><a href="#org1694209">version-, tick-, chunkstore, bsonstore</a></li>
+<li><a href="#org376849b">working with large data, lazy loading</a></li>
+<li><a href="#org34cbd80">prevent unindexed/unsharded collections</a></li>
+<li><a href="#orgfed6fbc">thread safety?</a></li>
+<li><a href="#org0b99ea2">exception handling (collection)</a></li>
+<li><a href="#org9f5b70a">apache arrow for in memory analytics (pymongoarrow)</a></li>
+<li><a href="#org591d054">multiple database with different unit lengths.</a></li>
+<li><a href="#org558aab4">no configures in the database document/ in application configuration</a></li>
+<li><a href="#org39e4d3e">maintaining, porting, searching, indexing, compatibility?</a></li>
+<li><a href="#org0a52152">variant metadata</a></li>
+<li><a href="#org3e111cc">todo data warelake design</a></li>
+</ul>
+</li>
+<li><a href="#orgf67b807">dvc ml-version-control</a></li>
+<li><a href="#org4ad99c0">truss server for prediction</a></li>
+<li><a href="#org9337e2f">basic function</a></li>
+<li><a href="#orgcfc81fa">saftety function</a></li>
+<li><a href="#org847d22b">algorithms verficatioin</a></li>
+</ul>
+</li>
+<li><a href="#org19bb685">safety</a>
+<ul>
+<li><a href="#orgc4f5117">communication (cybersecurity, data safety)</a></li>
+<li><a href="#org1973b8c">actor</a></li>
+<li><a href="#org91c8837">observation (data safety)</a></li>
+</ul>
+</li>
+<li><a href="#org05589ed">test issue</a>
+<ul>
+<li><a href="#org4b7dfce">design sucks, cannot meet requirements</a></li>
+<li><a href="#orgb8947ee">quality sucks, oss not sufficient &#x2013;&gt; intest interference? why?</a></li>
+<li><a href="#orgd29c5ad">database drops, ridiculous</a></li>
+<li><a href="#orgbee693b">deadend everywhere</a></li>
+<li><a href="#org2bb02ab">not telling truth</a></li>
+<li><a href="#orgaa25f79">no test before application, alarming!</a>
+<ul>
+<li><a href="#org44df1da">all problems on the final applications</a></li>
+<li><a href="#orgba68928">persistency, availability</a></li>
+<li><a href="#org4ab44bb">not knowning service is available! everyday checking!!!</a></li>
+<li><a href="#org162f678">cannot continue test</a></li>
+</ul>
+</li>
+<li><a href="#org3df7653">firmware version, no one cares, which one should be used?!</a>
+<ul>
+<li><a href="#orge2bc3c0">alarmed but no response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:id:       59bd937c-b70b-4546-bb0b-98d2215737d8
+</p>
+<p>
+<a href="./20211012160401-veos_production_plan.html">veos-production-plan</a>
+</p>
+
+<div id="outline-container-org81d366a" class="outline-2">
+<h2 id="org81d366a">communication</h2>
+<div class="outline-text-2" id="text-org81d366a">
+</div>
+<div id="outline-container-org5dc7a2f" class="outline-3">
+<h3 id="org5dc7a2f">online (remote-can)</h3>
+<div class="outline-text-3" id="text-org5dc7a2f">
+</div>
+<div id="outline-container-org0f6cbc1" class="outline-4">
+<h4 id="org0f6cbc1">uploading</h4>
+</div>
+<div id="outline-container-org36b4f46" class="outline-4">
+<h4 id="org36b4f46">downloading</h4>
+</div>
+</div>
+<div id="outline-container-org521d090" class="outline-3">
+<h3 id="org521d090">offline (cloud offline data)?</h3>
+<div class="outline-text-3" id="text-org521d090">
+</div>
+<div id="outline-container-org86374f1" class="outline-4">
+<h4 id="org86374f1">database search interface (es)</h4>
+<div class="outline-text-4" id="text-org86374f1">
+</div>
+<ul class="org-ul">
+<li><a id="org5d24a83"></a>only search and get record<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5dbd6bc" class="outline-3">
+<h3 id="org5dbd6bc">cloud deployment?</h3>
+</div>
+<div id="outline-container-org81f5134" class="outline-3">
+<h3 id="org81f5134">data interface <a href="./20220408125710-veos_adp_training_data_interface.html">veos adp training data interface</a></h3>
+</div>
+</div>
+
+<div id="outline-container-orgc1a8d13" class="outline-2">
+<h2 id="orgc1a8d13">vehicles</h2>
+<div class="outline-text-2" id="text-orgc1a8d13">
+</div>
+<div id="outline-container-orgddf4d51" class="outline-3">
+<h3 id="orgddf4d51">dev-vb</h3>
+</div>
+<div id="outline-container-orgf25a31b" class="outline-3">
+<h3 id="orgf25a31b">3 test-vb</h3>
+</div>
+</div>
+<div id="outline-container-org0e3baa4" class="outline-2">
+<h2 id="org0e3baa4">program management:</h2>
+<div class="outline-text-2" id="text-org0e3baa4">
+</div>
+<div id="outline-container-org0801003" class="outline-3">
+<h3 id="org0801003">who makes decision?</h3>
+<div class="outline-text-3" id="text-org0801003">
+</div>
+<div id="outline-container-org00d6867" class="outline-4">
+<h4 id="org00d6867">who has sense?</h4>
+</div>
+<div id="outline-container-org30be5dd" class="outline-4">
+<h4 id="org30be5dd">many decision made to stop the show, has impact on delaying the milestone.</h4>
+</div>
+<div id="outline-container-orgd84ce7e" class="outline-4">
+<h4 id="orgd84ce7e">technical decision: linux/windows, web requests not available on windows, why?</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d685b1" class="outline-2">
+<h2 id="org6d685b1">remotecan client</h2>
+<div class="outline-text-2" id="text-org6d685b1">
+</div>
+<div id="outline-container-orgfcb6e93" class="outline-3">
+<h3 id="orgfcb6e93">delivery insufficiency</h3>
+<div class="outline-text-3" id="text-orgfcb6e93">
+</div>
+<div id="outline-container-org28884c1" class="outline-4">
+<h4 id="org28884c1">poor documentation</h4>
+<div class="outline-text-4" id="text-org28884c1">
+</div>
+<ul class="org-ul">
+<li><a id="orga7f6fde"></a>class method not documented.<br /></li>
+<li><a id="org5cc917d"></a>no why and how<br /></li>
+<li><a id="orga3af265"></a>diagram low quality<br /></li>
+</ul>
+</div>
+<div id="outline-container-org5e563f6" class="outline-4">
+<h4 id="org5e563f6">naming confusing</h4>
+<div class="outline-text-4" id="text-org5e563f6">
+<ul class="org-ul">
+<li>"1s" vs "ls",</li>
+<li>"delay" as "dalay",</li>
+<li>"reson?",</li>
+<li>"pedal | brake?" &#x2013;&gt; "thrust | brake"</li>
+<li>meaningless value for gears 0,1,2,3; why not p r n d?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5c3ce9e" class="outline-4">
+<h4 id="org5c3ce9e">create a module, almost no test for delivery and expect client to test</h4>
+<div class="outline-text-4" id="text-org5c3ce9e">
+</div>
+<ul class="org-ul">
+<li><a id="org7b74a93"></a>almost no unit test<br />
+<ul class="org-ul">
+<li><a id="org95c03f6"></a>which test case? which unit tests?<br />
+<ul class="org-ul">
+<li><a id="org61e69f4"></a>test result ok with server not response!<br /></li>
+<li><a id="orgc2bd8f7"></a>test result ok with wrong json message!<br /></li>
+<li><a id="orgc06deff"></a>transmission fail<br /></li>
+<li><a id="org7d6fce0"></a>data fail<br />
+<ul class="org-ul">
+<li><a id="org6cc470c"></a>json object need metadata to have its own custom class for serialization and deserialization<br /></li>
+<li><a id="org10a0aa6"></a>metadata: type<br /></li>
+<li><a id="orga6642d2"></a>required field<br /></li>
+<li><a id="orgd78e0fc"></a>optional field<br /></li>
+<li><a id="orgd07d550"></a>length<br /></li>
+</ul>
+</li>
+<li><a id="org6d44b30"></a>upload fail<br /></li>
+<li><a id="orgc2ffbba"></a>download fail<br />
+<ul class="org-ul">
+<li><a id="orgde0b1fd"></a>no confirmation of whether vehicle side received the same data. no check. ust send sucess!!!<br /></li>
+</ul>
+</li>
+<li><a id="orge05dc78"></a>server pending<br /></li>
+</ul>
+</li>
+<li><a id="org697d9e1"></a>not working under windows<br /></li>
+<li><a id="org84e703e"></a>test incomplete without server (windows problem)<br /></li>
+<li><a id="org989bd2e"></a>test for only a method, not for class<br /></li>
+</ul>
+</li>
+<li><a id="orgd215cfb"></a>test output not aligned<br /></li>
+<li><a id="org7dad454"></a>test<sub>case</sub> names implies nothting<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgee435ce" class="outline-4">
+<h4 id="orgee435ce">poor acceptance of requirements</h4>
+<div class="outline-text-4" id="text-orgee435ce">
+</div>
+<ul class="org-ul">
+<li><a id="orgf7011df"></a>documentation is the schema, need contract.<br /></li>
+</ul>
+</div>
+<div id="outline-container-org716de5a" class="outline-4">
+<h4 id="org716de5a">why sending unnecessary redundant data (consumption list)?</h4>
+</div>
+<div id="outline-container-org4aa8a3d" class="outline-4">
+<h4 id="org4aa8a3d">"dalay"? method? review?, who is using?</h4>
+</div>
+<div id="outline-container-orgf43f7cb" class="outline-4">
+<h4 id="orgf43f7cb">what is the meaning of "alignment（对齐）"</h4>
+<div class="outline-text-4" id="text-orgf43f7cb">
+</div>
+<ul class="org-ul">
+<li><a id="orgda076b5"></a>if not aligned, padding with null!<br /></li>
+</ul>
+</div>
+<div id="outline-container-org4645a21" class="outline-4">
+<h4 id="org4645a21">gears dimension? [2x2]?</h4>
+</div>
+<div id="outline-container-orgccf73a4" class="outline-4">
+<h4 id="orgccf73a4">timestamp definition, when(被收到的时间戳?)?</h4>
+</div>
+<div id="outline-container-org5fc99b7" class="outline-4">
+<h4 id="org5fc99b7">what does delay mean? estimation method?</h4>
+</div>
+<div id="outline-container-orge08ec4a" class="outline-4">
+<h4 id="orge08ec4a">granularity 1s? should be able to get smaller granularity!</h4>
+</div>
+<div id="outline-container-org7fec593" class="outline-4">
+<h4 id="org7fec593">what does "current<sub>zoomed</sub>" mean? method? need raw data!</h4>
+</div>
+<div id="outline-container-orgfc8934b" class="outline-4">
+<h4 id="orgfc8934b">raw data : tuple with every timestamp, if not available use null!</h4>
+</div>
+<div id="outline-container-orgb3c00c7" class="outline-4">
+<h4 id="orgb3c00c7">api no return : black holes! (return status and the changes)</h4>
+</div>
+<div id="outline-container-orge613bee" class="outline-4">
+<h4 id="orge613bee">failed test result return ok/done.</h4>
+</div>
+<div id="outline-container-org1141290" class="outline-4">
+<h4 id="org1141290">flashing dangerous parameter onto the vehicle without testing！</h4>
+</div>
+<div id="outline-container-org14abb5f" class="outline-4">
+<h4 id="org14abb5f">testing without knowing what is doing (which vehicle is flashing!)</h4>
+</div>
+<div id="outline-container-orgff8fcc9" class="outline-4">
+<h4 id="orgff8fcc9">chaotic imports no isort!</h4>
+</div>
+<div id="outline-container-orge795c2a" class="outline-4">
+<h4 id="orge795c2a">everytime huge chaotic code changes</h4>
+</div>
+<div id="outline-container-orge512fdf" class="outline-4">
+<h4 id="orge512fdf">chaotic documentation</h4>
+</div>
+<div id="outline-container-org4f8ee04" class="outline-4">
+<h4 id="org4f8ee04">cannot use directly</h4>
+</div>
+<div id="outline-container-org837a39b" class="outline-4">
+<h4 id="org837a39b">no confirm of changing!</h4>
+</div>
+<div id="outline-container-orgfba635f" class="outline-4">
+<h4 id="orgfba635f">no design, no architecture, no production level</h4>
+<div class="outline-text-4" id="text-orgfba635f">
+</div>
+<ul class="org-ul">
+<li><a id="org71385b7"></a>code not maintainable<br /></li>
+<li><a id="org07f00f0"></a>no exception handling<br /></li>
+<li><a id="org9e8f3c0"></a>no timestamp hanlding<br /></li>
+<li><a id="orgee2d4b1"></a>typos everywhere<br /></li>
+<li><a id="orgece423d"></a>not pytest ready<br /></li>
+<li><a id="org9b21c77"></a>false claims<br /></li>
+<li><a id="org75b0d04"></a>naming/api chaotic<br /></li>
+<li><a id="org2c82050"></a>terrible documentation/coding styles (no black, isort etc.)<br /></li>
+<li><a id="org93448e2"></a>not familiar with mongodb<br /></li>
+</ul>
+</div>
+<div id="outline-container-org0405f05" class="outline-4">
+<h4 id="org0405f05">api design: flashing return error code 3?!</h4>
+</div>
+<div id="outline-container-org81b2772" class="outline-4">
+<h4 id="org81b2772">api unstable: cannot flashing!</h4>
+</div>
+<div id="outline-container-org8c9b55e" class="outline-4">
+<h4 id="org8c9b55e">todo debug 1000, 1002, empty code {} oss insufficiency</h4>
+</div>
+<div id="outline-container-org03b2344" class="outline-4">
+<h4 id="org03b2344">todo get &amp; send in duplex mode</h4>
+</div>
+<div id="outline-container-orga3b5e78" class="outline-4">
+<h4 id="orga3b5e78">poor response (own code response 2 days!)</h4>
+</div>
+</div>
+
+<div id="outline-container-org48e398a" class="outline-3">
+<h3 id="org48e398a">fixed url for server?</h3>
+</div>
+<div id="outline-container-org87d5d02" class="outline-3">
+<h3 id="org87d5d02">need fake json data server like jsonplaceholder.typicode.com</h3>
+</div>
+<div id="outline-container-org0e0c6ca" class="outline-3">
+<h3 id="org0e0c6ca">need timestamps</h3>
+</div>
+<div id="outline-container-org95d3357" class="outline-3">
+<h3 id="org95d3357">streaming requests</h3>
+</div>
+<div id="outline-container-org14691f2" class="outline-3">
+<h3 id="org14691f2">session for higher efficiency</h3>
+</div>
+<div id="outline-container-org05df529" class="outline-3">
+<h3 id="org05df529">design goal &#x2013;&gt; understand deviation &#x2013;&gt; need verify &#x2013;&gt; performance checking</h3>
+</div>
+<div id="outline-container-org6e3f469" class="outline-3">
+<h3 id="org6e3f469">todo <b>issues</b> improvements:</h3>
+<div class="outline-text-3" id="text-org6e3f469">
+</div>
+<div id="outline-container-org4c92108" class="outline-4">
+<h4 id="org4c92108">need streaming interface</h4>
+<div class="outline-text-4" id="text-org4c92108">
+</div>
+<ul class="org-ul">
+<li><a id="org13d4e7f"></a>with mode switch to turn on and off<br /></li>
+<li><a id="orge9eb154"></a>need full observation based on incessant frames of a full episode<br /></li>
+</ul>
+</div>
+<div id="outline-container-orga21db7d" class="outline-4">
+<h4 id="orga21db7d">need asynchronous download and upload</h4>
+<div class="outline-text-4" id="text-orga21db7d">
+</div>
+<ul class="org-ul">
+<li><a id="orgcc471ba"></a>usual way of remote interaction to handle delay, interrupt, preemtpion<br /></li>
+<li><a id="orgc9af263"></a>flexible, robust<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgee736e9" class="outline-4">
+<h4 id="orgee736e9">upload need more status: start/stop/interrupt eos mode,</h4>
+</div>
+<div id="outline-container-org2c15201" class="outline-4">
+<h4 id="org2c15201"><b><b>use rpc instead of rest api</b></b></h4>
+</div>
+</div>
+<div id="outline-container-orgcea0f9d" class="outline-3">
+<h3 id="orgcea0f9d">product branch</h3>
+<div class="outline-text-3" id="text-orgcea0f9d">
+<p>
+<a href="./20220420093028-veos_adp_plan.html">veos-adp-plan</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f01925" class="outline-2">
+<h2 id="org3f01925">tbox</h2>
+<div class="outline-text-2" id="text-org3f01925">
+</div>
+<div id="outline-container-org9dc4a72" class="outline-3">
+<h3 id="org9dc4a72">wiring</h3>
+<div class="outline-text-3" id="text-org9dc4a72">
+</div>
+<div id="outline-container-orgc4a7592" class="outline-4">
+<h4 id="orgc4a7592">can<sub>activate</sub> one light?</h4>
+</div>
+<div id="outline-container-orgd2b5d29" class="outline-4">
+<h4 id="orgd2b5d29">no calibration can?</h4>
+</div>
+</div>
+<div id="outline-container-org4e696db" class="outline-3">
+<h3 id="org4e696db">can<sub>driver</sub><sub>node</sub> rebuild? observation values ok?</h3>
+</div>
+<div id="outline-container-orgdfd73c8" class="outline-3">
+<h3 id="orgdfd73c8">pm 21 rows &#x2013;&gt; 14 rows? row coordinates?</h3>
+</div>
+<div id="outline-container-org32871b9" class="outline-3">
+<h3 id="org32871b9">flashing</h3>
+<div class="outline-text-3" id="text-org32871b9">
+</div>
+<div id="outline-container-org619807f" class="outline-4">
+<h4 id="org619807f">upload?</h4>
+</div>
+<div id="outline-container-org235a92e" class="outline-4">
+<h4 id="org235a92e">download?</h4>
+</div>
+<div id="outline-container-orgfc9bae9" class="outline-4">
+<h4 id="orgfc9bae9">diff on/off? meaning?</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orga7b4295" class="outline-2">
+<h2 id="orga7b4295">cloud</h2>
+<div class="outline-text-2" id="text-orga7b4295">
+</div>
+<div id="outline-container-org030b6af" class="outline-3">
+<h3 id="org030b6af">task</h3>
+<div class="outline-text-3" id="text-org030b6af">
+</div>
+<div id="outline-container-orge63a565" class="outline-4">
+<h4 id="orge63a565">pre-requisite</h4>
+<div class="outline-text-4" id="text-orge63a565">
+</div>
+<ul class="org-ul">
+<li><a id="org7d27f7f"></a>cloud platform test (connection ssh login, python, linux usergroup, docker install, pyenv configuration, ide )<br /></li>
+<li><a id="orgcce87fa"></a>issue fixing<br /></li>
+<li><a id="org79caa19"></a>dockerfile<br /></li>
+<li><a id="orgeabb596"></a>mypy<br /></li>
+<li><a id="orgb8856a3"></a>kubernetes deployment test<br /></li>
+<li><a id="org035e4c1"></a>fortinet install and ethernet test, functional test<br /></li>
+</ul>
+</div>
+<div id="outline-container-org9eb21d4" class="outline-4">
+<h4 id="org9eb21d4">veos deployment (pip pip+git install, mypy, poetry, )</h4>
+</div>
+<div id="outline-container-orgb853d4f" class="outline-4">
+<h4 id="orgb853d4f">veos functional test (remotecan, data pool)</h4>
+</div>
+</div>
+<div id="outline-container-org75d4288" class="outline-3">
+<h3 id="org75d4288">cloud problem</h3>
+<div class="outline-text-3" id="text-org75d4288">
+</div>
+<div id="outline-container-org3e5483d" class="outline-4">
+<h4 id="org3e5483d">connection</h4>
+<div class="outline-text-4" id="text-org3e5483d">
+</div>
+<ul class="org-ul">
+<li><a id="org1595f60"></a>install, github, apt-source, pytorch, tensorflow, nvidia overall<br /></li>
+<li><a id="org13381a1"></a>internal repo? gitlab.newrizon.work?<br /></li>
+<li><a id="orgbaafb5b"></a>install package by copy not working<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgae2139f" class="outline-4">
+<h4 id="orgae2139f">docker?</h4>
+<div class="outline-text-4" id="text-orgae2139f">
+</div>
+<ul class="org-ul">
+<li><a id="org9faa191"></a>dockerfile in the project, install?<br /></li>
+<li><a id="orgf29e306"></a>dockerfile, （kubernetes interface）， install source/pip<br /></li>
+</ul>
+</div>
+<div id="outline-container-org6e792a8" class="outline-4">
+<h4 id="org6e792a8">baiduyun account, profile setting</h4>
+<div class="outline-text-4" id="text-org6e792a8">
+</div>
+<ul class="org-ul">
+<li><a id="orgd76e8c2"></a>ssh<br /></li>
+<li><a id="org2eb19c4"></a>options: pip<br /></li>
+<li><a id="orgd0d4832"></a>dns, vpn /ssh reverse tunnel?<br /></li>
+<li><a id="orgbb7de4a"></a>pyenv?<br /></li>
+</ul>
+</div>
+<div id="outline-container-org836c1da" class="outline-4">
+<h4 id="org836c1da">pip</h4>
+<div class="outline-text-4" id="text-org836c1da">
+</div>
+<ul class="org-ul">
+<li><a id="orgacc44a8"></a>git+<a href="https://%24%7B%7D:%24%7B%7Dgitlab@newrizon.work/ai/drl-carla-manual.git@%7Brealese2">https://%24%7B%7D:%24%7B%7Dgitlab@newrizon.work/ai/drl-carla-manual.git@%7Brealese2</a>}<br /></li>
+<li><a id="orge18f78a"></a>priviate pip repo<br /></li>
+</ul>
+</div>
+<div id="outline-container-org695eb4a" class="outline-4">
+<h4 id="org695eb4a">not doing own duties</h4>
+<div class="outline-text-4" id="text-org695eb4a">
+</div>
+<ul class="org-ul">
+<li><a id="orgebfa4aa"></a>own container build issue<br /></li>
+<li><a id="orgc370515"></a>very old git (even in docker reinstalled)<br /></li>
+<li><a id="org8b1cd69"></a>not following instructions, deliberately asking irrelevant questions<br /></li>
+<li><a id="orgb6af6b7"></a>no testing, all integration test by apps!<br />
+<ul class="org-ul">
+<li><a id="orgc1e4cda"></a>all issues found by apps, not integration test, no module test<br /></li>
+<li><a id="org5ef8bd9"></a>issues found, no progress<br /></li>
+</ul>
+</li>
+<li><a id="org92cacbe"></a>deliberately change interfaces while adding features<br />
+<ul class="org-ul">
+<li><a id="org298c08a"></a>rocketmq<br />
+<ul class="org-ul">
+<li><a id="org0095880"></a>why would app contain cluster stuff?<br /></li>
+</ul>
+</li>
+<li><a id="org87295ad"></a>reomotecan parallel processing<br /></li>
+</ul>
+</li>
+<li><a id="org29cb54c"></a>no design review<br />
+<ul class="org-ul">
+<li><a id="org2cda5ad"></a>poor design: single machine/clusters. why?<br /></li>
+<li><a id="org2271959"></a>frequent changes of interfaces<br /></li>
+</ul>
+</li>
+<li><a id="org02d8fdd"></a>way of development<br />
+<ul class="org-ul">
+<li><a id="orgce6a0c9"></a>exchange of code not functionality<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org4fbbd44" class="outline-4">
+<h4 id="org4fbbd44">vbu software not confirmed</h4>
+</div>
+<div id="outline-container-orgcfb351b" class="outline-4">
+<h4 id="orgcfb351b">instruction? handbook? (baidubce?, github? pytorch!)</h4>
+</div>
+<div id="outline-container-orgb540fa2" class="outline-4">
+<h4 id="orgb540fa2">least surprise? (low efficiency, poor maturity)</h4>
+<div class="outline-text-4" id="text-orgb540fa2">
+</div>
+<ul class="org-ul">
+<li><a id="org7d8eca3"></a>user account management, strange account blocking<br /></li>
+<li><a id="orgf9d6fd0"></a>unstable access to outside network (pip, )<br /></li>
+<li><a id="orgd24dd5b"></a>poor connection (github intermittent, 50k top)<br /></li>
+<li><a id="org32fff36"></a>inexplicable restore<br /></li>
+<li><a id="org46a6134"></a>partition? 20g<br /></li>
+<li><a id="org040ac08"></a>does copy (not install) really work?<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7e01819" class="outline-3">
+<h3 id="org7e01819">database</h3>
+<div class="outline-text-3" id="text-org7e01819">
+</div>
+<div id="outline-container-org83895b9" class="outline-4">
+<h4 id="org83895b9"><a href="./20220829110049-data_warehouse.html">data warehouse</a></h4>
+</div>
+<div id="outline-container-org120e1dd" class="outline-4">
+<h4 id="org120e1dd">time series support for databse (timestamp, efficient indexing)</h4>
+<div class="outline-text-4" id="text-org120e1dd">
+</div>
+<ul class="org-ul">
+<li><a id="orgd1ac8da"></a>timestamp<br />
+<ul class="org-ul">
+<li><a id="orgd44d043"></a>indexing (searching)<br /></li>
+<li><a id="org75ab881"></a>random sample method<br /></li>
+</ul>
+</li>
+<li><a id="org59ce5d2"></a>metadata:<br />
+<ul class="org-ul">
+<li><a id="org72451e7"></a>vin<br /></li>
+<li><a id="orgb080045"></a>unit time length<br /></li>
+<li><a id="orgcff00f8"></a>sample frequency<br /></li>
+<li><a id="org66331c2"></a>location<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgbea1b13" class="outline-4">
+<h4 id="orgbea1b13"><b>automatic choose collection based on meta data</b></h4>
+</div>
+<div id="outline-container-orge4387e1" class="outline-4">
+<h4 id="orge4387e1">serialization support for pandas dataframe and numpy array, python objects, compression</h4>
+</div>
+<div id="outline-container-orgeadf79b" class="outline-4">
+<h4 id="orgeadf79b">data versioning, snapshots, chunking, ttl</h4>
+</div>
+<div id="outline-container-org71c4e51" class="outline-4">
+<h4 id="org71c4e51">update records with new features (mongodb 6.0, for mongodb&lt;6.0 only appending)</h4>
+</div>
+<div id="outline-container-org05ecd25" class="outline-4">
+<h4 id="org05ecd25">tracking changes over time</h4>
+</div>
+<div id="outline-container-org4884ed1" class="outline-4">
+<h4 id="org4884ed1">user, user library account management</h4>
+</div>
+<div id="outline-container-org1694209" class="outline-4">
+<h4 id="org1694209">version-, tick-, chunkstore, bsonstore</h4>
+</div>
+<div id="outline-container-org376849b" class="outline-4">
+<h4 id="org376849b">working with large data, lazy loading</h4>
+</div>
+<div id="outline-container-org34cbd80" class="outline-4">
+<h4 id="org34cbd80">prevent unindexed/unsharded collections</h4>
+</div>
+<div id="outline-container-orgfed6fbc" class="outline-4">
+<h4 id="orgfed6fbc">thread safety?</h4>
+</div>
+<div id="outline-container-org0b99ea2" class="outline-4">
+<h4 id="org0b99ea2">exception handling (collection)</h4>
+</div>
+<div id="outline-container-org9f5b70a" class="outline-4">
+<h4 id="org9f5b70a">apache arrow for in memory analytics (pymongoarrow)</h4>
+</div>
+<div id="outline-container-org591d054" class="outline-4">
+<h4 id="org591d054">multiple database with different unit lengths.</h4>
+</div>
+<div id="outline-container-org558aab4" class="outline-4">
+<h4 id="org558aab4">no configures in the database document/ in application configuration</h4>
+</div>
+<div id="outline-container-org39e4d3e" class="outline-4">
+<h4 id="org39e4d3e">maintaining, porting, searching, indexing, compatibility?</h4>
+</div>
+<div id="outline-container-org0a52152" class="outline-4">
+<h4 id="org0a52152">variant metadata</h4>
+</div>
+<div id="outline-container-org3e111cc" class="outline-4">
+<h4 id="org3e111cc">todo data warelake design</h4>
+</div>
+</div>
+<div id="outline-container-orgf67b807" class="outline-3">
+<h3 id="orgf67b807">dvc <a href="./20220511155146-ml_version_control.html">ml-version-control</a></h3>
+</div>
+<div id="outline-container-org4ad99c0" class="outline-3">
+<h3 id="org4ad99c0">truss server for prediction</h3>
+</div>
+<div id="outline-container-org9337e2f" class="outline-3">
+<h3 id="org9337e2f">basic function</h3>
+</div>
+<div id="outline-container-orgcfc81fa" class="outline-3">
+<h3 id="orgcfc81fa">saftety function</h3>
+</div>
+<div id="outline-container-org847d22b" class="outline-3">
+<h3 id="org847d22b">algorithms verficatioin</h3>
+</div>
+</div>
+<div id="outline-container-org19bb685" class="outline-2">
+<h2 id="org19bb685">safety</h2>
+<div class="outline-text-2" id="text-org19bb685">
+</div>
+<div id="outline-container-orgc4f5117" class="outline-3">
+<h3 id="orgc4f5117">communication (cybersecurity, data safety)</h3>
+</div>
+<div id="outline-container-org1973b8c" class="outline-3">
+<h3 id="org1973b8c">actor</h3>
+</div>
+<div id="outline-container-org91c8837" class="outline-3">
+<h3 id="org91c8837">observation (data safety)</h3>
+</div>
+</div>
+<div id="outline-container-org05589ed" class="outline-2">
+<h2 id="org05589ed">test issue</h2>
+<div class="outline-text-2" id="text-org05589ed">
+</div>
+<div id="outline-container-org4b7dfce" class="outline-3">
+<h3 id="org4b7dfce">design sucks, cannot meet requirements</h3>
+</div>
+<div id="outline-container-orgb8947ee" class="outline-3">
+<h3 id="orgb8947ee">quality sucks, oss not sufficient &#x2013;&gt; intest interference? why?</h3>
+</div>
+<div id="outline-container-orgd29c5ad" class="outline-3">
+<h3 id="orgd29c5ad">database drops, ridiculous</h3>
+</div>
+<div id="outline-container-orgbee693b" class="outline-3">
+<h3 id="orgbee693b">deadend everywhere</h3>
+</div>
+<div id="outline-container-org2bb02ab" class="outline-3">
+<h3 id="org2bb02ab">not telling truth</h3>
+</div>
+<div id="outline-container-orgaa25f79" class="outline-3">
+<h3 id="orgaa25f79">no test before application, alarming!</h3>
+<div class="outline-text-3" id="text-orgaa25f79">
+</div>
+<div id="outline-container-org44df1da" class="outline-4">
+<h4 id="org44df1da">all problems on the final applications</h4>
+</div>
+<div id="outline-container-orgba68928" class="outline-4">
+<h4 id="orgba68928">persistency, availability</h4>
+</div>
+<div id="outline-container-org4ab44bb" class="outline-4">
+<h4 id="org4ab44bb">not knowning service is available! everyday checking!!!</h4>
+</div>
+<div id="outline-container-org162f678" class="outline-4">
+<h4 id="org162f678">cannot continue test</h4>
+</div>
+</div>
+<div id="outline-container-org3df7653" class="outline-3">
+<h3 id="org3df7653">firmware version, no one cares, which one should be used?!</h3>
+<div class="outline-text-3" id="text-org3df7653">
+</div>
+<div id="outline-container-orge2bc3c0" class="outline-4">
+<h4 id="orge2bc3c0">alarmed but no response</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ChipLego Demo Intro</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">ChipLego Demo Intro</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org93b8c54">vck190</a>
+<ul>
+<li><a href="#orgbfb670e">AI Engines</a></li>
+<li><a href="#org3f88ecd">133 Tops</a></li>
+<li><a href="#org90b076a">4 摄像头扩展板</a></li>
+<li><a href="#org2dc6e73">Lidar + Radar 模拟 replay</a></li>
+<li><a href="#org6aabe9a">Capture + Acceleration + Output</a></li>
+<li><a href="#org0422d63">PL</a></li>
+<li><a href="#org824416d">DPU (DSP+AI+PL)</a></li>
+<li><a href="#orga351052">APU （PS）&#x2013;&gt;cpu</a></li>
+</ul>
+</li>
+<li><a href="#org9000048">software</a>
+<ul>
+<li><a href="#org5ac0201">ZOCL accelrator os driver</a></li>
+<li><a href="#org4bc3c0c">gstreamer (deepstream) pipeline</a>
+<ul>
+<li><a href="#org37f42b7">vvas plugins &#x2013;&gt; middleware</a></li>
+</ul>
+</li>
+<li><a href="#org1a94443">Vitis</a>
+<ul>
+<li><a href="#orgd702dd8">AI: DL</a></li>
+<li><a href="#org6887342">Libraries: scaling</a></li>
+<li><a href="#org52ea68b">XRT: runtime kernel</a></li>
+<li><a href="#org1328182">配置通过 json</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org77a6a6d">NPU SW stack</a>
+<ul>
+<li><a href="#org5ab2d68">onnx support</a></li>
+<li><a href="#org961a2b2">CL Reference Code</a></li>
+<li><a href="#org12e39dc">CL AI Development Kit</a>
+<ul>
+<li><a href="#org3dc8b20">Profiling offline</a></li>
+<li><a href="#org36c395f">online, performance monitor （dumping file)</a></li>
+<li><a href="#org2fc10b7">AI pipeline g-streamer based</a></li>
+<li><a href="#org63d4c9f">AI GRaph Cionverter, Quantizer, AI Compiler</a></li>
+<li><a href="#org98c4fe5">AI Runtime, HW Driver</a></li>
+</ul>
+</li>
+<li><a href="#org0a59657">Hardware NPU/(DSP/GPU)</a></li>
+</ul>
+</li>
+<li><a href="#org16a7f7a">Process</a>
+<ul>
+<li><a href="#org091bc99">Convert tool : ONNX &#x2013;&gt;CLG models</a></li>
+<li><a href="#orgfd4af0b">Quantizaiton tool: QAT?</a></li>
+<li><a href="#org118b1dd">Graph optimizer</a></li>
+</ul>
+</li>
+<li><a href="#org5c65097">SDK</a>
+<ul>
+<li><a href="#org92820d2">CL camera perception</a></li>
+<li><a href="#org3bc2a58">Deep Stream?</a></li>
+</ul>
+</li>
+<li><a href="#orgd90758a">data stream</a>
+<ul>
+<li><a href="#org6e54b30">GST Decoder</a></li>
+<li><a href="#org43f7d47">GST CLinfer</a></li>
+<li><a href="#org679b10b">GST Tracker? traditional SW stack</a></li>
+</ul>
+</li>
+<li><a href="#org97e8cb9">Use cases:</a>
+<ul>
+<li><a href="#org3eb35af">BEV</a></li>
+</ul>
+</li>
+<li><a href="#orgdec6454">Overall introduction</a></li>
+<li><a href="#orgd77c9c5">Weekly</a>
+<ul>
+<li><a href="#org65c87f2"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></a>
+<ul>
+<li><a href="#orgc38be46">Jonas</a></li>
+<li><a href="#orgd1bec4c">William</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       1a52b829-dae8-4689-8813-f1396ce7a9f7
+</p>
+
+<div id="outline-container-org93b8c54" class="outline-2">
+<h2 id="org93b8c54">vck190</h2>
+<div class="outline-text-2" id="text-org93b8c54">
+</div>
+<div id="outline-container-orgbfb670e" class="outline-3">
+<h3 id="orgbfb670e">AI Engines</h3>
+</div>
+<div id="outline-container-org3f88ecd" class="outline-3">
+<h3 id="org3f88ecd">133 Tops</h3>
+</div>
+<div id="outline-container-org90b076a" class="outline-3">
+<h3 id="org90b076a">4 摄像头扩展板</h3>
+</div>
+<div id="outline-container-org2dc6e73" class="outline-3">
+<h3 id="org2dc6e73">Lidar + Radar 模拟 replay</h3>
+</div>
+<div id="outline-container-org6aabe9a" class="outline-3">
+<h3 id="org6aabe9a">Capture + Acceleration + Output</h3>
+</div>
+<div id="outline-container-org0422d63" class="outline-3">
+<h3 id="org0422d63">PL</h3>
+</div>
+<div id="outline-container-org824416d" class="outline-3">
+<h3 id="org824416d">DPU (DSP+AI+PL)</h3>
+</div>
+<div id="outline-container-orga351052" class="outline-3">
+<h3 id="orga351052">APU （PS）&#x2013;&gt;cpu</h3>
+</div>
+</div>
+<div id="outline-container-org9000048" class="outline-2">
+<h2 id="org9000048">software</h2>
+<div class="outline-text-2" id="text-org9000048">
+</div>
+<div id="outline-container-org5ac0201" class="outline-3">
+<h3 id="org5ac0201">ZOCL accelrator os driver</h3>
+</div>
+<div id="outline-container-org4bc3c0c" class="outline-3">
+<h3 id="org4bc3c0c">gstreamer (deepstream) pipeline</h3>
+<div class="outline-text-3" id="text-org4bc3c0c">
+</div>
+<div id="outline-container-org37f42b7" class="outline-4">
+<h4 id="org37f42b7">vvas plugins &#x2013;&gt; middleware</h4>
+</div>
+</div>
+<div id="outline-container-org1a94443" class="outline-3">
+<h3 id="org1a94443">Vitis</h3>
+<div class="outline-text-3" id="text-org1a94443">
+</div>
+<div id="outline-container-orgd702dd8" class="outline-4">
+<h4 id="orgd702dd8">AI: DL</h4>
+</div>
+<div id="outline-container-org6887342" class="outline-4">
+<h4 id="org6887342">Libraries: scaling</h4>
+</div>
+<div id="outline-container-org52ea68b" class="outline-4">
+<h4 id="org52ea68b">XRT: runtime kernel</h4>
+</div>
+<div id="outline-container-org1328182" class="outline-4">
+<h4 id="org1328182">配置通过 json</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77a6a6d" class="outline-2">
+<h2 id="org77a6a6d">NPU SW stack</h2>
+<div class="outline-text-2" id="text-org77a6a6d">
+</div>
+<div id="outline-container-org5ab2d68" class="outline-3">
+<h3 id="org5ab2d68">onnx support</h3>
+</div>
+<div id="outline-container-org961a2b2" class="outline-3">
+<h3 id="org961a2b2">CL Reference Code</h3>
+</div>
+<div id="outline-container-org12e39dc" class="outline-3">
+<h3 id="org12e39dc">CL AI Development Kit</h3>
+<div class="outline-text-3" id="text-org12e39dc">
+</div>
+<div id="outline-container-org3dc8b20" class="outline-4">
+<h4 id="org3dc8b20">Profiling offline</h4>
+</div>
+<div id="outline-container-org36c395f" class="outline-4">
+<h4 id="org36c395f">online, performance monitor （dumping file)</h4>
+</div>
+<div id="outline-container-org2fc10b7" class="outline-4">
+<h4 id="org2fc10b7">AI pipeline g-streamer based</h4>
+<div class="outline-text-4" id="text-org2fc10b7">
+</div>
+<ul class="org-ul">
+<li><a id="org30e1c27"></a>nv graph composer?<br /></li>
+</ul>
+</div>
+<div id="outline-container-org63d4c9f" class="outline-4">
+<h4 id="org63d4c9f">AI GRaph Cionverter, Quantizer, AI Compiler</h4>
+</div>
+<div id="outline-container-org98c4fe5" class="outline-4">
+<h4 id="org98c4fe5">AI Runtime, HW Driver</h4>
+</div>
+</div>
+<div id="outline-container-org0a59657" class="outline-3">
+<h3 id="org0a59657">Hardware NPU/(DSP/GPU)</h3>
+</div>
+</div>
+<div id="outline-container-org16a7f7a" class="outline-2">
+<h2 id="org16a7f7a">Process</h2>
+<div class="outline-text-2" id="text-org16a7f7a">
+</div>
+<div id="outline-container-org091bc99" class="outline-3">
+<h3 id="org091bc99">Convert tool : ONNX &#x2013;&gt;CLG models</h3>
+</div>
+<div id="outline-container-orgfd4af0b" class="outline-3">
+<h3 id="orgfd4af0b">Quantizaiton tool: QAT?</h3>
+</div>
+<div id="outline-container-org118b1dd" class="outline-3">
+<h3 id="org118b1dd">Graph optimizer</h3>
+</div>
+</div>
+<div id="outline-container-org5c65097" class="outline-2">
+<h2 id="org5c65097">SDK</h2>
+<div class="outline-text-2" id="text-org5c65097">
+</div>
+<div id="outline-container-org92820d2" class="outline-3">
+<h3 id="org92820d2">CL camera perception</h3>
+</div>
+<div id="outline-container-org3bc2a58" class="outline-3">
+<h3 id="org3bc2a58">Deep Stream?</h3>
+</div>
+</div>
+<div id="outline-container-orgd90758a" class="outline-2">
+<h2 id="orgd90758a">data stream</h2>
+<div class="outline-text-2" id="text-orgd90758a">
+</div>
+<div id="outline-container-org6e54b30" class="outline-3">
+<h3 id="org6e54b30">GST Decoder</h3>
+</div>
+<div id="outline-container-org43f7d47" class="outline-3">
+<h3 id="org43f7d47">GST CLinfer</h3>
+</div>
+<div id="outline-container-org679b10b" class="outline-3">
+<h3 id="org679b10b">GST Tracker? traditional SW stack</h3>
+</div>
+</div>
+<div id="outline-container-org97e8cb9" class="outline-2">
+<h2 id="org97e8cb9">Use cases:</h2>
+<div class="outline-text-2" id="text-org97e8cb9">
+</div>
+<div id="outline-container-org3eb35af" class="outline-3">
+<h3 id="org3eb35af">BEV</h3>
+</div>
+</div>
+<div id="outline-container-orgdec6454" class="outline-2">
+<h2 id="orgdec6454">Overall introduction</h2>
+</div>
+<div id="outline-container-orgd77c9c5" class="outline-2">
+<h2 id="orgd77c9c5">Weekly</h2>
+<div class="outline-text-2" id="text-orgd77c9c5">
+</div>
+<div id="outline-container-org65c87f2" class="outline-3">
+<h3 id="org65c87f2"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></h3>
+<div class="outline-text-3" id="text-org65c87f2">
+</div>
+<div id="outline-container-orgc38be46" class="outline-4">
+<h4 id="orgc38be46">Jonas</h4>
+<div class="outline-text-4" id="text-orgc38be46">
+</div>
+<ul class="org-ul">
+<li><a id="orgc2a9349"></a>工具链不成熟，明年<br /></li>
+<li><a id="org42bc628"></a>layer norm，<br /></li>
+<li><a id="org39617e6"></a>tops int8, xflops<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgd1bec4c" class="outline-4">
+<h4 id="orgd1bec4c">William</h4>
+<div class="outline-text-4" id="text-orgd1bec4c">
+</div>
+<ul class="org-ul">
+<li><a id="orge2bdca7"></a>AIE2<br /></li>
+<li><a id="orgccb5345"></a>lidar, radar?<br /></li>
+<li><a id="orgac5e356"></a>upgrade vck190?<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

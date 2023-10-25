@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fudan-seminar</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">fudan-seminar</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd8c748d">程明明 富尺度,显著性检测</a></li>
+<li><a href="#org9222e65">郑哲东： 辅助分类器 domain adaptation（迁移学习）</a></li>
+<li><a href="#orge1b3ee2">付彦伟 少量样本统计机器学习</a>
+<ul>
+<li><a href="#orgaa9ee6f">学习能力</a>
+<ul>
+<li><a href="#orgc721b6e">学习计算规则</a></li>
+<li><a href="#org5bc6474">学习概念</a></li>
+</ul>
+</li>
+<li><a href="#orgeade8ef">learning</a>
+<ul>
+<li><a href="#orgd894d89">supervised  learning</a></li>
+<li><a href="#org7e43e09">one shot</a></li>
+<li><a href="#orga9b88fa">zero shot</a></li>
+<li><a href="#orgb320028">N shot</a></li>
+</ul>
+</li>
+<li><a href="#orgba03ec0">Meta functional learning</a>
+<ul>
+<li><a href="#orgf1b3372">manifold, cluster, continuity assumption</a></li>
+<li><a href="#org0543da7">DessiLBI: exploring structural sparsity on deep network via differential inclusion path</a></li>
+<li><a href="#orgce95a22">inverse scale space;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4c4c1a7">戈维峰 视觉中的深度学习算法与相应的数学物理方法</a>
+<ul>
+<li><a href="#org0d008cd">图像理解</a></li>
+<li><a href="#org9202bcf">图像匹配</a>
+<ul>
+<li><a href="#org2a2d1b6">图像语义匹配</a></li>
+<li><a href="#org39887be">超像素，CNN+GNN superpixel partition</a></li>
+<li><a href="#org84cb868">图神经网络+CNN GraphFPN</a></li>
+</ul>
+</li>
+<li><a href="#org8bd9d85">小目标检测：图神经金字塔</a></li>
+<li><a href="#org366589f">RankDNN learning to rank for few-shot learning.</a></li>
+<li><a href="#orgfbffc7b">Distortion-free photorealistic style transfer via structure-consistent</a></li>
+<li><a href="#org3ef1ad5">photorealitic style transfer guided by global information CCFAI2021</a></li>
+<li><a href="#org963c162">inferior to cyclegan, 没有理论深度</a></li>
+<li><a href="#org7d9d65c">物理模型（inductive bias)</a></li>
+<li><a href="#org3d16c1e">基于量子物理的神经网络可解释性</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       615cb47f-8542-4e2f-ac2c-8536aaec96fb
+</p>
+<p>
+good, interesting, frank, open.
+</p>
+
+<p>
+computer vision, busy with SOTA
+niche market
+</p>
+
+<p>
+inductive bias
+no generalization
+</p>
+
+<p>
+few image samples
+GNN enhancing CNN
+</p>
+
+<p>
+math should be solid.
+presentation is not clear enough
+</p>
+
+<p>
+fu yanwei pixel2mesh
+追热点，不是主流；
+try to follow major trends
+时间控制好
+</p>
+
+
+<div id="outline-container-orgd8c748d" class="outline-2">
+<h2 id="orgd8c748d">程明明 富尺度,显著性检测</h2>
+<div class="outline-text-2" id="text-orgd8c748d">
+<p>
+弱监督实例分割
+leveraging instance, image- and dataset-level information for weekly supervised segmentation
+</p>
+
+<p>
+基于卷积层多尺度的边缘检测 BSDS500
+ richer convolution features for edge detection
+</p>
+
+<p>
+显著性检测
+</p>
+
+<p>
+通用知识+专用数据=鲁棒检测
+class activation map CAM 伪标签
+</p>
+
+<p>
+mmcheng.net
+jittor/minspore
+DOCX行动倡议
+</p>
+
+<p>
+saliency?: conditional distribution P(1/0 | individual common sense)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9222e65" class="outline-2">
+<h2 id="org9222e65">郑哲东： 辅助分类器 domain adaptation（迁移学习）</h2>
+<div class="outline-text-2" id="text-org9222e65">
+<p>
+semisupervised, inductive learning &#x2013;&gt; transductive learning
+</p>
+
+<p>
+co-training (adverserial training?)
+</p>
+
+<p>
+memory?
+</p>
+
+
+<p>
+certainty measure with salient features like vanishing line,
+uncertainty formulation: large variance
+</p>
+
+<p>
+rectifying pseudo labels;
+</p>
+
+<p>
+priror knowledge; old school theory
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge1b3ee2" class="outline-2">
+<h2 id="orge1b3ee2">付彦伟 少量样本统计机器学习</h2>
+<div class="outline-text-2" id="text-orge1b3ee2">
+</div>
+<div id="outline-container-orgaa9ee6f" class="outline-3">
+<h3 id="orgaa9ee6f">学习能力</h3>
+<div class="outline-text-3" id="text-orgaa9ee6f">
+</div>
+<div id="outline-container-orgc721b6e" class="outline-4">
+<h4 id="orgc721b6e">学习计算规则</h4>
+</div>
+<div id="outline-container-org5bc6474" class="outline-4">
+<h4 id="org5bc6474">学习概念</h4>
+</div>
+</div>
+<div id="outline-container-orgeade8ef" class="outline-3">
+<h3 id="orgeade8ef">learning</h3>
+<div class="outline-text-3" id="text-orgeade8ef">
+</div>
+<div id="outline-container-orgd894d89" class="outline-4">
+<h4 id="orgd894d89">supervised  learning</h4>
+</div>
+<div id="outline-container-org7e43e09" class="outline-4">
+<h4 id="org7e43e09">one shot</h4>
+</div>
+<div id="outline-container-orga9b88fa" class="outline-4">
+<h4 id="orga9b88fa">zero shot</h4>
+</div>
+<div id="outline-container-orgb320028" class="outline-4">
+<h4 id="orgb320028">N shot</h4>
+</div>
+</div>
+<div id="outline-container-orgba03ec0" class="outline-3">
+<h3 id="orgba03ec0">Meta functional learning</h3>
+<div class="outline-text-3" id="text-orgba03ec0">
+</div>
+<div id="outline-container-orgf1b3372" class="outline-4">
+<h4 id="orgf1b3372">manifold, cluster, continuity assumption</h4>
+</div>
+<div id="outline-container-org0543da7" class="outline-4">
+<h4 id="org0543da7">DessiLBI: exploring structural sparsity on deep network via differential inclusion path</h4>
+</div>
+<div id="outline-container-orgce95a22" class="outline-4">
+<h4 id="orgce95a22">inverse scale space;</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4c4c1a7" class="outline-2">
+<h2 id="org4c4c1a7">戈维峰 视觉中的深度学习算法与相应的数学物理方法</h2>
+<div class="outline-text-2" id="text-org4c4c1a7">
+</div>
+<div id="outline-container-org0d008cd" class="outline-3">
+<h3 id="org0d008cd">图像理解</h3>
+</div>
+<div id="outline-container-org9202bcf" class="outline-3">
+<h3 id="org9202bcf">图像匹配</h3>
+<div class="outline-text-3" id="text-org9202bcf">
+</div>
+<div id="outline-container-org2a2d1b6" class="outline-4">
+<h4 id="org2a2d1b6">图像语义匹配</h4>
+</div>
+<div id="outline-container-org39887be" class="outline-4">
+<h4 id="org39887be">超像素，CNN+GNN superpixel partition</h4>
+</div>
+<div id="outline-container-org84cb868" class="outline-4">
+<h4 id="org84cb868">图神经网络+CNN GraphFPN</h4>
+</div>
+</div>
+<div id="outline-container-org8bd9d85" class="outline-3">
+<h3 id="org8bd9d85">小目标检测：图神经金字塔</h3>
+</div>
+<div id="outline-container-org366589f" class="outline-3">
+<h3 id="org366589f">RankDNN learning to rank for few-shot learning.</h3>
+</div>
+<div id="outline-container-orgfbffc7b" class="outline-3">
+<h3 id="orgfbffc7b">Distortion-free photorealistic style transfer via structure-consistent</h3>
+</div>
+<div id="outline-container-org3ef1ad5" class="outline-3">
+<h3 id="org3ef1ad5">photorealitic style transfer guided by global information CCFAI2021</h3>
+</div>
+<div id="outline-container-org963c162" class="outline-3">
+<h3 id="org963c162">inferior to cyclegan, 没有理论深度</h3>
+</div>
+<div id="outline-container-org7d9d65c" class="outline-3">
+<h3 id="org7d9d65c">物理模型（inductive bias)</h3>
+</div>
+<div id="outline-container-org3d16c1e" class="outline-3">
+<h3 id="org3d16c1e">基于量子物理的神经网络可解释性</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

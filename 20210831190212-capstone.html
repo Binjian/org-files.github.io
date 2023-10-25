@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>capstone</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">capstone</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org54b7d81"><span class="done DONE">DONE</span> start new org file for capstone</a></li>
+<li><a href="#orgae5da36"><span class="todo TODO">TODO</span> create outline of the org file for capstone</a></li>
+<li><a href="#orga8eb8fb">cooperative reinforcement learning</a>
+<ul>
+<li><a href="#org8a3f90f">for veos</a></li>
+</ul>
+</li>
+<li><a href="#org3e93a3b">Longicontrol</a>
+<ul>
+<li><a href="#org57824dd">transfer learning: from Gym to the real world</a></li>
+<li><a href="#orgc74c9a9">from planning to model-based reinforcement learning deep-reinforcement-learning</a></li>
+<li><a href="#orgc25ea9f">github repo is in LongiControl</a></li>
+<li><a href="#orgf8d1957">safety / conflicting goals / explainable</a></li>
+<li><a href="#orge3e74f7">system identification</a>
+<ul>
+<li><a href="#orgfbedbbc">road load coefficient A, B, C</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3d410c4">simulation</a>
+<ul>
+<li><a href="#org38e527a">construct typical highway, urban scenarios</a></li>
+<li><a href="#org235a00d">pgdrive</a></li>
+<li><a href="#orgb3c6a66">Assessment of veos strategy in open-ended simulation and its improvement: regarding overfitting, safety performance, traffic rule respectation and generalization, multi-agent behavior</a></li>
+</ul>
+</li>
+<li><a href="#org7bc007e">UM-SJTU-T5</a>
+<ul>
+<li><a href="#org99bbde4">Gitlab, ScrUM &amp; Jira</a>
+<ul>
+<li><a href="#orgecfaabe">电脑,服务器</a></li>
+<li><a href="#org6a99ed6">公司账号,vpn</a></li>
+<li><a href="#org9f08f39">分工?故事点分解?</a></li>
+</ul>
+</li>
+<li><a href="#orga3d1754">Seminar?</a>
+<ul>
+<li><a href="#orgd0336ce">RL</a></li>
+<li><a href="#org6e27c1c">PCG</a></li>
+<li><a href="#org6523b51">路阻系数</a></li>
+</ul>
+</li>
+<li><a href="#orgc6eee08">按开发内容的开发状态</a>
+<ul>
+<li><a href="#orge386f64">环境安装</a></li>
+<li><a href="#org344a407">仿真接口:</a></li>
+<li><a href="#org457092e">能量接口(PGDrive) paper 调研;</a></li>
+<li><a href="#org782aa1a">理论:路阻系数 (查找) &#x2013;&gt; 能量, 比较</a></li>
+</ul>
+</li>
+<li><a href="#org175e8a4">design review</a>
+<ul>
+<li><a href="#org0ec640c">customer requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+:ID:       4b9aa962-6e09-4534-a88e-3b6fc38d4788
+</p>
+<p>
+application:
+ev
+methode:
+<a href="./20210830182842-deep_reinforcement_learning.html">deep-reinforcement-learning</a>
+platform:
+<a href="./20210831172004-simulation.html">simulation</a>
+<a href="./20210831172038-carla.html">carla</a>
+</p>
+
+
+<div id="outline-container-org54b7d81" class="outline-2">
+<h2 id="org54b7d81"><span class="done DONE">DONE</span> start new org file for capstone</h2>
+</div>
+<div id="outline-container-orgae5da36" class="outline-2">
+<h2 id="orgae5da36"><span class="todo TODO">TODO</span> create outline of the org file for capstone</h2>
+<div class="outline-text-2" id="text-orgae5da36">
+</div>
+</div>
+<div id="outline-container-orga8eb8fb" class="outline-2">
+<h2 id="orga8eb8fb"><a href="./20210901102331-cooperative_reinforcement_learning.html">cooperative reinforcement learning</a></h2>
+<div class="outline-text-2" id="text-orga8eb8fb">
+</div>
+<div id="outline-container-org8a3f90f" class="outline-3">
+<h3 id="org8a3f90f">for veos</h3>
+</div>
+</div>
+
+
+<div id="outline-container-org3e93a3b" class="outline-2">
+<h2 id="org3e93a3b">Longicontrol</h2>
+<div class="outline-text-2" id="text-org3e93a3b">
+</div>
+<div id="outline-container-org57824dd" class="outline-3">
+<h3 id="org57824dd">transfer learning: from Gym to the real world</h3>
+</div>
+<div id="outline-container-orgc74c9a9" class="outline-3">
+<h3 id="orgc74c9a9">from planning to model-based reinforcement learning <a href="./20210830182842-deep_reinforcement_learning.html">deep-reinforcement-learning</a></h3>
+</div>
+<div id="outline-container-orgc25ea9f" class="outline-3">
+<h3 id="orgc25ea9f">github repo is in <a href="https://github.com/dynamik1703/gym_longicontrol.git">LongiControl</a></h3>
+</div>
+<div id="outline-container-orgf8d1957" class="outline-3">
+<h3 id="orgf8d1957">safety / conflicting goals / explainable</h3>
+</div>
+<div id="outline-container-orge3e74f7" class="outline-3">
+<h3 id="orge3e74f7"><a href="./20210901135410-system_identification.html">system identification</a></h3>
+<div class="outline-text-3" id="text-orge3e74f7">
+</div>
+<div id="outline-container-orgfbedbbc" class="outline-4">
+<h4 id="orgfbedbbc">road load coefficient A, B, C</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3d410c4" class="outline-2">
+<h2 id="org3d410c4"><a href="./20210831172004-simulation.html">simulation</a></h2>
+<div class="outline-text-2" id="text-org3d410c4">
+</div>
+<div id="outline-container-org38e527a" class="outline-3">
+<h3 id="org38e527a">construct typical highway, urban scenarios</h3>
+</div>
+<div id="outline-container-org235a00d" class="outline-3">
+<h3 id="org235a00d">pgdrive</h3>
+</div>
+<div id="outline-container-orgb3c6a66" class="outline-3">
+<h3 id="orgb3c6a66">Assessment of veos strategy in open-ended simulation and its improvement: regarding overfitting, safety performance, traffic rule respectation and generalization, multi-agent behavior</h3>
+</div>
+</div>
+
+<div id="outline-container-org7bc007e" class="outline-2">
+<h2 id="org7bc007e"><a href="./20210930153026-um_sjtu_t5.html">UM-SJTU-T5</a></h2>
+<div class="outline-text-2" id="text-org7bc007e">
+</div>
+<div id="outline-container-org99bbde4" class="outline-3">
+<h3 id="org99bbde4">Gitlab, ScrUM &amp; Jira</h3>
+<div class="outline-text-3" id="text-org99bbde4">
+</div>
+<div id="outline-container-orgecfaabe" class="outline-4">
+<h4 id="orgecfaabe">电脑,服务器</h4>
+</div>
+<div id="outline-container-org6a99ed6" class="outline-4">
+<h4 id="org6a99ed6">公司账号,vpn</h4>
+</div>
+<div id="outline-container-org9f08f39" class="outline-4">
+<h4 id="org9f08f39">分工?故事点分解?</h4>
+</div>
+</div>
+<div id="outline-container-orga3d1754" class="outline-3">
+<h3 id="orga3d1754">Seminar?</h3>
+<div class="outline-text-3" id="text-orga3d1754">
+</div>
+<div id="outline-container-orgd0336ce" class="outline-4">
+<h4 id="orgd0336ce">RL</h4>
+</div>
+<div id="outline-container-org6e27c1c" class="outline-4">
+<h4 id="org6e27c1c">PCG</h4>
+</div>
+<div id="outline-container-org6523b51" class="outline-4">
+<h4 id="org6523b51">路阻系数</h4>
+</div>
+</div>
+<div id="outline-container-orgc6eee08" class="outline-3">
+<h3 id="orgc6eee08">按开发内容的开发状态</h3>
+<div class="outline-text-3" id="text-orgc6eee08">
+</div>
+<div id="outline-container-orge386f64" class="outline-4">
+<h4 id="orge386f64">环境安装</h4>
+</div>
+<div id="outline-container-org344a407" class="outline-4">
+<h4 id="org344a407">仿真接口:</h4>
+<div class="outline-text-4" id="text-org344a407">
+</div>
+<ul class="org-ul">
+<li><a id="orgcc4a654"></a>运动状态,安全状态,记录,<br /></li>
+<li><a id="org672957b"></a>孵化接口<br /></li>
+<li><a id="org6d6dcb7"></a>traffic manager<br /></li>
+<li><a id="org2c803ed"></a>训练?<br /></li>
+</ul>
+</div>
+<div id="outline-container-org457092e" class="outline-4">
+<h4 id="org457092e">能量接口(PGDrive) paper 调研;</h4>
+</div>
+<div id="outline-container-org782aa1a" class="outline-4">
+<h4 id="org782aa1a">理论:路阻系数 (查找) &#x2013;&gt; 能量, 比较</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org175e8a4" class="outline-3">
+<h3 id="org175e8a4">design review</h3>
+<div class="outline-text-3" id="text-org175e8a4">
+</div>
+<div id="outline-container-org0ec640c" class="outline-4">
+<h4 id="org0ec640c">customer requirements</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>
