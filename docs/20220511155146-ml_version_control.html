@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ml-version-control</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">ml-version-control</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org680c153">elements</a>
+<ul>
+<li><a href="#orgfa4baee">code</a>
+<ul>
+<li><a href="#org1b07cda">changes, to improve/deteriorate training/inference</a></li>
+</ul>
+</li>
+<li><a href="#orgd5cc46e">data</a>
+<ul>
+<li><a href="#org5e5e26d">dataset</a></li>
+<li><a href="#orga266e7c">failure data, outlier</a></li>
+<li><a href="#org2d390b9">success data to improve</a></li>
+</ul>
+</li>
+<li><a href="#org747dd77">model</a>
+<ul>
+<li><a href="#org6b3e73a">checkpoints</a></li>
+<li><a href="#org1eb98de">hyperparameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgff853c4">Benefits</a>
+<ul>
+<li><a href="#org8379c40">collaboration</a></li>
+<li><a href="#org18d607f">versioning</a></li>
+<li><a href="#org9437afd">reproducibility</a></li>
+<li><a href="#org56e2b8d">dependcy tracking</a></li>
+<li><a href="#org56c0b7f">model updates</a></li>
+</ul>
+</li>
+<li><a href="#org5d1736a">type</a>
+<ul>
+<li><a href="#orgf2c2136">centralized</a></li>
+<li><a href="#org129435a">distributed</a></li>
+</ul>
+</li>
+<li><a href="#orgdecd6c0">DVC</a>
+<ul>
+<li><a href="#org6760c5a">https://dvc.org/</a></li>
+<li><a href="#orgccf46ae">performance</a>
+<ul>
+<li><a href="#org96a9a34">scalability</a></li>
+<li><a href="#orgcec9baa">availability</a></li>
+<li><a href="#org8555b2a">security</a></li>
+<li><a href="#orgcd2d55d">flexibility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org680c153" class="outline-2">
+<h2 id="org680c153">elements</h2>
+<div class="outline-text-2" id="text-org680c153">
+</div>
+<div id="outline-container-orgfa4baee" class="outline-3">
+<h3 id="orgfa4baee">code</h3>
+<div class="outline-text-3" id="text-orgfa4baee">
+</div>
+<div id="outline-container-org1b07cda" class="outline-4">
+<h4 id="org1b07cda">changes, to improve/deteriorate training/inference</h4>
+</div>
+</div>
+<div id="outline-container-orgd5cc46e" class="outline-3">
+<h3 id="orgd5cc46e">data</h3>
+<div class="outline-text-3" id="text-orgd5cc46e">
+</div>
+<div id="outline-container-org5e5e26d" class="outline-4">
+<h4 id="org5e5e26d">dataset</h4>
+</div>
+<div id="outline-container-orga266e7c" class="outline-4">
+<h4 id="orga266e7c">failure data, outlier</h4>
+</div>
+<div id="outline-container-org2d390b9" class="outline-4">
+<h4 id="org2d390b9">success data to improve</h4>
+</div>
+</div>
+<div id="outline-container-org747dd77" class="outline-3">
+<h3 id="org747dd77">model</h3>
+<div class="outline-text-3" id="text-org747dd77">
+</div>
+<div id="outline-container-org6b3e73a" class="outline-4">
+<h4 id="org6b3e73a">checkpoints</h4>
+<div class="outline-text-4" id="text-org6b3e73a">
+</div>
+<ul class="org-ul">
+<li><a id="orgdd1d800"></a>model arch<br /></li>
+<li><a id="org80a8c67"></a>weights<br /></li>
+</ul>
+</div>
+<div id="outline-container-org1eb98de" class="outline-4">
+<h4 id="org1eb98de">hyperparameters</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff853c4" class="outline-2">
+<h2 id="orgff853c4">Benefits</h2>
+<div class="outline-text-2" id="text-orgff853c4">
+</div>
+<div id="outline-container-org8379c40" class="outline-3">
+<h3 id="org8379c40">collaboration</h3>
+</div>
+<div id="outline-container-org18d607f" class="outline-3">
+<h3 id="org18d607f">versioning</h3>
+</div>
+<div id="outline-container-org9437afd" class="outline-3">
+<h3 id="org9437afd">reproducibility</h3>
+</div>
+<div id="outline-container-org56e2b8d" class="outline-3">
+<h3 id="org56e2b8d">dependcy tracking</h3>
+</div>
+<div id="outline-container-org56c0b7f" class="outline-3">
+<h3 id="org56c0b7f">model updates</h3>
+</div>
+</div>
+<div id="outline-container-org5d1736a" class="outline-2">
+<h2 id="org5d1736a">type</h2>
+<div class="outline-text-2" id="text-org5d1736a">
+</div>
+<div id="outline-container-orgf2c2136" class="outline-3">
+<h3 id="orgf2c2136">centralized</h3>
+</div>
+<div id="outline-container-org129435a" class="outline-3">
+<h3 id="org129435a">distributed</h3>
+</div>
+</div>
+<div id="outline-container-orgdecd6c0" class="outline-2">
+<h2 id="orgdecd6c0">DVC</h2>
+<div class="outline-text-2" id="text-orgdecd6c0">
+</div>
+<div id="outline-container-org6760c5a" class="outline-3">
+<h3 id="org6760c5a"><a href="https://dvc.org/">https://dvc.org/</a></h3>
+</div>
+<div id="outline-container-orgccf46ae" class="outline-3">
+<h3 id="orgccf46ae">performance</h3>
+<div class="outline-text-3" id="text-orgccf46ae">
+</div>
+<div id="outline-container-org96a9a34" class="outline-4">
+<h4 id="org96a9a34">scalability</h4>
+</div>
+<div id="outline-container-orgcec9baa" class="outline-4">
+<h4 id="orgcec9baa">availability</h4>
+</div>
+<div id="outline-container-org8555b2a" class="outline-4">
+<h4 id="org8555b2a">security</h4>
+</div>
+<div id="outline-container-orgcd2d55d" class="outline-4">
+<h4 id="orgcd2d55d">flexibility</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos adp training data ingestion interface</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">veos adp training data ingestion interface</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org836477a">Release Notes</a>
+<ul>
+<li><a href="#org7674d76">eos 0.0.3</a></li>
+<li><a href="#orgbdeeeb9">current server list</a>
+<ul>
+<li><a href="#org899f198">remotecan servers</a></li>
+<li><a href="#orgf0d4929">trip control servers</a></li>
+<li><a href="#org5ff676d">MongoDB servers:</a></li>
+</ul>
+</li>
+<li><a href="#org8a8e0e4">current vehicle list</a></li>
+<li><a href="#org07bada5">current driver list</a></li>
+</ul>
+</li>
+<li><a href="#orgcbb23aa">Preamble</a></li>
+<li><a href="#org7482080">Upload</a>
+<ul>
+<li><a href="#orge8de1b0">Raw streams</a></li>
+<li><a href="#orgce9ce73">Preprocessing</a></li>
+</ul>
+</li>
+<li><a href="#org32e5a6c">Record</a>
+<ul>
+<li><a href="#org9bdf5ff">It's a timestamped <i>quadruple</i>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</a></li>
+<li><a href="#orgb21a491">The structure of the record</a>
+<ul>
+<li><a href="#org4ab5526">\(s_t\)</a></li>
+<li><a href="#orgee5003c">\(s'_t\)</a></li>
+<li><a href="#org23ed6fd">\(a_t\)</a></li>
+<li><a href="#orgd90dae6">\(r_t\)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org92f7c53">Episode</a></li>
+<li><a href="#org717b8eb">Pool</a>
+<ul>
+<li><a href="#org5b4dd9e">Record pool</a>
+<ul>
+<li><a href="#org74a3a87">Record deposit interface</a></li>
+<li><a href="#orgf6af46f">Record minibatch sample interface</a></li>
+</ul>
+</li>
+<li><a href="#org11c40ea">Episode pool</a>
+<ul>
+<li><a href="#orgf5e4012">Episode deposit interface</a></li>
+<li><a href="#orgb98494a">Episode minibatch sample interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge0ff184">Flashing</a></li>
+<li><a href="#org2405908">Dataflow</a>
+<ul>
+<li><a href="#org4241a08">Upload (Observe)</a></li>
+<li><a href="#org7b598e9">Download (flash)</a></li>
+<li><a href="#org64774fc">Communication Performance Index</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org836477a" class="outline-2">
+<h2 id="org836477a">Release Notes</h2>
+<div class="outline-text-2" id="text-org836477a">
+</div>
+<div id="outline-container-org7674d76" class="outline-3">
+<h3 id="org7674d76">eos 0.0.3</h3>
+<div class="outline-text-3" id="text-org7674d76">
+<ol class="org-ol">
+<li>fix cuda driver for tensorflow-gpu</li>
+<li>eos process ends elegantly</li>
+<li>server specification can take either names or urls. The list of current servers see below.</li>
+<li><p>
+add mongodb server option on the command line. Current interface example:
+</p>
+<div class="org-src-container">
+<pre class="src src-python">python eos/realtime_train_infer_rdpg.py -v <span style="font-style: italic;">"VB1"</span> -d <span style="font-style: italic;">"wangcheng"</span> -m <span style="font-style: italic;">"can_cloud_svc"</span> -w <span style="font-style: italic;">"rocket_cluster"</span> -u <span style="font-style: italic;">"cloud"</span> -o <span style="font-style: italic;">"mongo_local"</span> -i
+</pre>
+</div></li>
+<li>update trip control client with ClearablePushConsumer</li>
+<li>build docker image with micromamba with changed docker hub image from micromamba</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgbdeeeb9" class="outline-3">
+<h3 id="orgbdeeeb9">current server list</h3>
+<div class="outline-text-3" id="text-orgbdeeeb9">
+</div>
+<div id="outline-container-org899f198" class="outline-4">
+<h4 id="org899f198">remotecan servers</h4>
+<div class="outline-text-4" id="text-org899f198">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Host</th>
+<th scope="col" class="org-right">Port</th>
+<th scope="col" class="org-left">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">can_intra</td>
+<td class="org-left">10.0.64.78</td>
+<td class="org-right">5000</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">can_cloud</td>
+<td class="org-left">10.10.0.6</td>
+<td class="org-right">30865</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">can_cloud_svc</td>
+<td class="org-left">remotecan.veos</td>
+<td class="org-right">5000</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">can_prod_svc</td>
+<td class="org-left">remotecan-prod.veos</td>
+<td class="org-right">5000</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgf0d4929" class="outline-4">
+<h4 id="orgf0d4929">trip control servers</h4>
+<div class="outline-text-4" id="text-orgf0d4929">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Host</th>
+<th scope="col" class="org-right">Port</th>
+<th scope="col" class="org-left">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">rocket_intra</td>
+<td class="org-right">10.0.64.78</td>
+<td class="org-right">9876</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">rocket_cloud</td>
+<td class="org-right">10.0.64.122</td>
+<td class="org-right">9876</td>
+<td class="org-left">obsolete</td>
+</tr>
+
+<tr>
+<td class="org-left">rocket_cluster</td>
+<td class="org-right">10.10.0.13</td>
+<td class="org-right">9876</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org5ff676d" class="outline-4">
+<h4 id="org5ff676d">MongoDB servers:</h4>
+<div class="outline-text-4" id="text-org5ff676d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-right">Host</th>
+<th scope="col" class="org-right">Port</th>
+<th scope="col" class="org-left">user</th>
+<th scope="col" class="org-left">password</th>
+<th scope="col" class="org-left">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">mongo_local</td>
+<td class="org-right">127.0.0.1</td>
+<td class="org-right">27017</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mongo_intra_sloppy</td>
+<td class="org-right">10.0.64.64</td>
+<td class="org-right">30116</td>
+<td class="org-left">root</td>
+<td class="org-left">Newrizon123</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mongo_cloud</td>
+<td class="org-right">10.10.0.7</td>
+<td class="org-right">30116</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mongo_cluster</td>
+<td class="org-right">10.10.0.4</td>
+<td class="org-right">23000</td>
+<td class="org-left">admin</td>
+<td class="org-left">ty02ydhVqDj3QFjT</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">mongo_cluster_intra</td>
+<td class="org-right">10.0.48.115</td>
+<td class="org-right">23000</td>
+<td class="org-left">admin</td>
+<td class="org-left">ty02ydhVqDj3QFjT</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8a8e0e4" class="outline-3">
+<h3 id="org8a8e0e4">current vehicle list</h3>
+<div class="outline-text-3" id="text-org8a8e0e4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Plate</th>
+<th scope="col" class="org-left">VIN</th>
+<th scope="col" class="org-right">TBox ID</th>
+<th scope="col" class="org-left">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">MP73</td>
+<td class="org-left">沪 AB82511</td>
+<td class="org-left">HMZABAAH4NF003873</td>
+<td class="org-right">73361466</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">MP74</td>
+<td class="org-left">苏 EDY8203</td>
+<td class="org-left">HMZABAAH4MF018274</td>
+<td class="org-right">73453868</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">MP02</td>
+<td class="org-left">沪 ABD9968</td>
+<td class="org-left">HMZABAAH1NF004902</td>
+<td class="org-right">73453941</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">MP20</td>
+<td class="org-left">沪 AB87177</td>
+<td class="org-left">HMZABAAH9NF005120</td>
+<td class="org-right">73454077</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">MP57</td>
+<td class="org-left">苏 BDT6608</td>
+<td class="org-left">HMZABAAH8NF005657</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">MP58</td>
+<td class="org-left">苏 BDC6566</td>
+<td class="org-left">HMZABAAHXNF005658</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">VB1</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">HMZABAAH1MF011055</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">VB4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">HMZABAAHXMF011054</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">VB4497</td>
+<td class="org-left">苏 BDC8937</td>
+<td class="org-left">HMZABAAH4MF014497</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">VB7</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">HMZABAAH7MF011058</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">VB6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">HMZABAAH5MF011057</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org07bada5" class="outline-3">
+<h3 id="org07bada5">current driver list</h3>
+<div class="outline-text-3" id="text-org07bada5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">ID</th>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Site</th>
+<th scope="col" class="org-left">status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">UNKNOWN-HUABD9968</td>
+<td class="org-left">无名</td>
+<td class="org-left">未知</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">UNKNOWN-SUEDY8203</td>
+<td class="org-left">无名</td>
+<td class="org-left">未知</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">UNKNOWN-HUAB82511</td>
+<td class="org-left">无名</td>
+<td class="org-left">未知</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">UNKNOWN-HUAB87177</td>
+<td class="org-left">无名</td>
+<td class="org-left">未知</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">cheng-wang</td>
+<td class="org-left">王成</td>
+<td class="org-left">江阴</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">changlong-li</td>
+<td class="org-left">李长龙</td>
+<td class="org-left">江阴</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">hongmei-chen</td>
+<td class="org-left">陈红美</td>
+<td class="org-left">江阴</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">longfei-zheng</td>
+<td class="org-left">郑龙飞</td>
+<td class="org-left">上海</td>
+<td class="org-left">obsolete</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcbb23aa" class="outline-2">
+<h2 id="orgcbb23aa">Preamble</h2>
+<div class="outline-text-2" id="text-orgcbb23aa">
+<p>
+This document serves as a README for VEOS ADP data interface. It covers the specification of data streams from receiving uploaded raw data streams, to pre-process the raw data to generate records, store records in a data pool, and finally to index and get minibatches for training purpose from the pool.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7482080" class="outline-2">
+<h2 id="org7482080">Upload</h2>
+<div class="outline-text-2" id="text-org7482080">
+</div>
+<div id="outline-container-orge8de1b0" class="outline-3">
+<h3 id="orge8de1b0">Raw streams</h3>
+<div class="outline-text-3" id="text-orge8de1b0">
+<p>
+Raw streams are time series of raw observations (<i>timestamped</i> vehicle velocity, acceleration pedal opening, brake pedal opening, battery voltage, battery current) and actions (changed and flashed pedal map) applied on the vehicle.
+</p>
+</div>
+</div>
+<div id="outline-container-orgce9ce73" class="outline-3">
+<h3 id="orgce9ce73">Preprocessing</h3>
+<div class="outline-text-3" id="text-orgce9ce73">
+<p>
+Raw streams will be transformed into timestamped <a href="#org32e5a6c">Record</a> after preprocessing and stored in <a href="#org717b8eb">Pool</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org32e5a6c" class="outline-2">
+<h2 id="org32e5a6c">Record</h2>
+<div class="outline-text-2" id="text-org32e5a6c">
+<ul class="org-ul">
+<li>Record is the uploading unit of remote-CAN module</li>
+</ul>
+</div>
+<div id="outline-container-org9bdf5ff" class="outline-3">
+<h3 id="org9bdf5ff">It's a timestamped <a href="#orgc7d6c95"><i>quadruple</i></a>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</h3>
+<div class="outline-text-3" id="text-org9bdf5ff">
+<ul class="org-ul">
+<li>A record without timestamp is called a quadruple<a id="orgc7d6c95"></a></li>
+<li>The sequence of records consist of an <a href="#org92f7c53"><i>episode</i></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb21a491" class="outline-3">
+<h3 id="orgb21a491">The structure of the record</h3>
+<div class="outline-text-3" id="text-orgb21a491">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> The timestamped quadruple</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">\(s_t\)</th>
+<th scope="col" class="org-left">\(a_t\)</th>
+<th scope="col" class="org-left">\(r_t\)</th>
+<th scope="col" class="org-left">\(s'_t\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">\(t\) (timestamp)</td>
+<td class="org-left">\(V_0\), \(A_0\), \(B_0\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(V'_0\), \(A'_0\), \(B'_0\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(V_1\), \(A_1\), \(B_1\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">\(V'_1\), \(A'_1\), \(B'_1\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(U_{r_0}\) , \(I_{r_0}\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(V_k\), \(A_k\), \(B_k\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(U_{r_k}\) , \(I_{r_k}\)</td>
+<td class="org-left">\(V'_k\), \(A'_k\), \(B'_k\)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(V_{K-1}\), \(A_{K-1}\), \(B_{K-1}\)</td>
+<td class="org-left">\([PM_{5\times17}]^t\)</td>
+<td class="org-left">\(U_{r_K}\) , \(I_{r_K}\)</td>
+<td class="org-left">\(V'_{K-1}\), \(A'_{K-1}\), \(B'_{K-1}\)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-org4ab5526" class="outline-4">
+<h4 id="org4ab5526">\(s_t\)</h4>
+<div class="outline-text-4" id="text-org4ab5526">
+<p>
+state at timestamp \(t\)
+</p>
+<ul class="org-ul">
+<li>\(V_k\): velocity of the vehicle</li>
+<li>\(A_k\): acceleration pedal position in percentage</li>
+<li>\(B_k\): brake pedal position in percentage</li>
+<li>\(K\): number of frames within a single record. A record starts from timestamp \(t\), contains \(K\) CAN frames and ends by the end of the last frame
+<ul class="org-ul">
+<li>each line in a record is referred to as a single frame, whose information can be extracted from multiple CAN frames at the same moment</li>
+<li>rows within a record is contiguous in time starting from the timestamp \(t\)</li>
+<li>in case of frame loss, a loss token needs to be inserted as a lost frame state at the next timestamp of \(t\), that is \(t+1\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgee5003c" class="outline-4">
+<h4 id="orgee5003c">\(s'_t\)</h4>
+<div class="outline-text-4" id="text-orgee5003c">
+<p>
+the next state following \(s_t\)
+</p>
+<ul class="org-ul">
+<li>The state according to which the next decsion \(a_t\) will be made.</li>
+<li>In case of previous assumption, this state will contain the next adjacent 30 frames of state \(s_t\).</li>
+<li>\(s'_t\) must be contiguous in time to \(s_t\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org23ed6fd" class="outline-4">
+<h4 id="org23ed6fd">\(a_t\)</h4>
+<div class="outline-text-4" id="text-org23ed6fd">
+<p>
+action at timestamp \(t\)
+</p>
+<ul class="org-ul">
+<li>It's the decision of what pedal map will be applied after observing the state \(s_t\) by the agent</li>
+<li>The action \(a_t\) of VEOS system is the pedal map \([PM_{5\times17}]^t\) at timestamp \(t\). It's currently 5 consecutive rows in the full pedal map corresponding to the current state \(s_t\), 17 is the current discretization level of the throttle pedal percentage. Each element of the pedal map is the requested torque given the vehicle velocity and the throttle pedal position</li>
+<li>The real effective time of \(a_t\) could be delayed by \(\Delta t\) due to transmission and flashing latency, i.e. \(a_t\) will be applied at \(t+\Delta t\)</li>
+<li>\(a_t\) must precede \(s'_t\), that is \(t+\Delta t < t+1\) so that the next state \(s'_t\) is the result of applying \(a_t\)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd90dae6" class="outline-4">
+<h4 id="orgd90dae6">\(r_t\)</h4>
+<div class="outline-text-4" id="text-orgd90dae6">
+<p>
+reward at timestamp \(t\)
+</p>
+<ul class="org-ul">
+<li>It's the electricity consumption effected by the action \(a_t\)</li>
+<li>It's computed by accumlating the product of battery voltage \(U_{r_k}\) and current values \(I_{r_k}\) at the frames after the current action \(a_t\) is applied and before the next action \(a_{t+1}\) becomes effective, that is to say, the voltage and current values after the moment \(r_0\)  when flashing the pedal map is done and in effect, until after the last effective moment \(r_K\)  when the next action \(a_{t+1}\) is applied (flashed and in effect)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92f7c53" class="outline-2">
+<h2 id="org92f7c53">Episode</h2>
+<div class="outline-text-2" id="text-org92f7c53">
+<p>
+An episode is a consecutive sequence of <a href="#org32e5a6c">records</a> with a start and a termination state which typically represents a driving route/task or a test case and the vehicle operates on routinely.
+</p>
+
+<ul class="org-ul">
+<li><b>Triple</b>: Since the sequence is consecutive, the next state \(s'_t\) is the next adjacent state \(s_{t+1}\) and thus not required in the tuple. Therefore one record is reduced to a triple.</li>
+<li><b>Null elements</b>: Care needs to be taken to insert null elements in the sequence in case of absent records.</li>
+<li><b>Ragged</b>: \(T\) is the total time steps of the episode. Episodes have different sequence length, since the termination of an episode could mean reaching the destination with different speeds or events. Therefore the <a href="#org3919845">episode pool</a> is ususally ragged.</li>
+</ul>
+
+<p>
+\(e_T=[(s_0,a_0,r_0),(s_1,a_1,r_1), ...,(s_{T-1},a_{T-1},r_{T-1})]\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org717b8eb" class="outline-2">
+<h2 id="org717b8eb">Pool</h2>
+<div class="outline-text-2" id="text-org717b8eb">
+<p>
+The pool stores the experience history. It entails two kinds of forms: it stores either timestamped <a href="#org32e5a6c">records</a> which is called <i>record pool</i> or the whole sequence of records defined as <a href="#org92f7c53">episodes</a> which is called <i>episode pool</i>.
+</p>
+</div>
+
+<div id="outline-container-org5b4dd9e" class="outline-3">
+<h3 id="org5b4dd9e">Record pool<a id="org20eae4d"></a></h3>
+<div class="outline-text-3" id="text-org5b4dd9e">
+<p>
+The record pool is the aggregation of all the <a href="#org32e5a6c">records</a>, ordered by timestamps. It has a <i>record deposit interface</i> to deposit a record of <a href="#orgc7d6c95">quadruple</a> and a <i>record minibatch sample interface</i> to get a record minibatch of designated size randomly from the pool.
+</p>
+</div>
+
+<div id="outline-container-org74a3a87" class="outline-4">
+<h4 id="org74a3a87">Record deposit interface</h4>
+<div class="outline-text-4" id="text-org74a3a87">
+<p>
+The record deposit interface serves as the method to append a <a href="#org32e5a6c">record</a> in the pool. Please refer to the following Python code snippet.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">pool could be a python list containing all the records</span>
+pool.deposit_record(
+        (current_timestamp,
+         state,
+         action,
+         reward,
+         next_state,
+         )
+)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf6af46f" class="outline-4">
+<h4 id="orgf6af46f">Record minibatch sample interface</h4>
+<div class="outline-text-4" id="text-orgf6af46f">
+<p>
+A record minibatch<a id="org6931c43"></a> is a batch of <a href="#org32e5a6c">records</a> by random sampling the record pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> numpy <span style="font-weight: bold;">as</span> np
+
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">pool could be a python list containing all the records</span>
+<span style="font-weight: bold; font-style: italic;">batch_size</span> = 64
+<span style="font-weight: bold; font-style: italic;">index</span> = np.random.choice(<span style="font-weight: bold;">len</span>(pool),batch_size)
+<span style="font-weight: bold; font-style: italic;">minibatch</span> = pool(index)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org11c40ea" class="outline-3">
+<h3 id="org11c40ea">Episode pool<a id="org3919845"></a></h3>
+<div class="outline-text-3" id="text-org11c40ea">
+<p>
+The episode pool is the aggregation of all the <a href="#org92f7c53">episodes</a>, ordered by timestamps of the episodes. It has an <i>episode deposit interface</i> to deposit an episode and an <i>episode minibatch sample interface</i> to get an episode minibatch of designated size randomly from the pool.
+</p>
+</div>
+
+<div id="outline-container-orgf5e4012" class="outline-4">
+<h4 id="orgf5e4012">Episode deposit interface</h4>
+<div class="outline-text-4" id="text-orgf5e4012">
+<p>
+The episode deposit interface serves as the method to append a complete <a href="#org92f7c53">episode</a> to the pool
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">pool could be a python list containing all the episodes</span>
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">e_T is collected sequence of triples of an episode as defined above</span>
+pool.deposit_episode(e_T)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb98494a" class="outline-4">
+<h4 id="orgb98494a">Episode minibatch sample interface</h4>
+<div class="outline-text-4" id="text-orgb98494a">
+<p>
+An episode minibatch<a id="orgb4aad07"></a> is a batch of <a href="#org92f7c53">episodes</a> by random sampling the episode pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> numpy <span style="font-weight: bold;">as</span> np
+
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">pool could be a python list containing all the episodes</span>
+<span style="font-weight: bold; font-style: italic;">batch_size</span> = 64
+<span style="font-weight: bold; font-style: italic;">index</span> = np.random.choice(<span style="font-weight: bold;">len</span>(pool),batch_size)
+<span style="font-weight: bold; font-style: italic;">minibatch</span> = pool(index)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0ff184" class="outline-2">
+<h2 id="orge0ff184">Flashing</h2>
+<div class="outline-text-2" id="text-orge0ff184">
+<p>
+The flashing interface will take pedal-torque map data to be flashed on VBU. The interface took a list of pedal-torque map, the starting row index and the row number to be flashed. It returns the status code of the flashing. In case of success, the status code is 0, see the following Python code snippet:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">from</span> typing <span style="font-weight: bold;">import</span> List
+<span style="font-weight: bold;">import</span> pandas <span style="font-weight: bold;">as</span> pd
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">send_pedaltorque_map</span>(
+                pedaltorque_map: List[<span style="font-weight: bold;">float</span>],
+                starting_row: <span style="font-weight: bold;">int</span>,
+                row_num: <span style="font-weight: bold;">int</span>) -&gt; <span style="font-weight: bold;">int</span>:
+
+        <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">implementation of remotecan flashing</span>
+        <span style="font-weight: bold; font-style: italic;">returncode</span> = 0 <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">0 is success as defined by unix process</span>
+
+        <span style="font-weight: bold;">return</span> returncode
+
+<span style="font-weight: bold; font-style: italic;">default_table_path</span> = <span style="font-style: italic;">".\somewhere.csv"</span>
+<span style="font-weight: bold; font-style: italic;">pedaltorque_map</span> = pd.read_csv(default_table_path).to_numpy()
+
+<span style="font-weight: bold; font-style: italic;">pedialtorque_map_list</span> = pedaltorque_map.reshape(-1).tolist()
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">flashing the whole pedal map</span>
+<span style="font-weight: bold; font-style: italic;">returncode</span> = send_pedaltorque_map(pedaltorque_map, 0, 14)
+
+<span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">flashing the 4 rows of pedal map, starting from 3rd row</span>
+<span style="font-weight: bold; font-style: italic;">pedaltorque_map_3_7</span> = pedaltorque_map[3:7, :].reshape(-1).tolist()
+<span style="font-weight: bold; font-style: italic;">returncode</span> = send_pedaltorque_map(pedaltorque_map_3_7, 3, 4)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2405908" class="outline-2">
+<h2 id="org2405908">Dataflow</h2>
+<div class="outline-text-2" id="text-org2405908">
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dataflow</label><pre class="src src-mermaid" id="orgdedccf1">graph BT
+  subgraph "vehicle (CAN)"
+  VBU(VBU)--&gt;TBox(TBox)
+  TBox--&gt;VBU
+  end
+  subgraph "Cloud (Sync API)"
+    direction LR
+    TBox--"BW/Latency (Intest)"--&gt;Buffer("Buffer (OSS)")
+    Buffer--"BW/Latency (Internal)"--&gt;RemoteCAN(RemoteCAN)
+    RemoteCAN--"BW/Latency (Internal)"--&gt;TSP(TSP Service)
+  end
+  TSP--"BW/Latency (Intest)"--&gt;TBox
+  VEOS(VEOS)--&gt;RemoteCAN(RemoteCAN)
+  RemoteCAN--&gt;VEOS
+  RemoteCAN-.configure.-&gt;Buffer
+  linkStyle 1 stroke-width:3px,stroke:red
+  linkStyle 4 stroke-width:3px,stroke:red
+  linkStyle 5 stroke-width:3px,stroke:red
+  linkStyle 6 stroke-width:3px,stroke:red
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-org4241a08" class="outline-3">
+<h3 id="org4241a08">Upload (Observe)</h3>
+<div class="outline-text-3" id="text-org4241a08">
+<ul class="org-ul">
+<li>the arrows with black link</li>
+<li>system state
+<ul class="org-ul">
+<li>velocity</li>
+<li>battery voltage</li>
+<li>battery current</li>
+<li>acceleration pedal</li>
+<li>brake pedal</li>
+</ul></li>
+<li>VBU parameters/Pedal Map(PM)</li>
+<li>the communication should have flags START/STOP to enable streaming interface for the master on the cloud (VEOS), so that the master can get the full observation of an episode which is usually more than 20 seconds and can last over 10 miniutes.
+<ul class="org-ul">
+<li>The master (VEOS) set START flag to start uploading,</li>
+<li>The mobile edge device (TBox) will upload observation data voluntarily and incessantly after receiving START flag and before STOP flag,</li>
+<li>The master (VEOS) set STOP flag to stop uploading,</li>
+<li>The mobile edge device (TBox) will stop uploading of observation immediately once it receives the STOP flag.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7b598e9" class="outline-3">
+<h3 id="org7b598e9">Download (flash)</h3>
+<div class="outline-text-3" id="text-org7b598e9">
+<ul class="org-ul">
+<li>the arrow with red link</li>
+<li>VBU parameter/Pedal Map(PM)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org64774fc" class="outline-3">
+<h3 id="org64774fc">Communication Performance Index</h3>
+<div class="outline-text-3" id="text-org64774fc">
+<ul class="org-ul">
+<li>bandwidth: expected/upper bound/lowerbound for both Intest &amp; Internal interface</li>
+<li>latency: expected/upper bound/lowerbound for both Intest &amp; Internal interface</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold;">import</span> matplotlib.pyplot <span style="font-weight: bold;">as</span> plt
+
+<span style="font-weight: bold; font-style: italic;">x</span> = [1,2,3,4]
+<span style="font-weight: bold; font-style: italic;">y</span> = [2,4,6,8]
+
+plot.plot(x,y)
+plt.savefig(<span style="font-style: italic;">'output.png'</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>
