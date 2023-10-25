@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-FTO</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">veos-FTO</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9369507">CN105752084B 一种新能源汽车能量优化方法 权1</a>
+<ul>
+<li><a href="#org7b7aafb">相似的部分是观测量（车速，加速度，油门踏板等），但是汽车基本上也就是这些观测量</a></li>
+<li><a href="#org6d30f08">调节量不同：此专利的调节量是混动车控制器中功率分配比例； 我司专利的调节量是车辆控制器的各类标定表（比如油门踏板请求力矩映射表）</a></li>
+<li><a href="#orgdfdd3b8">应用领域不同：</a>
+<ul>
+<li><a href="#org85231bd">混动车（电机+发动机），分配功率</a></li>
+</ul>
+</li>
+<li><a href="#org01dfa24">方法上不一样</a>
+<ul>
+<li><a href="#orgbafd009">基于驾驶员意图特征识别，基于传统特征工程不可行</a></li>
+<li><a href="#org8060c98">决策基于特征工程（电机，发动机效率图），不可行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org98b468c">CN109927709B 一种车辆行驶路线工况确定方法，能量管理方法及系统，权6</a>
+<ul>
+<li><a href="#org6838f6e">方法不一样，此专利是传统特征工程，基于工况识别，不可行</a>
+<ul>
+<li><a href="#org06fbf11">此专利对工况的定义是基于粗糙的特征值和离散的分类；而实际工况是连续的；我司专利处理的是连续的实际工况，不直接分类</a></li>
+<li><a href="#orgc5282ca">不考虑噪声的基于特征量工况识别也不可能精确</a></li>
+<li><a href="#org3262166">根据特定工况下冻结所谓最优控制参数，肯定不是最优的； 在随机控制里叫开环控制，我司专利的控制方案是随机闭环控制， 实时根据观测量调整控制量才有可能在真实环境（非平稳，有噪声）取得最优；根据不精确的工况识别做出离散工况分类，不存在最优控制参数</a></li>
+<li><a href="#org0917b79">主观工况分类造成模型假设偏差，也不可能达到最优</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9696687">CN111319626B 车辆控制参数的调整方法、装置、电子设备及存储介质，权1</a>
+<ul>
+<li><a href="#org5529c65">此权力要求似乎非常宽泛：“通过用户的操作和操作产生车辆状态变化选择车辆控制参数”。几乎可以包含所有的对车辆控制方案， 应该也可以包含前面两个专利的主要权力要求。</a></li>
+<li><a href="#orgcdd65eb">和我司专利的差异和前两个专利类似，此专利主要也是基于一张查找表，其实对应的方法也是对工况的离散分类，开环控制，没有可实现性。</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9369507" class="outline-2">
+<h2 id="org9369507">CN105752084B 一种新能源汽车能量优化方法 权1</h2>
+<div class="outline-text-2" id="text-org9369507">
+</div>
+<div id="outline-container-org7b7aafb" class="outline-3">
+<h3 id="org7b7aafb">相似的部分是观测量（车速，加速度，油门踏板等），但是汽车基本上也就是这些观测量</h3>
+</div>
+<div id="outline-container-org6d30f08" class="outline-3">
+<h3 id="org6d30f08">调节量不同：此专利的调节量是混动车控制器中功率分配比例； 我司专利的调节量是车辆控制器的各类标定表（比如油门踏板请求力矩映射表）</h3>
+</div>
+<div id="outline-container-orgdfdd3b8" class="outline-3">
+<h3 id="orgdfdd3b8">应用领域不同：</h3>
+<div class="outline-text-3" id="text-orgdfdd3b8">
+</div>
+<div id="outline-container-org85231bd" class="outline-4">
+<h4 id="org85231bd">混动车（电机+发动机），分配功率</h4>
+</div>
+</div>
+<div id="outline-container-org01dfa24" class="outline-3">
+<h3 id="org01dfa24">方法上不一样</h3>
+<div class="outline-text-3" id="text-org01dfa24">
+</div>
+<div id="outline-container-orgbafd009" class="outline-4">
+<h4 id="orgbafd009">基于驾驶员意图特征识别，基于传统特征工程不可行</h4>
+<div class="outline-text-4" id="text-orgbafd009">
+</div>
+<ul class="org-ul">
+<li><a id="org1f605a2"></a>此专利中叙述测量状态（车速，加速度，档位和油门）和意图（起步，加速，超车）根本不同，有巨大的差异<br /></li>
+</ul>
+</div>
+<div id="outline-container-org8060c98" class="outline-4">
+<h4 id="org8060c98">决策基于特征工程（电机，发动机效率图），不可行</h4>
+<div class="outline-text-4" id="text-org8060c98">
+</div>
+<ul class="org-ul">
+<li><a id="org43cd229"></a>基于粗略的理论模型，和节能的最终目标之间存在巨大的差异<br /></li>
+<li><a id="org344e41b"></a>基于不精确的理论系统模型，忽略模型偏差，噪声<br /></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org98b468c" class="outline-2">
+<h2 id="org98b468c">CN109927709B 一种车辆行驶路线工况确定方法，能量管理方法及系统，权6</h2>
+<div class="outline-text-2" id="text-org98b468c">
+</div>
+<div id="outline-container-org6838f6e" class="outline-3">
+<h3 id="org6838f6e">方法不一样，此专利是传统特征工程，基于工况识别，不可行</h3>
+<div class="outline-text-3" id="text-org6838f6e">
+</div>
+<div id="outline-container-org06fbf11" class="outline-4">
+<h4 id="org06fbf11">此专利对工况的定义是基于粗糙的特征值和离散的分类；而实际工况是连续的；我司专利处理的是连续的实际工况，不直接分类</h4>
+</div>
+<div id="outline-container-orgc5282ca" class="outline-4">
+<h4 id="orgc5282ca">不考虑噪声的基于特征量工况识别也不可能精确</h4>
+</div>
+<div id="outline-container-org3262166" class="outline-4">
+<h4 id="org3262166">根据特定工况下冻结所谓最优控制参数，肯定不是最优的； 在随机控制里叫开环控制，我司专利的控制方案是随机闭环控制， 实时根据观测量调整控制量才有可能在真实环境（非平稳，有噪声）取得最优；根据不精确的工况识别做出离散工况分类，不存在最优控制参数</h4>
+</div>
+<div id="outline-container-org0917b79" class="outline-4">
+<h4 id="org0917b79">主观工况分类造成模型假设偏差，也不可能达到最优</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org9696687" class="outline-2">
+<h2 id="org9696687">CN111319626B 车辆控制参数的调整方法、装置、电子设备及存储介质，权1</h2>
+<div class="outline-text-2" id="text-org9696687">
+</div>
+<div id="outline-container-org5529c65" class="outline-3">
+<h3 id="org5529c65">此权力要求似乎非常宽泛：“通过用户的操作和操作产生车辆状态变化选择车辆控制参数”。几乎可以包含所有的对车辆控制方案， 应该也可以包含前面两个专利的主要权力要求。</h3>
+</div>
+<div id="outline-container-orgcdd65eb" class="outline-3">
+<h3 id="orgcdd65eb">和我司专利的差异和前两个专利类似，此专利主要也是基于一张查找表，其实对应的方法也是对工况的离散分类，开环控制，没有可实现性。</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>
