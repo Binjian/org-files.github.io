@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v3
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@2.1.1
+        with:
+          token: ${{ secrets.ORG_PUBLISH }}
+          submodules: true
 
       - name: Install Emacs
         run: sudo apt install emacs-nox --yes
