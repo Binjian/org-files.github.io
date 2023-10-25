@@ -38,33 +38,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6bd6d8d">GAN Generator(decoder); Discriminator (not encoder?)</a>
+<li><a href="#orga9e7d74">GAN Generator(decoder); Discriminator (not encoder?)</a>
 <ul>
-<li><a href="#org3e7533a">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</a></li>
-<li><a href="#orgf3bc15f">Generator target minimization of JSD to approach data distribution</a></li>
-<li><a href="#org7c93a43">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</a></li>
+<li><a href="#orgfd2922e">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</a></li>
+<li><a href="#orgc533514">Generator target minimization of JSD to approach data distribution</a></li>
+<li><a href="#orgcd74a9e">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</a></li>
 </ul>
 </li>
-<li><a href="#org2530162">critisize</a>
+<li><a href="#org5ae94eb">critisize</a>
 <ul>
-<li><a href="#orgd59af44">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</a></li>
-<li><a href="#orgfd32ec5">the engineering trick to modify the second objective for G does not conform to JSD</a></li>
-<li><a href="#orgd4a4885">The optimization of D and G is subsequent, not simultanteous.</a>
+<li><a href="#org1489294">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</a></li>
+<li><a href="#org8b2e88c">the engineering trick to modify the second objective for G does not conform to JSD</a></li>
+<li><a href="#org0686191">The optimization of D and G is subsequent, not simultanteous.</a>
 <ul>
-<li><a href="#orgd4b02fd">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</a></li>
-<li><a href="#org70f63a5">how to guide the training?</a></li>
+<li><a href="#orga7edf1c">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</a></li>
+<li><a href="#org528c008">how to guide the training?</a></li>
 </ul>
 </li>
-<li><a href="#orgf119b0c">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</a></li>
-<li><a href="#org90cde37">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</a>
+<li><a href="#org251fd47">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</a></li>
+<li><a href="#org2361fb1">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</a>
 <ul>
-<li><a href="#orgc52e3ec">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</a></li>
-<li><a href="#org1520b27">discriminator(classifier)-&gt;decoder?</a></li>
+<li><a href="#org40a266f">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</a></li>
+<li><a href="#org7ce443f">discriminator(classifier)-&gt;decoder?</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org0521008">appendex</a></li>
+<li><a href="#org803c717">appendex</a></li>
 </ul>
 </div>
 </div>
@@ -72,70 +72,70 @@
 :ID:       c099ea75-ef58-4ca8-96a2-6d1468e8d9e8
 </p>
 
-<div id="outline-container-org6bd6d8d" class="outline-2">
-<h2 id="org6bd6d8d">GAN Generator(decoder); Discriminator (not encoder?)</h2>
-<div class="outline-text-2" id="text-org6bd6d8d">
+<div id="outline-container-orga9e7d74" class="outline-2">
+<h2 id="orga9e7d74">GAN Generator(decoder); Discriminator (not encoder?)</h2>
+<div class="outline-text-2" id="text-orga9e7d74">
 </div>
-<div id="outline-container-org3e7533a" class="outline-3">
-<h3 id="org3e7533a">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</h3>
+<div id="outline-container-orgfd2922e" class="outline-3">
+<h3 id="orgfd2922e">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</h3>
 </div>
-<div id="outline-container-orgf3bc15f" class="outline-3">
-<h3 id="orgf3bc15f">Generator target minimization of JSD to approach data distribution</h3>
+<div id="outline-container-orgc533514" class="outline-3">
+<h3 id="orgc533514">Generator target minimization of JSD to approach data distribution</h3>
 </div>
-<div id="outline-container-org7c93a43" class="outline-3">
-<h3 id="org7c93a43">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</h3>
+<div id="outline-container-orgcd74a9e" class="outline-3">
+<h3 id="orgcd74a9e">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</h3>
 </div>
 </div>
-<div id="outline-container-org2530162" class="outline-2">
-<h2 id="org2530162">critisize</h2>
-<div class="outline-text-2" id="text-org2530162">
+<div id="outline-container-org5ae94eb" class="outline-2">
+<h2 id="org5ae94eb">critisize</h2>
+<div class="outline-text-2" id="text-org5ae94eb">
 </div>
-<div id="outline-container-orgd59af44" class="outline-3">
-<h3 id="orgd59af44">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</h3>
-<div class="outline-text-3" id="text-orgd59af44">
+<div id="outline-container-org1489294" class="outline-3">
+<h3 id="org1489294">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</h3>
+<div class="outline-text-3" id="text-org1489294">
 <p>
 add G in a way to influence the first objective.
 add a gap of G to real data to have a loss for G
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd32ec5" class="outline-3">
-<h3 id="orgfd32ec5">the engineering trick to modify the second objective for G does not conform to JSD</h3>
+<div id="outline-container-org8b2e88c" class="outline-3">
+<h3 id="org8b2e88c">the engineering trick to modify the second objective for G does not conform to JSD</h3>
 </div>
-<div id="outline-container-orgd4a4885" class="outline-3">
-<h3 id="orgd4a4885">The optimization of D and G is subsequent, not simultanteous.</h3>
-<div class="outline-text-3" id="text-orgd4a4885">
+<div id="outline-container-org0686191" class="outline-3">
+<h3 id="org0686191">The optimization of D and G is subsequent, not simultanteous.</h3>
+<div class="outline-text-3" id="text-org0686191">
 </div>
-<div id="outline-container-orgd4b02fd" class="outline-4">
-<h4 id="orgd4b02fd">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</h4>
+<div id="outline-container-orga7edf1c" class="outline-4">
+<h4 id="orga7edf1c">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</h4>
 </div>
-<div id="outline-container-org70f63a5" class="outline-4">
-<h4 id="org70f63a5">how to guide the training?</h4>
+<div id="outline-container-org528c008" class="outline-4">
+<h4 id="org528c008">how to guide the training?</h4>
 </div>
 </div>
-<div id="outline-container-orgf119b0c" class="outline-3">
-<h3 id="orgf119b0c">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</h3>
+<div id="outline-container-org251fd47" class="outline-3">
+<h3 id="org251fd47">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</h3>
 </div>
-<div id="outline-container-org90cde37" class="outline-3">
-<h3 id="org90cde37">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</h3>
-<div class="outline-text-3" id="text-org90cde37">
+<div id="outline-container-org2361fb1" class="outline-3">
+<h3 id="org2361fb1">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</h3>
+<div class="outline-text-3" id="text-org2361fb1">
 </div>
-<div id="outline-container-orgc52e3ec" class="outline-4">
-<h4 id="orgc52e3ec">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</h4>
+<div id="outline-container-org40a266f" class="outline-4">
+<h4 id="org40a266f">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</h4>
 </div>
-<div id="outline-container-org1520b27" class="outline-4">
-<h4 id="org1520b27">discriminator(classifier)-&gt;decoder?</h4>
-<div class="outline-text-4" id="text-org1520b27">
+<div id="outline-container-org7ce443f" class="outline-4">
+<h4 id="org7ce443f">discriminator(classifier)-&gt;decoder?</h4>
+<div class="outline-text-4" id="text-org7ce443f">
 </div>
 <ul class="org-ul">
-<li><a id="org40c22a9"></a>guess: "discriminator = decoder + classifier" would be easy for classifier when the embedding is learned the way generator leans.<br /></li>
+<li><a id="orgf9276fc"></a>guess: "discriminator = decoder + classifier" would be easy for classifier when the embedding is learned the way generator leans.<br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org0521008" class="outline-2">
-<h2 id="org0521008">appendex</h2>
-<div class="outline-text-2" id="text-org0521008">
+<div id="outline-container-org803c717" class="outline-2">
+<h2 id="org803c717">appendex</h2>
+<div class="outline-text-2" id="text-org803c717">
 <p>
 <a href="./20220601131312-vae.html">VAE</a>
 </p>

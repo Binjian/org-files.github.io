@@ -39,9 +39,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfb6a333">Overview</a></li>
-<li><a href="#org1f04ce1">Short Review of Git Internal Basics</a></li>
-<li><a href="#org049a5a2">Tools and Operations in a typical use case for a mocking Repo</a></li>
+<li><a href="#orgf016a83">Overview</a></li>
+<li><a href="#orgb0845fb">Short Review of Git Internal Basics</a></li>
+<li><a href="#orgc90753c">Tools and Operations in a typical use case for a mocking Repo</a></li>
 </ul>
 </div>
 </div>
@@ -51,9 +51,9 @@
 
 
 
-<div id="outline-container-orgfb6a333" class="outline-2">
-<h2 id="orgfb6a333">Overview</h2>
-<div class="outline-text-2" id="text-orgfb6a333">
+<div id="outline-container-orgf016a83" class="outline-2">
+<h2 id="orgf016a83">Overview</h2>
+<div class="outline-text-2" id="text-orgf016a83">
 
 <div class="figure">
 <p><img src="file:///home/runner/.org.d/roam/img/git_in_a_nutshell/git.png" alt="git.png" />
@@ -61,13 +61,13 @@
 </div>
 </div>
 
-<div id="outline-container-org1d01f48" class="outline-3">
-<h3 id="org1d01f48">question "git submodule for each"</h3>
-<div class="outline-text-3" id="text-org1d01f48">
+<div id="outline-container-orgd3537a7" class="outline-3">
+<h3 id="orgd3537a7">question "git submodule for each"</h3>
+<div class="outline-text-3" id="text-orgd3537a7">
 </div>
-<div id="outline-container-orgdeecaf1" class="outline-4">
-<h4 id="orgdeecaf1">command line</h4>
-<div class="outline-text-4" id="text-orgdeecaf1">
+<div id="outline-container-orga15a7da" class="outline-4">
+<h4 id="orga15a7da">command line</h4>
+<div class="outline-text-4" id="text-orga15a7da">
 <div class="org-src-container">
 <pre class="src src-[[roam:bash">git submodule foreach --recursive '
 git log --oneline -n 5'
@@ -122,9 +122,9 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </div>
 </div>
 
-<div id="outline-container-org1a02b84" class="outline-4">
-<h4 id="org1a02b84">Porcelan:</h4>
-<div class="outline-text-4" id="text-org1a02b84">
+<div id="outline-container-orgaa67f37" class="outline-4">
+<h4 id="orgaa67f37">Porcelan:</h4>
+<div class="outline-text-4" id="text-orgaa67f37">
 <ul class="org-ul">
 <li>emacs magit</li>
 <li>git lens</li>
@@ -133,18 +133,18 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb04478b" class="outline-4">
-<h4 id="orgb04478b">Concept, no command manual articulation</h4>
+<div id="outline-container-org6c2e09d" class="outline-4">
+<h4 id="org6c2e09d">Concept, no command manual articulation</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org1f04ce1" class="outline-2">
-<h2 id="org1f04ce1">Short Review of Git Internal Basics</h2>
-<div class="outline-text-2" id="text-org1f04ce1">
+<div id="outline-container-orgb0845fb" class="outline-2">
+<h2 id="orgb0845fb">Short Review of Git Internal Basics</h2>
+<div class="outline-text-2" id="text-orgb0845fb">
 </div>
-<div id="outline-container-org628e903" class="outline-3">
-<h3 id="org628e903">hash table</h3>
-<div class="outline-text-3" id="text-org628e903">
+<div id="outline-container-org81bc708" class="outline-3">
+<h3 id="org81bc708">hash table</h3>
+<div class="outline-text-3" id="text-org81bc708">
 <ul class="org-ul">
 <li>effiency
 <ul class="org-ul">
@@ -163,9 +163,9 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </ul>
 </div>
 </div>
-<div id="outline-container-orge5607db" class="outline-3">
-<h3 id="orge5607db">four objects</h3>
-<div class="outline-text-3" id="text-orge5607db">
+<div id="outline-container-org88f97b5" class="outline-3">
+<h3 id="org88f97b5">four objects</h3>
+<div class="outline-text-3" id="text-org88f97b5">
 <ul class="org-ul">
 <li>tree (spatial/topological tree)</li>
 <li>blob</li>
@@ -174,20 +174,20 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc429160" class="outline-3">
-<h3 id="orgc429160">power of abstraction</h3>
+<div id="outline-container-orga26414b" class="outline-3">
+<h3 id="orga26414b">power of abstraction</h3>
 </div>
-<div id="outline-container-org5968e96" class="outline-3">
-<h3 id="org5968e96">content addressable filesystem / database</h3>
-<div class="outline-text-3" id="text-org5968e96">
+<div id="outline-container-org1204480" class="outline-3">
+<h3 id="org1204480">content addressable filesystem / database</h3>
+<div class="outline-text-3" id="text-org1204480">
 <ul class="org-ul">
 <li>equality among objects</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orged24bcc" class="outline-3">
-<h3 id="orged24bcc">gitrevisions (cherry-pick, reset, log, merge)</h3>
-<div class="outline-text-3" id="text-orged24bcc">
+<div id="outline-container-orgb585d57" class="outline-3">
+<h3 id="orgb585d57">gitrevisions (cherry-pick, reset, log, merge)</h3>
+<div class="outline-text-3" id="text-orgb585d57">
 <ul class="org-ul">
 <li>HEAD^^/HEAD^2</li>
 <li>HEAD@{2}</li>
@@ -198,13 +198,13 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </div>
 </div>
 </div>
-<div id="outline-container-org049a5a2" class="outline-2">
-<h2 id="org049a5a2">Tools and Operations in a typical use case for a mocking Repo</h2>
-<div class="outline-text-2" id="text-org049a5a2">
+<div id="outline-container-orgc90753c" class="outline-2">
+<h2 id="orgc90753c">Tools and Operations in a typical use case for a mocking Repo</h2>
+<div class="outline-text-2" id="text-orgc90753c">
 </div>
-<div id="outline-container-orgfb5e4cd" class="outline-3">
-<h3 id="orgfb5e4cd">Use Case (regret medicine)</h3>
-<div class="outline-text-3" id="text-orgfb5e4cd">
+<div id="outline-container-org26ea9eb" class="outline-3">
+<h3 id="org26ea9eb">Use Case (regret medicine)</h3>
+<div class="outline-text-3" id="text-org26ea9eb">
 <ul class="org-ul">
 <li>create a new feature branch for an existing repository</li>
 <li>add changes (git add)</li>
@@ -217,25 +217,25 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfdf2ddd" class="outline-3">
-<h3 id="orgfdf2ddd">git branch (off, out)</h3>
-<div class="outline-text-3" id="text-orgfdf2ddd">
+<div id="outline-container-org32d56bc" class="outline-3">
+<h3 id="org32d56bc">git branch (off, out)</h3>
+<div class="outline-text-3" id="text-org32d56bc">
 <ul class="org-ul">
 <li>Add a lot of changes</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6b5d626" class="outline-3">
-<h3 id="org6b5d626">git commit -a</h3>
-<div class="outline-text-3" id="text-org6b5d626">
+<div id="outline-container-orgfd02b97" class="outline-3">
+<h3 id="orgfd02b97">git commit -a</h3>
+<div class="outline-text-3" id="text-orgfd02b97">
 <ul class="org-ul">
 <li>use case: regret on the recent change, need -f for git push.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc04ac9d" class="outline-3">
-<h3 id="orgc04ac9d">git reset</h3>
-<div class="outline-text-3" id="text-orgc04ac9d">
+<div id="outline-container-org3f2ea4e" class="outline-3">
+<h3 id="org3f2ea4e">git reset</h3>
+<div class="outline-text-3" id="text-org3f2ea4e">
 <ul class="org-ul">
 <li>soft, <b>mixed</b>, hard  Why mixed is default, when hard usually results in a clean state?</li>
 <li>hard dangerous (detached/isolated commit)</li>
@@ -243,26 +243,26 @@ No magic! magic is when you don't understand! magic is accomanied with fear!
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb4f767e" class="outline-3">
-<h3 id="orgb4f767e">git remote</h3>
-<div class="outline-text-3" id="text-orgb4f767e">
+<div id="outline-container-orgeefef91" class="outline-3">
+<h3 id="orgeefef91">git remote</h3>
+<div class="outline-text-3" id="text-orgeefef91">
 <ul class="org-ul">
 <li>multiple remotes for open source repositories</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga0abad8" class="outline-3">
-<h3 id="orga0abad8">git rebase</h3>
-<div class="outline-text-3" id="text-orga0abad8">
+<div id="outline-container-org678a46d" class="outline-3">
+<h3 id="org678a46d">git rebase</h3>
+<div class="outline-text-3" id="text-org678a46d">
 <ul class="org-ul">
 <li>git push force</li>
 <li>git merge</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org348c145" class="outline-3">
-<h3 id="org348c145">git reflog</h3>
-<div class="outline-text-3" id="text-org348c145">
+<div id="outline-container-org465322b" class="outline-3">
+<h3 id="org465322b">git reflog</h3>
+<div class="outline-text-3" id="text-org465322b">
 <ul class="org-ul">
 <li>your activties history (HEAD &amp; branches)</li>
 </ul>

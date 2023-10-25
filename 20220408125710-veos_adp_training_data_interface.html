@@ -38,63 +38,63 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7c1b16a">Release Notes</a>
+<li><a href="#org55dd90a">Release Notes</a>
 <ul>
-<li><a href="#org2910837">eos 0.0.3</a></li>
-<li><a href="#org5f26984">current server list</a>
+<li><a href="#org8c245b7">eos 0.0.3</a></li>
+<li><a href="#org364c6d0">current server list</a>
 <ul>
-<li><a href="#orgada182c">remotecan servers</a></li>
-<li><a href="#org491dbb5">trip control servers</a></li>
-<li><a href="#org277d32c">MongoDB servers:</a></li>
+<li><a href="#orge73e9b7">remotecan servers</a></li>
+<li><a href="#org8100846">trip control servers</a></li>
+<li><a href="#orgd2e6607">MongoDB servers:</a></li>
 </ul>
 </li>
-<li><a href="#org6814b6b">current vehicle list</a></li>
-<li><a href="#orgcf9f5cf">current driver list</a></li>
+<li><a href="#org23a74d2">current vehicle list</a></li>
+<li><a href="#org76a8ce0">current driver list</a></li>
 </ul>
 </li>
-<li><a href="#orgc408f55">Preamble</a></li>
-<li><a href="#orgcbc33c1">Upload</a>
+<li><a href="#org90f6771">Preamble</a></li>
+<li><a href="#org46540dc">Upload</a>
 <ul>
-<li><a href="#orgaf3c5dd">Raw streams</a></li>
-<li><a href="#orgab71ce1">Preprocessing</a></li>
+<li><a href="#org589ec62">Raw streams</a></li>
+<li><a href="#org9bf4741">Preprocessing</a></li>
 </ul>
 </li>
-<li><a href="#org71f4dcf">Record</a>
+<li><a href="#orgbc63a9d">Record</a>
 <ul>
-<li><a href="#orge15cb43">It's a timestamped <i>quadruple</i>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</a></li>
-<li><a href="#orgd83f6ef">The structure of the record</a>
+<li><a href="#org4223d7d">It's a timestamped <i>quadruple</i>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</a></li>
+<li><a href="#org8749516">The structure of the record</a>
 <ul>
-<li><a href="#orgaded99d">\(s_t\)</a></li>
-<li><a href="#org95c7c63">\(s'_t\)</a></li>
-<li><a href="#org96dd660">\(a_t\)</a></li>
-<li><a href="#orgaa92f92">\(r_t\)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgb591377">Episode</a></li>
-<li><a href="#orgb73e2bf">Pool</a>
-<ul>
-<li><a href="#orgb6e2e35">Record pool</a>
-<ul>
-<li><a href="#org62960ef">Record deposit interface</a></li>
-<li><a href="#orge88afea">Record minibatch sample interface</a></li>
-</ul>
-</li>
-<li><a href="#org16c1ff4">Episode pool</a>
-<ul>
-<li><a href="#org398832a">Episode deposit interface</a></li>
-<li><a href="#org69ab074">Episode minibatch sample interface</a></li>
+<li><a href="#orgcc0f123">\(s_t\)</a></li>
+<li><a href="#orgfa2a1ce">\(s'_t\)</a></li>
+<li><a href="#org959267a">\(a_t\)</a></li>
+<li><a href="#org57c6aca">\(r_t\)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5f0bd35">Flashing</a></li>
-<li><a href="#orgf901876">Dataflow</a>
+<li><a href="#org3e7f575">Episode</a></li>
+<li><a href="#org8aae08b">Pool</a>
 <ul>
-<li><a href="#org5bac14c">Upload (Observe)</a></li>
-<li><a href="#orgf0d7c0c">Download (flash)</a></li>
-<li><a href="#org0330b66">Communication Performance Index</a></li>
+<li><a href="#org4a50ac2">Record pool</a>
+<ul>
+<li><a href="#org5de3da0">Record deposit interface</a></li>
+<li><a href="#org99bd78a">Record minibatch sample interface</a></li>
+</ul>
+</li>
+<li><a href="#orge86c5ad">Episode pool</a>
+<ul>
+<li><a href="#org5eff073">Episode deposit interface</a></li>
+<li><a href="#orga56c9b0">Episode minibatch sample interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgda3e327">Flashing</a></li>
+<li><a href="#org25e70db">Dataflow</a>
+<ul>
+<li><a href="#org28c0f4f">Upload (Observe)</a></li>
+<li><a href="#org7609d35">Download (flash)</a></li>
+<li><a href="#org7d5a89b">Communication Performance Index</a></li>
 </ul>
 </li>
 </ul>
@@ -104,13 +104,13 @@
 :ID:       077609d9-c061-437a-948c-4c7ceeb10fc9
 </p>
 
-<div id="outline-container-org7c1b16a" class="outline-2">
-<h2 id="org7c1b16a">Release Notes</h2>
-<div class="outline-text-2" id="text-org7c1b16a">
+<div id="outline-container-org55dd90a" class="outline-2">
+<h2 id="org55dd90a">Release Notes</h2>
+<div class="outline-text-2" id="text-org55dd90a">
 </div>
-<div id="outline-container-org2910837" class="outline-3">
-<h3 id="org2910837">eos 0.0.3</h3>
-<div class="outline-text-3" id="text-org2910837">
+<div id="outline-container-org8c245b7" class="outline-3">
+<h3 id="org8c245b7">eos 0.0.3</h3>
+<div class="outline-text-3" id="text-org8c245b7">
 <ol class="org-ol">
 <li>fix cuda driver for tensorflow-gpu</li>
 <li>eos process ends elegantly</li>
@@ -127,13 +127,13 @@ add mongodb server option on the command line. Current interface example:
 </ol>
 </div>
 </div>
-<div id="outline-container-org5f26984" class="outline-3">
-<h3 id="org5f26984">current server list</h3>
-<div class="outline-text-3" id="text-org5f26984">
+<div id="outline-container-org364c6d0" class="outline-3">
+<h3 id="org364c6d0">current server list</h3>
+<div class="outline-text-3" id="text-org364c6d0">
 </div>
-<div id="outline-container-orgada182c" class="outline-4">
-<h4 id="orgada182c">remotecan servers</h4>
-<div class="outline-text-4" id="text-orgada182c">
+<div id="outline-container-orge73e9b7" class="outline-4">
+<h4 id="orge73e9b7">remotecan servers</h4>
+<div class="outline-text-4" id="text-orge73e9b7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -187,9 +187,9 @@ add mongodb server option on the command line. Current interface example:
 </div>
 </div>
 
-<div id="outline-container-org491dbb5" class="outline-4">
-<h4 id="org491dbb5">trip control servers</h4>
-<div class="outline-text-4" id="text-org491dbb5">
+<div id="outline-container-org8100846" class="outline-4">
+<h4 id="org8100846">trip control servers</h4>
+<div class="outline-text-4" id="text-org8100846">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -236,9 +236,9 @@ add mongodb server option on the command line. Current interface example:
 </div>
 </div>
 
-<div id="outline-container-org277d32c" class="outline-4">
-<h4 id="org277d32c">MongoDB servers:</h4>
-<div class="outline-text-4" id="text-org277d32c">
+<div id="outline-container-orgd2e6607" class="outline-4">
+<h4 id="orgd2e6607">MongoDB servers:</h4>
+<div class="outline-text-4" id="text-orgd2e6607">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -316,9 +316,9 @@ add mongodb server option on the command line. Current interface example:
 </div>
 </div>
 
-<div id="outline-container-org6814b6b" class="outline-3">
-<h3 id="org6814b6b">current vehicle list</h3>
-<div class="outline-text-3" id="text-org6814b6b">
+<div id="outline-container-org23a74d2" class="outline-3">
+<h3 id="org23a74d2">current vehicle list</h3>
+<div class="outline-text-3" id="text-org23a74d2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -435,9 +435,9 @@ add mongodb server option on the command line. Current interface example:
 </div>
 </div>
 
-<div id="outline-container-orgcf9f5cf" class="outline-3">
-<h3 id="orgcf9f5cf">current driver list</h3>
-<div class="outline-text-3" id="text-orgcf9f5cf">
+<div id="outline-container-org76a8ce0" class="outline-3">
+<h3 id="org76a8ce0">current driver list</h3>
+<div class="outline-text-3" id="text-org76a8ce0">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -522,56 +522,56 @@ add mongodb server option on the command line. Current interface example:
 
 
 
-<div id="outline-container-orgc408f55" class="outline-2">
-<h2 id="orgc408f55">Preamble</h2>
-<div class="outline-text-2" id="text-orgc408f55">
+<div id="outline-container-org90f6771" class="outline-2">
+<h2 id="org90f6771">Preamble</h2>
+<div class="outline-text-2" id="text-org90f6771">
 <p>
 This document serves as a README for VEOS ADP data interface. It covers the specification of data streams from receiving uploaded raw data streams, to pre-process the raw data to generate records, store records in a data pool, and finally to index and get minibatches for training purpose from the pool.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcbc33c1" class="outline-2">
-<h2 id="orgcbc33c1">Upload</h2>
-<div class="outline-text-2" id="text-orgcbc33c1">
+<div id="outline-container-org46540dc" class="outline-2">
+<h2 id="org46540dc">Upload</h2>
+<div class="outline-text-2" id="text-org46540dc">
 </div>
-<div id="outline-container-orgaf3c5dd" class="outline-3">
-<h3 id="orgaf3c5dd">Raw streams</h3>
-<div class="outline-text-3" id="text-orgaf3c5dd">
+<div id="outline-container-org589ec62" class="outline-3">
+<h3 id="org589ec62">Raw streams</h3>
+<div class="outline-text-3" id="text-org589ec62">
 <p>
 Raw streams are time series of raw observations (<i>timestamped</i> vehicle velocity, acceleration pedal opening, brake pedal opening, battery voltage, battery current) and actions (changed and flashed pedal map) applied on the vehicle.
 </p>
 </div>
 </div>
-<div id="outline-container-orgab71ce1" class="outline-3">
-<h3 id="orgab71ce1">Preprocessing</h3>
-<div class="outline-text-3" id="text-orgab71ce1">
+<div id="outline-container-org9bf4741" class="outline-3">
+<h3 id="org9bf4741">Preprocessing</h3>
+<div class="outline-text-3" id="text-org9bf4741">
 <p>
-Raw streams will be transformed into timestamped <a href="#org71f4dcf">Record</a> after preprocessing and stored in <a href="#orgb73e2bf">Pool</a>.
+Raw streams will be transformed into timestamped <a href="#orgbc63a9d">Record</a> after preprocessing and stored in <a href="#org8aae08b">Pool</a>.
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org71f4dcf" class="outline-2">
-<h2 id="org71f4dcf">Record</h2>
-<div class="outline-text-2" id="text-org71f4dcf">
+<div id="outline-container-orgbc63a9d" class="outline-2">
+<h2 id="orgbc63a9d">Record</h2>
+<div class="outline-text-2" id="text-orgbc63a9d">
 <ul class="org-ul">
 <li>Record is the uploading unit of remote-CAN module</li>
 </ul>
 </div>
-<div id="outline-container-orge15cb43" class="outline-3">
-<h3 id="orge15cb43">It's a timestamped <a href="#orge7ab6a9"><i>quadruple</i></a>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</h3>
-<div class="outline-text-3" id="text-orge15cb43">
+<div id="outline-container-org4223d7d" class="outline-3">
+<h3 id="org4223d7d">It's a timestamped <a href="#org2c668de"><i>quadruple</i></a>, which is a tuple of 4 elements \((s_t, a_t, r_t, s'_t)\) with a timestamp \(t\)</h3>
+<div class="outline-text-3" id="text-org4223d7d">
 <ul class="org-ul">
-<li>A record without timestamp is called a quadruple<a id="orge7ab6a9"></a></li>
-<li>The sequence of records consist of an <a href="#orgb591377"><i>episode</i></a></li>
+<li>A record without timestamp is called a quadruple<a id="org2c668de"></a></li>
+<li>The sequence of records consist of an <a href="#org3e7f575"><i>episode</i></a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd83f6ef" class="outline-3">
-<h3 id="orgd83f6ef">The structure of the record</h3>
-<div class="outline-text-3" id="text-orgd83f6ef">
+<div id="outline-container-org8749516" class="outline-3">
+<h3 id="org8749516">The structure of the record</h3>
+<div class="outline-text-3" id="text-org8749516">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> The timestamped quadruple</caption>
 
@@ -654,9 +654,9 @@ Raw streams will be transformed into timestamped <a href="#org71f4dcf">Record</a
 </tbody>
 </table>
 </div>
-<div id="outline-container-orgaded99d" class="outline-4">
-<h4 id="orgaded99d">\(s_t\)</h4>
-<div class="outline-text-4" id="text-orgaded99d">
+<div id="outline-container-orgcc0f123" class="outline-4">
+<h4 id="orgcc0f123">\(s_t\)</h4>
+<div class="outline-text-4" id="text-orgcc0f123">
 <p>
 state at timestamp \(t\)
 </p>
@@ -673,9 +673,9 @@ state at timestamp \(t\)
 </ul>
 </div>
 </div>
-<div id="outline-container-org95c7c63" class="outline-4">
-<h4 id="org95c7c63">\(s'_t\)</h4>
-<div class="outline-text-4" id="text-org95c7c63">
+<div id="outline-container-orgfa2a1ce" class="outline-4">
+<h4 id="orgfa2a1ce">\(s'_t\)</h4>
+<div class="outline-text-4" id="text-orgfa2a1ce">
 <p>
 the next state following \(s_t\)
 </p>
@@ -686,9 +686,9 @@ the next state following \(s_t\)
 </ul>
 </div>
 </div>
-<div id="outline-container-org96dd660" class="outline-4">
-<h4 id="org96dd660">\(a_t\)</h4>
-<div class="outline-text-4" id="text-org96dd660">
+<div id="outline-container-org959267a" class="outline-4">
+<h4 id="org959267a">\(a_t\)</h4>
+<div class="outline-text-4" id="text-org959267a">
 <p>
 action at timestamp \(t\)
 </p>
@@ -700,9 +700,9 @@ action at timestamp \(t\)
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaa92f92" class="outline-4">
-<h4 id="orgaa92f92">\(r_t\)</h4>
-<div class="outline-text-4" id="text-orgaa92f92">
+<div id="outline-container-org57c6aca" class="outline-4">
+<h4 id="org57c6aca">\(r_t\)</h4>
+<div class="outline-text-4" id="text-org57c6aca">
 <p>
 reward at timestamp \(t\)
 </p>
@@ -715,17 +715,17 @@ reward at timestamp \(t\)
 </div>
 </div>
 
-<div id="outline-container-orgb591377" class="outline-2">
-<h2 id="orgb591377">Episode</h2>
-<div class="outline-text-2" id="text-orgb591377">
+<div id="outline-container-org3e7f575" class="outline-2">
+<h2 id="org3e7f575">Episode</h2>
+<div class="outline-text-2" id="text-org3e7f575">
 <p>
-An episode is a consecutive sequence of <a href="#org71f4dcf">records</a> with a start and a termination state which typically represents a driving route/task or a test case and the vehicle operates on routinely.
+An episode is a consecutive sequence of <a href="#orgbc63a9d">records</a> with a start and a termination state which typically represents a driving route/task or a test case and the vehicle operates on routinely.
 </p>
 
 <ul class="org-ul">
 <li><b>Triple</b>: Since the sequence is consecutive, the next state \(s'_t\) is the next adjacent state \(s_{t+1}\) and thus not required in the tuple. Therefore one record is reduced to a triple.</li>
 <li><b>Null elements</b>: Care needs to be taken to insert null elements in the sequence in case of absent records.</li>
-<li><b>Ragged</b>: \(T\) is the total time steps of the episode. Episodes have different sequence length, since the termination of an episode could mean reaching the destination with different speeds or events. Therefore the <a href="#org818c078">episode pool</a> is ususally ragged.</li>
+<li><b>Ragged</b>: \(T\) is the total time steps of the episode. Episodes have different sequence length, since the termination of an episode could mean reaching the destination with different speeds or events. Therefore the <a href="#org10400f7">episode pool</a> is ususally ragged.</li>
 </ul>
 
 <p>
@@ -734,27 +734,27 @@ An episode is a consecutive sequence of <a href="#org71f4dcf">records</a> with a
 </div>
 </div>
 
-<div id="outline-container-orgb73e2bf" class="outline-2">
-<h2 id="orgb73e2bf">Pool</h2>
-<div class="outline-text-2" id="text-orgb73e2bf">
+<div id="outline-container-org8aae08b" class="outline-2">
+<h2 id="org8aae08b">Pool</h2>
+<div class="outline-text-2" id="text-org8aae08b">
 <p>
-The pool stores the experience history. It entails two kinds of forms: it stores either timestamped <a href="#org71f4dcf">records</a> which is called <i>record pool</i> or the whole sequence of records defined as <a href="#orgb591377">episodes</a> which is called <i>episode pool</i>.
+The pool stores the experience history. It entails two kinds of forms: it stores either timestamped <a href="#orgbc63a9d">records</a> which is called <i>record pool</i> or the whole sequence of records defined as <a href="#org3e7f575">episodes</a> which is called <i>episode pool</i>.
 </p>
 </div>
 
-<div id="outline-container-orgb6e2e35" class="outline-3">
-<h3 id="orgb6e2e35">Record pool<a id="orgea65fb7"></a></h3>
-<div class="outline-text-3" id="text-orgb6e2e35">
+<div id="outline-container-org4a50ac2" class="outline-3">
+<h3 id="org4a50ac2">Record pool<a id="orgbfcf8b0"></a></h3>
+<div class="outline-text-3" id="text-org4a50ac2">
 <p>
-The record pool is the aggregation of all the <a href="#org71f4dcf">records</a>, ordered by timestamps. It has a <i>record deposit interface</i> to deposit a record of <a href="#orge7ab6a9">quadruple</a> and a <i>record minibatch sample interface</i> to get a record minibatch of designated size randomly from the pool.
+The record pool is the aggregation of all the <a href="#orgbc63a9d">records</a>, ordered by timestamps. It has a <i>record deposit interface</i> to deposit a record of <a href="#org2c668de">quadruple</a> and a <i>record minibatch sample interface</i> to get a record minibatch of designated size randomly from the pool.
 </p>
 </div>
 
-<div id="outline-container-org62960ef" class="outline-4">
-<h4 id="org62960ef">Record deposit interface</h4>
-<div class="outline-text-4" id="text-org62960ef">
+<div id="outline-container-org5de3da0" class="outline-4">
+<h4 id="org5de3da0">Record deposit interface</h4>
+<div class="outline-text-4" id="text-org5de3da0">
 <p>
-The record deposit interface serves as the method to append a <a href="#org71f4dcf">record</a> in the pool. Please refer to the following Python code snippet.
+The record deposit interface serves as the method to append a <a href="#orgbc63a9d">record</a> in the pool. Please refer to the following Python code snippet.
 </p>
 
 <div class="org-src-container">
@@ -772,11 +772,11 @@ pool.deposit_record(
 </div>
 </div>
 
-<div id="outline-container-orge88afea" class="outline-4">
-<h4 id="orge88afea">Record minibatch sample interface</h4>
-<div class="outline-text-4" id="text-orge88afea">
+<div id="outline-container-org99bd78a" class="outline-4">
+<h4 id="org99bd78a">Record minibatch sample interface</h4>
+<div class="outline-text-4" id="text-org99bd78a">
 <p>
-A record minibatch<a id="org4f47302"></a> is a batch of <a href="#org71f4dcf">records</a> by random sampling the record pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
+A record minibatch<a id="org72d9aee"></a> is a batch of <a href="#orgbc63a9d">records</a> by random sampling the record pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
 </p>
 
 <div class="org-src-container">
@@ -792,19 +792,19 @@ A record minibatch<a id="org4f47302"></a> is a batch of <a href="#org71f4dcf">re
 </div>
 </div>
 
-<div id="outline-container-org16c1ff4" class="outline-3">
-<h3 id="org16c1ff4">Episode pool<a id="org818c078"></a></h3>
-<div class="outline-text-3" id="text-org16c1ff4">
+<div id="outline-container-orge86c5ad" class="outline-3">
+<h3 id="orge86c5ad">Episode pool<a id="org10400f7"></a></h3>
+<div class="outline-text-3" id="text-orge86c5ad">
 <p>
-The episode pool is the aggregation of all the <a href="#orgb591377">episodes</a>, ordered by timestamps of the episodes. It has an <i>episode deposit interface</i> to deposit an episode and an <i>episode minibatch sample interface</i> to get an episode minibatch of designated size randomly from the pool.
+The episode pool is the aggregation of all the <a href="#org3e7f575">episodes</a>, ordered by timestamps of the episodes. It has an <i>episode deposit interface</i> to deposit an episode and an <i>episode minibatch sample interface</i> to get an episode minibatch of designated size randomly from the pool.
 </p>
 </div>
 
-<div id="outline-container-org398832a" class="outline-4">
-<h4 id="org398832a">Episode deposit interface</h4>
-<div class="outline-text-4" id="text-org398832a">
+<div id="outline-container-org5eff073" class="outline-4">
+<h4 id="org5eff073">Episode deposit interface</h4>
+<div class="outline-text-4" id="text-org5eff073">
 <p>
-The episode deposit interface serves as the method to append a complete <a href="#orgb591377">episode</a> to the pool
+The episode deposit interface serves as the method to append a complete <a href="#org3e7f575">episode</a> to the pool
 </p>
 
 <div class="org-src-container">
@@ -816,11 +816,11 @@ pool.deposit_episode(e_T)
 </div>
 </div>
 
-<div id="outline-container-org69ab074" class="outline-4">
-<h4 id="org69ab074">Episode minibatch sample interface</h4>
-<div class="outline-text-4" id="text-org69ab074">
+<div id="outline-container-orga56c9b0" class="outline-4">
+<h4 id="orga56c9b0">Episode minibatch sample interface</h4>
+<div class="outline-text-4" id="text-orga56c9b0">
 <p>
-An episode minibatch<a id="orgf6b4761"></a> is a batch of <a href="#orgb591377">episodes</a> by random sampling the episode pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
+An episode minibatch<a id="org223d188"></a> is a batch of <a href="#org3e7f575">episodes</a> by random sampling the episode pool with designated batch size, see the following Python code snippet as an example for random sampling via <code class="src src-python">numpy.random.choice</code> API.
 </p>
 
 <div class="org-src-container">
@@ -837,9 +837,9 @@ An episode minibatch<a id="orgf6b4761"></a> is a batch of <a href="#orgb591377">
 </div>
 </div>
 
-<div id="outline-container-org5f0bd35" class="outline-2">
-<h2 id="org5f0bd35">Flashing</h2>
-<div class="outline-text-2" id="text-org5f0bd35">
+<div id="outline-container-orgda3e327" class="outline-2">
+<h2 id="orgda3e327">Flashing</h2>
+<div class="outline-text-2" id="text-orgda3e327">
 <p>
 The flashing interface will take pedal-torque map data to be flashed on VBU. The interface took a list of pedal-torque map, the starting row index and the row number to be flashed. It returns the status code of the flashing. In case of success, the status code is 0, see the following Python code snippet:
 </p>
@@ -873,11 +873,11 @@ The flashing interface will take pedal-torque map data to be flashed on VBU. The
 </div>
 </div>
 </div>
-<div id="outline-container-orgf901876" class="outline-2">
-<h2 id="orgf901876">Dataflow</h2>
-<div class="outline-text-2" id="text-orgf901876">
+<div id="outline-container-org25e70db" class="outline-2">
+<h2 id="org25e70db">Dataflow</h2>
+<div class="outline-text-2" id="text-org25e70db">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dataflow</label><pre class="src src-mermaid" id="orga2e2e34">graph BT
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dataflow</label><pre class="src src-mermaid" id="org25ff0f1">graph BT
   subgraph "vehicle (CAN)"
   VBU(VBU)--&gt;TBox(TBox)
   TBox--&gt;VBU
@@ -902,9 +902,9 @@ The flashing interface will take pedal-torque map data to be flashed on VBU. The
 
 
 
-<div id="outline-container-org5bac14c" class="outline-3">
-<h3 id="org5bac14c">Upload (Observe)</h3>
-<div class="outline-text-3" id="text-org5bac14c">
+<div id="outline-container-org28c0f4f" class="outline-3">
+<h3 id="org28c0f4f">Upload (Observe)</h3>
+<div class="outline-text-3" id="text-org28c0f4f">
 <ul class="org-ul">
 <li>the arrows with black link</li>
 <li>system state
@@ -928,18 +928,18 @@ The flashing interface will take pedal-torque map data to be flashed on VBU. The
 </div>
 
 
-<div id="outline-container-orgf0d7c0c" class="outline-3">
-<h3 id="orgf0d7c0c">Download (flash)</h3>
-<div class="outline-text-3" id="text-orgf0d7c0c">
+<div id="outline-container-org7609d35" class="outline-3">
+<h3 id="org7609d35">Download (flash)</h3>
+<div class="outline-text-3" id="text-org7609d35">
 <ul class="org-ul">
 <li>the arrow with red link</li>
 <li>VBU parameter/Pedal Map(PM)</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0330b66" class="outline-3">
-<h3 id="org0330b66">Communication Performance Index</h3>
-<div class="outline-text-3" id="text-org0330b66">
+<div id="outline-container-org7d5a89b" class="outline-3">
+<h3 id="org7d5a89b">Communication Performance Index</h3>
+<div class="outline-text-3" id="text-org7d5a89b">
 <ul class="org-ul">
 <li>bandwidth: expected/upper bound/lowerbound for both Intest &amp; Internal interface</li>
 <li>latency: expected/upper bound/lowerbound for both Intest &amp; Internal interface</li>

@@ -16,112 +16,112 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org699d9c6">Algorithm</a>
+<li><a href="#orgb0a4329">Algorithm</a>
 <ul>
-<li><a href="#org0f5c57d">fine grid search, hyperparameter improvement</a>
+<li><a href="#org04d70c0">fine grid search, hyperparameter improvement</a>
 <ul>
-<li><a href="#org33e1dc4">hyperparameter: layer number, hidden dimension, learning rate</a></li>
+<li><a href="#org6ef0d08">hyperparameter: layer number, hidden dimension, learning rate</a></li>
 </ul>
 </li>
-<li><a href="#orgd9199e9">inference logics</a></li>
-<li><a href="#orgeef3f16">masking logic (pytorch)</a></li>
-<li><a href="#orgc1fedd2">convergence</a>
+<li><a href="#org6ecdc79">inference logics</a></li>
+<li><a href="#orgfd6123f">masking logic (pytorch)</a></li>
+<li><a href="#org29db3b8">convergence</a>
 <ul>
-<li><a href="#org96519d0">WGAN</a></li>
-<li><a href="#org5a8d4cf">WGAN-GP (not trained)</a></li>
+<li><a href="#org8bcf8ba">WGAN</a></li>
+<li><a href="#org639c520">WGAN-GP (not trained)</a></li>
 </ul>
 </li>
-<li><a href="#orgde18d21">counter measure for limited samples (overfitting of discriminator!)</a>
+<li><a href="#orgc936d84">counter measure for limited samples (overfitting of discriminator!)</a>
 <ul>
-<li><a href="#org4e3d206">Training Generative Adversarial Networks with Limited Data [T Karras 2020]</a></li>
-<li><a href="#orgf481292">data augmentation: slice, segment, (leaking of augmentation distribution)</a></li>
+<li><a href="#org8ea15ab">Training Generative Adversarial Networks with Limited Data [T Karras 2020]</a></li>
+<li><a href="#org345722f">data augmentation: slice, segment, (leaking of augmentation distribution)</a></li>
 </ul>
 </li>
-<li><a href="#org2f89618">VQ-VAE</a></li>
-<li><a href="#orgc622259">Diffusion Model</a>
+<li><a href="#org3ae7358">VQ-VAE</a></li>
+<li><a href="#org8eb934c">Diffusion Model</a>
 <ul>
-<li><a href="#org543376d">set up toy example for coding</a></li>
-<li><a href="#org1c437f8">testing on real data in a controlled small range</a></li>
+<li><a href="#orgcb9a5c5">set up toy example for coding</a></li>
+<li><a href="#org73caac0">testing on real data in a controlled small range</a></li>
 </ul>
 </li>
-<li><a href="#orgc07e55e">training harness for model training and development</a></li>
+<li><a href="#org46d5d53">training harness for model training and development</a></li>
 </ul>
 </li>
-<li><a href="#org8b5bc7a">Data</a>
+<li><a href="#org70f6790">Data</a>
 <ul>
-<li><a href="#org7d5aed1">outlier highlighting</a>
+<li><a href="#orgf17547d">outlier highlighting</a>
 <ul>
-<li><a href="#org6b495f5">BLMP 2.0 outlier</a></li>
-<li><a href="#org2dbac69">Ascending, Descending</a></li>
-<li><a href="#org41cc4ec">high frequent signal （no high frequent signals after rescaling)</a></li>
+<li><a href="#orgc900805">BLMP 2.0 outlier</a></li>
+<li><a href="#org73ede14">Ascending, Descending</a></li>
+<li><a href="#org252216d">high frequent signal （no high frequent signals after rescaling)</a></li>
 </ul>
 </li>
-<li><a href="#org5dceeba">cluster interpretation （reverse finding）</a></li>
-<li><a href="#org60e707f">dataset update by production data from cloud</a></li>
-<li><a href="#org34184f7">need private repository to publish upgrade</a></li>
+<li><a href="#org8b13a7d">cluster interpretation （reverse finding）</a></li>
+<li><a href="#orgb5c5c3b">dataset update by production data from cloud</a></li>
+<li><a href="#orga3d7da1">need private repository to publish upgrade</a></li>
 </ul>
 </li>
-<li><a href="#org88d65fd">Cloud</a>
+<li><a href="#org1a2611a">Cloud</a>
 <ul>
-<li><a href="#orga0ce9e1">data cycle</a>
+<li><a href="#orge3ce602">data cycle</a>
 <ul>
-<li><a href="#orgd5378d3">traning: model, checkpoint, data</a></li>
-<li><a href="#org82de57f">inferring</a></li>
-<li><a href="#orgd1a82b0">message posting</a></li>
+<li><a href="#org9e5d997">traning: model, checkpoint, data</a></li>
+<li><a href="#org8504fea">inferring</a></li>
+<li><a href="#org5ae64c6">message posting</a></li>
 </ul>
 </li>
-<li><a href="#org79396e5">code cycle</a>
+<li><a href="#org3bdcb34">code cycle</a>
 <ul>
-<li><a href="#org4dd8d55">version control (gitlab)</a></li>
-<li><a href="#orgfcbcf49">package publishing</a></li>
-<li><a href="#org7fda839">3rd party package upgrade</a></li>
+<li><a href="#org1e6d099">version control (gitlab)</a></li>
+<li><a href="#org0b88040">package publishing</a></li>
+<li><a href="#orgee95db7">3rd party package upgrade</a></li>
 </ul>
 </li>
-<li><a href="#org6e0eba6">service</a>
+<li><a href="#org37b0dd7">service</a>
 <ul>
-<li><a href="#org68aec8d">running http server on the cloud through truss</a></li>
-<li><a href="#org448be3d">timer scheduling (cran job, etc.)</a></li>
+<li><a href="#org4ed9181">running http server on the cloud through truss</a></li>
+<li><a href="#orgacf5aab">timer scheduling (cran job, etc.)</a></li>
 </ul>
 </li>
-<li><a href="#orga6d671b">datastore</a>
+<li><a href="#org66eddc0">datastore</a>
 <ul>
-<li><a href="#orgd393064">csv files</a></li>
-<li><a href="#org57bb12c">database</a></li>
-<li><a href="#orgc4ad393">pystore (no database)</a></li>
+<li><a href="#orga0e173b">csv files</a></li>
+<li><a href="#org2c2ff69">database</a></li>
+<li><a href="#orgb84db7f">pystore (no database)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3e36871">Coding</a>
+<li><a href="#orge235a51">Coding</a>
 <ul>
-<li><a href="#orgb08e96b">code squeeze</a></li>
-<li><a href="#org9833d6d">debugging</a></li>
-<li><a href="#orgafd5a48">refactoring</a>
+<li><a href="#orga0ad756">code squeeze</a></li>
+<li><a href="#org5f8cb21">debugging</a></li>
+<li><a href="#orgc07261b">refactoring</a>
 <ul>
-<li><a href="#orgf92910b">checkpointing</a></li>
-<li><a href="#orgd99daa5">training resuming</a></li>
+<li><a href="#orge25fe09">checkpointing</a></li>
+<li><a href="#orgd7f3916">training resuming</a></li>
 </ul>
 </li>
-<li><a href="#orgeb031d0">packaging</a></li>
-<li><a href="#orgbafd6c8">profiling</a></li>
-<li><a href="#org3a856e3">DL fine-tuning harness</a></li>
+<li><a href="#orgc67da05">packaging</a></li>
+<li><a href="#orgdaba449">profiling</a></li>
+<li><a href="#org4ca990d">DL fine-tuning harness</a></li>
 </ul>
 </li>
-<li><a href="#orgf1fed09">Data and model review</a>
+<li><a href="#orgd0407de">Data and model review</a>
 <ul>
-<li><a href="#org88da27d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-12 Tue&gt;</span></span></a>
+<li><a href="#org03082c8"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-12 Tue&gt;</span></span></a>
 <ul>
-<li><a href="#org076f83d"><span class="todo TODO">TODO</span> 2.0 percentage outlier position&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
-<li><a href="#org0ff1a16"><span class="todo TODO">TODO</span> cluster outlier reverse mapping&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
-<li><a href="#org1575da3">new VIN data</a></li>
-<li><a href="#org46577b4">code alignment</a></li>
-<li><a href="#org2c715d7">use transformer</a></li>
-<li><a href="#org36bc882">use</a></li>
+<li><a href="#org792bdac"><span class="todo TODO">TODO</span> 2.0 percentage outlier position&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
+<li><a href="#org88b3727"><span class="todo TODO">TODO</span> cluster outlier reverse mapping&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
+<li><a href="#org9b0786c">new VIN data</a></li>
+<li><a href="#org06b6cce">code alignment</a></li>
+<li><a href="#org3873952">use transformer</a></li>
+<li><a href="#orgf8498f3">use</a></li>
 </ul>
 </li>
-<li><a href="#org0033dc7"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-16 Mon&gt;</span></span></a>
+<li><a href="#orgaa3d3a9"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-16 Mon&gt;</span></span></a>
 <ul>
-<li><a href="#org25c8993">温度</a></li>
+<li><a href="#orgc5fe20b">温度</a></li>
 </ul>
 </li>
 </ul>
@@ -136,258 +136,258 @@
 <a href="./20220406135530-devel_project.html">devel-project</a>
 </p>
 
-<div id="outline-container-org699d9c6" class="outline-2">
-<h2 id="org699d9c6">Algorithm</h2>
-<div class="outline-text-2" id="text-org699d9c6">
+<div id="outline-container-orgb0a4329" class="outline-2">
+<h2 id="orgb0a4329">Algorithm</h2>
+<div class="outline-text-2" id="text-orgb0a4329">
 </div>
-<div id="outline-container-org0f5c57d" class="outline-3">
-<h3 id="org0f5c57d">fine grid search, hyperparameter improvement</h3>
-<div class="outline-text-3" id="text-org0f5c57d">
+<div id="outline-container-org04d70c0" class="outline-3">
+<h3 id="org04d70c0">fine grid search, hyperparameter improvement</h3>
+<div class="outline-text-3" id="text-org04d70c0">
 </div>
-<div id="outline-container-org33e1dc4" class="outline-4">
-<h4 id="org33e1dc4">hyperparameter: layer number, hidden dimension, learning rate</h4>
-</div>
-</div>
-<div id="outline-container-orgd9199e9" class="outline-3">
-<h3 id="orgd9199e9">inference logics</h3>
-</div>
-<div id="outline-container-orgeef3f16" class="outline-3">
-<h3 id="orgeef3f16">masking logic (pytorch)</h3>
-</div>
-<div id="outline-container-orgc1fedd2" class="outline-3">
-<h3 id="orgc1fedd2">convergence</h3>
-<div class="outline-text-3" id="text-orgc1fedd2">
-</div>
-<div id="outline-container-org96519d0" class="outline-4">
-<h4 id="org96519d0">WGAN</h4>
-</div>
-<div id="outline-container-org5a8d4cf" class="outline-4">
-<h4 id="org5a8d4cf">WGAN-GP (not trained)</h4>
+<div id="outline-container-org6ef0d08" class="outline-4">
+<h4 id="org6ef0d08">hyperparameter: layer number, hidden dimension, learning rate</h4>
 </div>
 </div>
-<div id="outline-container-orgde18d21" class="outline-3">
-<h3 id="orgde18d21">counter measure for limited samples (overfitting of discriminator!)</h3>
-<div class="outline-text-3" id="text-orgde18d21">
+<div id="outline-container-org6ecdc79" class="outline-3">
+<h3 id="org6ecdc79">inference logics</h3>
 </div>
-<div id="outline-container-org4e3d206" class="outline-4">
-<h4 id="org4e3d206">Training Generative Adversarial Networks with Limited Data [T Karras 2020]</h4>
+<div id="outline-container-orgfd6123f" class="outline-3">
+<h3 id="orgfd6123f">masking logic (pytorch)</h3>
 </div>
-<div id="outline-container-orgf481292" class="outline-4">
-<h4 id="orgf481292">data augmentation: slice, segment, (leaking of augmentation distribution)</h4>
+<div id="outline-container-org29db3b8" class="outline-3">
+<h3 id="org29db3b8">convergence</h3>
+<div class="outline-text-3" id="text-org29db3b8">
 </div>
+<div id="outline-container-org8bcf8ba" class="outline-4">
+<h4 id="org8bcf8ba">WGAN</h4>
 </div>
-<div id="outline-container-org2f89618" class="outline-3">
-<h3 id="org2f89618">VQ-VAE</h3>
-</div>
-<div id="outline-container-orgc622259" class="outline-3">
-<h3 id="orgc622259">Diffusion Model</h3>
-<div class="outline-text-3" id="text-orgc622259">
-</div>
-<div id="outline-container-org543376d" class="outline-4">
-<h4 id="org543376d">set up toy example for coding</h4>
-</div>
-<div id="outline-container-org1c437f8" class="outline-4">
-<h4 id="org1c437f8">testing on real data in a controlled small range</h4>
+<div id="outline-container-org639c520" class="outline-4">
+<h4 id="org639c520">WGAN-GP (not trained)</h4>
 </div>
 </div>
-<div id="outline-container-orgc07e55e" class="outline-3">
-<h3 id="orgc07e55e">training harness for model training and development</h3>
+<div id="outline-container-orgc936d84" class="outline-3">
+<h3 id="orgc936d84">counter measure for limited samples (overfitting of discriminator!)</h3>
+<div class="outline-text-3" id="text-orgc936d84">
+</div>
+<div id="outline-container-org8ea15ab" class="outline-4">
+<h4 id="org8ea15ab">Training Generative Adversarial Networks with Limited Data [T Karras 2020]</h4>
+</div>
+<div id="outline-container-org345722f" class="outline-4">
+<h4 id="org345722f">data augmentation: slice, segment, (leaking of augmentation distribution)</h4>
 </div>
 </div>
-
-<div id="outline-container-org8b5bc7a" class="outline-2">
-<h2 id="org8b5bc7a">Data</h2>
-<div class="outline-text-2" id="text-org8b5bc7a">
+<div id="outline-container-org3ae7358" class="outline-3">
+<h3 id="org3ae7358">VQ-VAE</h3>
 </div>
-<div id="outline-container-org7d5aed1" class="outline-3">
-<h3 id="org7d5aed1">outlier highlighting</h3>
-<div class="outline-text-3" id="text-org7d5aed1">
+<div id="outline-container-org8eb934c" class="outline-3">
+<h3 id="org8eb934c">Diffusion Model</h3>
+<div class="outline-text-3" id="text-org8eb934c">
 </div>
-<div id="outline-container-org6b495f5" class="outline-4">
-<h4 id="org6b495f5">BLMP 2.0 outlier</h4>
-<div class="outline-text-4" id="text-org6b495f5">
+<div id="outline-container-orgcb9a5c5" class="outline-4">
+<h4 id="orgcb9a5c5">set up toy example for coding</h4>
 </div>
-<ul class="org-ul">
-<li><a id="orga68025f"></a>charging signals of in question battery (found)<br /></li>
-</ul>
-</div>
-<div id="outline-container-org2dbac69" class="outline-4">
-<h4 id="org2dbac69">Ascending, Descending</h4>
-</div>
-<div id="outline-container-org41cc4ec" class="outline-4">
-<h4 id="org41cc4ec">high frequent signal （no high frequent signals after rescaling)</h4>
+<div id="outline-container-org73caac0" class="outline-4">
+<h4 id="org73caac0">testing on real data in a controlled small range</h4>
 </div>
 </div>
-<div id="outline-container-org5dceeba" class="outline-3">
-<h3 id="org5dceeba">cluster interpretation （reverse finding）</h3>
-</div>
-<div id="outline-container-org60e707f" class="outline-3">
-<h3 id="org60e707f">dataset update by production data from cloud</h3>
-</div>
-<div id="outline-container-org34184f7" class="outline-3">
-<h3 id="org34184f7">need private repository to publish upgrade</h3>
-</div>
-</div>
-<div id="outline-container-org88d65fd" class="outline-2">
-<h2 id="org88d65fd">Cloud</h2>
-<div class="outline-text-2" id="text-org88d65fd">
-</div>
-<div id="outline-container-orga0ce9e1" class="outline-3">
-<h3 id="orga0ce9e1">data cycle</h3>
-<div class="outline-text-3" id="text-orga0ce9e1">
-</div>
-<div id="outline-container-orgd5378d3" class="outline-4">
-<h4 id="orgd5378d3">traning: model, checkpoint, data</h4>
-</div>
-<div id="outline-container-org82de57f" class="outline-4">
-<h4 id="org82de57f">inferring</h4>
-</div>
-<div id="outline-container-orgd1a82b0" class="outline-4">
-<h4 id="orgd1a82b0">message posting</h4>
-</div>
-</div>
-<div id="outline-container-org79396e5" class="outline-3">
-<h3 id="org79396e5">code cycle</h3>
-<div class="outline-text-3" id="text-org79396e5">
-</div>
-<div id="outline-container-org4dd8d55" class="outline-4">
-<h4 id="org4dd8d55">version control (gitlab)</h4>
-</div>
-<div id="outline-container-orgfcbcf49" class="outline-4">
-<h4 id="orgfcbcf49">package publishing</h4>
-</div>
-<div id="outline-container-org7fda839" class="outline-4">
-<h4 id="org7fda839">3rd party package upgrade</h4>
-</div>
-</div>
-<div id="outline-container-org6e0eba6" class="outline-3">
-<h3 id="org6e0eba6">service</h3>
-<div class="outline-text-3" id="text-org6e0eba6">
-</div>
-<div id="outline-container-org68aec8d" class="outline-4">
-<h4 id="org68aec8d">running http server on the cloud through truss</h4>
-</div>
-<div id="outline-container-org448be3d" class="outline-4">
-<h4 id="org448be3d">timer scheduling (cran job, etc.)</h4>
-</div>
-</div>
-<div id="outline-container-orga6d671b" class="outline-3">
-<h3 id="orga6d671b">datastore</h3>
-<div class="outline-text-3" id="text-orga6d671b">
-</div>
-<div id="outline-container-orgd393064" class="outline-4">
-<h4 id="orgd393064">csv files</h4>
-</div>
-<div id="outline-container-org57bb12c" class="outline-4">
-<h4 id="org57bb12c">database</h4>
-</div>
-<div id="outline-container-orgc4ad393" class="outline-4">
-<h4 id="orgc4ad393">pystore (no database)</h4>
-</div>
-</div>
-</div>
-<div id="outline-container-org3e36871" class="outline-2">
-<h2 id="org3e36871">Coding</h2>
-<div class="outline-text-2" id="text-org3e36871">
-</div>
-<div id="outline-container-orgb08e96b" class="outline-3">
-<h3 id="orgb08e96b">code squeeze</h3>
-</div>
-<div id="outline-container-org9833d6d" class="outline-3">
-<h3 id="org9833d6d">debugging</h3>
-</div>
-<div id="outline-container-orgafd5a48" class="outline-3">
-<h3 id="orgafd5a48">refactoring</h3>
-<div class="outline-text-3" id="text-orgafd5a48">
-</div>
-<div id="outline-container-orgf92910b" class="outline-4">
-<h4 id="orgf92910b">checkpointing</h4>
-</div>
-<div id="outline-container-orgd99daa5" class="outline-4">
-<h4 id="orgd99daa5">training resuming</h4>
-</div>
-</div>
-<div id="outline-container-orgeb031d0" class="outline-3">
-<h3 id="orgeb031d0">packaging</h3>
-</div>
-<div id="outline-container-orgbafd6c8" class="outline-3">
-<h3 id="orgbafd6c8">profiling</h3>
-</div>
-<div id="outline-container-org3a856e3" class="outline-3">
-<h3 id="org3a856e3">DL fine-tuning harness</h3>
+<div id="outline-container-org46d5d53" class="outline-3">
+<h3 id="org46d5d53">training harness for model training and development</h3>
 </div>
 </div>
 
-<div id="outline-container-orgf1fed09" class="outline-2">
-<h2 id="orgf1fed09">Data and model review</h2>
-<div class="outline-text-2" id="text-orgf1fed09">
+<div id="outline-container-org70f6790" class="outline-2">
+<h2 id="org70f6790">Data</h2>
+<div class="outline-text-2" id="text-org70f6790">
 </div>
-<div id="outline-container-org88da27d" class="outline-3">
-<h3 id="org88da27d"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-12 Tue&gt;</span></span></h3>
-<div class="outline-text-3" id="text-org88da27d">
+<div id="outline-container-orgf17547d" class="outline-3">
+<h3 id="orgf17547d">outlier highlighting</h3>
+<div class="outline-text-3" id="text-orgf17547d">
 </div>
-<div id="outline-container-org076f83d" class="outline-4">
-<h4 id="org076f83d"><span class="todo TODO">TODO</span> 2.0 percentage outlier position&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h4>
-<div class="outline-text-4" id="text-org076f83d">
+<div id="outline-container-orgc900805" class="outline-4">
+<h4 id="orgc900805">BLMP 2.0 outlier</h4>
+<div class="outline-text-4" id="text-orgc900805">
 </div>
 <ul class="org-ul">
-<li><a id="org8022976"></a>observation<br />
+<li><a id="org15da64d"></a>charging signals of in question battery (found)<br /></li>
+</ul>
+</div>
+<div id="outline-container-org73ede14" class="outline-4">
+<h4 id="org73ede14">Ascending, Descending</h4>
+</div>
+<div id="outline-container-org252216d" class="outline-4">
+<h4 id="org252216d">high frequent signal （no high frequent signals after rescaling)</h4>
+</div>
+</div>
+<div id="outline-container-org8b13a7d" class="outline-3">
+<h3 id="org8b13a7d">cluster interpretation （reverse finding）</h3>
+</div>
+<div id="outline-container-orgb5c5c3b" class="outline-3">
+<h3 id="orgb5c5c3b">dataset update by production data from cloud</h3>
+</div>
+<div id="outline-container-orga3d7da1" class="outline-3">
+<h3 id="orga3d7da1">need private repository to publish upgrade</h3>
+</div>
+</div>
+<div id="outline-container-org1a2611a" class="outline-2">
+<h2 id="org1a2611a">Cloud</h2>
+<div class="outline-text-2" id="text-org1a2611a">
+</div>
+<div id="outline-container-orge3ce602" class="outline-3">
+<h3 id="orge3ce602">data cycle</h3>
+<div class="outline-text-3" id="text-orge3ce602">
+</div>
+<div id="outline-container-org9e5d997" class="outline-4">
+<h4 id="org9e5d997">traning: model, checkpoint, data</h4>
+</div>
+<div id="outline-container-org8504fea" class="outline-4">
+<h4 id="org8504fea">inferring</h4>
+</div>
+<div id="outline-container-org5ae64c6" class="outline-4">
+<h4 id="org5ae64c6">message posting</h4>
+</div>
+</div>
+<div id="outline-container-org3bdcb34" class="outline-3">
+<h3 id="org3bdcb34">code cycle</h3>
+<div class="outline-text-3" id="text-org3bdcb34">
+</div>
+<div id="outline-container-org1e6d099" class="outline-4">
+<h4 id="org1e6d099">version control (gitlab)</h4>
+</div>
+<div id="outline-container-org0b88040" class="outline-4">
+<h4 id="org0b88040">package publishing</h4>
+</div>
+<div id="outline-container-orgee95db7" class="outline-4">
+<h4 id="orgee95db7">3rd party package upgrade</h4>
+</div>
+</div>
+<div id="outline-container-org37b0dd7" class="outline-3">
+<h3 id="org37b0dd7">service</h3>
+<div class="outline-text-3" id="text-org37b0dd7">
+</div>
+<div id="outline-container-org4ed9181" class="outline-4">
+<h4 id="org4ed9181">running http server on the cloud through truss</h4>
+</div>
+<div id="outline-container-orgacf5aab" class="outline-4">
+<h4 id="orgacf5aab">timer scheduling (cran job, etc.)</h4>
+</div>
+</div>
+<div id="outline-container-org66eddc0" class="outline-3">
+<h3 id="org66eddc0">datastore</h3>
+<div class="outline-text-3" id="text-org66eddc0">
+</div>
+<div id="outline-container-orga0e173b" class="outline-4">
+<h4 id="orga0e173b">csv files</h4>
+</div>
+<div id="outline-container-org2c2ff69" class="outline-4">
+<h4 id="org2c2ff69">database</h4>
+</div>
+<div id="outline-container-orgb84db7f" class="outline-4">
+<h4 id="orgb84db7f">pystore (no database)</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orge235a51" class="outline-2">
+<h2 id="orge235a51">Coding</h2>
+<div class="outline-text-2" id="text-orge235a51">
+</div>
+<div id="outline-container-orga0ad756" class="outline-3">
+<h3 id="orga0ad756">code squeeze</h3>
+</div>
+<div id="outline-container-org5f8cb21" class="outline-3">
+<h3 id="org5f8cb21">debugging</h3>
+</div>
+<div id="outline-container-orgc07261b" class="outline-3">
+<h3 id="orgc07261b">refactoring</h3>
+<div class="outline-text-3" id="text-orgc07261b">
+</div>
+<div id="outline-container-orge25fe09" class="outline-4">
+<h4 id="orge25fe09">checkpointing</h4>
+</div>
+<div id="outline-container-orgd7f3916" class="outline-4">
+<h4 id="orgd7f3916">training resuming</h4>
+</div>
+</div>
+<div id="outline-container-orgc67da05" class="outline-3">
+<h3 id="orgc67da05">packaging</h3>
+</div>
+<div id="outline-container-orgdaba449" class="outline-3">
+<h3 id="orgdaba449">profiling</h3>
+</div>
+<div id="outline-container-org4ca990d" class="outline-3">
+<h3 id="org4ca990d">DL fine-tuning harness</h3>
+</div>
+</div>
+
+<div id="outline-container-orgd0407de" class="outline-2">
+<h2 id="orgd0407de">Data and model review</h2>
+<div class="outline-text-2" id="text-orgd0407de">
+</div>
+<div id="outline-container-org03082c8" class="outline-3">
+<h3 id="org03082c8"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-04-12 Tue&gt;</span></span></h3>
+<div class="outline-text-3" id="text-org03082c8">
+</div>
+<div id="outline-container-org792bdac" class="outline-4">
+<h4 id="org792bdac"><span class="todo TODO">TODO</span> 2.0 percentage outlier position&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h4>
+<div class="outline-text-4" id="text-org792bdac">
+</div>
 <ul class="org-ul">
-<li><a id="orgc4d738e"></a>VIN: 8349:20 &#x2013;&gt; 20,21<br /></li>
-<li><a id="org83e00c5"></a>TimeGAN not converged yet, but embedding can be used for clustering<br /></li>
-<li><a id="org47b474c"></a>feature:<br />
+<li><a id="org1ebc797"></a>observation<br />
 <ul class="org-ul">
-<li><a id="orgdf2d848"></a>battery pack avergage diff<br /></li>
-<li><a id="org3efbb0f"></a>can: 全天 相邻 traveltime， 中断 20min,1hour,&lt;60mA，静息电压；<br /></li>
-<li><a id="org9e3eb42"></a>一个电池包的差分,任意时刻<br /></li>
+<li><a id="orge41a8ba"></a>VIN: 8349:20 &#x2013;&gt; 20,21<br /></li>
+<li><a id="orgde4762b"></a>TimeGAN not converged yet, but embedding can be used for clustering<br /></li>
+<li><a id="org3f7fbfb"></a>feature:<br />
+<ul class="org-ul">
+<li><a id="org6ce4d6b"></a>battery pack avergage diff<br /></li>
+<li><a id="orgacadab9"></a>can: 全天 相邻 traveltime， 中断 20min,1hour,&lt;60mA，静息电压；<br /></li>
+<li><a id="org1634ac7"></a>一个电池包的差分,任意时刻<br /></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a id="org9a6dc24"></a>unsafe label?<br /></li>
-<li><a id="org2b18211"></a>meaning?<br />
+<li><a id="org7a88139"></a>unsafe label?<br /></li>
+<li><a id="orgc7e6b69"></a>meaning?<br />
 <ul class="org-ul">
-<li><a id="orgf5fd66b"></a>0, &#x2013;&gt; -1,-2,-3; 1st order difference: 一阶差分，极化变化率<br /></li>
+<li><a id="org63ecb8d"></a>0, &#x2013;&gt; -1,-2,-3; 1st order difference: 一阶差分，极化变化率<br /></li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="outline-container-org0ff1a16" class="outline-4">
-<h4 id="org0ff1a16"><span class="todo TODO">TODO</span> cluster outlier reverse mapping&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h4>
-<div class="outline-text-4" id="text-org0ff1a16">
+<div id="outline-container-org88b3727" class="outline-4">
+<h4 id="org88b3727"><span class="todo TODO">TODO</span> cluster outlier reverse mapping&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h4>
+<div class="outline-text-4" id="text-org88b3727">
 </div>
 </div>
-<div id="outline-container-org1575da3" class="outline-4">
-<h4 id="org1575da3">new VIN data</h4>
+<div id="outline-container-org9b0786c" class="outline-4">
+<h4 id="org9b0786c">new VIN data</h4>
 </div>
-<div id="outline-container-org46577b4" class="outline-4">
-<h4 id="org46577b4">code alignment</h4>
-<div class="outline-text-4" id="text-org46577b4">
+<div id="outline-container-org06b6cce" class="outline-4">
+<h4 id="org06b6cce">code alignment</h4>
+<div class="outline-text-4" id="text-org06b6cce">
 </div>
 <ul class="org-ul">
-<li><a id="org842ae72"></a>aligning pytorch codebase with tensorflow (with stock data and hyperparameter, ie short sequence length)<br /></li>
-<li><a id="orgb13bce2"></a>retrain battery charging timeseries with aligned hyperparameter, short seq. length, without mode collapse<br /></li>
-<li><a id="org82ac987"></a>increase sequence length (long training) to improve timeseries resolution<br /></li>
+<li><a id="org1afd44c"></a>aligning pytorch codebase with tensorflow (with stock data and hyperparameter, ie short sequence length)<br /></li>
+<li><a id="org5be5b74"></a>retrain battery charging timeseries with aligned hyperparameter, short seq. length, without mode collapse<br /></li>
+<li><a id="org9c055d8"></a>increase sequence length (long training) to improve timeseries resolution<br /></li>
 </ul>
 </div>
-<div id="outline-container-org2c715d7" class="outline-4">
-<h4 id="org2c715d7">use transformer</h4>
+<div id="outline-container-org3873952" class="outline-4">
+<h4 id="org3873952">use transformer</h4>
 </div>
-<div id="outline-container-org36bc882" class="outline-4">
-<h4 id="org36bc882">use</h4>
+<div id="outline-container-orgf8498f3" class="outline-4">
+<h4 id="orgf8498f3">use</h4>
 </div>
 </div>
-<div id="outline-container-org0033dc7" class="outline-3">
-<h3 id="org0033dc7"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-16 Mon&gt;</span></span></h3>
-<div class="outline-text-3" id="text-org0033dc7">
+<div id="outline-container-orgaa3d3a9" class="outline-3">
+<h3 id="orgaa3d3a9"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-16 Mon&gt;</span></span></h3>
+<div class="outline-text-3" id="text-orgaa3d3a9">
 </div>
-<div id="outline-container-org25c8993" class="outline-4">
-<h4 id="org25c8993">温度</h4>
-<div class="outline-text-4" id="text-org25c8993">
+<div id="outline-container-orgc5fe20b" class="outline-4">
+<h4 id="orgc5fe20b">温度</h4>
+<div class="outline-text-4" id="text-orgc5fe20b">
 </div>
 <ul class="org-ul">
-<li><a id="orge1cadd8"></a>容量，阻抗和自放电<br /></li>
-<li><a id="orgfb106ed"></a>基线：静息温度，<br /></li>
+<li><a id="orgca4be6e"></a>容量，阻抗和自放电<br /></li>
+<li><a id="orgff67a9d"></a>基线：静息温度，<br /></li>
 </ul>
 </div>
 </div>
