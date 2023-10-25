@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>deep learning hardware</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">deep learning hardware</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6c353b4">Refenreces</a></li>
+<li><a href="#orgb8e96b3">ChipLego</a>
+<ul>
+<li><a href="#orgb2f3ab7">Goals</a>
+<ul>
+<li><a href="#org3cd9db8">assessment of the design</a></li>
+<li><a href="#orga82c77b">application for future &amp; current AI project</a></li>
+</ul>
+</li>
+<li><a href="#org03c3654">proposal</a>
+<ul>
+<li><a href="#orgc93e12f">Model zoo TIMM</a></li>
+<li><a href="#org0612963">Steps:</a></li>
+<li><a href="#org857ac4e">specs</a></li>
+<li><a href="#orgca5c8cb">design</a></li>
+<li><a href="#org27b5225">NAS?</a></li>
+<li><a href="#org9f48e1f">Generative models (Stable Diffusion model)</a></li>
+<li><a href="#orge8d40a7">NERF</a></li>
+<li><a href="#orga1ef842">Very strong prior knowledge/model (query the AGI)</a></li>
+<li><a href="#org0b92dae">High level inference with query of LLM and get the proposed high level control proprosals like Saycan</a></li>
+<li><a href="#org8a9eea7">RegNet</a></li>
+<li><a href="#orgf0a7125">ViT?</a></li>
+<li><a href="#orgee185e9">what is now?</a></li>
+<li><a href="#org12875bb">what is in the future?</a></li>
+<li><a href="#orgd2c8943">emphasis on SW 2.0</a></li>
+</ul>
+</li>
+<li><a href="#orgafc6593">HW &amp; SW Co-Design</a>
+<ul>
+<li><a href="#org3e73cab">HW lottery!</a></li>
+<li><a href="#org98d6760">algorithm</a></li>
+<li><a href="#org0215403">training</a></li>
+<li><a href="#org1e02ed2">inference</a></li>
+<li><a href="#orge02c808">sparsity</a></li>
+<li><a href="#org5f520c0">microarchitecture</a></li>
+<li><a href="#orgd10d74e">speedup</a></li>
+<li><a href="#orgb6a6154">energy efficiency</a></li>
+<li><a href="#orge390a35">throughput</a></li>
+<li><a href="#org2f72ceb">parallelization</a></li>
+<li><a href="#org737a70b">precision3</a></li>
+<li><a href="#orgfc183b5">Federated Learning?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org16f5cb1">Evaluation</a>
+<ul>
+<li><a href="#org9390dda">Xilinx board</a></li>
+<li><a href="#orga071d00">BSP package Linux</a></li>
+<li><a href="#orgdeb6d77">remote debugging</a></li>
+</ul>
+</li>
+<li><a href="#org7aee038">Chiplego</a>
+<ul>
+<li><a href="#orgff82e73">Jonas</a>
+<ul>
+<li><a href="#org00fa3de">AI 相关软件，</a></li>
+<li><a href="#org506b3dd">NPU 相关</a></li>
+<li><a href="#org7497b9b">工具链底层 firmware</a></li>
+<li><a href="#orgce3dba1">reference design</a></li>
+</ul>
+</li>
+<li><a href="#orge5bd127">William:黄虎城</a>
+<ul>
+<li><a href="#org82ed308">middle 相关，非 AI specific</a></li>
+</ul>
+</li>
+<li><a href="#org7b8b56c">John Leng:冷强</a>
+<ul>
+<li><a href="#orgea088f0">所有软件交付</a></li>
+<li><a href="#org333478c">BSP， linux, qnx</a></li>
+<li><a href="#orgc39a87a">集成</a></li>
+<li><a href="#org344c39e">stream pipeline 304，工具链</a></li>
+</ul>
+</li>
+<li><a href="#org20fa8ed">邹昊</a>
+<ul>
+<li><a href="#org961f4b5">PM, support william</a></li>
+</ul>
+</li>
+<li><a href="#org22d5e5b">Glenn:</a>
+<ul>
+<li><a href="#org696d2a8">ADAS，</a></li>
+<li><a href="#org8b0670d">pipeline 工具，debug，</a></li>
+</ul>
+</li>
+<li><a href="#orgeee581d">适合何种应用？</a>
+<ul>
+<li><a href="#org324096e">toy project</a></li>
+<li><a href="#org7fd3e1e">NPU 为中心！</a></li>
+<li><a href="#orge1bef7b">目前的应用？</a></li>
+<li><a href="#org83596c7">Linux/QNX:</a></li>
+<li><a href="#org703020e">未来导向？</a></li>
+</ul>
+</li>
+<li><a href="#orgb1091d4">何种选择?什么后果?</a></li>
+<li><a href="#org671d929">计划：</a>
+<ul>
+<li><a href="#org47d019f">NPU+AI 介绍（下周五）</a></li>
+<li><a href="#org085f75a">工具链介绍</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd6d18cb">Assessment</a>
+<ul>
+<li><a href="#org378fd91">Hardware</a></li>
+<li><a href="#org09c8308">Software, Toolchain</a></li>
+<li><a href="#org49b6c2e">FAE Handson</a>
+<ul>
+<li><a href="#org7b1dfbb">strongly dependent on Xilinx toolchain</a></li>
+<li><a href="#org6db271a">not catching up with updates not support v2.5, only v2.0</a></li>
+</ul>
+</li>
+<li><a href="#orga73fc88">Features very old architecture</a>
+<ul>
+<li><a href="#orgf73409d">not supporting transformer</a></li>
+<li><a href="#orgc4f38e4">far behind research</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6c353b4" class="outline-2">
+<h2 id="org6c353b4">Refenreces</h2>
+<div class="outline-text-2" id="text-org6c353b4">
+<p>
+<a href="https://geohot.github.io/blog/jekyll/update/2021/06/13/a-breakdown-of-ai-chip-companies.html">https://geohot.github.io/blog/jekyll/update/2021/06/13/a-breakdown-of-ai-chip-companies.html</a>
+</p>
+
+<p>
+Sparsity <a href="https://www.youtube.com/watch?v=0PAiQ1jTN5k">https://www.youtube.com/watch?v=0PAiQ1jTN5k</a>
+</p>
+
+<p>
+Adi Fuchs for Accelerators <a href="https://www.youtube.com/watch?v=VQoyypYTz2U&amp;t=1791s">https://www.youtube.com/watch?v=VQoyypYTz2U&amp;t=1791s</a>
+</p>
+
+<p>
+cerebras <a href="https://www.youtube.com/watch?v=LiJaHflemKU">https://www.youtube.com/watch?v=LiJaHflemKU</a> <a href="https://www.youtube.com/watch?v=xnMmd2zZ3RM">https://www.youtube.com/watch?v=xnMmd2zZ3RM</a>
+</p>
+
+<p>
+Song Han <a href="http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture16.pdf">http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture16.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb8e96b3" class="outline-2">
+<h2 id="orgb8e96b3">ChipLego</h2>
+<div class="outline-text-2" id="text-orgb8e96b3">
+</div>
+<div id="outline-container-orgb2f3ab7" class="outline-3">
+<h3 id="orgb2f3ab7">Goals</h3>
+<div class="outline-text-3" id="text-orgb2f3ab7">
+</div>
+<div id="outline-container-org3cd9db8" class="outline-4">
+<h4 id="org3cd9db8">assessment of the design</h4>
+</div>
+<div id="outline-container-orga82c77b" class="outline-4">
+<h4 id="orga82c77b">application for future &amp; current AI project</h4>
+</div>
+</div>
+<div id="outline-container-org03c3654" class="outline-3">
+<h3 id="org03c3654">proposal</h3>
+<div class="outline-text-3" id="text-org03c3654">
+</div>
+<div id="outline-container-orgc93e12f" class="outline-4">
+<h4 id="orgc93e12f">Model zoo TIMM</h4>
+<div class="outline-text-4" id="text-orgc93e12f">
+</div>
+<ul class="org-ul">
+<li><a id="org54bf1d8"></a>different types of computer, big &#x2013;&gt; small<br /></li>
+<li><a id="orgaf7c6b1"></a>Vision model as encoder<br />
+<ul class="org-ul">
+<li><a id="org43f30ba"></a>ViT-pytorch (lucidrain)<br /></li>
+<li><a id="orgea35f92"></a>BEiT<br /></li>
+<li><a id="orgc74c32d"></a>RegNet<br /></li>
+<li><a id="org18a00a0"></a>ConvNext<br /></li>
+<li><a id="orgce81db2"></a>FocalNet<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org0612963" class="outline-4">
+<h4 id="org0612963">Steps:</h4>
+<div class="outline-text-4" id="text-org0612963">
+</div>
+<ul class="org-ul">
+<li><a id="org4dcb8f3"></a>evaluate accessible model<br /></li>
+<li><a id="orgb7f0112"></a>add layers and upscale inputs to test<br /></li>
+<li><a id="orgec2b3f2"></a>like AlexNet to adapt big models to HW<br /></li>
+</ul>
+</div>
+<div id="outline-container-org857ac4e" class="outline-4">
+<h4 id="org857ac4e">specs</h4>
+</div>
+<div id="outline-container-orgca5c8cb" class="outline-4">
+<h4 id="orgca5c8cb">design</h4>
+</div>
+<div id="outline-container-org27b5225" class="outline-4">
+<h4 id="org27b5225">NAS?</h4>
+</div>
+<div id="outline-container-org9f48e1f" class="outline-4">
+<h4 id="org9f48e1f">Generative models (Stable Diffusion model)</h4>
+<div class="outline-text-4" id="text-org9f48e1f">
+</div>
+<ul class="org-ul">
+<li><a id="org9408d8e"></a>finetuning for driving world (transfer learning)<br /></li>
+<li><a id="orgd91e342"></a>finetuning road and traffic related embedding<br /></li>
+<li><a id="org1141585"></a>image2image to create inpainting for occlusion issues<br /></li>
+<li><a id="orge0a340b"></a>for style transfer (get de-weathering, from 2d to 3d)<br /></li>
+<li><a id="org750198a"></a>downscaled to improve inference, realtime training to improve the depth estimation<br /></li>
+</ul>
+</div>
+<div id="outline-container-orge8d40a7" class="outline-4">
+<h4 id="orge8d40a7">NERF</h4>
+<div class="outline-text-4" id="text-orge8d40a7">
+</div>
+<ul class="org-ul">
+<li><a id="orgdf2ba72"></a>Large Road Model with NERF layer<br />
+<ul class="org-ul">
+<li><a id="org766109c"></a>waymo must be eyeing on this<br /></li>
+<li><a id="orgb967782"></a>compress the large nerf model to be loaded on the edge<br /></li>
+</ul>
+</li>
+<li><a id="org7455a9e"></a>query the large model as prior<br /></li>
+</ul>
+</div>
+<div id="outline-container-orga1ef842" class="outline-4">
+<h4 id="orga1ef842">Very strong prior knowledge/model (query the AGI)</h4>
+</div>
+<div id="outline-container-org0b92dae" class="outline-4">
+<h4 id="org0b92dae">High level inference with query of LLM and get the proposed high level control proprosals like Saycan</h4>
+</div>
+<div id="outline-container-org8a9eea7" class="outline-4">
+<h4 id="org8a9eea7">RegNet</h4>
+</div>
+<div id="outline-container-orgf0a7125" class="outline-4">
+<h4 id="orgf0a7125">ViT?</h4>
+</div>
+<div id="outline-container-orgee185e9" class="outline-4">
+<h4 id="orgee185e9">what is now?</h4>
+</div>
+<div id="outline-container-org12875bb" class="outline-4">
+<h4 id="org12875bb">what is in the future?</h4>
+</div>
+<div id="outline-container-orgd2c8943" class="outline-4">
+<h4 id="orgd2c8943">emphasis on SW 2.0</h4>
+<div class="outline-text-4" id="text-orgd2c8943">
+</div>
+<ul class="org-ul">
+<li><a id="org38a2f8a"></a>Any DNN model is a SW computer (turing complete), how it can be accommodated in the chip<br /></li>
+<li><a id="org0651f54"></a>LLM inference<br />
+<div class="outline-text-5" id="text-org0651f54">
+<p>
+<a href="./20221111125428-newrizon_proposals_for_chiplego.html">Newrizon Proposal</a>
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgafc6593" class="outline-3">
+<h3 id="orgafc6593">HW &amp; SW Co-Design</h3>
+<div class="outline-text-3" id="text-orgafc6593">
+</div>
+<div id="outline-container-org3e73cab" class="outline-4">
+<h4 id="org3e73cab">HW lottery!</h4>
+</div>
+<div id="outline-container-org98d6760" class="outline-4">
+<h4 id="org98d6760">algorithm</h4>
+<div class="outline-text-4" id="text-org98d6760">
+</div>
+<ul class="org-ul">
+<li><a id="org6adc633"></a>pruning?<br /></li>
+<li><a id="org3295025"></a>weight sharing?<br /></li>
+<li><a id="org695c34f"></a>quantization?<br /></li>
+<li><a id="orgc46f9c9"></a>low rank approximation?<br /></li>
+<li><a id="orgc50d6fd"></a>winograd transformation?<br /></li>
+</ul>
+</div>
+<div id="outline-container-org0215403" class="outline-4">
+<h4 id="org0215403">training</h4>
+</div>
+<div id="outline-container-org1e02ed2" class="outline-4">
+<h4 id="org1e02ed2">inference</h4>
+</div>
+<div id="outline-container-orge02c808" class="outline-4">
+<h4 id="orge02c808">sparsity</h4>
+</div>
+<div id="outline-container-org5f520c0" class="outline-4">
+<h4 id="org5f520c0">microarchitecture</h4>
+</div>
+<div id="outline-container-orgd10d74e" class="outline-4">
+<h4 id="orgd10d74e">speedup</h4>
+</div>
+<div id="outline-container-orgb6a6154" class="outline-4">
+<h4 id="orgb6a6154">energy efficiency</h4>
+</div>
+<div id="outline-container-orge390a35" class="outline-4">
+<h4 id="orge390a35">throughput</h4>
+</div>
+<div id="outline-container-org2f72ceb" class="outline-4">
+<h4 id="org2f72ceb">parallelization</h4>
+<div class="outline-text-4" id="text-org2f72ceb">
+</div>
+<ul class="org-ul">
+<li><a id="orgebdb7e7"></a>data<br /></li>
+<li><a id="org59cd0ce"></a>parameter<br /></li>
+<li><a id="org3277f6a"></a>model<br /></li>
+</ul>
+</div>
+<div id="outline-container-org737a70b" class="outline-4">
+<h4 id="org737a70b">precision3</h4>
+<div class="outline-text-4" id="text-org737a70b">
+</div>
+<ul class="org-ul">
+<li><a id="org4637d26"></a>mixed<br /></li>
+<li><a id="org29e65b9"></a>b-float16<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgfc183b5" class="outline-4">
+<h4 id="orgfc183b5">Federated Learning?</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org16f5cb1" class="outline-2">
+<h2 id="org16f5cb1">Evaluation</h2>
+<div class="outline-text-2" id="text-org16f5cb1">
+</div>
+<div id="outline-container-org9390dda" class="outline-3">
+<h3 id="org9390dda">Xilinx board</h3>
+</div>
+<div id="outline-container-orga071d00" class="outline-3">
+<h3 id="orga071d00">BSP package Linux</h3>
+</div>
+<div id="outline-container-orgdeb6d77" class="outline-3">
+<h3 id="orgdeb6d77">remote debugging</h3>
+</div>
+</div>
+<div id="outline-container-org7aee038" class="outline-2">
+<h2 id="org7aee038">Chiplego</h2>
+<div class="outline-text-2" id="text-org7aee038">
+</div>
+<div id="outline-container-orgff82e73" class="outline-3">
+<h3 id="orgff82e73">Jonas</h3>
+<div class="outline-text-3" id="text-orgff82e73">
+</div>
+<div id="outline-container-org00fa3de" class="outline-4">
+<h4 id="org00fa3de">AI 相关软件，</h4>
+</div>
+<div id="outline-container-org506b3dd" class="outline-4">
+<h4 id="org506b3dd">NPU 相关</h4>
+</div>
+<div id="outline-container-org7497b9b" class="outline-4">
+<h4 id="org7497b9b">工具链底层 firmware</h4>
+</div>
+<div id="outline-container-orgce3dba1" class="outline-4">
+<h4 id="orgce3dba1">reference design</h4>
+</div>
+</div>
+<div id="outline-container-orge5bd127" class="outline-3">
+<h3 id="orge5bd127">William:黄虎城</h3>
+<div class="outline-text-3" id="text-orge5bd127">
+</div>
+<div id="outline-container-org82ed308" class="outline-4">
+<h4 id="org82ed308">middle 相关，非 AI specific</h4>
+</div>
+</div>
+<div id="outline-container-org7b8b56c" class="outline-3">
+<h3 id="org7b8b56c">John Leng:冷强</h3>
+<div class="outline-text-3" id="text-org7b8b56c">
+</div>
+<div id="outline-container-orgea088f0" class="outline-4">
+<h4 id="orgea088f0">所有软件交付</h4>
+</div>
+<div id="outline-container-org333478c" class="outline-4">
+<h4 id="org333478c">BSP， linux, qnx</h4>
+</div>
+<div id="outline-container-orgc39a87a" class="outline-4">
+<h4 id="orgc39a87a">集成</h4>
+</div>
+<div id="outline-container-org344c39e" class="outline-4">
+<h4 id="org344c39e">stream pipeline 304，工具链</h4>
+</div>
+</div>
+<div id="outline-container-org20fa8ed" class="outline-3">
+<h3 id="org20fa8ed">邹昊</h3>
+<div class="outline-text-3" id="text-org20fa8ed">
+</div>
+<div id="outline-container-org961f4b5" class="outline-4">
+<h4 id="org961f4b5">PM, support william</h4>
+</div>
+</div>
+<div id="outline-container-org22d5e5b" class="outline-3">
+<h3 id="org22d5e5b">Glenn:</h3>
+<div class="outline-text-3" id="text-org22d5e5b">
+</div>
+<div id="outline-container-org696d2a8" class="outline-4">
+<h4 id="org696d2a8">ADAS，</h4>
+</div>
+<div id="outline-container-org8b0670d" class="outline-4">
+<h4 id="org8b0670d">pipeline 工具，debug，</h4>
+</div>
+</div>
+<div id="outline-container-orgeee581d" class="outline-3">
+<h3 id="orgeee581d">适合何种应用？</h3>
+<div class="outline-text-3" id="text-orgeee581d">
+</div>
+<div id="outline-container-org324096e" class="outline-4">
+<h4 id="org324096e">toy project</h4>
+<div class="outline-text-4" id="text-org324096e">
+</div>
+<ul class="org-ul">
+<li><a id="orgff44d01"></a>便于剪裁<br /></li>
+<li><a id="orgaf98c84"></a>丰富的架构<br />
+<ul class="org-ul">
+<li><a id="orga7a93c5"></a>编解码 VAE<br /></li>
+<li><a id="org3599495"></a>convolution<br /></li>
+<li><a id="orgec2142b"></a>Transformer ViT?<br /></li>
+</ul>
+</li>
+<li><a id="org29f1737"></a>深度学习计算，视频处理<br /></li>
+</ul>
+</div>
+<div id="outline-container-org7fd3e1e" class="outline-4">
+<h4 id="org7fd3e1e">NPU 为中心！</h4>
+</div>
+<div id="outline-container-orge1bef7b" class="outline-4">
+<h4 id="orge1bef7b">目前的应用？</h4>
+</div>
+<div id="outline-container-org83596c7" class="outline-4">
+<h4 id="org83596c7">Linux/QNX:</h4>
+<div class="outline-text-4" id="text-org83596c7">
+</div>
+<ul class="org-ul">
+<li><a id="org589d6a9"></a>middleware 及以上保持相同<br /></li>
+</ul>
+</div>
+<div id="outline-container-org703020e" class="outline-4">
+<h4 id="org703020e">未来导向？</h4>
+</div>
+</div>
+<div id="outline-container-orgb1091d4" class="outline-3">
+<h3 id="orgb1091d4">何种选择?什么后果?</h3>
+</div>
+<div id="outline-container-org671d929" class="outline-3">
+<h3 id="org671d929">计划：</h3>
+<div class="outline-text-3" id="text-org671d929">
+</div>
+<div id="outline-container-org47d019f" class="outline-4">
+<h4 id="org47d019f">NPU+AI 介绍（下周五）</h4>
+<div class="outline-text-4" id="text-org47d019f">
+</div>
+</div>
+<div id="outline-container-org085f75a" class="outline-4">
+<h4 id="org085f75a">工具链介绍</h4>
+<div class="outline-text-4" id="text-org085f75a">
+<p>
+<a href="./20221027095918-chiplego_demo_intro.html">ChipLego Demo Intro</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6d18cb" class="outline-2">
+<h2 id="orgd6d18cb">Assessment</h2>
+<div class="outline-text-2" id="text-orgd6d18cb">
+</div>
+<div id="outline-container-org378fd91" class="outline-3">
+<h3 id="org378fd91">Hardware</h3>
+</div>
+<div id="outline-container-org09c8308" class="outline-3">
+<h3 id="org09c8308">Software, Toolchain</h3>
+</div>
+<div id="outline-container-org49b6c2e" class="outline-3">
+<h3 id="org49b6c2e">FAE Handson</h3>
+<div class="outline-text-3" id="text-org49b6c2e">
+</div>
+<div id="outline-container-org7b1dfbb" class="outline-4">
+<h4 id="org7b1dfbb">strongly dependent on Xilinx toolchain</h4>
+</div>
+<div id="outline-container-org6db271a" class="outline-4">
+<h4 id="org6db271a">not catching up with updates not support v2.5, only v2.0</h4>
+</div>
+</div>
+<div id="outline-container-orga73fc88" class="outline-3">
+<h3 id="orga73fc88">Features very old architecture</h3>
+<div class="outline-text-3" id="text-orga73fc88">
+</div>
+<div id="outline-container-orgf73409d" class="outline-4">
+<h4 id="orgf73409d">not supporting transformer</h4>
+</div>
+<div id="outline-container-orgc4f38e4" class="outline-4">
+<h4 id="orgc4f38e4">far behind research</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

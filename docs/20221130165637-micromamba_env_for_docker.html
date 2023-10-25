@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>micromamba_env_for_docker</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">micromamba<sub>env</sub><sub>for</sub><sub>docker</sub></h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga71c1b8">install micromamba</a></li>
+<li><a href="#org6cee1ff">create ueos env with ueos-env.yaml</a>
+<ul>
+<li><a href="#orgda72938">export micromamba env ueos to requirements-freeze.txt</a></li>
+</ul>
+</li>
+<li><a href="#org3fcc987">create eos package with poetry</a>
+<ul>
+<li><a href="#org810a34e">poetry update with pyproject.toml</a></li>
+</ul>
+</li>
+<li><a href="#orgfb3c14e">modify poetry pyproject.toml with manual version check</a></li>
+<li><a href="#org6ceb04a">build eos package with updated poetry virtual environment</a></li>
+<li><a href="#orgfb4e8cc">create micromamba env ueos from ueos-env.yaml</a>
+<ul>
+<li><a href="#org0d241e1">update ueos-env.yaml with local eos package</a></li>
+</ul>
+</li>
+<li><a href="#orgdc9a7cf">test local micromamba env ueos</a></li>
+<li><a href="#orgb0ea82d">export from ueos-env ueos-env-lock.txt file</a></li>
+<li><a href="#org36cbeea">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</a></li>
+<li><a href="#orge14eea5">export freeze format requirements,</a></li>
+<li><a href="#org7161d2f">export conda env ueos to frozen txt</a></li>
+<li><a href="#org505c79e">docker micromamba install frozen ueos-env</a></li>
+<li><a href="#org222e696">pip intall extra package not in conda-forge</a></li>
+<li><a href="#orgdb689b6">pip install -e . with pyproject.toml with depleted dependencies</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga71c1b8" class="outline-2">
+<h2 id="orga71c1b8">install micromamba</h2>
+</div>
+<div id="outline-container-org6cee1ff" class="outline-2">
+<h2 id="org6cee1ff">create ueos env with ueos-env.yaml</h2>
+<div class="outline-text-2" id="text-org6cee1ff">
+<p>
+micromamba create -f ueos-env.yaml
+micromamba install pip
+</p>
+</div>
+<div id="outline-container-orgda72938" class="outline-3">
+<h3 id="orgda72938">export micromamba env ueos to requirements-freeze.txt</h3>
+<div class="outline-text-3" id="text-orgda72938">
+<p>
+pip list &#x2013;format=freeze &gt; requirements.txt
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3fcc987" class="outline-2">
+<h2 id="org3fcc987">create eos package with poetry</h2>
+<div class="outline-text-2" id="text-org3fcc987">
+<p>
+pyenv local eos
+</p>
+</div>
+<div id="outline-container-org810a34e" class="outline-3">
+<h3 id="org810a34e">poetry update with pyproject.toml</h3>
+<div class="outline-text-3" id="text-org810a34e">
+<p>
+poetry update
+poetry lock
+poetry build
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfb3c14e" class="outline-2">
+<h2 id="orgfb3c14e">modify poetry pyproject.toml with manual version check</h2>
+<div class="outline-text-2" id="text-orgfb3c14e">
+<p>
+poetry add $(cat requirements.txt)
+</p>
+</div>
+</div>
+<div id="outline-container-org6ceb04a" class="outline-2">
+<h2 id="org6ceb04a">build eos package with updated poetry virtual environment</h2>
+<div class="outline-text-2" id="text-org6ceb04a">
+<p>
+poetry lock
+poetry build
+</p>
+</div>
+</div>
+<div id="outline-container-orgfb4e8cc" class="outline-2">
+<h2 id="orgfb4e8cc">create micromamba env ueos from ueos-env.yaml</h2>
+<div class="outline-text-2" id="text-orgfb4e8cc">
+</div>
+<div id="outline-container-org0d241e1" class="outline-3">
+<h3 id="org0d241e1">update ueos-env.yaml with local eos package</h3>
+<div class="outline-text-3" id="text-org0d241e1">
+<p>
+./dist/eos-0.0.3-py3-none-any.whl
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdc9a7cf" class="outline-2">
+<h2 id="orgdc9a7cf">test local micromamba env ueos</h2>
+<div class="outline-text-2" id="text-orgdc9a7cf">
+<p>
+micromamba create -f ueos-env.yaml
+</p>
+</div>
+</div>
+<div id="outline-container-orgb0ea82d" class="outline-2">
+<h2 id="orgb0ea82d">export from ueos-env ueos-env-lock.txt file</h2>
+<div class="outline-text-2" id="text-orgb0ea82d">
+<p>
+conda list &#x2013;explicit &#x2013;md5 &gt; ueos-env-lock.txt
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org36cbeea" class="outline-2">
+<h2 id="org36cbeea">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</h2>
+<div class="outline-text-2" id="text-org36cbeea">
+<p>
+pip list &#x2013;format=freeze &gt; requirements.txt
+</p>
+</div>
+</div>
+<div id="outline-container-orge14eea5" class="outline-2">
+<h2 id="orge14eea5">export freeze format requirements,</h2>
+</div>
+<div id="outline-container-org7161d2f" class="outline-2">
+<h2 id="org7161d2f">export conda env ueos to frozen txt</h2>
+<div class="outline-text-2" id="text-org7161d2f">
+<p>
+conda list &#x2013;explicit &#x2013;md5 &gt; ueos-env-lock.txt
+</p>
+</div>
+</div>
+<div id="outline-container-org505c79e" class="outline-2">
+<h2 id="org505c79e">docker micromamba install frozen ueos-env</h2>
+</div>
+<div id="outline-container-org222e696" class="outline-2">
+<h2 id="org222e696">pip intall extra package not in conda-forge</h2>
+<div class="outline-text-2" id="text-org222e696">
+<p>
+rocketmq
+cutelog
+pyqt5
+poetry2conda
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb689b6" class="outline-2">
+<h2 id="orgdb689b6">pip install -e . with pyproject.toml with depleted dependencies</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>

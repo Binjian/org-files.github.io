@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>virutal-logistic-hub</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">virutal-logistic-hub</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org29bcc19">Graph representation</a>
+<ul>
+<li><a href="#org99e0996">rich semantic of nodes and edges</a>
+<ul>
+<li><a href="#orgabbe648">nodes: vehicles; clients</a></li>
+<li><a href="#org81a39e7">edges:</a></li>
+<li><a href="#org9d9ebea">parcel transaction induces local neighborhood changes</a></li>
+<li><a href="#orgc106f58">network evolves over time</a></li>
+<li><a href="#orge0e7e59">node level (graphlet feature vector, local agent-client connection)</a></li>
+</ul>
+</li>
+<li><a href="#org6c75ac7">bipartite graph</a></li>
+<li><a href="#orgdfd5f44">alignment of two separation graphs</a></li>
+<li><a href="#org3964bfe">business goals</a>
+<ul>
+<li><a href="#orgd74309e">optimization of client satisfaction</a></li>
+<li><a href="#orgdcefb28">engery savings of fleets</a></li>
+<li><a href="#org053a40b">optimal utilization of fleets</a></li>
+<li><a href="#orgac06ce7">vehicle dispatching response</a></li>
+<li><a href="#orgb8c04bf">optimal operation of the whole network</a></li>
+</ul>
+</li>
+<li><a href="#org3a4fa58">solution (prediction)</a>
+<ul>
+<li><a href="#org79ba860">node-level</a></li>
+<li><a href="#org2e85909">link-level</a></li>
+<li><a href="#orga1a4aab">graph-level</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org29bcc19" class="outline-2">
+<h2 id="org29bcc19">Graph representation</h2>
+<div class="outline-text-2" id="text-org29bcc19">
+</div>
+<div id="outline-container-org99e0996" class="outline-3">
+<h3 id="org99e0996">rich semantic of nodes and edges</h3>
+<div class="outline-text-3" id="text-org99e0996">
+</div>
+<div id="outline-container-orgabbe648" class="outline-4">
+<h4 id="orgabbe648">nodes: vehicles; clients</h4>
+<div class="outline-text-4" id="text-orgabbe648">
+</div>
+<ul class="org-ul">
+<li><a id="org2b281e5"></a>attributes: coordinates, loading, capacity,<br /></li>
+</ul>
+</div>
+<div id="outline-container-org81a39e7" class="outline-4">
+<h4 id="org81a39e7">edges:</h4>
+<div class="outline-text-4" id="text-org81a39e7">
+</div>
+<ul class="org-ul">
+<li><a id="org6cb1678"></a>tasks (connecting vehicles and clients), multiple<br /></li>
+<li><a id="orgf8ea32b"></a>connectivity<br />
+<ul class="org-ul">
+<li><a id="org7a34a79"></a>road network<br /></li>
+<li><a id="org4ea7cb3"></a>realtime traffic<br /></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org9d9ebea" class="outline-4">
+<h4 id="org9d9ebea">parcel transaction induces local neighborhood changes</h4>
+</div>
+<div id="outline-container-orgc106f58" class="outline-4">
+<h4 id="orgc106f58">network evolves over time</h4>
+</div>
+<div id="outline-container-orge0e7e59" class="outline-4">
+<h4 id="orge0e7e59">node level (graphlet feature vector, local agent-client connection)</h4>
+</div>
+</div>
+<div id="outline-container-org6c75ac7" class="outline-3">
+<h3 id="org6c75ac7">bipartite graph</h3>
+</div>
+<div id="outline-container-orgdfd5f44" class="outline-3">
+<h3 id="orgdfd5f44">alignment of two separation graphs</h3>
+</div>
+<div id="outline-container-org3964bfe" class="outline-3">
+<h3 id="org3964bfe">business goals</h3>
+<div class="outline-text-3" id="text-org3964bfe">
+</div>
+<div id="outline-container-orgd74309e" class="outline-4">
+<h4 id="orgd74309e">optimization of client satisfaction</h4>
+</div>
+<div id="outline-container-orgdcefb28" class="outline-4">
+<h4 id="orgdcefb28">engery savings of fleets</h4>
+</div>
+<div id="outline-container-org053a40b" class="outline-4">
+<h4 id="org053a40b">optimal utilization of fleets</h4>
+</div>
+<div id="outline-container-orgac06ce7" class="outline-4">
+<h4 id="orgac06ce7">vehicle dispatching response</h4>
+</div>
+<div id="outline-container-orgb8c04bf" class="outline-4">
+<h4 id="orgb8c04bf">optimal operation of the whole network</h4>
+</div>
+</div>
+<div id="outline-container-org3a4fa58" class="outline-3">
+<h3 id="org3a4fa58">solution (prediction)</h3>
+<div class="outline-text-3" id="text-org3a4fa58">
+</div>
+<div id="outline-container-org79ba860" class="outline-4">
+<h4 id="org79ba860">node-level</h4>
+</div>
+<div id="outline-container-org2e85909" class="outline-4">
+<h4 id="org2e85909">link-level</h4>
+</div>
+<div id="outline-container-orga1a4aab" class="outline-4">
+<h4 id="orga1a4aab">graph-level</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.7)</p>
+</div>
+</body>
+</html>
