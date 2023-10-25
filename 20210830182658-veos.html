@@ -16,107 +16,107 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb67dc76">method</a></li>
-<li><a href="#org4dbf406">meditation</a>
+<li><a href="#org44fc76d">method</a></li>
+<li><a href="#org3e29a82">meditation</a>
 <ul>
-<li><a href="#org0a6baa4"><b><b>world class application: need careful design and plan; drl need manual curriculum; achieve solid progress;</b></b></a></li>
-<li><a href="#org03d99da">energy saving result is determined by scenarios: cruise has no space for saving!</a></li>
-<li><a href="#org40e2b4a">action space: too big already to consider other than pedal map: 5 rows is 85 continuous float; more than this will not converge!</a></li>
-<li><a href="#org841e252">road environment is complex, add action space will make approximation, optimization and model more complex!</a></li>
-<li><a href="#org70810f0">sample efficiency is import since road test is expensive, time, cost!</a></li>
-<li><a href="#orgb6d929d">e2e is indispensable: think about detecting edges for mnist classification</a></li>
-<li><a href="#orgd553344">LEARNING/TRAINING &#x2013;&gt; INFERRING</a></li>
-<li><a href="#org3ee740b">Project Funes</a></li>
-<li><a href="#org445dcf2">continuous learning (avanlanche: an end-to-end library for conticual learning)</a></li>
-<li><a href="#org68d7a6b">differentiable attention ( diffrentiable search index )</a></li>
-<li><a href="#org24d3772">Hierachical DRL : LLM integration to alleviate the Long Horizon issue, exploration issue, represetnation issue (conce)</a>
+<li><a href="#orgfebb957"><b><b>world class application: need careful design and plan; drl need manual curriculum; achieve solid progress;</b></b></a></li>
+<li><a href="#org67d3232">energy saving result is determined by scenarios: cruise has no space for saving!</a></li>
+<li><a href="#org894c69f">action space: too big already to consider other than pedal map: 5 rows is 85 continuous float; more than this will not converge!</a></li>
+<li><a href="#org8c5e0bc">road environment is complex, add action space will make approximation, optimization and model more complex!</a></li>
+<li><a href="#orgf5b98ea">sample efficiency is import since road test is expensive, time, cost!</a></li>
+<li><a href="#orge02cea3">e2e is indispensable: think about detecting edges for mnist classification</a></li>
+<li><a href="#org6f0e477">LEARNING/TRAINING &#x2013;&gt; INFERRING</a></li>
+<li><a href="#org8cf1da5">Project Funes</a></li>
+<li><a href="#org94f04f8">continuous learning (avanlanche: an end-to-end library for conticual learning)</a></li>
+<li><a href="#org617fba8">differentiable attention ( diffrentiable search index )</a></li>
+<li><a href="#org4cf3844">Hierachical DRL : LLM integration to alleviate the Long Horizon issue, exploration issue, represetnation issue (conce)</a>
 <ul>
-<li><a href="#org8839f34">[long sequential decision] Goal filtering: SayCan (value function, long horizon sequential decision, affordance, grounding)</a></li>
-<li><a href="#orgce27864">[exploration] Goal generation in sparse rewarding environment: Natural Language for exploration</a></li>
+<li><a href="#org3eadd54">[long sequential decision] Goal filtering: SayCan (value function, long horizon sequential decision, affordance, grounding)</a></li>
+<li><a href="#org72f8f55">[exploration] Goal generation in sparse rewarding environment: Natural Language for exploration</a></li>
 </ul>
 </li>
-<li><a href="#org83053de">VQ-VAE 1&amp;2</a></li>
-<li><a href="#org8bd5d00">CycleGAN</a></li>
-<li><a href="#org36e6e95">Graph NN</a></li>
-<li><a href="#org3d63253">Causal Inference</a></li>
+<li><a href="#orgff3375d">VQ-VAE 1&amp;2</a></li>
+<li><a href="#org0902756">CycleGAN</a></li>
+<li><a href="#org6b7e94a">Graph NN</a></li>
+<li><a href="#org96fda22">Causal Inference</a></li>
 </ul>
 </li>
-<li><a href="#orgb0861a0">road test</a>
+<li><a href="#org888efe8">road test</a>
 <ul>
-<li><a href="#org60b8929">freeze model, pure inference</a>
+<li><a href="#org6bddd0f">freeze model, pure inference</a>
 <ul>
-<li><a href="#org5afe90f">meager overlapping of training and inferring</a></li>
+<li><a href="#org0cd104d">meager overlapping of training and inferring</a></li>
 </ul>
 </li>
-<li><a href="#org3bef2ab">learning with pseudo episode (fixed time length)</a>
+<li><a href="#orga91c158">learning with pseudo episode (fixed time length)</a>
 <ul>
-<li><a href="#org0d1a697">no episode guarantee, might not converge</a></li>
+<li><a href="#org632452e">no episode guarantee, might not converge</a></li>
 </ul>
 </li>
-<li><a href="#org48034f0">real episode, stepwise expand test range</a>
+<li><a href="#org00e65ee">real episode, stepwise expand test range</a>
 <ul>
-<li><a href="#orgf436de6">exponential complexity with extending range</a></li>
-<li><a href="#orgfc19eb0">unpredictable events, interrupts change the scenarios</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org674ce2a">solution</a>
-<ul>
-<li><a href="#org7467da5">memory: rnn encoding; neural turing machine reinforcement learning</a></li>
-<li><a href="#org9540dba">model based</a>
-<ul>
-<li><a href="#org8feca35">GAN</a></li>
-<li><a href="#org7dd23e9">Stochastic Value Gradient SVG(0) SVG(1)</a></li>
-</ul>
-</li>
-<li><a href="#org1f3b0ee">offline reinforcement learning</a></li>
-<li><a href="#org1a9208c">simulation (metadrive/pgdrive), transfer learning</a></li>
-</ul>
-</li>
-<li><a href="#org362eaa8">Current Achievement:</a>
-<ul>
-<li><a href="#org47a11e9">Get definite convergence on short episode with DRL (on policy, off policy)</a>
-<ul>
-<li><a href="#org9a1270e">Achieves definitely better performance than human drivers for the small episode</a></li>
-<li><a href="#org0822f6d">validated on different drivers/ driving style</a></li>
-<li><a href="#org0709c71">model free: not explicitly using and domain knowledge</a></li>
-<li><a href="#org79081cb">Get the most performanc margin for defined episodes and decision space</a></li>
-</ul>
-</li>
-<li><a href="#org1e3b4ba">Setup campus and road test system and method</a></li>
-<li><a href="#org3527c8e">Construct methodes for esitmation of problem complexity for simple episode and complex episode</a></li>
-<li><a href="#orgf73d7f5">Solid performance evaluation by data collection and analysis</a></li>
-</ul>
-</li>
-<li><a href="#org210a749">Key Observation MDP</a>
-<ul>
-<li><a href="#org9a0bfa1">Type I system, human performance in energy saving strategy is a low-dimensional manifold in the decision space. Thus it can be reached.</a></li>
-<li><a href="#org9e708e8">World-Class Challenges</a></li>
-<li><a href="#org4d0b3d6">major factors for energy consumpution is power</a>
-<ul>
-<li><a href="#orgbc33c53">action space</a></li>
-<li><a href="#org89999ba">system dynamics （world): road</a></li>
-<li><a href="#org28a00ae">ways of energy saving:</a></li>
-<li><a href="#org9f66a03">Issue:</a></li>
+<li><a href="#org62ddaaa">exponential complexity with extending range</a></li>
+<li><a href="#orgd6e60a3">unpredictable events, interrupts change the scenarios</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge5801a5">Industry</a>
+<li><a href="#org5d73a71">solution</a>
 <ul>
-<li><a href="#org20acd90">scale up, resources, AI scaling up, huge potential!</a></li>
-<li><a href="#org17694fe">Research oriented Product/Engineering</a>
+<li><a href="#orgd636508">memory: rnn encoding; neural turing machine reinforcement learning</a></li>
+<li><a href="#orgcc5d52e">model based</a>
 <ul>
-<li><a href="#org4b2f788">AI is the key, should be the dominating factor to reconsider the system architecture, infrastructure, cutting-edges, cannot manage, business case, planning</a></li>
-<li><a href="#org6a42fed">technologoy oriented</a></li>
+<li><a href="#org927a092">GAN</a></li>
+<li><a href="#orgbb506e4">Stochastic Value Gradient SVG(0) SVG(1)</a></li>
 </ul>
 </li>
-<li><a href="#org5c59a74">Flexibility</a>
+<li><a href="#orgfdf0bf4">offline reinforcement learning</a></li>
+<li><a href="#org8d7944f">simulation (metadrive/pgdrive), transfer learning</a></li>
+</ul>
+</li>
+<li><a href="#org65d7af6">Current Achievement:</a>
 <ul>
-<li><a href="#orgb9bb6be">no management oriented</a></li>
-<li><a href="#orgdc36a3a">time bugdet</a></li>
-<li><a href="#orge511ff4">for learning, self-management</a></li>
+<li><a href="#orgdf07720">Get definite convergence on short episode with DRL (on policy, off policy)</a>
+<ul>
+<li><a href="#orge03f631">Achieves definitely better performance than human drivers for the small episode</a></li>
+<li><a href="#org646f956">validated on different drivers/ driving style</a></li>
+<li><a href="#org6de8271">model free: not explicitly using and domain knowledge</a></li>
+<li><a href="#orgd7d03d9">Get the most performanc margin for defined episodes and decision space</a></li>
+</ul>
+</li>
+<li><a href="#org82a2c2c">Setup campus and road test system and method</a></li>
+<li><a href="#org855a913">Construct methodes for esitmation of problem complexity for simple episode and complex episode</a></li>
+<li><a href="#orgb696b0e">Solid performance evaluation by data collection and analysis</a></li>
+</ul>
+</li>
+<li><a href="#org340659f">Key Observation MDP</a>
+<ul>
+<li><a href="#org613659a">Type I system, human performance in energy saving strategy is a low-dimensional manifold in the decision space. Thus it can be reached.</a></li>
+<li><a href="#orgcbfd9e4">World-Class Challenges</a></li>
+<li><a href="#orgf9cffb1">major factors for energy consumpution is power</a>
+<ul>
+<li><a href="#org14655d6">action space</a></li>
+<li><a href="#org9b2dbdb">system dynamics （world): road</a></li>
+<li><a href="#org44cfa47">ways of energy saving:</a></li>
+<li><a href="#org193597a">Issue:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga37861a">Industry</a>
+<ul>
+<li><a href="#org95d1a3c">scale up, resources, AI scaling up, huge potential!</a></li>
+<li><a href="#org8497529">Research oriented Product/Engineering</a>
+<ul>
+<li><a href="#org926fe8b">AI is the key, should be the dominating factor to reconsider the system architecture, infrastructure, cutting-edges, cannot manage, business case, planning</a></li>
+<li><a href="#orgd29c65c">technologoy oriented</a></li>
+</ul>
+</li>
+<li><a href="#orga12fd74">Flexibility</a>
+<ul>
+<li><a href="#orge825aed">no management oriented</a></li>
+<li><a href="#orgb45b0c8">time bugdet</a></li>
+<li><a href="#org1f04ef1">for learning, self-management</a></li>
 </ul>
 </li>
 </ul>
@@ -131,9 +131,9 @@
 Vehicle Energy Optimization System
 </p>
 
-<div id="outline-container-orgb67dc76" class="outline-2">
-<h2 id="orgb67dc76">method</h2>
-<div class="outline-text-2" id="text-orgb67dc76">
+<div id="outline-container-org44fc76d" class="outline-2">
+<h2 id="org44fc76d">method</h2>
+<div class="outline-text-2" id="text-org44fc76d">
 <p>
 <a href="./20210830182904-q_learning.html">q learning</a>
 <a href="./20210831171703-patent.html">patent</a>
@@ -143,365 +143,205 @@ Vehicle Energy Optimization System
 </div>
 
 
-<div id="outline-container-org4dbf406" class="outline-2">
-<h2 id="org4dbf406">meditation</h2>
-<div class="outline-text-2" id="text-org4dbf406">
+<div id="outline-container-org3e29a82" class="outline-2">
+<h2 id="org3e29a82">meditation</h2>
+<div class="outline-text-2" id="text-org3e29a82">
 </div>
-<div id="outline-container-org0a6baa4" class="outline-3">
-<h3 id="org0a6baa4"><b><b>world class application: need careful design and plan; drl need manual curriculum; achieve solid progress;</b></b></h3>
+<div id="outline-container-orgfebb957" class="outline-3">
+<h3 id="orgfebb957"><b><b>world class application: need careful design and plan; drl need manual curriculum; achieve solid progress;</b></b></h3>
 </div>
-<div id="outline-container-org03d99da" class="outline-3">
-<h3 id="org03d99da">energy saving result is determined by scenarios: cruise has no space for saving!</h3>
+<div id="outline-container-org67d3232" class="outline-3">
+<h3 id="org67d3232">energy saving result is determined by scenarios: cruise has no space for saving!</h3>
 </div>
-<div id="outline-container-org40e2b4a" class="outline-3">
-<h3 id="org40e2b4a">action space: too big already to consider other than pedal map: 5 rows is 85 continuous float; more than this will not converge!</h3>
+<div id="outline-container-org894c69f" class="outline-3">
+<h3 id="org894c69f">action space: too big already to consider other than pedal map: 5 rows is 85 continuous float; more than this will not converge!</h3>
 </div>
-<div id="outline-container-org841e252" class="outline-3">
-<h3 id="org841e252">road environment is complex, add action space will make approximation, optimization and model more complex!</h3>
+<div id="outline-container-org8c5e0bc" class="outline-3">
+<h3 id="org8c5e0bc">road environment is complex, add action space will make approximation, optimization and model more complex!</h3>
 </div>
-<div id="outline-container-org70810f0" class="outline-3">
-<h3 id="org70810f0">sample efficiency is import since road test is expensive, time, cost!</h3>
+<div id="outline-container-orgf5b98ea" class="outline-3">
+<h3 id="orgf5b98ea">sample efficiency is import since road test is expensive, time, cost!</h3>
 </div>
-<div id="outline-container-orgb6d929d" class="outline-3">
-<h3 id="orgb6d929d">e2e is indispensable: think about detecting edges for mnist classification</h3>
+<div id="outline-container-orge02cea3" class="outline-3">
+<h3 id="orge02cea3">e2e is indispensable: think about detecting edges for mnist classification</h3>
 </div>
-<div id="outline-container-orgd553344" class="outline-3">
-<h3 id="orgd553344">LEARNING/TRAINING &#x2013;&gt; INFERRING</h3>
+<div id="outline-container-org6f0e477" class="outline-3">
+<h3 id="org6f0e477">LEARNING/TRAINING &#x2013;&gt; INFERRING</h3>
 </div>
-<div id="outline-container-org3ee740b" class="outline-3">
-<h3 id="org3ee740b">Project Funes</h3>
+<div id="outline-container-org8cf1da5" class="outline-3">
+<h3 id="org8cf1da5">Project Funes</h3>
 </div>
-<div id="outline-container-org445dcf2" class="outline-3">
-<h3 id="org445dcf2">continuous learning (avanlanche: an end-to-end library for conticual learning)</h3>
+<div id="outline-container-org94f04f8" class="outline-3">
+<h3 id="org94f04f8">continuous learning (avanlanche: an end-to-end library for conticual learning)</h3>
 </div>
-<div id="outline-container-org68d7a6b" class="outline-3">
-<h3 id="org68d7a6b">differentiable attention ( diffrentiable search index )</h3>
+<div id="outline-container-org617fba8" class="outline-3">
+<h3 id="org617fba8">differentiable attention ( diffrentiable search index )</h3>
 </div>
-<div id="outline-container-org24d3772" class="outline-3">
-<h3 id="org24d3772">Hierachical DRL : LLM integration to alleviate the Long Horizon issue, exploration issue, represetnation issue (conce)</h3>
-<div class="outline-text-3" id="text-org24d3772">
+<div id="outline-container-org4cf3844" class="outline-3">
+<h3 id="org4cf3844">Hierachical DRL : LLM integration to alleviate the Long Horizon issue, exploration issue, represetnation issue (conce)</h3>
+<div class="outline-text-3" id="text-org4cf3844">
 </div>
-<div id="outline-container-org8839f34" class="outline-4">
-<h4 id="org8839f34">[long sequential decision] Goal filtering: SayCan (value function, long horizon sequential decision, affordance, grounding)</h4>
+<div id="outline-container-org3eadd54" class="outline-4">
+<h4 id="org3eadd54">[long sequential decision] Goal filtering: SayCan (value function, long horizon sequential decision, affordance, grounding)</h4>
 </div>
-<div id="outline-container-orgce27864" class="outline-4">
-<h4 id="orgce27864">[exploration] Goal generation in sparse rewarding environment: Natural Language for exploration</h4>
+<div id="outline-container-org72f8f55" class="outline-4">
+<h4 id="org72f8f55">[exploration] Goal generation in sparse rewarding environment: Natural Language for exploration</h4>
 </div>
 </div>
-<div id="outline-container-org83053de" class="outline-3">
-<h3 id="org83053de">VQ-VAE 1&amp;2</h3>
+<div id="outline-container-orgff3375d" class="outline-3">
+<h3 id="orgff3375d">VQ-VAE 1&amp;2</h3>
 </div>
-<div id="outline-container-org8bd5d00" class="outline-3">
-<h3 id="org8bd5d00">CycleGAN</h3>
+<div id="outline-container-org0902756" class="outline-3">
+<h3 id="org0902756">CycleGAN</h3>
 </div>
-<div id="outline-container-org36e6e95" class="outline-3">
-<h3 id="org36e6e95">Graph NN</h3>
+<div id="outline-container-org6b7e94a" class="outline-3">
+<h3 id="org6b7e94a">Graph NN</h3>
 </div>
-<div id="outline-container-org3d63253" class="outline-3">
-<h3 id="org3d63253">Causal Inference</h3>
+<div id="outline-container-org96fda22" class="outline-3">
+<h3 id="org96fda22">Causal Inference</h3>
 </div>
 </div>
 
-<div id="outline-container-orgb0861a0" class="outline-2">
-<h2 id="orgb0861a0">road test</h2>
-<div class="outline-text-2" id="text-orgb0861a0">
+<div id="outline-container-org888efe8" class="outline-2">
+<h2 id="org888efe8">road test</h2>
+<div class="outline-text-2" id="text-org888efe8">
 </div>
-<div id="outline-container-org60b8929" class="outline-3">
-<h3 id="org60b8929">freeze model, pure inference</h3>
-<div class="outline-text-3" id="text-org60b8929">
+<div id="outline-container-org6bddd0f" class="outline-3">
+<h3 id="org6bddd0f">freeze model, pure inference</h3>
+<div class="outline-text-3" id="text-org6bddd0f">
 </div>
-<div id="outline-container-org5afe90f" class="outline-4">
-<h4 id="org5afe90f">meager overlapping of training and inferring</h4>
-</div>
-</div>
-<div id="outline-container-org3bef2ab" class="outline-3">
-<h3 id="org3bef2ab">learning with pseudo episode (fixed time length)</h3>
-<div class="outline-text-3" id="text-org3bef2ab">
-</div>
-<div id="outline-container-org0d1a697" class="outline-4">
-<h4 id="org0d1a697">no episode guarantee, might not converge</h4>
+<div id="outline-container-org0cd104d" class="outline-4">
+<h4 id="org0cd104d">meager overlapping of training and inferring</h4>
 </div>
 </div>
-<div id="outline-container-org48034f0" class="outline-3">
-<h3 id="org48034f0">real episode, stepwise expand test range</h3>
-<div class="outline-text-3" id="text-org48034f0">
+<div id="outline-container-orga91c158" class="outline-3">
+<h3 id="orga91c158">learning with pseudo episode (fixed time length)</h3>
+<div class="outline-text-3" id="text-orga91c158">
 </div>
-<div id="outline-container-orgf436de6" class="outline-4">
-<h4 id="orgf436de6">exponential complexity with extending range</h4>
-</div>
-<div id="outline-container-orgfc19eb0" class="outline-4">
-<h4 id="orgfc19eb0">unpredictable events, interrupts change the scenarios</h4>
+<div id="outline-container-org632452e" class="outline-4">
+<h4 id="org632452e">no episode guarantee, might not converge</h4>
 </div>
 </div>
+<div id="outline-container-org00e65ee" class="outline-3">
+<h3 id="org00e65ee">real episode, stepwise expand test range</h3>
+<div class="outline-text-3" id="text-org00e65ee">
 </div>
-<div id="outline-container-org674ce2a" class="outline-2">
-<h2 id="org674ce2a">solution</h2>
-<div class="outline-text-2" id="text-org674ce2a">
+<div id="outline-container-org62ddaaa" class="outline-4">
+<h4 id="org62ddaaa">exponential complexity with extending range</h4>
 </div>
-<div id="outline-container-org7467da5" class="outline-3">
-<h3 id="org7467da5">memory: rnn encoding; <a href="./20211101093524-neural_turning_machine.html">neural turing machine reinforcement learning</a></h3>
-</div>
-<div id="outline-container-org9540dba" class="outline-3">
-<h3 id="org9540dba">model based</h3>
-<div class="outline-text-3" id="text-org9540dba">
-</div>
-<div id="outline-container-org8feca35" class="outline-4">
-<h4 id="org8feca35">GAN</h4>
-</div>
-<div id="outline-container-org7dd23e9" class="outline-4">
-<h4 id="org7dd23e9">Stochastic Value Gradient SVG(0) SVG(1)</h4>
+<div id="outline-container-orgd6e60a3" class="outline-4">
+<h4 id="orgd6e60a3">unpredictable events, interrupts change the scenarios</h4>
 </div>
 </div>
-<div id="outline-container-org1f3b0ee" class="outline-3">
-<h3 id="org1f3b0ee">offline reinforcement learning</h3>
 </div>
-<div id="outline-container-org1a9208c" class="outline-3">
-<h3 id="org1a9208c">simulation (metadrive/pgdrive), transfer learning</h3>
+<div id="outline-container-org5d73a71" class="outline-2">
+<h2 id="org5d73a71">solution</h2>
+<div class="outline-text-2" id="text-org5d73a71">
 </div>
+<div id="outline-container-orgd636508" class="outline-3">
+<h3 id="orgd636508">memory: rnn encoding; <a href="./20211101093524-neural_turning_machine.html">neural turing machine reinforcement learning</a></h3>
 </div>
-<div id="outline-container-org362eaa8" class="outline-2">
-<h2 id="org362eaa8">Current Achievement:</h2>
-<div class="outline-text-2" id="text-org362eaa8">
+<div id="outline-container-orgcc5d52e" class="outline-3">
+<h3 id="orgcc5d52e">model based</h3>
+<div class="outline-text-3" id="text-orgcc5d52e">
 </div>
-<div id="outline-container-org47a11e9" class="outline-3">
-<h3 id="org47a11e9">Get definite convergence on short episode with DRL (on policy, off policy)</h3>
-<div class="outline-text-3" id="text-org47a11e9">
+<div id="outline-container-org927a092" class="outline-4">
+<h4 id="org927a092">GAN</h4>
 </div>
-<div id="outline-container-org9a1270e" class="outline-4">
-<h4 id="org9a1270e">Achieves definitely better performance than human drivers for the small episode</h4>
-</div>
-<div id="outline-container-org0822f6d" class="outline-4">
-<h4 id="org0822f6d">validated on different drivers/ driving style</h4>
-</div>
-<div id="outline-container-org0709c71" class="outline-4">
-<h4 id="org0709c71">model free: not explicitly using and domain knowledge</h4>
-</div>
-<div id="outline-container-org79081cb" class="outline-4">
-<h4 id="org79081cb">Get the most performanc margin for defined episodes and decision space</h4>
+<div id="outline-container-orgbb506e4" class="outline-4">
+<h4 id="orgbb506e4">Stochastic Value Gradient SVG(0) SVG(1)</h4>
 </div>
 </div>
-<div id="outline-container-org1e3b4ba" class="outline-3">
-<h3 id="org1e3b4ba">Setup campus and road test system and method</h3>
+<div id="outline-container-orgfdf0bf4" class="outline-3">
+<h3 id="orgfdf0bf4">offline reinforcement learning</h3>
 </div>
-<div id="outline-container-org3527c8e" class="outline-3">
-<h3 id="org3527c8e">Construct methodes for esitmation of problem complexity for simple episode and complex episode</h3>
-</div>
-<div id="outline-container-orgf73d7f5" class="outline-3">
-<h3 id="orgf73d7f5">Solid performance evaluation by data collection and analysis</h3>
+<div id="outline-container-org8d7944f" class="outline-3">
+<h3 id="org8d7944f">simulation (metadrive/pgdrive), transfer learning</h3>
 </div>
 </div>
-<div id="outline-container-org210a749" class="outline-2">
-<h2 id="org210a749">Key Observation MDP</h2>
-<div class="outline-text-2" id="text-org210a749">
+<div id="outline-container-org65d7af6" class="outline-2">
+<h2 id="org65d7af6">Current Achievement:</h2>
+<div class="outline-text-2" id="text-org65d7af6">
 </div>
-<div id="outline-container-org9a0bfa1" class="outline-3">
-<h3 id="org9a0bfa1">Type I system, human performance in energy saving strategy is a low-dimensional manifold in the decision space. Thus it can be reached.</h3>
+<div id="outline-container-orgdf07720" class="outline-3">
+<h3 id="orgdf07720">Get definite convergence on short episode with DRL (on policy, off policy)</h3>
+<div class="outline-text-3" id="text-orgdf07720">
 </div>
-<div id="outline-container-org9e708e8" class="outline-3">
-<h3 id="org9e708e8">World-Class Challenges</h3>
+<div id="outline-container-orge03f631" class="outline-4">
+<h4 id="orge03f631">Achieves definitely better performance than human drivers for the small episode</h4>
 </div>
-<div id="outline-container-org4d0b3d6" class="outline-3">
-<h3 id="org4d0b3d6">major factors for energy consumpution is power</h3>
-<div class="outline-text-3" id="text-org4d0b3d6">
+<div id="outline-container-org646f956" class="outline-4">
+<h4 id="org646f956">validated on different drivers/ driving style</h4>
 </div>
-<div id="outline-container-orgbc33c53" class="outline-4">
-<h4 id="orgbc33c53">action space</h4>
-<div class="outline-text-4" id="text-orgbc33c53">
+<div id="outline-container-org6de8271" class="outline-4">
+<h4 id="org6de8271">model free: not explicitly using and domain knowledge</h4>
+</div>
+<div id="outline-container-orgd7d03d9" class="outline-4">
+<h4 id="orgd7d03d9">Get the most performanc margin for defined episodes and decision space</h4>
+</div>
+</div>
+<div id="outline-container-org82a2c2c" class="outline-3">
+<h3 id="org82a2c2c">Setup campus and road test system and method</h3>
+</div>
+<div id="outline-container-org855a913" class="outline-3">
+<h3 id="org855a913">Construct methodes for esitmation of problem complexity for simple episode and complex episode</h3>
+</div>
+<div id="outline-container-orgb696b0e" class="outline-3">
+<h3 id="orgb696b0e">Solid performance evaluation by data collection and analysis</h3>
+</div>
+</div>
+<div id="outline-container-org340659f" class="outline-2">
+<h2 id="org340659f">Key Observation MDP</h2>
+<div class="outline-text-2" id="text-org340659f">
+</div>
+<div id="outline-container-org613659a" class="outline-3">
+<h3 id="org613659a">Type I system, human performance in energy saving strategy is a low-dimensional manifold in the decision space. Thus it can be reached.</h3>
+</div>
+<div id="outline-container-orgcbfd9e4" class="outline-3">
+<h3 id="orgcbfd9e4">World-Class Challenges</h3>
+</div>
+<div id="outline-container-orgf9cffb1" class="outline-3">
+<h3 id="orgf9cffb1">major factors for energy consumpution is power</h3>
+<div class="outline-text-3" id="text-orgf9cffb1">
+</div>
+<div id="outline-container-org14655d6" class="outline-4">
+<h4 id="org14655d6">action space</h4>
+<div class="outline-text-4" id="text-org14655d6">
 </div>
 <ul class="org-ul">
-<li><a id="org73bbb18"></a>motion planning (PM/AccMap/&#x2026;):<br />
+<li><a id="orgbe25dac"></a>motion planning (PM/AccMap/&#x2026;):<br />
 <ul class="org-ul">
-<li><a id="org71b221f"></a>acceleration,<br /></li>
-<li><a id="org4bcf572"></a>torque,<br /></li>
-<li><a id="org4ef1da2"></a>speed<br /></li>
+<li><a id="orgd35ab14"></a>acceleration,<br /></li>
+<li><a id="org4654a11"></a>torque,<br /></li>
+<li><a id="org39458d5"></a>speed<br /></li>
 </ul>
 </li>
-<li><a id="org921404a"></a>Battery working region<br /></li>
-<li><a id="org44d23ab"></a>&#x2026;?<br /></li>
+<li><a id="orgd2b9936"></a>Battery working region<br /></li>
+<li><a id="org9973c71"></a>&#x2026;?<br /></li>
 </ul>
 </div>
-<div id="outline-container-org89999ba" class="outline-4">
-<h4 id="org89999ba">system dynamics （world): road</h4>
-<div class="outline-text-4" id="text-org89999ba">
+<div id="outline-container-org9b2dbdb" class="outline-4">
+<h4 id="org9b2dbdb">system dynamics （world): road</h4>
+<div class="outline-text-4" id="text-org9b2dbdb">
 </div>
 <ul class="org-ul">
-<li><a id="org8f5df0b"></a>road<br /></li>
-<li><a id="orgae38952"></a>driver style<br />
+<li><a id="org331e99a"></a>road<br /></li>
+<li><a id="org1e0a2ab"></a>driver style<br />
 <ul class="org-ul">
-<li><a id="org54a2535"></a>definition?(sequential model), can be formalized as cooperative agent<br /></li>
-<li><a id="org42db922"></a>non-stationary (can be chagned by the road, vehicle parameters)<br /></li>
-<li><a id="orgdb0a283"></a>states/observations (partially observable):<br />
+<li><a id="orgeed50c9"></a>definition?(sequential model), can be formalized as cooperative agent<br /></li>
+<li><a id="orga9126fa"></a>non-stationary (can be chagned by the road, vehicle parameters)<br /></li>
+<li><a id="org6d131ed"></a>states/observations (partially observable):<br />
 <ul class="org-ul">
-<li><a id="orgc0049a8"></a>vehicle motion<br /></li>
-<li><a id="orge0d5199"></a>current, voltage<br /></li>
+<li><a id="org2fc6eb6"></a>vehicle motion<br /></li>
+<li><a id="org5e70f9f"></a>current, voltage<br /></li>
 </ul>
 </li>
-<li><a id="orgabd2feb"></a>reward:<br />
+<li><a id="org76fd89e"></a>reward:<br />
 <ul class="org-ul">
-<li><a id="org57f5bf2"></a>energy consumpution!<br /></li>
-<li><a id="org17c90a8"></a>reward has margin!<br />
+<li><a id="org735c55d"></a>energy consumpution!<br /></li>
+<li><a id="orgb0fb6ce"></a>reward has margin!<br />
 <ul class="org-ul">
-<li><a id="org187e585"></a>different episode definitions determine the margin of reward (cruising vs traffic jam driving)<br /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="outline-container-org28a00ae" class="outline-4">
-<h4 id="org28a00ae">ways of energy saving:</h4>
-<div class="outline-text-4" id="text-org28a00ae">
-</div>
-<ul class="org-ul">
-<li><a id="orga6e5e5b"></a>e2e and PG, (change the motion):<br />
-<ul class="org-ul">
-<li><a id="org2511ad6"></a>lower the power: low speed<br /></li>
-<li><a id="org6dd8cae"></a>utilize regenerative braking<br /></li>
-</ul>
-</li>
-<li><a id="orgf2944f4"></a>learn the system dynamics model<br />
-<ul class="org-ul">
-<li><a id="orga3bffc8"></a>learn the road?<br /></li>
-<li><a id="org6cfc595"></a>learn the user driving style? (user motion planning model) then change motion decision by reward driven DRL<br /></li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="outline-container-org9f66a03" class="outline-4">
-<h4 id="org9f66a03">Issue:</h4>
-<div class="outline-text-4" id="text-org9f66a03">
-</div>
-<ul class="org-ul">
-<li><a id="org8c25d3d"></a>driving-style-driven<br />
-<ul class="org-ul">
-<li><a id="orgbc72efe"></a>reward is weak, buried in the fluctuation of other factors like speed, SOC, temperature<br /></li>
-<li><a id="org40a7b91"></a>driving style is changed by the road condition unobservably and by vehicle intrinsics adjustment<br /></li>
-</ul>
-</li>
-<li><a id="orgfbfee8a"></a>need to be episodic<br />
-<ul class="org-ul">
-<li><a id="orge59b418"></a>Break the episode is not allowed. Cannot guarantee the convergence of critic<br />
-<ul class="org-ul">
-<li><a id="orgd9db459"></a>break reinforcement algorithm<br /></li>
-<li><a id="org23bd17c"></a>or decrease data/training efficiency<br /></li>
-</ul>
-</li>
-<li><a id="org9150a6e"></a>definition needs to be delineated with precise state boundaries, incomplete episode is difficult to punish due to credit assignment problem<br /></li>
-<li><a id="org8d692f1"></a>episode definition determines the reward margin for designated action space<br /></li>
-<li><a id="orgb8c51f2"></a>No reward for cuise! little reward for smooth episode!<br /></li>
-<li><a id="org3c1142f"></a>large and long episode increase the learning complexity, training time and the requirement on model capacity!<br /></li>
-<li><a id="org0b8c4fc"></a>episode definition is tricky to trigger the specific mechanism (driving style uitilization)<br /></li>
-<li><a id="org1b0349b"></a>having episode on the road test has safety issue<br /></li>
-</ul>
-</li>
-<li><a id="org89ec555"></a>Current Solution<br />
-<ul class="org-ul">
-<li><a id="org28d24cd"></a>Pre-Training<br />
-<ul class="org-ul">
-<li><a id="org9ac5989"></a>To train with dedicated test cases with model updates, guarantees data-efficiency. then inference with frozen model.<br /></li>
-<li><a id="org6287685"></a>Big episode<br /></li>
-</ul>
-</li>
-<li><a id="org57075bf"></a>To improve algorithms (data efficiency):<br />
-<ul class="org-ul">
-<li><a id="org485094b"></a>POMDP method : RDPG, RSVG(0) verified on CarlaVEOS<br /></li>
-<li><a id="org8ce7da7"></a>model based method: model-based SVG for continuous RL<br /></li>
-</ul>
-</li>
-<li><a id="orga2fe8a3"></a>To validate on the road:<br />
-<ul class="org-ul">
-<li><a id="org4871433"></a>Ultimate production level: Massive test on the road, get the expectation.<br /></li>
-<li><a id="org1d785b7"></a>Experimentell level: Dedicated test cases, clear episode definition.<br /></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orge5801a5" class="outline-2">
-<h2 id="orge5801a5">Industry</h2>
-<div class="outline-text-2" id="text-orge5801a5">
-</div>
-<div id="outline-container-org20acd90" class="outline-3">
-<h3 id="org20acd90">scale up, resources, AI scaling up, huge potential!</h3>
-</div>
-<div id="outline-container-org17694fe" class="outline-3">
-<h3 id="org17694fe">Research oriented Product/Engineering</h3>
-<div class="outline-text-3" id="text-org17694fe">
-</div>
-<div id="outline-container-org4b2f788" class="outline-4">
-<h4 id="org4b2f788">AI is the key, should be the dominating factor to reconsider the system architecture, infrastructure, cutting-edges, cannot manage, business case, planning</h4>
-<div class="outline-text-4" id="text-org4b2f788">
-</div>
-<ul class="org-ul">
-<li><a id="orgb8d99b5"></a>progress is huge (waymo sascha anoud &#x2026;), scaling up needs showcasing<br /></li>
-<li><a id="orga2a87ba"></a>surprising way of changing the tendency, not like hammer and nail solution.<br /></li>
-<li><a id="org431aaef"></a>SoTA is not sufficient. Need breakthrough, derailing often!<br />
-<ul class="org-ul">
-<li><a id="org25e4d73"></a>multitasking &#x2013;&gt; multimodel<br /></li>
-<li><a id="org85f1973"></a>self-supervised &#x2013;&gt; LLM<br /></li>
-</ul>
-</li>
-<li><a id="org7363bc9"></a>LLM, reinforcement learning, robust inference<br /></li>
-<li><a id="orgf196b57"></a>different infrastructure<br /></li>
-<li><a id="orgbc89cb8"></a>failure, risks<br /></li>
-<li><a id="org0e76635"></a>no sure with success<br /></li>
-</ul>
-</div>
-<div id="outline-container-org6a42fed" class="outline-4">
-<h4 id="org6a42fed">technologoy oriented</h4>
-<div class="outline-text-4" id="text-org6a42fed">
-</div>
-<ul class="org-ul">
-<li><a id="org19190e4"></a>leadership sentiments: inspired by creativity and new ideas<br /></li>
-<li><a id="org44f1ce8"></a>appearance management:  not by management success, not by fancy demos<br /></li>
-<li><a id="org1d75289"></a>not opportunitism, but strategy,<br />
-<ul class="org-ul">
-<li><a id="org21c9c83"></a>courage to hold temporary failure and bold ideas<br /></li>
-<li><a id="org1ec300f"></a>leadership is learning slowly<br /></li>
-<li><a id="orge7ffd32"></a>hesitate in decision<br /></li>
-</ul>
-</li>
-<li><a id="org8c99634"></a>tech company is more conserved<br />
-<ul class="org-ul">
-<li><a id="org5905773"></a>system engineering is problematic, requirement vs architecture?<br />
-<ul class="org-ul">
-<li><a id="org3921aa4"></a>total distorted the discussion<br /></li>
-</ul>
-</li>
-<li><a id="orgdd5f146"></a>validation is not deterministic anymore<br />
-<ul class="org-ul">
-<li><a id="orgda611d8"></a>based big data should be statistical, more expensive<br /></li>
-<li><a id="org6c2d8c1"></a>prediction by GAN designed with probalistic assumption<br /></li>
-<li><a id="orgba92145"></a>demo is deterministic, but not helping in judges in statistical point of view, too few samples, not honest!<br /></li>
-<li><a id="orgc8bb1ae"></a>the industry produces rediculous standards.<br /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a id="orga680d07"></a>encouraging innovation by encouraging discussion and new ideas<br /></li>
-<li><a id="org2783f3c"></a>organization change: system 1 &amp; system 2<br />
-<ul class="org-ul">
-<li><a id="org711102a"></a>currently wrong<br />
-<ul class="org-ul">
-<li><a id="org2871ecf"></a>management is management oriented!<br /></li>
-<li><a id="org9835bf3"></a>evaluation is product oriented, not by ideas<br /></li>
-<li><a id="org23fc772"></a>engineers working on wrong problems due to wrong assignments<br /></li>
-<li><a id="org3d36511"></a>separation of research and production<br />
-<ul class="org-ul">
-<li><a id="orgcdac92a"></a>what kind of research is needed for production<br /></li>
-<li><a id="org6fd9e3c"></a>what kind of theory is important for 1~3 years of production<br /></li>
-</ul>
-</li>
-<li><a id="org835df39"></a>performance index:<br />
-<ul class="org-ul">
-<li><a id="orgba16fd3"></a>code number: produce cheap results<br /></li>
-<li><a id="org6779bf5"></a>extra hours<br /></li>
-<li><a id="org7494d7a"></a>not based on ideas<br /></li>
+<li><a id="org880f9b0"></a>different episode definitions determine the margin of reward (cruising vs traffic jam driving)<br /></li>
 </ul>
 </li>
 </ul>
@@ -510,19 +350,179 @@ Vehicle Energy Optimization System
 </li>
 </ul>
 </div>
+<div id="outline-container-org44cfa47" class="outline-4">
+<h4 id="org44cfa47">ways of energy saving:</h4>
+<div class="outline-text-4" id="text-org44cfa47">
 </div>
-<div id="outline-container-org5c59a74" class="outline-3">
-<h3 id="org5c59a74">Flexibility</h3>
-<div class="outline-text-3" id="text-org5c59a74">
+<ul class="org-ul">
+<li><a id="orgd8b41ab"></a>e2e and PG, (change the motion):<br />
+<ul class="org-ul">
+<li><a id="org58d966b"></a>lower the power: low speed<br /></li>
+<li><a id="org5256ff4"></a>utilize regenerative braking<br /></li>
+</ul>
+</li>
+<li><a id="org6782294"></a>learn the system dynamics model<br />
+<ul class="org-ul">
+<li><a id="org35314fa"></a>learn the road?<br /></li>
+<li><a id="org00ac660"></a>learn the user driving style? (user motion planning model) then change motion decision by reward driven DRL<br /></li>
+</ul>
+</li>
+</ul>
 </div>
-<div id="outline-container-orgb9bb6be" class="outline-4">
-<h4 id="orgb9bb6be">no management oriented</h4>
+<div id="outline-container-org193597a" class="outline-4">
+<h4 id="org193597a">Issue:</h4>
+<div class="outline-text-4" id="text-org193597a">
 </div>
-<div id="outline-container-orgdc36a3a" class="outline-4">
-<h4 id="orgdc36a3a">time bugdet</h4>
+<ul class="org-ul">
+<li><a id="org8719f8e"></a>driving-style-driven<br />
+<ul class="org-ul">
+<li><a id="orgd17bcc0"></a>reward is weak, buried in the fluctuation of other factors like speed, SOC, temperature<br /></li>
+<li><a id="orgaf81376"></a>driving style is changed by the road condition unobservably and by vehicle intrinsics adjustment<br /></li>
+</ul>
+</li>
+<li><a id="orgda80e44"></a>need to be episodic<br />
+<ul class="org-ul">
+<li><a id="org2e5bf35"></a>Break the episode is not allowed. Cannot guarantee the convergence of critic<br />
+<ul class="org-ul">
+<li><a id="org6de4800"></a>break reinforcement algorithm<br /></li>
+<li><a id="org88bc0d0"></a>or decrease data/training efficiency<br /></li>
+</ul>
+</li>
+<li><a id="org4daafa6"></a>definition needs to be delineated with precise state boundaries, incomplete episode is difficult to punish due to credit assignment problem<br /></li>
+<li><a id="org57f1b42"></a>episode definition determines the reward margin for designated action space<br /></li>
+<li><a id="org507e7da"></a>No reward for cuise! little reward for smooth episode!<br /></li>
+<li><a id="orgabcd139"></a>large and long episode increase the learning complexity, training time and the requirement on model capacity!<br /></li>
+<li><a id="org13b2aa6"></a>episode definition is tricky to trigger the specific mechanism (driving style uitilization)<br /></li>
+<li><a id="orge311e17"></a>having episode on the road test has safety issue<br /></li>
+</ul>
+</li>
+<li><a id="orgab4c5dc"></a>Current Solution<br />
+<ul class="org-ul">
+<li><a id="org394e49d"></a>Pre-Training<br />
+<ul class="org-ul">
+<li><a id="org0f05342"></a>To train with dedicated test cases with model updates, guarantees data-efficiency. then inference with frozen model.<br /></li>
+<li><a id="orgf8e87f9"></a>Big episode<br /></li>
+</ul>
+</li>
+<li><a id="orgc50f967"></a>To improve algorithms (data efficiency):<br />
+<ul class="org-ul">
+<li><a id="orgb7c0f5b"></a>POMDP method : RDPG, RSVG(0) verified on CarlaVEOS<br /></li>
+<li><a id="orgc22bf36"></a>model based method: model-based SVG for continuous RL<br /></li>
+</ul>
+</li>
+<li><a id="orgbc89ed3"></a>To validate on the road:<br />
+<ul class="org-ul">
+<li><a id="org29fc121"></a>Ultimate production level: Massive test on the road, get the expectation.<br /></li>
+<li><a id="org1d259ed"></a>Experimentell level: Dedicated test cases, clear episode definition.<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-<div id="outline-container-orge511ff4" class="outline-4">
-<h4 id="orge511ff4">for learning, self-management</h4>
+</div>
+</div>
+<div id="outline-container-orga37861a" class="outline-2">
+<h2 id="orga37861a">Industry</h2>
+<div class="outline-text-2" id="text-orga37861a">
+</div>
+<div id="outline-container-org95d1a3c" class="outline-3">
+<h3 id="org95d1a3c">scale up, resources, AI scaling up, huge potential!</h3>
+</div>
+<div id="outline-container-org8497529" class="outline-3">
+<h3 id="org8497529">Research oriented Product/Engineering</h3>
+<div class="outline-text-3" id="text-org8497529">
+</div>
+<div id="outline-container-org926fe8b" class="outline-4">
+<h4 id="org926fe8b">AI is the key, should be the dominating factor to reconsider the system architecture, infrastructure, cutting-edges, cannot manage, business case, planning</h4>
+<div class="outline-text-4" id="text-org926fe8b">
+</div>
+<ul class="org-ul">
+<li><a id="orga79bdc4"></a>progress is huge (waymo sascha anoud &#x2026;), scaling up needs showcasing<br /></li>
+<li><a id="orgb6dc9b3"></a>surprising way of changing the tendency, not like hammer and nail solution.<br /></li>
+<li><a id="org95b7ec5"></a>SoTA is not sufficient. Need breakthrough, derailing often!<br />
+<ul class="org-ul">
+<li><a id="org8d32c09"></a>multitasking &#x2013;&gt; multimodel<br /></li>
+<li><a id="orgd4dee1c"></a>self-supervised &#x2013;&gt; LLM<br /></li>
+</ul>
+</li>
+<li><a id="org0a2c407"></a>LLM, reinforcement learning, robust inference<br /></li>
+<li><a id="org22e6f3c"></a>different infrastructure<br /></li>
+<li><a id="org7de3160"></a>failure, risks<br /></li>
+<li><a id="org3449798"></a>no sure with success<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgd29c65c" class="outline-4">
+<h4 id="orgd29c65c">technologoy oriented</h4>
+<div class="outline-text-4" id="text-orgd29c65c">
+</div>
+<ul class="org-ul">
+<li><a id="orge7ce2f8"></a>leadership sentiments: inspired by creativity and new ideas<br /></li>
+<li><a id="org929c31d"></a>appearance management:  not by management success, not by fancy demos<br /></li>
+<li><a id="org3596a78"></a>not opportunitism, but strategy,<br />
+<ul class="org-ul">
+<li><a id="org14a0524"></a>courage to hold temporary failure and bold ideas<br /></li>
+<li><a id="org7132e35"></a>leadership is learning slowly<br /></li>
+<li><a id="org14bcede"></a>hesitate in decision<br /></li>
+</ul>
+</li>
+<li><a id="orgdc9be47"></a>tech company is more conserved<br />
+<ul class="org-ul">
+<li><a id="org62ee6bb"></a>system engineering is problematic, requirement vs architecture?<br />
+<ul class="org-ul">
+<li><a id="org2d70781"></a>total distorted the discussion<br /></li>
+</ul>
+</li>
+<li><a id="org385913f"></a>validation is not deterministic anymore<br />
+<ul class="org-ul">
+<li><a id="org00c7ff4"></a>based big data should be statistical, more expensive<br /></li>
+<li><a id="orgeba5036"></a>prediction by GAN designed with probalistic assumption<br /></li>
+<li><a id="orgfe085d8"></a>demo is deterministic, but not helping in judges in statistical point of view, too few samples, not honest!<br /></li>
+<li><a id="orgeb1c13a"></a>the industry produces rediculous standards.<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a id="org69fff10"></a>encouraging innovation by encouraging discussion and new ideas<br /></li>
+<li><a id="org5c8ca8b"></a>organization change: system 1 &amp; system 2<br />
+<ul class="org-ul">
+<li><a id="org347a7cc"></a>currently wrong<br />
+<ul class="org-ul">
+<li><a id="org144219f"></a>management is management oriented!<br /></li>
+<li><a id="org0370aa0"></a>evaluation is product oriented, not by ideas<br /></li>
+<li><a id="org1b4255b"></a>engineers working on wrong problems due to wrong assignments<br /></li>
+<li><a id="orgc4fc6ac"></a>separation of research and production<br />
+<ul class="org-ul">
+<li><a id="orgd585217"></a>what kind of research is needed for production<br /></li>
+<li><a id="org1a5220a"></a>what kind of theory is important for 1~3 years of production<br /></li>
+</ul>
+</li>
+<li><a id="org44928a8"></a>performance index:<br />
+<ul class="org-ul">
+<li><a id="org571efba"></a>code number: produce cheap results<br /></li>
+<li><a id="orga792778"></a>extra hours<br /></li>
+<li><a id="org132b6f8"></a>not based on ideas<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga12fd74" class="outline-3">
+<h3 id="orga12fd74">Flexibility</h3>
+<div class="outline-text-3" id="text-orga12fd74">
+</div>
+<div id="outline-container-orge825aed" class="outline-4">
+<h4 id="orge825aed">no management oriented</h4>
+</div>
+<div id="outline-container-orgb45b0c8" class="outline-4">
+<h4 id="orgb45b0c8">time bugdet</h4>
+</div>
+<div id="outline-container-org1f04ef1" class="outline-4">
+<h4 id="org1f04ef1">for learning, self-management</h4>
 </div>
 </div>
 </div>

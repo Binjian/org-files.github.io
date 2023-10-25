@@ -16,33 +16,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a66fe3">Graph representation</a>
+<li><a href="#orgfe6b226">Graph representation</a>
 <ul>
-<li><a href="#orgdd02e49">rich semantic of nodes and edges</a>
+<li><a href="#org6e54b4e">rich semantic of nodes and edges</a>
 <ul>
-<li><a href="#orgabfa750">nodes: vehicles; clients</a></li>
-<li><a href="#org29acdcf">edges:</a></li>
-<li><a href="#org5b50fe0">parcel transaction induces local neighborhood changes</a></li>
-<li><a href="#orgae4517a">network evolves over time</a></li>
-<li><a href="#org00647fd">node level (graphlet feature vector, local agent-client connection)</a></li>
+<li><a href="#orged12c38">nodes: vehicles; clients</a></li>
+<li><a href="#orgbb18d1e">edges:</a></li>
+<li><a href="#orgf57f428">parcel transaction induces local neighborhood changes</a></li>
+<li><a href="#orge070867">network evolves over time</a></li>
+<li><a href="#orgc18975e">node level (graphlet feature vector, local agent-client connection)</a></li>
 </ul>
 </li>
-<li><a href="#org9d6999f">bipartite graph</a></li>
-<li><a href="#orgc8a552a">alignment of two separation graphs</a></li>
-<li><a href="#org35f1127">business goals</a>
+<li><a href="#orge6e788b">bipartite graph</a></li>
+<li><a href="#org20e8b2a">alignment of two separation graphs</a></li>
+<li><a href="#orgf2128de">business goals</a>
 <ul>
-<li><a href="#org7688217">optimization of client satisfaction</a></li>
-<li><a href="#orgd4ad900">engery savings of fleets</a></li>
-<li><a href="#org48ebb9b">optimal utilization of fleets</a></li>
-<li><a href="#orgc34bc80">vehicle dispatching response</a></li>
-<li><a href="#org2ecd2a9">optimal operation of the whole network</a></li>
+<li><a href="#org632be84">optimization of client satisfaction</a></li>
+<li><a href="#org8f73952">engery savings of fleets</a></li>
+<li><a href="#org0776a6a">optimal utilization of fleets</a></li>
+<li><a href="#org7054777">vehicle dispatching response</a></li>
+<li><a href="#org9040267">optimal operation of the whole network</a></li>
 </ul>
 </li>
-<li><a href="#orgeed518d">solution (prediction)</a>
+<li><a href="#org0bcf2b8">solution (prediction)</a>
 <ul>
-<li><a href="#orgb3279ba">node-level</a></li>
-<li><a href="#org91b0c4b">link-level</a></li>
-<li><a href="#org9b36938">graph-level</a></li>
+<li><a href="#orge89dea9">node-level</a></li>
+<li><a href="#orgb04bb5d">link-level</a></li>
+<li><a href="#org1493b9a">graph-level</a></li>
 </ul>
 </li>
 </ul>
@@ -53,84 +53,84 @@
 <p>
 :ID:       d39d0251-b08a-4086-aa0e-779678b918d5
 </p>
-<div id="outline-container-org1a66fe3" class="outline-2">
-<h2 id="org1a66fe3">Graph representation</h2>
-<div class="outline-text-2" id="text-org1a66fe3">
+<div id="outline-container-orgfe6b226" class="outline-2">
+<h2 id="orgfe6b226">Graph representation</h2>
+<div class="outline-text-2" id="text-orgfe6b226">
 </div>
-<div id="outline-container-orgdd02e49" class="outline-3">
-<h3 id="orgdd02e49">rich semantic of nodes and edges</h3>
-<div class="outline-text-3" id="text-orgdd02e49">
+<div id="outline-container-org6e54b4e" class="outline-3">
+<h3 id="org6e54b4e">rich semantic of nodes and edges</h3>
+<div class="outline-text-3" id="text-org6e54b4e">
 </div>
-<div id="outline-container-orgabfa750" class="outline-4">
-<h4 id="orgabfa750">nodes: vehicles; clients</h4>
-<div class="outline-text-4" id="text-orgabfa750">
+<div id="outline-container-orged12c38" class="outline-4">
+<h4 id="orged12c38">nodes: vehicles; clients</h4>
+<div class="outline-text-4" id="text-orged12c38">
 </div>
 <ul class="org-ul">
-<li><a id="org9f5e63a"></a>attributes: coordinates, loading, capacity,<br /></li>
+<li><a id="orgee68b4b"></a>attributes: coordinates, loading, capacity,<br /></li>
 </ul>
 </div>
-<div id="outline-container-org29acdcf" class="outline-4">
-<h4 id="org29acdcf">edges:</h4>
-<div class="outline-text-4" id="text-org29acdcf">
+<div id="outline-container-orgbb18d1e" class="outline-4">
+<h4 id="orgbb18d1e">edges:</h4>
+<div class="outline-text-4" id="text-orgbb18d1e">
 </div>
 <ul class="org-ul">
-<li><a id="org76241a9"></a>tasks (connecting vehicles and clients), multiple<br /></li>
-<li><a id="orgd3bf532"></a>connectivity<br />
+<li><a id="org886f974"></a>tasks (connecting vehicles and clients), multiple<br /></li>
+<li><a id="org2879fff"></a>connectivity<br />
 <ul class="org-ul">
-<li><a id="org56b3524"></a>road network<br /></li>
-<li><a id="orgc089057"></a>realtime traffic<br /></li>
+<li><a id="org30e8807"></a>road network<br /></li>
+<li><a id="orgb4af835"></a>realtime traffic<br /></li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="outline-container-org5b50fe0" class="outline-4">
-<h4 id="org5b50fe0">parcel transaction induces local neighborhood changes</h4>
+<div id="outline-container-orgf57f428" class="outline-4">
+<h4 id="orgf57f428">parcel transaction induces local neighborhood changes</h4>
 </div>
-<div id="outline-container-orgae4517a" class="outline-4">
-<h4 id="orgae4517a">network evolves over time</h4>
+<div id="outline-container-orge070867" class="outline-4">
+<h4 id="orge070867">network evolves over time</h4>
 </div>
-<div id="outline-container-org00647fd" class="outline-4">
-<h4 id="org00647fd">node level (graphlet feature vector, local agent-client connection)</h4>
-</div>
-</div>
-<div id="outline-container-org9d6999f" class="outline-3">
-<h3 id="org9d6999f">bipartite graph</h3>
-</div>
-<div id="outline-container-orgc8a552a" class="outline-3">
-<h3 id="orgc8a552a">alignment of two separation graphs</h3>
-</div>
-<div id="outline-container-org35f1127" class="outline-3">
-<h3 id="org35f1127">business goals</h3>
-<div class="outline-text-3" id="text-org35f1127">
-</div>
-<div id="outline-container-org7688217" class="outline-4">
-<h4 id="org7688217">optimization of client satisfaction</h4>
-</div>
-<div id="outline-container-orgd4ad900" class="outline-4">
-<h4 id="orgd4ad900">engery savings of fleets</h4>
-</div>
-<div id="outline-container-org48ebb9b" class="outline-4">
-<h4 id="org48ebb9b">optimal utilization of fleets</h4>
-</div>
-<div id="outline-container-orgc34bc80" class="outline-4">
-<h4 id="orgc34bc80">vehicle dispatching response</h4>
-</div>
-<div id="outline-container-org2ecd2a9" class="outline-4">
-<h4 id="org2ecd2a9">optimal operation of the whole network</h4>
+<div id="outline-container-orgc18975e" class="outline-4">
+<h4 id="orgc18975e">node level (graphlet feature vector, local agent-client connection)</h4>
 </div>
 </div>
-<div id="outline-container-orgeed518d" class="outline-3">
-<h3 id="orgeed518d">solution (prediction)</h3>
-<div class="outline-text-3" id="text-orgeed518d">
+<div id="outline-container-orge6e788b" class="outline-3">
+<h3 id="orge6e788b">bipartite graph</h3>
 </div>
-<div id="outline-container-orgb3279ba" class="outline-4">
-<h4 id="orgb3279ba">node-level</h4>
+<div id="outline-container-org20e8b2a" class="outline-3">
+<h3 id="org20e8b2a">alignment of two separation graphs</h3>
 </div>
-<div id="outline-container-org91b0c4b" class="outline-4">
-<h4 id="org91b0c4b">link-level</h4>
+<div id="outline-container-orgf2128de" class="outline-3">
+<h3 id="orgf2128de">business goals</h3>
+<div class="outline-text-3" id="text-orgf2128de">
 </div>
-<div id="outline-container-org9b36938" class="outline-4">
-<h4 id="org9b36938">graph-level</h4>
+<div id="outline-container-org632be84" class="outline-4">
+<h4 id="org632be84">optimization of client satisfaction</h4>
+</div>
+<div id="outline-container-org8f73952" class="outline-4">
+<h4 id="org8f73952">engery savings of fleets</h4>
+</div>
+<div id="outline-container-org0776a6a" class="outline-4">
+<h4 id="org0776a6a">optimal utilization of fleets</h4>
+</div>
+<div id="outline-container-org7054777" class="outline-4">
+<h4 id="org7054777">vehicle dispatching response</h4>
+</div>
+<div id="outline-container-org9040267" class="outline-4">
+<h4 id="org9040267">optimal operation of the whole network</h4>
+</div>
+</div>
+<div id="outline-container-org0bcf2b8" class="outline-3">
+<h3 id="org0bcf2b8">solution (prediction)</h3>
+<div class="outline-text-3" id="text-org0bcf2b8">
+</div>
+<div id="outline-container-orge89dea9" class="outline-4">
+<h4 id="orge89dea9">node-level</h4>
+</div>
+<div id="outline-container-orgb04bb5d" class="outline-4">
+<h4 id="orgb04bb5d">link-level</h4>
+</div>
+<div id="outline-container-org1493b9a" class="outline-4">
+<h4 id="org1493b9a">graph-level</h4>
 </div>
 </div>
 </div>

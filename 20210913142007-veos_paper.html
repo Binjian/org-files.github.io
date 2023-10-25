@@ -16,28 +16,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8b29922">motivation</a></li>
-<li><a href="#org5f003d9">sota</a></li>
-<li><a href="#org2c876f0">method</a>
+<li><a href="#orgd02acff">motivation</a></li>
+<li><a href="#org14a3b08">sota</a></li>
+<li><a href="#org23d88d7">method</a>
 <ul>
-<li><a href="#org734722d">model</a>
+<li><a href="#orgfe18b9d">model</a>
 <ul>
-<li><a href="#org72c4fa4">vehicle dynamic system modeling</a></li>
-<li><a href="#orgaffff5b">reinforcement learning model</a></li>
+<li><a href="#org14caa4c">vehicle dynamic system modeling</a></li>
+<li><a href="#org198a553">reinforcement learning model</a></li>
 </ul>
 </li>
-<li><a href="#org7c49c22">time sequence is important for exact reward</a></li>
-<li><a href="#org5ad61f1">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</a></li>
+<li><a href="#orgf9e0755">time sequence is important for exact reward</a></li>
+<li><a href="#org7353d92">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</a></li>
 </ul>
 </li>
-<li><a href="#orgea3ca81">experiment results discussion</a>
+<li><a href="#org8fbe9cf">experiment results discussion</a>
 <ul>
-<li><a href="#org760b293">ddpg</a></li>
-<li><a href="#orgfaf8761">driving style hinted at a common reward of human drive and agent</a></li>
-<li><a href="#org5fb2a53">rdpg</a></li>
+<li><a href="#orgcdbfe28">ddpg</a></li>
+<li><a href="#org75d1e45">driving style hinted at a common reward of human drive and agent</a></li>
+<li><a href="#org7a95c18">rdpg</a></li>
 </ul>
 </li>
-<li><a href="#orgad98d2e">broader impact</a></li>
+<li><a href="#org46a2e24">broader impact</a></li>
 </ul>
 </div>
 </div>
@@ -47,9 +47,9 @@
 <p>
 <a href="./20210830182658-veos.html">veos</a>
 </p>
-<div id="outline-container-org8b29922" class="outline-2">
-<h2 id="org8b29922">motivation</h2>
-<div class="outline-text-2" id="text-org8b29922">
+<div id="outline-container-orgd02acff" class="outline-2">
+<h2 id="orgd02acff">motivation</h2>
+<div class="outline-text-2" id="text-orgd02acff">
 <p>
 alex irpan paper post why reinforcement leanring does not work yet in the real world
 scaling up model, is not the case
@@ -85,78 +85,78 @@ Contextual Information like NLU different scenario, any action is like tokens. &
 </div>
 
 
-<div id="outline-container-org5f003d9" class="outline-2">
-<h2 id="org5f003d9">sota</h2>
+<div id="outline-container-org14a3b08" class="outline-2">
+<h2 id="org14a3b08">sota</h2>
 </div>
 
-<div id="outline-container-org2c876f0" class="outline-2">
-<h2 id="org2c876f0">method</h2>
-<div class="outline-text-2" id="text-org2c876f0">
+<div id="outline-container-org23d88d7" class="outline-2">
+<h2 id="org23d88d7">method</h2>
+<div class="outline-text-2" id="text-org23d88d7">
 </div>
-<div id="outline-container-org734722d" class="outline-3">
-<h3 id="org734722d">model</h3>
-<div class="outline-text-3" id="text-org734722d">
+<div id="outline-container-orgfe18b9d" class="outline-3">
+<h3 id="orgfe18b9d">model</h3>
+<div class="outline-text-3" id="text-orgfe18b9d">
 </div>
-<div id="outline-container-org72c4fa4" class="outline-4">
-<h4 id="org72c4fa4">vehicle dynamic system modeling</h4>
-<div class="outline-text-4" id="text-org72c4fa4">
+<div id="outline-container-org14caa4c" class="outline-4">
+<h4 id="org14caa4c">vehicle dynamic system modeling</h4>
+<div class="outline-text-4" id="text-org14caa4c">
 </div>
 <ul class="org-ul">
-<li><a id="orgd8927b7"></a>general model<br /></li>
+<li><a id="orgf2a54e3"></a>general model<br /></li>
 </ul>
 </div>
-<div id="outline-container-orgaffff5b" class="outline-4">
-<h4 id="orgaffff5b">reinforcement learning model</h4>
-<div class="outline-text-4" id="text-orgaffff5b">
+<div id="outline-container-org198a553" class="outline-4">
+<h4 id="org198a553">reinforcement learning model</h4>
+<div class="outline-text-4" id="text-org198a553">
 </div>
 <ul class="org-ul">
-<li><a id="orga51ebc9"></a>action model: torque model, translational mixed gaussian model, with speed translation invariance<br />
-<div class="outline-text-5" id="text-orga51ebc9">
+<li><a id="orgf070f1c"></a>action model: torque model, translational mixed gaussian model, with speed translation invariance<br />
+<div class="outline-text-5" id="text-orgf070f1c">
 <p>
 equation
 </p>
 </div>
 </li>
-<li><a id="orgb99df3f"></a>observation model: state,<br />
-<div class="outline-text-5" id="text-orgb99df3f">
+<li><a id="orgfd5ce8d"></a>observation model: state,<br />
+<div class="outline-text-5" id="text-orgfd5ce8d">
 <p>
 equation
 </p>
 </div>
 </li>
-<li><a id="orgeaec676"></a>reward model<br /></li>
-<li><a id="org8962eb2"></a>driver model<br /></li>
+<li><a id="org1f3d5c7"></a>reward model<br /></li>
+<li><a id="orgcb1479a"></a>driver model<br /></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7c49c22" class="outline-3">
-<h3 id="org7c49c22">time sequence is important for exact reward</h3>
+<div id="outline-container-orgf9e0755" class="outline-3">
+<h3 id="orgf9e0755">time sequence is important for exact reward</h3>
 </div>
-<div id="outline-container-org5ad61f1" class="outline-3">
-<h3 id="org5ad61f1">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</h3>
+<div id="outline-container-org7353d92" class="outline-3">
+<h3 id="org7353d92">data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps</h3>
 </div>
 </div>
 
-<div id="outline-container-orgea3ca81" class="outline-2">
-<h2 id="orgea3ca81">experiment results discussion</h2>
-<div class="outline-text-2" id="text-orgea3ca81">
+<div id="outline-container-org8fbe9cf" class="outline-2">
+<h2 id="org8fbe9cf">experiment results discussion</h2>
+<div class="outline-text-2" id="text-org8fbe9cf">
 </div>
-<div id="outline-container-org760b293" class="outline-3">
-<h3 id="org760b293">ddpg</h3>
-<div class="outline-text-3" id="text-org760b293">
+<div id="outline-container-orgcdbfe28" class="outline-3">
+<h3 id="orgcdbfe28">ddpg</h3>
+<div class="outline-text-3" id="text-orgcdbfe28">
 <p>
 short period of attention window
 </p>
 </div>
 </div>
-<div id="outline-container-orgfaf8761" class="outline-3">
-<h3 id="orgfaf8761">driving style hinted at a common reward of human drive and agent</h3>
+<div id="outline-container-org75d1e45" class="outline-3">
+<h3 id="org75d1e45">driving style hinted at a common reward of human drive and agent</h3>
 </div>
 
-<div id="outline-container-org5fb2a53" class="outline-3">
-<h3 id="org5fb2a53">rdpg</h3>
-<div class="outline-text-3" id="text-org5fb2a53">
+<div id="outline-container-org7a95c18" class="outline-3">
+<h3 id="org7a95c18">rdpg</h3>
+<div class="outline-text-3" id="text-org7a95c18">
 <p>
 long episode truncated BPTT long period of attention window
 episode management, training selection,
@@ -169,9 +169,9 @@ RLHF? easy way with empirical distribution no sequential model, first ignore the
 </div>
 </div>
 
-<div id="outline-container-orgad98d2e" class="outline-2">
-<h2 id="orgad98d2e">broader impact</h2>
-<div class="outline-text-2" id="text-orgad98d2e">
+<div id="outline-container-org46a2e24" class="outline-2">
+<h2 id="org46a2e24">broader impact</h2>
+<div class="outline-text-2" id="text-org46a2e24">
 <p>
 federated learning for meta learning,evolving
 NAS,

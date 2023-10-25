@@ -16,48 +16,48 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org67ef21a">Algorithm</a>
+<li><a href="#org34c18f5">Algorithm</a>
 <ul>
-<li><a href="#orga65a9f6">fine grid search, hyperparameter improvement</a>
+<li><a href="#org6503a44">fine grid search, hyperparameter improvement</a>
 <ul>
-<li><a href="#org82641ea">hyperparameter: layer number, hidden dimension, learning rate</a></li>
+<li><a href="#orgdc2743f">hyperparameter: layer number, hidden dimension, learning rate</a></li>
 </ul>
 </li>
-<li><a href="#org7e4879e">inference logics</a></li>
-<li><a href="#orgefb9f23">masking logic (pytorch)</a></li>
-<li><a href="#org473c43e">convergence</a>
+<li><a href="#orgb955b9d">inference logics</a></li>
+<li><a href="#org1873005">masking logic (pytorch)</a></li>
+<li><a href="#orgc537f20">convergence</a>
 <ul>
-<li><a href="#orgf1c2fc7">WGAN</a></li>
-<li><a href="#org2ac1995">WGAN-GP (not trained)</a></li>
+<li><a href="#org76e140c">WGAN</a></li>
+<li><a href="#org85fee71">WGAN-GP (not trained)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org87787b4">Data</a>
+<li><a href="#org9b01152">Data</a>
 <ul>
-<li><a href="#orgbc770a2">outlier highlighting</a>
+<li><a href="#org44e2703">outlier highlighting</a>
 <ul>
-<li><a href="#org6db1dbc">BLMP 2.0 outlier</a></li>
-<li><a href="#orga2f3ab7">Ascending, Descending</a></li>
-<li><a href="#org7d2726f">high frequent signal （no high frequent signals after rescaling)</a></li>
+<li><a href="#org04a5b18">BLMP 2.0 outlier</a></li>
+<li><a href="#orgbc7c05b">Ascending, Descending</a></li>
+<li><a href="#org2dd9a5e">high frequent signal （no high frequent signals after rescaling)</a></li>
 </ul>
 </li>
-<li><a href="#org0015a9f">cluster interpretation （reverse finding）</a></li>
-<li><a href="#orga48e3a4">dataset update by production data from cloud</a></li>
+<li><a href="#orge13a2ef">cluster interpretation （reverse finding）</a></li>
+<li><a href="#orgc9c1439">dataset update by production data from cloud</a></li>
 </ul>
 </li>
-<li><a href="#org2c865f9">Coding</a>
+<li><a href="#org4b80476">Coding</a>
 <ul>
-<li><a href="#org0c30328">code squeeze</a></li>
-<li><a href="#org546cff7">debugging</a></li>
-<li><a href="#org8018327">refactoring</a>
+<li><a href="#org2d79aa9">code squeeze</a></li>
+<li><a href="#orgd751ded">debugging</a></li>
+<li><a href="#org36003ce">refactoring</a>
 <ul>
-<li><a href="#orgd98a6a5">checkpointing</a></li>
-<li><a href="#orgfea22e9">training resuming</a></li>
+<li><a href="#orgb4cc8a8">checkpointing</a></li>
+<li><a href="#org1a71fdc">training resuming</a></li>
 </ul>
 </li>
-<li><a href="#orgd710e43">packaging</a></li>
-<li><a href="#orgacd7723">profiling</a></li>
+<li><a href="#org8865014">packaging</a></li>
+<li><a href="#orgdd70a75">profiling</a></li>
 </ul>
 </li>
 </ul>
@@ -70,92 +70,92 @@
 <a href="./20211220160946-blmp_project.html">BLMP-Project</a>
 </p>
 
-<div id="outline-container-org67ef21a" class="outline-2">
-<h2 id="org67ef21a">Algorithm</h2>
-<div class="outline-text-2" id="text-org67ef21a">
+<div id="outline-container-org34c18f5" class="outline-2">
+<h2 id="org34c18f5">Algorithm</h2>
+<div class="outline-text-2" id="text-org34c18f5">
 </div>
-<div id="outline-container-orga65a9f6" class="outline-3">
-<h3 id="orga65a9f6">fine grid search, hyperparameter improvement</h3>
-<div class="outline-text-3" id="text-orga65a9f6">
+<div id="outline-container-org6503a44" class="outline-3">
+<h3 id="org6503a44">fine grid search, hyperparameter improvement</h3>
+<div class="outline-text-3" id="text-org6503a44">
 </div>
-<div id="outline-container-org82641ea" class="outline-4">
-<h4 id="org82641ea">hyperparameter: layer number, hidden dimension, learning rate</h4>
-</div>
-</div>
-<div id="outline-container-org7e4879e" class="outline-3">
-<h3 id="org7e4879e">inference logics</h3>
-</div>
-<div id="outline-container-orgefb9f23" class="outline-3">
-<h3 id="orgefb9f23">masking logic (pytorch)</h3>
-</div>
-<div id="outline-container-org473c43e" class="outline-3">
-<h3 id="org473c43e">convergence</h3>
-<div class="outline-text-3" id="text-org473c43e">
-</div>
-<div id="outline-container-orgf1c2fc7" class="outline-4">
-<h4 id="orgf1c2fc7">WGAN</h4>
-</div>
-<div id="outline-container-org2ac1995" class="outline-4">
-<h4 id="org2ac1995">WGAN-GP (not trained)</h4>
+<div id="outline-container-orgdc2743f" class="outline-4">
+<h4 id="orgdc2743f">hyperparameter: layer number, hidden dimension, learning rate</h4>
 </div>
 </div>
+<div id="outline-container-orgb955b9d" class="outline-3">
+<h3 id="orgb955b9d">inference logics</h3>
 </div>
-<div id="outline-container-org87787b4" class="outline-2">
-<h2 id="org87787b4">Data</h2>
-<div class="outline-text-2" id="text-org87787b4">
+<div id="outline-container-org1873005" class="outline-3">
+<h3 id="org1873005">masking logic (pytorch)</h3>
 </div>
-<div id="outline-container-orgbc770a2" class="outline-3">
-<h3 id="orgbc770a2">outlier highlighting</h3>
-<div class="outline-text-3" id="text-orgbc770a2">
+<div id="outline-container-orgc537f20" class="outline-3">
+<h3 id="orgc537f20">convergence</h3>
+<div class="outline-text-3" id="text-orgc537f20">
 </div>
-<div id="outline-container-org6db1dbc" class="outline-4">
-<h4 id="org6db1dbc">BLMP 2.0 outlier</h4>
-<div class="outline-text-4" id="text-org6db1dbc">
+<div id="outline-container-org76e140c" class="outline-4">
+<h4 id="org76e140c">WGAN</h4>
+</div>
+<div id="outline-container-org85fee71" class="outline-4">
+<h4 id="org85fee71">WGAN-GP (not trained)</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org9b01152" class="outline-2">
+<h2 id="org9b01152">Data</h2>
+<div class="outline-text-2" id="text-org9b01152">
+</div>
+<div id="outline-container-org44e2703" class="outline-3">
+<h3 id="org44e2703">outlier highlighting</h3>
+<div class="outline-text-3" id="text-org44e2703">
+</div>
+<div id="outline-container-org04a5b18" class="outline-4">
+<h4 id="org04a5b18">BLMP 2.0 outlier</h4>
+<div class="outline-text-4" id="text-org04a5b18">
 </div>
 <ul class="org-ul">
-<li><a id="org11d152d"></a>charging signals of in question battery (found)<br /></li>
+<li><a id="orgb736729"></a>charging signals of in question battery (found)<br /></li>
 </ul>
 </div>
-<div id="outline-container-orga2f3ab7" class="outline-4">
-<h4 id="orga2f3ab7">Ascending, Descending</h4>
+<div id="outline-container-orgbc7c05b" class="outline-4">
+<h4 id="orgbc7c05b">Ascending, Descending</h4>
 </div>
-<div id="outline-container-org7d2726f" class="outline-4">
-<h4 id="org7d2726f">high frequent signal （no high frequent signals after rescaling)</h4>
-</div>
-</div>
-<div id="outline-container-org0015a9f" class="outline-3">
-<h3 id="org0015a9f">cluster interpretation （reverse finding）</h3>
-</div>
-<div id="outline-container-orga48e3a4" class="outline-3">
-<h3 id="orga48e3a4">dataset update by production data from cloud</h3>
+<div id="outline-container-org2dd9a5e" class="outline-4">
+<h4 id="org2dd9a5e">high frequent signal （no high frequent signals after rescaling)</h4>
 </div>
 </div>
-<div id="outline-container-org2c865f9" class="outline-2">
-<h2 id="org2c865f9">Coding</h2>
-<div class="outline-text-2" id="text-org2c865f9">
+<div id="outline-container-orge13a2ef" class="outline-3">
+<h3 id="orge13a2ef">cluster interpretation （reverse finding）</h3>
 </div>
-<div id="outline-container-org0c30328" class="outline-3">
-<h3 id="org0c30328">code squeeze</h3>
-</div>
-<div id="outline-container-org546cff7" class="outline-3">
-<h3 id="org546cff7">debugging</h3>
-</div>
-<div id="outline-container-org8018327" class="outline-3">
-<h3 id="org8018327">refactoring</h3>
-<div class="outline-text-3" id="text-org8018327">
-</div>
-<div id="outline-container-orgd98a6a5" class="outline-4">
-<h4 id="orgd98a6a5">checkpointing</h4>
-</div>
-<div id="outline-container-orgfea22e9" class="outline-4">
-<h4 id="orgfea22e9">training resuming</h4>
+<div id="outline-container-orgc9c1439" class="outline-3">
+<h3 id="orgc9c1439">dataset update by production data from cloud</h3>
 </div>
 </div>
-<div id="outline-container-orgd710e43" class="outline-3">
-<h3 id="orgd710e43">packaging</h3>
+<div id="outline-container-org4b80476" class="outline-2">
+<h2 id="org4b80476">Coding</h2>
+<div class="outline-text-2" id="text-org4b80476">
 </div>
-<div id="outline-container-orgacd7723" class="outline-3">
-<h3 id="orgacd7723">profiling</h3>
+<div id="outline-container-org2d79aa9" class="outline-3">
+<h3 id="org2d79aa9">code squeeze</h3>
+</div>
+<div id="outline-container-orgd751ded" class="outline-3">
+<h3 id="orgd751ded">debugging</h3>
+</div>
+<div id="outline-container-org36003ce" class="outline-3">
+<h3 id="org36003ce">refactoring</h3>
+<div class="outline-text-3" id="text-org36003ce">
+</div>
+<div id="outline-container-orgb4cc8a8" class="outline-4">
+<h4 id="orgb4cc8a8">checkpointing</h4>
+</div>
+<div id="outline-container-org1a71fdc" class="outline-4">
+<h4 id="org1a71fdc">training resuming</h4>
+</div>
+</div>
+<div id="outline-container-org8865014" class="outline-3">
+<h3 id="org8865014">packaging</h3>
+</div>
+<div id="outline-container-orgdd70a75" class="outline-3">
+<h3 id="orgdd70a75">profiling</h3>
 </div>
 </div>
 </div>
