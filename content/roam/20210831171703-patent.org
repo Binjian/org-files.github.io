@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       22c08346-a728-40f7-bb70-52361c724097
+:END:
+#+title: patent
+
+
+[[./20210907102953-self_calibration.org][self-calibration]]
+
+[[./20210907103240-reward_driven_optimal_vehicle_longitudinal_decision.org][reward-driven optimal vehicle longitudinal decision]]
+
+
+[[./20211202104125-battery_soh_prediction_using_generative_model.org][Battery SOH prediction using Generative Model]]
+
+
+[[./20220120172531-reward_based_powertrain_control_unit_calibration_in_eco_mode.org][Reward based Powertrain Control Unit Calibration in Eco Mode]]
+
+[[./20210924113818-newrizon_ip.org][Newrizon  IP]]
+
+
+[[./20211210171817-veos_fto.org][veos-FTO]]
+
+
+Software Work EOS
+
+LLM adapter
+
+LLM in the loop planning
+
+software copyright for EOS
+
+[[./20211210171817-veos_fto.org][LLM as high-level self-driving decision module]]

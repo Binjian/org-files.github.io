@@ -1,0 +1,37 @@
+:PROPERTIES:
+:ID:       dbd81655-b7c8-470d-b69a-292f6bfb3da5
+:END:
+#+title: UM-SJTU-T5
+* Prerequisite [0/5]
+** [ ] Server
+** [ ] laptop
+** [ ] Company Account
+** [ ] Company Seat
+** [ ] Gitlab and Jira
+
+* Seminar
+** PG/PCG
+*** Increasing generality in machine learning through procedural content generation
+** PGDrive
+*** mproving the Generalization of End-to-End Driving through Procedural Generation
+** DRL
+
+* Jira
+** Sprint Prep
+*** owner, master, milestone, epic, story
+*** meeting set
+*** repo setting rules
+* Extentions
+** guided domain randomization
+*** entropy
+*** reward
+*** design
+** automatic domain randomization
+*** exploration
+*** curiosity
+*** policy gradient
+*** generalization
+** search based PCG
+*** orthogonal (independent) PCG to the learning diversity
+** PCG via ML
+*** functional content

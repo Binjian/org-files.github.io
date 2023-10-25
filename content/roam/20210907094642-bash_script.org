@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       08ab59db-166b-4183-9c67-adb0b96a6656
+:END:
+#+title: bash script

@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       aa5848aa-9f07-444d-8a0c-8898e5c6eab3
+:END:
+#+title: Git-LFS
+
+* objects
+** Object Data
+*** tranining and inference
+*** integration test
+** Auxiliary Data
+*** documents, Images, Videos
+** Build Artifacts (artifactory!)
+*** checkpoints
+*** model files
+*** logging files
+** not size dependent, （binary)
+*** changes leads to size grow for version control
+**** difficult to compress and change frequently
+*** <500kB is ok
+** Set up git LFS on dev machines enterprise config
+** configure file size limit on git server!

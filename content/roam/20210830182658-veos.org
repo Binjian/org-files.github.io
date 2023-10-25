@@ -1,0 +1,154 @@
+:PROPERTIES:
+:ID:       228e200d-6679-453b-af68-788ed82029d6
+:END:
+#+title: veos
+Vehicle Energy Optimization System
+
+* method
+[[./20210830182904-q_learning.org][q learning]]
+[[./20210831171703-patent.org][patent]]
+[[./20210907093906-pedal_map.org][pedal map]]
+
+
+* meditation
+** **world class application: need careful design and plan; drl need manual curriculum; achieve solid progress;**
+** energy saving result is determined by scenarios: cruise has no space for saving!
+** action space: too big already to consider other than pedal map: 5 rows is 85 continuous float; more than this will not converge!
+** road environment is complex, add action space will make approximation, optimization and model more complex!
+** sample efficiency is import since road test is expensive, time, cost!
+** e2e is indispensable: think about detecting edges for mnist classification
+** LEARNING/TRAINING --> INFERRING
+** Project Funes
+** continuous learning (avanlanche: an end-to-end library for conticual learning)
+** differentiable attention ( diffrentiable search index )
+** Hierachical DRL : LLM integration to alleviate the Long Horizon issue, exploration issue, represetnation issue (conce)
+*** [long sequential decision] Goal filtering: SayCan (value function, long horizon sequential decision, affordance, grounding)
+*** [exploration] Goal generation in sparse rewarding environment: Natural Language for exploration
+** VQ-VAE 1&2
+** CycleGAN
+** Graph NN
+** Causal Inference
+
+* road test
+** freeze model, pure inference
+*** meager overlapping of training and inferring
+** learning with pseudo episode (fixed time length)
+*** no episode guarantee, might not converge
+** real episode, stepwise expand test range
+*** exponential complexity with extending range
+*** unpredictable events, interrupts change the scenarios
+* solution
+** memory: rnn encoding; [[./20211101093524-neural_turning_machine.org][neural turing machine reinforcement learning]]
+** model based
+*** GAN
+*** Stochastic Value Gradient SVG(0) SVG(1)
+** offline reinforcement learning
+** simulation (metadrive/pgdrive), transfer learning
+* Current Achievement:
+** Get definite convergence on short episode with DRL (on policy, off policy)
+*** Achieves definitely better performance than human drivers for the small episode
+*** validated on different drivers/ driving style
+*** model free: not explicitly using and domain knowledge
+*** Get the most performanc margin for defined episodes and decision space
+** Setup campus and road test system and method
+** Construct methodes for esitmation of problem complexity for simple episode and complex episode
+** Solid performance evaluation by data collection and analysis
+* Key Observation MDP
+** Type I system, human performance in energy saving strategy is a low-dimensional manifold in the decision space. Thus it can be reached.
+** World-Class Challenges
+** major factors for energy consumpution is power
+*** action space
+**** motion planning (PM/AccMap/...):
+***** acceleration,
+***** torque,
+***** speed
+**** Battery working region
+**** ...?
+*** system dynamics （world): road
+**** road
+**** driver style
+***** definition?(sequential model), can be formalized as cooperative agent
+***** non-stationary (can be chagned by the road, vehicle parameters)
+***** states/observations (partially observable):
+****** vehicle motion
+****** current, voltage
+***** reward:
+****** energy consumpution!
+****** reward has margin!
+******* different episode definitions determine the margin of reward (cruising vs traffic jam driving)
+*** ways of energy saving:
+**** e2e and PG, (change the motion):
+***** lower the power: low speed
+***** utilize regenerative braking
+**** learn the system dynamics model
+***** learn the road?
+***** learn the user driving style? (user motion planning model) then change motion decision by reward driven DRL
+*** Issue:
+**** driving-style-driven
+***** reward is weak, buried in the fluctuation of other factors like speed, SOC, temperature
+***** driving style is changed by the road condition unobservably and by vehicle intrinsics adjustment
+**** need to be episodic
+***** Break the episode is not allowed. Cannot guarantee the convergence of critic
+****** break reinforcement algorithm
+****** or decrease data/training efficiency
+***** definition needs to be delineated with precise state boundaries, incomplete episode is difficult to punish due to credit assignment problem
+***** episode definition determines the reward margin for designated action space
+***** No reward for cuise! little reward for smooth episode!
+***** large and long episode increase the learning complexity, training time and the requirement on model capacity!
+***** episode definition is tricky to trigger the specific mechanism (driving style uitilization)
+***** having episode on the road test has safety issue
+**** Current Solution
+***** Pre-Training
+****** To train with dedicated test cases with model updates, guarantees data-efficiency. then inference with frozen model.
+****** Big episode
+***** To improve algorithms (data efficiency):
+****** POMDP method : RDPG, RSVG(0) verified on CarlaVEOS
+****** model based method: model-based SVG for continuous RL
+***** To validate on the road:
+****** Ultimate production level: Massive test on the road, get the expectation.
+****** Experimentell level: Dedicated test cases, clear episode definition.
+* Industry
+** scale up, resources, AI scaling up, huge potential!
+** Research oriented Product/Engineering
+*** AI is the key, should be the dominating factor to reconsider the system architecture, infrastructure, cutting-edges, cannot manage, business case, planning
+**** progress is huge (waymo sascha anoud ...), scaling up needs showcasing
+**** surprising way of changing the tendency, not like hammer and nail solution.
+**** SoTA is not sufficient. Need breakthrough, derailing often!
+***** multitasking --> multimodel
+***** self-supervised --> LLM
+**** LLM, reinforcement learning, robust inference
+**** different infrastructure
+**** failure, risks
+**** no sure with success
+*** technologoy oriented
+**** leadership sentiments: inspired by creativity and new ideas
+**** appearance management:  not by management success, not by fancy demos
+**** not opportunitism, but strategy,
+***** courage to hold temporary failure and bold ideas
+***** leadership is learning slowly
+***** hesitate in decision
+**** tech company is more conserved
+***** system engineering is problematic, requirement vs architecture?
+****** total distorted the discussion
+***** validation is not deterministic anymore
+****** based big data should be statistical, more expensive
+****** prediction by GAN designed with probalistic assumption
+****** demo is deterministic, but not helping in judges in statistical point of view, too few samples, not honest!
+****** the industry produces rediculous standards.
+**** encouraging innovation by encouraging discussion and new ideas
+**** organization change: system 1 & system 2
+***** currently wrong
+****** management is management oriented!
+****** evaluation is product oriented, not by ideas
+****** engineers working on wrong problems due to wrong assignments
+****** separation of research and production
+******* what kind of research is needed for production
+******* what kind of theory is important for 1~3 years of production
+****** performance index:
+******* code number: produce cheap results
+******* extra hours
+******* not based on ideas
+** Flexibility
+*** no management oriented
+*** time bugdet
+*** for learning, self-management

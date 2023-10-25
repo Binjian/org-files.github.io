@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       d19f1706-fcf3-4e75-b20b-743c84724fc9
+:END:
+#+title: geometric deep learning
+
+[[./20231024150747-deep_learning_general_theory.org][Deep Learning General Theory]]
+
+Michael Bronstein
+"I think machine learning is such a field where holding strong beliefs is often counterproductive!"
+
+Joan Bruna
+prior sample efficiency;
+learning guarantee: certifiate
+symmetry (invariance) + scale separation

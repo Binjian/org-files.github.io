@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       6aa2c2e8-4636-453f-a681-039dec041cc1
+:END:
+#+title: simulation
+[[./20210831171703-patent.org][patent]]
+[[./20210831171925-l3.org][l3]]
+
+[[./20210930152446-pgdrive.org][PGDrive]]

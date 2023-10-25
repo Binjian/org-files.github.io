@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       c099ea75-ef58-4ca8-96a2-6d1468e8d9e8
+:END:
+#+title: GAN
+
+* GAN Generator(decoder); Discriminator (not encoder?)
+** discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification
+** Generator target minimization of JSD to approach data distribution
+** objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!
+* critisize
+
+** loss is not balanced $E_{x \sim p_{data}}$ not dependent on G
+add G in a way to influence the first objective.
+add a gap of G to real data to have a loss for G
+** the engineering trick to modify the second objective for G does not conform to JSD
+** The optimization of D and G is subsequent, not simultanteous.
+*** If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.
+*** how to guide the training?
+** $z\sim p(z)$ is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make $x \sim p_{G}(x)$ approach $p_{data}$ more easily!
+** G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?
+*** some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator->encoder;
+*** discriminator(classifier)->decoder?
+**** guess: "discriminator = decoder + classifier" would be easy for classifier when the embedding is learned the way generator leans.
+* appendex
+
+[[./20220601131312-vae.org][VAE]]
+
+[[./20211221093903-time_series_gan.org][Time Seres GAN]]
+
+
+[[./20211221093920-conditional_gan.org][Conditional GAN]]

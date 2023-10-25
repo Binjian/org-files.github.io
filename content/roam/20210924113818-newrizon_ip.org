@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       db5cb139-dca7-4442-9faf-e766d20dc4c4
+:END:
+#+title: Newrizon IP
+[[./20210924113454-electric_powertrain.org][Electric Powertrain]]
+[[./20210924113930-vehicle_engineering.org][Vehicle Engineering]]
+[[./20210924113542-intelligent_system.org][Intelligent System]]

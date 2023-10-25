@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       26ff3a0b-26c7-49f0-832f-6fed2372074a
+:END:
+#+title: virtual-grid
+
+* Real-time demand forecasting for an urban delivery platform
+** demand forcasting of

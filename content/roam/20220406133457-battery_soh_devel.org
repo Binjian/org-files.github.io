@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       8352d6c8-7a78-49be-9b78-f72438f8398f
+:END:
+#+title: battery-soh-devel
+
+[[./20211220160946-blmp_project.org][BLMP-Project]]
+
+* Algorithm
+** fine grid search, hyperparameter improvement
+*** hyperparameter: layer number, hidden dimension, learning rate
+** inference logics
+** masking logic (pytorch)
+** convergence
+*** WGAN
+*** WGAN-GP (not trained)
+* Data
+** outlier highlighting
+*** BLMP 2.0 outlier
+**** charging signals of in question battery (found)
+*** Ascending, Descending
+*** high frequent signal （no high frequent signals after rescaling)
+** cluster interpretation （reverse finding）
+** dataset update by production data from cloud
+* Coding
+** code squeeze
+** debugging
+** refactoring
+*** checkpointing
+*** training resuming
+** packaging
+** profiling

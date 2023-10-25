@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       8b79e3f9-1ac7-4041-bc91-81b5a8213c41
+:END:
+#+title: metaflow
+
+* Goal
+- scalability
+- criticality
+- complexity
+* Infrastructure
+** data warehouse
+** compute resources
+** job scheduler
+** architecture
+** versioning
+** model operations
+** feature engineering
+** model development

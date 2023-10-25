@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       6fcbbe7c-c6e7-4d68-917c-409a518b3995
+:END:
+#+title: battery aging model
+* battery capacity estimation
+** State of Health (SoH)
++ ratio of relative residual capacity with respect to the initial capacity
++ critical for range prediction and maximum energy storage capability
++ battery capacity: full charge process, parking iwt grid connection
++ discharge is uncertain with environmental and operational conditions,
+  + discharge curve is seldom available for on-board SoH monitoring
+  + charging and discharging voltage depends on thermodynamic and kinetic characteristics of the batttery
++ do not need to a deep understanding of the electrochemical model, but large datasets
++ degradation features?
++ charging
+  + regularly
+  + favorable
+  + relaxation process has a relationship with SoH:
+    + relaxation voltage value at a specific time
+    + the voltage curve during a specific period
+  + CC (constant current) charge voltage-based
+  + CC-CV (constant current-constant voltage) charge voltage-based
+  + *charging strategy for the purpose of surveying SoH?*
+  + *What is the general capacity degrading udner temperautre and charging current, cycles*?
+  + multistage charging? optimal stategy relying on real SoC
+  + start of charge normally distributed
+  + partial charge process in a specific voltage range for feature extraction
+    + SOTA RMSE 0.39% ~ 4.26%
+  + differential voltage analysis, incremental capacity analysis for battery aging mechanism identification and capacity fade evaluation
+    + SVR (support vector regression), GPPF (Gaussian Process Particle Filter), BPNN (Back-Propagation Neural Network), linear model
+    + partial incremental capacity curve
+  + rest voltage-based are few
+    + linear model utilizing resting process: voltage after 30 min rest when fully charged: capacity estimation percentage error 0.7%~3.3%
+    + method using voltage relaxation for lithium plating detection
+    + ECM (Equivalent Circuit Model) to describe the voltage relaxation
+    + RC (resistor-capacitor) network model: batttery capacity decay during rest periods at 100% SoC using a dynamic time constant from RC model
++ results with features from voltage relaxation curve:
+  + ElasticNet, XGBoost, SVR: RMSE 1.0%, 1.7%, 1.6%
+  + Battery: NCA, NCM, NCM+NCA
++ discharging
+  + random
+  + driving behaviors
+  + road environments

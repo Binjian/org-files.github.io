@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       d39d0251-b08a-4086-aa0e-779678b918d5
+:END:
+#+title: virutal-logistic-hub
+* Graph representation
+** rich semantic of nodes and edges
+*** nodes: vehicles; clients
+**** attributes: coordinates, loading, capacity,
+*** edges:
+**** tasks (connecting vehicles and clients), multiple
+**** connectivity
+***** road network
+***** realtime traffic
+*** parcel transaction induces local neighborhood changes
+*** network evolves over time
+*** node level (graphlet feature vector, local agent-client connection)
+** bipartite graph
+** alignment of two separation graphs
+** business goals
+*** optimization of client satisfaction
+*** engery savings of fleets
+*** optimal utilization of fleets
+*** vehicle dispatching response
+*** optimal operation of the whole network
+** solution (prediction)
+*** node-level
+*** link-level
+*** graph-level

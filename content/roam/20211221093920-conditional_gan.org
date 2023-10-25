@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       72d52d97-37c2-4627-86d4-76e73998e29b
+:END:
+#+title: Conditional GAN

@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       7eaacea0-aeee-4d40-a49f-4ab23e0ff164
+:END:
+#+title: foundation_model_newrizon
+
+* LLM (language, multimodal (audio, image))
+** Commercial data
+*** Sales
+*** Customer
+*** Supplier
+** Office Applications
+** Development
+*** software
+*** system requirements
+** autonomous driving systems
+*** LLM for prediction and planning in complicated driving scenes
+*** perception
+**** complex scene understanding
+**** visual: SAM
+** Policy switch for VEOS system based on low FR videos of Camcorder
+** Way of applications
+*** prompt engineering
+*** LLM-Adapter
+* Foundational Models for Time Series
+** less research
+** vehicle
+*** EP (VBU)
+*** Battery
+****

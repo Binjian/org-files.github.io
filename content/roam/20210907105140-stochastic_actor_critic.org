@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       8552cda0-383b-4d96-8dee-8a180becf292
+:END:
+#+title: stochastic actor critic

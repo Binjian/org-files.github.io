@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       7495c102-cab9-46af-baee-a5926d835a1c
+:END:
+#+title: distributed learning
+[[./20231024174436-deep_learning_theory.org][deep learning theory]]

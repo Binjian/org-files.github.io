@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       18d7b376-c12a-41a5-977a-966a078925f4
+:END:
+#+title: data warehouse
+
+* sources
+** transactional (inferring)
+*** kvasercan
+*** remotecan
+** analytical (batch, training)
+*** mongodb
+*** elastic
+*** pystore
+* formats
+** pandas dataframe
+** numpy array
+** apache parquet
+** CSV
+** JSON
+* models
+** NoSQL
+** time sequence
+** document model
+** (graph model)
+** structured data
+** (unstructured data)
+* storage engines and processing
+** MongoDB time series collection
+** pystore (dask)
+* modes of data flow
+** passing through database
+** through through service (HTTP REST),  (RPC)
+** through real-time transport (Kafka, )

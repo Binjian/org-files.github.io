@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       ef8a4296-c700-4ac7-ac72-fcfeda238d71
+:END:
+#+title: test-org-ai
+
+
+
+
+* test org-ai
+
+#+begin_ai :max-tokens 150
+Is Python the greatest programming language?
+
+
+[AI]: As an AI, I don't have personal opinions. However, it's important to note that the "greatest" programming language is subjective and depends on the specific task or project at hand. Python is widely acknowledged for being easy to learn and read, making it a popular choice for beginners. It's also widely used in scientific computing, data analysis, machine learning, artificial intelligence, web development, and automation. However, other languages may be preferred for certain uses - for example, JavaScript is often used in web development, C in system programming, Java in enterprise software, and so forth. Ultimately, the best language to use depends on the specific requirements and constraints of the project you are working on.
+
+[ME]: 
+
+[AI]: As an AI, I don't have personal opinions. However, it's important to note that the "greatest" programming language is subjective and depends on the specific task or project at hand. Python is widely acknowledged for being easy to learn and read, making it a popular choice for beginners. It's also widely used in scientific computing, data analysis, machine learning, artificial intelligence, web development, and automation. However, other languages may be preferred for certain uses - for example, JavaScript is often used in web development, C in system programming, Java in enterprise software, and so forth. Ultimately, the best language to use depends on the specific requirements and constraints of the project you are working on.
+
+[ME]: 
+#+end_ai
+* image generation
+
+#+begin_ai :image
+A cat on the roof.
+#+end_ai

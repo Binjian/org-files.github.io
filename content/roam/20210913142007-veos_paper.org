@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       f949414e-7ddf-4d0f-b2b0-d27c2644a498
+:END:
+#+title: veos-paper
+[[./20210830182658-veos.org][veos]]
+* motivation
+alex irpan paper post why reinforcement leanring does not work yet in the real world
+scaling up model, is not the case
+1. Simulation atari
+2. Carla
+3. server cluster VAC
+4. Bonsai
+
+make some progress, any progress in the application;
+
+
+learning based.
+
+driving decision with short horizon has an impact on the overall energy consumption
+
+no realtime requirement, based on the scenario, minutes would be sufficient. actuallly the luxuray of seconds updating the nearby rows of torque table.
+
+Contextual Information like NLU different scenario, any action is like tokens. --> Sequential decision by transformer/RNN
+
+
+* sota
+
+* method
+
+** model
+*** vehicle dynamic system modeling
+**** general model
+*** reinforcement learning model
+**** action model: torque model, translational mixed gaussian model, with speed translation invariance
+equation
+**** observation model: state,
+equation
+**** reward model
+**** driver model
+
+** time sequence is important for exact reward
+** data pool with dask and mongodb for easy sampling, storing, indexing, data interface with DataFrame with every timestamps
+
+* experiment results discussion
+** ddpg
+short period of attention window
+** driving style hinted at a common reward of human drive and agent
+
+** rdpg
+long episode truncated BPTT long period of attention window
+episode management, training selection,
+
+RLHF? easy way with empirical distribution no sequential model, first ignore the time sequence, just to look at the difference.
+
+* broader impact
+federated learning for meta learning,evolving
+NAS,

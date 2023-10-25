@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       1a52b829-dae8-4689-8813-f1396ce7a9f7
+:END:
+#+title: ChipLego Demo Intro
+
+* vck190
+** AI Engines
+** 133 Tops
+** 4 摄像头扩展板
+** Lidar + Radar 模拟 replay
+** Capture + Acceleration + Output
+** PL
+** DPU (DSP+AI+PL)
+** APU （PS）-->cpu
+* software
+** ZOCL accelrator os driver
+** gstreamer (deepstream) pipeline
+*** vvas plugins --> middleware
+** Vitis
+*** AI: DL
+*** Libraries: scaling
+*** XRT: runtime kernel
+*** 配置通过 json
+
+* NPU SW stack
+** onnx support
+** CL Reference Code
+** CL AI Development Kit
+*** Profiling offline
+*** online, performance monitor （dumping file)
+*** AI pipeline g-streamer based
+**** nv graph composer?
+*** AI GRaph Cionverter, Quantizer, AI Compiler
+*** AI Runtime, HW Driver
+** Hardware NPU/(DSP/GPU)
+* Process
+** Convert tool : ONNX -->CLG models
+** Quantizaiton tool: QAT?
+** Graph optimizer
+* SDK
+** CL camera perception
+** Deep Stream?
+* data stream
+** GST Decoder
+** GST CLinfer
+** GST Tracker? traditional SW stack
+* Use cases:
+** BEV
+* Overall introduction
+* Weekly
+** <2022-11-18 周五>
+*** Jonas
+**** 工具链不成熟，明年
+**** layer norm，
+**** tops int8, xflops
+*** William
+**** AIE2
+**** lidar, radar?
+**** upgrade vck190?

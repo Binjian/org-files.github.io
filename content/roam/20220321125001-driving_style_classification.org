@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       bc7050d5-36c0-4732-8863-ab08b86bf5ef
+:END:
+#+title: driving style classification
+
+* data set preparation
+** using tensorflow datasets / sklearn interface training/validation splitt
+** labeling, shuffle, batch generation with sampling,
+* supervised learning
+** XGBoost with time series
+** LSTM classification
+* unsupervised learning
+** learn the embedding
+*** PCA
+*** t-SNE
+*** UMap
+*** TriMap
+*** Compressive VAE

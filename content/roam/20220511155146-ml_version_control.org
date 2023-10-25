@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       07dbf914-8386-4e94-8528-1ced3983d1ad
+:END:
+#+title: ml-version-control
+
+* elements
+** code
+*** changes, to improve/deteriorate training/inference
+** data
+*** dataset
+*** failure data, outlier
+*** success data to improve
+** model
+*** checkpoints
+**** model arch
+**** weights
+*** hyperparameters
+* Benefits
+** collaboration
+** versioning
+** reproducibility
+** dependcy tracking
+** model updates
+* type
+** centralized
+** distributed
+* DVC
+** https://dvc.org/
+** performance
+*** scalability
+*** availability
+*** security
+*** flexibility

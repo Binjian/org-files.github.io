@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e9e809d2-25dd-4f93-9063-1118d79ab4c2
+:END:
+#+title: BMS interface
+
+
+
+:truck: :battery: :battery: :battery: :battery: \neq :truck: :email: :email: :email: :email:

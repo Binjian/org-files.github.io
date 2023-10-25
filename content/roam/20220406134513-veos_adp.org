@@ -1,0 +1,227 @@
+:properties:
+:id:       59bd937c-b70b-4546-bb0b-98d2215737d8
+:end:
+#+title: veos-adp
+
+[[./20211012160401-veos_production_plan.org][veos-production-plan]]
+
+* communication
+** online (remote-can)
+*** uploading
+*** downloading
+** offline (cloud offline data)?
+*** database search interface (es)
+**** only search and get record
+** cloud deployment?
+** data interface [[./20220408125710-veos_adp_training_data_interface.org][veos adp training data interface]]
+
+* vehicles
+** dev-vb
+** 3 test-vb
+* program management:
+
+** who makes decision?
+*** who has sense?
+*** many decision made to stop the show, has impact on delaying the milestone.
+*** technical decision: linux/windows, web requests not available on windows, why?
+* remotecan client
+** delivery insufficiency
+*** poor documentation
+**** class method not documented.
+**** no why and how
+**** diagram low quality
+*** naming confusing
+- "1s" vs "ls",
+- "delay" as "dalay",
+- "reson?",
+- "pedal | brake?" --> "thrust | brake"
+- meaningless value for gears 0,1,2,3; why not p r n d?
+*** create a module, almost no test for delivery and expect client to test
+**** almost no unit test
+***** which test case? which unit tests?
+****** test result ok with server not response!
+****** test result ok with wrong json message!
+****** transmission fail
+****** data fail
+******* json object need metadata to have its own custom class for serialization and deserialization
+******* metadata: type
+******* required field
+******* optional field
+******* length
+****** upload fail
+****** download fail
+******* no confirmation of whether vehicle side received the same data. no check. ust send sucess!!!
+****** server pending
+***** not working under windows
+***** test incomplete without server (windows problem)
+***** test for only a method, not for class
+**** test output not aligned
+**** test_case names implies nothting
+*** poor acceptance of requirements
+**** documentation is the schema, need contract.
+*** why sending unnecessary redundant data (consumption list)?
+*** "dalay"? method? review?, who is using?
+*** what is the meaning of "alignment（对齐）"
+**** if not aligned, padding with null!
+*** gears dimension? [2x2]?
+*** timestamp definition, when(被收到的时间戳?)?
+*** what does delay mean? estimation method?
+*** granularity 1s? should be able to get smaller granularity!
+*** what does "current_zoomed" mean? method? need raw data!
+*** raw data : tuple with every timestamp, if not available use null!
+*** api no return : black holes! (return status and the changes)
+*** failed test result return ok/done.
+*** flashing dangerous parameter onto the vehicle without testing！
+*** testing without knowing what is doing (which vehicle is flashing!)
+*** chaotic imports no isort!
+*** everytime huge chaotic code changes
+*** chaotic documentation
+*** cannot use directly
+*** no confirm of changing!
+*** no design, no architecture, no production level
+**** code not maintainable
+**** no exception handling
+**** no timestamp hanlding
+**** typos everywhere
+**** not pytest ready
+**** false claims
+**** naming/api chaotic
+**** terrible documentation/coding styles (no black, isort etc.)
+**** not familiar with mongodb
+*** api design: flashing return error code 3?!
+*** api unstable: cannot flashing!
+*** todo debug 1000, 1002, empty code {} oss insufficiency
+*** todo get & send in duplex mode
+*** poor response (own code response 2 days!)
+
+** fixed url for server?
+** need fake json data server like jsonplaceholder.typicode.com
+** need timestamps
+** streaming requests
+** session for higher efficiency
+** design goal --> understand deviation --> need verify --> performance checking
+** todo *issues* improvements:
+*** need streaming interface
+**** with mode switch to turn on and off
+**** need full observation based on incessant frames of a full episode
+*** need asynchronous download and upload
+**** usual way of remote interaction to handle delay, interrupt, preemtpion
+**** flexible, robust
+*** upload need more status: start/stop/interrupt eos mode,
+*** **use rpc instead of rest api**
+** product branch
+
+
+[[./20220420093028-veos_adp_plan.org][veos-adp-plan]]
+* tbox
+** wiring
+*** can_activate one light?
+*** no calibration can?
+** can_driver_node rebuild? observation values ok?
+** pm 21 rows --> 14 rows? row coordinates?
+** flashing
+*** upload?
+*** download?
+*** diff on/off? meaning?
+* cloud
+** task
+*** pre-requisite
+**** cloud platform test (connection ssh login, python, linux usergroup, docker install, pyenv configuration, ide )
+**** issue fixing
+**** dockerfile
+**** mypy
+**** kubernetes deployment test
+**** fortinet install and ethernet test, functional test
+*** veos deployment (pip pip+git install, mypy, poetry, )
+*** veos functional test (remotecan, data pool)
+** cloud problem
+*** connection
+**** install, github, apt-source, pytorch, tensorflow, nvidia overall
+**** internal repo? gitlab.newrizon.work?
+**** install package by copy not working
+*** docker?
+**** dockerfile in the project, install?
+**** dockerfile, （kubernetes interface）， install source/pip
+*** baiduyun account, profile setting
+**** ssh
+**** options: pip
+**** dns, vpn /ssh reverse tunnel?
+**** pyenv?
+*** pip
+**** git+https://${}:${}gitlab@newrizon.work/ai/drl-carla-manual.git@{realese2}
+**** priviate pip repo
+*** not doing own duties
+**** own container build issue
+**** very old git (even in docker reinstalled)
+**** not following instructions, deliberately asking irrelevant questions
+**** no testing, all integration test by apps!
+***** all issues found by apps, not integration test, no module test
+***** issues found, no progress
+**** deliberately change interfaces while adding features
+***** rocketmq
+****** why would app contain cluster stuff?
+***** reomotecan parallel processing
+**** no design review
+***** poor design: single machine/clusters. why?
+***** frequent changes of interfaces
+**** way of development
+***** exchange of code not functionality
+*** vbu software not confirmed
+*** instruction? handbook? (baidubce?, github? pytorch!)
+*** least surprise? (low efficiency, poor maturity)
+**** user account management, strange account blocking
+**** unstable access to outside network (pip, )
+**** poor connection (github intermittent, 50k top)
+**** inexplicable restore
+**** partition? 20g
+**** does copy (not install) really work?
+** database
+*** [[./20220829110049-data_warehouse.org][data warehouse]]
+*** time series support for databse (timestamp, efficient indexing)
+**** timestamp
+***** indexing (searching)
+***** random sample method
+**** metadata:
+***** vin
+***** unit time length
+***** sample frequency
+***** location
+*** *automatic choose collection based on meta data*
+*** serialization support for pandas dataframe and numpy array, python objects, compression
+*** data versioning, snapshots, chunking, ttl
+*** update records with new features (mongodb 6.0, for mongodb<6.0 only appending)
+*** tracking changes over time
+*** user, user library account management
+*** version-, tick-, chunkstore, bsonstore
+*** working with large data, lazy loading
+*** prevent unindexed/unsharded collections
+*** thread safety?
+*** exception handling (collection)
+*** apache arrow for in memory analytics (pymongoarrow)
+*** multiple database with different unit lengths.
+*** no configures in the database document/ in application configuration
+*** maintaining, porting, searching, indexing, compatibility?
+*** variant metadata
+*** todo data warelake design
+** dvc [[./20220511155146-ml_version_control.org][ml-version-control]]
+** truss server for prediction
+** basic function
+** saftety function
+** algorithms verficatioin
+* safety
+** communication (cybersecurity, data safety)
+** actor
+** observation (data safety)
+* test issue
+** design sucks, cannot meet requirements
+** quality sucks, oss not sufficient --> intest interference? why?
+** database drops, ridiculous
+** deadend everywhere
+** not telling truth
+** no test before application, alarming!
+*** all problems on the final applications
+*** persistency, availability
+*** not knowning service is available! everyday checking!!!
+*** cannot continue test
+** firmware version, no one cares, which one should be used?!
+*** alarmed but no response

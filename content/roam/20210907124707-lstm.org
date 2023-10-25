@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2484a4f0-bc0b-4a7b-b80a-6710892c884f
+:END:
+#+title: lstm
+long short term memory

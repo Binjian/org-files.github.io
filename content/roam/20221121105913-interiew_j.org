@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       882abb7d-abbb-45d6-af24-5f096d2ab387
+:END:
+#+title: interiew J
+*
+<2022-11-21 周一>
+* Herry
+* Bob
+** 兴宾
+** behavior
+**

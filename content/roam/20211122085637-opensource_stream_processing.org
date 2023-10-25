@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       ac992fc9-e291-4acc-8eb2-d3a8c2619a07
+:END:
+#+title: opensource steam processing 
+
+apache flink
+
+apache Kafka

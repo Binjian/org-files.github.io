@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       693c9b79-094c-4f90-a16b-3b1c8d77e32f
+:END:
+#+title: opencv

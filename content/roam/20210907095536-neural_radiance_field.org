@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       8b22340e-26b8-493e-8355-6f231415d81d
+:END:
+#+title: Neural Radiance Field

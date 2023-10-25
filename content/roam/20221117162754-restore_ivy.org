@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       b10224f6-2e57-4f6b-ae07-8774da683207
+:END:
+#+title: restore-ivy
+
+* partition
+** vlt
+** dpt
+** ore
+** btr
+/etc/fstab
+sudo blkid
+
+* system
+** chinese input
+
+* programs
+** openssh-server
+** emacs
+** v2raya
+** lantern
+** pycharm
+** pyenv
+** micromamba
+** poetry
+** code
+** docker engine install
+** nvidia container tool
+** mongodb install
+** nvidia
+** openfortivpn?
+** tmux
+** omz
+** powerline10k
+** terminator
+** asdf
+
+* data
+**  ~/devel/
+**  ~/programme/
+**  ~/.doom.d/
+**  ~/.pyenv.d/
+**  ~/.pip/pip.conf config
+**  .condarc
+** .bashrc .zshrc .pip
+** .ssh/
+** /etc/host
+** /etc/docker
+** /etc/mongod.conf

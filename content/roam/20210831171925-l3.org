@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       5ae725c7-4331-4bd5-9633-696c553f132a
+:END:
+#+title: l3
+[[./20210831171842-ads.org][ads]]

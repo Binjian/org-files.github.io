@@ -1,0 +1,89 @@
+:PROPERTIES:
+:ID:       615cb47f-8542-4e2f-ac2c-8536aaec96fb
+:END:
+#+title: fudan-seminar
+
+good, interesting, frank, open.
+
+computer vision, busy with SOTA
+niche market
+
+inductive bias
+no generalization
+
+few image samples
+GNN enhancing CNN
+
+math should be solid.
+presentation is not clear enough
+
+fu yanwei pixel2mesh
+追热点，不是主流；
+try to follow major trends
+时间控制好
+
+
+* 程明明 富尺度,显著性检测
+
+弱监督实例分割
+leveraging instance, image- and dataset-level information for weekly supervised segmentation
+
+基于卷积层多尺度的边缘检测 BSDS500
+ richer convolution features for edge detection
+
+显著性检测
+
+通用知识+专用数据=鲁棒检测
+class activation map CAM 伪标签
+
+mmcheng.net
+jittor/minspore
+DOCX行动倡议
+
+saliency?: conditional distribution P(1/0 | individual common sense)
+
+* 郑哲东： 辅助分类器 domain adaptation（迁移学习）
+
+semisupervised, inductive learning --> transductive learning
+
+co-training (adverserial training?)
+
+memory?
+
+
+certainty measure with salient features like vanishing line,
+uncertainty formulation: large variance
+
+rectifying pseudo labels;
+
+priror knowledge; old school theory
+
+
+* 付彦伟 少量样本统计机器学习
+
+** 学习能力
+*** 学习计算规则
+*** 学习概念
+** learning
+*** supervised  learning
+*** one shot
+*** zero shot
+*** N shot
+** Meta functional learning
+*** manifold, cluster, continuity assumption
+*** DessiLBI: exploring structural sparsity on deep network via differential inclusion path
+*** inverse scale space;
+
+* 戈维峰 视觉中的深度学习算法与相应的数学物理方法
+** 图像理解
+** 图像匹配
+*** 图像语义匹配
+*** 超像素，CNN+GNN superpixel partition
+*** 图神经网络+CNN GraphFPN
+** 小目标检测：图神经金字塔
+** RankDNN learning to rank for few-shot learning.
+** Distortion-free photorealistic style transfer via structure-consistent
+** photorealitic style transfer guided by global information CCFAI2021
+** inferior to cyclegan, 没有理论深度
+** 物理模型（inductive bias)
+** 基于量子物理的神经网络可解释性

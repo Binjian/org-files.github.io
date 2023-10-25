@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       9b90022a-391c-457a-b543-b939f8388430
+:END:
+#+title: deep reinforcement learning
+[[./20210907105140-stochastic_actor_critic.org][stochastic actor critic]]
+
+[[./20210830182904-q_learning.org][q learning]]
+
+
+[[./20210906085305-recurrent_deterministic_policy_gradient.org][recurrent deterministic policy gradient]]
+
+[[./20210907105609-ppo.org][PPO]]
+
+[[./20210907105636-soft_actor_critc.org][Soft Actor Critc]]
+
+[[./20210907105702-cooperative_reinforcement_learning.org][Cooperative Reinforcement Learning]]
+
+
+[[./20210906085330-offline_reinforcement_learning.org][offline reinforcement learning]]
+
+
+[[./20211101093409-neural_turing_machine_reinforcement_learning.org][neural turing machine reinforcement learning]]
+
+
+[[./20211101093438-episodic_memory.org][episodic memory]]

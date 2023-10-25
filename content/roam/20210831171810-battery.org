@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       c8533b64-d2ab-4226-9424-2a7250d94b6a
+:END:
+#+title: battery
+
+[[./20210831171810-battery.org][patent]]
