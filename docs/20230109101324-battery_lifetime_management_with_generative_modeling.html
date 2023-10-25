@@ -48,20 +48,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd76635f">电池银行大数据模型</a></li>
-<li><a href="#orga31de51">结果</a></li>
-<li><a href="#org30dcebc">总结（工具箱 ）</a></li>
+<li><a href="#org52b1fce">电池银行大数据模型</a></li>
+<li><a href="#orgd91a72b">结果</a></li>
+<li><a href="#orgf7f1b3a">总结（工具箱 ）</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd76635f" class="outline-2">
-<h2 id="orgd76635f">电池银行大数据模型</h2>
-<div class="outline-text-2" id="text-orgd76635f">
+<div id="outline-container-org52b1fce" class="outline-2">
+<h2 id="org52b1fce">电池银行大数据模型</h2>
+<div class="outline-text-2" id="text-org52b1fce">
 </div>
-<div id="outline-container-orgbc7e08f" class="outline-3">
-<h3 id="orgbc7e08f">数据来源：</h3>
-<div class="outline-text-3" id="text-orgbc7e08f">
+<div id="outline-container-orgd16fb86" class="outline-3">
+<h3 id="orgd16fb86">数据来源：</h3>
+<div class="outline-text-3" id="text-orgd16fb86">
 <ul class="org-ul">
 <li>信号：单体电芯电压</li>
 <li>场景：充电
@@ -86,9 +86,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org3b965ac" class="outline-3">
-<h3 id="org3b965ac">随机模型</h3>
-<div class="outline-text-3" id="text-org3b965ac">
+<div id="outline-container-orgf4dd38f" class="outline-3">
+<h3 id="orgf4dd38f">随机模型</h3>
+<div class="outline-text-3" id="text-orgf4dd38f">
 <ul class="org-ul">
 <li>获得安全状态和观测量之间的关系：\(SoS \approx \hat{f}^{-1}(V,I,SoC,SoH,...), SoS \in \{Good, Bad\}\)</li>
 </ul>
@@ -115,16 +115,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf059949" class="outline-3">
-<h3 id="orgf059949">深度学习信号模型</h3>
-<div class="outline-text-3" id="text-orgf059949">
+<div id="outline-container-orgf9ed84f" class="outline-3">
+<h3 id="orgf9ed84f">深度学习信号模型</h3>
+<div class="outline-text-3" id="text-orgf9ed84f">
 
-<div id="org8806f84" class="figure">
+<div id="orgcf43cd9" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/20230111_112316dl1.png" alt="多维观测量" title="采集到的时间序列" align="center" />
 </p>
 </div>
 
-<div id="orgad8441f" class="figure">
+<div id="org32abf12" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/20230111_112041dl2.png" title="隐空间聚类分布" align="center" />
 </p>
 </div>
@@ -143,15 +143,15 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf9170a0" class="outline-3">
-<h3 id="orgf9170a0">深度学习网络模型</h3>
-<div class="outline-text-3" id="text-orgf9170a0">
+<div id="outline-container-org8cecc56" class="outline-3">
+<h3 id="org8cecc56">深度学习网络模型</h3>
+<div class="outline-text-3" id="text-org8cecc56">
 <p>
 可观测性假设：低维度信号(\(\mathcal{S}: (SoS, SoC, SoH,...)\)
 决定高维度信号 \(\mathcal{X}_t: (U_t, I_t)\) 分布
 </p>
 
-<div id="orgbcff3e8" class="figure">
+<div id="orge67c1ce" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/20230111_122019dl3.png" alt="TimeGAN" width="600" style="border:2px solid balck;" title="自动编码器，时间序列监督网，对抗生成网络" align="center" />
 </p>
 <p><span class="figure-number">Figure 1: </span>时间序列 GAN 模型</p>
@@ -177,9 +177,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org4d1bb69" class="outline-3">
-<h3 id="org4d1bb69">深度学习特点</h3>
-<div class="outline-text-3" id="text-org4d1bb69">
+<div id="outline-container-orgd1a246b" class="outline-3">
+<h3 id="orgd1a246b">深度学习特点</h3>
+<div class="outline-text-3" id="text-orgd1a246b">
 <ul class="org-ul">
 <li>无监督学习
 <ul class="org-ul">
@@ -193,11 +193,11 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge8e367b" class="outline-3">
-<h3 id="orge8e367b">机器学习运维模式（云服务器）MLOps</h3>
-<div class="outline-text-3" id="text-orge8e367b">
+<div id="outline-container-org2390fb9" class="outline-3">
+<h3 id="org2390fb9">机器学习运维模式（云服务器）MLOps</h3>
+<div class="outline-text-3" id="text-org2390fb9">
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dataflow</label><pre class="src src-mermaid" id="org202f1b4">graph LR
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Dataflow</label><pre class="src src-mermaid" id="orgb97ba50">graph LR
   subgraph "EC1"
   VBU(VBU)--&gt;TBox(TBox)
   end
@@ -222,7 +222,7 @@
 
 
 
-<div id="orgf282822" class="figure">
+<div id="org1755be2" class="figure">
 <p><img src="./img/funes-production.png" alt="Dataflow" width="1600" style="border:2px solid balck;" title="自动编码器，时间序列监督网，对抗生成网络" align="center" />
 </p>
 <p><span class="figure-number">Figure 2: </span>训练和推理的数据流</p>
@@ -230,17 +230,17 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orga31de51" class="outline-2">
-<h2 id="orga31de51">结果</h2>
-<div class="outline-text-2" id="text-orga31de51">
+<div id="outline-container-orgd91a72b" class="outline-2">
+<h2 id="orgd91a72b">结果</h2>
+<div class="outline-text-2" id="text-orgd91a72b">
 </div>
-<div id="outline-container-org9581722" class="outline-3">
-<h3 id="org9581722">无监督学习训练</h3>
-<div class="outline-text-3" id="text-org9581722">
+<div id="outline-container-org8b23922" class="outline-3">
+<h3 id="org8b23922">无监督学习训练</h3>
+<div class="outline-text-3" id="text-org8b23922">
 </div>
-<div id="outline-container-org27192bb" class="outline-4">
-<h4 id="org27192bb">数据样本</h4>
-<div class="outline-text-4" id="text-org27192bb">
+<div id="outline-container-org0f601a4" class="outline-4">
+<h4 id="org0f601a4">数据样本</h4>
+<div class="outline-text-4" id="text-org0f601a4">
 <p>
 数据分布由给定样本集合确定（训练集，验证集，测试集）
 </p>
@@ -267,9 +267,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1c19573" class="outline-4">
-<h4 id="org1c19573">验证</h4>
-<div class="outline-text-4" id="text-org1c19573">
+<div id="outline-container-org5045b1e" class="outline-4">
+<h4 id="org5045b1e">验证</h4>
+<div class="outline-text-4" id="text-org5045b1e">
 <ul class="org-ul">
 <li>从冻结的生成器（Generator)随机采样</li>
 <li>从训练样本中匹配最相似时间序列</li>
@@ -279,170 +279,170 @@
 </div>
 </div>
 
-<div id="outline-container-orgbe6fce9" class="outline-4">
-<h4 id="orgbe6fce9">正弦波的生成模型训练和采样结果（单模态）</h4>
-<div class="outline-text-4" id="text-orgbe6fce9">
+<div id="outline-container-org66536cf" class="outline-4">
+<h4 id="org66536cf">正弦波的生成模型训练和采样结果（单模态）</h4>
+<div class="outline-text-4" id="text-org66536cf">
 
-<div id="org3b26634" class="figure">
+<div id="org9993236" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/_20230112_103534fft_most_similar_cases-20220920-095753.svg" class="org-svg" title="0" align="center" />
 </p>
 </div>
 
-<div id="org68e9a0a" class="figure">
+<div id="org8dc3f95" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/_20230112_101420fft_most_similar_cases-20220921-153548.svg" class="org-svg" title="1" align="center" />
 </p>
 </div>
 
-<div id="orgeb387a0" class="figure">
+<div id="org48bd440" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/_20230112_101501fft_most_similar_cases-20220921-152459.svg" class="org-svg" title="2" align="center" />
 </p>
 </div>
 
-<div id="orgf3e1eee" class="figure">
+<div id="org07f87bf" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/_20230112_102209fft_most_similar_cases-20221109-094318.svg" class="org-svg" title="3" align="center" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org3b92792" class="outline-4">
-<h4 id="org3b92792">正弦波的压缩空间聚类（单模态）</h4>
-<div class="outline-text-4" id="text-org3b92792">
+<div id="outline-container-orgdf823f1" class="outline-4">
+<h4 id="orgdf823f1">正弦波的压缩空间聚类（单模态）</h4>
+<div class="outline-text-4" id="text-orgdf823f1">
 
-<div id="org851cf3c" class="figure">
+<div id="orgaf23626" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_151750pca-20220921-090946.svg" class="org-svg" title="PCA" align="center" />
 </p>
 </div>
 
 
-<div id="org5214e4a" class="figure">
+<div id="org72baa2b" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_154535tsne-20220921-090953.svg" class="org-svg" title="t-SNE" align="center" />
 </p>
 </div>
 
 
-<div id="org2bcc2ed" class="figure">
+<div id="org3e33199" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_155054pca-20221109-094252.svg" class="org-svg" title="PCA" align="center" />
 </p>
 </div>
 
-<div id="org184226b" class="figure">
+<div id="orgabb0a4a" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_155207tsne-20221109-094301.svg" class="org-svg" title="t-SNE" align="center" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgec7d458" class="outline-4">
-<h4 id="orgec7d458">正弦波的模拟离群点检测（单模态）</h4>
-<div class="outline-text-4" id="text-orgec7d458">
+<div id="outline-container-orgd1f2de7" class="outline-4">
+<h4 id="orgd1f2de7">正弦波的模拟离群点检测（单模态）</h4>
+<div class="outline-text-4" id="text-orgd1f2de7">
 
-<div id="org6c163c2" class="figure">
+<div id="orgf33226c" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_160536Data_Logits-20221109-094833.svg" class="org-svg" title="Squares logits" align="center" />
 </p>
 </div>
 
 
-<div id="org008cac8" class="figure">
+<div id="orga458e94" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_160746outlier_pca-20221109-094858.svg" class="org-svg" title="Squares PCA" align="center" />
 </p>
 </div>
 
-<div id="org1ed5230" class="figure">
+<div id="org0278c17" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_160657Data_Logits-20221109-095411.svg" class="org-svg" title="tri logits" align="center" />
 </p>
 </div>
 
-<div id="org3e68c80" class="figure">
+<div id="orgc0a1b36" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_160848outlier_pca-20221109-095421.svg" class="org-svg" title="triangle PC" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org4bce633" class="outline-4">
-<h4 id="org4bce633">三角波的生成模型训练和采样结果（单模态）</h4>
-<div class="outline-text-4" id="text-org4bce633">
+<div id="outline-container-org9a517b0" class="outline-4">
+<h4 id="org9a517b0">三角波的生成模型训练和采样结果（单模态）</h4>
+<div class="outline-text-4" id="text-org9a517b0">
 
-<div id="org94c648f" class="figure">
+<div id="org7426a0b" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_162940fft_most_similar_cases-20221109-131947.svg" class="org-svg" title="Generator samples" align="center" />
 </p>
 </div>
 
-<div id="org0978b39" class="figure">
+<div id="org3e3e6db" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_163112pca-20221109-131922.svg" class="org-svg" title="PCA" align="center" />
 </p>
 </div>
 
-<div id="org19b624d" class="figure">
+<div id="orgcd1cd56" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_163412Data_Logits-20221109-132846.svg" class="org-svg" title="Logits Outlier with sin" align="center" />
 </p>
 </div>
 
-<div id="org5a1e815" class="figure">
+<div id="org3f41760" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_163625outlier_pca-20221109-132853.svg" class="org-svg" title="t-SNE with sine wave" align="center" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2ed5890" class="outline-4">
-<h4 id="org2ed5890">充电电压样条拟合数据的生成模型训练和采样结果</h4>
-<div class="outline-text-4" id="text-org2ed5890">
+<div id="outline-container-org1396b09" class="outline-4">
+<h4 id="org1396b09">充电电压样条拟合数据的生成模型训练和采样结果</h4>
+<div class="outline-text-4" id="text-org1396b09">
 
-<div id="org2359b9c" class="figure">
+<div id="org0d0c2f7" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_165616most_similar_cases-20221108-105611.svg" class="org-svg" title="Generator samples" align="center" />
 </p>
 </div>
 
-<div id="orgd047b4a" class="figure">
+<div id="org7d4945b" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_165759pca-20221108-105544.svg" class="org-svg" title="PCA" align="center" />
 </p>
 </div>
 
-<div id="org032edce" class="figure">
+<div id="orgf943348" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_170336Data_Logits-20221109-105440.svg" class="org-svg" title="Logits Outlier with sin" align="center" />
 </p>
 </div>
 
-<div id="org2e6a4d2" class="figure">
+<div id="orgdc1fe4e" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_170835outlier_pca-20221109-105448.svg" class="org-svg" title="PCA with sine wave" align="center" />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org7d7e16b" class="outline-4">
-<h4 id="org7d7e16b">混合时间序列(正弦与三角）生成模型和采样结果（多模态）</h4>
-<div class="outline-text-4" id="text-org7d7e16b">
+<div id="outline-container-org8275e49" class="outline-4">
+<h4 id="org8275e49">混合时间序列(正弦与三角）生成模型和采样结果（多模态）</h4>
+<div class="outline-text-4" id="text-org8275e49">
 
-<div id="orge9daf98" class="figure">
+<div id="org7a067e0" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_172308fft_most_similar_cases-20221108-131528.svg" class="org-svg" title="Generator samples" align="center" />
 </p>
 </div>
 
-<div id="org6761aa7" class="figure">
+<div id="org99e7bfc" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_172620pca-20221108-131502.svg" class="org-svg" title="PCA" align="center" />
 </p>
 </div>
 
-<div id="orgecd8b51" class="figure">
+<div id="orge9e123e" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_174828outlier_pca-20221109-113016.svg" class="org-svg" title="PCA with voltage" align="center" />
 </p>
 </div>
 
-<div id="org73d6c76" class="figure">
+<div id="orge065af1" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/无监督学习训练/_20230112_174534outlier_tsne-20221109-113023.svg" class="org-svg" title="t-SNE with voltage splines" align="center" />
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org300db80" class="outline-3">
-<h3 id="org300db80">监督学习</h3>
-<div class="outline-text-3" id="text-org300db80">
+<div id="outline-container-org24342f3" class="outline-3">
+<h3 id="org24342f3">监督学习</h3>
+<div class="outline-text-3" id="text-org24342f3">
 </div>
-<div id="outline-container-orgcefb63f" class="outline-4">
-<h4 id="orgcefb63f">可理解的时间序列特征，监督学习训练成熟稳定</h4>
-<div class="outline-text-4" id="text-orgcefb63f">
+<div id="outline-container-org76b74d0" class="outline-4">
+<h4 id="org76b74d0">可理解的时间序列特征，监督学习训练成熟稳定</h4>
+<div class="outline-text-4" id="text-org76b74d0">
 
-<div id="org92fcb73" class="figure">
+<div id="orgaef7ca8" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/监督学习/_20230112_180524ts_supervised_learning.png" alt="多维观测量" title="工作流程" align="center" />
 </p>
 </div>
@@ -458,9 +458,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6f886f7" class="outline-4">
-<h4 id="org6f886f7">监督学习的优点</h4>
-<div class="outline-text-4" id="text-org6f886f7">
+<div id="outline-container-org835c208" class="outline-4">
+<h4 id="org835c208">监督学习的优点</h4>
+<div class="outline-text-4" id="text-org835c208">
 <ul class="org-ul">
 <li>结果可解释，主要依据专家知识（标签，可解释特征）</li>
 <li>利用专家知识和时间序列特征区分不同模态</li>
@@ -471,26 +471,26 @@
 </div>
 </div>
 
-<div id="outline-container-org794511f" class="outline-4">
-<h4 id="org794511f">结果</h4>
-<div class="outline-text-4" id="text-org794511f">
+<div id="outline-container-orgc378db8" class="outline-4">
+<h4 id="orgc378db8">结果</h4>
+<div class="outline-text-4" id="text-orgc378db8">
 
-<div id="orgd26e50a" class="figure">
+<div id="org33bff90" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/监督学习/_20230112_185237KATS_Data_Logits-20221109-173756.svg" class="org-svg" title="28 Kats features for voltage splines outliers ( sine and triangle)" align="center" />
 </p>
 </div>
 
-<div id="org6136ed6" class="figure">
+<div id="org7fd8355" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/监督学习/_20230112_185445KATS_Data_Logits-20221109-165456.svg" class="org-svg" title="outlier of multimodal (sine+tri) voltages" align="center" />
 </p>
 </div>
 
-<div id="org12080b5" class="figure">
+<div id="org7d4b69e" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/监督学习/_20230112_1856405_vol_PCA-20221111-155631.svg" class="org-svg" title="multimodal voltage PCA with mode labels" align="center" />
 </p>
 </div>
 
-<div id="orgeeccc4f" class="figure">
+<div id="org3ed2f52" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/监督学习/_20230112_1857055_vol_t-SNE-20221111-155637.svg" class="org-svg" title="t-SNE with sine wave with mode labels" align="center" />
 </p>
 </div>
@@ -499,9 +499,9 @@
 </div>
 </div>
 
-<div id="outline-container-org30dcebc" class="outline-2">
-<h2 id="org30dcebc">总结（工具箱 ）</h2>
-<div class="outline-text-2" id="text-org30dcebc">
+<div id="outline-container-orgf7f1b3a" class="outline-2">
+<h2 id="orgf7f1b3a">总结（工具箱 ）</h2>
+<div class="outline-text-2" id="text-orgf7f1b3a">
 <ul class="org-ul">
 <li>弱特征（原始数据）： LSTM/GRU 形式的时间序列对抗生成网络
 <ul class="org-ul">
@@ -524,13 +524,13 @@
 </ul>
 </div>
 
-<div id="outline-container-orgef7c34e" class="outline-3">
-<h3 id="orgef7c34e">挑战</h3>
-<div class="outline-text-3" id="text-orgef7c34e">
+<div id="outline-container-org447c304" class="outline-3">
+<h3 id="org447c304">挑战</h3>
+<div class="outline-text-3" id="text-org447c304">
 </div>
-<div id="outline-container-orge0549ff" class="outline-4">
-<h4 id="orge0549ff">时间序列特征工程</h4>
-<div class="outline-text-4" id="text-orge0549ff">
+<div id="outline-container-orgd479b06" class="outline-4">
+<h4 id="orgd479b06">时间序列特征工程</h4>
+<div class="outline-text-4" id="text-orgd479b06">
 <ul class="org-ul">
 <li>建模困难</li>
 <li>不像图像和自然语言，无法利用已有的人类知识，概念</li>
@@ -539,9 +539,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbe93f1a" class="outline-4">
-<h4 id="orgbe93f1a">机器学习</h4>
-<div class="outline-text-4" id="text-orgbe93f1a">
+<div id="outline-container-orga8023c0" class="outline-4">
+<h4 id="orga8023c0">机器学习</h4>
+<div class="outline-text-4" id="text-orga8023c0">
 <ul class="org-ul">
 <li>RNN 对长的时间序列数据（&gt;100)较难训练</li>
 <li>GAN 训练不稳定</li>
@@ -552,9 +552,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgaf2dada" class="outline-4">
-<h4 id="orgaf2dada">时间序列模型构建</h4>
-<div class="outline-text-4" id="text-orgaf2dada">
+<div id="outline-container-org8cb0efa" class="outline-4">
+<h4 id="org8cb0efa">时间序列模型构建</h4>
+<div class="outline-text-4" id="text-org8cb0efa">
 <ul class="org-ul">
 <li>场景选择影响信号的复杂度</li>
 <li>时间序列特征选择影响模型结构和超参选择</li>
@@ -564,13 +564,13 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org9aec7e2" class="outline-3">
-<h3 id="org9aec7e2">机遇</h3>
-<div class="outline-text-3" id="text-org9aec7e2">
+<div id="outline-container-org7d43b0f" class="outline-3">
+<h3 id="org7d43b0f">机遇</h3>
+<div class="outline-text-3" id="text-org7d43b0f">
 </div>
-<div id="outline-container-org8e5dbc8" class="outline-4">
-<h4 id="org8e5dbc8">经验知识和大数据结合</h4>
-<div class="outline-text-4" id="text-org8e5dbc8">
+<div id="outline-container-orgc14e3db" class="outline-4">
+<h4 id="orgc14e3db">经验知识和大数据结合</h4>
+<div class="outline-text-4" id="text-orgc14e3db">
 <ul class="org-ul">
 <li>专家在环迭代
 <ul class="org-ul">
@@ -581,9 +581,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d03e9a" class="outline-4">
-<h4 id="org8d03e9a">模型改进</h4>
-<div class="outline-text-4" id="text-org8d03e9a">
+<div id="outline-container-orgf40824b" class="outline-4">
+<h4 id="orgf40824b">模型改进</h4>
+<div class="outline-text-4" id="text-orgf40824b">
 <ul class="org-ul">
 <li>Transformer 模型取代 GRU/LSTM</li>
 <li>条件推理模型</li>
@@ -592,9 +592,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org88b9fe9" class="outline-4">
-<h4 id="org88b9fe9">扩散模型 diffusion model</h4>
-<div class="outline-text-4" id="text-org88b9fe9">
+<div id="outline-container-orgcbec2e3" class="outline-4">
+<h4 id="orgcbec2e3">扩散模型 diffusion model</h4>
+<div class="outline-text-4" id="text-orgcbec2e3">
 <ul class="org-ul">
 <li>稳定有效对数据分布进行变换的深度学习方法</li>
 <li>静态分布估计到概率函数分布变换</li>
@@ -604,36 +604,36 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org21090a9" class="outline-4">
-<h4 id="org21090a9">图像扩散模型用于补全</h4>
-<div class="outline-text-4" id="text-org21090a9">
+<div id="outline-container-org889bc13" class="outline-4">
+<h4 id="org889bc13">图像扩散模型用于补全</h4>
+<div class="outline-text-4" id="text-org889bc13">
 
-<div id="org4587646" class="figure">
+<div id="orge8fb60f" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_192239bench2.png" title="SD bench2 original" align="center" />
 </p>
 </div>
 
-<div id="org1dd4914" class="figure">
+<div id="org08d1dea" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_192532bench2_mask.png" title="SD bench2 mask" align="center" />
 </p>
 </div>
 
-<div id="org46e3760" class="figure">
+<div id="orga65ae37" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_192258bench2_inpainted.png" title="SD bench2 inpainting" align="center" />
 </p>
 </div>
 
-<div id="org303d97c" class="figure">
+<div id="org10728df" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_1927141534313574.830631_crop.png" title="SD baidu road original" align="center" />
 </p>
 </div>
 
-<div id="orge28bebb" class="figure">
+<div id="org4faa90b" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_1927211534313574.830631_crop_mask.png" title="SD baidu road mask" align="center" />
 </p>
 </div>
 
-<div id="org17a599c" class="figure">
+<div id="orga79925f" class="figure">
 <p><img src="file:///home/n/.org.d/roam/img/扩散模型_diffusion_model/_20230112_1927311534313574.830631_crop_inpainted.png" title="SD baidu road inpainting" align="center" />
 </p>
 </div>

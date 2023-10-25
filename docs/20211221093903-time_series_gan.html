@@ -48,31 +48,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd16b5c6">Gist</a>
+<li><a href="#org3373527">Gist</a>
 <ul>
-<li><a href="#orgc5857ec">temoporal dynamics</a></li>
-<li><a href="#org9baa195">embedding space by supervised &amp; adverserial objectives</a></li>
+<li><a href="#org9cfe06e">temoporal dynamics</a></li>
+<li><a href="#org3f3716e">embedding space by supervised &amp; adverserial objectives</a></li>
 </ul>
 </li>
-<li><a href="#org418da9e">TimeGAN</a>
+<li><a href="#orgf574145">TimeGAN</a>
 <ul>
-<li><a href="#org9d6c4af">stepwise supervised loss, stepwise conditional distributions in the data</a></li>
-<li><a href="#org6525fbd">embedding network: reversible mapping between features and latent representation</a>
+<li><a href="#orgcd3d35c">stepwise supervised loss, stepwise conditional distributions in the data</a></li>
+<li><a href="#orgc29b8f2">embedding network: reversible mapping between features and latent representation</a>
 <ul>
-<li><a href="#org9da7034">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</a></li>
-<li><a href="#org46b8eda">supervised loss minized by jointly training both the embedding and generator netowrks</a></li>
-<li><a href="#org242cec3">conditioned to facilitate generator in learning temporal relationship</a></li>
+<li><a href="#orgbc82506">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</a></li>
+<li><a href="#orgc0ec3a1">supervised loss minized by jointly training both the embedding and generator netowrks</a></li>
+<li><a href="#org004ef39">conditioned to facilitate generator in learning temporal relationship</a></li>
 </ul>
 </li>
-<li><a href="#orgbfc49e0">evaluation</a>
+<li><a href="#org4693eae">evaluation</a>
 <ul>
-<li><a href="#org65717bc">desiderata:</a></li>
+<li><a href="#org602675f">desiderata:</a></li>
 </ul>
 </li>
-<li><a href="#org0ecfd5b">Problem Formulation</a>
+<li><a href="#org775e999">Problem Formulation</a>
 <ul>
-<li><a href="#org174e314">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</a></li>
-<li><a href="#org3c82f3b">embedding model: static and temporal features</a></li>
+<li><a href="#org85e57e5">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</a></li>
+<li><a href="#orgcb235a9">embedding model: static and temporal features</a></li>
 </ul>
 </li>
 </ul>
@@ -81,112 +81,112 @@
 </div>
 </div>
 
-<div id="outline-container-orgd16b5c6" class="outline-2">
-<h2 id="orgd16b5c6">Gist</h2>
-<div class="outline-text-2" id="text-orgd16b5c6">
+<div id="outline-container-org3373527" class="outline-2">
+<h2 id="org3373527">Gist</h2>
+<div class="outline-text-2" id="text-org3373527">
 </div>
-<div id="outline-container-orgc5857ec" class="outline-3">
-<h3 id="orgc5857ec">temoporal dynamics</h3>
+<div id="outline-container-org9cfe06e" class="outline-3">
+<h3 id="org9cfe06e">temoporal dynamics</h3>
 </div>
-<div id="outline-container-org9baa195" class="outline-3">
-<h3 id="org9baa195">embedding space by supervised &amp; adverserial objectives</h3>
+<div id="outline-container-org3f3716e" class="outline-3">
+<h3 id="org3f3716e">embedding space by supervised &amp; adverserial objectives</h3>
 </div>
 </div>
-<div id="outline-container-org418da9e" class="outline-2">
-<h2 id="org418da9e">TimeGAN</h2>
-<div class="outline-text-2" id="text-org418da9e">
+<div id="outline-container-orgf574145" class="outline-2">
+<h2 id="orgf574145">TimeGAN</h2>
+<div class="outline-text-2" id="text-orgf574145">
 </div>
-<div id="outline-container-org9d6c4af" class="outline-3">
-<h3 id="org9d6c4af">stepwise supervised loss, stepwise conditional distributions in the data</h3>
+<div id="outline-container-orgcd3d35c" class="outline-3">
+<h3 id="orgcd3d35c">stepwise supervised loss, stepwise conditional distributions in the data</h3>
 </div>
-<div id="outline-container-org6525fbd" class="outline-3">
-<h3 id="org6525fbd">embedding network: reversible mapping between features and latent representation</h3>
-<div class="outline-text-3" id="text-org6525fbd">
+<div id="outline-container-orgc29b8f2" class="outline-3">
+<h3 id="orgc29b8f2">embedding network: reversible mapping between features and latent representation</h3>
+<div class="outline-text-3" id="text-orgc29b8f2">
 </div>
-<div id="outline-container-org9da7034" class="outline-4">
-<h4 id="org9da7034">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</h4>
+<div id="outline-container-orgbc82506" class="outline-4">
+<h4 id="orgbc82506">temporal dynamics of complex systems are driven by fewer and lower-dimensional factors of vairation</h4>
 </div>
-<div id="outline-container-org46b8eda" class="outline-4">
-<h4 id="org46b8eda">supervised loss minized by jointly training both the embedding and generator netowrks</h4>
-<div class="outline-text-4" id="text-org46b8eda">
+<div id="outline-container-orgc0ec3a1" class="outline-4">
+<h4 id="orgc0ec3a1">supervised loss minized by jointly training both the embedding and generator netowrks</h4>
+<div class="outline-text-4" id="text-orgc0ec3a1">
 </div>
 <ul class="org-ul">
-<li><a id="org3006aa7"></a>parameter efficiency<br /></li>
+<li><a id="orge1b7240"></a>parameter efficiency<br /></li>
 </ul>
 </div>
-<div id="outline-container-org242cec3" class="outline-4">
-<h4 id="org242cec3">conditioned to facilitate generator in learning temporal relationship</h4>
-<div class="outline-text-4" id="text-org242cec3">
+<div id="outline-container-org004ef39" class="outline-4">
+<h4 id="org004ef39">conditioned to facilitate generator in learning temporal relationship</h4>
+<div class="outline-text-4" id="text-org004ef39">
 </div>
 <ul class="org-ul">
-<li><a id="org3a8c941"></a>mixed-data: static &amp; time-series<br /></li>
+<li><a id="org1ce167f"></a>mixed-data: static &amp; time-series<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbfc49e0" class="outline-3">
-<h3 id="orgbfc49e0">evaluation</h3>
-<div class="outline-text-3" id="text-orgbfc49e0">
+<div id="outline-container-org4693eae" class="outline-3">
+<h3 id="org4693eae">evaluation</h3>
+<div class="outline-text-3" id="text-org4693eae">
 </div>
-<div id="outline-container-org65717bc" class="outline-4">
-<h4 id="org65717bc">desiderata:</h4>
-<div class="outline-text-4" id="text-org65717bc">
+<div id="outline-container-org602675f" class="outline-4">
+<h4 id="org602675f">desiderata:</h4>
+<div class="outline-text-4" id="text-org602675f">
 </div>
 <ul class="org-ul">
-<li><a id="org15ef606"></a>diversity<br />
+<li><a id="orga84b841"></a>diversity<br />
 <ul class="org-ul">
-<li><a id="org7e8fbbe"></a>Visualization<br />
+<li><a id="orgd31c888"></a>Visualization<br />
 <ul class="org-ul">
-<li><a id="orga7f71b3"></a>t-SNE and PCA<br /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a id="orgd838cbe"></a>fidelity<br />
-<ul class="org-ul">
-<li><a id="org2cd3776"></a>post hoc time series classifier<br /></li>
-</ul>
-</li>
-<li><a id="orgac621bb"></a>usefulnes<br />
-<ul class="org-ul">
-<li><a id="orgd6071f3"></a>train on synthetic, test on real: TSTR<br />
-<ul class="org-ul">
-<li><a id="orgdc5a968"></a>predictive score MAE mean absolute error<br /></li>
+<li><a id="orgbc7a0ce"></a>t-SNE and PCA<br /></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org0ecfd5b" class="outline-3">
-<h3 id="org0ecfd5b">Problem Formulation</h3>
-<div class="outline-text-3" id="text-org0ecfd5b">
-</div>
-<div id="outline-container-org174e314" class="outline-4">
-<h4 id="org174e314">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</h4>
-</div>
-<div id="outline-container-org3c82f3b" class="outline-4">
-<h4 id="org3c82f3b">embedding model: static and temporal features</h4>
-<div class="outline-text-4" id="text-org3c82f3b">
-</div>
+<li><a id="org85a0c78"></a>fidelity<br />
 <ul class="org-ul">
-<li><a id="orge8de542"></a>feature space\((\mathcal{S}\times\prod_t\mathcal{X})\)<br />
-<ul class="org-ul">
-<li><a id="org1e820db"></a>static \(\mathcal{S}\)<br /></li>
-<li><a id="org700aca9"></a>temporal \(\mathcal{X}_{1:T}\)<br /></li>
+<li><a id="org1d125ed"></a>post hoc time series classifier<br /></li>
 </ul>
 </li>
-<li><a id="org339a1f0"></a>latent space<br />
+<li><a id="orge482eac"></a>usefulnes<br />
 <ul class="org-ul">
-<li><a id="orgff34b2b"></a>static \(\mathcal{H_S}\)<br /></li>
-<li><a id="orgb3474a2"></a>temporal \(\mathcal{H_X}_{1:T}\)<br /></li>
+<li><a id="orgad7a629"></a>train on synthetic, test on real: TSTR<br />
+<ul class="org-ul">
+<li><a id="orgc6bdbf3"></a>predictive score MAE mean absolute error<br /></li>
 </ul>
 </li>
-<li><a id="orgeb5da1b"></a>target embedding \((\mathbf{H_\mathcal{S}}, \mathbf{h}_{1:T})\)<br /></li>
-<li><a id="org78de6c8"></a>Z: deeper latent to H; Gaussian and Wiener (OU noise?)<br /></li>
-<li><a id="org3276b1d"></a>embedding and recovery functions<br />
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org775e999" class="outline-3">
+<h3 id="org775e999">Problem Formulation</h3>
+<div class="outline-text-3" id="text-org775e999">
+</div>
+<div id="outline-container-org85e57e5" class="outline-4">
+<h4 id="org85e57e5">dataset \((\mathbf{S}, \mathbf{X}_{1:T})\)</h4>
+</div>
+<div id="outline-container-orgcb235a9" class="outline-4">
+<h4 id="orgcb235a9">embedding model: static and temporal features</h4>
+<div class="outline-text-4" id="text-orgcb235a9">
+</div>
 <ul class="org-ul">
-<li><a id="org2f5adbd"></a>embedding \(e_{\mathcal{s}}(\mathbf{s})\), \(e_{\mathcal{X}}(\mathbf{h}_{\mathcal{S}}, \mathbf{h}_{t-1},\mathbf{x}_{t})\)<br /></li>
+<li><a id="orgb944b71"></a>feature space\((\mathcal{S}\times\prod_t\mathcal{X})\)<br />
+<ul class="org-ul">
+<li><a id="org4e62182"></a>static \(\mathcal{S}\)<br /></li>
+<li><a id="org580ca28"></a>temporal \(\mathcal{X}_{1:T}\)<br /></li>
+</ul>
+</li>
+<li><a id="org74c9698"></a>latent space<br />
+<ul class="org-ul">
+<li><a id="org7363614"></a>static \(\mathcal{H_S}\)<br /></li>
+<li><a id="org2e63ec7"></a>temporal \(\mathcal{H_X}_{1:T}\)<br /></li>
+</ul>
+</li>
+<li><a id="orgbf59da1"></a>target embedding \((\mathbf{H_\mathcal{S}}, \mathbf{h}_{1:T})\)<br /></li>
+<li><a id="org33996cd"></a>Z: deeper latent to H; Gaussian and Wiener (OU noise?)<br /></li>
+<li><a id="org1b9a097"></a>embedding and recovery functions<br />
+<ul class="org-ul">
+<li><a id="org9514340"></a>embedding \(e_{\mathcal{s}}(\mathbf{s})\), \(e_{\mathcal{X}}(\mathbf{h}_{\mathcal{S}}, \mathbf{h}_{t-1},\mathbf{x}_{t})\)<br /></li>
 </ul>
 </li>
 </ul>

@@ -31,7 +31,7 @@
 * 常见场景
 
 #+attr_org: :width 300px
-[[~/.org.d/roam/img/git_in_a_nutshell/git.png]]
+[[./img/git_in_a_nutshell/git.png]]
 
 ** 关于"git submodule for each"一个例子
 *** 台盆命令
@@ -148,7 +148,7 @@ no magic! magic is when you don't understand! magic is accomanied with fear!impo
   - @ : HEAD
 
 #+attr_org: :width 300px
-[[~/.org.d/roam/img/git_in_a_nutshell/double-dot.png]]
+[[./img/git_in_a_nutshell/double-dot.png]]
 *** 版本关系语法
 
 #+REVEAL_HTML: <div class="gridded_frame_with_columns">
@@ -170,7 +170,7 @@ no magic! magic is when you don't understand! magic is accomanied with fear!impo
             #+end_src
             #+caption[dataflow]: 多分支的版本历史
             #+results: fig. loeliger diagram
-            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+            [[./img/git_in_a_nutshell/loeliger.png]]
 
      #+REVEAL_HTML: </div>
      #+REVEAL_HTML: <div class="one_of_2_columns">
@@ -194,7 +194,7 @@ no magic! magic is when you don't understand! magic is accomanied with fear!impo
         #+ATTR_HTML: :alt  :title Sutskever 2015 :width 400pix  :align center
             #+caption[dataflow]: 多分支的版本历史
             #+results: fig. loeliger diagram
-            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+            [[./img/git_in_a_nutshell/loeliger.png]]
 
      #+REVEAL_HTML: </div>
      #+REVEAL_HTML: <div class="one_of_2_columns">
@@ -217,7 +217,7 @@ no magic! magic is when you don't understand! magic is accomanied with fear!impo
         #+ATTR_HTML: :alt  :title Sutskever 2015 :width 400pix  :align center
             #+caption[dataflow]: 多分支的版本历史
             #+results: fig. loeliger diagram
-            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+            [[./img/git_in_a_nutshell/loeliger.png]]
 
      #+REVEAL_HTML: </div>
      #+REVEAL_HTML: <div class="one_of_2_columns">

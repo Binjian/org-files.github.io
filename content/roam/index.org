@@ -4,17 +4,13 @@
 
 This is an notes dump in a _website_ written with [[https://orgmode.org][Org Mode]]!
 
-
-* Projects
-** EOS
-*** [[./20210830182658-veos.org][veos]]
-**** [[./20220408125710-veos_adp_training_data_interface.org][veos adp training data ingestion interface]]
-*** [[./20211220160946-blmp_project.org][BLMP-Project]]
-**** [[./20211202104125-battery_soh_prediction_using_generative_model.org][Battery SOH prediction using Generative Model]]
-
-* Areas
-** [[./20211013091403-vertex_lab.org][VERTEX Lab]]
-** [[./20210930153026-um_sjtu_t5.org][UM-SJTU-T5]]
+* Training Slides
+** Git
+*** [[./20211125152933-git_training.org][git-training]]
+*** [[./20230918133711-fluent_git.org][Fluent Git]]
+** Deep Learning
+*** [[./20230524090843-foundation_model.org][foundation model]]
+*** [[./20230313125157-llm_ai_slides.org][large language model]]
 
 * Resources
 ** Algorithms
@@ -25,8 +21,6 @@ This is an notes dump in a _website_ written with [[https://orgmode.org][Org Mod
 
 ** Hardwares
 *** [[./20220927113311-deep_learning_hardware.org][deep learning hardware]]
-*** [[./20221111125428-newrizon_proposals_for_chiplego.org][Newrizon Proposals for ChipLego]]
-*** [[./20211020132210-veos_compute.org][veos-compute]]
 
 * Archives
 ** [[./20210907094004-programming_language.org][programming languages]]
@@ -35,8 +29,4 @@ This is an notes dump in a _website_ written with [[https://orgmode.org][Org Mod
 ** [[./20210907095445-computer_vision.org][Computer vision]]
 
 * Links
-*** Here is a link to my [[./Emacs.org][Emacs configuration]].
-- [[https://systemcrafters.net][System Crafters Official Site]]
-- [[https://youtube.com/SystemCrafters][System Crafters on YouTube]]
-- [[https://twitch.com/SystemCrafters][System Crafters on Twitch]]
-- [[https://twitter.com/SystemCrafters][System Crafters on Twitter]]
+*** [[https://systemcrafters.net][System Crafters Official Site]]

@@ -16,65 +16,65 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge8e79e1">install micromamba</a></li>
-<li><a href="#org1ce336e">create ueos env with ueos-env.yaml</a>
+<li><a href="#org19440a7">install micromamba</a></li>
+<li><a href="#org26790bd">create ueos env with ueos-env.yaml</a>
 <ul>
-<li><a href="#org0989a94">export micromamba env ueos to requirements-freeze.txt</a></li>
+<li><a href="#org234760d">export micromamba env ueos to requirements-freeze.txt</a></li>
 </ul>
 </li>
-<li><a href="#orgd6e1507">create eos package with poetry</a>
+<li><a href="#org20d365c">create eos package with poetry</a>
 <ul>
-<li><a href="#orgdd6f9d9">poetry update with pyproject.toml</a></li>
+<li><a href="#orgf1a8046">poetry update with pyproject.toml</a></li>
 </ul>
 </li>
-<li><a href="#orga5f469c">modify poetry pyproject.toml with manual version check</a></li>
-<li><a href="#org7de8497">build eos package with updated poetry virtual environment</a></li>
-<li><a href="#org4b55d19">create micromamba env ueos from ueos-env.yaml</a>
+<li><a href="#org75856d7">modify poetry pyproject.toml with manual version check</a></li>
+<li><a href="#orge3c1755">build eos package with updated poetry virtual environment</a></li>
+<li><a href="#org15643e6">create micromamba env ueos from ueos-env.yaml</a>
 <ul>
-<li><a href="#orgbbe7247">update ueos-env.yaml with local eos package</a></li>
+<li><a href="#orgadbd1a4">update ueos-env.yaml with local eos package</a></li>
 </ul>
 </li>
-<li><a href="#org6308611">test local micromamba env ueos</a></li>
-<li><a href="#org0ddd510">export from ueos-env ueos-env-lock.txt file</a></li>
-<li><a href="#org5eb38f1">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</a></li>
-<li><a href="#orgd5fb49f">export freeze format requirements,</a></li>
-<li><a href="#org614d920">export conda env ueos to frozen txt</a></li>
-<li><a href="#orgcfe9349">docker micromamba install frozen ueos-env</a></li>
-<li><a href="#org216def1">pip intall extra package not in conda-forge</a></li>
-<li><a href="#org92de418">pip install -e . with pyproject.toml with depleted dependencies</a></li>
+<li><a href="#orga3d75df">test local micromamba env ueos</a></li>
+<li><a href="#orgd4fe65f">export from ueos-env ueos-env-lock.txt file</a></li>
+<li><a href="#org3432d8d">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</a></li>
+<li><a href="#org3a9bceb">export freeze format requirements,</a></li>
+<li><a href="#org091e988">export conda env ueos to frozen txt</a></li>
+<li><a href="#org3e45a67">docker micromamba install frozen ueos-env</a></li>
+<li><a href="#org966f93d">pip intall extra package not in conda-forge</a></li>
+<li><a href="#orgf00265e">pip install -e . with pyproject.toml with depleted dependencies</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge8e79e1" class="outline-2">
-<h2 id="orge8e79e1">install micromamba</h2>
+<div id="outline-container-org19440a7" class="outline-2">
+<h2 id="org19440a7">install micromamba</h2>
 </div>
-<div id="outline-container-org1ce336e" class="outline-2">
-<h2 id="org1ce336e">create ueos env with ueos-env.yaml</h2>
-<div class="outline-text-2" id="text-org1ce336e">
+<div id="outline-container-org26790bd" class="outline-2">
+<h2 id="org26790bd">create ueos env with ueos-env.yaml</h2>
+<div class="outline-text-2" id="text-org26790bd">
 <p>
 micromamba create -f ueos-env.yaml
 micromamba install pip
 </p>
 </div>
-<div id="outline-container-org0989a94" class="outline-3">
-<h3 id="org0989a94">export micromamba env ueos to requirements-freeze.txt</h3>
-<div class="outline-text-3" id="text-org0989a94">
+<div id="outline-container-org234760d" class="outline-3">
+<h3 id="org234760d">export micromamba env ueos to requirements-freeze.txt</h3>
+<div class="outline-text-3" id="text-org234760d">
 <p>
 pip list &#x2013;format=freeze &gt; requirements.txt
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd6e1507" class="outline-2">
-<h2 id="orgd6e1507">create eos package with poetry</h2>
-<div class="outline-text-2" id="text-orgd6e1507">
+<div id="outline-container-org20d365c" class="outline-2">
+<h2 id="org20d365c">create eos package with poetry</h2>
+<div class="outline-text-2" id="text-org20d365c">
 <p>
 pyenv local eos
 </p>
 </div>
-<div id="outline-container-orgdd6f9d9" class="outline-3">
-<h3 id="orgdd6f9d9">poetry update with pyproject.toml</h3>
-<div class="outline-text-3" id="text-orgdd6f9d9">
+<div id="outline-container-orgf1a8046" class="outline-3">
+<h3 id="orgf1a8046">poetry update with pyproject.toml</h3>
+<div class="outline-text-3" id="text-orgf1a8046">
 <p>
 poetry update
 poetry lock
@@ -83,47 +83,47 @@ poetry build
 </div>
 </div>
 </div>
-<div id="outline-container-orga5f469c" class="outline-2">
-<h2 id="orga5f469c">modify poetry pyproject.toml with manual version check</h2>
-<div class="outline-text-2" id="text-orga5f469c">
+<div id="outline-container-org75856d7" class="outline-2">
+<h2 id="org75856d7">modify poetry pyproject.toml with manual version check</h2>
+<div class="outline-text-2" id="text-org75856d7">
 <p>
 poetry add $(cat requirements.txt)
 </p>
 </div>
 </div>
-<div id="outline-container-org7de8497" class="outline-2">
-<h2 id="org7de8497">build eos package with updated poetry virtual environment</h2>
-<div class="outline-text-2" id="text-org7de8497">
+<div id="outline-container-orge3c1755" class="outline-2">
+<h2 id="orge3c1755">build eos package with updated poetry virtual environment</h2>
+<div class="outline-text-2" id="text-orge3c1755">
 <p>
 poetry lock
 poetry build
 </p>
 </div>
 </div>
-<div id="outline-container-org4b55d19" class="outline-2">
-<h2 id="org4b55d19">create micromamba env ueos from ueos-env.yaml</h2>
-<div class="outline-text-2" id="text-org4b55d19">
+<div id="outline-container-org15643e6" class="outline-2">
+<h2 id="org15643e6">create micromamba env ueos from ueos-env.yaml</h2>
+<div class="outline-text-2" id="text-org15643e6">
 </div>
-<div id="outline-container-orgbbe7247" class="outline-3">
-<h3 id="orgbbe7247">update ueos-env.yaml with local eos package</h3>
-<div class="outline-text-3" id="text-orgbbe7247">
+<div id="outline-container-orgadbd1a4" class="outline-3">
+<h3 id="orgadbd1a4">update ueos-env.yaml with local eos package</h3>
+<div class="outline-text-3" id="text-orgadbd1a4">
 <p>
 ./dist/eos-0.0.3-py3-none-any.whl
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org6308611" class="outline-2">
-<h2 id="org6308611">test local micromamba env ueos</h2>
-<div class="outline-text-2" id="text-org6308611">
+<div id="outline-container-orga3d75df" class="outline-2">
+<h2 id="orga3d75df">test local micromamba env ueos</h2>
+<div class="outline-text-2" id="text-orga3d75df">
 <p>
 micromamba create -f ueos-env.yaml
 </p>
 </div>
 </div>
-<div id="outline-container-org0ddd510" class="outline-2">
-<h2 id="org0ddd510">export from ueos-env ueos-env-lock.txt file</h2>
-<div class="outline-text-2" id="text-org0ddd510">
+<div id="outline-container-orgd4fe65f" class="outline-2">
+<h2 id="orgd4fe65f">export from ueos-env ueos-env-lock.txt file</h2>
+<div class="outline-text-2" id="text-orgd4fe65f">
 <p>
 conda list &#x2013;explicit &#x2013;md5 &gt; ueos-env-lock.txt
 </p>
@@ -132,31 +132,31 @@ conda list &#x2013;explicit &#x2013;md5 &gt; ueos-env-lock.txt
 
 
 
-<div id="outline-container-org5eb38f1" class="outline-2">
-<h2 id="org5eb38f1">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</h2>
-<div class="outline-text-2" id="text-org5eb38f1">
+<div id="outline-container-org3432d8d" class="outline-2">
+<h2 id="org3432d8d">create ueos by micromamba with ueos-env.yaml pytho=3.10.8</h2>
+<div class="outline-text-2" id="text-org3432d8d">
 <p>
 pip list &#x2013;format=freeze &gt; requirements.txt
 </p>
 </div>
 </div>
-<div id="outline-container-orgd5fb49f" class="outline-2">
-<h2 id="orgd5fb49f">export freeze format requirements,</h2>
+<div id="outline-container-org3a9bceb" class="outline-2">
+<h2 id="org3a9bceb">export freeze format requirements,</h2>
 </div>
-<div id="outline-container-org614d920" class="outline-2">
-<h2 id="org614d920">export conda env ueos to frozen txt</h2>
-<div class="outline-text-2" id="text-org614d920">
+<div id="outline-container-org091e988" class="outline-2">
+<h2 id="org091e988">export conda env ueos to frozen txt</h2>
+<div class="outline-text-2" id="text-org091e988">
 <p>
 conda list &#x2013;explicit &#x2013;md5 &gt; ueos-env-lock.txt
 </p>
 </div>
 </div>
-<div id="outline-container-orgcfe9349" class="outline-2">
-<h2 id="orgcfe9349">docker micromamba install frozen ueos-env</h2>
+<div id="outline-container-org3e45a67" class="outline-2">
+<h2 id="org3e45a67">docker micromamba install frozen ueos-env</h2>
 </div>
-<div id="outline-container-org216def1" class="outline-2">
-<h2 id="org216def1">pip intall extra package not in conda-forge</h2>
-<div class="outline-text-2" id="text-org216def1">
+<div id="outline-container-org966f93d" class="outline-2">
+<h2 id="org966f93d">pip intall extra package not in conda-forge</h2>
+<div class="outline-text-2" id="text-org966f93d">
 <p>
 rocketmq
 cutelog
@@ -165,8 +165,8 @@ poetry2conda
 </p>
 </div>
 </div>
-<div id="outline-container-org92de418" class="outline-2">
-<h2 id="org92de418">pip install -e . with pyproject.toml with depleted dependencies</h2>
+<div id="outline-container-orgf00265e" class="outline-2">
+<h2 id="orgf00265e">pip install -e . with pyproject.toml with depleted dependencies</h2>
 </div>
 </div>
 <div id="postamble" class="status">
