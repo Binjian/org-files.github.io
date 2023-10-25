@@ -1,4 +1,0 @@
-[submodule "content"]
-	path = content
-	url = https://github.com/Binjian/orgnotes.git
-	branch = publish
