@@ -16,53 +16,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4c01cd5">sources</a>
+<li><a href="#orgc525457">sources</a>
 <ul>
-<li><a href="#org18bd2d9">transactional (inferring)</a>
+<li><a href="#org9cca625">transactional (inferring)</a>
 <ul>
-<li><a href="#orgb756692">kvasercan</a></li>
-<li><a href="#org0ea912b">remotecan</a></li>
+<li><a href="#orgc73effb">kvasercan</a></li>
+<li><a href="#orgf67bfa0">remotecan</a></li>
 </ul>
 </li>
-<li><a href="#org1a32fd2">analytical (batch, training)</a>
+<li><a href="#org5d07636">analytical (batch, training)</a>
 <ul>
-<li><a href="#org47da37b">mongodb</a></li>
-<li><a href="#org2e3d5fd">elastic</a></li>
-<li><a href="#org201798b">pystore</a></li>
+<li><a href="#orgcbb4818">mongodb</a></li>
+<li><a href="#orgcaea7e6">elastic</a></li>
+<li><a href="#orga1c7758">pystore</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3d2d09c">formats</a>
+<li><a href="#org55d0208">formats</a>
 <ul>
-<li><a href="#orgce89d9f">pandas dataframe</a></li>
-<li><a href="#orgeedbbef">numpy array</a></li>
-<li><a href="#orga008fe1">apache parquet</a></li>
-<li><a href="#org83af1fd">CSV</a></li>
-<li><a href="#orgc2fc7cb">JSON</a></li>
+<li><a href="#org1d9e41b">pandas dataframe</a></li>
+<li><a href="#org612dce2">numpy array</a></li>
+<li><a href="#orgca9fe55">apache parquet</a></li>
+<li><a href="#orgbaad032">CSV</a></li>
+<li><a href="#org4f4fa0d">JSON</a></li>
 </ul>
 </li>
-<li><a href="#org8d539be">models</a>
+<li><a href="#org0e1aae3">models</a>
 <ul>
-<li><a href="#org96470b4">NoSQL</a></li>
-<li><a href="#org0016b10">time sequence</a></li>
-<li><a href="#org42a86da">document model</a></li>
-<li><a href="#orgb92c920">(graph model)</a></li>
-<li><a href="#orgf7609ff">structured data</a></li>
-<li><a href="#org2597ee7">(unstructured data)</a></li>
+<li><a href="#org1a72b9b">NoSQL</a></li>
+<li><a href="#orgd5c3896">time sequence</a></li>
+<li><a href="#org79c4cd6">document model</a></li>
+<li><a href="#orge2573e8">(graph model)</a></li>
+<li><a href="#orgbea6d3e">structured data</a></li>
+<li><a href="#org3428775">(unstructured data)</a></li>
 </ul>
 </li>
-<li><a href="#orga017e8e">storage engines and processing</a>
+<li><a href="#org2914738">storage engines and processing</a>
 <ul>
-<li><a href="#org33bd7b9">MongoDB time series collection</a></li>
-<li><a href="#orgb670cff">pystore (dask)</a></li>
+<li><a href="#org16ac719">MongoDB time series collection</a></li>
+<li><a href="#orga840959">pystore (dask)</a></li>
 </ul>
 </li>
-<li><a href="#org3ec6163">modes of data flow</a>
+<li><a href="#orgb67dfbd">modes of data flow</a>
 <ul>
-<li><a href="#orge06be8d">passing through database</a></li>
-<li><a href="#org08ea1f0">through through service (HTTP REST),  (RPC)</a></li>
-<li><a href="#orgd6c9c1f">through real-time transport (Kafka, )</a></li>
+<li><a href="#org679069e">passing through database</a></li>
+<li><a href="#orgcf23ccf">through through service (HTTP REST),  (RPC)</a></li>
+<li><a href="#org4babd1d">through real-time transport (Kafka, )</a></li>
 </ul>
 </li>
 </ul>
@@ -72,102 +72,102 @@
 :ID:       18d7b376-c12a-41a5-977a-966a078925f4
 </p>
 
-<div id="outline-container-org4c01cd5" class="outline-2">
-<h2 id="org4c01cd5">sources</h2>
-<div class="outline-text-2" id="text-org4c01cd5">
+<div id="outline-container-orgc525457" class="outline-2">
+<h2 id="orgc525457">sources</h2>
+<div class="outline-text-2" id="text-orgc525457">
 </div>
-<div id="outline-container-org18bd2d9" class="outline-3">
-<h3 id="org18bd2d9">transactional (inferring)</h3>
-<div class="outline-text-3" id="text-org18bd2d9">
+<div id="outline-container-org9cca625" class="outline-3">
+<h3 id="org9cca625">transactional (inferring)</h3>
+<div class="outline-text-3" id="text-org9cca625">
 </div>
-<div id="outline-container-orgb756692" class="outline-4">
-<h4 id="orgb756692">kvasercan</h4>
+<div id="outline-container-orgc73effb" class="outline-4">
+<h4 id="orgc73effb">kvasercan</h4>
 </div>
-<div id="outline-container-org0ea912b" class="outline-4">
-<h4 id="org0ea912b">remotecan</h4>
-</div>
-</div>
-<div id="outline-container-org1a32fd2" class="outline-3">
-<h3 id="org1a32fd2">analytical (batch, training)</h3>
-<div class="outline-text-3" id="text-org1a32fd2">
-</div>
-<div id="outline-container-org47da37b" class="outline-4">
-<h4 id="org47da37b">mongodb</h4>
-</div>
-<div id="outline-container-org2e3d5fd" class="outline-4">
-<h4 id="org2e3d5fd">elastic</h4>
-</div>
-<div id="outline-container-org201798b" class="outline-4">
-<h4 id="org201798b">pystore</h4>
+<div id="outline-container-orgf67bfa0" class="outline-4">
+<h4 id="orgf67bfa0">remotecan</h4>
 </div>
 </div>
+<div id="outline-container-org5d07636" class="outline-3">
+<h3 id="org5d07636">analytical (batch, training)</h3>
+<div class="outline-text-3" id="text-org5d07636">
 </div>
-<div id="outline-container-org3d2d09c" class="outline-2">
-<h2 id="org3d2d09c">formats</h2>
-<div class="outline-text-2" id="text-org3d2d09c">
+<div id="outline-container-orgcbb4818" class="outline-4">
+<h4 id="orgcbb4818">mongodb</h4>
 </div>
-<div id="outline-container-orgce89d9f" class="outline-3">
-<h3 id="orgce89d9f">pandas dataframe</h3>
+<div id="outline-container-orgcaea7e6" class="outline-4">
+<h4 id="orgcaea7e6">elastic</h4>
 </div>
-<div id="outline-container-orgeedbbef" class="outline-3">
-<h3 id="orgeedbbef">numpy array</h3>
-</div>
-<div id="outline-container-orga008fe1" class="outline-3">
-<h3 id="orga008fe1">apache parquet</h3>
-</div>
-<div id="outline-container-org83af1fd" class="outline-3">
-<h3 id="org83af1fd">CSV</h3>
-</div>
-<div id="outline-container-orgc2fc7cb" class="outline-3">
-<h3 id="orgc2fc7cb">JSON</h3>
+<div id="outline-container-orga1c7758" class="outline-4">
+<h4 id="orga1c7758">pystore</h4>
 </div>
 </div>
-<div id="outline-container-org8d539be" class="outline-2">
-<h2 id="org8d539be">models</h2>
-<div class="outline-text-2" id="text-org8d539be">
 </div>
-<div id="outline-container-org96470b4" class="outline-3">
-<h3 id="org96470b4">NoSQL</h3>
+<div id="outline-container-org55d0208" class="outline-2">
+<h2 id="org55d0208">formats</h2>
+<div class="outline-text-2" id="text-org55d0208">
 </div>
-<div id="outline-container-org0016b10" class="outline-3">
-<h3 id="org0016b10">time sequence</h3>
+<div id="outline-container-org1d9e41b" class="outline-3">
+<h3 id="org1d9e41b">pandas dataframe</h3>
 </div>
-<div id="outline-container-org42a86da" class="outline-3">
-<h3 id="org42a86da">document model</h3>
+<div id="outline-container-org612dce2" class="outline-3">
+<h3 id="org612dce2">numpy array</h3>
 </div>
-<div id="outline-container-orgb92c920" class="outline-3">
-<h3 id="orgb92c920">(graph model)</h3>
+<div id="outline-container-orgca9fe55" class="outline-3">
+<h3 id="orgca9fe55">apache parquet</h3>
 </div>
-<div id="outline-container-orgf7609ff" class="outline-3">
-<h3 id="orgf7609ff">structured data</h3>
+<div id="outline-container-orgbaad032" class="outline-3">
+<h3 id="orgbaad032">CSV</h3>
 </div>
-<div id="outline-container-org2597ee7" class="outline-3">
-<h3 id="org2597ee7">(unstructured data)</h3>
+<div id="outline-container-org4f4fa0d" class="outline-3">
+<h3 id="org4f4fa0d">JSON</h3>
 </div>
 </div>
-<div id="outline-container-orga017e8e" class="outline-2">
-<h2 id="orga017e8e">storage engines and processing</h2>
-<div class="outline-text-2" id="text-orga017e8e">
+<div id="outline-container-org0e1aae3" class="outline-2">
+<h2 id="org0e1aae3">models</h2>
+<div class="outline-text-2" id="text-org0e1aae3">
 </div>
-<div id="outline-container-org33bd7b9" class="outline-3">
-<h3 id="org33bd7b9">MongoDB time series collection</h3>
+<div id="outline-container-org1a72b9b" class="outline-3">
+<h3 id="org1a72b9b">NoSQL</h3>
 </div>
-<div id="outline-container-orgb670cff" class="outline-3">
-<h3 id="orgb670cff">pystore (dask)</h3>
+<div id="outline-container-orgd5c3896" class="outline-3">
+<h3 id="orgd5c3896">time sequence</h3>
+</div>
+<div id="outline-container-org79c4cd6" class="outline-3">
+<h3 id="org79c4cd6">document model</h3>
+</div>
+<div id="outline-container-orge2573e8" class="outline-3">
+<h3 id="orge2573e8">(graph model)</h3>
+</div>
+<div id="outline-container-orgbea6d3e" class="outline-3">
+<h3 id="orgbea6d3e">structured data</h3>
+</div>
+<div id="outline-container-org3428775" class="outline-3">
+<h3 id="org3428775">(unstructured data)</h3>
 </div>
 </div>
-<div id="outline-container-org3ec6163" class="outline-2">
-<h2 id="org3ec6163">modes of data flow</h2>
-<div class="outline-text-2" id="text-org3ec6163">
+<div id="outline-container-org2914738" class="outline-2">
+<h2 id="org2914738">storage engines and processing</h2>
+<div class="outline-text-2" id="text-org2914738">
 </div>
-<div id="outline-container-orge06be8d" class="outline-3">
-<h3 id="orge06be8d">passing through database</h3>
+<div id="outline-container-org16ac719" class="outline-3">
+<h3 id="org16ac719">MongoDB time series collection</h3>
 </div>
-<div id="outline-container-org08ea1f0" class="outline-3">
-<h3 id="org08ea1f0">through through service (HTTP REST),  (RPC)</h3>
+<div id="outline-container-orga840959" class="outline-3">
+<h3 id="orga840959">pystore (dask)</h3>
 </div>
-<div id="outline-container-orgd6c9c1f" class="outline-3">
-<h3 id="orgd6c9c1f">through real-time transport (Kafka, )</h3>
+</div>
+<div id="outline-container-orgb67dfbd" class="outline-2">
+<h2 id="orgb67dfbd">modes of data flow</h2>
+<div class="outline-text-2" id="text-orgb67dfbd">
+</div>
+<div id="outline-container-org679069e" class="outline-3">
+<h3 id="org679069e">passing through database</h3>
+</div>
+<div id="outline-container-orgcf23ccf" class="outline-3">
+<h3 id="orgcf23ccf">through through service (HTTP REST),  (RPC)</h3>
+</div>
+<div id="outline-container-org4babd1d" class="outline-3">
+<h3 id="org4babd1d">through real-time transport (Kafka, )</h3>
 </div>
 </div>
 </div>
