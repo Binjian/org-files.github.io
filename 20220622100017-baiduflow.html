@@ -16,43 +16,43 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0ae0c2b">百度百舸</a>
+<li><a href="#org110b885">百度百舸</a>
 <ul>
-<li><a href="#orgd410ff9">分布式缓存，内存,SSD</a></li>
-<li><a href="#org58017e5">raas, paas; model aas;</a></li>
-<li><a href="#orgbc97dbf">容器：AI 作业调度；GPU 调度，弹性训练，AI 加速引擎，加速镜像，</a></li>
-<li><a href="#org31b5063">高性能实例</a>
+<li><a href="#org48d3de9">分布式缓存，内存,SSD</a></li>
+<li><a href="#orgc8a2b35">raas, paas; model aas;</a></li>
+<li><a href="#orgfd66741">容器：AI 作业调度；GPU 调度，弹性训练，AI 加速引擎，加速镜像，</a></li>
+<li><a href="#orgec47445">高性能实例</a>
 <ul>
-<li><a href="#org628780a">A100, H100，昆仑 NPU,</a></li>
-<li><a href="#orgda0d68d">X-MAN 架构： InfiniBand &amp; Xlink， 1.6T,</a></li>
-<li><a href="#org6c9aa8c">太行：hypervisor 弹性裸金属</a></li>
-<li><a href="#orga345544">RDMA + VPC</a></li>
+<li><a href="#org98d45b5">A100, H100，昆仑 NPU,</a></li>
+<li><a href="#org260b16b">X-MAN 架构： InfiniBand &amp; Xlink， 1.6T,</a></li>
+<li><a href="#org9f12aa6">太行：hypervisor 弹性裸金属</a></li>
+<li><a href="#orgf217b55">RDMA + VPC</a></li>
 </ul>
 </li>
-<li><a href="#org2756e94">存储</a>
+<li><a href="#org5011276">存储</a>
 <ul>
-<li><a href="#orge0b1e74">100TB， 600TB</a></li>
-<li><a href="#orgb1f2629">原生镜像</a></li>
-<li><a href="#orga6b6c97">rapid fs</a></li>
-<li><a href="#orga47f87b">PFS:</a></li>
-<li><a href="#org1d8b85e">RapidFS</a></li>
+<li><a href="#orgea29009">100TB， 600TB</a></li>
+<li><a href="#org4d13197">原生镜像</a></li>
+<li><a href="#org3eef514">rapid fs</a></li>
+<li><a href="#orgb19cbbe">PFS:</a></li>
+<li><a href="#org4cf7f86">RapidFS</a></li>
 </ul>
 </li>
-<li><a href="#org0b6bd3d">容器</a>
+<li><a href="#orgd862ef0">容器</a>
 <ul>
-<li><a href="#orgfe0d8e4">可插拔：AI Job Operator,训练作业，资源队列，AI 框架</a></li>
-<li><a href="#org49160bf">NVLink 2.0</a></li>
-<li><a href="#orgeb8a4fc">GPU Device Plugin：精细调度，用户态，内核态，编解码；SM；</a></li>
-<li><a href="#orgb4afb5d">容器适配</a></li>
-<li><a href="#org58d4e4e">AIK</a></li>
-<li><a href="#orga80ae1e">GPU 虚拟化（内核态，用户态）</a></li>
-<li><a href="#orgbcd5c92">AI 容器调度 Binpack</a></li>
-<li><a href="#org9905e33">加速引擎，通信库</a></li>
-<li><a href="#orga1e476e">空分复用，5000 卡；5%&#x2013;&gt;50%</a></li>
-<li><a href="#org9986ffa">亲和性标签，预热数据节点</a></li>
+<li><a href="#org3a47275">可插拔：AI Job Operator,训练作业，资源队列，AI 框架</a></li>
+<li><a href="#org05b396f">NVLink 2.0</a></li>
+<li><a href="#orgccaf198">GPU Device Plugin：精细调度，用户态，内核态，编解码；SM；</a></li>
+<li><a href="#org35bc80b">容器适配</a></li>
+<li><a href="#org28f27d0">AIK</a></li>
+<li><a href="#org6f22ee8">GPU 虚拟化（内核态，用户态）</a></li>
+<li><a href="#org60a2789">AI 容器调度 Binpack</a></li>
+<li><a href="#org8c4c4a4">加速引擎，通信库</a></li>
+<li><a href="#org45c41c5">空分复用，5000 卡；5%&#x2013;&gt;50%</a></li>
+<li><a href="#org45f77fd">亲和性标签，预热数据节点</a></li>
 </ul>
 </li>
-<li><a href="#org025b6db">CCE 百舸能力，</a></li>
+<li><a href="#org11a5d18">CCE 百舸能力，</a></li>
 </ul>
 </li>
 </ul>
@@ -61,93 +61,93 @@
 <p>
 :ID:       59ecf766-867e-4c4d-adf2-93a68edbe0e7
 </p>
-<div id="outline-container-org0ae0c2b" class="outline-2">
-<h2 id="org0ae0c2b">百度百舸</h2>
-<div class="outline-text-2" id="text-org0ae0c2b">
+<div id="outline-container-org110b885" class="outline-2">
+<h2 id="org110b885">百度百舸</h2>
+<div class="outline-text-2" id="text-org110b885">
 </div>
-<div id="outline-container-orgd410ff9" class="outline-3">
-<h3 id="orgd410ff9">分布式缓存，内存,SSD</h3>
+<div id="outline-container-org48d3de9" class="outline-3">
+<h3 id="org48d3de9">分布式缓存，内存,SSD</h3>
 </div>
-<div id="outline-container-org58017e5" class="outline-3">
-<h3 id="org58017e5">raas, paas; model aas;</h3>
+<div id="outline-container-orgc8a2b35" class="outline-3">
+<h3 id="orgc8a2b35">raas, paas; model aas;</h3>
 </div>
-<div id="outline-container-orgbc97dbf" class="outline-3">
-<h3 id="orgbc97dbf">容器：AI 作业调度；GPU 调度，弹性训练，AI 加速引擎，加速镜像，</h3>
+<div id="outline-container-orgfd66741" class="outline-3">
+<h3 id="orgfd66741">容器：AI 作业调度；GPU 调度，弹性训练，AI 加速引擎，加速镜像，</h3>
 </div>
-<div id="outline-container-org31b5063" class="outline-3">
-<h3 id="org31b5063">高性能实例</h3>
-<div class="outline-text-3" id="text-org31b5063">
+<div id="outline-container-orgec47445" class="outline-3">
+<h3 id="orgec47445">高性能实例</h3>
+<div class="outline-text-3" id="text-orgec47445">
 </div>
-<div id="outline-container-org628780a" class="outline-4">
-<h4 id="org628780a">A100, H100，昆仑 NPU,</h4>
+<div id="outline-container-org98d45b5" class="outline-4">
+<h4 id="org98d45b5">A100, H100，昆仑 NPU,</h4>
 </div>
-<div id="outline-container-orgda0d68d" class="outline-4">
-<h4 id="orgda0d68d">X-MAN 架构： InfiniBand &amp; Xlink， 1.6T,</h4>
+<div id="outline-container-org260b16b" class="outline-4">
+<h4 id="org260b16b">X-MAN 架构： InfiniBand &amp; Xlink， 1.6T,</h4>
 </div>
-<div id="outline-container-org6c9aa8c" class="outline-4">
-<h4 id="org6c9aa8c">太行：hypervisor 弹性裸金属</h4>
+<div id="outline-container-org9f12aa6" class="outline-4">
+<h4 id="org9f12aa6">太行：hypervisor 弹性裸金属</h4>
 </div>
-<div id="outline-container-orga345544" class="outline-4">
-<h4 id="orga345544">RDMA + VPC</h4>
-</div>
-</div>
-<div id="outline-container-org2756e94" class="outline-3">
-<h3 id="org2756e94">存储</h3>
-<div class="outline-text-3" id="text-org2756e94">
-</div>
-<div id="outline-container-orge0b1e74" class="outline-4">
-<h4 id="orge0b1e74">100TB， 600TB</h4>
-</div>
-<div id="outline-container-orgb1f2629" class="outline-4">
-<h4 id="orgb1f2629">原生镜像</h4>
-</div>
-<div id="outline-container-orga6b6c97" class="outline-4">
-<h4 id="orga6b6c97">rapid fs</h4>
-</div>
-<div id="outline-container-orga47f87b" class="outline-4">
-<h4 id="orga47f87b">PFS:</h4>
-</div>
-<div id="outline-container-org1d8b85e" class="outline-4">
-<h4 id="org1d8b85e">RapidFS</h4>
+<div id="outline-container-orgf217b55" class="outline-4">
+<h4 id="orgf217b55">RDMA + VPC</h4>
 </div>
 </div>
-<div id="outline-container-org0b6bd3d" class="outline-3">
-<h3 id="org0b6bd3d">容器</h3>
-<div class="outline-text-3" id="text-org0b6bd3d">
+<div id="outline-container-org5011276" class="outline-3">
+<h3 id="org5011276">存储</h3>
+<div class="outline-text-3" id="text-org5011276">
 </div>
-<div id="outline-container-orgfe0d8e4" class="outline-4">
-<h4 id="orgfe0d8e4">可插拔：AI Job Operator,训练作业，资源队列，AI 框架</h4>
+<div id="outline-container-orgea29009" class="outline-4">
+<h4 id="orgea29009">100TB， 600TB</h4>
 </div>
-<div id="outline-container-org49160bf" class="outline-4">
-<h4 id="org49160bf">NVLink 2.0</h4>
+<div id="outline-container-org4d13197" class="outline-4">
+<h4 id="org4d13197">原生镜像</h4>
 </div>
-<div id="outline-container-orgeb8a4fc" class="outline-4">
-<h4 id="orgeb8a4fc">GPU Device Plugin：精细调度，用户态，内核态，编解码；SM；</h4>
+<div id="outline-container-org3eef514" class="outline-4">
+<h4 id="org3eef514">rapid fs</h4>
 </div>
-<div id="outline-container-orgb4afb5d" class="outline-4">
-<h4 id="orgb4afb5d">容器适配</h4>
+<div id="outline-container-orgb19cbbe" class="outline-4">
+<h4 id="orgb19cbbe">PFS:</h4>
 </div>
-<div id="outline-container-org58d4e4e" class="outline-4">
-<h4 id="org58d4e4e">AIK</h4>
-</div>
-<div id="outline-container-orga80ae1e" class="outline-4">
-<h4 id="orga80ae1e">GPU 虚拟化（内核态，用户态）</h4>
-</div>
-<div id="outline-container-orgbcd5c92" class="outline-4">
-<h4 id="orgbcd5c92">AI 容器调度 Binpack</h4>
-</div>
-<div id="outline-container-org9905e33" class="outline-4">
-<h4 id="org9905e33">加速引擎，通信库</h4>
-</div>
-<div id="outline-container-orga1e476e" class="outline-4">
-<h4 id="orga1e476e">空分复用，5000 卡；5%&#x2013;&gt;50%</h4>
-</div>
-<div id="outline-container-org9986ffa" class="outline-4">
-<h4 id="org9986ffa">亲和性标签，预热数据节点</h4>
+<div id="outline-container-org4cf7f86" class="outline-4">
+<h4 id="org4cf7f86">RapidFS</h4>
 </div>
 </div>
-<div id="outline-container-org025b6db" class="outline-3">
-<h3 id="org025b6db">CCE 百舸能力，</h3>
+<div id="outline-container-orgd862ef0" class="outline-3">
+<h3 id="orgd862ef0">容器</h3>
+<div class="outline-text-3" id="text-orgd862ef0">
+</div>
+<div id="outline-container-org3a47275" class="outline-4">
+<h4 id="org3a47275">可插拔：AI Job Operator,训练作业，资源队列，AI 框架</h4>
+</div>
+<div id="outline-container-org05b396f" class="outline-4">
+<h4 id="org05b396f">NVLink 2.0</h4>
+</div>
+<div id="outline-container-orgccaf198" class="outline-4">
+<h4 id="orgccaf198">GPU Device Plugin：精细调度，用户态，内核态，编解码；SM；</h4>
+</div>
+<div id="outline-container-org35bc80b" class="outline-4">
+<h4 id="org35bc80b">容器适配</h4>
+</div>
+<div id="outline-container-org28f27d0" class="outline-4">
+<h4 id="org28f27d0">AIK</h4>
+</div>
+<div id="outline-container-org6f22ee8" class="outline-4">
+<h4 id="org6f22ee8">GPU 虚拟化（内核态，用户态）</h4>
+</div>
+<div id="outline-container-org60a2789" class="outline-4">
+<h4 id="org60a2789">AI 容器调度 Binpack</h4>
+</div>
+<div id="outline-container-org8c4c4a4" class="outline-4">
+<h4 id="org8c4c4a4">加速引擎，通信库</h4>
+</div>
+<div id="outline-container-org45c41c5" class="outline-4">
+<h4 id="org45c41c5">空分复用，5000 卡；5%&#x2013;&gt;50%</h4>
+</div>
+<div id="outline-container-org45f77fd" class="outline-4">
+<h4 id="org45f77fd">亲和性标签，预热数据节点</h4>
+</div>
+</div>
+<div id="outline-container-org11a5d18" class="outline-3">
+<h3 id="org11a5d18">CCE 百舸能力，</h3>
 </div>
 </div>
 </div>

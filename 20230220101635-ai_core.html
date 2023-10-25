@@ -16,65 +16,65 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdff495b">code</a>
+<li><a href="#orgab945bc">code</a>
 <ul>
-<li><a href="#org4ec7c6c">pythonic refactoring</a>
+<li><a href="#org5a9cee8">pythonic refactoring</a>
 <ul>
-<li><a href="#org6bf8ea0">dataclass</a></li>
-<li><a href="#orgba08a8b">ABC for expanding</a></li>
-<li><a href="#org9ae1137">database technology (indexing, storage, DVC)</a></li>
-<li><a href="#org8fee829">refactor in pytorch</a></li>
-<li><a href="#org93ab699">transformer implementation</a></li>
+<li><a href="#orgf711208">dataclass</a></li>
+<li><a href="#org24885c9">ABC for expanding</a></li>
+<li><a href="#org0d5a66e">database technology (indexing, storage, DVC)</a></li>
+<li><a href="#orga9a984e">refactor in pytorch</a></li>
+<li><a href="#org19c73eb">transformer implementation</a></li>
 </ul>
 </li>
-<li><a href="#org9215dfe">VCS (git)</a>
+<li><a href="#orgcf6d6c5">VCS (git)</a>
 <ul>
-<li><a href="#orgfa55399">publishing</a></li>
-<li><a href="#orgd215a3f">subscription</a></li>
-<li><a href="#org19ef5e5">autotest</a></li>
+<li><a href="#org6dcfeca">publishing</a></li>
+<li><a href="#orgdc07cc3">subscription</a></li>
+<li><a href="#orgc05b96f">autotest</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org69fa4f2">Projects</a>
+<li><a href="#org80e82e3">Projects</a>
 <ul>
-<li><a href="#orga41a429">development harness</a>
+<li><a href="#orgbac6066">development harness</a>
 <ul>
-<li><a href="#org74ee92f">DL model tuning</a></li>
+<li><a href="#org9bea484">DL model tuning</a></li>
 </ul>
 </li>
-<li><a href="#orgd740cd6">MLOps</a></li>
-<li><a href="#org630ea71">debugging on the cloud</a></li>
-<li><a href="#org3b52865">database</a></li>
-<li><a href="#org3a4999a">docker compose, K8s</a></li>
+<li><a href="#org8636b97">MLOps</a></li>
+<li><a href="#orgebd92c4">debugging on the cloud</a></li>
+<li><a href="#org63a1e50">database</a></li>
+<li><a href="#org22e3c3f">docker compose, K8s</a></li>
 </ul>
 </li>
-<li><a href="#org9e05445">Deep Learning</a>
+<li><a href="#org080866c">Deep Learning</a>
 <ul>
-<li><a href="#org09aa505">Reinforcement learning</a>
+<li><a href="#org0e8137c">Reinforcement learning</a>
 <ul>
-<li><a href="#org2ed7cfb"><b>Offline reinforcement learning</b></a></li>
-<li><a href="#org55e5450"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></a></li>
-<li><a href="#org5dbb431">efficient search in memory （experience pool)</a></li>
-<li><a href="#org1e9a1e8">transformer based decision system</a></li>
-<li><a href="#orgb727e70">Federated Learning</a></li>
+<li><a href="#org5f3f118"><b>Offline reinforcement learning</b></a></li>
+<li><a href="#org572f24d"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></a></li>
+<li><a href="#orga1b8dbf">efficient search in memory （experience pool)</a></li>
+<li><a href="#orgafbf84b">transformer based decision system</a></li>
+<li><a href="#org616ee5d">Federated Learning</a></li>
 </ul>
 </li>
-<li><a href="#org6c0a8eb">Generative model</a>
+<li><a href="#orgee4145d">Generative model</a>
 <ul>
-<li><a href="#orgd763a83"><b>Diffusion model</b></a></li>
-<li><a href="#org704ba89"><b>transformer application</b></a></li>
-<li><a href="#orga91f5e4"><b>Application of new TS features from EP</b></a></li>
+<li><a href="#orgd1ffb22"><b>Diffusion model</b></a></li>
+<li><a href="#orgc8e901d"><b>transformer application</b></a></li>
+<li><a href="#org42dfe71"><b>Application of new TS features from EP</b></a></li>
 </ul>
 </li>
-<li><a href="#org019dd3a">transformer application in DRL and Generative modeling</a></li>
-<li><a href="#org5e2d34e">Foundational Model exploration</a>
+<li><a href="#org818b4f5">transformer application in DRL and Generative modeling</a></li>
+<li><a href="#org486ce00">Foundational Model exploration</a>
 <ul>
-<li><a href="#orge69eb4c">Image captioning (scene understanding)</a></li>
-<li><a href="#orgcfbd968">Policy selection/Planning with Instructions</a></li>
+<li><a href="#org9bd70c5">Image captioning (scene understanding)</a></li>
+<li><a href="#orgaf85199">Policy selection/Planning with Instructions</a></li>
 </ul>
 </li>
-<li><a href="#orgc27f1ed">Building TS foundation model</a></li>
+<li><a href="#orgb53d18f">Building TS foundation model</a></li>
 </ul>
 </li>
 </ul>
@@ -91,140 +91,140 @@
 <a href="./20220406135530-devel_project.html">devel-project</a>
 </p>
 
-<div id="outline-container-orgdff495b" class="outline-2">
-<h2 id="orgdff495b">code</h2>
-<div class="outline-text-2" id="text-orgdff495b">
+<div id="outline-container-orgab945bc" class="outline-2">
+<h2 id="orgab945bc">code</h2>
+<div class="outline-text-2" id="text-orgab945bc">
 </div>
-<div id="outline-container-org4ec7c6c" class="outline-3">
-<h3 id="org4ec7c6c">pythonic refactoring</h3>
-<div class="outline-text-3" id="text-org4ec7c6c">
+<div id="outline-container-org5a9cee8" class="outline-3">
+<h3 id="org5a9cee8">pythonic refactoring</h3>
+<div class="outline-text-3" id="text-org5a9cee8">
 </div>
-<div id="outline-container-org6bf8ea0" class="outline-4">
-<h4 id="org6bf8ea0">dataclass</h4>
+<div id="outline-container-orgf711208" class="outline-4">
+<h4 id="orgf711208">dataclass</h4>
 </div>
-<div id="outline-container-orgba08a8b" class="outline-4">
-<h4 id="orgba08a8b">ABC for expanding</h4>
-<div class="outline-text-4" id="text-orgba08a8b">
-</div>
-<ul class="org-ul">
-<li><a id="org4c0c916"></a>RL toolkit<br /></li>
-<li><a id="org103d903"></a>datastore (db, cluster)<br /></li>
-<li><a id="orgfe675f9"></a>observation/flashing interface (EC1, iC1, &#x2026;)<br /></li>
-<li><a id="orgd4e46c5"></a>Exception handling<br /></li>
-</ul>
-</div>
-<div id="outline-container-org9ae1137" class="outline-4">
-<h4 id="org9ae1137">database technology (indexing, storage, DVC)</h4>
-</div>
-<div id="outline-container-org8fee829" class="outline-4">
-<h4 id="org8fee829">refactor in pytorch</h4>
-</div>
-<div id="outline-container-org93ab699" class="outline-4">
-<h4 id="org93ab699">transformer implementation</h4>
-</div>
-</div>
-<div id="outline-container-org9215dfe" class="outline-3">
-<h3 id="org9215dfe">VCS (git)</h3>
-<div class="outline-text-3" id="text-org9215dfe">
-</div>
-<div id="outline-container-orgfa55399" class="outline-4">
-<h4 id="orgfa55399">publishing</h4>
-</div>
-<div id="outline-container-orgd215a3f" class="outline-4">
-<h4 id="orgd215a3f">subscription</h4>
-</div>
-<div id="outline-container-org19ef5e5" class="outline-4">
-<h4 id="org19ef5e5">autotest</h4>
-</div>
-</div>
-</div>
-<div id="outline-container-org69fa4f2" class="outline-2">
-<h2 id="org69fa4f2">Projects</h2>
-<div class="outline-text-2" id="text-org69fa4f2">
-</div>
-<div id="outline-container-orga41a429" class="outline-3">
-<h3 id="orga41a429">development harness</h3>
-<div class="outline-text-3" id="text-orga41a429">
-</div>
-<div id="outline-container-org74ee92f" class="outline-4">
-<h4 id="org74ee92f">DL model tuning</h4>
-<div class="outline-text-4" id="text-org74ee92f">
+<div id="outline-container-org24885c9" class="outline-4">
+<h4 id="org24885c9">ABC for expanding</h4>
+<div class="outline-text-4" id="text-org24885c9">
 </div>
 <ul class="org-ul">
-<li><a id="org78c6a51"></a>training<br /></li>
-<li><a id="org8bd0bf6"></a>testing<br /></li>
-<li><a id="org8f6928f"></a>validation<br /></li>
-<li><a id="orgdfa103e"></a>data pipeline<br /></li>
+<li><a id="org38f2081"></a>RL toolkit<br /></li>
+<li><a id="orgf217ed0"></a>datastore (db, cluster)<br /></li>
+<li><a id="org29797a3"></a>observation/flashing interface (EC1, iC1, &#x2026;)<br /></li>
+<li><a id="orgbc31494"></a>Exception handling<br /></li>
+</ul>
+</div>
+<div id="outline-container-org0d5a66e" class="outline-4">
+<h4 id="org0d5a66e">database technology (indexing, storage, DVC)</h4>
+</div>
+<div id="outline-container-orga9a984e" class="outline-4">
+<h4 id="orga9a984e">refactor in pytorch</h4>
+</div>
+<div id="outline-container-org19c73eb" class="outline-4">
+<h4 id="org19c73eb">transformer implementation</h4>
+</div>
+</div>
+<div id="outline-container-orgcf6d6c5" class="outline-3">
+<h3 id="orgcf6d6c5">VCS (git)</h3>
+<div class="outline-text-3" id="text-orgcf6d6c5">
+</div>
+<div id="outline-container-org6dcfeca" class="outline-4">
+<h4 id="org6dcfeca">publishing</h4>
+</div>
+<div id="outline-container-orgdc07cc3" class="outline-4">
+<h4 id="orgdc07cc3">subscription</h4>
+</div>
+<div id="outline-container-orgc05b96f" class="outline-4">
+<h4 id="orgc05b96f">autotest</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org80e82e3" class="outline-2">
+<h2 id="org80e82e3">Projects</h2>
+<div class="outline-text-2" id="text-org80e82e3">
+</div>
+<div id="outline-container-orgbac6066" class="outline-3">
+<h3 id="orgbac6066">development harness</h3>
+<div class="outline-text-3" id="text-orgbac6066">
+</div>
+<div id="outline-container-org9bea484" class="outline-4">
+<h4 id="org9bea484">DL model tuning</h4>
+<div class="outline-text-4" id="text-org9bea484">
+</div>
+<ul class="org-ul">
+<li><a id="org5d562ff"></a>training<br /></li>
+<li><a id="org45ef048"></a>testing<br /></li>
+<li><a id="orgb53b855"></a>validation<br /></li>
+<li><a id="org7c83f93"></a>data pipeline<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd740cd6" class="outline-3">
-<h3 id="orgd740cd6"><a href="./20211217115351-mlops.html">MLOps</a></h3>
+<div id="outline-container-org8636b97" class="outline-3">
+<h3 id="org8636b97"><a href="./20211217115351-mlops.html">MLOps</a></h3>
 </div>
-<div id="outline-container-org630ea71" class="outline-3">
-<h3 id="org630ea71">debugging on the cloud</h3>
+<div id="outline-container-orgebd92c4" class="outline-3">
+<h3 id="orgebd92c4">debugging on the cloud</h3>
 </div>
-<div id="outline-container-org3b52865" class="outline-3">
-<h3 id="org3b52865">database</h3>
+<div id="outline-container-org63a1e50" class="outline-3">
+<h3 id="org63a1e50">database</h3>
 </div>
-<div id="outline-container-org3a4999a" class="outline-3">
-<h3 id="org3a4999a">docker compose, K8s</h3>
-</div>
-</div>
-<div id="outline-container-org9e05445" class="outline-2">
-<h2 id="org9e05445">Deep Learning</h2>
-<div class="outline-text-2" id="text-org9e05445">
-</div>
-<div id="outline-container-org09aa505" class="outline-3">
-<h3 id="org09aa505">Reinforcement learning</h3>
-<div class="outline-text-3" id="text-org09aa505">
-</div>
-<div id="outline-container-org2ed7cfb" class="outline-4">
-<h4 id="org2ed7cfb"><b>Offline reinforcement learning</b></h4>
-</div>
-<div id="outline-container-org55e5450" class="outline-4">
-<h4 id="org55e5450"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></h4>
-</div>
-<div id="outline-container-org5dbb431" class="outline-4">
-<h4 id="org5dbb431">efficient search in memory （experience pool)</h4>
-</div>
-<div id="outline-container-org1e9a1e8" class="outline-4">
-<h4 id="org1e9a1e8">transformer based decision system</h4>
-</div>
-<div id="outline-container-orgb727e70" class="outline-4">
-<h4 id="orgb727e70">Federated Learning</h4>
+<div id="outline-container-org22e3c3f" class="outline-3">
+<h3 id="org22e3c3f">docker compose, K8s</h3>
 </div>
 </div>
-<div id="outline-container-org6c0a8eb" class="outline-3">
-<h3 id="org6c0a8eb">Generative model</h3>
-<div class="outline-text-3" id="text-org6c0a8eb">
+<div id="outline-container-org080866c" class="outline-2">
+<h2 id="org080866c">Deep Learning</h2>
+<div class="outline-text-2" id="text-org080866c">
 </div>
-<div id="outline-container-orgd763a83" class="outline-4">
-<h4 id="orgd763a83"><b>Diffusion model</b></h4>
+<div id="outline-container-org0e8137c" class="outline-3">
+<h3 id="org0e8137c">Reinforcement learning</h3>
+<div class="outline-text-3" id="text-org0e8137c">
 </div>
-<div id="outline-container-org704ba89" class="outline-4">
-<h4 id="org704ba89"><b>transformer application</b></h4>
+<div id="outline-container-org5f3f118" class="outline-4">
+<h4 id="org5f3f118"><b>Offline reinforcement learning</b></h4>
 </div>
-<div id="outline-container-orga91f5e4" class="outline-4">
-<h4 id="orga91f5e4"><b>Application of new TS features from EP</b></h4>
+<div id="outline-container-org572f24d" class="outline-4">
+<h4 id="org572f24d"><b>RLHF in VEOS (convergence boundary, performance enhancement)</b></h4>
 </div>
+<div id="outline-container-orga1b8dbf" class="outline-4">
+<h4 id="orga1b8dbf">efficient search in memory （experience pool)</h4>
 </div>
-<div id="outline-container-org019dd3a" class="outline-3">
-<h3 id="org019dd3a">transformer application in DRL and Generative modeling</h3>
+<div id="outline-container-orgafbf84b" class="outline-4">
+<h4 id="orgafbf84b">transformer based decision system</h4>
 </div>
-<div id="outline-container-org5e2d34e" class="outline-3">
-<h3 id="org5e2d34e">Foundational Model exploration</h3>
-<div class="outline-text-3" id="text-org5e2d34e">
-</div>
-<div id="outline-container-orge69eb4c" class="outline-4">
-<h4 id="orge69eb4c">Image captioning (scene understanding)</h4>
-</div>
-<div id="outline-container-orgcfbd968" class="outline-4">
-<h4 id="orgcfbd968">Policy selection/Planning with Instructions</h4>
+<div id="outline-container-org616ee5d" class="outline-4">
+<h4 id="org616ee5d">Federated Learning</h4>
 </div>
 </div>
-<div id="outline-container-orgc27f1ed" class="outline-3">
-<h3 id="orgc27f1ed">Building TS foundation model</h3>
+<div id="outline-container-orgee4145d" class="outline-3">
+<h3 id="orgee4145d">Generative model</h3>
+<div class="outline-text-3" id="text-orgee4145d">
+</div>
+<div id="outline-container-orgd1ffb22" class="outline-4">
+<h4 id="orgd1ffb22"><b>Diffusion model</b></h4>
+</div>
+<div id="outline-container-orgc8e901d" class="outline-4">
+<h4 id="orgc8e901d"><b>transformer application</b></h4>
+</div>
+<div id="outline-container-org42dfe71" class="outline-4">
+<h4 id="org42dfe71"><b>Application of new TS features from EP</b></h4>
+</div>
+</div>
+<div id="outline-container-org818b4f5" class="outline-3">
+<h3 id="org818b4f5">transformer application in DRL and Generative modeling</h3>
+</div>
+<div id="outline-container-org486ce00" class="outline-3">
+<h3 id="org486ce00">Foundational Model exploration</h3>
+<div class="outline-text-3" id="text-org486ce00">
+</div>
+<div id="outline-container-org9bd70c5" class="outline-4">
+<h4 id="org9bd70c5">Image captioning (scene understanding)</h4>
+</div>
+<div id="outline-container-orgaf85199" class="outline-4">
+<h4 id="orgaf85199">Policy selection/Planning with Instructions</h4>
+</div>
+</div>
+<div id="outline-container-orgb53d18f" class="outline-3">
+<h3 id="orgb53d18f">Building TS foundation model</h3>
 </div>
 </div>
 </div>

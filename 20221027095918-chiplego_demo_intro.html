@@ -16,84 +16,84 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1bbc4ed">vck190</a>
+<li><a href="#orgb0d2b93">vck190</a>
 <ul>
-<li><a href="#org8e777ec">AI Engines</a></li>
-<li><a href="#org787127b">133 Tops</a></li>
-<li><a href="#org9c5240c">4 摄像头扩展板</a></li>
-<li><a href="#org61d9b2a">Lidar + Radar 模拟 replay</a></li>
-<li><a href="#orgc528620">Capture + Acceleration + Output</a></li>
-<li><a href="#org59148f2">PL</a></li>
-<li><a href="#org5ff1004">DPU (DSP+AI+PL)</a></li>
-<li><a href="#org52368cb">APU （PS）&#x2013;&gt;cpu</a></li>
+<li><a href="#org8ed78f8">AI Engines</a></li>
+<li><a href="#orgcd5c46c">133 Tops</a></li>
+<li><a href="#org231b7ef">4 摄像头扩展板</a></li>
+<li><a href="#org542554e">Lidar + Radar 模拟 replay</a></li>
+<li><a href="#org6e224cf">Capture + Acceleration + Output</a></li>
+<li><a href="#org94a975f">PL</a></li>
+<li><a href="#orge0a4b81">DPU (DSP+AI+PL)</a></li>
+<li><a href="#orgd19e290">APU （PS）&#x2013;&gt;cpu</a></li>
 </ul>
 </li>
-<li><a href="#orgf6fcbcc">software</a>
+<li><a href="#org31b156b">software</a>
 <ul>
-<li><a href="#org8401e30">ZOCL accelrator os driver</a></li>
-<li><a href="#orgfe6f9a9">gstreamer (deepstream) pipeline</a>
+<li><a href="#org9c702cb">ZOCL accelrator os driver</a></li>
+<li><a href="#org1a29c3e">gstreamer (deepstream) pipeline</a>
 <ul>
-<li><a href="#org7bf3a83">vvas plugins &#x2013;&gt; middleware</a></li>
+<li><a href="#org772ace9">vvas plugins &#x2013;&gt; middleware</a></li>
 </ul>
 </li>
-<li><a href="#orgf676e9f">Vitis</a>
+<li><a href="#org1b463b6">Vitis</a>
 <ul>
-<li><a href="#org4888df5">AI: DL</a></li>
-<li><a href="#org91131df">Libraries: scaling</a></li>
-<li><a href="#org9aef240">XRT: runtime kernel</a></li>
-<li><a href="#org6f57f66">配置通过 json</a></li>
+<li><a href="#org00e3214">AI: DL</a></li>
+<li><a href="#org7b742c1">Libraries: scaling</a></li>
+<li><a href="#org63122cd">XRT: runtime kernel</a></li>
+<li><a href="#org3192c6a">配置通过 json</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga43d092">NPU SW stack</a>
+<li><a href="#org6cbc62d">NPU SW stack</a>
 <ul>
-<li><a href="#orgd6a963a">onnx support</a></li>
-<li><a href="#org41e0c79">CL Reference Code</a></li>
-<li><a href="#orgafd0720">CL AI Development Kit</a>
+<li><a href="#org48036a5">onnx support</a></li>
+<li><a href="#orgf15a69a">CL Reference Code</a></li>
+<li><a href="#org9e90686">CL AI Development Kit</a>
 <ul>
-<li><a href="#org0df4a2b">Profiling offline</a></li>
-<li><a href="#orga85877e">online, performance monitor （dumping file)</a></li>
-<li><a href="#orgaab75a6">AI pipeline g-streamer based</a></li>
-<li><a href="#org6d98b83">AI GRaph Cionverter, Quantizer, AI Compiler</a></li>
-<li><a href="#org9b23efe">AI Runtime, HW Driver</a></li>
+<li><a href="#org301c911">Profiling offline</a></li>
+<li><a href="#orgdd87860">online, performance monitor （dumping file)</a></li>
+<li><a href="#org25de4f3">AI pipeline g-streamer based</a></li>
+<li><a href="#orga6b3cd9">AI GRaph Cionverter, Quantizer, AI Compiler</a></li>
+<li><a href="#orgff81571">AI Runtime, HW Driver</a></li>
 </ul>
 </li>
-<li><a href="#org355cdd9">Hardware NPU/(DSP/GPU)</a></li>
+<li><a href="#org936ebbc">Hardware NPU/(DSP/GPU)</a></li>
 </ul>
 </li>
-<li><a href="#orgc45a2a1">Process</a>
+<li><a href="#org617ba29">Process</a>
 <ul>
-<li><a href="#org5fc36cc">Convert tool : ONNX &#x2013;&gt;CLG models</a></li>
-<li><a href="#orgdea2bba">Quantizaiton tool: QAT?</a></li>
-<li><a href="#org3350642">Graph optimizer</a></li>
+<li><a href="#org971668e">Convert tool : ONNX &#x2013;&gt;CLG models</a></li>
+<li><a href="#orgd8a8801">Quantizaiton tool: QAT?</a></li>
+<li><a href="#orga73ac88">Graph optimizer</a></li>
 </ul>
 </li>
-<li><a href="#org26e05ae">SDK</a>
+<li><a href="#orgff30208">SDK</a>
 <ul>
-<li><a href="#org0210990">CL camera perception</a></li>
-<li><a href="#orgd6c0c93">Deep Stream?</a></li>
+<li><a href="#orgb817209">CL camera perception</a></li>
+<li><a href="#org55bcb80">Deep Stream?</a></li>
 </ul>
 </li>
-<li><a href="#org21b33fb">data stream</a>
+<li><a href="#org9642e67">data stream</a>
 <ul>
-<li><a href="#orgd8cf993">GST Decoder</a></li>
-<li><a href="#org1b19144">GST CLinfer</a></li>
-<li><a href="#org9c8e1c6">GST Tracker? traditional SW stack</a></li>
+<li><a href="#org6b5642d">GST Decoder</a></li>
+<li><a href="#orgd522d2e">GST CLinfer</a></li>
+<li><a href="#org63c1ed8">GST Tracker? traditional SW stack</a></li>
 </ul>
 </li>
-<li><a href="#org3c2bfc2">Use cases:</a>
+<li><a href="#orgc28afc1">Use cases:</a>
 <ul>
-<li><a href="#orgaa158f8">BEV</a></li>
+<li><a href="#orgbcaba0b">BEV</a></li>
 </ul>
 </li>
-<li><a href="#orgf99bf06">Overall introduction</a></li>
-<li><a href="#org8c76075">Weekly</a>
+<li><a href="#org63e7fa5">Overall introduction</a></li>
+<li><a href="#org113f85b">Weekly</a>
 <ul>
-<li><a href="#org0ea117b"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></a>
+<li><a href="#orgc162c4b"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></a>
 <ul>
-<li><a href="#orgcef49a8">Jonas</a></li>
-<li><a href="#org4991602">William</a></li>
+<li><a href="#org2425294">Jonas</a></li>
+<li><a href="#orga01a522">William</a></li>
 </ul>
 </li>
 </ul>
@@ -105,184 +105,184 @@
 :ID:       1a52b829-dae8-4689-8813-f1396ce7a9f7
 </p>
 
-<div id="outline-container-org1bbc4ed" class="outline-2">
-<h2 id="org1bbc4ed">vck190</h2>
-<div class="outline-text-2" id="text-org1bbc4ed">
+<div id="outline-container-orgb0d2b93" class="outline-2">
+<h2 id="orgb0d2b93">vck190</h2>
+<div class="outline-text-2" id="text-orgb0d2b93">
 </div>
-<div id="outline-container-org8e777ec" class="outline-3">
-<h3 id="org8e777ec">AI Engines</h3>
+<div id="outline-container-org8ed78f8" class="outline-3">
+<h3 id="org8ed78f8">AI Engines</h3>
 </div>
-<div id="outline-container-org787127b" class="outline-3">
-<h3 id="org787127b">133 Tops</h3>
+<div id="outline-container-orgcd5c46c" class="outline-3">
+<h3 id="orgcd5c46c">133 Tops</h3>
 </div>
-<div id="outline-container-org9c5240c" class="outline-3">
-<h3 id="org9c5240c">4 摄像头扩展板</h3>
+<div id="outline-container-org231b7ef" class="outline-3">
+<h3 id="org231b7ef">4 摄像头扩展板</h3>
 </div>
-<div id="outline-container-org61d9b2a" class="outline-3">
-<h3 id="org61d9b2a">Lidar + Radar 模拟 replay</h3>
+<div id="outline-container-org542554e" class="outline-3">
+<h3 id="org542554e">Lidar + Radar 模拟 replay</h3>
 </div>
-<div id="outline-container-orgc528620" class="outline-3">
-<h3 id="orgc528620">Capture + Acceleration + Output</h3>
+<div id="outline-container-org6e224cf" class="outline-3">
+<h3 id="org6e224cf">Capture + Acceleration + Output</h3>
 </div>
-<div id="outline-container-org59148f2" class="outline-3">
-<h3 id="org59148f2">PL</h3>
+<div id="outline-container-org94a975f" class="outline-3">
+<h3 id="org94a975f">PL</h3>
 </div>
-<div id="outline-container-org5ff1004" class="outline-3">
-<h3 id="org5ff1004">DPU (DSP+AI+PL)</h3>
+<div id="outline-container-orge0a4b81" class="outline-3">
+<h3 id="orge0a4b81">DPU (DSP+AI+PL)</h3>
 </div>
-<div id="outline-container-org52368cb" class="outline-3">
-<h3 id="org52368cb">APU （PS）&#x2013;&gt;cpu</h3>
-</div>
-</div>
-<div id="outline-container-orgf6fcbcc" class="outline-2">
-<h2 id="orgf6fcbcc">software</h2>
-<div class="outline-text-2" id="text-orgf6fcbcc">
-</div>
-<div id="outline-container-org8401e30" class="outline-3">
-<h3 id="org8401e30">ZOCL accelrator os driver</h3>
-</div>
-<div id="outline-container-orgfe6f9a9" class="outline-3">
-<h3 id="orgfe6f9a9">gstreamer (deepstream) pipeline</h3>
-<div class="outline-text-3" id="text-orgfe6f9a9">
-</div>
-<div id="outline-container-org7bf3a83" class="outline-4">
-<h4 id="org7bf3a83">vvas plugins &#x2013;&gt; middleware</h4>
+<div id="outline-container-orgd19e290" class="outline-3">
+<h3 id="orgd19e290">APU （PS）&#x2013;&gt;cpu</h3>
 </div>
 </div>
-<div id="outline-container-orgf676e9f" class="outline-3">
-<h3 id="orgf676e9f">Vitis</h3>
-<div class="outline-text-3" id="text-orgf676e9f">
+<div id="outline-container-org31b156b" class="outline-2">
+<h2 id="org31b156b">software</h2>
+<div class="outline-text-2" id="text-org31b156b">
 </div>
-<div id="outline-container-org4888df5" class="outline-4">
-<h4 id="org4888df5">AI: DL</h4>
+<div id="outline-container-org9c702cb" class="outline-3">
+<h3 id="org9c702cb">ZOCL accelrator os driver</h3>
 </div>
-<div id="outline-container-org91131df" class="outline-4">
-<h4 id="org91131df">Libraries: scaling</h4>
+<div id="outline-container-org1a29c3e" class="outline-3">
+<h3 id="org1a29c3e">gstreamer (deepstream) pipeline</h3>
+<div class="outline-text-3" id="text-org1a29c3e">
 </div>
-<div id="outline-container-org9aef240" class="outline-4">
-<h4 id="org9aef240">XRT: runtime kernel</h4>
+<div id="outline-container-org772ace9" class="outline-4">
+<h4 id="org772ace9">vvas plugins &#x2013;&gt; middleware</h4>
 </div>
-<div id="outline-container-org6f57f66" class="outline-4">
-<h4 id="org6f57f66">配置通过 json</h4>
+</div>
+<div id="outline-container-org1b463b6" class="outline-3">
+<h3 id="org1b463b6">Vitis</h3>
+<div class="outline-text-3" id="text-org1b463b6">
+</div>
+<div id="outline-container-org00e3214" class="outline-4">
+<h4 id="org00e3214">AI: DL</h4>
+</div>
+<div id="outline-container-org7b742c1" class="outline-4">
+<h4 id="org7b742c1">Libraries: scaling</h4>
+</div>
+<div id="outline-container-org63122cd" class="outline-4">
+<h4 id="org63122cd">XRT: runtime kernel</h4>
+</div>
+<div id="outline-container-org3192c6a" class="outline-4">
+<h4 id="org3192c6a">配置通过 json</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga43d092" class="outline-2">
-<h2 id="orga43d092">NPU SW stack</h2>
-<div class="outline-text-2" id="text-orga43d092">
+<div id="outline-container-org6cbc62d" class="outline-2">
+<h2 id="org6cbc62d">NPU SW stack</h2>
+<div class="outline-text-2" id="text-org6cbc62d">
 </div>
-<div id="outline-container-orgd6a963a" class="outline-3">
-<h3 id="orgd6a963a">onnx support</h3>
+<div id="outline-container-org48036a5" class="outline-3">
+<h3 id="org48036a5">onnx support</h3>
 </div>
-<div id="outline-container-org41e0c79" class="outline-3">
-<h3 id="org41e0c79">CL Reference Code</h3>
+<div id="outline-container-orgf15a69a" class="outline-3">
+<h3 id="orgf15a69a">CL Reference Code</h3>
 </div>
-<div id="outline-container-orgafd0720" class="outline-3">
-<h3 id="orgafd0720">CL AI Development Kit</h3>
-<div class="outline-text-3" id="text-orgafd0720">
+<div id="outline-container-org9e90686" class="outline-3">
+<h3 id="org9e90686">CL AI Development Kit</h3>
+<div class="outline-text-3" id="text-org9e90686">
 </div>
-<div id="outline-container-org0df4a2b" class="outline-4">
-<h4 id="org0df4a2b">Profiling offline</h4>
+<div id="outline-container-org301c911" class="outline-4">
+<h4 id="org301c911">Profiling offline</h4>
 </div>
-<div id="outline-container-orga85877e" class="outline-4">
-<h4 id="orga85877e">online, performance monitor （dumping file)</h4>
+<div id="outline-container-orgdd87860" class="outline-4">
+<h4 id="orgdd87860">online, performance monitor （dumping file)</h4>
 </div>
-<div id="outline-container-orgaab75a6" class="outline-4">
-<h4 id="orgaab75a6">AI pipeline g-streamer based</h4>
-<div class="outline-text-4" id="text-orgaab75a6">
+<div id="outline-container-org25de4f3" class="outline-4">
+<h4 id="org25de4f3">AI pipeline g-streamer based</h4>
+<div class="outline-text-4" id="text-org25de4f3">
 </div>
 <ul class="org-ul">
-<li><a id="org67b1201"></a>nv graph composer?<br /></li>
+<li><a id="org653cf10"></a>nv graph composer?<br /></li>
 </ul>
 </div>
-<div id="outline-container-org6d98b83" class="outline-4">
-<h4 id="org6d98b83">AI GRaph Cionverter, Quantizer, AI Compiler</h4>
+<div id="outline-container-orga6b3cd9" class="outline-4">
+<h4 id="orga6b3cd9">AI GRaph Cionverter, Quantizer, AI Compiler</h4>
 </div>
-<div id="outline-container-org9b23efe" class="outline-4">
-<h4 id="org9b23efe">AI Runtime, HW Driver</h4>
-</div>
-</div>
-<div id="outline-container-org355cdd9" class="outline-3">
-<h3 id="org355cdd9">Hardware NPU/(DSP/GPU)</h3>
+<div id="outline-container-orgff81571" class="outline-4">
+<h4 id="orgff81571">AI Runtime, HW Driver</h4>
 </div>
 </div>
-<div id="outline-container-orgc45a2a1" class="outline-2">
-<h2 id="orgc45a2a1">Process</h2>
-<div class="outline-text-2" id="text-orgc45a2a1">
-</div>
-<div id="outline-container-org5fc36cc" class="outline-3">
-<h3 id="org5fc36cc">Convert tool : ONNX &#x2013;&gt;CLG models</h3>
-</div>
-<div id="outline-container-orgdea2bba" class="outline-3">
-<h3 id="orgdea2bba">Quantizaiton tool: QAT?</h3>
-</div>
-<div id="outline-container-org3350642" class="outline-3">
-<h3 id="org3350642">Graph optimizer</h3>
+<div id="outline-container-org936ebbc" class="outline-3">
+<h3 id="org936ebbc">Hardware NPU/(DSP/GPU)</h3>
 </div>
 </div>
-<div id="outline-container-org26e05ae" class="outline-2">
-<h2 id="org26e05ae">SDK</h2>
-<div class="outline-text-2" id="text-org26e05ae">
+<div id="outline-container-org617ba29" class="outline-2">
+<h2 id="org617ba29">Process</h2>
+<div class="outline-text-2" id="text-org617ba29">
 </div>
-<div id="outline-container-org0210990" class="outline-3">
-<h3 id="org0210990">CL camera perception</h3>
+<div id="outline-container-org971668e" class="outline-3">
+<h3 id="org971668e">Convert tool : ONNX &#x2013;&gt;CLG models</h3>
 </div>
-<div id="outline-container-orgd6c0c93" class="outline-3">
-<h3 id="orgd6c0c93">Deep Stream?</h3>
+<div id="outline-container-orgd8a8801" class="outline-3">
+<h3 id="orgd8a8801">Quantizaiton tool: QAT?</h3>
 </div>
-</div>
-<div id="outline-container-org21b33fb" class="outline-2">
-<h2 id="org21b33fb">data stream</h2>
-<div class="outline-text-2" id="text-org21b33fb">
-</div>
-<div id="outline-container-orgd8cf993" class="outline-3">
-<h3 id="orgd8cf993">GST Decoder</h3>
-</div>
-<div id="outline-container-org1b19144" class="outline-3">
-<h3 id="org1b19144">GST CLinfer</h3>
-</div>
-<div id="outline-container-org9c8e1c6" class="outline-3">
-<h3 id="org9c8e1c6">GST Tracker? traditional SW stack</h3>
+<div id="outline-container-orga73ac88" class="outline-3">
+<h3 id="orga73ac88">Graph optimizer</h3>
 </div>
 </div>
-<div id="outline-container-org3c2bfc2" class="outline-2">
-<h2 id="org3c2bfc2">Use cases:</h2>
-<div class="outline-text-2" id="text-org3c2bfc2">
+<div id="outline-container-orgff30208" class="outline-2">
+<h2 id="orgff30208">SDK</h2>
+<div class="outline-text-2" id="text-orgff30208">
 </div>
-<div id="outline-container-orgaa158f8" class="outline-3">
-<h3 id="orgaa158f8">BEV</h3>
+<div id="outline-container-orgb817209" class="outline-3">
+<h3 id="orgb817209">CL camera perception</h3>
+</div>
+<div id="outline-container-org55bcb80" class="outline-3">
+<h3 id="org55bcb80">Deep Stream?</h3>
 </div>
 </div>
-<div id="outline-container-orgf99bf06" class="outline-2">
-<h2 id="orgf99bf06">Overall introduction</h2>
+<div id="outline-container-org9642e67" class="outline-2">
+<h2 id="org9642e67">data stream</h2>
+<div class="outline-text-2" id="text-org9642e67">
 </div>
-<div id="outline-container-org8c76075" class="outline-2">
-<h2 id="org8c76075">Weekly</h2>
-<div class="outline-text-2" id="text-org8c76075">
+<div id="outline-container-org6b5642d" class="outline-3">
+<h3 id="org6b5642d">GST Decoder</h3>
 </div>
-<div id="outline-container-org0ea117b" class="outline-3">
-<h3 id="org0ea117b"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></h3>
-<div class="outline-text-3" id="text-org0ea117b">
+<div id="outline-container-orgd522d2e" class="outline-3">
+<h3 id="orgd522d2e">GST CLinfer</h3>
 </div>
-<div id="outline-container-orgcef49a8" class="outline-4">
-<h4 id="orgcef49a8">Jonas</h4>
-<div class="outline-text-4" id="text-orgcef49a8">
+<div id="outline-container-org63c1ed8" class="outline-3">
+<h3 id="org63c1ed8">GST Tracker? traditional SW stack</h3>
+</div>
+</div>
+<div id="outline-container-orgc28afc1" class="outline-2">
+<h2 id="orgc28afc1">Use cases:</h2>
+<div class="outline-text-2" id="text-orgc28afc1">
+</div>
+<div id="outline-container-orgbcaba0b" class="outline-3">
+<h3 id="orgbcaba0b">BEV</h3>
+</div>
+</div>
+<div id="outline-container-org63e7fa5" class="outline-2">
+<h2 id="org63e7fa5">Overall introduction</h2>
+</div>
+<div id="outline-container-org113f85b" class="outline-2">
+<h2 id="org113f85b">Weekly</h2>
+<div class="outline-text-2" id="text-org113f85b">
+</div>
+<div id="outline-container-orgc162c4b" class="outline-3">
+<h3 id="orgc162c4b"><span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt;</span></span></h3>
+<div class="outline-text-3" id="text-orgc162c4b">
+</div>
+<div id="outline-container-org2425294" class="outline-4">
+<h4 id="org2425294">Jonas</h4>
+<div class="outline-text-4" id="text-org2425294">
 </div>
 <ul class="org-ul">
-<li><a id="orgbe27364"></a>工具链不成熟，明年<br /></li>
-<li><a id="orgcd80185"></a>layer norm，<br /></li>
-<li><a id="org6a66626"></a>tops int8, xflops<br /></li>
+<li><a id="org986830a"></a>工具链不成熟，明年<br /></li>
+<li><a id="org86c9bfb"></a>layer norm，<br /></li>
+<li><a id="orgd91a6e5"></a>tops int8, xflops<br /></li>
 </ul>
 </div>
-<div id="outline-container-org4991602" class="outline-4">
-<h4 id="org4991602">William</h4>
-<div class="outline-text-4" id="text-org4991602">
+<div id="outline-container-orga01a522" class="outline-4">
+<h4 id="orga01a522">William</h4>
+<div class="outline-text-4" id="text-orga01a522">
 </div>
 <ul class="org-ul">
-<li><a id="orgba11f3a"></a>AIE2<br /></li>
-<li><a id="org91d202f"></a>lidar, radar?<br /></li>
-<li><a id="orga869857"></a>upgrade vck190?<br /></li>
+<li><a id="org23b2d66"></a>AIE2<br /></li>
+<li><a id="org5a2c2c8"></a>lidar, radar?<br /></li>
+<li><a id="org6e1156b"></a>upgrade vck190?<br /></li>
 </ul>
 </div>
 </div>
