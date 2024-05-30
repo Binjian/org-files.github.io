@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Fluent Git</title>
+<meta name="author" content="忻斌健"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="./templates/grids.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style> .figure p {text-align: center;}</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Elements Reference</title>
+</head>
+<body>
+<h1>流畅的Git</h1>
+<h2>Git可视化实践交流</h2>
+<h4>忻斌健</h4>
+<h4>智能系统前沿开发</h4>
+<h4>2023年09月18日</h4>
+<div id="logo">
+	<img src="./img/newrizon_crop.png" alt="上海前晨汽车科技有限公司" width="300">
+</div>
+</body>
+</html>
+
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-orgbe1bcd4">常见场景</a></li>
+<li><a href="#/slide-org06d7553">哈希值，四类对象</a></li>
+<li><a href="#/slide-orga964096">典型场景中的工具和操作</a></li>
+<li><a href="#/slide-org8e94050">进阶</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<section>
+<section id="slide-orgbe1bcd4">
+<h2 id="orgbe1bcd4">常见场景</h2>
+
+<div id="orga51ffb5" class="figure">
+<p><img src="./img/git_in_a_nutshell/git.png" alt="git.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orge828211">
+<h3 id="orge828211">关于&ldquo;git submodule for each&rdquo;一个例子</h3>
+<div class="outline-text-3" id="text-orge828211">
+</div>
+</section>
+<section id="slide-org792b109">
+<h4 id="org792b109">台盆命令</h4>
+<div class="gridded_frame_with_rows">
+<div class="one_of_3_rows">
+<ul>
+<li><p>
+查手册：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-[[roam:bash">        git submodule foreach --recursive 'git log'
+</pre>
+</div></li>
+
+</ul>
+</div>
+<div class="one_of_3_rows">
+<ul>
+<li><p>
+debugged:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-[[roam:bash">        git submodule foreach --recursive 'git log --oneline'
+</pre>
+</div></li>
+
+</ul>
+</div>
+<div class="one_of_3_rows">
+<ul>
+<li><p>
+更多功能：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-[[roam:bash">        git submodule foreach --recursive 'git log --oneline HEAD...HEAD~5'
+</pre>
+</div></li>
+
+</ul>
+</div>
+</div>
+
+
+</section>
+<section id="slide-orgc84be00">
+<h4 id="orgc84be00">水管命令</h4>
+<div class="gridded_frame_with_rows">
+<div class="one_of_2_rows">
+<ul>
+<li>stack overflow:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-[[roam:bash">        git submodule foreach --recursive '
+        REV1=HEAD;
+        REV2=HEAD~10;
+        SHA1=$(cd $toplevel &amp;&amp; git ls-tree $REV1 $sm_path | \
+            grep -E -o "[0-9a-f]{40}");
+        SHA2=$(cd $toplevel &amp;&amp; git ls-tree $REV2 $sm_path | \
+            grep -E -o "[0-9a-f]{40}");
+        git log --oneline $SHA1...$SHA2'
+</pre>
+</div>
+</div>
+<div class="one_of_2_rows">
+<ul>
+<li>debug:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-[[roam:bash">        git submodule foreach --recursive '
+        SHA1=$(cd $toplevel &amp;&amp; cd $sm_path &amp;&amp; git log | \
+            grep -E -o "[0-9a-f]{40}" | head -1);
+        SHA2=$(cd $toplevel &amp;&amp; cd $sm_path &amp;&amp; git log | \
+            grep -E -o "[0-9a-f]{40}" | head -10 | tail -n1);
+        git log --oneline $SHA1...$SHA2'
+</pre>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>
+git submodule 是一个不太好用的功能! look at opencv, ros
+</p>
+<ul>
+<li>git submodule update -&gt; no branch</li>
+<li>submodule tracking branch needs to be configured</li>
+<li>pushing order with main repo (has the responsibility to set the branch and version it tracks, and it&rsquo;s static, unless configured in main repo)</li>
+
+</ul>
+<p>
+without knowing the internals, like learning chemistry without knowledge of atomic physics.
+learning deeper is smart, not learning wider! learning wider is memorization, computers can better!
+no magic! magic is when you don&rsquo;t understand! magic is accomanied with fear!important to have an image (einstein) -&gt; git-sim as a tool
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org0e89983">
+<h4 id="org0e89983">台盆命令:</h4>
+<ul>
+<li>git commandline</li>
+<li>git lens</li>
+<li>gitkraken</li>
+<li>emacs magit</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org06d7553">
+<h2 id="org06d7553">哈希值，四类对象</h2>
+</section>
+<section id="slide-orgd302c81">
+<h3 id="orgd302c81">哈希(暗物质)</h3>
+<ul>
+<li>高效
+<ul>
+<li>哈希函数计算, 每百万次计算约几百毫秒</li>
+<li>索引~O(1) (数组 O(N)）</li>
+<li>哈希冲突概率极低，最坏 O(N)</li>
+
+</ul></li>
+<li>sha-1 (20byte, 40hex, 160 位, 8 位 用于目录)
+<ul>
+<li>安全性 -&gt; sha256(32bit), sha512(64bit), ipv6 多 42 亿倍</li>
+<li>ipv6 128bit \(2^{128}\)  79x10<sup>27</sup> （宇宙总原子数 wiki \(\approx10^{80}\), 人体原子数\(\approx7*10^{27}\), 恒星数量 \(\approx200\times10^{21}\))</li>
+
+</ul></li>
+<li>哈希表的广泛应用
+<ul>
+<li>编程语言的数据结构：Python dict (json) 与 set， (不算 list 与 tuple)</li>
+<li>数据库：Mongodb object</li>
+<li>云存储：Object Storage System</li>
+
+</ul></li>
+
+</ul>
+<aside class="notes">
+<p>
+哈希值是计算机技术的暗物质
+</p>
+
+</aside>
+</section>
+<section id="slide-org39afa56">
+<h3 id="org39afa56">四个对象</h3>
+<ul>
+<li>tree 树 (空间/拓扑关系)</li>
+<li>blob 文件</li>
+<li>commit (时间顺序)</li>
+<li>annotated tag</li>
+<li>树对象,文件对象 的实例：HEAD,
+<ul>
+<li>git cat-file -p HEAD</li>
+<li>git ls-tree -r HEAD</li>
+<li>head 内一个文件对象</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgd166b74">
+<h3 id="orgd166b74">抽象的力量</h3>
+<ul>
+<li>内容可编址的文件系统/数据库</li>
+<li>所有对象平等, 不分优先级</li>
+
+</ul>
+</section>
+<section id="slide-orge7eaeab">
+<h3 id="orge7eaeab">版本选择 gitrevisions</h3>
+<ul>
+<li>应用于 cherry-pick, reset, log, merge</li>
+<li>特定单个版本
+<ul>
+<li>head^^/head^2</li>
+<li>head@{2}</li>
+<li>head~~/head~2</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org072f10f">
+<h4 id="org072f10f">版本的范围</h4>
+<ul>
+<li>master..experiment  (from master to experiment)
+<ul>
+<li>D, C</li>
+
+</ul></li>
+<li>master A ^experiment (from experiment to master or feature)
+<ul>
+<li>F, E</li>
+
+</ul></li>
+<li>master&#x2026;experiment (from master to experiment or vice versa)
+<ul>
+<li>F,E,D,C</li>
+
+</ul></li>
+<li>@ : HEAD</li>
+
+</ul>
+
+
+<div id="org31bce70" class="figure">
+<p><img src="./img/git_in_a_nutshell/double-dot.png" alt="double-dot.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgbb461ff">
+<h4 id="orgbb461ff">版本关系语法</h4>
+<div class="gridded_frame_with_columns">
+<div class="one_of_2_columns">
+
+<div id="orgde427a0" class="figure">
+<p><img src="./img/git_in_a_nutshell/loeliger.png" alt="loeliger.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>多分支的版本历史</p>
+</div>
+
+</div>
+<div class="one_of_2_columns">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">A^0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">B</td>
+<td class="org-left">A^</td>
+<td class="org-left">A^1</td>
+<td class="org-left">A~1</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">A^2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">A^^</td>
+<td class="org-left">A^1^1</td>
+<td class="org-left">A~2</td>
+<td class="org-left">B^1</td>
+</tr>
+
+<tr>
+<td class="org-left">E</td>
+<td class="org-left">B^2</td>
+<td class="org-left">A^^2</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">F</td>
+<td class="org-left">B^3</td>
+<td class="org-left">A^^3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">G</td>
+<td class="org-left">A^^^</td>
+<td class="org-left">A^1^1^1</td>
+<td class="org-left">A~3</td>
+<td class="org-left">D^1</td>
+</tr>
+
+<tr>
+<td class="org-left">H</td>
+<td class="org-left">D^2</td>
+<td class="org-left">B^^2</td>
+<td class="org-left">A^^^2</td>
+<td class="org-left">A~2^2</td>
+</tr>
+
+<tr>
+<td class="org-left">I</td>
+<td class="org-left">F^</td>
+<td class="org-left">B^3^</td>
+<td class="org-left">A^^3^</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">J</td>
+<td class="org-left">F^2</td>
+<td class="org-left">B^3^2</td>
+<td class="org-left">A^^3^2</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</section>
+<section id="slide-org83cfdf2">
+<h4 id="org83cfdf2">范围选择的语法 1</h4>
+<div class="gridded_frame_with_columns">
+<div class="one_of_2_columns">
+
+<div id="orgc9354ec" class="figure">
+<p><img src="./img/git_in_a_nutshell/loeliger.png" title="loeliger" width="400pix" align="center" />
+</p>
+<p><span class="figure-number">Figure 2: </span>多分支的版本历史</p>
+</div>
+
+</div>
+<div class="one_of_2_columns">
+<p>
+版本范围语法
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">输入</th>
+<th scope="col" class="org-left">分解</th>
+<th scope="col" class="org-left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">G H D</td>
+</tr>
+
+<tr>
+<td class="org-left">D F</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">G H I J D F</td>
+</tr>
+
+<tr>
+<td class="org-left">^G D</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">H D</td>
+</tr>
+
+<tr>
+<td class="org-left">^D B</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">E I J F B</td>
+</tr>
+
+<tr>
+<td class="org-left">^D B C</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">E I J F B C</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">I J F C</td>
+</tr>
+
+<tr>
+<td class="org-left">B..C</td>
+<td class="org-left">^B C</td>
+<td class="org-left">C</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</section>
+<section id="slide-orgba92497">
+<h4 id="orgba92497">范围选择的语法 2</h4>
+<div class="gridded_frame_with_columns">
+<div class="one_of_2_columns">
+
+<div id="org3253b9b" class="figure">
+<p><img src="./img/git_in_a_nutshell/loeliger.png" title="loeliger" width="400pix" align="center" />
+</p>
+<p><span class="figure-number">Figure 3: </span>多分支的版本历史</p>
+</div>
+
+</div>
+<div class="one_of_2_columns">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">B&#x2026;C</td>
+<td class="org-left">B ^F C</td>
+<td class="org-left">G H D E B C</td>
+</tr>
+
+<tr>
+<td class="org-left">B^- (merge)</td>
+<td class="org-left">B^..B</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">^B^1 B</td>
+<td class="org-left">E I J F B</td>
+</tr>
+
+<tr>
+<td class="org-left">C^@</td>
+<td class="org-left">C^1, F</td>
+<td class="org-left">I J F</td>
+</tr>
+
+<tr>
+<td class="org-left">C^!</td>
+<td class="org-left">C ^C^@, C ^F</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-left">F^! D</td>
+<td class="org-left">F ^I ^J D</td>
+<td class="org-left">G H D F</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga964096">
+<h2 id="orga964096">典型场景中的工具和操作</h2>
+</section>
+<section id="slide-org588f79b">
+<h3 id="org588f79b">模拟场景 (后悔药)</h3>
+<ul>
+<li>在已有代码仓库开创一个特征分支</li>
+<li>增加变更 (git add)</li>
+<li>提交变更 (git commit)</li>
+<li>撤回最近提交变更 (git commit，马上反悔)</li>
+<li>撤回一长串变更 (在一个分支上多次提交以后反悔，reset)</li>
+<li>撤回远程仓库(git push 给所有人后反悔)</li>
+<li>变更整个分支 (git rebase)</li>
+<li>在错误分支上提交变更（把相关变更推到正确分支上，cherrypick）</li>
+<li>头脑风暴!</li>
+
+</ul>
+</section>
+<section id="slide-orge1132c1">
+<h3 id="orge1132c1">常规应用命令</h3>
+<ul>
+<li>git branch (off, out)
+<ul>
+<li>添加变更</li>
+
+</ul></li>
+<li>git commit -a
+<ul>
+<li>提交变更: 反悔最近变更, git push -f 选项.</li>
+
+</ul></li>
+<li>git reset
+<ul>
+<li>soft, <b>mixed</b>, hard
+如果 hard 更干净，为何 mixed 是默认选项？</li>
+<li>hard 很危险 (detached/isolated commit,没有后悔药!)</li>
+<li>soft, mixed 更保守，防卫性回退</li>
+
+</ul></li>
+<li>git remote
+<ul>
+<li>可以对应多个远端仓库？ 比如 ros 的 github 仓库和公司内网有特殊配置的仓库</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org877f6a7">
+<h3 id="org877f6a7">复杂命令</h3>
+<ul>
+<li>git rebase
+<ul>
+<li>git push &#x2013;force （没有后悔药!)</li>
+<li>git merge</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org70d7d89">
+<h3 id="org70d7d89">git reflog 的视角</h3>
+<ul>
+<li>头部分支的历史 (head &amp; branches)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8e94050">
+<h2 id="org8e94050">进阶</h2>
+<div class="outline-text-2" id="text-org8e94050">
+</div>
+</section>
+<section id="slide-org6ea2e0d">
+<h3 id="org6ea2e0d">git revert vs git reset</h3>
+</section>
+<section id="slide-org265abf3">
+<h3 id="org265abf3">commit needs to be atomic -&gt; git cherrypick</h3>
+</section>
+<section id="slide-org4b769c5">
+<h3 id="org4b769c5">git branch pushremote</h3>
+</section>
+<section id="slide-orgf66a89e">
+<h3 id="orgf66a89e">git stash branch &lt;stash&gt;@{0}</h3>
+</section>
+<section id="slide-org5fb1759">
+<h3 id="org5fb1759">git rebase &#x2013;interactive</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/markdown/markdown.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/notes/notes.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/search/search.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.01,
+minScale: 0.05,
+maxScale: 2.50,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

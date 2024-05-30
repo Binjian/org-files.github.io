@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>git-training</title>
+<meta name="author" content="Binjian Xin"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/theme/black.css" id="theme"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">git-training</h1><h2 class="author">Binjian Xin</h2><p class="date">Created: 2024-05-30 Thu 16:45</p>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-1">1. git short introduction</a></li>
+<li><a href="#/slide-2">2. work-flow:</a></li>
+<li><a href="#/slide-3">3. index/stage, repository, working tree, remote;</a></li>
+<li><a href="#/slide-4">4. git advanced</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-1">
+<h2 id="1"><span class="section-number-2">1.</span> git short introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</section>
+<section id="slide-1-1">
+<h3 id="1-1"><span class="section-number-3">1.1.</span> &rsquo;git&rsquo; not &rsquo;jit&rsquo;</h3>
+</section>
+<section id="slide-1-2">
+<h3 id="1-2"><span class="section-number-3">1.2.</span> days of diff and patch, bitkeeper</h3>
+</section>
+<section id="slide-1-3">
+<h3 id="1-3"><span class="section-number-3">1.3.</span> Goal: distributed development (coooperative? depends!)</h3>
+</section>
+<section id="slide-1-4">
+<h3 id="1-4"><span class="section-number-3">1.4.</span> linus torwald</h3>
+</section>
+<section id="slide-1-5">
+<h3 id="1-5"><span class="section-number-3">1.5.</span> very similar to blockchain Merkle Tree (hash tree)</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+</section>
+<section id="slide-1-5-1">
+<h4 id="1-5-1"><span class="section-number-4">1.5.1.</span> <a href="https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain">why is git not a blockchain</a></h4>
+</section>
+<section id="slide-1-6">
+<h3 id="1-6"><span class="section-number-3">1.6.</span> SHA is not a security feature, security is a by-product</h3>
+</section>
+<section id="slide-1-7">
+<h3 id="1-7"><span class="section-number-3">1.7.</span> objects: blob, tree</h3>
+</section>
+<section id="slide-1-8">
+<h3 id="1-8"><span class="section-number-3">1.8.</span> references: name for raw SHA-1 value; refs</h3>
+</section>
+<section id="slide-1-9">
+<h3 id="1-9"><span class="section-number-3">1.9.</span> porcelan vs plumbing git cat-file -t -p</h3>
+</section>
+<section id="slide-1-10">
+<h3 id="1-10"><span class="section-number-3">1.10.</span> features: local, fast, efficient, distributed, snapshot not patches, changes</h3>
+</section>
+<section id="slide-1-11">
+<h3 id="1-11"><span class="section-number-3">1.11.</span> HEAD/Detached?</h3>
+</section>
+</section>
+<section>
+<section id="slide-2">
+<h2 id="2"><span class="section-number-2">2.</span> work-flow:</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-2-1">
+<h3 id="2-1"><span class="section-number-3">2.1.</span> edit, stage(add), review, commit</h3>
+</section>
+<section id="slide-2-2">
+<h3 id="2-2"><span class="section-number-3">2.2.</span> git-flow</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+</section>
+<section id="slide-2-2-1">
+<h4 id="2-2-1"><span class="section-number-4">2.2.1.</span> <a href="https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html">git flow cheetsheet</a></h4>
+</section>
+<section id="slide-2-3">
+<h3 id="2-3"><span class="section-number-3">2.3.</span> submodule</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+</section>
+<section id="slide-2-3-1">
+<h4 id="2-3-1"><span class="section-number-4">2.3.1.</span> just update, track the new changes of the submodules (no change)</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="2-3-1-1"></a>manually : git fetch<br /></li>
+<li><a id="2-3-1-2"></a>automatically: git submodule update &#x2013;remote<br />
+<ol class="org-ol">
+<li><a id="2-3-1-2-1"></a>set specific branch .gitmodules submodule.submudle<sub>name.branch</sub> stable<br /></li>
+<li><a id="2-3-1-2-2"></a>-f: tracked; no -f locally, not tracked.<br /></li>
+<li><a id="2-3-1-2-3"></a>git config status.submodulesummary 1<br /></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="slide-2-3-2">
+<h4 id="2-3-2"><span class="section-number-4">2.3.2.</span> work on the submodule collaboratively</h4>
+<div class="outline-text-4" id="text-2-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="2-3-2-1"></a>git submodule update &#x2013;remote &#x2013;rebase/&#x2013;merge<br /></li>
+<li><a id="2-3-2-2"></a>caveats: has to commit locally.<br /></li>
+<li><a id="2-3-2-3"></a>publishing submodule changes: git push &#x2013;recurse-submodules=check/on-demand<br /></li>
+</ol>
+</section>
+<section id="slide-2-3-3">
+<h4 id="2-3-3"><span class="section-number-4">2.3.3.</span> caveats:</h4>
+<div class="outline-text-4" id="text-2-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="2-3-3-1"></a>accidental revert: git submodule update &#x2013;remote to update .gitmodule; and commit in parent projects.<br /></li>
+<li><a id="2-3-3-2"></a>cannot merge: no submodule merge<br /></li>
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-3">
+<h2 id="3"><span class="section-number-2">3.</span> index/stage, repository, working tree, remote;</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-3-1">
+<h3 id="3-1"><span class="section-number-3">3.1.</span> git hash-object -w;git cat-file -p/-t; git update-index &#x2013;add &#x2013;cacheinfo</h3>
+</section>
+<section id="slide-3-2">
+<h3 id="3-2"><span class="section-number-3">3.2.</span> file modes: 100644/100755/120000</h3>
+</section>
+<section id="slide-3-3">
+<h3 id="3-3"><span class="section-number-3">3.3.</span> git write-tree</h3>
+</section>
+<section id="slide-3-4">
+<h3 id="3-4"><span class="section-number-3">3.4.</span> git objects: content-addressable filesystem</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+</section>
+<section id="slide-3-4-1">
+<h4 id="3-4-1"><span class="section-number-4">3.4.1.</span> tree objects</h4>
+</section>
+<section id="slide-3-4-2">
+<h4 id="3-4-2"><span class="section-number-4">3.4.2.</span> blob</h4>
+</section>
+<section id="slide-3-4-3">
+<h4 id="3-4-3"><span class="section-number-4">3.4.3.</span> <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">commit objects</a></h4>
+</section>
+<section id="slide-3-4-4">
+<h4 id="3-4-4"><span class="section-number-4">3.4.4.</span> tag</h4>
+</section>
+<section id="slide-3-5">
+<h3 id="3-5"><span class="section-number-3">3.5.</span> diff, snapshot</h3>
+<div class="outline-text-3" id="text-3-5">
+</div>
+</section>
+<section id="slide-3-5-1">
+<h4 id="3-5-1"><span class="section-number-4">3.5.1.</span> view/content</h4>
+</section>
+<section id="slide-3-6">
+<h3 id="3-6"><span class="section-number-3">3.6.</span> git commit: is a snapshot</h3>
+<div class="outline-text-3" id="text-3-6">
+</div>
+</section>
+<section id="slide-3-6-1">
+<h4 id="3-6-1"><span class="section-number-4">3.6.1.</span> new commits often: history of your logic units of change, a story of history of the repository</h4>
+</section>
+<section id="slide-3-6-2">
+<h4 id="3-6-2"><span class="section-number-4">3.6.2.</span> metadta: contents, messages of author, timestamp,</h4>
+</section>
+<section id="slide-3-6-3">
+<h4 id="3-6-3"><span class="section-number-4">3.6.3.</span> change history, &#x2013;amend</h4>
+</section>
+<section id="slide-3-7">
+<h3 id="3-7"><span class="section-number-3">3.7.</span> reference</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+</section>
+<section id="slide-3-7-1">
+<h4 id="3-7-1"><span class="section-number-4">3.7.1.</span> branch, HEAD, detached</h4>
+<div class="outline-text-4" id="text-3-7-1">
+</div>
+<ol class="org-ol">
+<li><a id="3-7-1-1"></a>branch: reference to the head of a line of work&#x2013;&gt;git update-ref refs/heads/master<br /></li>
+<li><a id="3-7-1-2"></a>HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object<br /></li>
+<li><a id="3-7-1-3"></a>detatched HEAD: cannot commit (checkout a commit/tag/remote branch)<br />
+<ol class="org-ol">
+<li><a id="3-7-1-3-1"></a>to save : git checkout -b foo/ git branch foo/ git tag foo<br /></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="slide-3-7-2">
+<h4 id="3-7-2"><span class="section-number-4">3.7.2.</span> git reflog -2 HEAD/ HEAD^^</h4>
+</section>
+<section id="slide-3-7-3">
+<h4 id="3-7-3"><span class="section-number-4">3.7.3.</span> git symbolic-ref</h4>
+</section>
+<section id="slide-3-7-4">
+<h4 id="3-7-4"><span class="section-number-4">3.7.4.</span> master^^</h4>
+</section>
+<section id="slide-3-7-5">
+<h4 id="3-7-5"><span class="section-number-4">3.7.5.</span> tags： branch reference; never moves</h4>
+</section>
+<section id="slide-3-7-6">
+<h4 id="3-7-6"><span class="section-number-4">3.7.6.</span> remotes: git remote add origin git@gitlab.work:ai/ref.git: git push</h4>
+</section>
+<section id="slide-3-8">
+<h3 id="3-8"><span class="section-number-3">3.8.</span> merge</h3>
+</section>
+<section id="slide-3-9">
+<h3 id="3-9"><span class="section-number-3">3.9.</span> rebase</h3>
+</section>
+<section id="slide-3-10">
+<h3 id="3-10"><span class="section-number-3">3.10.</span> stashing</h3>
+</section>
+<section id="slide-3-11">
+<h3 id="3-11"><span class="section-number-3">3.11.</span> log</h3>
+</section>
+<section id="slide-3-12">
+<h3 id="3-12"><span class="section-number-3">3.12.</span> misc</h3>
+<div class="outline-text-3" id="text-3-12">
+</div>
+</section>
+<section id="slide-3-12-1">
+<h4 id="3-12-1"><span class="section-number-4">3.12.1.</span> commit amend</h4>
+</section>
+<section id="slide-3-12-2">
+<h4 id="3-12-2"><span class="section-number-4">3.12.2.</span> rename</h4>
+</section>
+<section id="slide-3-12-3">
+<h4 id="3-12-3"><span class="section-number-4">3.12.3.</span> gitignore</h4>
+</section>
+<section id="slide-3-12-4">
+<h4 id="3-12-4"><span class="section-number-4">3.12.4.</span> submodule,</h4>
+</section>
+</section>
+<section>
+<section id="slide-4">
+<h2 id="4"><span class="section-number-2">4.</span> git advanced</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</section>
+<section id="slide-4-1">
+<h3 id="4-1"><span class="section-number-3">4.1.</span> git revert</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+</section>
+<section id="slide-4-1-1">
+<h4 id="4-1-1"><span class="section-number-4">4.1.1.</span> git revision specification</h4>
+<div class="outline-text-4" id="text-4-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="4-1-1-1"></a>git log<br /></li>
+<li><a id="4-1-1-2"></a>git reset<br /></li>
+<li><a id="4-1-1-3"></a>git chery-pick<br /></li>
+</ol>
+</section>
+<section id="slide-4-2">
+<h3 id="4-2"><span class="section-number-3">4.2.</span> git rebase</h3>
+</section>
+<section id="slide-4-3">
+<h3 id="4-3"><span class="section-number-3">4.3.</span> magit</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/markdown/markdown.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/notes/notes.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/search/search.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

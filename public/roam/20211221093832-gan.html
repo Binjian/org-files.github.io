@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GAN</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">GAN</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0a1fe9b">GAN Generator(decoder); Discriminator (not encoder?)</a>
+<ul>
+<li><a href="#org4337381">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</a></li>
+<li><a href="#orgab0aca9">Generator target minimization of JSD to approach data distribution</a></li>
+<li><a href="#org7aa729c">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</a></li>
+</ul>
+</li>
+<li><a href="#org4b2a103">critisize</a>
+<ul>
+<li><a href="#orgb4c8ccc">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</a></li>
+<li><a href="#orga866b17">the engineering trick to modify the second objective for G does not conform to JSD</a></li>
+<li><a href="#orga314d6b">The optimization of D and G is subsequent, not simultanteous.</a>
+<ul>
+<li><a href="#orgc1ef39c">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</a></li>
+<li><a href="#orgacec651">how to guide the training?</a></li>
+</ul>
+</li>
+<li><a href="#org5f9c934">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</a></li>
+<li><a href="#orgbc84792">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</a>
+<ul>
+<li><a href="#org863ddbe">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</a></li>
+<li><a href="#org28727e3">discriminator(classifier)-&gt;decoder?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org23c0255">appendex</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0a1fe9b" class="outline-2">
+<h2 id="org0a1fe9b">GAN Generator(decoder); Discriminator (not encoder?)</h2>
+<div class="outline-text-2" id="text-org0a1fe9b">
+</div>
+<div id="outline-container-org4337381" class="outline-3">
+<h3 id="org4337381">discriminator kind of encoder, but is a binary classifier. but encodes the latent embedding for classification</h3>
+</div>
+<div id="outline-container-orgab0aca9" class="outline-3">
+<h3 id="orgab0aca9">Generator target minimization of JSD to approach data distribution</h3>
+</div>
+<div id="outline-container-org7aa729c" class="outline-3">
+<h3 id="org7aa729c">objective is not directly JSD, but discriminator binary entropy loss. JSD is indirect!</h3>
+</div>
+</div>
+<div id="outline-container-org4b2a103" class="outline-2">
+<h2 id="org4b2a103">critisize</h2>
+<div class="outline-text-2" id="text-org4b2a103">
+</div>
+<div id="outline-container-orgb4c8ccc" class="outline-3">
+<h3 id="orgb4c8ccc">loss is not balanced \(E_{x \sim p_{data}}\) not dependent on G</h3>
+<div class="outline-text-3" id="text-orgb4c8ccc">
+<p>
+add G in a way to influence the first objective.
+add a gap of G to real data to have a loss for G
+</p>
+</div>
+</div>
+<div id="outline-container-orga866b17" class="outline-3">
+<h3 id="orga866b17">the engineering trick to modify the second objective for G does not conform to JSD</h3>
+</div>
+<div id="outline-container-orga314d6b" class="outline-3">
+<h3 id="orga314d6b">The optimization of D and G is subsequent, not simultanteous.</h3>
+<div class="outline-text-3" id="text-orga314d6b">
+</div>
+<div id="outline-container-orgc1ef39c" class="outline-4">
+<h4 id="orgc1ef39c">If D does not converges, G is not guaranteed to be opitmal when G follows data distribution, vice verse.</h4>
+</div>
+<div id="outline-container-orgacec651" class="outline-4">
+<h4 id="orgacec651">how to guide the training?</h4>
+</div>
+</div>
+<div id="outline-container-org5f9c934" class="outline-3">
+<h3 id="org5f9c934">\(z\sim p(z)\) is a simple distribution. needs more versatile to increase efficiency, capacity. if parametrization with a NN, then learnable! to make \(x \sim p_{G}(x)\) approach \(p_{data}\) more easily!</h3>
+</div>
+<div id="outline-container-orgbc84792" class="outline-3">
+<h3 id="orgbc84792">G is somehow fixed architecture, ConvNet, RNN, D is simply a classifier, which architecture to apply?</h3>
+<div class="outline-text-3" id="text-orgbc84792">
+</div>
+<div id="outline-container-org863ddbe" class="outline-4">
+<h4 id="org863ddbe">some practice hints for a symmetric architecture (adopt encoder/decoder architecture) generator-&gt;encoder;</h4>
+</div>
+<div id="outline-container-org28727e3" class="outline-4">
+<h4 id="org28727e3">discriminator(classifier)-&gt;decoder?</h4>
+<div class="outline-text-4" id="text-org28727e3">
+</div>
+<ul class="org-ul">
+<li><a id="orgab798dc"></a>guess: "discriminator = decoder + classifier" would be easy for classifier when the embedding is learned the way generator leans.<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org23c0255" class="outline-2">
+<h2 id="org23c0255">appendex</h2>
+<div class="outline-text-2" id="text-org23c0255">
+<p>
+<a href="./20220601131312-vae.html">VAE</a>
+</p>
+
+<p>
+<a href="./20211221093903-time_series_gan.html">Time Seres GAN</a>
+</p>
+
+
+<p>
+<a href="./20211221093920-conditional_gan.html">Conditional GAN</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+</div>
+</body>
+</html>

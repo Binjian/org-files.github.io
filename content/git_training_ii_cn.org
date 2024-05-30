@@ -1,0 +1,261 @@
+:PROPERTIES:
+:ID: 704f4d6a-033c-4701-9a8f-9c536e73309a
+:END:
+#+title: Fluent Git
+#+AUTHOR: 忻斌健
+#+CREATOR: 忻斌健
+#+DATE: <2023-09-18 mon>
+#+STARTUP: latexpreview
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: tex:t
+#+OPTIONS: ^:{}
+#+DOWNLOAD_IMAGE_DIR:  '~/.org.d/roam/img'
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: reve
+#+OPTIONS: toc:1
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+#+REVEAL_MARGIN: 0.01
+#+REVEAL_MIN_SCALE: 0.05
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ./grids.css
+#+REVEAL_TITLE_SLIDE: ./title_git_nutshell.html
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
+
+* 常见场景
+
+#+attr_org: :width 300px
+[[~/.org.d/roam/img/git_in_a_nutshell/git.png]]
+
+** 关于"git submodule for each"一个例子
+*** 台盆命令
+
+#+REVEAL_HTML: <div class="gridded_frame_with_rows">
+     #+REVEAL_HTML: <div class="one_of_3_rows">
+     - 查手册：
+        #+BEGIN_SRC [[roam:bash script]]
+        git submodule foreach --recursive 'git log'
+        #+END_SRC
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_3_rows">
+     - debugged:
+        #+BEGIN_SRC [[roam:bash script]]
+        git submodule foreach --recursive 'git log --oneline'
+        #+END_SRC
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_3_rows">
+     - 更多功能：
+        #+BEGIN_SRC [[roam:bash script]]
+        git submodule foreach --recursive 'git log --oneline HEAD...HEAD~5'
+        #+END_SRC
+     #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+
+
+*** 水管命令
+
+#+REVEAL_HTML: <div class="gridded_frame_with_rows">
+     #+REVEAL_HTML: <div class="one_of_2_rows">
+        - stack overflow:
+        #+BEGIN_SRC [[roam:bash script]]
+        git submodule foreach --recursive '
+        REV1=HEAD;
+        REV2=HEAD~10;
+        SHA1=$(cd $toplevel && git ls-tree $REV1 $sm_path | \
+            grep -E -o "[0-9a-f]{40}");
+        SHA2=$(cd $toplevel && git ls-tree $REV2 $sm_path | \
+            grep -E -o "[0-9a-f]{40}");
+        git log --oneline $SHA1...$SHA2'
+        #+END_SRC
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_2_rows">
+        - debug:
+        #+BEGIN_SRC [[roam:bash script]]
+        git submodule foreach --recursive '
+        SHA1=$(cd $toplevel && cd $sm_path && git log | \
+            grep -E -o "[0-9a-f]{40}" | head -1);
+        SHA2=$(cd $toplevel && cd $sm_path && git log | \
+            grep -E -o "[0-9a-f]{40}" | head -10 | tail -n1);
+        git log --oneline $SHA1...$SHA2'
+        #+END_SRC
+     #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+#+BEGIN_NOTES
+git submodule 是一个不太好用的功能! look at opencv, ros
+- git submodule update -> no branch
+- submodule tracking branch needs to be configured
+- pushing order with main repo (has the responsibility to set the branch and version it tracks, and it's static, unless configured in main repo)
+without knowing the internals, like learning chemistry without knowledge of atomic physics.
+learning deeper is smart, not learning wider! learning wider is memorization, computers can better!
+no magic! magic is when you don't understand! magic is accomanied with fear!important to have an image (einstein) -> git-sim as a tool
+#+END_NOTES
+
+*** 台盆命令:
+- git commandline
+- git lens
+- gitkraken
+- emacs magit
+
+* 哈希值，四类对象
+
+#+ATTR_REVEAL: :frag (appear)
+** 哈希(暗物质)
+- 高效
+  - 哈希函数计算, 每百万次计算约几百毫秒
+  - 索引~O(1) (数组 O(N)）
+  - 哈希冲突概率极低，最坏 O(N)
+- sha-1 (20byte, 40hex, 160 位, 8 位 用于目录)
+  - 安全性 -> sha256(32bit), sha512(64bit), ipv6 多 42 亿倍
+  - ipv6 128bit $2^{128}$  79x10^{27} （宇宙总原子数 wiki $\approx10^{80}$, 人体原子数$\approx7*10^{27}$, 恒星数量 $\approx200\times10^{21}$)
+- 哈希表的广泛应用
+  - 编程语言的数据结构：Python dict (json) 与 set， (不算 list 与 tuple)
+  - 数据库：Mongodb object
+  - 云存储：Object Storage System
+#+BEGIN_NOTES
+哈希值是计算机技术的暗物质
+#+END_NOTES
+** 四个对象
+- tree 树 (空间/拓扑关系)
+- blob 文件
+- commit (时间顺序)
+- annotated tag
+- 树对象,文件对象 的实例：HEAD,
+  - git cat-file -p HEAD
+  - git ls-tree -r HEAD
+  - head 内一个文件对象
+** 抽象的力量
+- 内容可编址的文件系统/数据库
+- 所有对象平等, 不分优先级
+** 版本选择 gitrevisions
+- 应用于 cherry-pick, reset, log, merge
+- 特定单个版本
+  - head^^/head^2
+  - head@{2}
+  - head~~/head~2
+*** 版本的范围
+  - master..experiment  (from master to experiment)
+    - D, C
+  - master A ^experiment (from experiment to master or feature)
+    - F, E
+  - master...experiment (from master to experiment or vice versa)
+    - F,E,D,C
+  - @ : HEAD
+
+#+attr_org: :width 300px
+[[~/.org.d/roam/img/git_in_a_nutshell/double-dot.png]]
+*** 版本关系语法
+
+#+REVEAL_HTML: <div class="gridded_frame_with_columns">
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+        #+ATTR_HTML: :alt  :title Sutskever 2015 :width 400pix  :align center
+            #+name: fig. loeliger diagram
+            #+begin_src mermaid :file ~/.org.d/roam/img/git_in_a_nutshell/loeliger.png
+            flowchart TD
+               G --> D
+               H --> D
+               I --> F
+               J --> F
+               D --> B
+               E --> B
+               F --> B
+               F --> C
+               B --> A
+               C --> A
+            #+end_src
+            #+caption[dataflow]: 多分支的版本历史
+            #+results: fig. loeliger diagram
+            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+         |--------+------------+------------+------------+------------|
+         | A      |            | A^0        |            |            |
+         | B      | A^         | A^1        | A~1        |            |
+         | C      |            | A^2        |            |            |
+         | D      | A^^        | A^1^1      | A~2        | B^1        |
+         | E      | B^2        | A^^2       |            |            |
+         | F      | B^3        | A^^3       |            |            |
+         | G      | A^^^       | A^1^1^1    | A~3        | D^1        |
+         | H      | D^2        | B^^2       | A^^^2      | A~2^2      |
+         | I      | F^         | B^3^       | A^^3^      |            |
+         | J      | F^2        | B^3^2      | A^^3^2     |            |
+     #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+
+*** 范围选择的语法 1
+#+REVEAL_HTML: <div class="gridded_frame_with_columns">
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+        #+ATTR_HTML: :alt  :title Sutskever 2015 :width 400pix  :align center
+            #+caption[dataflow]: 多分支的版本历史
+            #+results: fig. loeliger diagram
+            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+           版本范围语法
+           | 输入    | 分解  | 结果         |
+           |--------+------+-------------|
+           | D      |      | G H D       |
+           | D F    |      | G H I J D F |
+           | ^G D   |      | H D         |
+           | ^D B   |      | E I J F B   |
+           | ^D B C |      | E I J F B C |
+           | C      |      | I J F C     |
+           | B..C   | ^B C | C           |
+     #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+
+*** 范围选择的语法 2
+#+REVEAL_HTML: <div class="gridded_frame_with_columns">
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+        #+ATTR_HTML: :alt  :title Sutskever 2015 :width 400pix  :align center
+            #+caption[dataflow]: 多分支的版本历史
+            #+results: fig. loeliger diagram
+            [[file:~/.org.d/roam/img/git_in_a_nutshell/loeliger.png]]
+
+     #+REVEAL_HTML: </div>
+     #+REVEAL_HTML: <div class="one_of_2_columns">
+           |-------------+--------------+-------------|
+           | B...C       | B ^F C       | G H D E B C |
+           | B^- (merge) | B^..B        |             |
+           |             | ^B^1 B       | E I J F B   |
+           | C^@         | C^1, F       | I J F       |
+           | C^!         | C ^C^@, C ^F | C           |
+           | F^! D       | F ^I ^J D    | G H D F     |
+     #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+* 典型场景中的工具和操作
+#+ATTR_REVEAL: :frag (appear)
+** 模拟场景 (后悔药)
+- 在已有代码仓库开创一个特征分支
+- 增加变更 (git add)
+- 提交变更 (git commit)
+- 撤回最近提交变更 (git commit，马上反悔)
+- 撤回一长串变更 (在一个分支上多次提交以后反悔，reset)
+- 撤回远程仓库(git push 给所有人后反悔)
+- 变更整个分支 (git rebase)
+- 在错误分支上提交变更（把相关变更推到正确分支上，cherrypick）
+- 头脑风暴!
+** 常规应用命令
+- git branch (off, out)
+  - 添加变更
+- git commit -a
+  - 提交变更: 反悔最近变更, git push -f 选项.
+- git reset
+  - soft, *mixed*, hard
+    如果 hard 更干净，为何 mixed 是默认选项？
+  - hard 很危险 (detached/isolated commit,没有后悔药!)
+  - soft, mixed 更保守，防卫性回退
+- git remote
+  - 可以对应多个远端仓库？ 比如 ros 的 github 仓库和公司内网有特殊配置的仓库
+** 复杂命令
+- git rebase
+  - git push --force （没有后悔药!)
+  - git merge
+** git reflog 的视角
+  - 头部分支的历史 (head & branches)

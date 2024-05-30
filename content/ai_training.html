@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Ai Training 前晨汽车入职培训 AI前沿开发</title>
+<meta name="author" content="忻斌健"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="./templates/grids.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<style> .figure p {text-align: center;}</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Elements Reference</title>
+</head>
+<body>
+<h1>大型语言模型与人工智能</h1>
+<h2>ChatGPT及其他</h2>
+<h4>忻斌健</h4>
+<h4>智能系统前沿开发</h4>
+<h4>2023年03月12日</h4>
+<div id="logo">
+	<img src="./img/newrizon_crop.png" alt="上海前晨汽车科技有限公司" width="300">
+</div>
+</body>
+</html>
+
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-orgcd96ff0">概述</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgcd96ff0">
+<h2 id="orgcd96ff0">概述</h2>
+</section>
+<section id="slide-org3ef9583">
+<h3 id="org3ef9583">智能定义</h3>
+<div class="outline-text-3" id="text-org3ef9583">
+</div>
+</section>
+<section id="slide-org42e1a11">
+<h4 id="org42e1a11">生物学：行为学，（inwards)，描述性 declarative，归纳性，knowing-that</h4>
+</section>
+<section id="slide-orga3ca323">
+<h4 id="orga3ca323">人工智能：数学，物理，（outwards)，工程化 procedural，真正理解智能 knowing-how</h4>
+<div class="outline-text-4" id="text-orga3ca323">
+</div>
+<ul class="org-ul">
+<li><a id="org54c66c4"></a>Machine in the Ghost (Gilbert Ryle 吉尔伯特·赖尔 1949): 二元论的谬误，范畴错误 （精神和躯体的区分）<br />
+<ul class="org-ul">
+<li><a id="org5b32f71"></a>把意识过程（智能）和物理过程割裂开<br /></li>
+</ul>
+</li>
+<li><a id="orgc2268ba"></a>&ldquo;Can Digital Computers Think?&rdquo; 1951 Turing, 预期 50 年后<br />
+<aside class="notes">
+<p>
+‘To take an extreme case, we are not interested in the fact that the brain has the consistency of cold porridge. We don’t want to say ‘‘This machine’s quite hard, so it isn’t a brain, and so it can’t think.’’ ’
+</p>
+
+</aside>
+</li>
+</ul>
+</section>
+<section id="slide-org2967c6a">
+<h4 id="org2967c6a">50 多年后，人工智能的工程化对图灵问题的回应</h4>
+<p>
+<iframe width="440" height="335" src="https://www.youtube.com/embed/rV77BJAUYGU" frameborder="0" allowfullscreen></iframe>
+</p>
+
+</section>
+<section id="slide-org6fd34c4">
+<h3 id="org6fd34c4">机器学习</h3>
+<div class="outline-text-3" id="text-org6fd34c4">
+</div>
+</section>
+<section id="slide-orgda832ff">
+<h4 id="orgda832ff">机器可以学习</h4>
+<div class="outline-text-4" id="text-orgda832ff">
+</div>
+<ul class="org-ul">
+<li><a id="orgf13e12b"></a>神经网络（前馈，卷积，并发，变形金刚，GPT）<br /></li>
+<li><a id="org74a7cc7"></a>规模化（Scaling Law)和浮现性能（Emerging capabilities）<br /></li>
+<li><a id="orgfa12e17"></a>梯度反向传播（Gradient Back-Propagation)<br /></li>
+</ul>
+</section>
+<section id="slide-org308c9ca">
+<h4 id="org308c9ca">机器为何学习</h4>
+<div class="outline-text-4" id="text-org308c9ca">
+</div>
+<ul class="org-ul">
+<li><a id="orgd9358c8"></a>Agency<br />
+<ul class="org-ul">
+<li><a id="org2b2a715"></a>普适的简单假设：<br />
+<ul class="org-ul">
+<li><a id="orgde79f0b"></a>动态系统，边界，Computing world, Dynamics + Agent (System with Boundaries)<br /></li>
+<li><a id="org2a06601"></a>复杂性假设和不可约计算性<br /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="slide-org4281abe">
+<h4 id="org4281abe">机器如何学习</h4>
+<div class="outline-text-4" id="text-org4281abe">
+</div>
+<ul class="org-ul">
+<li><a id="org73cd5fe"></a>监督学习<br /></li>
+<li><a id="org5ea03bc"></a>半监督学习<br /></li>
+<li><a id="orgfb1a1a7"></a>自监督学习<br /></li>
+<li><a id="org0512580"></a>目标函数<br /></li>
+</ul>
+</section>
+<section id="slide-org8f084ec">
+<h3 id="org8f084ec">优化 &#x2013; 神经网络（深度学习）</h3>
+<div class="outline-text-3" id="text-org8f084ec">
+</div>
+</section>
+<section id="slide-org5cb54f4">
+<h4 id="org5cb54f4">网络架构</h4>
+<div class="outline-text-4" id="text-org5cb54f4">
+</div>
+<ul class="org-ul">
+<li><a id="orgdbf2fb4"></a>全连接层（前馈网）<br /></li>
+<li><a id="org4b72d9a"></a>卷积层（卷积网）<br /></li>
+<li><a id="orgebe370b"></a>注意力层（变形金刚网）<br /></li>
+<li><a id="org51f9920"></a>稀疏拓朴层（图神经网络）<br /></li>
+</ul>
+</section>
+<section id="slide-org6fde7e7">
+<h4 id="org6fde7e7">优化</h4>
+<div class="outline-text-4" id="text-org6fde7e7">
+</div>
+<ul class="org-ul">
+<li><a id="org2c243c7"></a>构造损失(目标函数，极大似然估计)<br /></li>
+<li><a id="orgb92a419"></a>梯度反向传播<br /></li>
+</ul>
+</section>
+<section id="slide-org63f1709">
+<h3 id="org63f1709">目标</h3>
+<div class="outline-text-3" id="text-org63f1709">
+</div>
+</section>
+<section id="slide-org4427689">
+<h4 id="org4427689">监督学习：极大似然估计</h4>
+</section>
+<section id="slide-orgd0cc8ad">
+<h4 id="orgd0cc8ad">生成模型 Generative Model （动态随机过程，概率分布的变换）</h4>
+<div class="outline-text-4" id="text-orgd0cc8ad">
+</div>
+<ul class="org-ul">
+<li><a id="org42bdb05"></a>变分自编码 VAE<br /></li>
+<li><a id="orgf2db33b"></a>对抗生成网络 GAN<br /></li>
+<li><a id="org69dfbca"></a>扩散模型 Diffusion Model 动态随机过程<br /></li>
+<li><a id="org0e03b38"></a>主动推理（自由能量原则，动态平衡）<br />
+<ul>
+<li>最大化目标：基于内在模型的置信精度+熵（最小化惊奇值 surprise，不可能性的期望）</li>
+<li>最大化的自变量：内在模型的参数</li>
+
+</ul>
+</li>
+</ul>
+</section>
+<section id="slide-org2237145">
+<h4 id="org2237145">柯尔莫哥洛夫复杂度</h4>
+<div class="outline-text-4" id="text-org2237145">
+</div>
+<ul class="org-ul">
+<li><a id="orgd98acc9"></a>知识压缩作为目标<br />
+<ul class="org-ul">
+<li><a id="org4f80805"></a>Markus Hutter(Shane Legg),<br /></li>
+<li><a id="org3e9b398"></a>Ilya Sutskever<br /></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="slide-org5ea93ee">
+<h3 id="org5ea93ee">机器学习例子</h3>
+<div class="outline-text-3" id="text-org5ea93ee">
+</div>
+</section>
+<section id="slide-org51d689a">
+<h4 id="org51d689a">房价预测作为线性回归</h4>
+<div class="outline-text-4" id="text-org51d689a">
+</div>
+<ul class="org-ul">
+<li><a id="org0bb6303"></a><a href="https://www.geeksforgeeks.org/ml-linear-regression/">Linear Regression</a><br /></li>
+<li><a id="org2183566"></a><a href="https://github.com/AshishJangra27/Machine-Learning-with-Python-GFG/blob/main/Regression/1%20Linear%20Regression/Linear%20Regression%20from%20Scratch.ipynb">Linear Regressin: Jupyter Notebook</a><br /></li>
+</ul>
+
+</section>
+<section id="slide-org6c72efd">
+<h3 id="org6c72efd">技术进步</h3>
+
+<div id="orgadd37d2" class="figure">
+<p><img src="./img/technology.png" alt="technology.png" />
+</p>
+</div>
+
+<aside class="notes">
+<p>
+
+</p>
+
+<p>
+新技术的出现导致社会的进步，人工智能被誉为新时代的电力
+电力有坏处：
+</p>
+<ul>
+<li>触电危险</li>
+<li>基础设施昂贵</li>
+<li>消灭旧的行业,产生新的行业和职业</li>
+
+</ul>
+
+
+<p>
+大数据：
+<a href="https://motherduck.com/blog/big-data-is-dead/">Jordan Tigani (ex Google Enguineering lead of BigQuery)大数据已死</a>
+2011, 2017~2019,大数据并没有成为瓶颈
+</p>
+<ul>
+<li>到不了大数据级别 GB</li>
+<li>存储和计算正在分离</li>
+<li>没有新业务，数据是线性增长的</li>
+<li>人们只关心最近的数据</li>
+<li>真正有大数据的公司，几乎从不查询全部数据, 2017</li>
+<li>单机的计算能力大增</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgd3bebd9">
+<h3 id="orgd3bebd9">科学观念的更新</h3>
+
+<div id="orgf7849b9" class="figure">
+<p><img src="./img/science.png" alt="science.png" />
+</p>
+</div>
+
+
+<aside class="notes">
+<p>
+三个领域发生巨大持久和深刻的变化
+</p>
+<ul>
+<li>理解原理越深刻，应用影响越大，&#x2013;&gt; 革命性的应用
+<ul>
+<li>物理学案例：核聚变，宇宙的起源，恒星的形成，\(E=MC^2\) ，取之不尽用之不竭的安全能源，50 年以后&#x2013;&gt;5 年以后</li>
+<li>生物学案例：真核细胞生物的生化起源：光合作用，细胞呼吸作用，线粒体，外星生命研究</li>
+
+</ul></li>
+<li>发现问题是取得进展的研究方向。</li>
+<li>深刻理解会改变观念！</li>
+
+</ul>
+
+
+<p>
+<a href="https://www.gatesnotes.com/The-Age-of-AI-Has-Begun">比尔盖茨 AI的时代开始了</a>
+</p>
+<ul>
+<li>GUI 之后的第二次革命性的技术展示 2022.中旬&#x2013;&gt; 9 月</li>
+
+</ul>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/dist/reveal.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/markdown/markdown.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/notes/notes.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/search/search.js"></script>
+<script src="file:///Users/x/.config/emacs/.local/straight/build-30.0.50/revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+width: 1200,
+height: 800,
+margin: 0.01,
+minScale: 0.05,
+maxScale: 2.50,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

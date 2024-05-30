@@ -1,0 +1,170 @@
+#+title: Ai Training
+
+#+title: 前晨汽车入职培训 AI前沿开发
+#+AUTHOR: 忻斌健
+#+CREATOR: 忻斌健
+#+DATE: <2023-03-13 Mon>
+#+STARTUP: latexpreview
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: tex:t
+#+OPTIONS: ^:{}
+#+DOWNLOAD_IMAGE_DIR:  '~/.org.d/mode/img'
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: reve
+#+OPTIONS: toc:1
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+#+REVEAL_MARGIN: 0.01
+#+REVEAL_MIN_SCALE: 0.05
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ./templates/grids.css
+#+REVEAL_TITLE_SLIDE: ./templates/title_llm.html
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
+
+* 概述
+# :PROPERTIES:
+# :reveal_overview: t
+# :EXPORT_AUTHOR: TEST_EXPORT Author
+# :EXPORT_DATE: 2023-01-10
+# :EXPORT_TITLE: My Title
+# :EXPORT_EMAIL: Test@example.com
+# :EXPORT_OPTIONS: num:nil toc:nil reveal_keyboard:t reveal_overview:t
+# :EXPORT_REVEAL_HLEVEL: 3
+# :EXPORT_REVEAL_MARGIN: 200
+# :END:
+** 智能定义
+*** 生物学：行为学，（inwards)，描述性 declarative，归纳性，knowing-that
+*** 人工智能：数学，物理，（outwards)，工程化 procedural，真正理解智能 knowing-how
+**** Machine in the Ghost (Gilbert Ryle 吉尔伯特·赖尔 1949): 二元论的谬误，范畴错误 （精神和躯体的区分）
+***** 把意识过程（智能）和物理过程割裂开
+**** "Can Digital Computers Think?" 1951 Turing, 预期 50 年后
+#+BEGIN_NOTES
+ ‘To take an extreme case, we are not interested in the fact that the brain has the consistency of cold porridge. We don’t want to say ‘‘This machine’s quite hard, so it isn’t a brain, and so it can’t think.’’ ’
+#+END_NOTES
+*** 50 多年后，人工智能的工程化对图灵问题的回应
+
+#+CAPTION[Dataflow]: APRL vs vanilla exploration
+[[yt:rV77BJAUYGU]]
+
+** 机器学习
+*** 机器可以学习
+**** 神经网络（前馈，卷积，并发，变形金刚，GPT）
+**** 规模化（Scaling Law)和浮现性能（Emerging capabilities）
+**** 梯度反向传播（Gradient Back-Propagation)
+*** 机器为何学习
+**** Agency
+***** 普适的简单假设：
+****** 动态系统，边界，Computing world, Dynamics + Agent (System with Boundaries)
+****** 复杂性假设和不可约计算性
+*** 机器如何学习
+**** 监督学习
+**** 半监督学习
+**** 自监督学习
+**** 目标函数
+** 优化 -- 神经网络（深度学习）
+*** 网络架构
+**** 全连接层（前馈网）
+**** 卷积层（卷积网）
+**** 注意力层（变形金刚网）
+**** 稀疏拓朴层（图神经网络）
+*** 优化
+**** 构造损失(目标函数，极大似然估计)
+**** 梯度反向传播
+** 目标
+*** 监督学习：极大似然估计
+*** 生成模型 Generative Model （动态随机过程，概率分布的变换）
+**** 变分自编码 VAE
+**** 对抗生成网络 GAN
+**** 扩散模型 Diffusion Model 动态随机过程
+**** 主动推理（自由能量原则，动态平衡）
+- 最大化目标：基于内在模型的置信精度+熵（最小化惊奇值 surprise，不可能性的期望）
+- 最大化的自变量：内在模型的参数
+*** 柯尔莫哥洛夫复杂度
+**** 知识压缩作为目标
+***** Markus Hutter(Shane Legg),
+***** Ilya Sutskever
+** 机器学习例子
+*** 房价预测作为线性回归
+**** [[https://www.geeksforgeeks.org/ml-linear-regression/][Linear Regression]]
+**** [[https://github.com/AshishJangra27/Machine-Learning-with-Python-GFG/blob/main/Regression/1%20Linear%20Regression/Linear%20Regression%20from%20Scratch.ipynb][Linear Regressin: Jupyter Notebook]]
+
+** 技术进步
+
+#+CAPTION[技术进步]: 技术进步
+#+NAME: 技术进步
+#+ATTR_HTML: :alt  :title 技术进步 width 800px  :align right
+#+attr_org: :width 600px
+#+begin_src mermaid :file ./img/technology.png
+flowchart LR
+    id1(((农业革命)))-->id2(((工业革命)))-->id3(((电力革命)))-->id4(((信息革命)))-->id5(((大数据)))
+    id4-->id6(((人工智能)))-->id8(((大型基础语言模型)))
+    id2-->id7(((蒸汽机)))
+#+end_src
+
+#+RESULTS: 技术进步
+[[file:./img/technology.png]]
+
+#+BEGIN_NOTES
+
+新技术的出现导致社会的进步，人工智能被誉为新时代的电力
+电力有坏处：
+ - 触电危险
+ - 基础设施昂贵
+ - 消灭旧的行业,产生新的行业和职业
+
+
+大数据：
+[[https://motherduck.com/blog/big-data-is-dead/][Jordan Tigani (ex Google Enguineering lead of BigQuery)大数据已死]]
+2011, 2017~2019,大数据并没有成为瓶颈
+- 到不了大数据级别 GB
+- 存储和计算正在分离
+- 没有新业务，数据是线性增长的
+- 人们只关心最近的数据
+- 真正有大数据的公司，几乎从不查询全部数据, 2017
+- 单机的计算能力大增
+
+#+END_NOTES
+** 科学观念的更新
+
+#+CAPTION[Science]: 科学进展
+#+NAME: Fig. Science
+#+ATTR_HTML: :alt 能源，生物，人工智能  :title 科学进展 :width 300px  :align right
+#+attr_org: :width 200px
+#+begin_src mermaid :file ./img/science.png
+mindmap
+  root((科学))
+  :::urgent large
+    )物理(
+      相对论<br/>量子力学
+        核聚变
+    )人工智能(
+      深度神经网络
+        蛋白质折叠与功能
+        大型语言模型
+    )生物(
+      生命起源<br/>线粒体
+         mRNA疫苗<br/>犯罪学,考古
+#+end_src
+
+#+RESULTS: Fig. Science
+[[file:./img/science.png]]
+
+
+#+BEGIN_NOTES
+三个领域发生巨大持久和深刻的变化
++ 理解原理越深刻，应用影响越大，--> 革命性的应用
+  + 物理学案例：核聚变，宇宙的起源，恒星的形成，$E=MC^2$ ，取之不尽用之不竭的安全能源，50 年以后-->5 年以后
+  + 生物学案例：真核细胞生物的生化起源：光合作用，细胞呼吸作用，线粒体，外星生命研究
++ 发现问题是取得进展的研究方向。
++ 深刻理解会改变观念！
+
+
+[[https://www.gatesnotes.com/The-Age-of-AI-Has-Begun][比尔盖茨 AI的时代开始了]]
+- GUI 之后的第二次革命性的技术展示 2022.中旬--> 9 月
+
+#+END_NOTES

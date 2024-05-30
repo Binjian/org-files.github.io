@@ -251,6 +251,7 @@ graph BT
 
 #+CAPTION[Dataflow]: Dataflow
 #+RESULTS: Fig. Dataflow
+[[file:./img/adp_data_flow_seq_block.png]]
 
 
 

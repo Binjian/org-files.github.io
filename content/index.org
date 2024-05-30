@@ -1,0 +1,10 @@
+#+title: My training talks
+
+
+* Deep learning
+** [[./ai_training.org][ai training]]
+** [[./foundation_model.org][foundation model]]
+** [[./llm_ai_slides.org][LLM]]
+* Git
+** [[./git_training.org][Git basics]]
+** [[./fluent_git.org][Fluent Git]]

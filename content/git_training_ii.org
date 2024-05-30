@@ -1,0 +1,142 @@
+:PROPERTIES:
+:ID:       704f4d6a-033c-4701-9a8f-9c536e73309a
+:END:
+#+title: Git in a Nutshell and Hands-On
+#+AUTHOR: 忻斌健
+#+CREATOR: 忻斌健
+#+DATE: <2023-09-18 Mon>
+#+STARTUP: latexpreview
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: tex:t
+#+OPTIONS: ^:{}
+#+DOWNLOAD_IMAGE_DIR:  '~/.org.d/roam/img'
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: reve
+#+OPTIONS: toc:1
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+#+REVEAL_MARGIN: 0.01
+#+REVEAL_MIN_SCALE: 0.05
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ./grids.css
+#+REVEAL_TITLE_SLIDE: ./title_git_nutshell.html
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
+
+
+
+* Overview
+
+
+#+attr_org: :width 300px
+[[~/.org.d/roam/img/git_in_a_nutshell/git.png]]
+
+** question "git submodule for each"
+*** command line
+#+ATTR_REVEAL: :frag(appear)
+
+#+BEGIN_SRC [[roam:bash script]]
+git submodule foreach --recursive '
+git log --oneline -n 5'
+#+END_SRC
+
+#+BEGIN_SRC [[roam:bash script]]
+git submodule foreach --recursive 'git log --oneline HEAD...HEAD~5'
+#+END_SRC
+
+#+BEGIN_SRC [[roam:bash script]]
+git submodule foreach --recursive 'git log --oneline docker...docker~5'
+#+END_SRC
+
+#+BEGIN_SRC [[roam:bash script]]
+git submodule foreach --recursive '
+REV1=HEAD;
+REV2=HEAD~10;
+SHA1=$(cd $toplevel && git ls-tree $REV1 $sm_path | grep -E -o "[0-9a-f]{40}");
+SHA2=$(cd $toplevel && git ls-tree $REV2 $sm_path | grep -E -o "[0-9a-f]{40}");
+git log --oneline $SHA1...$SHA2'
+#+END_SRC
+
+#+BEGIN_SRC [[roam:bash script]]
+git submodule foreach --recursive '
+SHA1=$(cd $toplevel && cd $sm_path && git log | grep -E -o "[0-9a-f]{40}" | head -1);
+SHA2=$(cd $toplevel && cd $sm_path && git log | grep -E -o "[0-9a-f]{40}" | head -10 | tail -n1);
+git log --oneline $SHA1...$SHA2'
+#+END_SRC
+
+
+#+BEGIN_NOTES
+git submodule is not a good solution! no integrity! look at OpenCV, ROS
+- git submodule update -> no branch
+- submodule tracking branch needs to be configured
+- pushing order with main repo (has the responsibility to set the branch and version it tracks, and it's static, unless configured in main repo)
+Without knowing the internals, like learning Chemistry without knowledge of atomic physics.
+Learning Deeper is smart, not Learning Wider! Learning Wider is memorization, computers can better!
+No magic! magic is when you don't understand! magic is accomanied with fear!
+#+END_NOTES
+
+*** Porcelan:
+- emacs magit
+- git lens
+- gitraken
+- git commandline
+*** Concept, no command manual articulation
+* Short Review of Git Internal Basics
+
+#+ATTR_REVEAL: :frag (appear)
+** hash table
+- effiency
+  - hash function, hundred milliseconds per Million hashes
+  - indexing and hash conflicts O(1), (array O(N))
+  - low probablity of hash conflicts
+- SHA-1 (20Byte, 40Hex, 160bit, 8bit for directory)
+  - security, compromised -> SHA256(32bit), SHA512(64bit)
+  - ipv6 128bit $2^{128}$  79 mio bio tri ($10^{78-80}$, $7*10^{27}$, 200 bio tri stars)
+- python dict (json), set (not list, no tuple)
+- mongodb object, object
+- Object Storage System
+** four objects
+- tree (spatial/topological tree)
+- blob
+- commit (timing tree)
+- annotated tag
+** power of abstraction
+** content addressable filesystem / database
+- equality among objects
+** gitrevisions (cherry-pick, reset, log, merge)
+- HEAD^^/HEAD^2
+- HEAD@{2}
+- HEAD~~/HEAD~2
+- master..experiment
+- master...experiment
+* Tools and Operations in a typical use case for a mocking Repo
+
+#+ATTR_REVEAL: :frag (appear)
+** Use Case (regret medicine)
+- create a new feature branch for an existing repository
+- add changes (git add)
+- submit changes (git commit)
+- regret the last change (git commit and regret at once)
+- regret a segment of history (git commit multiple times and regret)
+- regret submission to all (git push and regret)
+- regret a branch (git rebase)
+- Please brainstorm!
+** git branch (off, out)
+- Add a lot of changes
+** git commit -a
+- use case: regret on the recent change, need -f for git push.
+** git reset
+- soft, *mixed*, hard  Why mixed is default, when hard usually results in a clean state?
+- hard dangerous (detached/isolated commit)
+- soft, mixed is more conservative & protective
+** git remote
+- multiple remotes for open source repositories
+** git rebase
+- git push force
+- git merge
+** git reflog
+- your activties history (HEAD & branches)
