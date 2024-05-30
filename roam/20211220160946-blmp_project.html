@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BLMP-Project</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">BLMP-Project</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org483ac6e">计划</a>
+<ul>
+<li><a href="#orgfad82fa">1.0 根据阈值判定</a></li>
+<li><a href="#org1755570">2.0 瞬态电压判断离群点</a>
+<ul>
+<li><a href="#org8b3319e">V=f(I,SOC) ignore T, SOH, &#x2026;</a></li>
+<li><a href="#org1e99dd5">OCV V=F(SOC) 4mV +-3mV</a></li>
+</ul>
+</li>
+<li><a href="#org45267b7">3.0 周期性对比同意单体的性能指标值变化</a>
+<ul>
+<li><a href="#org4d135a7">极化，产生电阻/电势，实验室方法；100ms；诊断功能</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6f04c37">项目目标</a>
+<ul>
+<li><a href="#orgd420ef6">电芯层面</a></li>
+<li><a href="#org202302c">同状态, I，T, SOC, SOH,</a></li>
+<li><a href="#org372465c">时间累计（应力累计）</a></li>
+</ul>
+</li>
+<li><a href="#org7de9d7b">电池监控</a>
+<ul>
+<li><a href="#orgdff9079">CMU Cell monitor unit, 均衡，测量，（LECU 从板，采样，均衡)</a></li>
+<li><a href="#org21f5ecd">BMS</a></li>
+<li><a href="#org940007f">VBU 指令</a></li>
+<li><a href="#org6d0ca30">TBOX&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_OFFICE">@OFFICE</span>&#xa0;<span class="COMPUTER">COMPUTER</span></span></a></li>
+<li><a href="#orgc52b67e">TSP</a></li>
+<li><a href="#org486ca57">前晨云端数据库(Elastic Search)</a></li>
+</ul>
+</li>
+<li><a href="#orge020862"><span class="timestamp-wrapper"><span class="timestamp">[2022-01-20 Thu]</span></span></a>
+<ul>
+<li><a href="#org1183f39">1.0 已上线</a>
+<ul>
+<li><a href="#orgb8d44ca">先抓数据量看一下；</a></li>
+</ul>
+</li>
+<li><a href="#org22cb5fe">相同 traveltime 有重复数据</a></li>
+<li><a href="#orgdf7d9a4">历史报警数据；&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
+<li><a href="#org3b03f44">极限耐久测试：不符合&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></a></li>
+<li><a href="#orgeb67180">电芯一致性： :battery: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-29 Sat 13:00&gt;</span></span></a>
+<ul>
+<li><a href="#org15379c5">后天？</a></li>
+<li><a href="#orgbeb40bf">先天？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org51ff2af"><span class="timestamp-wrapper"><span class="timestamp">[2022-01-29 Sat]</span></span></a>
+<ul>
+<li><a href="#org4a1c65e">show grid search result <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org0e6ebf7">电芯数据</a>
+<ul>
+<li><a href="#org7f14a15">超过 5 分钟是两次充电</a></li>
+<li><a href="#org3cd0465">震荡的不对</a></li>
+<li><a href="#org4fb9c1e">突变</a></li>
+<li><a href="#orgd7d55a7">延迟，</a></li>
+<li><a href="#orgb2f03f5">长度不同，没有充满，时间短，</a></li>
+<li><a href="#orgf2cb371">soc 稳定线性增加（BMS 控制目标）</a></li>
+<li><a href="#orgae13971">电流逐渐减小是正常</a></li>
+<li><a href="#orgfd91031">毛刺，充电设备问题，电流减小，电芯内阻响应</a></li>
+<li><a href="#orgfa511e7">区分：充电不正常，电芯不正常</a></li>
+<li><a href="#org446fbfa">充电快满的</a></li>
+</ul>
+</li>
+<li><a href="#orgc7e5e02">EP features</a>
+<ul>
+<li><a href="#orge71a419">SoC-V 曲线</a></li>
+<li><a href="#org0602dbf">V</a></li>
+<li><a href="#orgf5befd4">差分充电特征</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="./20220411103644-blmp_devel.html">BLMP-devel</a>
+</p>
+
+<div id="outline-container-org483ac6e" class="outline-2">
+<h2 id="org483ac6e">计划</h2>
+<div class="outline-text-2" id="text-org483ac6e">
+</div>
+<div id="outline-container-orgfad82fa" class="outline-3">
+<h3 id="orgfad82fa">1.0 根据阈值判定</h3>
+</div>
+<div id="outline-container-org1755570" class="outline-3">
+<h3 id="org1755570">2.0 瞬态电压判断离群点</h3>
+<div class="outline-text-3" id="text-org1755570">
+</div>
+<div id="outline-container-org8b3319e" class="outline-4">
+<h4 id="org8b3319e">V=f(I,SOC) ignore T, SOH, &#x2026;</h4>
+</div>
+<div id="outline-container-org1e99dd5" class="outline-4">
+<h4 id="org1e99dd5">OCV V=F(SOC) 4mV +-3mV</h4>
+</div>
+</div>
+<div id="outline-container-org45267b7" class="outline-3">
+<h3 id="org45267b7">3.0 周期性对比同意单体的性能指标值变化</h3>
+<div class="outline-text-3" id="text-org45267b7">
+</div>
+<div id="outline-container-org4d135a7" class="outline-4">
+<h4 id="org4d135a7">极化，产生电阻/电势，实验室方法；100ms；诊断功能</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f04c37" class="outline-2">
+<h2 id="org6f04c37">项目目标</h2>
+<div class="outline-text-2" id="text-org6f04c37">
+</div>
+<div id="outline-container-orgd420ef6" class="outline-3">
+<h3 id="orgd420ef6">电芯层面</h3>
+</div>
+<div id="outline-container-org202302c" class="outline-3">
+<h3 id="org202302c">同状态, I，T, SOC, SOH,</h3>
+</div>
+<div id="outline-container-org372465c" class="outline-3">
+<h3 id="org372465c">时间累计（应力累计）</h3>
+</div>
+</div>
+<div id="outline-container-org7de9d7b" class="outline-2">
+<h2 id="org7de9d7b">电池监控</h2>
+<div class="outline-text-2" id="text-org7de9d7b">
+</div>
+<div id="outline-container-orgdff9079" class="outline-3">
+<h3 id="orgdff9079">CMU Cell monitor unit, 均衡，测量，（LECU 从板，采样，均衡)</h3>
+</div>
+<div id="outline-container-org21f5ecd" class="outline-3">
+<h3 id="org21f5ecd">BMS</h3>
+</div>
+<div id="outline-container-org940007f" class="outline-3">
+<h3 id="org940007f">VBU 指令</h3>
+</div>
+<div id="outline-container-org6d0ca30" class="outline-3">
+<h3 id="org6d0ca30">TBOX&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_OFFICE">@OFFICE</span>&#xa0;<span class="COMPUTER">COMPUTER</span></span></h3>
+</div>
+<div id="outline-container-orgc52b67e" class="outline-3">
+<h3 id="orgc52b67e">TSP</h3>
+</div>
+<div id="outline-container-org486ca57" class="outline-3">
+<h3 id="org486ca57">前晨云端数据库(Elastic Search)</h3>
+</div>
+</div>
+<div id="outline-container-orge020862" class="outline-2">
+<h2 id="orge020862"><span class="timestamp-wrapper"><span class="timestamp">[2022-01-20 Thu]</span></span></h2>
+<div class="outline-text-2" id="text-orge020862">
+</div>
+<div id="outline-container-org1183f39" class="outline-3">
+<h3 id="org1183f39">1.0 已上线</h3>
+<div class="outline-text-3" id="text-org1183f39">
+</div>
+<div id="outline-container-orgb8d44ca" class="outline-4">
+<h4 id="orgb8d44ca">先抓数据量看一下；</h4>
+</div>
+</div>
+<div id="outline-container-org22cb5fe" class="outline-3">
+<h3 id="org22cb5fe">相同 traveltime 有重复数据</h3>
+</div>
+<div id="outline-container-orgdf7d9a4" class="outline-3">
+<h3 id="orgdf7d9a4">历史报警数据；&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h3>
+</div>
+<div id="outline-container-org3b03f44" class="outline-3">
+<h3 id="org3b03f44">极限耐久测试：不符合&#xa0;&#xa0;&#xa0;<span class="tag"><span class="battery">battery</span></span></h3>
+</div>
+<div id="outline-container-orgeb67180" class="outline-3">
+<h3 id="orgeb67180">电芯一致性： :battery: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-01-29 Sat 13:00&gt;</span></span></h3>
+<div class="outline-text-3" id="text-orgeb67180">
+</div>
+<div id="outline-container-org15379c5" class="outline-4">
+<h4 id="org15379c5">后天？</h4>
+</div>
+<div id="outline-container-orgbeb40bf" class="outline-4">
+<h4 id="orgbeb40bf">先天？</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-org51ff2af" class="outline-2">
+<h2 id="org51ff2af"><span class="timestamp-wrapper"><span class="timestamp">[2022-01-29 Sat]</span></span></h2>
+<div class="outline-text-2" id="text-org51ff2af">
+</div>
+<div id="outline-container-org4a1c65e" class="outline-3">
+<h3 id="org4a1c65e">show grid search result <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-02-03 Thu&gt;</span></span></h3>
+</div>
+</div>
+<div id="outline-container-org0e6ebf7" class="outline-2">
+<h2 id="org0e6ebf7">电芯数据</h2>
+<div class="outline-text-2" id="text-org0e6ebf7">
+</div>
+<div id="outline-container-org7f14a15" class="outline-3">
+<h3 id="org7f14a15">超过 5 分钟是两次充电</h3>
+</div>
+<div id="outline-container-org3cd0465" class="outline-3">
+<h3 id="org3cd0465">震荡的不对</h3>
+</div>
+<div id="outline-container-org4fb9c1e" class="outline-3">
+<h3 id="org4fb9c1e">突变</h3>
+</div>
+<div id="outline-container-orgd7d55a7" class="outline-3">
+<h3 id="orgd7d55a7">延迟，</h3>
+</div>
+<div id="outline-container-orgb2f03f5" class="outline-3">
+<h3 id="orgb2f03f5">长度不同，没有充满，时间短，</h3>
+</div>
+<div id="outline-container-orgf2cb371" class="outline-3">
+<h3 id="orgf2cb371">soc 稳定线性增加（BMS 控制目标）</h3>
+</div>
+<div id="outline-container-orgae13971" class="outline-3">
+<h3 id="orgae13971">电流逐渐减小是正常</h3>
+</div>
+<div id="outline-container-orgfd91031" class="outline-3">
+<h3 id="orgfd91031">毛刺，充电设备问题，电流减小，电芯内阻响应</h3>
+</div>
+<div id="outline-container-orgfa511e7" class="outline-3">
+<h3 id="orgfa511e7">区分：充电不正常，电芯不正常</h3>
+</div>
+<div id="outline-container-org446fbfa" class="outline-3">
+<h3 id="org446fbfa">充电快满的</h3>
+</div>
+</div>
+<div id="outline-container-orgc7e5e02" class="outline-2">
+<h2 id="orgc7e5e02">EP features</h2>
+<div class="outline-text-2" id="text-orgc7e5e02">
+</div>
+<div id="outline-container-orge71a419" class="outline-3">
+<h3 id="orge71a419">SoC-V 曲线</h3>
+</div>
+<div id="outline-container-org0602dbf" class="outline-3">
+<h3 id="org0602dbf">V</h3>
+</div>
+<div id="outline-container-orgf5befd4" class="outline-3">
+<h3 id="orgf5befd4">差分充电特征</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+</div>
+</body>
+</html>

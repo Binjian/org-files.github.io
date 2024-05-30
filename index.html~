@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My training talks</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">My training talks</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org817dcea">Deep learning</a>
+<ul>
+<li><a href="#org813dc13">ai training</a></li>
+<li><a href="#org130fa29">foundation model</a></li>
+<li><a href="#orgd08d9a6">LLM</a></li>
+</ul>
+</li>
+<li><a href="#orga5a5c42">Git</a>
+<ul>
+<li><a href="#org1438b5d">Git basics</a></li>
+<li><a href="#orgbe45e6e">Fluent Git</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org817dcea" class="outline-2">
+<h2 id="org817dcea">Deep learning</h2>
+<div class="outline-text-2" id="text-org817dcea">
+</div>
+<div id="outline-container-org813dc13" class="outline-3">
+<h3 id="org813dc13"><a href="./ai_training.html">ai training</a></h3>
+</div>
+<div id="outline-container-org130fa29" class="outline-3">
+<h3 id="org130fa29"><a href="./foundation_model.html">foundation model</a></h3>
+</div>
+<div id="outline-container-orgd08d9a6" class="outline-3">
+<h3 id="orgd08d9a6"><a href="./llm_ai_slides.html">LLM</a></h3>
+</div>
+</div>
+<div id="outline-container-orga5a5c42" class="outline-2">
+<h2 id="orga5a5c42">Git</h2>
+<div class="outline-text-2" id="text-orga5a5c42">
+</div>
+<div id="outline-container-org1438b5d" class="outline-3">
+<h3 id="org1438b5d"><a href="./git_training.html">Git basics</a></h3>
+</div>
+<div id="outline-container-orgbe45e6e" class="outline-3">
+<h3 id="orgbe45e6e"><a href="./fluent_git.html">Fluent Git</a></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>veos-adp-plan</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">veos-adp-plan</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgcfa43e4">algorithm&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#org575435b">ddpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#org8b4c51e"><span class="todo TODO">TODO</span> refactoring</a></li>
+</ul>
+</li>
+<li><a href="#org294d5a1">rdpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#org318fabc"><span class="todo TODO">TODO</span> implementation and refactoring</a></li>
+<li><a href="#org0cb0fad">campus test</a></li>
+<li><a href="#org5170a93">road test</a></li>
+</ul>
+</li>
+<li><a href="#org576934e">offline training</a></li>
+<li><a href="#orgbf77461">driving style clustering/classification</a>
+<ul>
+<li><a href="#org77735f4"><span class="todo TODO">TODO</span> classification review</a></li>
+<li><a href="#org13e4b5f"><span class="todo TODO">TODO</span> training interface review</a></li>
+<li><a href="#org341a087"><span class="todo TODO">TODO</span> algorithm review</a></li>
+</ul>
+</li>
+<li><a href="#orgc1a0064"><span class="todo TODO">TODO</span> algorithm revision and selection I</a></li>
+<li><a href="#orgaab6f75"><span class="todo TODO">TODO</span> algorithm revision and selection II</a></li>
+<li><a href="#orgef16434"><span class="todo TODO">TODO</span> continual learning: Avanlance (Pytorch, ContinualAI)</a></li>
+</ul>
+</li>
+<li><a href="#org25a533e">cloud cluster&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#orgb3a2a16"><span class="todo TODO">TODO</span> create dockerfile for cluster environment</a>
+<ul>
+<li><a href="#org36a8d54"><span class="todo TODO">TODO</span> online</a></li>
+<li><a href="#orgf3fbc73"><span class="todo TODO">TODO</span> offline</a></li>
+</ul>
+</li>
+<li><a href="#org7b3cca4">Daniel</a></li>
+<li><a href="#orgdd54233">Qinglong</a>
+<ul>
+<li><a href="#org7aa10dd">handy</a></li>
+<li><a href="#orgdc70689">background</a></li>
+</ul>
+</li>
+<li><a href="#org0a3b58d">数据，通信？</a></li>
+</ul>
+</li>
+<li><a href="#org94eef95">remotecan</a>
+<ul>
+<li><a href="#orga748bdb"><span class="todo TODO">TODO</span> raw data packaging</a></li>
+<li><a href="#org1b6eca6"><span class="todo TODO">TODO</span> multithreading</a></li>
+</ul>
+</li>
+<li><a href="#orga06471a"><span class="todo TODO">TODO</span> Avanlanche &amp; DVS</a></li>
+<li><a href="#orga22feaa">integration test&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></a>
+<ul>
+<li><a href="#org04a3579"><span class="todo TODO">TODO</span> integration test with remotecan</a>
+<ul>
+<li><a href="#org24ffe39"><span class="todo TODO">TODO</span> offline training test</a></li>
+<li><a href="#org6f8d22b"><span class="todo TODO">TODO</span> integration test with offline data engine</a></li>
+<li><a href="#orgd0802d2"><span class="todo TODO">TODO</span> online training test</a></li>
+</ul>
+</li>
+<li><a href="#org1cc4436"><span class="todo TODO">TODO</span> rdpg campus</a></li>
+<li><a href="#orgcebeba5"><span class="todo TODO">TODO</span> ddpg road test phase I</a></li>
+<li><a href="#org6f36885"><span class="todo TODO">TODO</span> rdpg road test phase I</a></li>
+<li><a href="#org943e305"><span class="todo TODO">TODO</span> ddpg road test phase II</a></li>
+<li><a href="#org6e22489"><span class="todo TODO">TODO</span> rdpg road test phase II</a></li>
+</ul>
+</li>
+<li><a href="#orgfea8924">RoadTest Jiangyin</a>
+<ul>
+<li><a href="#org9633ec5">Test specification</a>
+<ul>
+<li><a href="#orgced740c">Route</a></li>
+<li><a href="#org2026dac">Time</a></li>
+<li><a href="#org7fe4450">Test Requirements:</a></li>
+<li><a href="#orgc70ef9a">Driving requirements</a></li>
+<li><a href="#org156f0f2">equipment</a></li>
+<li><a href="#orgbb99636">Workflow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1974342">MP</a>
+<ul>
+<li><a href="#orgf7b0516">data</a>
+<ul>
+<li><a href="#org7fce96d">quality</a></li>
+<li><a href="#org648fab4">exploring</a></li>
+<li><a href="#org7a8ec01">my own data (mongodb, data folder in docker)</a></li>
+</ul>
+</li>
+<li><a href="#orgc91c0fe">model</a>
+<ul>
+<li><a href="#orgf53f5a7">training, 0.4</a></li>
+<li><a href="#orgddbe8a5">1.0 model with new interface</a></li>
+<li><a href="#orge0db085">data format conversion from 0.4 to 1.0</a></li>
+</ul>
+</li>
+<li><a href="#org243c71e">compute</a>
+<ul>
+<li><a href="#org00e9ac0">growth expection for future</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="./20220406134513-veos_adp.html">veos-adp</a>
+</p>
+
+<div id="outline-container-orgcfa43e4" class="outline-2">
+<h2 id="orgcfa43e4">algorithm&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-orgcfa43e4">
+</div>
+<div id="outline-container-org575435b" class="outline-3">
+<h3 id="org575435b">ddpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h3>
+<div class="outline-text-3" id="text-org575435b">
+</div>
+<div id="outline-container-org8b4c51e" class="outline-4">
+<h4 id="org8b4c51e"><span class="todo TODO">TODO</span> refactoring</h4>
+<div class="outline-text-4" id="text-org8b4c51e">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-org294d5a1" class="outline-3">
+<h3 id="org294d5a1">rdpg&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h3>
+<div class="outline-text-3" id="text-org294d5a1">
+</div>
+<div id="outline-container-org318fabc" class="outline-4">
+<h4 id="org318fabc"><span class="todo TODO">TODO</span> implementation and refactoring</h4>
+<div class="outline-text-4" id="text-org318fabc">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-19 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org0cb0fad" class="outline-4">
+<h4 id="org0cb0fad">campus test</h4>
+</div>
+<div id="outline-container-org5170a93" class="outline-4">
+<h4 id="org5170a93">road test</h4>
+</div>
+</div>
+<div id="outline-container-org576934e" class="outline-3">
+<h3 id="org576934e">offline training</h3>
+</div>
+<div id="outline-container-orgbf77461" class="outline-3">
+<h3 id="orgbf77461">driving style clustering/classification</h3>
+<div class="outline-text-3" id="text-orgbf77461">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-15 Wed&gt;</span></span></p>
+</div>
+<div id="outline-container-org77735f4" class="outline-4">
+<h4 id="org77735f4"><span class="todo TODO">TODO</span> classification review</h4>
+</div>
+<div id="outline-container-org13e4b5f" class="outline-4">
+<h4 id="org13e4b5f"><span class="todo TODO">TODO</span> training interface review</h4>
+</div>
+<div id="outline-container-org341a087" class="outline-4">
+<h4 id="org341a087"><span class="todo TODO">TODO</span> algorithm review</h4>
+</div>
+</div>
+<div id="outline-container-orgc1a0064" class="outline-3">
+<h3 id="orgc1a0064"><span class="todo TODO">TODO</span> algorithm revision and selection I</h3>
+<div class="outline-text-3" id="text-orgc1a0064">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-30 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgaab6f75" class="outline-3">
+<h3 id="orgaab6f75"><span class="todo TODO">TODO</span> algorithm revision and selection II</h3>
+<div class="outline-text-3" id="text-orgaab6f75">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-29 Fri&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgef16434" class="outline-3">
+<h3 id="orgef16434"><span class="todo TODO">TODO</span> continual learning: Avanlance (Pytorch, ContinualAI)</h3>
+</div>
+</div>
+<div id="outline-container-org25a533e" class="outline-2">
+<h2 id="org25a533e">cloud cluster&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-org25a533e">
+</div>
+<div id="outline-container-orgb3a2a16" class="outline-3">
+<h3 id="orgb3a2a16"><span class="todo TODO">TODO</span> create dockerfile for cluster environment</h3>
+<div class="outline-text-3" id="text-orgb3a2a16">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-29 Fri&gt;</span></span></p>
+</div>
+<div id="outline-container-org36a8d54" class="outline-4">
+<h4 id="org36a8d54"><span class="todo TODO">TODO</span> online</h4>
+</div>
+<div id="outline-container-orgf3fbc73" class="outline-4">
+<h4 id="orgf3fbc73"><span class="todo TODO">TODO</span> offline</h4>
+<div class="outline-text-4" id="text-orgf3fbc73">
+</div>
+<ul class="org-ul">
+<li><a id="org6ba96a9"></a><span class="todo TODO">TODO</span> quadruple<br /></li>
+<li><a id="org6c2084b"></a><span class="todo TODO">TODO</span> sample<br /></li>
+<li><a id="org2a92fb0"></a><span class="todo TODO">TODO</span> pool<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b3cca4" class="outline-3">
+<h3 id="org7b3cca4">Daniel</h3>
+</div>
+<div id="outline-container-orgdd54233" class="outline-3">
+<h3 id="orgdd54233">Qinglong</h3>
+<div class="outline-text-3" id="text-orgdd54233">
+</div>
+<div id="outline-container-org7aa10dd" class="outline-4">
+<h4 id="org7aa10dd">handy</h4>
+</div>
+<div id="outline-container-orgdc70689" class="outline-4">
+<h4 id="orgdc70689">background</h4>
+</div>
+</div>
+<div id="outline-container-org0a3b58d" class="outline-3">
+<h3 id="org0a3b58d">数据，通信？</h3>
+</div>
+</div>
+<div id="outline-container-org94eef95" class="outline-2">
+<h2 id="org94eef95">remotecan</h2>
+<div class="outline-text-2" id="text-org94eef95">
+</div>
+<div id="outline-container-orga748bdb" class="outline-3">
+<h3 id="orga748bdb"><span class="todo TODO">TODO</span> raw data packaging</h3>
+<div class="outline-text-3" id="text-orga748bdb">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org1b6eca6" class="outline-3">
+<h3 id="org1b6eca6"><span class="todo TODO">TODO</span> multithreading</h3>
+</div>
+</div>
+<div id="outline-container-orga06471a" class="outline-2">
+<h2 id="orga06471a"><span class="todo TODO">TODO</span> Avanlanche &amp; DVS</h2>
+</div>
+<div id="outline-container-orga22feaa" class="outline-2">
+<h2 id="orga22feaa">integration test&#xa0;&#xa0;&#xa0;<span class="tag"><span class="veos">veos</span></span></h2>
+<div class="outline-text-2" id="text-orga22feaa">
+</div>
+<div id="outline-container-org04a3579" class="outline-3">
+<h3 id="org04a3579"><span class="todo TODO">TODO</span> integration test with remotecan</h3>
+<div class="outline-text-3" id="text-org04a3579">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-13 Fri&gt;</span></span></p>
+</div>
+<div id="outline-container-org24ffe39" class="outline-4">
+<h4 id="org24ffe39"><span class="todo TODO">TODO</span> offline training test</h4>
+<div class="outline-text-4" id="text-org24ffe39">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-19 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org6f8d22b" class="outline-4">
+<h4 id="org6f8d22b"><span class="todo TODO">TODO</span> integration test with offline data engine</h4>
+<div class="outline-text-4" id="text-org6f8d22b">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-20 Fri&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgd0802d2" class="outline-4">
+<h4 id="orgd0802d2"><span class="todo TODO">TODO</span> online training test</h4>
+<div class="outline-text-4" id="text-orgd0802d2">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-27 Fri&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1cc4436" class="outline-3">
+<h3 id="org1cc4436"><span class="todo TODO">TODO</span> rdpg campus</h3>
+<div class="outline-text-3" id="text-org1cc4436">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-05-31 Tue&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-orgcebeba5" class="outline-3">
+<h3 id="orgcebeba5"><span class="todo TODO">TODO</span> ddpg road test phase I</h3>
+<div class="outline-text-3" id="text-orgcebeba5">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-16 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org6f36885" class="outline-3">
+<h3 id="org6f36885"><span class="todo TODO">TODO</span> rdpg road test phase I</h3>
+<div class="outline-text-3" id="text-org6f36885">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-06-30 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org943e305" class="outline-3">
+<h3 id="org943e305"><span class="todo TODO">TODO</span> ddpg road test phase II</h3>
+<div class="outline-text-3" id="text-org943e305">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-14 Thu&gt;</span></span></p>
+</div>
+</div>
+<div id="outline-container-org6e22489" class="outline-3">
+<h3 id="org6e22489"><span class="todo TODO">TODO</span> rdpg road test phase II</h3>
+<div class="outline-text-3" id="text-org6e22489">
+<p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-07-28 Thu&gt;</span></span></p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfea8924" class="outline-2">
+<h2 id="orgfea8924">RoadTest Jiangyin</h2>
+<div class="outline-text-2" id="text-orgfea8924">
+</div>
+<div id="outline-container-org9633ec5" class="outline-3">
+<h3 id="org9633ec5">Test specification</h3>
+<div class="outline-text-3" id="text-org9633ec5">
+</div>
+<div id="outline-container-orgced740c" class="outline-4">
+<h4 id="orgced740c">Route</h4>
+<div class="outline-text-4" id="text-orgced740c">
+</div>
+<ul class="org-ul">
+<li><a id="orgda68b3c"></a>loop<br /></li>
+<li><a id="org355cea5"></a>avoid crossings (always turning right)<br /></li>
+<li><a id="org3ea36ac"></a>few traffic (few pedestrians or other vehicles, bicycles)<br /></li>
+<li><a id="org7b4b02f"></a>smooth road surface<br /></li>
+</ul>
+</div>
+<div id="outline-container-org2026dac" class="outline-4">
+<h4 id="org2026dac">Time</h4>
+<div class="outline-text-4" id="text-org2026dac">
+</div>
+<ul class="org-ul">
+<li><a id="org5edbbd9"></a>1~2 min<br /></li>
+</ul>
+</div>
+<div id="outline-container-org7fe4450" class="outline-4">
+<h4 id="org7fe4450">Test Requirements:</h4>
+<div class="outline-text-4" id="text-org7fe4450">
+</div>
+<ul class="org-ul">
+<li><a id="org0b94d64"></a>continuous, no interrruption<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgc70ef9a" class="outline-4">
+<h4 id="orgc70ef9a">Driving requirements</h4>
+<div class="outline-text-4" id="text-orgc70ef9a">
+</div>
+<ul class="org-ul">
+<li><a id="org80c7625"></a>normal but constant, no jerky or sudden braking<br /></li>
+<li><a id="orga96ef19"></a>cruising on straight road<br /></li>
+<li><a id="org0929982"></a>slow down before turn, accelerate to cruise speed after turning<br /></li>
+</ul>
+</div>
+<div id="outline-container-org156f0f2" class="outline-4">
+<h4 id="org156f0f2">equipment</h4>
+<div class="outline-text-4" id="text-org156f0f2">
+</div>
+<ul class="org-ul">
+<li><a id="org156149d"></a>mobile phone<br /></li>
+<li><a id="orgbc00467"></a>login on test report webpage <a href="http://58.34.202.172:5830/">http://58.34.202.172:5830/</a>  with personal account，<br /></li>
+<li><a id="org914d42f"></a>configure: set vehicle ID (name of the test vehicle like vb7, m2, etc)<br /></li>
+</ul>
+</div>
+<div id="outline-container-orgbb99636" class="outline-4">
+<h4 id="orgbb99636">Workflow</h4>
+<div class="outline-text-4" id="text-orgbb99636">
+<ol class="org-ol">
+<li>Safety first</li>
+<li>Mobile phone keeps on the test report page</li>
+<li>press Start on test report page</li>
+<li>drive the vehicle according to the driving requirements</li>
+<li>when arriving and stopping at the termination point (in case of loop, the starting position), press the stop button</li>
+<li>prepare for the next round and return to 1.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1974342" class="outline-2">
+<h2 id="org1974342">MP</h2>
+<div class="outline-text-2" id="text-org1974342">
+</div>
+<div id="outline-container-orgf7b0516" class="outline-3">
+<h3 id="orgf7b0516">data</h3>
+<div class="outline-text-3" id="text-orgf7b0516">
+</div>
+<div id="outline-container-org7fce96d" class="outline-4">
+<h4 id="org7fce96d">quality</h4>
+</div>
+<div id="outline-container-org648fab4" class="outline-4">
+<h4 id="org648fab4">exploring</h4>
+<div class="outline-text-4" id="text-org648fab4">
+</div>
+<ul class="org-ul">
+<li><a id="org3f28894"></a>remotecan issues finding &#x2013;&gt; debugging/fixing<br /></li>
+</ul>
+</div>
+<div id="outline-container-org7a8ec01" class="outline-4">
+<h4 id="org7a8ec01">my own data (mongodb, data folder in docker)</h4>
+</div>
+</div>
+<div id="outline-container-orgc91c0fe" class="outline-3">
+<h3 id="orgc91c0fe">model</h3>
+<div class="outline-text-3" id="text-orgc91c0fe">
+</div>
+<div id="outline-container-orgf53f5a7" class="outline-4">
+<h4 id="orgf53f5a7">training, 0.4</h4>
+</div>
+<div id="outline-container-orgddbe8a5" class="outline-4">
+<h4 id="orgddbe8a5">1.0 model with new interface</h4>
+</div>
+<div id="outline-container-orge0db085" class="outline-4">
+<h4 id="orge0db085">data format conversion from 0.4 to 1.0</h4>
+</div>
+</div>
+<div id="outline-container-org243c71e" class="outline-3">
+<h3 id="org243c71e">compute</h3>
+<div class="outline-text-3" id="text-org243c71e">
+</div>
+<div id="outline-container-org00e9ac0" class="outline-4">
+<h4 id="org00e9ac0">growth expection for future</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.0.50 (<a href="https://orgmode.org">Org</a> mode 9.6.15)</p>
+</div>
+</body>
+</html>
