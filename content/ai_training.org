@@ -49,7 +49,7 @@
 *** 50 多年后，人工智能的工程化对图灵问题的回应
 
 #+CAPTION[Dataflow]: APRL vs vanilla exploration
-[[yt:rV77BJAUYGU]]
+[[https://www.youtube.com/embed/rV77BJAUYGu][yt:rV77BJAUYGu]]
 
 ** 机器学习
 *** 机器可以学习

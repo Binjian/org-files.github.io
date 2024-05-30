@@ -12,11 +12,10 @@
 
 ;; Install dependencies
 (package-install 'htmlize)
-(package-install 'org-yt)
 
 ;; Load the publishing system
 (require 'ox-publish)
-(require 'org-yt)
+
 
 ;; Customize the HTML output
 (setq org-html-validation-link nil            ;; Don't show validation link
