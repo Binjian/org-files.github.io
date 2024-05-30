@@ -30,7 +30,7 @@
       :recursive t
       :base-directory "./content"
       :publishing-function 'org-html-publish-to-html
-      :publishing-directory "./public"
+      :publishing-directory "./docs"
       :with-author nil           ;; Don't include author name
       :with-creator t            ;; Include Emacs and Org versions in footer
       :with-toc t                ;; Include a table of contents
@@ -40,7 +40,7 @@
     (list "org-static"
       :base-directory "./content"
       :base-extension "css\\js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-      :publishing-directory "./public"
+      :publishing-directory "./docs"
       :recursive t
       :publishing-function 'org-publish-attachment
       )
