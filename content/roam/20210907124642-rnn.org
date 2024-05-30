@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       1355a07c-8e30-4ae9-ae86-8f17ce0b1a36
-:END:
-#+title: rnn
-recurrent neural network
-
-[[./20210907124707-lstm.org][lstm]]

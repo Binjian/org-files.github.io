@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       20ba65a5-9b25-418f-9d3f-d2a84376654c
-:END:
-#+title: recurrent deterministic policy gradient
-[[./20210830182842-deep_reinforcement_learning.org][deep-reinforcement-learning]]

@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       6e22a310-074b-420f-9f03-d35c05386160
-:END:
-#+title: carla
-[[./20210831172004-simulation.org][simulation]]
-[[./20210831171703-patent.org][patent]]
-[[./20210831171925-l3.org][l3]]
