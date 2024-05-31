@@ -1,9 +1,7 @@
 #+title: Ai Training
-
-#+title: 前晨汽车入职培训 AI前沿开发
 #+AUTHOR: 忻斌健
 #+CREATOR: 忻斌健
-#+DATE: <2023-03-13 Mon>
+#+DATE: <2023-01-11 Mon>
 #+STARTUP: latexpreview
 #+LATEX_COMPILER: xelatex
 #+LATEX_CLASS: article
@@ -23,7 +21,7 @@
 #+REVEAL_THEME: sky
 #+REVEAL_HLEVEL: 1
 #+REVEAL_EXTRA_CSS: ./templates/grids.css
-#+REVEAL_TITLE_SLIDE: ./templates/title_llm.html
+#+REVEAL_TITLE_SLIDE: ./templates/title_ai_training.html
 #+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
 
 * 概述
@@ -49,7 +47,7 @@
 *** 50 多年后，人工智能的工程化对图灵问题的回应
 
 #+CAPTION[Dataflow]: APRL vs vanilla exploration
-[[https://www.youtube.com/embed/rV77BJAUYGu][yt:rV77BJAUYGu]]
+yt:rV77BJAUYGU
 
 ** 机器学习
 *** 机器可以学习

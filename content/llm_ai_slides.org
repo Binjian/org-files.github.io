@@ -11,7 +11,7 @@
 #+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
 #+OPTIONS: tex:t
 #+OPTIONS: ^:{}
-#+DOWNLOAD_IMAGE_DIR:  '~/.org.d/roam/img'
+#+DOWNLOAD_IMAGE_DIR:  './img'
 #+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
 #+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
 #+OPTIONS: reveal_width:1200 reveal_height:800
@@ -26,8 +26,8 @@
 #+REVEAL_EXTRA_CSS: ./grids.css
 #+REVEAL_TITLE_SLIDE: ./templates/title_llm.html
 #+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
-#+hugo_base_dir: '~/doc/hugo/binjian.github.io/'
-#+hugo_section: 'slides'
+#+hugo_base_dir: ../talks
+#+hugo_section: slides
 
 * 概述
 # :PROPERTIES:

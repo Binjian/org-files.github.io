@@ -1,81 +1,120 @@
 :PROPERTIES:
 :ID:       8525d1c4-20e9-40ca-ab38-1d1bd88d0884
 :END:
-#+title: git-training
+#+title: git-basics
+#+CREATOR: 忻斌健
+#+DATE: <2023-04-20 Mon>
+#+STARTUP: latexpreview
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 11pt]
+#+OPTIONS: tex:t
+#+OPTIONS: ^:{}
+#+DOWNLOAD_IMAGE_DIR:  '~/.org.d/mode/img'
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:t reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+OPTIONS: reve
+#+OPTIONS: toc:1
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+#+REVEAL_MARGIN: 0.01
+#+REVEAL_MIN_SCALE: 0.05
+#+REVEAL_MAX_SCALE: 2.5
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 1
+#+REVEAL_EXTRA_CSS: ./templates/grids.css
+#+REVEAL_TITLE_SLIDE: ./templates/title_git_training.html
+#+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
 #+OPTIONS: toc:1
 
-* git short introduction
-** 'git' not 'jit'
-** days of diff and patch, bitkeeper
-** Goal: distributed development (coooperative? depends!)
-** linus torwald
-** very similar to blockchain Merkle Tree (hash tree)
-*** [[https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain][why is git not a blockchain]]
-** SHA is not a security feature, security is a by-product
-** objects: blob, tree
-** references: name for raw SHA-1 value; refs
-** porcelan vs plumbing git cat-file -t -p
-** features: local, fast, efficient, distributed, snapshot not patches, changes
-** HEAD/Detached?
-* work-flow
-** edit, stage(add), review, commit
-** git-flow
-*** [[https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html][git flow cheetsheet]]
-** submodule
-*** just update, track the new changes of the submodules (no change)
-**** manually : git fetch
-**** automatically: git submodule update --remote
-***** set specific branch .gitmodules submodule.submudle_name.branch stable
-***** -f: tracked; no -f locally, not tracked.
-***** git config status.submodulesummary 1
-*** work on the submodule collaboratively
-**** git submodule update --remote --rebase/--merge
-**** caveats: has to commit locally.
-**** publishing submodule changes: git push --recurse-submodules=check/on-demand
-*** caveats:
-**** accidental revert: git submodule update --remote to update .gitmodule; and commit in parent projects.
-**** cannot merge: no submodule merge
+* Git short introduction
+- 'Git' not 'Jit'
+- days of diff and patch, bitkeeper
+- Goal: distributed development (coooperative? depends!)
+- linus torwald
+- very similar to blockchain Merkle Tree (hash tree)
+  [[https://stackoverflow.com/questions/46192377/why-is-git-not-considered-a-block-chain][why is git not a blockchain]]
 
-* index/stage, repository, working tree, remote;
-** git hash-object -w;git cat-file -p/-t; git update-index --add --cacheinfo
-** file modes: 100644/100755/120000
-** git write-tree
-** git objects: content-addressable filesystem
-*** tree objects
-*** blob
-*** [[https://git-scm.com/book/en/v2/Git-Internals-Git-Objects][commit objects]]
-*** tag
-** diff, snapshot
-*** view/content
-** git commit: is a snapshot
-*** new commits often: history of your logic units of change, a story of history of the repository
-*** metadta: contents, messages of author, timestamp,
-*** change history, --amend
-** reference
-*** branch, HEAD, detached
-**** branch: reference to the head of a line of work-->git update-ref refs/heads/master
-**** HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object
-**** detatched HEAD: cannot commit (checkout a commit/tag/remote branch)
-***** to save : git checkout -b foo/ git branch foo/ git tag foo
-*** git reflog -2 HEAD/ HEAD^^
-*** git symbolic-ref
-*** master^^
-*** tags： branch reference; never moves
-*** remotes: git remote add origin git@gitlab.work:ai/ref.git: git push
-** merge
-** rebase
-** stashing
-** log
-** misc
-*** commit amend
-*** rename
-*** gitignore
-*** submodule,
+* Inside Git
+- SHA is not a security feature, security is a by-product
+- objects:
+  blob, tree
+- references:
+  name for raw SHA-1 value; refs
+- porcelan vs plumbing:
+  git cat-file -t -p
+- features:
+  local, fast, efficient, distributed, snapshot not patches, changes
+- HEAD/Detached?
+
+* Workflow
+- edit -> stage(add) -> review -> commit
+- git-flow
+  - [[https://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html][git flow cheetsheet]]
+* submodule
+- just update, track the new changes of the submodules (no change)
+- manually : git fetch
+- automatically: git submodule update --remote
+  - set specific branch .gitmodules submodule.submudle_name.branch stable
+  - -f: tracked; no -f locally, not tracked.
+  - git config status.submodulesummary 1
+* Cooperative submodule
+- git submodule update --remote --rebase/--merge
+- caveats: has to commit locally.
+- publishing submodule changes: git push --recurse-submodules=check/on-demand
+- caveats:
+  - accidental revert: git submodule update --remote to update .gitmodule; and commit in parent projects.
+  - cannot merge: no submodule merge
+
+* internals
+- index/stage, repository, working tree, remote;
+- plumbing:
+  - git hash-object -w;
+  - git cat-file -p/-t;
+  - git update-index --add --cacheinfo
+- file modes: 100644/100755/120000
+- git write-tree
+* objects
+- Git is content-addressable filesystem
+  - tree objects
+  - blob
+  - [[https://git-scm.com/book/en/v2/Git-Internals-Git-Objects][commit objects]]
+  - tag
+* commit
+- Git commit: is a snapshot
+  - Commit often!
+    - history of your logic units of change
+    - a story of history of the repository
+- metadta: contents, messages of author, timestamp,
+- change history, --amend
+* reference
+- branch, HEAD, detached
+  - branch: reference to the head of a line of work-->git update-ref refs/heads/master
+  - HEAD: symbolic reference (pointer to a reference); or SHA-1 value of a git object
+  - detatched HEAD: cannot commit (checkout a commit/tag/remote branch)
+    - to save : git checkout -b foo/ git branch foo/ git tag foo
+* advanced reference
+- git reflog -2 HEAD/ HEAD^^
+- git symbolic-ref
+- master^^
+- tags： branch reference; never moves
+* remote
+- git remote add origin git@gitlab.work:ai/ref.git
+- git push
+- merge
+- rebase
+- stashing
+- log
+* misc
+- commit amend
+- rename
+- gitignore
+- submodule,
 * git advanced
-** git revert
-*** git revision specification
-**** git log
-**** git reset
-**** git chery-pick
-** git rebase
-** magit
+- git revert
+- git revision specification for
+  - git log
+  - git reset
+  - git chery-pick
+- git rebase
+- A beautiful magit

@@ -26,6 +26,8 @@
 #+REVEAL_EXTRA_CSS: ./templates/grids.css
 #+REVEAL_TITLE_SLIDE: ./templates/title_git_nutshell.html
 #+HTML_HEAD_EXTRA: <style> .figure p {text-align: center;}</style>
+#+hugo_base_dir: ../talks
+#+hugo_section: slides
 
 
 * 常见场景
